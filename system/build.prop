@@ -341,3 +341,5 @@ persist.gps.qc_nlp_in_use=1
 persist.loc.nlp_name=com.qualcomm.services.location
 ro.gps.agps_provider=1
 ro.pip.gated=0
+
+persist.sys.media.use-awesome=1
