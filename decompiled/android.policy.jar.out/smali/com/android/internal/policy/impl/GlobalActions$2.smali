@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/internal/policy/impl/GlobalActions;)V
     .locals 0
 
-    .prologue
-    .line 317
     iput-object p1, p0, Lcom/android/internal/policy/impl/GlobalActions$2;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,9 +36,6 @@
 # virtual methods
 .method public onItemLongClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)Z
     .locals 2
-    .param p2, "view"    # Landroid/view/View;
-    .param p3, "position"    # I
-    .param p4, "id"    # J
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -51,9 +46,6 @@
         }
     .end annotation
 
-    .prologue
-    .line 321
-    .local p1, "parent":Landroid/widget/AdapterView;, "Landroid/widget/AdapterView<*>;"
     iget-object v1, p0, Lcom/android/internal/policy/impl/GlobalActions$2;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
 
     # getter for: Lcom/android/internal/policy/impl/GlobalActions;->mAdapter:Lcom/android/internal/policy/impl/GlobalActions$MyAdapter;
@@ -65,25 +57,19 @@
 
     move-result-object v0
 
-    .line 322
-    .local v0, "action":Lcom/android/internal/policy/impl/GlobalActions$Action;
     instance-of v1, v0, Lcom/android/internal/policy/impl/GlobalActions$LongPressAction;
 
     if-eqz v1, :cond_0
 
-    .line 323
     check-cast v0, Lcom/android/internal/policy/impl/GlobalActions$LongPressAction;
 
-    .end local v0    # "action":Lcom/android/internal/policy/impl/GlobalActions$Action;
     invoke-interface {v0}, Lcom/android/internal/policy/impl/GlobalActions$LongPressAction;->onLongPress()Z
 
     move-result v1
 
-    .line 325
     :goto_0
     return v1
 
-    .restart local v0    # "action":Lcom/android/internal/policy/impl/GlobalActions$Action;
     :cond_0
     const/4 v1, 0x0
 

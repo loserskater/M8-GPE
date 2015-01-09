@@ -1,0 +1,525 @@
+﻿run_program("/sbin/busybox", "mkdir", "/sdcard/aroma");
+ini_set("force_colorspace","rgba");
+ini_set("dp","6");
+theme("material");
+ini_set("rom_name", "M8_GPE LRX22C.H5);
+ini_set("rom_version", "1.0");
+ini_set("rom_author", "enewman17, loserskater");
+ini_set("rom_device", "HTC ONE M8");
+ini_set("rom_date",   "");
+fontresload( "0", "ttf/Roboto-Regular.ttf;ttf/DroidSansArabic.ttf;ttf/DroidSansFallback.ttf;", "12" );
+loadlang("langs/en.lang");
+fontresload( "0", "ttf/Roboto-Regular.ttf", "12" );
+fontresload( "1", "ttf/Roboto-Regular.ttf", "18" );
+#
+# Show Animated Splash
+#
+anisplash(
+  #-- Number of Loop
+    2,
+  
+  #-- Frame 1 [ Image, duration in millisecond ]. <AROMA Resource Dir>/splash/a[1..6].png
+    "splash/a1", 500,
+    "splash/a2", 30,
+    "splash/a3", 30,
+    "splash/a4", 30,
+    "splash/a5", 30,
+    "splash/a6", 30
+);
+##
+# Show Splash
+#
+
+splash(
+    4000,
+    "m8_gpe"
+);
+
+###################################################################################################################
+
+textbox(
+  #-- Title
+    "Welcome",
+  
+  #-- Subtitle
+    ini_get("rom_name")+" "+ini_get("rom_version"),
+  
+  #-- Icon
+    "@changelog",
+  
+  #-- Arg 4
+    resread("changelog.txt")
+);
+
+###################################################################################################################
+
+menubox(
+  #-- Title
+    "Install/Option Menu",
+  
+  #-- Sub Title
+    "Select an option from the menu to begin",
+  
+  #-- Icon
+    "@menu",
+    
+  #-- Will be saved in /tmp/aroma/type.prop
+    "type.prop",
+    
+    
+    "Install Stock Rom",       "Don't worry about mods or apps, just install.", "@install2",      #-- selected = 1
+    "Install Custom Rom",        "Install the rom along with mods selection.",  "@install2",      #-- selected = 2
+    "Mods Only",                 "Change themes, enable or disable mods.","@mods",                #-- selected = 3
+	"Kernel Only",               "Install a kernel","@mods2",                                     #-- selected = 4
+	"System Information",        "Show device and partition information.","@info",                #-- selected = 5
+	"Reboot",                    "Reboot Your Device","@reboot",                                  #-- selected = 6
+	"Exit",                      "Terminate AROMA and return to recovery.","@exit",               #-- selected = 7
+);
+
+###################################################################################################################
+
+#-- System Information
+
+if prop("type.prop","selected")=="5" then
+  pleasewait("Getting system information...");
+  setvar(
+    "sysinfo", 
+    
+    "\n"+
+    
+    "Model\t\t\t: <b><#selectbg_g>"+sysprop("ro.product.model")+"</#></b>\n"+
+    "Board Type\t\t: <b><#selectbg_g>"+sysprop("ro.product.board")+"</#></b>\n"+
+    "Manufacturer\t: <b><#selectbg_g>"+sysprop("ro.product.manufacturer")+"</#></b>\n\n"+
+      
+    "CPU\t\t\t: <b><#selectbg_g>"+sysprop("ro.product.cpu.abi")+"</#></b>\n"+
+    "LCD Density\t\t: <b><#selectbg_g>"+sysprop("ro.sf.lcd_density")+"</#></b>\n\n"+
+     
+    "System Size\t\t: <b><#selectbg_g>"+getdisksize("/system","m")+" MB</#></b>\n"+
+    "Free Space\t\t: <b><#selectbg_g>"+getdiskfree("/system","m")+" MB</#></b>\n\n"+
+    "Data Size\t\t: <b><#selectbg_g>"+getdisksize("/data","m")+" MB</#></b>\n"+
+    "Free Space\t\t: <b><#selectbg_g>"+getdiskfree("/data","m")+" MB</#></b>\n\n"+
+    "SDCard Size\t\t: <b><#selectbg_g>"+getdisksize("/sdcard","m")+" MB</#></b>\n"+
+    "Free Space\t\t: <b><#selectbg_g>"+getdiskfree("/sdcard","m")+" MB</#></b>\n\n"
+  );
+
+textbox(
+    "System Information",
+    "Review your phone's information",
+    "@Info",
+    getvar("sysinfo")
+  );
+  back("2");
+endif;
+
+#-- Reboot
+
+if prop("type.prop","selected")=="6" then
+  if
+    confirm(
+	    "Reboot",
+	    "Are you sure want to reboot your device?",
+	    "@confirm"
+    )=="yes"
+  then
+    reboot("now");
+  else
+  back("1");
+  endif;
+endif;
+
+#-- Exit Installer
+
+if prop("type.prop","selected")=="7" then
+  if
+    confirm(
+        "Exit",
+        "Are you sure want to exit the Installer?",
+	    "@confirm"
+    )=="yes"
+  then
+	exit("");
+  else
+  back("1");
+  endif;
+endif;
+
+###################################################################################################################
+  
+if prop("type.prop","selected")=="1"||prop("type.prop","selected")=="2" then
+  selectbox(
+    #-- Title
+      "Wipe Options",
+  
+    #-- Sub Title
+      "",
+  
+    #-- Icon
+      "@alert",
+  
+    #-- Will be saved in /tmp/aroma/wipe.prop
+      "wipe.prop",
+
+      "Full Wipe",            "Data, System, Cache, Dalvik",               0,      #-- selected.0 = 1
+      "Upgrade",              "System, Cache, Dalvik... dirty flash",      1       #-- selected.0 = 2
+
+);
+endif;
+
+###################################################################################################################
+
+if prop("type.prop","selected")=="3" then
+  selectbox(
+    #-- Title
+      "Wipe Options",
+  
+    #-- Sub Title
+      "",
+  
+    #-- Icon
+      "@alert",
+  
+    #-- Will be saved in /tmp/aroma/wipe.prop
+      "wipe.prop",
+
+      "Expert",               "Doesn't wipe anything",                    0,      #-- selected.0 = 1
+      "Upgrade",              "Cache, Dalvik",                            1       #-- selected.0 = 2
+
+);
+endif;
+
+###################################################################################################################
+
+if prop("type.prop","selected")=="2"||prop("type.prop","selected")=="3" then
+  setvar(
+    #-- Variable name
+      "themes_prop",
+    #-- Value
+      read(
+        #-- Absolute Path
+          "/data/media/0/aroma/Themes.prop"
+      )
+    );
+    if (getvar("themes_prop")!="") then
+        writetmpfile("themes.prop",getvar("themes_prop"));
+    endif;
+    selectbox(
+      #-- Title
+        "Themes",
+      
+      #-- Sub Title
+        "Select your theme",
+      
+      #-- Icon:
+        "@personalize",
+      
+      #-- Will be saved in /tmp/aroma/themes.prop
+        "themes.prop",
+		
+        "Stock Material UI",  "Stock UI, No themeing has been done.",           1,      #-- selected.0 = 1
+        "Dark Material UI",   "Dark UI",                                        0       #-- selected.0 = 2
+		  
+    );
+	write(
+      #-- Absolute path into the file
+      "/data/media/0/aroma/Themes.prop",
+        
+      #-- File Content to be writen into the file
+      readtmpfile("themes.prop");
+    );
+	setvar(
+      #-- Variable name
+        "mms_prop",
+      #-- Value
+        read(
+          #-- Absolute Path
+            "/data/media/0/aroma/MMS.prop"
+        )
+      );
+    if (getvar("mms_prop")!="") then
+        writetmpfile("mms.prop",getvar("mms_prop"));
+    endif;
+    checkbox(
+      #-- Title
+        "MMS Options",
+      
+      #-- Sub Title
+        "",
+       
+      #-- Icon:
+        "@apps",
+      
+      #-- Will be saved in /tmp/aroma/mms.prop
+        "mms.prop",
+
+		  "Messenger",        "",           1,      #-- item.0.1
+          "AOSP",             "",           3       #-- item.0.2
+
+    );
+	write(
+      #-- Absolute path into the file
+      "/data/media/0/aroma/MMS.prop",
+        
+      #-- File Content to be writen into the file
+      readtmpfile("mms.prop");
+    );
+	setvar(
+      #-- Variable name
+        "email_prop",
+      #-- Value
+        read(
+          #-- Absolute Path
+            "/data/media/0/aroma/Email.prop"
+        )
+      );
+    if (getvar("email_prop")!="") then
+        writetmpfile("email.prop",getvar("email_prop"));
+    endif;
+    selectbox(
+      #-- Title
+        "Email Options",
+      
+      #-- Sub Title
+        "",
+       
+      #-- Icon:
+        "@apps",
+      
+      #-- Will be saved in /tmp/aroma/email.prop
+        "email.prop",
+
+        "Email",              "",                                              2,  #-- Group 2. key = "selected.1"
+		  "Stock",            "Email and Exchange bundled in Gmail",           1,      #-- selected.1 = 1
+          "AOSP",             "AOSP Email and Exchange, separate from Gmail",  0       #-- selected.1 = 2
+
+    );
+	write(
+      #-- Absolute path into the file
+      "/data/media/0/aroma/Email.prop",
+        
+      #-- File Content to be writen into the file
+      readtmpfile("email.prop");
+    );
+	setvar(
+      #-- Variable name
+        "keyboard_prop",
+      #-- Value
+        read(
+          #-- Absolute Path
+            "/data/media/0/aroma/Keyboard.prop"
+        )
+      );
+    if (getvar("keyboard_prop")!="") then
+        writetmpfile("keyboard.prop",getvar("keyboard_prop"));
+    endif;
+    checkbox(
+      #-- Title
+        "Keyboards",
+      
+      #-- Sub Title
+        "Select the apps you would like added/removed.\n"+
+        "CHECKED items will be ADDED.\n"+
+        "UNCHECKED will be REMOVED.",
+      
+      #-- Icon:
+        "@apps",
+      
+      #-- Will be saved in /tmp/aroma/keyboard.prop
+        "keyboard.prop",
+          
+		"HTC",    "HTC Sense 6 Keyboard",     0       #-- item.0.1
+			  
+    );
+	write(
+      #-- Absolute path into the file
+      "/data/media/0/aroma/Keyboard.prop",
+        
+      #-- File Content to be writen into the file
+      readtmpfile("keyboard.prop");
+    );
+	setvar(
+      #-- Variable name
+        "cm_prop",
+      #-- Value
+        read(
+          #-- Absolute Path
+            "/data/media/0/aroma/CM.prop"
+        )
+      );
+    if (getvar("cm_prop")!="") then
+        writetmpfile("cm.prop",getvar("cm_prop"));
+    endif;
+    checkbox(
+      #-- Title
+        "CyanogenMod Apps",
+      
+      #-- Sub Title
+        "Select the apps you would like added/removed.\n"+
+        "CHECKED items will be ADDED.\n"+
+        "UNCHECKED will be REMOVED.",
+      
+      #-- Icon:
+        "@apps",
+      
+      #-- Will be saved in /tmp/aroma/other
+        "cm.prop",
+										  
+	    "Audio FX",       "Will replace MusicFX",                                              0,      #-- item.0.1
+		"CM Browser",     "Material design web browser, will replace Chrome",                  0,      #-- item.0.2
+		"Calendar",       "AOSP Calendar",                                                     0,      #-- item.0.3
+	    "File Manager",   "Material design file explorer",                                     0,      #-- item.0.4
+        "Music",          "Eleven, material design music player, will replace google music.",  0,      #-- item.0.5
+		"Gallery",        "Material design photo gallery, will replace google photos",         0       #-- item.0.6
+    
+	);
+    write(
+      #-- Absolute path into the file
+      "/data/media/0/aroma/CM.prop",
+        
+      #-- File Content to be writen into the file
+      readtmpfile("cm.prop");
+    );
+    setvar(
+      #-- Variable name
+        "live_prop",
+      #-- Value
+        read(
+          #-- Absolute Path
+            "/data/media/0/aroma/LiveWallpaper.prop"
+        )
+      );
+    if (getvar("live_prop")!="") then
+        writetmpfile("live.prop",getvar("live_prop"));
+    endif;
+    checkbox(
+      #-- Title
+        "Live Wallpapers",
+      
+      #-- Sub Title
+        "Select the apps you would like added/removed.\n"+
+        "CHECKED items will be ADDED.\n"+
+        "UNCHECKED will be REMOVED.",
+      
+      #-- Icon:
+        "@apps",
+      
+      #-- Will be saved in /tmp/aroma/other
+        "live.prop",
+										  
+	    "Galaxy",       "",         0,      #-- item.0.1
+		"Microbes",     "",         0,      #-- item.0.2
+	    "Noise Field",  "",         0,      #-- item.0.3
+        "PhaseBeam",    "",         0,      #-- item.0.4
+		"SunBeam",      "",         0       #-- item.0.5
+    
+	);
+    write(
+      #-- Absolute path into the file
+      "/data/media/0/aroma/LiveWallpaper.prop",
+        
+      #-- File Content to be writen into the file
+      readtmpfile("live.prop");
+    );
+endif;
+
+##################################################################################################################
+
+if prop("type.prop","selected")=="2"||prop("type.prop","selected")=="4" then
+selectbox(
+  #-- Title
+    "Kernel Options",
+  
+  #-- Sub Title
+    "",
+  
+  #-- Icon
+    "@settings",
+  
+  #-- Will be saved in /tmp/aroma/kernel.prop
+    "kernel.prop",
+  
+  "Kernel Options", "",               2,      #-- Group 1. key = "selected.1"
+   "Default",    "Stock kernel",      1,      #-- selected.1 = 1
+);
+write(
+  #-- Absolute path into the file
+  "/data/media/0/aroma/Kernel.prop",
+        
+  #-- File Content to be write into the file
+  readtmpfile("kernel.prop");
+);
+endif;
+
+###################################################################################################################
+
+ini_set("text_next", "Install Now");
+
+###################################################################################################################
+
+  viewbox(
+    #-- Title
+      "Ready to Install",
+
+    #-- Text
+      "We're ready to begin installation.\n\n"+
+      "Press <b>Install Now</b> to begin the installation.\n\n"+
+      "If you want to review or change any of your installation settings, press <b>Back</b>. Press Menu Key -> Quit Installation to exit installation.",
+
+    #-- Icon
+      "@install"
+  );
+
+  ini_set("text_next", "Next >");
+
+###################################################################################################################
+
+setvar("retstatus",
+  install(
+    #-- Title
+      "Installing",
+    
+    #-- Installation Process message
+      "<b>"+ini_get("rom_name")+"</b> is being installed.\n\n"+
+      "This may take several minutes.",
+    
+    #-- Installation Icon
+      "@install",
+    
+    #-- Installation Finish Message
+      "<b>"+ini_get("rom_name")+"</b> was successfully installed.\n\n"+
+      "Press Next to continue."
+  )
+);
+
+##
+
+ini_set("text_next", "Finish");
+
+checkviewbox(
+  #-- Title
+    "Installation Completed",
+  
+  #-- Text
+    "<#selectbg_g><b>Congratulation...</b></#>\n\n"+
+    "<b>"+ini_get("rom_name")+"</b> has been installed into your device.\n\n"+
+    "Installer Status: "+getvar("retstatus")+"\n\n",
+    
+  #-- Icon
+    "@welcome",
+
+  #-- Checkbox Text
+    "Reboot your device now.",
+
+  #-- Initial Checkbox value ( 0=unchecked, 1=checked ) -  (Optional, default:0)
+    "1",
+
+  #-- Save checked value in variable "reboot_it" (Optional)
+    "reboot_it"
+);
+
+if
+  getvar("reboot_it")=="1"
+then
+  reboot("onfinish");
+endif;
+
+#---- FINISH

@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/internal/policy/impl/GlobalActions$3;)V
     .locals 0
 
-    .prologue
-    .line 374
     iput-object p1, p0, Lcom/android/internal/policy/impl/GlobalActions$3$1;->this$1:Lcom/android/internal/policy/impl/GlobalActions$3;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,22 +36,16 @@
 # virtual methods
 .method public onClick(Landroid/content/DialogInterface;I)V
     .locals 4
-    .param p1, "dialog"    # Landroid/content/DialogInterface;
-    .param p2, "which"    # I
 
-    .prologue
-    .line 379
     invoke-static {}, Landroid/app/ActivityManager;->isUserAMonkey()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 394
     :goto_0
     return-void
 
-    .line 385
     :cond_0
     iget-object v0, p0, Lcom/android/internal/policy/impl/GlobalActions$3$1;->this$1:Lcom/android/internal/policy/impl/GlobalActions$3;
 

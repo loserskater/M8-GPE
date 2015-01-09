@@ -1,0 +1,5 @@
+<@center><b><#selectbg_g>License Agreement</#></b>
+
+<b>Terms and conditions:</b> Enjoy!
+
+<b>Agree</b>=Continue <b>Don't Agree</b>=Exit

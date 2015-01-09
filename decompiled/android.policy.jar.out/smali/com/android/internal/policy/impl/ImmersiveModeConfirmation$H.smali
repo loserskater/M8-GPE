@@ -30,8 +30,6 @@
 .method private constructor <init>(Lcom/android/internal/policy/impl/ImmersiveModeConfirmation;)V
     .locals 0
 
-    .prologue
-    .line 327
     iput-object p1, p0, Lcom/android/internal/policy/impl/ImmersiveModeConfirmation$H;->this$0:Lcom/android/internal/policy/impl/ImmersiveModeConfirmation;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -41,11 +39,7 @@
 
 .method synthetic constructor <init>(Lcom/android/internal/policy/impl/ImmersiveModeConfirmation;Lcom/android/internal/policy/impl/ImmersiveModeConfirmation$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/internal/policy/impl/ImmersiveModeConfirmation;
-    .param p2, "x1"    # Lcom/android/internal/policy/impl/ImmersiveModeConfirmation$1;
 
-    .prologue
-    .line 327
     invoke-direct {p0, p1}, Lcom/android/internal/policy/impl/ImmersiveModeConfirmation$H;-><init>(Lcom/android/internal/policy/impl/ImmersiveModeConfirmation;)V
 
     return-void
@@ -55,19 +49,14 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 1
-    .param p1, "msg"    # Landroid/os/Message;
 
-    .prologue
-    .line 334
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 345
     :goto_0
     return-void
 
-    .line 336
     :pswitch_0
     iget-object v0, p0, Lcom/android/internal/policy/impl/ImmersiveModeConfirmation$H;->this$0:Lcom/android/internal/policy/impl/ImmersiveModeConfirmation;
 
@@ -76,7 +65,6 @@
 
     goto :goto_0
 
-    .line 339
     :pswitch_1
     iget-object v0, p0, Lcom/android/internal/policy/impl/ImmersiveModeConfirmation$H;->this$0:Lcom/android/internal/policy/impl/ImmersiveModeConfirmation;
 
@@ -85,7 +73,6 @@
 
     goto :goto_0
 
-    .line 342
     :pswitch_2
     iget-object v0, p0, Lcom/android/internal/policy/impl/ImmersiveModeConfirmation$H;->this$0:Lcom/android/internal/policy/impl/ImmersiveModeConfirmation;
 
@@ -94,7 +81,6 @@
 
     goto :goto_0
 
-    .line 334
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0

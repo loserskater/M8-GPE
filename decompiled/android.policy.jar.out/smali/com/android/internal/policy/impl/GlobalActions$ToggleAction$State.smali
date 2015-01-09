@@ -43,7 +43,6 @@
 .method static constructor <clinit>()V
     .locals 6
 
-    .prologue
     const/4 v5, 0x3
 
     const/4 v4, 0x2
@@ -52,7 +51,6 @@
 
     const/4 v2, 0x0
 
-    .line 756
     new-instance v0, Lcom/android/internal/policy/impl/GlobalActions$ToggleAction$State;
 
     const-string v1, "Off"
@@ -61,7 +59,6 @@
 
     sput-object v0, Lcom/android/internal/policy/impl/GlobalActions$ToggleAction$State;->Off:Lcom/android/internal/policy/impl/GlobalActions$ToggleAction$State;
 
-    .line 757
     new-instance v0, Lcom/android/internal/policy/impl/GlobalActions$ToggleAction$State;
 
     const-string v1, "TurningOn"
@@ -70,7 +67,6 @@
 
     sput-object v0, Lcom/android/internal/policy/impl/GlobalActions$ToggleAction$State;->TurningOn:Lcom/android/internal/policy/impl/GlobalActions$ToggleAction$State;
 
-    .line 758
     new-instance v0, Lcom/android/internal/policy/impl/GlobalActions$ToggleAction$State;
 
     const-string v1, "TurningOff"
@@ -79,7 +75,6 @@
 
     sput-object v0, Lcom/android/internal/policy/impl/GlobalActions$ToggleAction$State;->TurningOff:Lcom/android/internal/policy/impl/GlobalActions$ToggleAction$State;
 
-    .line 759
     new-instance v0, Lcom/android/internal/policy/impl/GlobalActions$ToggleAction$State;
 
     const-string v1, "On"
@@ -88,7 +83,6 @@
 
     sput-object v0, Lcom/android/internal/policy/impl/GlobalActions$ToggleAction$State;->On:Lcom/android/internal/policy/impl/GlobalActions$ToggleAction$State;
 
-    .line 755
     const/4 v0, 0x4
 
     new-array v0, v0, [Lcom/android/internal/policy/impl/GlobalActions$ToggleAction$State;
@@ -116,30 +110,22 @@
 
 .method private constructor <init>(Ljava/lang/String;IZ)V
     .locals 0
-    .param p3, "intermediate"    # Z
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(Z)V"
         }
     .end annotation
 
-    .prologue
-    .line 763
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 764
     iput-boolean p3, p0, Lcom/android/internal/policy/impl/GlobalActions$ToggleAction$State;->inTransition:Z
 
-    .line 765
     return-void
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Lcom/android/internal/policy/impl/GlobalActions$ToggleAction$State;
     .locals 1
-    .param p0, "name"    # Ljava/lang/String;
 
-    .prologue
-    .line 755
     const-class v0, Lcom/android/internal/policy/impl/GlobalActions$ToggleAction$State;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -154,8 +140,6 @@
 .method public static values()[Lcom/android/internal/policy/impl/GlobalActions$ToggleAction$State;
     .locals 1
 
-    .prologue
-    .line 755
     sget-object v0, Lcom/android/internal/policy/impl/GlobalActions$ToggleAction$State;->$VALUES:[Lcom/android/internal/policy/impl/GlobalActions$ToggleAction$State;
 
     invoke-virtual {v0}, [Lcom/android/internal/policy/impl/GlobalActions$ToggleAction$State;->clone()Ljava/lang/Object;
@@ -172,8 +156,6 @@
 .method public inTransition()Z
     .locals 1
 
-    .prologue
-    .line 768
     iget-boolean v0, p0, Lcom/android/internal/policy/impl/GlobalActions$ToggleAction$State;->inTransition:Z
 
     return v0
