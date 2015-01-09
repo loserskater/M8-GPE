@@ -2,12 +2,11 @@
 ini_set("force_colorspace","rgba");
 ini_set("dp","6");
 theme("material");
-ini_set("rom_name", "M8_GPE LRX22C.H5);
+ini_set("rom_name", "M8_GPE LRX22C.H5");
 ini_set("rom_version", "1.0");
 ini_set("rom_author", "enewman17, loserskater");
 ini_set("rom_device", "HTC ONE M8");
 ini_set("rom_date",   "");
-fontresload( "0", "ttf/Roboto-Regular.ttf;ttf/DroidSansArabic.ttf;ttf/DroidSansFallback.ttf;", "12" );
 loadlang("langs/en.lang");
 fontresload( "0", "ttf/Roboto-Regular.ttf", "12" );
 fontresload( "1", "ttf/Roboto-Regular.ttf", "18" );
@@ -45,7 +44,7 @@ textbox(
     ini_get("rom_name")+" "+ini_get("rom_version"),
   
   #-- Icon
-    "@changelog",
+    "@welcome",
   
   #-- Arg 4
     resread("changelog.txt")
@@ -67,13 +66,13 @@ menubox(
     "type.prop",
     
     
-    "Install Stock Rom",       "Don't worry about mods or apps, just install.", "@install2",      #-- selected = 1
-    "Install Custom Rom",        "Install the rom along with mods selection.",  "@install2",      #-- selected = 2
-    "Mods Only",                 "Change themes, enable or disable mods.","@mods",                #-- selected = 3
-	"Kernel Only",               "Install a kernel","@mods2",                                     #-- selected = 4
-	"System Information",        "Show device and partition information.","@info",                #-- selected = 5
-	"Reboot",                    "Reboot Your Device","@reboot",                                  #-- selected = 6
-	"Exit",                      "Terminate AROMA and return to recovery.","@exit",               #-- selected = 7
+    "Install Stock Rom",       "Don't worry about mods or apps, just install.",  "@install2",    #-- selected = 1
+    "Install Custom Rom",        "Install the rom along with mods selection.", "@install2",      #-- selected = 2
+    "Mods Only",                 "Change themes, enable or disable mods.",  "@mods",             #-- selected = 3
+	"Kernel Only",               "Install a kernel",                      "@mods2",              #-- selected = 4
+	"System Information",        "Show device and partition information.",  "@info",             #-- selected = 5
+	"Reboot",                    "Reboot Your Device",   "@reboot",                              #-- selected = 6
+	"Exit",                      "Terminate AROMA and return to recovery.", "@exit"              #-- selected = 7
 );
 
 ###################################################################################################################
@@ -89,9 +88,9 @@ if prop("type.prop","selected")=="5" then
     
     "Model\t\t\t: <b><#selectbg_g>"+sysprop("ro.product.model")+"</#></b>\n"+
     "Board Type\t\t: <b><#selectbg_g>"+sysprop("ro.product.board")+"</#></b>\n"+
-    "Manufacturer\t: <b><#selectbg_g>"+sysprop("ro.product.manufacturer")+"</#></b>\n\n"+
+    "Manufacturer\t\t: <b><#selectbg_g>"+sysprop("ro.product.manufacturer")+"</#></b>\n\n"+
       
-    "CPU\t\t\t: <b><#selectbg_g>"+sysprop("ro.product.cpu.abi")+"</#></b>\n"+
+    "CPU\t\t\t\t: <b><#selectbg_g>"+sysprop("ro.product.cpu.abi")+"</#></b>\n"+
     "LCD Density\t\t: <b><#selectbg_g>"+sysprop("ro.sf.lcd_density")+"</#></b>\n\n"+
      
     "System Size\t\t: <b><#selectbg_g>"+getdisksize("/system","m")+" MB</#></b>\n"+
@@ -243,7 +242,9 @@ if prop("type.prop","selected")=="2"||prop("type.prop","selected")=="3" then
         "MMS Options",
       
       #-- Sub Title
-        "",
+        "Select the apps you would like added/removed.\n"+
+        "CHECKED items will be ADDED.\n"+
+        "UNCHECKED will be REMOVED.",
        
       #-- Icon:
         "@apps",
@@ -378,6 +379,32 @@ if prop("type.prop","selected")=="2"||prop("type.prop","selected")=="3" then
       #-- File Content to be writen into the file
       readtmpfile("cm.prop");
     );
+	checkbox(
+      #-- Title
+        "Cameras",
+      
+      #-- Sub Title
+        "Select the apps you would like added/removed.\n"+
+        "CHECKED items will be ADDED.\n"+
+        "UNCHECKED will be REMOVED.",
+      
+      #-- Icon:
+        "@apps",
+      
+      #-- Will be saved in /tmp/aroma/keyboard.prop
+        "camera.prop",
+          
+		"Stock Google",    "Stock camera. HDR available, no saving to SDcard",     1,       #-- item.0.1
+		"Moto X",          "Motorola Camera. saving to SD card supported, no HDR", 0        #-- item.0.2
+			  
+    );
+	write(
+      #-- Absolute path into the file
+      "/data/media/0/aroma/Keyboard.prop",
+        
+      #-- File Content to be writen into the file
+      readtmpfile("keyboard.prop");
+    );
     setvar(
       #-- Variable name
         "live_prop",
@@ -438,7 +465,7 @@ selectbox(
     "kernel.prop",
   
   "Kernel Options", "",               2,      #-- Group 1. key = "selected.1"
-   "Default",    "Stock kernel",      1,      #-- selected.1 = 1
+   "Default",    "Stock kernel",      1       #-- selected.1 = 1
 );
 write(
   #-- Absolute path into the file
@@ -460,6 +487,10 @@ ini_set("text_next", "Install Now");
       "Ready to Install",
 
     #-- Text
+	  "\n\n"+
+	  "\n\n"+
+	  "\n\n"+
+	  "\n\n"+
       "We're ready to begin installation.\n\n"+
       "Press <b>Install Now</b> to begin the installation.\n\n"+
       "If you want to review or change any of your installation settings, press <b>Back</b>. Press Menu Key -> Quit Installation to exit installation.",
