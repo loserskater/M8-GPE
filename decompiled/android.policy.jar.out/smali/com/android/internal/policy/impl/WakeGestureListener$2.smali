@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/internal/policy/impl/WakeGestureListener;)V
     .locals 0
 
-    .prologue
-    .line 94
     iput-object p1, p0, Lcom/android/internal/policy/impl/WakeGestureListener$2;->this$0:Lcom/android/internal/policy/impl/WakeGestureListener;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,12 +37,9 @@
 .method public run()V
     .locals 1
 
-    .prologue
-    .line 97
     iget-object v0, p0, Lcom/android/internal/policy/impl/WakeGestureListener$2;->this$0:Lcom/android/internal/policy/impl/WakeGestureListener;
 
     invoke-virtual {v0}, Lcom/android/internal/policy/impl/WakeGestureListener;->onWakeUp()V
 
-    .line 98
     return-void
 .end method

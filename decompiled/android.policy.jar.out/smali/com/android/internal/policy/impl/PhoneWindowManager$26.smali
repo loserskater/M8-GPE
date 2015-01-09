@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/internal/policy/impl/PhoneWindowManager;)V
     .locals 0
 
-    .prologue
-    .line 6428
     iput-object p1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$26;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,8 +37,6 @@
 .method public run()V
     .locals 3
 
-    .prologue
-    .line 6432
     :try_start_0
     invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
 
@@ -50,16 +46,12 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 6436
     :goto_0
     return-void
 
-    .line 6433
     :catch_0
     move-exception v0
 
-    .line 6434
-    .local v0, "e":Landroid/os/RemoteException;
     const-string v1, "WindowManager"
 
     const-string v2, "Unable to reach activity manager"

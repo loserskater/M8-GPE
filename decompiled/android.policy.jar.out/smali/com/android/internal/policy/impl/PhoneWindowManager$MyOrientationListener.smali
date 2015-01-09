@@ -21,17 +21,11 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/policy/impl/PhoneWindowManager;Landroid/content/Context;Landroid/os/Handler;)V
     .locals 0
-    .param p2, "context"    # Landroid/content/Context;
-    .param p3, "handler"    # Landroid/os/Handler;
 
-    .prologue
-    .line 713
     iput-object p1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$MyOrientationListener;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
-    .line 714
     invoke-direct {p0, p2, p3}, Lcom/android/internal/policy/impl/WindowOrientationListener;-><init>(Landroid/content/Context;Landroid/os/Handler;)V
 
-    .line 715
     return-void
 .end method
 
@@ -39,16 +33,12 @@
 # virtual methods
 .method public onProposedRotationChanged(I)V
     .locals 2
-    .param p1, "rotation"    # I
 
-    .prologue
-    .line 720
     iget-object v0, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$MyOrientationListener;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lcom/android/internal/policy/impl/PhoneWindowManager;->updateRotation(Z)V
 
-    .line 721
     return-void
 .end method

@@ -27,4 +27,4 @@ cd ..\..
 cd ..
 
 ::Now build
-tools\7za.exe a -mx9 -xr@tools/exclusion.txt M8-GPE-%VERSION%.zip addons META-INF supersu system boot.img
+tools\7za.exe a -mx9 -xr@tools/exclusion.txt M8-GPE-%VERSION%.zip assets aroma META-INF supersu system boot.img

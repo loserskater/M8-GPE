@@ -1,4 +1,3 @@
-set_progress(0.1);
 unmount("/data");
 unmount("/system");
 unmount("/cache");
@@ -6,20 +5,229 @@ ui_print("******************************************");
 ui_print("*    HTC One M8 - Google Play Edition    *");
 ui_print("*      Android 5.0.1 Build LRX22C.H5     *");
 ui_print("******************************************");
-ui_print("[*] Formatting /system as EXT4");
-format("ext4", "EMMC", "/dev/block/platform/msm_sdcc.1/by-name/system", "0", "/system");
-ui_print("[*] Formatting /cache as EXT4");
-format("ext4", "EMMC", "/dev/block/platform/msm_sdcc.1/by-name/cache", "0", "/cache");
-ui_print("[*] Extracting /system");
-mount("ext4", "EMMC", "/dev/block/platform/msm_sdcc.1/by-name/system", "/system");
-package_extract_dir("system", "/system");
-run_program("/sbin/mount", "/data");
-ui_print("[*] Extracting any addons to /system");
-package_extract_dir("addons", "/system");
-set_progress(0.9);
-ui_print("[*] Installing busybox");
+#
+#Kernel Only
+#
+if file_getprop("/tmp/aroma/type.prop","selected") == "4" then
+  set_progress(0.1);
+  mount("ext4", "EMMC", "/dev/block/platform/msm_sdcc.1/by-name/system", "/system");
+  mount("ext4", "EMMC", "/dev/block/platform/msm_sdcc.1/by-name/cache", "/cache");
+  mount("ext4", "EMMC", "/dev/block/platform/msm_sdcc.1/by-name/data", "/data");
+  ui_print("@Deleting Necessary Modules/Parts/Data");
+  if file_getprop("/tmp/aroma/kernel.prop","selected.2") == "1" then
+    delete_recursive("/system/lib/modules");
+  endif;
+  set_progress(0.5);
+  if file_getprop("/tmp/aroma/kernel.prop","selected.1") == "1" then
+    ui_print("@Installing Stock Kernel");
+    package_extract_dir("system/lib/modules", "/system/lib/modules");
+    assert(package_extract_file("boot.img", "/tmp/boot.img"), run_program("/sbin/dd", "if=/tmp/boot.img", "of=/dev/block/mmcblk0p42"));
+  endif;
+  ui_print("@Formating Cache");
+  run_program("/sbin/mke2fs", "-t", "ext4", "-m", "0", "/dev/block/mmcblk0p46");
+  set_progress(1.0);
+endif;
+#
+#Modify ROM
+#
+if file_getprop("/tmp/aroma/type.prop","selected") == "3" then
+  ui_print("@Modifying Rom");
+  set_progress(0.01);
+  if file_getprop("/tmp/aroma/wipe.prop","selected.0") != "1" then
+    ui_print("@Formatting Cache");
+    run_program("/sbin/mke2fs", "-t", "ext4", "-m", "0", "/dev/block/mmcblk0p46");
+  endif;
+  mount("ext4", "EMMC", "/dev/block/platform/msm_sdcc.1/by-name/system", "/system");
+  mount("ext4", "EMMC", "/dev/block/platform/msm_sdcc.1/by-name/cache", "/cache");
+  mount("ext4", "EMMC", "/dev/block/platform/msm_sdcc.1/by-name/data", "/data");
+  if file_getprop("/tmp/aroma/wipe.prop","selected.0") != "1" then
+    ui_print("@Formatting Dalvik");
+    delete_recursive("/data/dalvik-cache");
+    delete_recursive("/data/local");
+  endif;
+endif;
+#
+#Install ROM
+#
+if file_getprop("/tmp/aroma/type.prop","selected") == "1" || file_getprop("/tmp/aroma/type.prop","selected") == "2" then
+  ui_print("@Installing Rom");
+  set_progress(0.01);
+  ui_print("@Formatting System");
+  run_program("/sbin/mke2fs", "-t", "ext4", "-m", "0", "/dev/block/mmcblk0p45");
+  set_progress(0.10);
+  ui_print("@Formatting Cache");
+  run_program("/sbin/mke2fs", "-t", "ext4", "-m", "0", "/dev/block/mmcblk0p46");
+  mount("ext4", "EMMC", "/dev/block/platform/msm_sdcc.1/by-name/system", "/system");
+  mount("ext4", "EMMC", "/dev/block/platform/msm_sdcc.1/by-name/cache", "/cache");
+  mount("ext4", "EMMC", "/dev/block/platform/msm_sdcc.1/by-name/data", "/data");
+  set_progress(0.15);
+  if file_getprop("/tmp/aroma/wipe.prop","selected.0") == "1" then
+    ui_print("@Formatting Data");
+    run_program("/sbin/sh", "-c", "find /data/* -maxdepth 0 -type d ! -name 'media' -exec rm -rf {} +");
+  endif;
+  set_progress(0.20);
+  ui_print("@Extracting System");
+  package_extract_dir("system", "/system");
+  set_progress(0.55);
+  if file_getprop("/tmp/aroma/wipe.prop","selected.0") == "1" then
+    package_extract_dir("data", "/data");
+  endif;
+  if file_getprop("/tmp/aroma/type.prop","selected") != "1" then
+    delete_recursive("/system/lib/modules");
+    if file_getprop("/tmp/aroma/kernel.prop","selected.1") == "1" then
+      ui_print("@Installing Stock Kernel");
+      package_extract_dir("system/lib/modules", "/system/lib/modules");
+      assert(package_extract_file("boot.img", "/tmp/boot.img"), run_program("/sbin/dd", "if=/tmp/boot.img", "of=/dev/block/mmcblk0p42"));
+    endif;
+  else
+    ui_print("@Installing Kernel");
+    assert(package_extract_file("boot.img", "/tmp/boot.img"), run_program("/sbin/dd", "if=/tmp/boot.img", "of=/dev/block/mmcblk0p42"));
+  endif;
+  set_progress(0.60);
+endif;
+#
+#Mods
+#
+if file_getprop("/tmp/aroma/type.prop","selected") == "2" || file_getprop("/tmp/aroma/type.prop","selected") == "3" then
+  ui_print("#Installing Mods#");
+  set_progress(0.62);	
+  #
+  #Mms
+  #
+  ui_print("@MMS");
+  if file_getprop("/tmp/aroma/mms.prop","item.0.1") == "1" then
+    ui_print("Adding Messenger");
+    package_extract_dir("aroma/mms/messenger", "/system");
+  else
+    delete_recursive("/system/priv-app/Messenger");
+  endif;
+  if file_getprop("/tmp/aroma/mms.prop","item.0.2") == "1" then
+    ui_print("Adding CM Messaging");
+    package_extract_dir("aroma/mms/cm", "/system");
+  else
+    delete_recursive("/system/priv-app/Mms");
+  endif;
+  #
+  #Email
+  #
+  set_progress(0.66);
+  ui_print("@Email");
+  if file_getprop("/tmp/aroma/email.prop","selected.1") == "1" then
+    ui_print("Adding stock email");
+    package_extract_dir("system/app/EmailGoogle", "/system/app/EmailGoogle");
+    package_extract_dir("system/app/Exchange3Google", "/system/app/Exchange3Google");
+	package_extract_dir("system/app/Gmail2", "/system/app/Gmail2");
+	delete_recursive("/system/priv-app/Email");
+    delete_recursive("/system/priv-app/Exchange2");
+  endif;
+  if file_getprop("/tmp/aroma/email.prop","selected.1") == "2" then
+    ui_print("Adding AOSP email");
+    package_extract_dir("mods/email/aosp", "/system");
+    delete_recursive("/system/app/EmailGoogle");
+	delete_recursive("/system/app/Exchange3Google");
+  endif;
+  #
+  #Keyboards
+  #
+  set_progress(0.72);
+  ui_print("@Keyboards");
+  if file_getprop("/tmp/aroma/mms.prop","item.0.1") == "1" then
+    ui_print("Adding HTC Sense 6 keyboard");
+    package_extract_dir("aroma/keyboards/htc", "/system");
+  else
+    delete_recursive("/system/priv-app/HTC_IME");
+	delete_recursive("/system/priv-app/IMEXT9English");
+  endif;
+  #
+  #CyanogenMod apps
+  #
+  set_progress(0.78);
+  ui_print("@CyanogenMod apps");
+  if file_getprop("/tmp/aroma/cm.prop","item.0.1") == "1" then
+    ui_print("Adding AudioFX");
+    package_extract_dir("aroma/cm_apps/audiofx", "/system");
+	delete_recursive("/system/priv-app/MusicFX");
+  else
+    package_extract_dir("system/priv-app/MusicFX", "/system/priv-app/MusicFX");
+	package_extract_dir("system/lib/soundfx", "/system/lib/soundfx");
+    delete_recursive("/system/priv-app/AudioFX");
+  endif;
+  if file_getprop("/tmp/aroma/cm.prop","item.0.2") == "1" then
+    ui_print("Adding Browser");
+    package_extract_dir("aroma/cm_apps/browser", "/system");
+  else
+    delete_recursive("/system/priv-app/Browser+");
+	delete_recursive("/system/priv-app/GooglBookmarksSync");
+  endif;
+  if file_getprop("/tmp/aroma/cm.prop","item.0.3") == "1" then
+    ui_print("Adding ");
+    package_extract_dir("aroma/cm_apps/calendar", "/system");
+	delete_recursive("/system/app/CalendarGoogle");
+  else
+    delete_recursive("/system/app/Calendar");
+	package_extract_dir("system/app/CalendarGoogle", "/system/app/CalendarGoogle");
+  endif;
+  if file_getprop("/tmp/aroma/cm.prop","item.0.4") == "1" then
+    ui_print("Adding CM File Manager");
+    package_extract_dir("aroma/cm_apps/cmfilemanager", "/system");
+  else
+    delete_recursive("/system/priv-app/CMFileManager");
+  endif;
+  if file_getprop("/tmp/aroma/cm.prop","item.0.5") == "1" then
+    ui_print("Adding Eleven Music");
+    package_extract_dir("aroma/cm_apps/eleven", "/system");
+  else
+    delete_recursive("/system/priv-app/Eleven");
+  endif;
+  if file_getprop("/tmp/aroma/cm.prop","item.0.6") == "1" then
+    ui_print("Adding Gallery2");
+    package_extract_dir("aroma/cm_apps/gallery2", "/system");
+	delete_recursive("/system/app/Photos");
+  else
+    delete_recursive("/system/priv-app/Gallery2");
+  endif;
+  #
+  #LiveWallpaper
+  #
+  set_progress(0.82);
+  ui_print("@LiveWallpaper");
+  if file_getprop("/tmp/aroma/live.prop","item.0.1") == "1" then
+    ui_print("Adding Galaxy4");
+    package_extract_dir("aroma/livewallpaper/galaxy4", "/system");
+  else
+    delete_recursive("/system/app/Galaxy4");
+  endif;
+  if file_getprop("/tmp/aroma/live.prop","item.0.2") == "1" then
+    ui_print("Adding Microbes");
+    package_extract_dir("aroma/livewallpaper/microbes", "/system");
+  else
+    delete_recursive("/system/app/Microbes");
+  endif;
+  if file_getprop("/tmp/aroma/live.prop","item.0.3") == "1" then
+    ui_print("Adding NoiseField");
+    package_extract_dir("aroma/livewallpaper/noisefield", "/system");
+  else
+    delete_recursive("/system/app/NoiseField");
+  endif;
+  if file_getprop("/tmp/aroma/live.prop","item.0.4") == "1" then
+    ui_print("Adding PhaseBeam");
+    package_extract_dir("aroma/livewallpaper/phasebeam", "/system");
+  else
+    delete_recursive("/system/app/PhaseBeam");
+  endif;
+  if file_getprop("/tmp/aroma/live.prop","item.0.5") == "1" then
+    ui_print("Adding SunBeam");
+    package_extract_dir("aroma/livewallpaper/sunbeam", "/system");
+  else
+    delete_recursive("/system/app/sunbeam");
+  endif;
+endif;
+ui_print("@Finishing up");
+set_progress(0.85);
+if file_getprop("/tmp/aroma/type.prop","selected") == "1" || file_getprop("/tmp/aroma/type.prop","selected") == "2" || file_getprop("/tmp/aroma/type.prop","selected") == "3" then
+ui_print("@Installing busybox");
 run_program("/system/xbin/busybox", "--install", "-s", "/system/xbin");
-ui_print("[*] Creating symlinks");
+ui_print("@Creating symlinks");
 symlink("/data/misc/audio/mbhc.bin", "/system/etc/firmware/wcd9320/wcd9320_mbhc.bin");
 symlink("/data/misc/audio/wcd9320_anc.bin", "/system/etc/firmware/wcd9320/wcd9320_anc.bin");
 symlink("/data/misc/audio/wcd9320_mad_audio.bin", "/system/etc/firmware/wcd9320/wcd9320_mad_audio.bin");
@@ -144,7 +352,7 @@ symlink("toolbox", "/system/bin/cat", "/system/bin/chcon",
         "/system/bin/vmstat", "/system/bin/watchprops",
         "/system/bin/wipe");
 set_progress(0.93);
-ui_print("[*] Setting Permissions");
+ui_print("@Setting Permissions");
 set_metadata_recursive("/system", "uid", 0, "gid", 0, "dmode", 0755, "fmode", 0644, "capabilities", 0x0, "selabel", "u:object_r:system_file:s0");
 set_metadata_recursive("/system/bin", "uid", 0, "gid", 2000, "dmode", 0755, "fmode", 0755, "capabilities", 0x0, "selabel", "u:object_r:system_file:s0");
 set_metadata("/system/bin/app_process32", "uid", 0, "gid", 2000, "mode", 0755, "capabilities", 0x0, "selabel", "u:object_r:zygote_exec:s0");
@@ -210,15 +418,11 @@ set_metadata_recursive("/system/xbin", "uid", 0, "gid", 2000, "dmode", 0755, "fm
 set_metadata("/system/xbin/librank", "uid", 0, "gid", 0, "mode", 06755, "capabilities", 0x0, "selabel", "u:object_r:system_file:s0");
 set_metadata("/system/xbin/procmem", "uid", 0, "gid", 0, "mode", 06755, "capabilities", 0x0, "selabel", "u:object_r:system_file:s0");
 set_metadata("/system/xbin/procrank", "uid", 0, "gid", 0, "mode", 06755, "capabilities", 0x0, "selabel", "u:object_r:system_file:s0");
-set_progress(0.90);
-ui_print("[*] Extraction boot.img");
-assert(package_extract_file("boot.img", "/dev/block/mmcblk0p42"));	
-unmount("/data");
-unmount("/system");
-ui_print("[*] Installing SuperSu");
+set_progress(0.97);
+ui_print("@Installing SuperSu");
 package_extract_dir("supersu", "/tmp/supersu");
 run_program("/sbin/busybox", "unzip", "/tmp/supersu/supersu.zip", "META-INF/com/google/android/*", "-d", "/tmp/supersu");
 run_program("/sbin/busybox", "sh", "/tmp/supersu/META-INF/com/google/android/update-binary", "dummy", "1", "/tmp/supersu/supersu.zip");
-ui_print("*****************Success******************");
-ui_print("***********Please Reboot System***********");
+ui_print("@*Success*");
+ui_print("@*Please Reboot System*");
 set_progress(1.0);

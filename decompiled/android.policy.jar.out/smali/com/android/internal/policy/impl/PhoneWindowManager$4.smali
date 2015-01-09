@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/internal/policy/impl/PhoneWindowManager;)V
     .locals 0
 
-    .prologue
-    .line 633
     iput-object p1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$4;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,15 +37,12 @@
 .method public run()V
     .locals 4
 
-    .prologue
-    .line 636
     iget-object v0, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$4;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
     iget-object v0, v0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mCpuFreqRaiser:Landroid/os/PowerManager$HtcCpuCtrl;
 
     if-eqz v0, :cond_0
 
-    .line 637
     iget-object v0, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$4;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
     iget-object v0, v0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mCpuFreqRaiser:Landroid/os/PowerManager$HtcCpuCtrl;
@@ -56,7 +51,6 @@
 
     invoke-virtual {v0, v2, v3}, Landroid/os/PowerManager$HtcCpuCtrl;->acquire(J)V
 
-    .line 639
     :cond_0
     return-void
 .end method

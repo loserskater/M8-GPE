@@ -21,11 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/policy/impl/PhoneWindowManager$24;Landroid/content/Context;I)V
     .locals 0
-    .param p2, "x0"    # Landroid/content/Context;
-    .param p3, "x1"    # I
 
-    .prologue
-    .line 5635
     iput-object p1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$24$1;->this$1:Lcom/android/internal/policy/impl/PhoneWindowManager$24;
 
     invoke-direct {p0, p2, p3}, Landroid/app/ProgressDialog;-><init>(Landroid/content/Context;I)V
@@ -37,10 +33,7 @@
 # virtual methods
 .method public dispatchGenericMotionEvent(Landroid/view/MotionEvent;)Z
     .locals 1
-    .param p1, "ev"    # Landroid/view/MotionEvent;
 
-    .prologue
-    .line 5651
     const/4 v0, 0x1
 
     return v0
@@ -48,10 +41,7 @@
 
 .method public dispatchKeyEvent(Landroid/view/KeyEvent;)Z
     .locals 1
-    .param p1, "event"    # Landroid/view/KeyEvent;
 
-    .prologue
-    .line 5639
     const/4 v0, 0x1
 
     return v0
@@ -59,10 +49,7 @@
 
 .method public dispatchKeyShortcutEvent(Landroid/view/KeyEvent;)Z
     .locals 1
-    .param p1, "event"    # Landroid/view/KeyEvent;
 
-    .prologue
-    .line 5642
     const/4 v0, 0x1
 
     return v0
@@ -70,10 +57,7 @@
 
 .method public dispatchPopulateAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)Z
     .locals 1
-    .param p1, "event"    # Landroid/view/accessibility/AccessibilityEvent;
 
-    .prologue
-    .line 5655
     const/4 v0, 0x1
 
     return v0
@@ -81,10 +65,7 @@
 
 .method public dispatchTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 1
-    .param p1, "ev"    # Landroid/view/MotionEvent;
 
-    .prologue
-    .line 5645
     const/4 v0, 0x1
 
     return v0
@@ -92,10 +73,7 @@
 
 .method public dispatchTrackballEvent(Landroid/view/MotionEvent;)Z
     .locals 1
-    .param p1, "ev"    # Landroid/view/MotionEvent;
 
-    .prologue
-    .line 5648
     const/4 v0, 0x1
 
     return v0

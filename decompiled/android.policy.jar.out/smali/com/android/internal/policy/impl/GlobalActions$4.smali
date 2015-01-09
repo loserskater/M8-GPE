@@ -21,11 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/policy/impl/GlobalActions;II)V
     .locals 0
-    .param p2, "x0"    # I
-    .param p3, "x1"    # I
 
-    .prologue
-    .line 421
     iput-object p1, p0, Lcom/android/internal/policy/impl/GlobalActions$4;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
 
     invoke-direct {p0, p2, p3}, Lcom/android/internal/policy/impl/GlobalActions$SinglePressAction;-><init>(II)V
@@ -38,21 +34,16 @@
 .method public onPress()V
     .locals 2
 
-    .prologue
-    .line 425
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.settings.SETTINGS"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 426
-    .local v0, "intent":Landroid/content/Intent;
     const/high16 v1, 0x14000000
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 427
     iget-object v1, p0, Lcom/android/internal/policy/impl/GlobalActions$4;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
 
     # getter for: Lcom/android/internal/policy/impl/GlobalActions;->mContext:Landroid/content/Context;
@@ -62,15 +53,12 @@
 
     invoke-virtual {v1, v0}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
 
-    .line 428
     return-void
 .end method
 
 .method public showBeforeProvisioning()Z
     .locals 1
 
-    .prologue
-    .line 437
     const/4 v0, 0x1
 
     return v0
@@ -79,8 +67,6 @@
 .method public showDuringKeyguard()Z
     .locals 1
 
-    .prologue
-    .line 432
     const/4 v0, 0x1
 
     return v0

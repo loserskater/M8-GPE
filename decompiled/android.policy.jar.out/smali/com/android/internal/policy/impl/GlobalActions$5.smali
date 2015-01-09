@@ -21,11 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/policy/impl/GlobalActions;II)V
     .locals 0
-    .param p2, "x0"    # I
-    .param p3, "x1"    # I
 
-    .prologue
-    .line 444
     iput-object p1, p0, Lcom/android/internal/policy/impl/GlobalActions$5;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
 
     invoke-direct {p0, p2, p3}, Lcom/android/internal/policy/impl/GlobalActions$SinglePressAction;-><init>(II)V
@@ -38,8 +34,6 @@
 .method public onPress()V
     .locals 3
 
-    .prologue
-    .line 448
     new-instance v1, Lcom/android/internal/widget/LockPatternUtils;
 
     iget-object v2, p0, Lcom/android/internal/policy/impl/GlobalActions$5;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
@@ -55,7 +49,6 @@
 
     invoke-virtual {v1, v2}, Lcom/android/internal/widget/LockPatternUtils;->requireCredentialEntry(I)V
 
-    .line 450
     :try_start_0
     invoke-static {}, Landroid/view/WindowManagerGlobal;->getWindowManagerService()Landroid/view/IWindowManager;
 
@@ -67,16 +60,12 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 454
     :goto_0
     return-void
 
-    .line 451
     :catch_0
     move-exception v0
 
-    .line 452
-    .local v0, "e":Landroid/os/RemoteException;
     const-string v1, "GlobalActions"
 
     const-string v2, "Error while trying to lock device."
@@ -89,8 +78,6 @@
 .method public showBeforeProvisioning()Z
     .locals 1
 
-    .prologue
-    .line 463
     const/4 v0, 0x0
 
     return v0
@@ -99,8 +86,6 @@
 .method public showDuringKeyguard()Z
     .locals 1
 
-    .prologue
-    .line 458
     const/4 v0, 0x1
 
     return v0

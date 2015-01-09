@@ -25,28 +25,20 @@
 .method private constructor <init>(Lcom/android/internal/policy/impl/GlobalActions;)V
     .locals 2
 
-    .prologue
-    .line 336
     iput-object p1, p0, Lcom/android/internal/policy/impl/GlobalActions$PowerAction;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
 
-    .line 337
     const v0, 0x1080030
 
     const v1, 0x10400f6
 
     invoke-direct {p0, v0, v1}, Lcom/android/internal/policy/impl/GlobalActions$SinglePressAction;-><init>(II)V
 
-    .line 339
     return-void
 .end method
 
 .method synthetic constructor <init>(Lcom/android/internal/policy/impl/GlobalActions;Lcom/android/internal/policy/impl/GlobalActions$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/internal/policy/impl/GlobalActions;
-    .param p2, "x1"    # Lcom/android/internal/policy/impl/GlobalActions$1;
 
-    .prologue
-    .line 335
     invoke-direct {p0, p1}, Lcom/android/internal/policy/impl/GlobalActions$PowerAction;-><init>(Lcom/android/internal/policy/impl/GlobalActions;)V
 
     return-void
@@ -57,10 +49,8 @@
 .method public onLongPress()Z
     .locals 2
 
-    .prologue
     const/4 v1, 0x1
 
-    .line 343
     iget-object v0, p0, Lcom/android/internal/policy/impl/GlobalActions$PowerAction;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
 
     # getter for: Lcom/android/internal/policy/impl/GlobalActions;->mWindowManagerFuncs:Landroid/view/WindowManagerPolicy$WindowManagerFuncs;
@@ -70,15 +60,12 @@
 
     invoke-interface {v0, v1}, Landroid/view/WindowManagerPolicy$WindowManagerFuncs;->rebootSafeMode(Z)V
 
-    .line 344
     return v1
 .end method
 
 .method public onPress()V
     .locals 2
 
-    .prologue
-    .line 360
     iget-object v0, p0, Lcom/android/internal/policy/impl/GlobalActions$PowerAction;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
 
     # getter for: Lcom/android/internal/policy/impl/GlobalActions;->mWindowManagerFuncs:Landroid/view/WindowManagerPolicy$WindowManagerFuncs;
@@ -90,15 +77,12 @@
 
     invoke-interface {v0, v1}, Landroid/view/WindowManagerPolicy$WindowManagerFuncs;->shutdown(Z)V
 
-    .line 361
     return-void
 .end method
 
 .method public showBeforeProvisioning()Z
     .locals 1
 
-    .prologue
-    .line 354
     const/4 v0, 0x1
 
     return v0
@@ -107,8 +91,6 @@
 .method public showDuringKeyguard()Z
     .locals 1
 
-    .prologue
-    .line 349
     const/4 v0, 0x1
 
     return v0
