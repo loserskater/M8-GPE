@@ -45,3 +45,5 @@ Temporary Items
 #Other stuff
 M8-GPE*.zip
 temp/*
+build/
+dist/
