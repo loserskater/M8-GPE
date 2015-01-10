@@ -1,0 +1,171 @@
+Právne informácie HTC
+1.	Autorské práva
+2.	Ochrana súkromia
+3.	Licenčná zmluva koncového používateľa 
+
+
+
+1.	Autorské práva
+
+Určitý softvér nachádzajúci sa v tomto zariadení dodáva alebo vyvíja spoločnosť HTC Corporation.
+
+Autorské práva © [2006 – 2013] HTC Corporation
+
+Všetky práva vyhradené.
+
+Produkty („Produkt“) tu uvedené predstavujú softvér vyvinutý alebo vlastnený spoločnosťou HTC Corporation („HTC“), ktorý nie je vydávaný samostatne v rámci podmienok licencie na softvér s otvoreným zdrojovým kódom. Informácie nachádzajúce sa v Produkte sú vo výlučnom vlastníctve spoločnosti HTC. Spoločnosť HTC udeľuje právoplatnému vlastníkovi tohto zariadenia práva na používanie Produktu výhradne v rámci legitímneho používania zariadenia. Touto licenciou nie sú udelené žiadne iné práva vrátane (ale bez obmedzenia) na rozširovanie, reprodukciu, úpravu a prenos. Akékoľvek iné použitie Produktu je podmienené písomným súhlasom spoločnosti HTC.
+
+Na všetok príslušný softvér (ktorý zahŕňa súčasti poskytované spoločnosti HTC dodávateľmi a držiteľmi licencií) nachádzajúci sa v tomto zariadení, ktoré ste si zakúpili a na použitie tohto príslušného softvéru sa vzťahujú ustanovenia a podmienky týkajúce sa autorských práv týchto dodávateľov alebo vlastníkov licencií.
+
+
+
+2.	Ochrana súkromia
+
+Tieto zásady ochrany osobných údajov („Zásady“) uvádzajú, ako spoločnosť HTC Corporation, HTC America, Inc. a pridružené spoločnosti („HTC“, „my/naše/nás“) zhromažďujú, používajú a zdieľajú osobné údaje, ktoré získame od vás ako používateľa webových lokalít, zariadení, aplikácií a služieb spoločnosti HTC (spolu „Služby“).
+Tieto Zásady môžeme doplniť alebo upraviť ďalšími informáciami. Môžeme tiež zverejňovať rôzne vyhlásenia týkajúce sa ochrany osobných údajov pre niektoré Služby a keď tak urobíme, tieto Zásady sa nebudú uplatňovať. Samostatné zásady sa vzťahujú napríklad na informácie získané z vášho zariadenia prostredníctvom hlásenia o používaní pre aplikáciu Oznámiť spoločnosti HTC a hlásenia chýb pre aplikáciu Oznámiť spoločnosti HTC.
+POZNÁMKA: Váš operátor bezdrôtových služieb, poskytovateľ mobilného operačného systému a aplikácie, panely s nástrojmi, služby a webové lokality tretích strán môžu tiež zhromažďovať, používať a zdieľať informácie o vás, vašom zariadení a jeho používaní. Zásady ochrany osobných údajov spoločnosti HTC sa nevzťahujú na tretie strany, ich produkty, konanie ani ich služby. Spoločnosť HTC nemôže kontrolovať, ako tretie strany získavajú, používajú či zabezpečujú vaše údaje. Informácie o postupoch tretích strán nájdete v ich príslušných zásadách ochrany osobných údajov. Aplikácie preberajte len od dôveryhodných tretích strán.
+
+1.	Informácie, ktoré nám poskytujete
+Pri používaní našich Služieb nám môžete poskytovať informácie v režime online aj offline vrátane napríklad: vášho mena, e-mailovej adresy, poštovej adresy, telefónneho čísla, čísla faxu, dátumu narodenia, identifikátorov zariadenia, údajov o polohe, informácií o vašej kariére, fotografií, videí a demografie (pohlavie, názov spoločnosti alebo organizácie, povolanie, jazykové preferencie, mesto, krajina, poštové smerové číslo, číslo oblasti, časové pásmo atď.). Ak nakupujete prostredníctvom našich Služieb, môžeme uchovávať aj čísla vašich kreditných kariet alebo ďalšie informácie o platbách. Môžeme tiež uchovávať a spájať tieto informácie o platbách s informáciami z iných zdrojov vrátane vašich sociálnych účtov, ktoré ste sa rozhodli spojiť so Službami alebo s informáciami od iných spoločností.
+
+2.	Informácie, ktoré zhromažďujeme automaticky
+Keď používate Služby, automaticky zhromažďujeme niektoré informácie. Môžeme zhromažďovať informácie o vašej aktivite v našich Službách a o ich používaní. Keď navštívite naše webové lokality, informácie, ktoré môžeme zaznamenávať, zahŕňajú napríklad váš operačný systém, adresu internetového protokolu (IP), čas prístupu, typ prehľadávača, jazyk a webovú lokalitu, ktorú ste navštívili pred našou webovou lokalitou. Keď používate naše zariadenia, preberáte a používate naše aplikácie alebo pristupujete k Službám z vášho zariadenia, môžeme zaznamenávať aj informácie týkajúce sa vášho zariadenia. Môžeme zaznamenávať napríklad polohu, telefónne číslo, typ zariadenia, sériové číslo, identifikátory zariadenia (napr. kód IMEI, MEID, sériové číslo, kód CID, MID a číslo eMCC ID alebo ID karty SIM), typy a verzie mobilných operačných systémov, aplikácií a softvéru, ktoré používate, obsah, ktorý si prezeráte alebo používate, a záznamy časovej pečiatky výmeny údajov.
+
+Môžeme tiež zaznamenávať informácie pomocou webových signálov, súborov cookie, lokálnych zdieľaných objektov (LSO) a podobných metód (uvedených nižšie). Ak si neželáte, aby sme používali súbory cookie, nepoužívajte Služby, kým najprv súbory cookie nezakážete nižšie opísaným spôsobom. Akékoľvek informácie, ktoré získame, môžeme automaticky prepojiť s vašimi osobnými údajmi.
+Webové signály. Webové signály sú elektronické obrázky, ktoré môžeme používať na našich webových lokalitách alebo v našich e-mailoch na odovzdávanie súborov cookie, počítanie návštev a porozumenie používaniu a efektívnosti kampane, napríklad či ste otvorili e-mail, ktorý sme vám poslali, a konali podľa neho.
+Súbory cookie. Súbory cookie sú malé súbory údajov ukladané na váš pevný disk webovou lokalitou. Okrem iného nám súbory cookie pomáhajú vylepšovať naše webové lokality a váš zážitok. Súbory cookie používame na to, aby sme videli, ktoré oblasti našich webových lokalít a ktoré funkcie sú obľúbené, a na počítanie návštev na našich webových lokalitách. Informácie získané zo súborov cookie používame aj na prispôsobenie obsahu. Súbory cookie z našich webových lokalít môžete obyčajne odstrániť a odmietnuť pomocou nastavení vášho prehľadávača. Mnohé prehľadávače sú nastavené na prijímanie súborov cookie, kým nastavenia nezmeníte. Odstránenie alebo odmietnutie našich súborov cookie by mohlo mať vplyv na to, ako budú naše webové lokality u vás fungovať, a je možné, že si Služby nebudete môcť vychutnať naplno. Ak sa chcete dozvedieť, ako spravovať nastavenia ochrany osobných údajov a ukladania pre súbory cookie, kliknite sem: http://www.allaboutcookies.org (alebo v Európskej únii http://www.youronlinechoices.com/ – kliknutím sem zistíte, aké informácie súbory cookie zhromažďujú o webovej lokalite htc.com a vašich voľbách).
+Lokálne zdieľané objekty (flashové cookies). Lokálne zdieľané objekty, známe ako flashové cookies, používame na ukladanie vašich preferencií, ako je ovládanie hlasitosti alebo zobrazenie obsahu na základe toho, čo zobrazujete na našich webových lokalitách, aby sme mohli vašu návštevu personalizovať. Tretie strany partnerov môžu tiež poskytovať určité funkcie na našich webových lokalitách a zobrazovať reklamné služby na základe vašej aktivity prezerania webových stránok pomocou súborov flashových cookies s cieľom zhromažďovať a ukladať informácie. Súbory flashových cookies sa líšia od ostatných súborov cookie množstvom, typom a spôsobom ukladania údajov. Nástroje na správu súborov cookie poskytované prehľadávačom zvyčajne súbory flashových cookies neodstránia. Ak chcete zistiť, ako spravovať nastavenia ochrany osobných údajov a ukladania pre súbory flashových cookies, kliknite sem: http://www.macromedia.com/support/documentation/en/flashplayer/help/settings_manager.html#117118 (alebo v Európskej únii http://www.youronlinechoices.com/).
+Denník hlásenia skúseností a hlásenie chýb pre aplikáciu Oznámiť spoločnosti HTC. Okrem automaticky zhromažďovaných informácií opísaných vyššie môžeme na vybraných zariadeniach s vaším súhlasom zhromažďovať aj podrobnejšie údaje o tom, ako používate naše zariadenia, ak sa rozhodnete pre podávanie hlásení pre aplikáciu Oznámiť spoločnosti HTC alebo ak budete súhlasiť so zdieľaním údajov chybových hlásení. Viac informácií nájdete v zásadách ochrany osobných údajov služby hlásenia skúseností pre aplikáciu Oznámiť spoločnosti HTC a hlásenia o chybe pre aplikáciu Oznámiť spoločnosti HTC, ktoré sú prístupné z vášho zariadenia prostredníctvom položky Nastavenia.
+3.	Informácie zhromaždené prostredníctvom reklamných služieb
+Reklamy tretích strán v Službách
+V našich Službách môžeme využívať reklamy tretích strán. Niektoré tretie strany môžu automaticky zhromažďovať informácie o tom, ako používate Služby, o návštevách na našich a iných webových lokalitách, o vašej adrese IP, poskytovateľovi internetových služieb a prehľadávači, ktorý používate na navštevovanie našich webových lokalít (ale nie vaše meno, adresu, e-mailovú adresu ani telefónne číslo). Tretie strany môžu zhromažďovať informácie pomocou súborov cookie, clear gif alebo iných technológií. Tieto tretie strany môžu používať získané informácie na odovzdávanie reklamných služieb, ktoré zodpovedajú vašim záujmom, a na pochopenie používania a návštevnosti Služieb a iných webových lokalít sledovaných týmito tretími stranami. Tieto Zásady sa nevzťahujú na súbory cookie ani clear gif v reklamách tretích strán a nenesieme za ne zodpovednosť. Odporúčame vám skontrolovať zásady ochrany osobných údajov zadávateľov reklám a reklamných služieb, aby ste zistili, akým spôsobom používajú súbory cookie a iné technológie. Viac informácií o týchto postupoch a o vašich voľbách, ktoré sa týkajú sa mnohých našich reklamných sietí, získate kliknutím sem: http://www.networkadvertising.org/choices/.
+Reklamy spoločnosti HTC na webových lokalitách tretích strán
+Môžeme používať informácie získané pomocou súborov cookie a webových signálov tretích strán v našich Službách a v e-mailoch na odovzdávanie reklamných služieb so značkou HTC, ktoré sa vám zobrazujú na webových stránkach tretích strán. Môžeme tiež používať informácie súborov cookie, aby sme vedeli, kedy sa po návšteve týchto webových lokalít tretích strán vrátite na naše webové lokality. Tieto a ďalšie informácie o vás používame na to, aby sme spoznali vaše záujmy a zobrazovali pre vás relevantné reklamné služby o produktoch a službách, ktoré by vás mohli zaujímať.
+4.	Používanie vašich osobných údajov
+Spoločnosť HTC môže používať vaše osobné údaje na nasledujúce činnosti:
+prevádzkovanie a zdokonaľovanie našich webových lokalít, produktov, Služieb a marketingu,
+zabezpečenie personalizovaného a prispôsobeného zážitku, obsahu, marketingu a odporúčaní pre vás naprieč všetkými našimi Službami,
+reagovanie na vaše pripomienky a otázky a poskytovanie služieb zákazníkom,
+poskytovanie a odovzdávanie produktov a služieb, ktoré požadujete,
+posielanie informácií súvisiacich s vašimi požiadavkami a nákupmi vrátane potvrdení, faktúr, technických oznámení, aktualizácií, bezpečnostných upozornení a podporných a administratívnych správ,
+komunikácia s vami o súťažiach, akciách, odmenách, nadchádzajúcich udalostiach a o novinkách o produktoch a službách ponúkaných spoločnosťou HTC a našimi vybranými partnermi (konáme tak na základe vašich volieb nižšie) a na spracovávanie a odovzdávanie súťažných hesiel a odmien,
+prepojenie alebo kombinovanie vašich osobných údajov s ďalšími informáciami, ktoré sme získali o tom, ako používate ďalšie služby spoločnosti HTC, a od tretích strán, aby sme lepšie rozumeli vám a vašim potrebám a poskytovali vám odporúčania, lepšie služby a prispôsobený marketing a
+ochrana proti podvodným, neoprávneným a nelegálnym aktivitám, ich preskúmanie a zabránenie im.
+5.	Ďalšie informácie o údajoch o polohe
+Keď používate niektoré Služby, môžeme zhromažďovať, spracovávať, ukladať a zdieľať presné údaje o polohe. Tieto informácie o polohe môžu zahŕňať geografickú polohu vášho zariadenia v skutočnom čase. Môžu tiež zahŕňať názvy miest, na ktorých ste boli, kde ste sa prihlásili, miesta, ktoré ste označili na mape, geografickú polohu, kde ste nasnímali fotografie, trasy, po ktorých ste cestovali, a dátumy a časy, kedy ste sa na určitých miestach nachádzali. Spoločnosť HTC môže zdieľať vaše údaje o polohe s poskytovateľmi aplikácií, ktorí preukážu náležité oprávnenie.
+Spoločnosť HTC môže spájať údaje o polohe s identifikačným číslom vášho zariadenia a informáciami o vašom účte.
+Naše služby môžu tiež zhromažďovať údaje o presnej polohe v neidentifikovateľnej forme a tieto údaje môžeme zdieľať s partnermi a operátormi na zdokonalenie funkcií a služieb.
+6.	Zdieľanie osobných údajov
+Informácie, ktoré zdieľate
+Služby vám môžu umožniť pripojenie a zdieľanie vašich činností, pripomienok, obsahu a informácií verejne alebo s inými ľuďmi. Môžete sa tiež pripojiť k webovým lokalitám a službám tretích strán alebo zdieľať informácie o nich. Majte na pamäti vlastné potreby ochrany osobných údajov pri výbere toho, ku komu sa pripojíte a čo zdieľate a zverejňujete. Nemôžeme kontrolovať ochranu osobných údajov ani bezpečnosť informácií, ktoré sa rozhodnete zverejniť alebo zdieľať s ostatnými.
+Informácie, ktoré zdieľame
+Môžeme zdieľať vaše osobné údaje nasledujúcim spôsobom:
+Vaše osobné údaje môžeme zdieľať s vaším súhlasom. Môžete nám napríklad povoliť zdieľať vaše osobné údaje s našimi partnermi na webových lokalitách so spoločnou značkou alebo môžete využívať naše Služby na pripojenie sa k službám našich partnerov alebo požiadať o prijímanie informácií od nich. Používanie vašich osobných údajov našimi partnermi je predmetom ich zásad ochrany osobných údajov.
+Môžeme zdieľať vaše osobné údaje na účely uzatvorenia obchodu (alebo jednania o uzatvorení obchodu) zahŕňajúceho predaj alebo prevod celého nášho podniku alebo jeho časti alebo majetku. Uzatvorenie obchodu môže zahŕňať akékoľvek transakcie alebo postupy spojenia, financovania, akvizície alebo bankrotu.
+Osobné údaje môžeme zdieľať na právne, ochranné, bezpečnostné účely a účely zabezpečenia vrátane:
+zabezpečenia súladu s právnymi predpismi alebo regulačnými požiadavkami a reagovania na zákonné požiadavky a zákonné procesy,
+ochrany práv a majetku spoločnosti HTC, našich zástupcov, zákazníkov a ďalších osôb vrátane vymáhania plnenia zmlúv, zásad a podmienok používania a ochrany našej siete a hmotného majetku a
+v stave núdze vrátane ochrany bezpečnosti našich zamestnancov a zástupcov, našich zákazníkov alebo akejkoľvek inej osoby.
+Informácie môžeme zdieľať s tými, ktorí ich používajú na to, aby nám poskytovali služby alebo pracovali pre nás.
+Vaše osobné údaje môžeme zdieľať s poskytovateľmi. To, ako používajú vaše údaje, je predmetom ich zásad ochrany osobných údajov.
+Môžeme zdieľať súhrnné a neidentifikovateľné údaje s inými.
+7.	Miesto uloženia vašich údajov, prenos vašich údajov
+Informácie, ktoré zhromažďujeme, môžeme ukladať vo vašom telefóne alebo na našich serveroch a prenášať ich, ukladať a spracovávať v Spojených štátoch amerických, na Taiwane, v Singapure, členských štátoch Európskej únie a v ktorejkoľvek inej krajine, kde spoločnosť HTC alebo poskytovatelia jej služieb uchovávajú vybavenie vrátane jurisdikcií, ktoré nemusia mať zákony o ochrane osobných údajov, ktoré zabezpečujú rovnocennú ochranu ako vaša domovská krajina. Osobné informácie, ktoré prenesieme, budeme chrániť v súlade s týmito Zásadami ochrany osobných údajov. Používaním Služieb vyjadrujete svoj súhlas s týmto prenosom.
+8.	Voľby a zmeny informácií
+Z našich marketingových e-mailov sa dozviete, ako sa odhlásiť z odberu marketingových e-mailov. Ak sa odhlásite, stále vám môžeme posielať e-maily bez marketingového obsahu. E-maily bez marketingového obsahu môžu zahŕňať e-maily o vašich účtoch a naše obchodné jednania s vami.
+Môžete nám poslať požiadavky týkajúce sa osobných údajov prostredníctvom kontaktných údajov uvedených nižšie. Môžete požiadať o zmenu volieb týkajúcich sa kontaktu a marketingu a aktualizovať, sprístupniť alebo vykonať ďalšie zmeny týkajúce sa vašich osobných údajov.
+Pomocou nastavení vo vašom zariadení a nastavení prehľadávača môžete zmeniť spôsob, ktorým my aj iní môžu zhromažďovať určité informácie o vás (napríklad zablokovaním určitých súborov cookie). Ďalšie informácie o nastaveniach zariadenia nájdete v príručke k produktu. Pozrite si tiež časť o súboroch cookie a časť o zhromažďovaní informácií prostredníctvom reklamných služieb vyššie.
+9.	Bezpečnosť vašich osobných údajov
+Usilujeme sa o ochranu osobne identifikovateľných informácií, ktoré od vás získavame prostredníctvom našich Služieb. Hoci podnikáme kroky na používanie a zdokonaľovanie bezpečnostných opatrení, žiadna spoločnosť nedokáže zabrániť všetkým bezpečnostným rizikám alebo škodám. Ak sa dozviete o nedostatočnom zabezpečení ovplyvňujúcom služby spoločnosti HTC, pošlite nám e-mail na adresu security@htc.com alebo navštívte túto webovú lokalitu a ohláste to.
+Účet HTC vám umožňuje používať jedno používateľské meno a heslo na prihlásenie sa na lokalite HTCSense.com a do ďalších aplikácií a Služieb spoločnosti HTC. Niektoré aplikácie a Služby spoločnosti HTC si vyžadujú odlišné používateľské meno a heslo. Chráňte svoje používateľské mená a heslá, aby ste zabránili prístupu kohokoľvek k vašim účtom a Službám.
+Nenesieme zodpovednosť za bezpečnosť aplikácií a služieb tretích strán ani za údaje, ktoré tieto aplikácie a služby tretích strán o vás môžu zhromažďovať. Obráťte sa na príslušné tretie strany, ako zaisťujú bezpečnosť vašich údajov.
+10.	Kontaktné informácie
+Radi vám odpovieme na vaše pripomienky a otázky týkajúce sa týchto Zásad. Pošlite nám e-mail na adresu global-privacy@htc.com. Môžete sa na nás obrátiť aj na adrese:
+Severná a Južná Amerika:
+HTC America, Inc.
+13920 SE Eastgate Way, Suite 400
+Bellevue, WA 98005 USA
+Attention: Privacy Administrator
+E-mail: privacy_na@htc.com
+
+Ázia – Pacifik:
+HTC Corporation
+No 88, Section 3
+Zhongxing Road
+Xindian District
+New Taipei City
+Taiwan, 231
+E-mailová adresa: Webmaster_NA@htc.com 
+Registračné číslo spoločnosti: 16003518
+
+EÚ:
+HTC Europe Co. Ltd
+Communications House Presley Way
+Crownhill Milton Keynes MK8 0ES UK
+E-mailová adresa: Webmaster_NA@htc.com 
+Registračné číslo spoločnosti: 04826012
+Attention: Privacy Administrator
+
+(Spoločnosť HTC Europe Co. Ltd je vymenovaným zástupcom spoločnosti HTC Corporation pre Európsku úniu.)
+
+
+11.	Zmeny v týchto Zásadách ochrany osobných údajov
+Tieto zásady ochrany osobných údajov môžeme zmeniť. Ak vykonáme akékoľvek zmeny, upravíme dátum poslednej aktualizácie uvedený nižšie.
+Tieto Zásady ochrany osobných údajov boli naposledy aktualizované 10. apríla 2013.
+
+
+
+3.     Licenčná zmluva koncového používateľa
+
+Licenčná zmluva medzi koncovým používateľom a spoločnosťou HTC a Vyhlásenie k výrobkom s funkciou navigácie
+
+UPOZORNENIE: Majte na pamäti, že táto Licenčná zmluva sa môže obsahom odlišovať od licenčnej zmluvy koncového používateľa nachádzajúcej sa v Záručnom liste. 
+
+DÔLEŽITÉ – PRED POUŽITÍM TOHTO SOFTVÉRU SI DÔKLADNE PREČÍTAJTE: Táto Licenčná zmluva a Vyhlásenie („Licenčná zmluva“) pre určitý produkt HTC alebo softvér a hardvér v ňom sa nachádzajúci je právna zmluva medzi vami (osobou alebo organizáciou) a spoločnosťou HTC Corporation a jej dodávateľmi z tretej strany a poskytovateľmi licencií (súhrnne „HTC“) pre všetok príslušný softvér (ktorý obsahuje softvér, údaje a súčasti poskytnuté dodávateľmi a poskytovateľmi licencií spoločnosti HTC) (všetok takýto softvér, údaje a súčasti sú ďalej uvedené ako „Softvér“) nachádzajúci sa v produkte HTC, ktorý ste si zakúpili. 
+
+AKTIVOVANÍM, POUŽÍVANÍM, PREVZATÍM ALEBO INŠTALÁCIOU TOHTO TELEFÓNU ALEBO SOFTVÉRU SÚHLASÍTE S DODRŽIAVANÍM PODMIENOK TEJTO LICENČNEJ ZMLUVY.
+
+Ak pred prejavením svojho súhlasu aktivovaním, používaním, prevzatím alebo inštaláciou tohto telefónu alebo Softvéru zistíte, že nesúhlasíte s podmienkami tejto Licenčnej zmluvy, nemáte právo Softvér používať a nemali by Softvér používať.  V prípade, že budete aj naďalej používať Softvér bez súhlasu s podmienkami tejto Licenčnej zmluvy, beriete na vedomie, že preberáte všetku zodpovednosť a následky vyplývajúce z takéhoto nepovoleného používania Softvéru, a spoločnosť HTC nebude za takéto nepovolené používanie zodpovedná.  Súhlasíte aj s tým, že za takéto neoprávnené používanie Softvéru budete niesť zodpovednosť a voči spoločnosti HTC splníte záväzky týkajúce sa odškodnenia podľa Časti 6 tejto Licenčnej zmluvy.
+ 
+
+Softvér s otvoreným zdrojovým kódom 
+Časti Softvéru zahŕňajú softvérové súbory spadajúce pod licenčné zmluvy na softvér s otvoreným zdrojovým kódom, tieto softvérové súbory s otvoreným zdrojovým kódom sú teda predmetom oznámení a ďalších podmienok a ustanovení, ktoré su uvedené v tejto časti.  Takéto softvérové súbory s otvoreným zdrojovým kódom sa poskytujú „TAK AKO SÚ“ v maximálnom platnými zákonmi povolenom rozsahu.
+
+Príslušné autorské práva a licenčné podmienky v tu uvedených súboroch s otvoreným zdrojovým kódom sú uvedené v časti „Licencia na otvorený zdrojový kód“, ktorá sa nachádza v zariadení v položke Nastavenie\\O telefóne\\Právne informácie.  Kópiu licencie Apache verzia 2.0 nájdete na adrese http://www.apache.org/licenses/LICENSE-2.0.  Kópiu licencie GNU General Public License verzia 2 získate na adrese Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.  
+
+Počas troch rokov od získania Softvéru môžete získať kópiu zdrojového kódu príslušných binárnych súborov pre súbor s licenciou GPL zaslaním žiadosti zákazníckej službe spoločnosti HTC na adrese www.htc.com a spoločnosť HTC vám pošle prepojenie na tento zdrojový kód. AKÝKOĽVEK SOFTVÉR TRETÍCH STRÁN, KTORÝ MÔŽE BYŤ POSKYTOVANÝ SPOLU SO SOFTVÉROM, JE URČENÝ LEN NA POUŽITIE NA ZÁKLADE VLASTNEJ VOĽBY. AK ZVOLÍTE MOŽNOSŤ POUŽITIA TAKÉHOTO SOFTVÉRU TRETEJ STRANY, JEHO POUŽITIE MUSÍ SPADAŤ POD LICENČNÚ ZMLUVU S TOUTO TREŤOU STRANOU. SPOLOČNOSŤ HTC NEZODPOVEDÁ ZA ŽIADNY SOFTVÉR TRETEJ STRANY A NENESIE ŽIADNE NÁSLEDKY ZA VAŠE POUŽÍVANIE SOFTVÉRU TRETEJ STRANY.
+
+1.     UDELENIE LICENCIE. Spoločnosť HTC vám udeľuje nevýhradnú, neprenosnú a obmedzenú licenciu na používanie Softvéru a všetku príslušnú dokumentáciu („Dokumentácia“) v súlade s nasledujúcimi podmienkami: 
+
+Softvér musíte používať výhradne spolu s vreckovým zariadením, v ktorom sa Softvér pôvodne nachádza. 
+
+2.     OBMEDZENIA LICENCIE
+
+a)     Mimo inak vyjadrený a spoločnosťou HTC jednoznačne poverený rozsah alebo mimo rozsah takých obmedzení, ktoré sú výslovne zakázané platnými zákonmi, NESMIETE: (I) povoľovať iným osobám používanie Softvéru; (II) upravovať, prekladať, spätne rozoberať, dekompilovať, demontovať (okrem obmedzenia, ktoré je výslovne zakázané platnými zákonmi) alebo vytvárať odvodeniny založené na Softvéri alebo Dokumentácii; (III) kopírovať Softvér alebo Dokumentáciu (Okrem zálohovania na účely opravy alebo výmeny, ak takéto zálohovanie nie je nainštalované alebo použité na nejakom počítači, a takáto záloha musí byť okamžite po oprave alebo výmene odstránená alebo zničená. Všetky ostatné kópie Softvéru, ktoré vytvoríte, sú porušením tejto Zmluvy); (IV) prenajímať, požičiavať, prenášať, poskytovať licenciu alebo inak prenášať práva na Softvér alebo Dokumentáciu; (V) odstraňovať akékoľvek označenia patentov alebo menovky zo Softvéru alebo Dokumentácie; (VI) pridávať, integrovať alebo kombinovať so Softvérom nejaký iný softvér. Akékoľvek takéto zakázané použitie okamžite ruší platnosť vašej licencie na Softvér. 
+
+b)     Súhlasíte s tým, že budete používať Softvér a Dokumentáciu iba spôsobom, ktorý je v súlade so všetkými platnými právnymi predpismi v právnom systéme, v ktorom softvér a príslušnú dokumentáciu používate, najmä v súlade s platnými obmedzeniami vyplývajúcimi z autorského práva a ďalších práv duševného vlastníctva, ako aj vyhlášok týkajúcich sa obmedzenia exportu. 
+        
+c)     Softvér môžete používať iba na súkromné nekomerčné účely. Softvér ani žiadnu jeho časť nesmiete poskytovať ako komerčnú službu alebo aplikáciu.  Softvér sa nesmie používať v súvislosti s prekonaním technologických obmedzení slúžiacich na ovládanie prístupu k autorsky chráneným súborom alebo iným dielam chráneným autorským právom ktoréhokoľvek právneho systému, a to ani v spojení so žiadnym zariadením, programom alebo službou určenými na tieto účely.
+
+3.     NÁZOV. Názov, vlastnícke práva a duševné vlastníctvo na obsah prístupný prostredníctvom Softvéru vrátane obsahu v ukážkových súboroch médií, ktoré sa v Softvéri nachádzajú, musia byť zachované pre spoločnosť HTC (vrátane všetkých jej dodávateľov a poskytovateľov licencií). Softvér je chránený zákonmi na ochranu autorských práv platnými v USA a medzinárodnými zmluvami týkajúcimi sa ochrany autorských práv. Názov, vlastnícke práva a duševné vlastníctvo na obsah prístupný prostredníctvom Softvéru vrátane obsahu v ukážkových súboroch médií, ktoré sa v Softvéri nachádzajú, musia byť zachované pre platného vlastníka Obsahu a môžu byť chránené platnými autorskými alebo inými zákonmi.  Táto licencia vám NEDÁVA práva na takýto Obsah.
+
+4.     POZNÁMKA A VYHLÁSENIE: Digitálna kartografia môže byť nepresná a do určitej miery neúplná. Dostupnosť a presnosť navigácie a súvisiacich služieb okrem iného závisia od bezdrôtových sietí a satelitných systémov. Nemusia po celý čas fungovať vo všetkých oblastiach. Nikdy by ste sa teda nemali spoliehať výlučne na predtým uvedený materiál a služby, napr. pri nutnej komunikácii, ako sú tiesňové stavy.   Tento výrobok nesmie byť používaný vodičom vozidla počas šoférovania. Pri šoférovaní vždy používajte súpravu hands-free. Dodržiavajte všetky zákony. Vaša prvoradá pozornosť počas šoférovania má byť venovaná bezpečnosti na ceste. V maximálnom rozsahu dovolenom platnými zákonmi sa spoločnosť HTC a jej dcérske spoločnosti a poskytovatelia licencií odmietajú akúkoľvek zodpovednosť vyplývajúcu z akéhokoľvek použitia tohto výrobku a jeho obsahu.
+
+5.     ODMIETNUTIE ZÁRUKY A OBMEDZENIE ZODPOVEDNOSTI. SOFTVÉR, DOKUMENTÁCIA A OBSAH SA POSKYTUJÚ AKO SÚ, BEZ ZÁRUKY AKÉHOKOĽVEK DRUHU. SPOLOČNOSŤ HTC ĎALEJ ODMIETA VŠETKY ZÁRUKY VRÁTANE (ALE BEZ OBMEDZENIA)  AKÉKOĽVEK PREDPOKLADANÝCH ZÁRUK PREDAJNOSTI, VHODNOSTI NA URČITÝ ÚČEL A NEPORUŠENIE. VŠETKY RIZIKÁ VYPLÝVAJÚCE Z POUŽITIA ALEBO VÝKONU SOFTVÉRU, DOKUMENTÁCIE A OBSAHU OSTÁVAJÚ NA VÁS. SPOLOČNOSŤ HTC A JEJ ZAMESTNANCI ALEBO POSKYTOVATELIA LICENCIE NIE SÚ ZA ŽIADNYCH OKOLNOSTÍ ZODPOVEDNÍ ZA ŽIADNE NÁSLEDNÉ, NÁHODNÉ, NEPRIAME, ZVLÁŠTNE, TRESTNÉ ANI ZA ŽIADNE INÉ ŠKODY (VRÁTANE ALE BEZ OBMEDZENIA NA  STRATY NA ZISKU Z OBCHODU, PRERUŠENIA OBCHODU, STRATU OBCHODNÝCH INFORMÁCIÍ ALEBO INÝCH PEŇAŽNÝCH STRÁT) VYPLÝVAJÚCE Z TEJTO ZMLUVY ALEBO POUŽITIA ALEBO NEMOŽNOSTI POUŽITIA SOFTVÉRU, ALEBO OBSAHU, A TO ANI V PRÍPADE, ŽE BOLA SPOLOČNOSŤ HTC OBOZNÁMENÁ S MOŽNOSŤOU TAKÝCHTO ŠKÔD. CELKOVÁ ZODPOVEDNOSŤ SPOLOČNOSTI HTC ZA AKÉKOĽVEK ŠKODY V RÁMCI TEJTO ZMLUVY NIKDY NESMIE PRESIAHNUŤ KÚPNU CENU, KTORÚ STE ZAPLATILI ZA PRODUKT HTC.
+  
+Už žiadneho softvéru (poskytovaného treťou stranou alebo spoločnosťou HTC) nie je zaručené, že bude bez chýb. V prípade, že vy alebo zákazník inštalujete softvér do zariadenia, spoločnosť HTC nie je zodpovedná za to, ako bude v zariadení fungovať. Softvér bol vyvinutý pre systémy, ktoré nevyžadujú bezporuchový výkon. Nesmiete softvér používať v žiadnom zariadení alebo systéme, ktorého porucha by mohla mať za následok predvídateľné riziko strát, úraz alebo smrti nejakej osobe. Patrí sem používanie v nukleárnych zariadeniach, leteckej navigácii alebo komunikačných systémoch, riadení letovej prevádzky alebo používanie v rizikových a nebezpečných situáciách alebo prostrediach.
+
+6.     ZBAVENIE ZODPOVEDNOSTI. Súhlasíte s tým, že spoločnosť HTC, jej predstavitelia, riaditelia a zamestnanci sú krytí, zbavení zodpovednosti a chránení pred akýmikoľvek škodami, stratami, sankciami a výdavkami (vrátane právnych poplatkov a výloh) vyplývajúcich alebo vzťahujúcich sa na akékoľvek vaše požiadavky (I) akékoľvek zobrazované, preberané, kódované, komprimované, kopírované alebo prenášané materiály (iné než materiály poskytnuté spoločnosťou HTC) v spojení so Softvérom, ktoré porušujú práva tretích strán alebo akékoľvek zákony, alebo (II) porušujúce ktorúkoľvek podmienku tejto Licenčnej zmluvy. Ak importujete Softvér z USA alebo Európskej únie, musí byť spoločnosti HTC zaistené zbavenie zodpovednosti za akékoľvek importné a exportné clá alebo iné nároky vyplývajúce z takéhoto dovozu  
+ 
+7.     Ak ste agentúra, oddelenie alebo iný subjekt vlády USA, prípadne subjekt založený vcelku alebo sčasti vládou USA, 
+(I) používanie, duplikovanie, reprodukcia, vydanie, úprava, odtajnenie alebo prenos tohto výrobku HTC a príslušného Softvéru a dokumentácie sú zakázané v súlade s OBMEDZENÝMI alebo ZAKÁZANÝMI právami opísanými v platných predpisoch DFARS alebo FAR.  V prípade konfliktu medzi akýmikoľvek predpismi FAR alebo DFARS, ktoré sa môžu týkať licencovaného výrobku Tele Atlas, musí sa použiť predpoklad poskytujúci väčšie obmedzenia na práva vlády. Zmluvný partner/výrobca je Tele Atlas North America, Inc., 11 Lafayette Street, Libanon, NH 03766-1445. Telefón: 603.643. 0330.  Licencované výrobky od spoločnosti © 2006 – 2010 od spoločnosti Tele Atlas. VŠETKY PRÁVA VYHRADENÉ. Na účely akéhokoľvek ustanovenia týkajúceho sa zverejnenia podľa federálnych, štátnych alebo miestnych zákonov je dohodnuté, že licencované výrobky od spoločnosti Tele Atlas výrobky sú predmetom obchodného tajomstva a patentovaného komerčného produktu a nepodliehajú uverejneniu, a 
+(II) zaväzujete sa chrániť licencované výrobky od spoločnosti Tele Atlas pred uverejnením a beriete do úvahy výnimku pre licencované výrobky od spoločnosti Tele Atlas týkajúcu sa všetkých vyhlášok, zákonov, predpisov alebo kódexov vrátane predpisov Sunshine Act, Public Records Act, Freedom of Information Act alebo ekvivalentných, ktoré zaručujú verejný prístup alebo reprodukciu alebo používanie licencovaných výrobkov od spoločnosti Tele Atlas.  V prípade, že takáto výnimka je napadnutá podľa akýchkoľvek zákonov, táto zmluva EULA sa považuje za porušenú a všetky práva na držanie kópií alebo používanie licencovaných výrobkov od spoločnosti Tele Atlas musia byť ukončené a sú považované za ihneď od začiatku neplatné.  Všetky kópie licencovaných výrobkov od spoločnosti Tele Atlas držané podľa Licencie musia byť okamžite zničené.  Ak nejaký súd v príslušnej jurisdikcii posúdi tento článok ako neplatný a nevynútiteľné vcelku alebo sčasti, a to z akéhokoľvek dôvodu, táto zmluva EULA bude považovaná za ukončenú a neplatnú od samého začiatku, a všetky kópie licencovaných výrobkov od spoločnosti Tele Atlas musia byť okamžite zničené.
+
+8.     Nesmiete používať údaje Nórska od spoločnosti Tele Atlas® MultiNet® na vytváranie komerčne predávaných tlačených alebo digitálnych máp, ktoré sú podobné základným národným produktom od Norwegian Mapping Authority; súhlasíte s tým, že akýkoľvek licencovaný výrobok od spoločnosti Tele Atlas, ktorý obsahuje údaje o Číne, Indii a Kórey môže podliehať osobitným podmienkam a ustanoveniam, ktoré vám musia byť poskytnuté v momente, kedy sú k dispozícii spoločnosti Tele Atlas.  Údaje o Číne, Indii a Kórey nesmú byť exportované z krajiny pôvodu.
+
+
+9.     Tu uvedené zmluvy a záväzky sú tiež určené v priamy prospech spoločnosti Tele Atlas a môžu byť voči vám vynútené spoločnosťou Tele Atlas priamo proti vám, a beriete na vedomie a súhlasíte, že materiál alebo služby poskytované spoločnosťou Tele Atlas sú poskytované „tak ako sú“ a so všetkými možnými chybami, a spoločnosť Tele Atlas odmieta akúkoľvek záruku, výslovnú alebo predpokladanú.
+
+10.     UKONČENIE.  Platnosť tejto Licenčnej zmluvy bude automaticky ukončená, ak porušíte ktorúkoľvek z hore uvedených podmienok. Z takéhoto ukončenia platnosti nevyplýva spoločnosti HTC žiadna oznamovacia povinnosť. 
+
+11.     Príslušné zákony.  Hore uvedené podmienky a ustanovenia sa riadia zákonmi štátu Washington, USA bez toho, aby ovplyvňovali (I) konflikty s ustanoveniami zákonov alebo (II) Konvencie spojených národov o zmluvách pri medzinárodnom predaji tovaru.  Súhlasíte s tým, že sa podriadite výlučnej jurisdikcii súdov na území štátu Washington, USA, aby ste vyriešili akékoľvek právne záležitosti vyplývajúce z tejto Licenčnej zmluvy.
