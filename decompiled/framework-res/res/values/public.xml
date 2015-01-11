@@ -5293,6 +5293,16 @@
     <public type="string" name="battery_saver_description" id="0x0104067e" />
     <public type="string" name="downtime_condition_summary" id="0x0104067f" />
     <public type="string" name="zen_mode_forever" id="0x01040680" />
+    <public type="string" name="apm_reboot" id="0x010406c5" />
+    <public type="string" name="apm_reboot_summary" id="0x010406c6" />
+    <public type="string" name="apm_hotreboot" id="0x010406c7" />
+    <public type="string" name="apm_hotreboot_summary" id="0x010406c8" />
+    <public type="string" name="apm_recovery" id="0x010406c9" />
+    <public type="string" name="apm_recovery_summary" id="0x010406ca" />
+    <public type="string" name="apm_bootloader" id="0x010406cb" />
+    <public type="string" name="apm_bootloader_summary" id="0x010406cc" />
+    <public type="string" name="apm_safemode" id="0x010406cd" />
+    <public type="string" name="apm_safemode_summary" id="0x010406ce" />
     <public type="string" name="APKTOOL_DUMMY_0681" id="0x01040681" />
     <public type="string" name="APKTOOL_DUMMY_0682" id="0x01040682" />
     <public type="string" name="APKTOOL_DUMMY_0683" id="0x01040683" />
@@ -7860,6 +7870,13 @@
     <public type="drawable" name="spinner_disabled_holo" id="0x01080634" />
     <public type="drawable" name="spinner_normal_holo" id="0x01080641" />
     <public type="drawable" name="switch_thumb_holo_light_v2" id="0x010806b9" />
+    <public type="drawable" name="apm_bootloader" id="0x01080766" />
+    <public type="drawable" name="apm_hotreboot" id="0x01080767" />
+    <public type="drawable" name="apm_recovery" id="0x01080768" />
+    <public type="drawable" name="apm_safemode" id="0x01080769" />
+    <public type="drawable" name="apm_power_off" id="0x0108076a" />
+    <public type="drawable" name="apm_settings" id="0x0108076b" />
+    <public type="drawable" name="apm_power_key" id="0x0108076c" />
     <public type="drawable" name="APKTOOL_DUMMY_00bb" id="0x010800bb" />
     <public type="drawable" name="APKTOOL_DUMMY_00c4" id="0x010800c4" />
     <public type="drawable" name="APKTOOL_DUMMY_00f8" id="0x010800f8" />
