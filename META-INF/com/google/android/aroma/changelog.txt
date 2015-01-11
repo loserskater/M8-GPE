@@ -1,1 +1,12 @@
 <*>Initial release
+<*>Aroma installer
+   Dark Settings, Dialer, Contacts.
+   MotoX camera and gallery
+   CyanogenMod apps
+   Email options
+   HTC Keyboard.
+<*>Extra settings
+   Clock position
+   Music controls
+<*>Advanced Power Menu
+<*>AppOps> Settings>Security>AppOps

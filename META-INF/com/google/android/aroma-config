@@ -158,8 +158,8 @@ if prop("type.prop","selected")=="1"||prop("type.prop","selected")=="2" then
     #-- Will be saved in /tmp/aroma/wipe.prop
       "wipe.prop",
 
-      "Full Wipe",            "Data, System, Cache, Dalvik",               0,      #-- selected.0 = 1
-      "Upgrade",              "System, Cache, Dalvik... dirty flash",      1       #-- selected.0 = 2
+      "Full Wipe",            "Data, System, Cache",               0,      #-- selected.0 = 1
+      "Upgrade",              "System, Cache... dirty flash",      1       #-- selected.0 = 2
 
 );
 endif;
@@ -378,6 +378,18 @@ if prop("type.prop","selected")=="2"||prop("type.prop","selected")=="3" then
       #-- File Content to be writen into the file
       readtmpfile("cm.prop");
     );
+	setvar(
+      #-- Variable name
+        "camera_prop",
+      #-- Value
+        read(
+          #-- Absolute Path
+            "/data/media/0/aroma/Camera.prop"
+        )
+      );
+    if (getvar("camera_prop")!="") then
+        writetmpfile("camera.prop",getvar("camera_prop"));
+    endif;
 	checkbox(
       #-- Title
         "Camera and Gallery",
@@ -390,25 +402,24 @@ if prop("type.prop","selected")=="2"||prop("type.prop","selected")=="3" then
       #-- Icon:
         "@apps",
       
-      #-- Will be saved in /tmp/aroma/keyboard.prop
+      #-- Will be saved in /tmp/aroma/camera.prop
         "camera.prop",
         
        "Camera",           "",                                                     2,       		
 		"Stock Google",    "Stock camera. HDR available, no saving to SDcard",     1,       #-- item.1.1
 		"Moto X",          "Motorola Camera. saving to SD card supported, no HDR", 0,       #-- item.1.2
 		
-	   "Gallery"           "",                                                     2,
-	     "CM Gallery"      "",                                                     0,       #-- item.2.1
-		 "MotoX Gallery",  "",                                                     0,       #-- item.2.2
-		 "Google Photos",  "",                                                     1        #-- item.2.3
+	   "Gallery",          "",                                                     2,
+	     "CM Gallery",      "",                                                    0,       #-- item.2.1
+		 "MotoX Gallery",  "",                                                     0        #-- item.2.2
 			  
     );
 	write(
       #-- Absolute path into the file
-      "/data/media/0/aroma/Keyboard.prop",
+      "/data/media/0/aroma/Camera.prop",
         
       #-- File Content to be writen into the file
-      readtmpfile("keyboard.prop");
+      readtmpfile("camera.prop");
     );
     setvar(
       #-- Variable name
@@ -487,24 +498,24 @@ ini_set("text_next", "Install Now");
 
 ###################################################################################################################
 
-  viewbox(
-    #-- Title
-      "Ready to Install",
+viewbox(
+  #-- Title
+    "Ready to Install",
 
-    #-- Text
-	  "\n\n"+
-	  "\n\n"+
-	  "\n\n"+
-	  "\n\n"+
-      "We're ready to begin installation.\n\n"+
-      "Press <b>Install Now</b> to begin the installation.\n\n"+
-      "If you want to review or change any of your installation settings, press <b>Back</b>. Press Menu Key -> Quit Installation to exit installation.",
+  #-- Text
+    "\n\n"+
+	"\n\n"+
+	"\n\n"+
+	"\n\n"+
+    "We're ready to begin installation.\n\n"+
+    "Press <b>Install Now</b> to begin the installation.\n\n"+
+    "If you want to review or change any of your installation settings, press <b>Back</b>. Press Menu Key -> Quit Installation to exit installation.",
 
-    #-- Icon
-      "@install"
-  );
+  #-- Icon
+    "@install"
+);
 
-  ini_set("text_next", "Next >");
+ini_set("text_next", "Next >");
 
 ###################################################################################################################
 
@@ -525,8 +536,6 @@ setvar("retstatus",
       "Press Next to continue."
   )
 );
-
-##
 
 ini_set("text_next", "Finish");
 

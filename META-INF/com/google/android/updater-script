@@ -11,8 +11,6 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "4" then
   mount("ext4", "EMMC", "/dev/block/platform/msm_sdcc.1/by-name/data", "/data");
   ui_print("@Deleting Necessary Modules/Parts/Data");
   delete_recursive("/system/lib/modules");
-  if file_getprop("/tmp/aroma/kernel.prop","selected.2") == "1" then
-  endif;
   set_progress(0.5);
   if file_getprop("/tmp/aroma/kernel.prop","selected.1") == "1" then
     ui_print("@Installing Stock Kernel");
@@ -118,7 +116,7 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "2" || file_getprop("/tmp/
   endif;
   if file_getprop("/tmp/aroma/email.prop","selected.1") == "2" then
     ui_print("Adding AOSP email");
-    package_extract_dir("mods/email/aosp", "/system");
+    package_extract_dir("aroma/email/aosp", "/system");
     delete_recursive("/system/app/EmailGoogle");
 	delete_recursive("/system/app/Exchange3Google");
   endif;
@@ -172,8 +170,10 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "2" || file_getprop("/tmp/
   if file_getprop("/tmp/aroma/cm.prop","item.0.5") == "1" then
     ui_print("Adding Eleven Music");
     package_extract_dir("aroma/cm_apps/eleven", "/system");
+	delete_recursive("/system/app/Music2");
   else
     delete_recursive("/system/priv-app/Eleven");
+	package_extract_dir("system/app/Music2", "/system/app/Music2");
   endif;
   #
   #Camera/Gallery
@@ -203,12 +203,6 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "2" || file_getprop("/tmp/
     package_extract_dir("aroma/gallery/moto", "/system");
   else
     delete_recursive("/system/priv-app/MotoGallery");
-  endif;
-  if file_getprop("/tmp/aroma/camera.prop","item.2.3") == "1" then
-    ui_print("Adding Google Photos");
-    package_extract_dir("system/app/Photos", "/system/app/Photos");
-  else
-    delete_recursive("/system/app/Photos");
   endif;
   #
   #LiveWallpaper
@@ -244,6 +238,25 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "2" || file_getprop("/tmp/
     package_extract_dir("aroma/livewallpaper/sunbeam", "/system");
   else
     delete_recursive("/system/app/sunbeam");
+  endif;
+  #
+  #THEMES Preparing theme
+  #
+  ui_print("@Preparing Theme Install");
+  if file_getprop("/tmp/aroma/type.prop","selected") == "3" then
+    package_extract_dir("system/priv-app/AppOps", "/system/priv-app/AppOps");
+	package_extract_dir("system/priv-app/GoogleContacts", "/system/priv-app/GoogleContacts");
+	package_extract_dir("system/priv-app/GoogleDialer", "/system/priv-app/GoogleDialer");
+    package_extract_dir("system/priv-app/SystemUI", "/system/priv-app/SystemUI");
+    package_extract_dir("system/priv-app/Settings", "/system/priv-app/Settings");
+    package_extract_dir("system/framework/framework-res.apk", "/system/framework/framework-res.apk");
+  endif;
+  #
+  #Theme extract
+  #
+  if file_getprop("/tmp/aroma/themes.prop","selected.1") == "2" then
+    ui_print("Stock Theme");
+    package_extract_dir("aroma/theme/dark", "/system");
   endif;
 endif;
 ui_print("@Finishing up");
