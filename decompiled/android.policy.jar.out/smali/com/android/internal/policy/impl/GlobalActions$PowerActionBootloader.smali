@@ -44,22 +44,42 @@
 
 # virtual methods
 .method public onPress()V
-    .locals 3
+    .locals 5
 
-    iget-object v0, p0, Lcom/android/internal/policy/impl/GlobalActions$PowerActionBootloader;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
+    :try_start_0
+    const-string v2, "power"
 
-    # getter for: Lcom/android/internal/policy/impl/GlobalActions;->mWindowManagerFuncs:Landroid/view/WindowManagerPolicy$WindowManagerFuncs;
-    invoke-static {v0}, Lcom/android/internal/policy/impl/GlobalActions;->access$800(Lcom/android/internal/policy/impl/GlobalActions;)Landroid/view/WindowManagerPolicy$WindowManagerFuncs;
+    invoke-static {v2}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
 
-    move-result-object v0
+    move-result-object v2
 
-    const-string v1, "bootloader"
+    invoke-static {v2}, Landroid/os/IPowerManager$Stub;->asInterface(Landroid/os/IBinder;)Landroid/os/IPowerManager;
 
-    const/4 v2, 0x0
+    move-result-object v1
 
-    invoke-interface {v0, v1, v2}, Landroid/view/WindowManagerPolicy$WindowManagerFuncs;->reboot(Ljava/lang/String;Z)V
+    const/4 v2, 0x1
 
+    const-string v3, "bootloader"
+
+    const/4 v4, 0x0
+
+    invoke-interface {v1, v4, v3, v4}, Landroid/os/IPowerManager;->reboot(ZLjava/lang/String;Z)V
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    :goto_0
     return-void
+
+    :catch_0
+    move-exception v0
+
+    const-string v2, "GlobalActions"
+
+    const-string v3, "PowerManager service died!"
+
+    invoke-static {v2, v3, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    goto :goto_0
 .end method
 
 .method public showBeforeProvisioning()Z
