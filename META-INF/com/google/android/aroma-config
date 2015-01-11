@@ -364,12 +364,11 @@ if prop("type.prop","selected")=="2"||prop("type.prop","selected")=="3" then
       #-- Will be saved in /tmp/aroma/other
         "cm.prop",
 										  
-	    "Audio FX",       "Will replace MusicFX",                                              0,      #-- item.0.1
-		"CM Browser",     "Material design web browser, will replace Chrome",                  0,      #-- item.0.2
-		"Calendar",       "AOSP Calendar",                                                     0,      #-- item.0.3
-	    "File Manager",   "Material design file explorer",                                     0,      #-- item.0.4
-        "Music",          "Eleven, material design music player, will replace google music.",  0,      #-- item.0.5
-		"Gallery",        "Material design photo gallery, will replace google photos",         0       #-- item.0.6
+	    "Audio FX",       "Will replace MusicFX",                                                        0,      #-- item.0.1
+		"CM Browser",     "Material design web browser, will replace Chrome in /system",                 0,      #-- item.0.2
+		"Calendar",       "AOSP Calendar. will replace Google Calendar in /system",                      0,      #-- item.0.3
+	    "File Manager",   "Material design file explorer",                                               0,      #-- item.0.4
+        "Music",          "Eleven, material design music player, will replace google music in /system",  0       #-- item.0.5
     
 	);
     write(
@@ -381,7 +380,7 @@ if prop("type.prop","selected")=="2"||prop("type.prop","selected")=="3" then
     );
 	checkbox(
       #-- Title
-        "Cameras",
+        "Camera and Gallery",
       
       #-- Sub Title
         "Select the apps you would like added/removed.\n"+
@@ -393,9 +392,15 @@ if prop("type.prop","selected")=="2"||prop("type.prop","selected")=="3" then
       
       #-- Will be saved in /tmp/aroma/keyboard.prop
         "camera.prop",
-          
-		"Stock Google",    "Stock camera. HDR available, no saving to SDcard",     1,       #-- item.0.1
-		"Moto X",          "Motorola Camera. saving to SD card supported, no HDR", 0        #-- item.0.2
+        
+       "Camera",           "",                                                     2,       		
+		"Stock Google",    "Stock camera. HDR available, no saving to SDcard",     1,       #-- item.1.1
+		"Moto X",          "Motorola Camera. saving to SD card supported, no HDR", 0,       #-- item.1.2
+		
+	   "Gallery"           "",                                                     2,
+	     "CM Gallery"      "",                                                     0,       #-- item.2.1
+		 "MotoX Gallery",  "",                                                     0,       #-- item.2.2
+		 "Google Photos",  "",                                                     1        #-- item.2.3
 			  
     );
 	write(
@@ -464,7 +469,7 @@ selectbox(
   #-- Will be saved in /tmp/aroma/kernel.prop
     "kernel.prop",
   
-  "Kernel Options", "",               2,      #-- Group 1. key = "selected.1"
+  "Kernel Options", "",               2,
    "Default",    "Stock kernel",      1       #-- selected.1 = 1
 );
 write(

@@ -10,8 +10,8 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "4" then
   mount("ext4", "EMMC", "/dev/block/platform/msm_sdcc.1/by-name/cache", "/cache");
   mount("ext4", "EMMC", "/dev/block/platform/msm_sdcc.1/by-name/data", "/data");
   ui_print("@Deleting Necessary Modules/Parts/Data");
+  delete_recursive("/system/lib/modules");
   if file_getprop("/tmp/aroma/kernel.prop","selected.2") == "1" then
-    delete_recursive("/system/lib/modules");
   endif;
   set_progress(0.5);
   if file_getprop("/tmp/aroma/kernel.prop","selected.1") == "1" then
@@ -175,29 +175,40 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "2" || file_getprop("/tmp/
   else
     delete_recursive("/system/priv-app/Eleven");
   endif;
-  if file_getprop("/tmp/aroma/cm.prop","item.0.6") == "1" then
-    ui_print("Adding Gallery2");
-    package_extract_dir("aroma/cm_apps/gallery2", "/system");
-	delete_recursive("/system/app/Photos");
-  else
-    delete_recursive("/system/priv-app/Gallery2");
-  endif;
   #
-  #Camera
+  #Camera/Gallery
   #
   set_progress(0.78);
   ui_print("@Cameras");
-  if file_getprop("/tmp/aroma/camera.prop","item.0.1") == "1" then
+  if file_getprop("/tmp/aroma/camera.prop","item.1.1") == "1" then
     ui_print("Adding Google Camera");
     package_extract_dir("system/app/GoogleCamera", "/system/app/GoogleCamera");
   else
     delete_recursive("/system/app/GoogleCamera");
   endif;
-  if file_getprop("/tmp/aroma/camera.prop","item.0.2") == "1" then
+  if file_getprop("/tmp/aroma/camera.prop","item.1.2") == "1" then
     ui_print("Adding MotoX Camera");
     package_extract_dir("aroma/cameras/moto", "/system");
   else
     delete_recursive("/system/priv-app/MotoCamera");
+  endif;
+  if file_getprop("/tmp/aroma/camera.prop","item.2.1") == "1" then
+    ui_print("Adding CM Gallery2");
+    package_extract_dir("aroma/cm_apps/gallery2", "/system");
+  else
+    delete_recursive("/system/priv-app/Gallery2");
+  endif;
+  if file_getprop("/tmp/aroma/camera.prop","item.2.2") == "1" then
+    ui_print("Adding MotoX Gallery");
+    package_extract_dir("aroma/gallery/moto", "/system");
+  else
+    delete_recursive("/system/priv-app/MotoGallery");
+  endif;
+  if file_getprop("/tmp/aroma/camera.prop","item.2.3") == "1" then
+    ui_print("Adding Google Photos");
+    package_extract_dir("system/app/Photos", "/system/app/Photos");
+  else
+    delete_recursive("/system/app/Photos");
   endif;
   #
   #LiveWallpaper
