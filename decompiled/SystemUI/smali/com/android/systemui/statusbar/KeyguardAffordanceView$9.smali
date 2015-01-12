@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/systemui/statusbar/KeyguardAffordanceView;)V
     .locals 0
 
-    .prologue
-    .line 372
     iput-object p1, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView$9;->this$0:Lcom/android/systemui/statusbar/KeyguardAffordanceView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,10 +36,7 @@
 # virtual methods
 .method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 2
-    .param p1, "animation"    # Landroid/animation/ValueAnimator;
 
-    .prologue
-    .line 375
     iget-object v1, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView$9;->this$0:Lcom/android/systemui/statusbar/KeyguardAffordanceView;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
@@ -57,11 +52,9 @@
     # setter for: Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mImageScale:F
     invoke-static {v1, v0}, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->access$802(Lcom/android/systemui/statusbar/KeyguardAffordanceView;F)F
 
-    .line 376
     iget-object v0, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView$9;->this$0:Lcom/android/systemui/statusbar/KeyguardAffordanceView;
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->invalidate()V
 
-    .line 377
     return-void
 .end method

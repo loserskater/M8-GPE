@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/systemui/recents/views/RecentsView$1;)V
     .locals 0
 
-    .prologue
-    .line 451
     iput-object p1, p0, Lcom/android/systemui/recents/views/RecentsView$1$1;->this$1:Lcom/android/systemui/recents/views/RecentsView$1;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,14 +37,11 @@
 .method public run()V
     .locals 1
 
-    .prologue
-    .line 454
     iget-object v0, p0, Lcom/android/systemui/recents/views/RecentsView$1$1;->this$1:Lcom/android/systemui/recents/views/RecentsView$1;
 
     iget-object v0, v0, Lcom/android/systemui/recents/views/RecentsView$1;->val$ssp:Lcom/android/systemui/recents/misc/SystemServicesProxy;
 
     invoke-virtual {v0}, Lcom/android/systemui/recents/misc/SystemServicesProxy;->lockCurrentTask()V
 
-    .line 455
     return-void
 .end method

@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/systemui/usb/UsbStorageActivity;)V
     .locals 0
 
-    .prologue
-    .line 216
     iput-object p1, p0, Lcom/android/systemui/usb/UsbStorageActivity$5;->this$0:Lcom/android/systemui/usb/UsbStorageActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,11 +36,7 @@
 # virtual methods
 .method public onClick(Landroid/content/DialogInterface;I)V
     .locals 2
-    .param p1, "dialog"    # Landroid/content/DialogInterface;
-    .param p2, "which"    # I
 
-    .prologue
-    .line 218
     iget-object v0, p0, Lcom/android/systemui/usb/UsbStorageActivity$5;->this$0:Lcom/android/systemui/usb/UsbStorageActivity;
 
     const/4 v1, 0x1
@@ -50,6 +44,5 @@
     # invokes: Lcom/android/systemui/usb/UsbStorageActivity;->switchUsbMassStorage(Z)V
     invoke-static {v0, v1}, Lcom/android/systemui/usb/UsbStorageActivity;->access$400(Lcom/android/systemui/usb/UsbStorageActivity;Z)V
 
-    .line 219
     return-void
 .end method

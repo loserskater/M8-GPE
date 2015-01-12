@@ -27,8 +27,6 @@
 .method constructor <init>(Lcom/android/systemui/statusbar/NotificationContentView;Z)V
     .locals 0
 
-    .prologue
-    .line 184
     iput-object p1, p0, Lcom/android/systemui/statusbar/NotificationContentView$1;->this$0:Lcom/android/systemui/statusbar/NotificationContentView;
 
     iput-boolean p2, p0, Lcom/android/systemui/statusbar/NotificationContentView$1;->val$showContractedChild:Z
@@ -43,14 +41,12 @@
 .method public run()V
     .locals 4
 
-    .prologue
     const/4 v2, 0x4
 
     const/4 v3, 0x0
 
     const/4 v1, 0x0
 
-    .line 187
     iget-object v0, p0, Lcom/android/systemui/statusbar/NotificationContentView$1;->this$0:Lcom/android/systemui/statusbar/NotificationContentView;
 
     # getter for: Lcom/android/systemui/statusbar/NotificationContentView;->mContractedChild:Landroid/view/View;
@@ -60,7 +56,6 @@
 
     invoke-virtual {v0, v1, v3}, Landroid/view/View;->setLayerType(ILandroid/graphics/Paint;)V
 
-    .line 188
     iget-object v0, p0, Lcom/android/systemui/statusbar/NotificationContentView$1;->this$0:Lcom/android/systemui/statusbar/NotificationContentView;
 
     # getter for: Lcom/android/systemui/statusbar/NotificationContentView;->mExpandedChild:Landroid/view/View;
@@ -70,12 +65,10 @@
 
     invoke-virtual {v0, v1, v3}, Landroid/view/View;->setLayerType(ILandroid/graphics/Paint;)V
 
-    .line 189
     iget-object v0, p0, Lcom/android/systemui/statusbar/NotificationContentView$1;->this$0:Lcom/android/systemui/statusbar/NotificationContentView;
 
     invoke-virtual {v0, v1, v3}, Lcom/android/systemui/statusbar/NotificationContentView;->setLayerType(ILandroid/graphics/Paint;)V
 
-    .line 190
     iget-object v0, p0, Lcom/android/systemui/statusbar/NotificationContentView$1;->this$0:Lcom/android/systemui/statusbar/NotificationContentView;
 
     # getter for: Lcom/android/systemui/statusbar/NotificationContentView;->mContractedChild:Landroid/view/View;
@@ -92,7 +85,6 @@
     :goto_0
     invoke-virtual {v3, v0}, Landroid/view/View;->setVisibility(I)V
 
-    .line 193
     iget-object v0, p0, Lcom/android/systemui/statusbar/NotificationContentView$1;->this$0:Lcom/android/systemui/statusbar/NotificationContentView;
 
     # getter for: Lcom/android/systemui/statusbar/NotificationContentView;->mExpandedChild:Landroid/view/View;
@@ -107,18 +99,15 @@
     :goto_1
     invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 196
     return-void
 
     :cond_0
     move v0, v2
 
-    .line 190
     goto :goto_0
 
     :cond_1
     move v2, v1
 
-    .line 193
     goto :goto_1
 .end method

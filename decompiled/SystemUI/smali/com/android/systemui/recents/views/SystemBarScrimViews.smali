@@ -22,17 +22,11 @@
 # direct methods
 .method public constructor <init>(Landroid/app/Activity;Lcom/android/systemui/recents/RecentsConfiguration;)V
     .locals 1
-    .param p1, "activity"    # Landroid/app/Activity;
-    .param p2, "config"    # Lcom/android/systemui/recents/RecentsConfiguration;
 
-    .prologue
-    .line 37
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 38
     iput-object p2, p0, Lcom/android/systemui/recents/views/SystemBarScrimViews;->mConfig:Lcom/android/systemui/recents/RecentsConfiguration;
 
-    .line 39
     const v0, 0x7f0e00b8
 
     invoke-virtual {p1, v0}, Landroid/app/Activity;->findViewById(I)Landroid/view/View;
@@ -41,7 +35,6 @@
 
     iput-object v0, p0, Lcom/android/systemui/recents/views/SystemBarScrimViews;->mStatusBarScrimView:Landroid/view/View;
 
-    .line 40
     const v0, 0x7f0e00bc
 
     invoke-virtual {p1, v0}, Landroid/app/Activity;->findViewById(I)Landroid/view/View;
@@ -50,7 +43,6 @@
 
     iput-object v0, p0, Lcom/android/systemui/recents/views/SystemBarScrimViews;->mNavBarScrimView:Landroid/view/View;
 
-    .line 41
     return-void
 .end method
 
@@ -59,12 +51,10 @@
 .method public prepareEnterRecentsAnimation()V
     .locals 4
 
-    .prologue
     const/4 v2, 0x4
 
     const/4 v1, 0x0
 
-    .line 48
     iget-object v0, p0, Lcom/android/systemui/recents/views/SystemBarScrimViews;->mConfig:Lcom/android/systemui/recents/RecentsConfiguration;
 
     invoke-virtual {v0}, Lcom/android/systemui/recents/RecentsConfiguration;->hasNavBarScrim()Z
@@ -73,7 +63,6 @@
 
     iput-boolean v0, p0, Lcom/android/systemui/recents/views/SystemBarScrimViews;->mHasNavBarScrim:Z
 
-    .line 49
     iget-object v0, p0, Lcom/android/systemui/recents/views/SystemBarScrimViews;->mConfig:Lcom/android/systemui/recents/RecentsConfiguration;
 
     invoke-virtual {v0}, Lcom/android/systemui/recents/RecentsConfiguration;->shouldAnimateNavBarScrim()Z
@@ -82,7 +71,6 @@
 
     iput-boolean v0, p0, Lcom/android/systemui/recents/views/SystemBarScrimViews;->mShouldAnimateNavBarScrim:Z
 
-    .line 50
     iget-object v0, p0, Lcom/android/systemui/recents/views/SystemBarScrimViews;->mConfig:Lcom/android/systemui/recents/RecentsConfiguration;
 
     invoke-virtual {v0}, Lcom/android/systemui/recents/RecentsConfiguration;->hasStatusBarScrim()Z
@@ -91,7 +79,6 @@
 
     iput-boolean v0, p0, Lcom/android/systemui/recents/views/SystemBarScrimViews;->mHasStatusBarScrim:Z
 
-    .line 51
     iget-object v0, p0, Lcom/android/systemui/recents/views/SystemBarScrimViews;->mConfig:Lcom/android/systemui/recents/RecentsConfiguration;
 
     invoke-virtual {v0}, Lcom/android/systemui/recents/RecentsConfiguration;->shouldAnimateStatusBarScrim()Z
@@ -100,7 +87,6 @@
 
     iput-boolean v0, p0, Lcom/android/systemui/recents/views/SystemBarScrimViews;->mShouldAnimateStatusBarScrim:Z
 
-    .line 53
     iget-object v3, p0, Lcom/android/systemui/recents/views/SystemBarScrimViews;->mNavBarScrimView:Landroid/view/View;
 
     iget-boolean v0, p0, Lcom/android/systemui/recents/views/SystemBarScrimViews;->mHasNavBarScrim:Z
@@ -116,7 +102,6 @@
     :goto_0
     invoke-virtual {v3, v0}, Landroid/view/View;->setVisibility(I)V
 
-    .line 55
     iget-object v0, p0, Lcom/android/systemui/recents/views/SystemBarScrimViews;->mStatusBarScrimView:Landroid/view/View;
 
     iget-boolean v3, p0, Lcom/android/systemui/recents/views/SystemBarScrimViews;->mHasStatusBarScrim:Z
@@ -130,29 +115,24 @@
     :goto_1
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 57
     return-void
 
     :cond_0
     move v0, v2
 
-    .line 53
     goto :goto_0
 
     :cond_1
     move v1, v2
 
-    .line 55
     goto :goto_1
 .end method
 
 .method public startEnterRecentsAnimation()V
     .locals 5
 
-    .prologue
     const/4 v4, 0x0
 
-    .line 63
     iget-boolean v0, p0, Lcom/android/systemui/recents/views/SystemBarScrimViews;->mHasStatusBarScrim:Z
 
     if-eqz v0, :cond_0
@@ -161,7 +141,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 64
     iget-object v0, p0, Lcom/android/systemui/recents/views/SystemBarScrimViews;->mStatusBarScrimView:Landroid/view/View;
 
     iget-object v1, p0, Lcom/android/systemui/recents/views/SystemBarScrimViews;->mStatusBarScrimView:Landroid/view/View;
@@ -176,7 +155,6 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setTranslationY(F)V
 
-    .line 65
     iget-object v0, p0, Lcom/android/systemui/recents/views/SystemBarScrimViews;->mStatusBarScrimView:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
@@ -225,7 +203,6 @@
 
     invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 78
     :cond_0
     iget-boolean v0, p0, Lcom/android/systemui/recents/views/SystemBarScrimViews;->mHasNavBarScrim:Z
 
@@ -235,7 +212,6 @@
 
     if-eqz v0, :cond_1
 
-    .line 79
     iget-object v0, p0, Lcom/android/systemui/recents/views/SystemBarScrimViews;->mNavBarScrimView:Landroid/view/View;
 
     iget-object v1, p0, Lcom/android/systemui/recents/views/SystemBarScrimViews;->mNavBarScrimView:Landroid/view/View;
@@ -248,7 +224,6 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setTranslationY(F)V
 
-    .line 80
     iget-object v0, p0, Lcom/android/systemui/recents/views/SystemBarScrimViews;->mNavBarScrimView:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
@@ -297,7 +272,6 @@
 
     invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 93
     :cond_1
     return-void
 .end method
@@ -305,10 +279,8 @@
 .method public startExitRecentsAnimation()V
     .locals 6
 
-    .prologue
     const-wide/16 v4, 0x0
 
-    .line 100
     iget-boolean v0, p0, Lcom/android/systemui/recents/views/SystemBarScrimViews;->mHasStatusBarScrim:Z
 
     if-eqz v0, :cond_0
@@ -317,7 +289,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 101
     iget-object v0, p0, Lcom/android/systemui/recents/views/SystemBarScrimViews;->mStatusBarScrimView:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
@@ -362,7 +333,6 @@
 
     invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 108
     :cond_0
     iget-boolean v0, p0, Lcom/android/systemui/recents/views/SystemBarScrimViews;->mHasNavBarScrim:Z
 
@@ -372,7 +342,6 @@
 
     if-eqz v0, :cond_1
 
-    .line 109
     iget-object v0, p0, Lcom/android/systemui/recents/views/SystemBarScrimViews;->mNavBarScrimView:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
@@ -415,7 +384,6 @@
 
     invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 116
     :cond_1
     return-void
 .end method

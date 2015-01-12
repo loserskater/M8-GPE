@@ -35,8 +35,6 @@
 .method constructor <init>(Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;Z)V
     .locals 0
 
-    .prologue
-    .line 323
     iput-object p1, p0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$2;->this$0:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;
 
     iput-boolean p2, p0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$2;->val$enabled:Z
@@ -50,13 +48,9 @@
 # virtual methods
 .method protected bridge synthetic doInBackground([Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
-    .param p1, "x0"    # [Ljava/lang/Object;
 
-    .prologue
-    .line 323
     check-cast p1, [Ljava/lang/Void;
 
-    .end local p1    # "x0":[Ljava/lang/Object;
     invoke-virtual {p0, p1}, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$2;->doInBackground([Ljava/lang/Void;)Ljava/lang/Void;
 
     move-result-object v0
@@ -66,12 +60,9 @@
 
 .method protected varargs doInBackground([Ljava/lang/Void;)Ljava/lang/Void;
     .locals 4
-    .param p1, "args"    # [Ljava/lang/Void;
 
-    .prologue
     const/4 v3, 0x0
 
-    .line 327
     iget-object v1, p0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$2;->this$0:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;
 
     iget-object v1, v1, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;->mWifiManager:Landroid/net/wifi/WifiManager;
@@ -80,8 +71,6 @@
 
     move-result v0
 
-    .line 328
-    .local v0, "wifiApState":I
     iget-boolean v1, p0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$2;->val$enabled:Z
 
     if-eqz v1, :cond_1
@@ -94,7 +83,6 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 330
     :cond_0
     iget-object v1, p0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$2;->this$0:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;
 
@@ -104,7 +92,6 @@
 
     invoke-virtual {v1, v3, v2}, Landroid/net/wifi/WifiManager;->setWifiApEnabled(Landroid/net/wifi/WifiConfiguration;Z)Z
 
-    .line 333
     :cond_1
     iget-object v1, p0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$2;->this$0:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;
 
@@ -114,6 +101,5 @@
 
     invoke-virtual {v1, v2}, Landroid/net/wifi/WifiManager;->setWifiEnabled(Z)Z
 
-    .line 334
     return-object v3
 .end method

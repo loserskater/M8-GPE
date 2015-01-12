@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/systemui/SearchPanelCircleView;)V
     .locals 0
 
-    .prologue
-    .line 71
     iput-object p1, p0, Lcom/android/systemui/SearchPanelCircleView$1;->this$0:Lcom/android/systemui/SearchPanelCircleView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,10 +36,7 @@
 # virtual methods
 .method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 2
-    .param p1, "animation"    # Landroid/animation/ValueAnimator;
 
-    .prologue
-    .line 74
     iget-object v1, p0, Lcom/android/systemui/SearchPanelCircleView$1;->this$0:Lcom/android/systemui/SearchPanelCircleView;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
@@ -57,12 +52,10 @@
     # invokes: Lcom/android/systemui/SearchPanelCircleView;->applyCircleSize(F)V
     invoke-static {v1, v0}, Lcom/android/systemui/SearchPanelCircleView;->access$000(Lcom/android/systemui/SearchPanelCircleView;F)V
 
-    .line 75
     iget-object v0, p0, Lcom/android/systemui/SearchPanelCircleView$1;->this$0:Lcom/android/systemui/SearchPanelCircleView;
 
     # invokes: Lcom/android/systemui/SearchPanelCircleView;->updateElevation()V
     invoke-static {v0}, Lcom/android/systemui/SearchPanelCircleView;->access$100(Lcom/android/systemui/SearchPanelCircleView;)V
 
-    .line 76
     return-void
 .end method

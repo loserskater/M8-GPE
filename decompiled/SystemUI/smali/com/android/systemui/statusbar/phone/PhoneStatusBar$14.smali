@@ -27,8 +27,6 @@
 .method constructor <init>(Lcom/android/systemui/statusbar/phone/PhoneStatusBar;Lcom/android/systemui/statusbar/phone/QSTileHost;)V
     .locals 0
 
-    .prologue
-    .line 891
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$14;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     iput-object p2, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$14;->val$qsh:Lcom/android/systemui/statusbar/phone/QSTileHost;
@@ -43,8 +41,6 @@
 .method public onTilesChanged()V
     .locals 2
 
-    .prologue
-    .line 894
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$14;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     # getter for: Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mQSPanel:Lcom/android/systemui/qs/QSPanel;
@@ -60,6 +56,5 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/qs/QSPanel;->setTiles(Ljava/util/Collection;)V
 
-    .line 895
     return-void
 .end method

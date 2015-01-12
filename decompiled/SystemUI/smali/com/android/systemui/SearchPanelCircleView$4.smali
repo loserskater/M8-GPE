@@ -22,8 +22,6 @@
 .method constructor <init>(Lcom/android/systemui/SearchPanelCircleView;)V
     .locals 0
 
-    .prologue
-    .line 108
     iput-object p1, p0, Lcom/android/systemui/SearchPanelCircleView$4;->this$0:Lcom/android/systemui/SearchPanelCircleView;
 
     invoke-direct {p0}, Landroid/view/ViewOutlineProvider;-><init>()V
@@ -35,11 +33,7 @@
 # virtual methods
 .method public getOutline(Landroid/view/View;Landroid/graphics/Outline;)V
     .locals 2
-    .param p1, "view"    # Landroid/view/View;
-    .param p2, "outline"    # Landroid/graphics/Outline;
 
-    .prologue
-    .line 111
     iget-object v0, p0, Lcom/android/systemui/SearchPanelCircleView$4;->this$0:Lcom/android/systemui/SearchPanelCircleView;
 
     # getter for: Lcom/android/systemui/SearchPanelCircleView;->mCircleSize:F
@@ -53,7 +47,6 @@
 
     if-lez v0, :cond_0
 
-    .line 112
     iget-object v0, p0, Lcom/android/systemui/SearchPanelCircleView$4;->this$0:Lcom/android/systemui/SearchPanelCircleView;
 
     # getter for: Lcom/android/systemui/SearchPanelCircleView;->mCircleRect:Landroid/graphics/Rect;
@@ -63,7 +56,6 @@
 
     invoke-virtual {p2, v0}, Landroid/graphics/Outline;->setOval(Landroid/graphics/Rect;)V
 
-    .line 116
     :goto_0
     iget-object v0, p0, Lcom/android/systemui/SearchPanelCircleView$4;->this$0:Lcom/android/systemui/SearchPanelCircleView;
 
@@ -74,10 +66,8 @@
 
     invoke-virtual {p2, v0}, Landroid/graphics/Outline;->setAlpha(F)V
 
-    .line 117
     return-void
 
-    .line 114
     :cond_0
     invoke-virtual {p2}, Landroid/graphics/Outline;->setEmpty()V
 

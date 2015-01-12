@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/systemui/qs/tiles/CastTile$CastDetailAdapter;)V
     .locals 0
 
-    .prologue
-    .line 171
     iput-object p1, p0, Lcom/android/systemui/qs/tiles/CastTile$CastDetailAdapter$1;->this$1:Lcom/android/systemui/qs/tiles/CastTile$CastDetailAdapter;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,10 +36,7 @@
 # virtual methods
 .method public onViewAttachedToWindow(Landroid/view/View;)V
     .locals 2
-    .param p1, "v"    # Landroid/view/View;
 
-    .prologue
-    .line 174
     # getter for: Lcom/android/systemui/qs/tiles/CastTile;->DEBUG:Z
     invoke-static {}, Lcom/android/systemui/qs/tiles/CastTile;->access$800()Z
 
@@ -62,17 +57,13 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 175
     :cond_0
     return-void
 .end method
 
 .method public onViewDetachedFromWindow(Landroid/view/View;)V
     .locals 2
-    .param p1, "v"    # Landroid/view/View;
 
-    .prologue
-    .line 179
     # getter for: Lcom/android/systemui/qs/tiles/CastTile;->DEBUG:Z
     invoke-static {}, Lcom/android/systemui/qs/tiles/CastTile;->access$1000()Z
 
@@ -93,7 +84,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 180
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/CastTile$CastDetailAdapter$1;->this$1:Lcom/android/systemui/qs/tiles/CastTile$CastDetailAdapter;
 
@@ -104,6 +94,5 @@
 
     invoke-virtual {v0}, Ljava/util/LinkedHashMap;->clear()V
 
-    .line 181
     return-void
 .end method

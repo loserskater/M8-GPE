@@ -27,8 +27,6 @@
 .method constructor <init>(Lcom/android/systemui/recents/views/TaskView;Lcom/android/systemui/recents/views/ViewAnimation$TaskViewEnterContext;)V
     .locals 0
 
-    .prologue
-    .line 329
     iput-object p1, p0, Lcom/android/systemui/recents/views/TaskView$4;->this$0:Lcom/android/systemui/recents/views/TaskView;
 
     iput-object p2, p0, Lcom/android/systemui/recents/views/TaskView$4;->val$ctx:Lcom/android/systemui/recents/views/ViewAnimation$TaskViewEnterContext;
@@ -43,41 +41,34 @@
 .method public run()V
     .locals 3
 
-    .prologue
     const/4 v1, 0x0
 
-    .line 332
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView$4;->this$0:Lcom/android/systemui/recents/views/TaskView;
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/recents/views/TaskView;->setIsFullScreen(Z)V
 
-    .line 333
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView$4;->this$0:Lcom/android/systemui/recents/views/TaskView;
 
     invoke-virtual {v0}, Lcom/android/systemui/recents/views/TaskView;->requestLayout()V
 
-    .line 336
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView$4;->this$0:Lcom/android/systemui/recents/views/TaskView;
 
     iget-object v0, v0, Lcom/android/systemui/recents/views/TaskView;->mViewBounds:Lcom/android/systemui/recents/views/AnimateableViewBounds;
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/recents/views/AnimateableViewBounds;->setClipTop(I)V
 
-    .line 337
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView$4;->this$0:Lcom/android/systemui/recents/views/TaskView;
 
     iget-object v0, v0, Lcom/android/systemui/recents/views/TaskView;->mViewBounds:Lcom/android/systemui/recents/views/AnimateableViewBounds;
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/recents/views/AnimateableViewBounds;->setClipBottom(I)V
 
-    .line 338
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView$4;->this$0:Lcom/android/systemui/recents/views/TaskView;
 
     iget-object v0, v0, Lcom/android/systemui/recents/views/TaskView;->mViewBounds:Lcom/android/systemui/recents/views/AnimateableViewBounds;
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/recents/views/AnimateableViewBounds;->setClipRight(I)V
 
-    .line 340
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView$4;->this$0:Lcom/android/systemui/recents/views/TaskView;
 
     iget-object v0, v0, Lcom/android/systemui/recents/views/TaskView;->mHeaderView:Lcom/android/systemui/recents/views/TaskViewHeader;
@@ -86,7 +77,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/recents/views/TaskViewHeader;->setTranslationY(F)V
 
-    .line 342
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView$4;->this$0:Lcom/android/systemui/recents/views/TaskView;
 
     const/4 v1, 0x1
@@ -99,7 +89,6 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/android/systemui/recents/views/TaskView;->animateFooterVisibility(ZI)V
 
-    .line 345
     invoke-static {}, Lcom/android/systemui/recents/model/RecentsTaskLoader;->getInstance()Lcom/android/systemui/recents/model/RecentsTaskLoader;
 
     move-result-object v0
@@ -110,23 +99,19 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/recents/model/RecentsTaskLoader;->loadTaskData(Lcom/android/systemui/recents/model/Task;)V
 
-    .line 347
     invoke-static {}, Lcom/android/systemui/recents/AlternateRecentsComponent;->consumeLastScreenshot()V
 
-    .line 349
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView$4;->this$0:Lcom/android/systemui/recents/views/TaskView;
 
     iget-object v0, v0, Lcom/android/systemui/recents/views/TaskView;->mCb:Lcom/android/systemui/recents/views/TaskView$TaskViewCallbacks;
 
     invoke-interface {v0}, Lcom/android/systemui/recents/views/TaskView$TaskViewCallbacks;->onTaskViewFullScreenTransitionCompleted()V
 
-    .line 352
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView$4;->val$ctx:Lcom/android/systemui/recents/views/ViewAnimation$TaskViewEnterContext;
 
     iget-object v0, v0, Lcom/android/systemui/recents/views/ViewAnimation$TaskViewEnterContext;->postAnimationTrigger:Lcom/android/systemui/recents/misc/ReferenceCountedTrigger;
 
     invoke-virtual {v0}, Lcom/android/systemui/recents/misc/ReferenceCountedTrigger;->decrement()V
 
-    .line 353
     return-void
 .end method

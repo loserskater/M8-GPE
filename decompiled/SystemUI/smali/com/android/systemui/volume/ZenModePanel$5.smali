@@ -29,8 +29,6 @@
 .method constructor <init>(Lcom/android/systemui/volume/ZenModePanel;Landroid/view/View;Lcom/android/systemui/volume/ZenModePanel$ConditionTag;)V
     .locals 0
 
-    .prologue
-    .line 465
     iput-object p1, p0, Lcom/android/systemui/volume/ZenModePanel$5;->this$0:Lcom/android/systemui/volume/ZenModePanel;
 
     iput-object p2, p0, Lcom/android/systemui/volume/ZenModePanel$5;->val$row:Landroid/view/View;
@@ -46,10 +44,7 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 4
-    .param p1, "v"    # Landroid/view/View;
 
-    .prologue
-    .line 468
     iget-object v0, p0, Lcom/android/systemui/volume/ZenModePanel$5;->this$0:Lcom/android/systemui/volume/ZenModePanel;
 
     iget-object v1, p0, Lcom/android/systemui/volume/ZenModePanel$5;->val$row:Landroid/view/View;
@@ -61,6 +56,5 @@
     # invokes: Lcom/android/systemui/volume/ZenModePanel;->onClickTimeButton(Landroid/view/View;Lcom/android/systemui/volume/ZenModePanel$ConditionTag;Z)V
     invoke-static {v0, v1, v2, v3}, Lcom/android/systemui/volume/ZenModePanel;->access$1200(Lcom/android/systemui/volume/ZenModePanel;Landroid/view/View;Lcom/android/systemui/volume/ZenModePanel$ConditionTag;Z)V
 
-    .line 469
     return-void
 .end method

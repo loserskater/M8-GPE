@@ -27,8 +27,6 @@
 .method constructor <init>(Lcom/android/keyguard/KeyguardAccountView;Z)V
     .locals 0
 
-    .prologue
-    .line 164
     iput-object p1, p0, Lcom/android/keyguard/KeyguardAccountView$1;->this$0:Lcom/android/keyguard/KeyguardAccountView;
 
     iput-boolean p2, p0, Lcom/android/keyguard/KeyguardAccountView$1;->val$success:Z
@@ -43,17 +41,14 @@
 .method public run()V
     .locals 5
 
-    .prologue
     const/4 v4, 0x1
 
     const/4 v3, 0x0
 
-    .line 166
     iget-boolean v1, p0, Lcom/android/keyguard/KeyguardAccountView$1;->val$success:Z
 
     if-eqz v1, :cond_0
 
-    .line 168
     iget-object v1, p0, Lcom/android/keyguard/KeyguardAccountView$1;->this$0:Lcom/android/keyguard/KeyguardAccountView;
 
     # getter for: Lcom/android/keyguard/KeyguardAccountView;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
@@ -63,7 +58,6 @@
 
     invoke-virtual {v1, v3}, Lcom/android/internal/widget/LockPatternUtils;->setPermanentlyLocked(Z)V
 
-    .line 169
     iget-object v1, p0, Lcom/android/keyguard/KeyguardAccountView$1;->this$0:Lcom/android/keyguard/KeyguardAccountView;
 
     # getter for: Lcom/android/keyguard/KeyguardAccountView;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
@@ -73,7 +67,6 @@
 
     invoke-virtual {v1, v3}, Lcom/android/internal/widget/LockPatternUtils;->setLockPatternEnabled(Z)V
 
-    .line 170
     iget-object v1, p0, Lcom/android/keyguard/KeyguardAccountView$1;->this$0:Lcom/android/keyguard/KeyguardAccountView;
 
     # getter for: Lcom/android/keyguard/KeyguardAccountView;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
@@ -85,25 +78,20 @@
 
     invoke-virtual {v1, v2}, Lcom/android/internal/widget/LockPatternUtils;->saveLockPattern(Ljava/util/List;)V
 
-    .line 174
     new-instance v0, Landroid/content/Intent;
 
     invoke-direct {v0}, Landroid/content/Intent;-><init>()V
 
-    .line 175
-    .local v0, "intent":Landroid/content/Intent;
     const-string v1, "com.android.settings"
 
     const-string v2, "com.android.settings.ChooseLockGeneric"
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 176
     const/high16 v1, 0x10000000
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
-    .line 177
     iget-object v1, p0, Lcom/android/keyguard/KeyguardAccountView$1;->this$0:Lcom/android/keyguard/KeyguardAccountView;
 
     # getter for: Lcom/android/keyguard/KeyguardAccountView;->mContext:Landroid/content/Context;
@@ -128,7 +116,6 @@
 
     invoke-virtual {v1, v0, v2}, Landroid/content/Context;->startActivityAsUser(Landroid/content/Intent;Landroid/os/UserHandle;)V
 
-    .line 179
     iget-object v1, p0, Lcom/android/keyguard/KeyguardAccountView$1;->this$0:Lcom/android/keyguard/KeyguardAccountView;
 
     # getter for: Lcom/android/keyguard/KeyguardAccountView;->mCallback:Lcom/android/keyguard/KeyguardSecurityCallback;
@@ -138,7 +125,6 @@
 
     invoke-interface {v1, v4}, Lcom/android/keyguard/KeyguardSecurityCallback;->reportUnlockAttempt(Z)V
 
-    .line 182
     iget-object v1, p0, Lcom/android/keyguard/KeyguardAccountView$1;->this$0:Lcom/android/keyguard/KeyguardAccountView;
 
     # getter for: Lcom/android/keyguard/KeyguardAccountView;->mCallback:Lcom/android/keyguard/KeyguardSecurityCallback;
@@ -148,12 +134,9 @@
 
     invoke-interface {v1, v4}, Lcom/android/keyguard/KeyguardSecurityCallback;->dismiss(Z)V
 
-    .line 188
-    .end local v0    # "intent":Landroid/content/Intent;
     :goto_0
     return-void
 
-    .line 184
     :cond_0
     iget-object v1, p0, Lcom/android/keyguard/KeyguardAccountView$1;->this$0:Lcom/android/keyguard/KeyguardAccountView;
 
@@ -166,7 +149,6 @@
 
     invoke-interface {v1, v2, v4}, Lcom/android/keyguard/SecurityMessageDisplay;->setMessage(IZ)V
 
-    .line 185
     iget-object v1, p0, Lcom/android/keyguard/KeyguardAccountView$1;->this$0:Lcom/android/keyguard/KeyguardAccountView;
 
     # getter for: Lcom/android/keyguard/KeyguardAccountView;->mPassword:Landroid/widget/EditText;
@@ -178,7 +160,6 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    .line 186
     iget-object v1, p0, Lcom/android/keyguard/KeyguardAccountView$1;->this$0:Lcom/android/keyguard/KeyguardAccountView;
 
     # getter for: Lcom/android/keyguard/KeyguardAccountView;->mCallback:Lcom/android/keyguard/KeyguardSecurityCallback;

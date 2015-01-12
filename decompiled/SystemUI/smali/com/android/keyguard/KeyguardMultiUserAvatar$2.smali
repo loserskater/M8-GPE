@@ -24,8 +24,6 @@
 .method constructor <init>(Lcom/android/keyguard/KeyguardMultiUserAvatar;Ljava/lang/Runnable;)V
     .locals 0
 
-    .prologue
-    .line 202
     iput-object p1, p0, Lcom/android/keyguard/KeyguardMultiUserAvatar$2;->this$0:Lcom/android/keyguard/KeyguardMultiUserAvatar;
 
     iput-object p2, p0, Lcom/android/keyguard/KeyguardMultiUserAvatar$2;->val$onComplete:Ljava/lang/Runnable;
@@ -39,20 +37,15 @@
 # virtual methods
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
-    .param p1, "animation"    # Landroid/animation/Animator;
 
-    .prologue
-    .line 205
     iget-object v0, p0, Lcom/android/keyguard/KeyguardMultiUserAvatar$2;->val$onComplete:Ljava/lang/Runnable;
 
     if-eqz v0, :cond_0
 
-    .line 206
     iget-object v0, p0, Lcom/android/keyguard/KeyguardMultiUserAvatar$2;->val$onComplete:Ljava/lang/Runnable;
 
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
-    .line 208
     :cond_0
     return-void
 .end method

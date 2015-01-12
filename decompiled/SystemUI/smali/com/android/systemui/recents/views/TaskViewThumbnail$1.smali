@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/systemui/recents/views/TaskViewThumbnail;)V
     .locals 0
 
-    .prologue
-    .line 59
     iput-object p1, p0, Lcom/android/systemui/recents/views/TaskViewThumbnail$1;->this$0:Lcom/android/systemui/recents/views/TaskViewThumbnail;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,10 +36,7 @@
 # virtual methods
 .method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 2
-    .param p1, "animation"    # Landroid/animation/ValueAnimator;
 
-    .prologue
-    .line 62
     iget-object v1, p0, Lcom/android/systemui/recents/views/TaskViewThumbnail$1;->this$0:Lcom/android/systemui/recents/views/TaskViewThumbnail;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
@@ -57,12 +52,10 @@
     # setter for: Lcom/android/systemui/recents/views/TaskViewThumbnail;->mBitmapAlpha:F
     invoke-static {v1, v0}, Lcom/android/systemui/recents/views/TaskViewThumbnail;->access$002(Lcom/android/systemui/recents/views/TaskViewThumbnail;F)F
 
-    .line 63
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskViewThumbnail$1;->this$0:Lcom/android/systemui/recents/views/TaskViewThumbnail;
 
     # invokes: Lcom/android/systemui/recents/views/TaskViewThumbnail;->updateFilter()V
     invoke-static {v0}, Lcom/android/systemui/recents/views/TaskViewThumbnail;->access$100(Lcom/android/systemui/recents/views/TaskViewThumbnail;)V
 
-    .line 64
     return-void
 .end method

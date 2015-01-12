@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/keyguard/CameraWidgetFrame;)V
     .locals 0
 
-    .prologue
-    .line 89
     iput-object p1, p0, Lcom/android/keyguard/CameraWidgetFrame$3;->this$0:Lcom/android/keyguard/CameraWidgetFrame;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,8 +37,6 @@
 .method public run()V
     .locals 2
 
-    .prologue
-    .line 92
     iget-object v0, p0, Lcom/android/keyguard/CameraWidgetFrame$3;->this$0:Lcom/android/keyguard/CameraWidgetFrame;
 
     # getter for: Lcom/android/keyguard/CameraWidgetFrame;->mHandler:Landroid/os/Handler;
@@ -57,6 +53,5 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 93
     return-void
 .end method

@@ -12,23 +12,17 @@
 # direct methods
 .method public constructor <init>(Ljava/lang/Runnable;)V
     .locals 1
-    .param p1, "triggeredRunnable"    # Ljava/lang/Runnable;
 
-    .prologue
-    .line 36
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 37
     new-instance v0, Landroid/os/Handler;
 
     invoke-direct {v0}, Landroid/os/Handler;-><init>()V
 
     iput-object v0, p0, Lcom/android/systemui/recents/misc/DebugTrigger;->mHandler:Landroid/os/Handler;
 
-    .line 38
     iput-object p1, p0, Lcom/android/systemui/recents/misc/DebugTrigger;->mTriggeredRunnable:Ljava/lang/Runnable;
 
-    .line 39
     return-void
 .end method
 
@@ -36,9 +30,6 @@
 # virtual methods
 .method public onKeyEvent(I)V
     .locals 0
-    .param p1, "keyCode"    # I
 
-    .prologue
-    .line 52
     return-void
 .end method

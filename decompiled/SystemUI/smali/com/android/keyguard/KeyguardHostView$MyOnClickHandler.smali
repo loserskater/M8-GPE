@@ -30,20 +30,15 @@
 # direct methods
 .method constructor <init>(Lcom/android/keyguard/KeyguardHostView;)V
     .locals 1
-    .param p1, "hostView"    # Lcom/android/keyguard/KeyguardHostView;
 
-    .prologue
-    .line 510
     invoke-direct {p0}, Landroid/widget/RemoteViews$OnClickHandler;-><init>()V
 
-    .line 511
     new-instance v0, Ljava/lang/ref/WeakReference;
 
     invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
 
     iput-object v0, p0, Lcom/android/keyguard/KeyguardHostView$MyOnClickHandler;->mKeyguardHostView:Ljava/lang/ref/WeakReference;
 
-    .line 512
     return-void
 .end method
 
@@ -51,14 +46,9 @@
 # virtual methods
 .method public onClickHandler(Landroid/view/View;Landroid/app/PendingIntent;Landroid/content/Intent;)Z
     .locals 3
-    .param p1, "view"    # Landroid/view/View;
-    .param p2, "pendingIntent"    # Landroid/app/PendingIntent;
-    .param p3, "fillInIntent"    # Landroid/content/Intent;
 
-    .prologue
     const/4 v1, 0x1
 
-    .line 518
     iget-object v2, p0, Lcom/android/keyguard/KeyguardHostView$MyOnClickHandler;->mKeyguardHostView:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v2}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
@@ -67,18 +57,13 @@
 
     check-cast v0, Lcom/android/keyguard/KeyguardHostView;
 
-    .line 519
-    .local v0, "hostView":Lcom/android/keyguard/KeyguardHostView;
     if-nez v0, :cond_0
 
-    .line 520
     const/4 v1, 0x0
 
-    .line 552
     :goto_0
     return v1
 
-    .line 522
     :cond_0
     invoke-virtual {p2}, Landroid/app/PendingIntent;->isActivity()Z
 
@@ -86,14 +71,12 @@
 
     if-eqz v2, :cond_2
 
-    .line 523
     new-instance v2, Lcom/android/keyguard/KeyguardHostView$MyOnClickHandler$1;
 
     invoke-direct {v2, p0, p1, p2, p3}, Lcom/android/keyguard/KeyguardHostView$MyOnClickHandler$1;-><init>(Lcom/android/keyguard/KeyguardHostView$MyOnClickHandler;Landroid/view/View;Landroid/app/PendingIntent;Landroid/content/Intent;)V
 
     invoke-virtual {v0, v2}, Lcom/android/keyguard/KeyguardHostView;->setOnDismissAction(Lcom/android/keyguard/KeyguardHostView$OnDismissAction;)V
 
-    .line 545
     # getter for: Lcom/android/keyguard/KeyguardHostView;->mViewStateManager:Lcom/android/keyguard/KeyguardViewStateManager;
     invoke-static {v0}, Lcom/android/keyguard/KeyguardHostView;->access$600(Lcom/android/keyguard/KeyguardHostView;)Lcom/android/keyguard/KeyguardViewStateManager;
 
@@ -105,7 +88,6 @@
 
     if-eqz v2, :cond_1
 
-    .line 546
     # getter for: Lcom/android/keyguard/KeyguardHostView;->mViewStateManager:Lcom/android/keyguard/KeyguardViewStateManager;
     invoke-static {v0}, Lcom/android/keyguard/KeyguardHostView;->access$600(Lcom/android/keyguard/KeyguardHostView;)Lcom/android/keyguard/KeyguardViewStateManager;
 
@@ -115,13 +97,11 @@
 
     goto :goto_0
 
-    .line 548
     :cond_1
     invoke-virtual {v0}, Lcom/android/keyguard/KeyguardHostView;->dismiss()Z
 
     goto :goto_0
 
-    .line 552
     :cond_2
     invoke-super {p0, p1, p2, p3}, Landroid/widget/RemoteViews$OnClickHandler;->onClickHandler(Landroid/view/View;Landroid/app/PendingIntent;Landroid/content/Intent;)Z
 

@@ -37,8 +37,6 @@
 .method constructor <init>(Lcom/android/keyguard/KeyguardMultiUserAvatar;FFFFII)V
     .locals 0
 
-    .prologue
-    .line 189
     iput-object p1, p0, Lcom/android/keyguard/KeyguardMultiUserAvatar$1;->this$0:Lcom/android/keyguard/KeyguardMultiUserAvatar;
 
     iput p2, p0, Lcom/android/keyguard/KeyguardMultiUserAvatar$1;->val$initScale:F
@@ -62,20 +60,15 @@
 # virtual methods
 .method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 8
-    .param p1, "animation"    # Landroid/animation/ValueAnimator;
 
-    .prologue
     const/16 v7, 0xff
 
     const/high16 v6, 0x3f800000
 
-    .line 192
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedFraction()F
 
     move-result v1
 
-    .line 193
-    .local v1, "r":F
     sub-float v4, v6, v1
 
     iget v5, p0, Lcom/android/keyguard/KeyguardMultiUserAvatar$1;->val$initScale:F
@@ -88,8 +81,6 @@
 
     add-float v2, v4, v5
 
-    .line 194
-    .local v2, "scale":F
     sub-float v4, v6, v1
 
     iget v5, p0, Lcom/android/keyguard/KeyguardMultiUserAvatar$1;->val$initAlpha:F
@@ -102,8 +93,6 @@
 
     add-float v0, v4, v5
 
-    .line 195
-    .local v0, "alpha":F
     sub-float v4, v6, v1
 
     iget v5, p0, Lcom/android/keyguard/KeyguardMultiUserAvatar$1;->val$initTextAlpha:I
@@ -122,8 +111,6 @@
 
     float-to-int v3, v4
 
-    .line 196
-    .local v3, "textAlpha":I
     iget-object v4, p0, Lcom/android/keyguard/KeyguardMultiUserAvatar$1;->this$0:Lcom/android/keyguard/KeyguardMultiUserAvatar;
 
     # getter for: Lcom/android/keyguard/KeyguardMultiUserAvatar;->mFramed:Lcom/android/keyguard/KeyguardCircleFramedDrawable;
@@ -133,7 +120,6 @@
 
     invoke-virtual {v4, v2}, Lcom/android/keyguard/KeyguardCircleFramedDrawable;->setScale(F)V
 
-    .line 197
     iget-object v4, p0, Lcom/android/keyguard/KeyguardMultiUserAvatar$1;->this$0:Lcom/android/keyguard/KeyguardMultiUserAvatar;
 
     # getter for: Lcom/android/keyguard/KeyguardMultiUserAvatar;->mUserImage:Landroid/widget/ImageView;
@@ -143,7 +129,6 @@
 
     invoke-virtual {v4, v0}, Landroid/widget/ImageView;->setAlpha(F)V
 
-    .line 198
     iget-object v4, p0, Lcom/android/keyguard/KeyguardMultiUserAvatar$1;->this$0:Lcom/android/keyguard/KeyguardMultiUserAvatar;
 
     # getter for: Lcom/android/keyguard/KeyguardMultiUserAvatar;->mUserName:Landroid/widget/TextView;
@@ -157,7 +142,6 @@
 
     invoke-virtual {v4, v5}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 199
     iget-object v4, p0, Lcom/android/keyguard/KeyguardMultiUserAvatar$1;->this$0:Lcom/android/keyguard/KeyguardMultiUserAvatar;
 
     # getter for: Lcom/android/keyguard/KeyguardMultiUserAvatar;->mUserImage:Landroid/widget/ImageView;
@@ -167,6 +151,5 @@
 
     invoke-virtual {v4}, Landroid/widget/ImageView;->invalidate()V
 
-    .line 200
     return-void
 .end method

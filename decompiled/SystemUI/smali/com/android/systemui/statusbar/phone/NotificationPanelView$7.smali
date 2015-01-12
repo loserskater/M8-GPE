@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)V
     .locals 0
 
-    .prologue
-    .line 858
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$7;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,26 +36,11 @@
 # virtual methods
 .method public onLayoutChange(Landroid/view/View;IIIIIIII)V
     .locals 8
-    .param p1, "v"    # Landroid/view/View;
-    .param p2, "left"    # I
-    .param p3, "top"    # I
-    .param p4, "right"    # I
-    .param p5, "bottom"    # I
-    .param p6, "oldLeft"    # I
-    .param p7, "oldTop"    # I
-    .param p8, "oldRight"    # I
-    .param p9, "oldBottom"    # I
 
-    .prologue
-    .line 862
     sub-int v3, p9, p7
 
-    .line 863
-    .local v3, "oldHeight":I
     sub-int v0, p5, p3
 
-    .line 864
-    .local v0, "height":I
     if-eq v0, v3, :cond_0
 
     iget-object v5, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$7;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
@@ -69,7 +52,6 @@
 
     if-eqz v5, :cond_0
 
-    .line 865
     iget-object v5, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$7;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
     # getter for: Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mQsContainerAnimator:Landroid/animation/ObjectAnimator;
@@ -81,8 +63,6 @@
 
     move-result-object v4
 
-    .line 866
-    .local v4, "values":[Landroid/animation/PropertyValuesHolder;
     iget-object v5, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$7;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
     # getter for: Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mHeader:Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;
@@ -109,16 +89,12 @@
 
     int-to-float v1, v5
 
-    .line 867
-    .local v1, "newEndValue":F
     neg-int v5, v0
 
     sub-int/2addr v5, p3
 
     int-to-float v2, v5
 
-    .line 868
-    .local v2, "newStartValue":F
     const/4 v5, 0x0
 
     aget-object v5, v4, v5
@@ -137,7 +113,6 @@
 
     invoke-virtual {v5, v6}, Landroid/animation/PropertyValuesHolder;->setFloatValues([F)V
 
-    .line 869
     iget-object v5, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$7;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
     # getter for: Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mQsContainerAnimator:Landroid/animation/ObjectAnimator;
@@ -158,10 +133,6 @@
 
     invoke-virtual {v5, v6, v7}, Landroid/animation/ObjectAnimator;->setCurrentPlayTime(J)V
 
-    .line 871
-    .end local v1    # "newEndValue":F
-    .end local v2    # "newStartValue":F
-    .end local v4    # "values":[Landroid/animation/PropertyValuesHolder;
     :cond_0
     return-void
 .end method

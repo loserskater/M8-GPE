@@ -28,22 +28,15 @@
 # direct methods
 .method public constructor <init>(Lcom/android/systemui/recents/RecentsActivity;Landroid/content/Intent;Landroid/app/ActivityOptions;)V
     .locals 0
-    .param p2, "launchIntent"    # Landroid/content/Intent;
-    .param p3, "opts"    # Landroid/app/ActivityOptions;
 
-    .prologue
-    .line 97
     iput-object p1, p0, Lcom/android/systemui/recents/RecentsActivity$FinishRecentsRunnable;->this$0:Lcom/android/systemui/recents/RecentsActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 98
     iput-object p2, p0, Lcom/android/systemui/recents/RecentsActivity$FinishRecentsRunnable;->mLaunchIntent:Landroid/content/Intent;
 
-    .line 99
     iput-object p3, p0, Lcom/android/systemui/recents/RecentsActivity$FinishRecentsRunnable;->mLaunchOpts:Landroid/app/ActivityOptions;
 
-    .line 100
     return-void
 .end method
 
@@ -52,28 +45,22 @@
 .method public run()V
     .locals 4
 
-    .prologue
     const/4 v1, 0x0
 
-    .line 105
     invoke-static {v1}, Lcom/android/systemui/recents/AlternateRecentsComponent;->notifyVisibilityChanged(Z)V
 
-    .line 106
     iget-object v0, p0, Lcom/android/systemui/recents/RecentsActivity$FinishRecentsRunnable;->this$0:Lcom/android/systemui/recents/RecentsActivity;
 
     iput-boolean v1, v0, Lcom/android/systemui/recents/RecentsActivity;->mVisible:Z
 
-    .line 108
     iget-object v0, p0, Lcom/android/systemui/recents/RecentsActivity$FinishRecentsRunnable;->mLaunchIntent:Landroid/content/Intent;
 
     if-eqz v0, :cond_1
 
-    .line 109
     iget-object v0, p0, Lcom/android/systemui/recents/RecentsActivity$FinishRecentsRunnable;->mLaunchOpts:Landroid/app/ActivityOptions;
 
     if-eqz v0, :cond_0
 
-    .line 110
     iget-object v0, p0, Lcom/android/systemui/recents/RecentsActivity$FinishRecentsRunnable;->this$0:Lcom/android/systemui/recents/RecentsActivity;
 
     iget-object v1, p0, Lcom/android/systemui/recents/RecentsActivity$FinishRecentsRunnable;->mLaunchIntent:Landroid/content/Intent;
@@ -88,11 +75,9 @@
 
     invoke-virtual {v0, v1, v2, v3}, Lcom/android/systemui/recents/RecentsActivity;->startActivityAsUser(Landroid/content/Intent;Landroid/os/Bundle;Landroid/os/UserHandle;)V
 
-    .line 119
     :goto_0
     return-void
 
-    .line 112
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/recents/RecentsActivity$FinishRecentsRunnable;->this$0:Lcom/android/systemui/recents/RecentsActivity;
 
@@ -104,13 +89,11 @@
 
     goto :goto_0
 
-    .line 115
     :cond_1
     iget-object v0, p0, Lcom/android/systemui/recents/RecentsActivity$FinishRecentsRunnable;->this$0:Lcom/android/systemui/recents/RecentsActivity;
 
     invoke-virtual {v0}, Lcom/android/systemui/recents/RecentsActivity;->finish()V
 
-    .line 116
     iget-object v0, p0, Lcom/android/systemui/recents/RecentsActivity$FinishRecentsRunnable;->this$0:Lcom/android/systemui/recents/RecentsActivity;
 
     const v1, 0x7f050021

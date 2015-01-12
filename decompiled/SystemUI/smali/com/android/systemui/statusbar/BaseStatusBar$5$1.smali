@@ -29,8 +29,6 @@
 .method constructor <init>(Lcom/android/systemui/statusbar/BaseStatusBar$5;[Landroid/service/notification/StatusBarNotification;Landroid/service/notification/NotificationListenerService$RankingMap;)V
     .locals 0
 
-    .prologue
-    .line 361
     iput-object p1, p0, Lcom/android/systemui/statusbar/BaseStatusBar$5$1;->this$1:Lcom/android/systemui/statusbar/BaseStatusBar$5;
 
     iput-object p2, p0, Lcom/android/systemui/statusbar/BaseStatusBar$5$1;->val$notifications:[Landroid/service/notification/StatusBarNotification;
@@ -47,24 +45,17 @@
 .method public run()V
     .locals 6
 
-    .prologue
-    .line 364
     iget-object v0, p0, Lcom/android/systemui/statusbar/BaseStatusBar$5$1;->val$notifications:[Landroid/service/notification/StatusBarNotification;
 
-    .local v0, "arr$":[Landroid/service/notification/StatusBarNotification;
     array-length v2, v0
 
-    .local v2, "len$":I
     const/4 v1, 0x0
 
-    .local v1, "i$":I
     :goto_0
     if-ge v1, v2, :cond_0
 
     aget-object v3, v0, v1
 
-    .line 365
-    .local v3, "sbn":Landroid/service/notification/StatusBarNotification;
     iget-object v4, p0, Lcom/android/systemui/statusbar/BaseStatusBar$5$1;->this$1:Lcom/android/systemui/statusbar/BaseStatusBar$5;
 
     iget-object v4, v4, Lcom/android/systemui/statusbar/BaseStatusBar$5;->this$0:Lcom/android/systemui/statusbar/BaseStatusBar;
@@ -73,13 +64,10 @@
 
     invoke-virtual {v4, v3, v5}, Lcom/android/systemui/statusbar/BaseStatusBar;->addNotification(Landroid/service/notification/StatusBarNotification;Landroid/service/notification/NotificationListenerService$RankingMap;)V
 
-    .line 364
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 367
-    .end local v3    # "sbn":Landroid/service/notification/StatusBarNotification;
     :cond_0
     return-void
 .end method

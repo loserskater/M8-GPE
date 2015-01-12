@@ -24,8 +24,6 @@
 .method constructor <init>(Lcom/android/systemui/recents/views/TaskStackViewScroller;Ljava/lang/Runnable;)V
     .locals 0
 
-    .prologue
-    .line 144
     iput-object p1, p0, Lcom/android/systemui/recents/views/TaskStackViewScroller$2;->this$0:Lcom/android/systemui/recents/views/TaskStackViewScroller;
 
     iput-object p2, p0, Lcom/android/systemui/recents/views/TaskStackViewScroller$2;->val$postRunnable:Ljava/lang/Runnable;
@@ -39,20 +37,15 @@
 # virtual methods
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
-    .param p1, "animation"    # Landroid/animation/Animator;
 
-    .prologue
-    .line 147
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskStackViewScroller$2;->val$postRunnable:Ljava/lang/Runnable;
 
     if-eqz v0, :cond_0
 
-    .line 148
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskStackViewScroller$2;->val$postRunnable:Ljava/lang/Runnable;
 
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
-    .line 150
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskStackViewScroller$2;->this$0:Lcom/android/systemui/recents/views/TaskStackViewScroller;
 
@@ -60,6 +53,5 @@
 
     invoke-virtual {v0}, Landroid/animation/ObjectAnimator;->removeAllListeners()V
 
-    .line 151
     return-void
 .end method

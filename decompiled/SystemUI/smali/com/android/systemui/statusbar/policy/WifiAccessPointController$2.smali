@@ -35,8 +35,6 @@
 .method constructor <init>(Lcom/android/systemui/statusbar/policy/WifiAccessPointController;)V
     .locals 0
 
-    .prologue
-    .line 159
     iput-object p1, p0, Lcom/android/systemui/statusbar/policy/WifiAccessPointController$2;->this$0:Lcom/android/systemui/statusbar/policy/WifiAccessPointController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -46,10 +44,7 @@
 
 .method private score(Lcom/android/systemui/statusbar/policy/NetworkController$AccessPoint;)I
     .locals 2
-    .param p1, "ap"    # Lcom/android/systemui/statusbar/policy/NetworkController$AccessPoint;
 
-    .prologue
-    .line 166
     iget v1, p1, Lcom/android/systemui/statusbar/policy/NetworkController$AccessPoint;->level:I
 
     iget-boolean v0, p1, Lcom/android/systemui/statusbar/policy/NetworkController$AccessPoint;->isConnected:Z
@@ -73,11 +68,7 @@
 # virtual methods
 .method public compare(Lcom/android/systemui/statusbar/policy/NetworkController$AccessPoint;Lcom/android/systemui/statusbar/policy/NetworkController$AccessPoint;)I
     .locals 2
-    .param p1, "lhs"    # Lcom/android/systemui/statusbar/policy/NetworkController$AccessPoint;
-    .param p2, "rhs"    # Lcom/android/systemui/statusbar/policy/NetworkController$AccessPoint;
 
-    .prologue
-    .line 162
     invoke-direct {p0, p1}, Lcom/android/systemui/statusbar/policy/WifiAccessPointController$2;->score(Lcom/android/systemui/statusbar/policy/NetworkController$AccessPoint;)I
 
     move-result v0
@@ -97,17 +88,11 @@
 
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 1
-    .param p1, "x0"    # Ljava/lang/Object;
-    .param p2, "x1"    # Ljava/lang/Object;
 
-    .prologue
-    .line 159
     check-cast p1, Lcom/android/systemui/statusbar/policy/NetworkController$AccessPoint;
 
-    .end local p1    # "x0":Ljava/lang/Object;
     check-cast p2, Lcom/android/systemui/statusbar/policy/NetworkController$AccessPoint;
 
-    .end local p2    # "x1":Ljava/lang/Object;
     invoke-virtual {p0, p1, p2}, Lcom/android/systemui/statusbar/policy/WifiAccessPointController$2;->compare(Lcom/android/systemui/statusbar/policy/NetworkController$AccessPoint;Lcom/android/systemui/statusbar/policy/NetworkController$AccessPoint;)I
 
     move-result v0

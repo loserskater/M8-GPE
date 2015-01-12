@@ -22,8 +22,6 @@
 .method constructor <init>(Lcom/android/keyguard/KeyguardHostView;)V
     .locals 0
 
-    .prologue
-    .line 225
     iput-object p1, p0, Lcom/android/keyguard/KeyguardHostView$1;->this$0:Lcom/android/keyguard/KeyguardHostView;
 
     invoke-direct {p0}, Lcom/android/keyguard/KeyguardUpdateMonitorCallback;-><init>()V
@@ -36,8 +34,6 @@
 .method public onBootCompleted()V
     .locals 2
 
-    .prologue
-    .line 228
     iget-object v0, p0, Lcom/android/keyguard/KeyguardHostView$1;->this$0:Lcom/android/keyguard/KeyguardHostView;
 
     # getter for: Lcom/android/keyguard/KeyguardHostView;->mPostBootCompletedRunnable:Ljava/lang/Runnable;
@@ -47,7 +43,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 229
     iget-object v0, p0, Lcom/android/keyguard/KeyguardHostView$1;->this$0:Lcom/android/keyguard/KeyguardHostView;
 
     # getter for: Lcom/android/keyguard/KeyguardHostView;->mPostBootCompletedRunnable:Ljava/lang/Runnable;
@@ -57,7 +52,6 @@
 
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
-    .line 230
     iget-object v0, p0, Lcom/android/keyguard/KeyguardHostView$1;->this$0:Lcom/android/keyguard/KeyguardHostView;
 
     const/4 v1, 0x0
@@ -65,17 +59,13 @@
     # setter for: Lcom/android/keyguard/KeyguardHostView;->mPostBootCompletedRunnable:Ljava/lang/Runnable;
     invoke-static {v0, v1}, Lcom/android/keyguard/KeyguardHostView;->access$002(Lcom/android/keyguard/KeyguardHostView;Ljava/lang/Runnable;)Ljava/lang/Runnable;
 
-    .line 232
     :cond_0
     return-void
 .end method
 
 .method public onUserSwitchComplete(I)V
     .locals 2
-    .param p1, "userId"    # I
 
-    .prologue
-    .line 235
     iget-object v0, p0, Lcom/android/keyguard/KeyguardHostView$1;->this$0:Lcom/android/keyguard/KeyguardHostView;
 
     # getter for: Lcom/android/keyguard/KeyguardHostView;->mKeyguardMultiUserSelectorView:Lcom/android/keyguard/KeyguardMultiUserSelectorView;
@@ -85,7 +75,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 236
     iget-object v0, p0, Lcom/android/keyguard/KeyguardHostView$1;->this$0:Lcom/android/keyguard/KeyguardHostView;
 
     # getter for: Lcom/android/keyguard/KeyguardHostView;->mKeyguardMultiUserSelectorView:Lcom/android/keyguard/KeyguardMultiUserSelectorView;
@@ -97,7 +86,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/keyguard/KeyguardMultiUserSelectorView;->finalizeActiveUserView(Z)V
 
-    .line 238
     :cond_0
     return-void
 .end method

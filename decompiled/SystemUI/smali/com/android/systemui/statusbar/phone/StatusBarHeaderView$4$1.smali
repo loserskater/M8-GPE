@@ -27,8 +27,6 @@
 .method constructor <init>(Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$4;Z)V
     .locals 0
 
-    .prologue
-    .line 699
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$4$1;->this$1:Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$4;
 
     iput-boolean p2, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$4$1;->val$state:Z
@@ -43,8 +41,6 @@
 .method public run()V
     .locals 2
 
-    .prologue
-    .line 702
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$4$1;->this$1:Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$4;
 
     iget-boolean v1, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$4$1;->val$state:Z
@@ -52,6 +48,5 @@
     # invokes: Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$4;->handleToggleStateChanged(Z)V
     invoke-static {v0, v1}, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$4;->access$600(Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$4;Z)V
 
-    .line 703
     return-void
 .end method

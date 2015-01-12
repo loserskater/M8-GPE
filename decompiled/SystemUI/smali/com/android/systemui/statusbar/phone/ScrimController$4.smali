@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/systemui/statusbar/phone/ScrimController;)V
     .locals 0
 
-    .prologue
-    .line 345
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/ScrimController$4;->this$0:Lcom/android/systemui/statusbar/phone/ScrimController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,8 +37,6 @@
 .method public run()V
     .locals 4
 
-    .prologue
-    .line 348
     # getter for: Lcom/android/systemui/statusbar/phone/ScrimController;->DEBUG:Z
     invoke-static {}, Lcom/android/systemui/statusbar/phone/ScrimController;->access$100()Z
 
@@ -77,7 +73,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 349
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/ScrimController$4;->this$0:Lcom/android/systemui/statusbar/phone/ScrimController;
 
@@ -88,11 +83,9 @@
 
     if-nez v0, :cond_1
 
-    .line 351
     :goto_0
     return-void
 
-    .line 350
     :cond_1
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/ScrimController$4;->this$0:Lcom/android/systemui/statusbar/phone/ScrimController;
 

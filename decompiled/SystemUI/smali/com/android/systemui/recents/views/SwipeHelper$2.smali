@@ -29,8 +29,6 @@
 .method constructor <init>(Lcom/android/systemui/recents/views/SwipeHelper;ZLandroid/view/View;)V
     .locals 0
 
-    .prologue
-    .line 253
     iput-object p1, p0, Lcom/android/systemui/recents/views/SwipeHelper$2;->this$0:Lcom/android/systemui/recents/views/SwipeHelper;
 
     iput-boolean p2, p0, Lcom/android/systemui/recents/views/SwipeHelper$2;->val$canAnimViewBeDismissed:Z
@@ -46,15 +44,11 @@
 # virtual methods
 .method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 3
-    .param p1, "animation"    # Landroid/animation/ValueAnimator;
 
-    .prologue
-    .line 256
     iget-boolean v0, p0, Lcom/android/systemui/recents/views/SwipeHelper$2;->val$canAnimViewBeDismissed:Z
 
     if-eqz v0, :cond_0
 
-    .line 257
     iget-object v0, p0, Lcom/android/systemui/recents/views/SwipeHelper$2;->val$view:Landroid/view/View;
 
     iget-object v1, p0, Lcom/android/systemui/recents/views/SwipeHelper$2;->this$0:Lcom/android/systemui/recents/views/SwipeHelper;
@@ -67,7 +61,6 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setAlpha(F)V
 
-    .line 259
     :cond_0
     return-void
 .end method

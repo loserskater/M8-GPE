@@ -26,10 +26,7 @@
 # direct methods
 .method constructor <init>(Ljava/lang/String;)V
     .locals 0
-    .param p1, "x0"    # Ljava/lang/String;
 
-    .prologue
-    .line 137
     invoke-direct {p0, p1}, Landroid/util/FloatProperty;-><init>(Ljava/lang/String;)V
 
     return-void
@@ -39,10 +36,7 @@
 # virtual methods
 .method public get(Lcom/android/keyguard/SlidingChallengeLayout;)Ljava/lang/Float;
     .locals 1
-    .param p1, "view"    # Lcom/android/keyguard/SlidingChallengeLayout;
 
-    .prologue
-    .line 146
     iget v0, p1, Lcom/android/keyguard/SlidingChallengeLayout;->mHandleAlpha:F
 
     invoke-static {v0}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
@@ -54,13 +48,9 @@
 
 .method public bridge synthetic get(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
-    .param p1, "x0"    # Ljava/lang/Object;
 
-    .prologue
-    .line 137
     check-cast p1, Lcom/android/keyguard/SlidingChallengeLayout;
 
-    .end local p1    # "x0":Ljava/lang/Object;
     invoke-virtual {p0, p1}, Lcom/android/keyguard/SlidingChallengeLayout$1;->get(Lcom/android/keyguard/SlidingChallengeLayout;)Ljava/lang/Float;
 
     move-result-object v0
@@ -70,30 +60,19 @@
 
 .method public setValue(Lcom/android/keyguard/SlidingChallengeLayout;F)V
     .locals 0
-    .param p1, "view"    # Lcom/android/keyguard/SlidingChallengeLayout;
-    .param p2, "value"    # F
 
-    .prologue
-    .line 140
     iput p2, p1, Lcom/android/keyguard/SlidingChallengeLayout;->mHandleAlpha:F
 
-    .line 141
     invoke-virtual {p1}, Lcom/android/keyguard/SlidingChallengeLayout;->invalidate()V
 
-    .line 142
     return-void
 .end method
 
 .method public bridge synthetic setValue(Ljava/lang/Object;F)V
     .locals 0
-    .param p1, "x0"    # Ljava/lang/Object;
-    .param p2, "x1"    # F
 
-    .prologue
-    .line 137
     check-cast p1, Lcom/android/keyguard/SlidingChallengeLayout;
 
-    .end local p1    # "x0":Ljava/lang/Object;
     invoke-virtual {p0, p1, p2}, Lcom/android/keyguard/SlidingChallengeLayout$1;->setValue(Lcom/android/keyguard/SlidingChallengeLayout;F)V
 
     return-void

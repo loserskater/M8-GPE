@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/keyguard/KeyguardDisplayManager$KeyguardPresentation;)V
     .locals 0
 
-    .prologue
-    .line 133
     iput-object p1, p0, Lcom/android/keyguard/KeyguardDisplayManager$KeyguardPresentation$1;->this$0:Lcom/android/keyguard/KeyguardDisplayManager$KeyguardPresentation;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,8 +37,6 @@
 .method public run()V
     .locals 8
 
-    .prologue
-    .line 136
     iget-object v2, p0, Lcom/android/keyguard/KeyguardDisplayManager$KeyguardPresentation$1;->this$0:Lcom/android/keyguard/KeyguardDisplayManager$KeyguardPresentation;
 
     # getter for: Lcom/android/keyguard/KeyguardDisplayManager$KeyguardPresentation;->mMarginLeft:I
@@ -80,8 +76,6 @@
 
     add-int v0, v2, v3
 
-    .line 137
-    .local v0, "x":I
     iget-object v2, p0, Lcom/android/keyguard/KeyguardDisplayManager$KeyguardPresentation$1;->this$0:Lcom/android/keyguard/KeyguardDisplayManager$KeyguardPresentation;
 
     # getter for: Lcom/android/keyguard/KeyguardDisplayManager$KeyguardPresentation;->mMarginTop:I
@@ -121,8 +115,6 @@
 
     add-int v1, v2, v3
 
-    .line 138
-    .local v1, "y":I
     iget-object v2, p0, Lcom/android/keyguard/KeyguardDisplayManager$KeyguardPresentation$1;->this$0:Lcom/android/keyguard/KeyguardDisplayManager$KeyguardPresentation;
 
     # getter for: Lcom/android/keyguard/KeyguardDisplayManager$KeyguardPresentation;->mClock:Landroid/view/View;
@@ -134,7 +126,6 @@
 
     invoke-virtual {v2, v3}, Landroid/view/View;->setTranslationX(F)V
 
-    .line 139
     iget-object v2, p0, Lcom/android/keyguard/KeyguardDisplayManager$KeyguardPresentation$1;->this$0:Lcom/android/keyguard/KeyguardDisplayManager$KeyguardPresentation;
 
     # getter for: Lcom/android/keyguard/KeyguardDisplayManager$KeyguardPresentation;->mClock:Landroid/view/View;
@@ -146,7 +137,6 @@
 
     invoke-virtual {v2, v3}, Landroid/view/View;->setTranslationY(F)V
 
-    .line 140
     iget-object v2, p0, Lcom/android/keyguard/KeyguardDisplayManager$KeyguardPresentation$1;->this$0:Lcom/android/keyguard/KeyguardDisplayManager$KeyguardPresentation;
 
     # getter for: Lcom/android/keyguard/KeyguardDisplayManager$KeyguardPresentation;->mClock:Landroid/view/View;
@@ -162,6 +152,5 @@
 
     invoke-virtual {v2, v3, v4, v5}, Landroid/view/View;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 141
     return-void
 .end method

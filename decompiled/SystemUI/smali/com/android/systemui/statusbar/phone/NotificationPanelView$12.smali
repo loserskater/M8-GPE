@@ -24,8 +24,6 @@
 .method constructor <init>(Lcom/android/systemui/statusbar/phone/NotificationPanelView;Ljava/lang/Runnable;)V
     .locals 0
 
-    .prologue
-    .line 1158
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$12;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
     iput-object p2, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$12;->val$onFinishRunnable:Ljava/lang/Runnable;
@@ -39,10 +37,7 @@
 # virtual methods
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
-    .param p1, "animation"    # Landroid/animation/Animator;
 
-    .prologue
-    .line 1161
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$12;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
     # getter for: Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mScrollView:Lcom/android/systemui/statusbar/phone/ObservableScrollView;
@@ -54,7 +49,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/phone/ObservableScrollView;->setBlockFlinging(Z)V
 
-    .line 1162
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$12;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
     const/4 v1, -0x1
@@ -62,7 +56,6 @@
     # setter for: Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mScrollYOverride:I
     invoke-static {v0, v1}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->access$1802(Lcom/android/systemui/statusbar/phone/NotificationPanelView;I)I
 
-    .line 1163
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$12;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
     const/4 v1, 0x0
@@ -70,17 +63,14 @@
     # setter for: Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mQsExpansionAnimator:Landroid/animation/ValueAnimator;
     invoke-static {v0, v1}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->access$1902(Lcom/android/systemui/statusbar/phone/NotificationPanelView;Landroid/animation/ValueAnimator;)Landroid/animation/ValueAnimator;
 
-    .line 1164
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$12;->val$onFinishRunnable:Ljava/lang/Runnable;
 
     if-eqz v0, :cond_0
 
-    .line 1165
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$12;->val$onFinishRunnable:Ljava/lang/Runnable;
 
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
-    .line 1167
     :cond_0
     return-void
 .end method

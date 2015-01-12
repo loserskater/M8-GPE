@@ -27,8 +27,6 @@
 .method constructor <init>(Lcom/android/systemui/statusbar/stack/StackStateAnimator;Lcom/android/systemui/statusbar/ExpandableView;)V
     .locals 0
 
-    .prologue
-    .line 407
     iput-object p1, p0, Lcom/android/systemui/statusbar/stack/StackStateAnimator$3;->this$0:Lcom/android/systemui/statusbar/stack/StackStateAnimator;
 
     iput-object p2, p0, Lcom/android/systemui/statusbar/stack/StackStateAnimator$3;->val$child:Lcom/android/systemui/statusbar/ExpandableView;
@@ -42,10 +40,7 @@
 # virtual methods
 .method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 2
-    .param p1, "animation"    # Landroid/animation/ValueAnimator;
 
-    .prologue
-    .line 410
     iget-object v1, p0, Lcom/android/systemui/statusbar/stack/StackStateAnimator$3;->val$child:Lcom/android/systemui/statusbar/ExpandableView;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
@@ -60,6 +55,5 @@
 
     invoke-virtual {v1, v0}, Lcom/android/systemui/statusbar/ExpandableView;->setClipTopAmount(I)V
 
-    .line 411
     return-void
 .end method

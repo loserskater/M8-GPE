@@ -37,8 +37,6 @@
 .method static constructor <clinit>()V
     .locals 4
 
-    .prologue
-    .line 37
     new-instance v0, Landroid/content/Intent;
 
     invoke-direct {v0}, Landroid/content/Intent;-><init>()V
@@ -62,27 +60,21 @@
 
 .method public constructor <init>(Lcom/android/systemui/qs/QSTile$Host;)V
     .locals 2
-    .param p1, "host"    # Lcom/android/systemui/qs/QSTile$Host;
 
-    .prologue
-    .line 44
     invoke-direct {p0, p1}, Lcom/android/systemui/qs/QSTile;-><init>(Lcom/android/systemui/qs/QSTile$Host;)V
 
-    .line 145
     new-instance v0, Lcom/android/systemui/qs/tiles/CellularTile$1;
 
     invoke-direct {v0, p0}, Lcom/android/systemui/qs/tiles/CellularTile$1;-><init>(Lcom/android/systemui/qs/tiles/CellularTile;)V
 
     iput-object v0, p0, Lcom/android/systemui/qs/tiles/CellularTile;->mCallback:Lcom/android/systemui/statusbar/policy/NetworkController$NetworkSignalChangedCallback;
 
-    .line 45
     invoke-interface {p1}, Lcom/android/systemui/qs/QSTile$Host;->getNetworkController()Lcom/android/systemui/statusbar/policy/NetworkController;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/systemui/qs/tiles/CellularTile;->mController:Lcom/android/systemui/statusbar/policy/NetworkController;
 
-    .line 46
     new-instance v0, Lcom/android/systemui/qs/tiles/CellularTile$CellularDetailAdapter;
 
     const/4 v1, 0x0
@@ -91,17 +83,12 @@
 
     iput-object v0, p0, Lcom/android/systemui/qs/tiles/CellularTile;->mDetailAdapter:Lcom/android/systemui/qs/tiles/CellularTile$CellularDetailAdapter;
 
-    .line 47
     return-void
 .end method
 
 .method static synthetic access$200(Lcom/android/systemui/qs/tiles/CellularTile;Ljava/lang/Object;)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/systemui/qs/tiles/CellularTile;
-    .param p1, "x1"    # Ljava/lang/Object;
 
-    .prologue
-    .line 36
     invoke-virtual {p0, p1}, Lcom/android/systemui/qs/tiles/CellularTile;->refreshState(Ljava/lang/Object;)V
 
     return-void
@@ -109,10 +96,7 @@
 
 .method static synthetic access$300(Lcom/android/systemui/qs/tiles/CellularTile;)Lcom/android/systemui/qs/tiles/CellularTile$CellularDetailAdapter;
     .locals 1
-    .param p0, "x0"    # Lcom/android/systemui/qs/tiles/CellularTile;
 
-    .prologue
-    .line 36
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/CellularTile;->mDetailAdapter:Lcom/android/systemui/qs/tiles/CellularTile$CellularDetailAdapter;
 
     return-object v0
@@ -120,10 +104,7 @@
 
 .method static synthetic access$400(Lcom/android/systemui/qs/tiles/CellularTile;)Lcom/android/systemui/statusbar/policy/NetworkController;
     .locals 1
-    .param p0, "x0"    # Lcom/android/systemui/qs/tiles/CellularTile;
 
-    .prologue
-    .line 36
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/CellularTile;->mController:Lcom/android/systemui/statusbar/policy/NetworkController;
 
     return-object v0
@@ -132,8 +113,6 @@
 .method static synthetic access$500()Landroid/content/Intent;
     .locals 1
 
-    .prologue
-    .line 36
     sget-object v0, Lcom/android/systemui/qs/tiles/CellularTile;->CELLULAR_SETTINGS:Landroid/content/Intent;
 
     return-object v0
@@ -141,10 +120,7 @@
 
 .method static synthetic access$600(Lcom/android/systemui/qs/tiles/CellularTile;)Landroid/content/Context;
     .locals 1
-    .param p0, "x0"    # Lcom/android/systemui/qs/tiles/CellularTile;
 
-    .prologue
-    .line 36
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/CellularTile;->mContext:Landroid/content/Context;
 
     return-object v0
@@ -152,31 +128,20 @@
 
 .method public static removeTrailingPeriod(Ljava/lang/String;)Ljava/lang/String;
     .locals 3
-    .param p0, "string"    # Ljava/lang/String;
 
-    .prologue
-    .line 121
     if-nez p0, :cond_1
 
     const/4 p0, 0x0
 
-    .line 126
-    .end local p0    # "string":Ljava/lang/String;
-    .local v0, "length":I
     :cond_0
     :goto_0
     return-object p0
 
-    .line 122
-    .end local v0    # "length":I
-    .restart local p0    # "string":Ljava/lang/String;
     :cond_1
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
     move-result v0
 
-    .line 123
-    .restart local v0    # "length":I
     const-string v1, "."
 
     invoke-virtual {p0, v1}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
@@ -185,7 +150,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 124
     const/4 v1, 0x0
 
     add-int/lit8 v2, v0, -0x1
@@ -201,10 +165,7 @@
 # virtual methods
 .method public createTileView(Landroid/content/Context;)Lcom/android/systemui/qs/QSTileView;
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
 
-    .prologue
-    .line 70
     new-instance v0, Lcom/android/systemui/qs/SignalTileView;
 
     invoke-direct {v0, p1}, Lcom/android/systemui/qs/SignalTileView;-><init>(Landroid/content/Context;)V
@@ -215,8 +176,6 @@
 .method public getDetailAdapter()Lcom/android/systemui/qs/QSTile$DetailAdapter;
     .locals 1
 
-    .prologue
-    .line 56
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/CellularTile;->mDetailAdapter:Lcom/android/systemui/qs/tiles/CellularTile$CellularDetailAdapter;
 
     return-object v0
@@ -225,8 +184,6 @@
 .method protected handleClick()V
     .locals 2
 
-    .prologue
-    .line 75
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/CellularTile;->mController:Lcom/android/systemui/statusbar/policy/NetworkController;
 
     invoke-interface {v0}, Lcom/android/systemui/statusbar/policy/NetworkController;->isMobileDataSupported()Z
@@ -235,16 +192,13 @@
 
     if-eqz v0, :cond_0
 
-    .line 76
     const/4 v0, 0x1
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/qs/tiles/CellularTile;->showDetail(Z)V
 
-    .line 80
     :goto_0
     return-void
 
-    .line 78
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/CellularTile;->mHost:Lcom/android/systemui/qs/QSTile$Host;
 
@@ -257,17 +211,13 @@
 
 .method protected handleUpdateState(Lcom/android/systemui/qs/QSTile$SignalState;Ljava/lang/Object;)V
     .locals 8
-    .param p1, "state"    # Lcom/android/systemui/qs/QSTile$SignalState;
-    .param p2, "arg"    # Ljava/lang/Object;
 
-    .prologue
     const v5, 0x7f020077
 
     const/4 v6, 0x1
 
     const/4 v7, 0x0
 
-    .line 84
     iget-object v4, p0, Lcom/android/systemui/qs/tiles/CellularTile;->mController:Lcom/android/systemui/statusbar/policy/NetworkController;
 
     invoke-interface {v4}, Lcom/android/systemui/statusbar/policy/NetworkController;->hasMobileDataFeature()Z
@@ -276,12 +226,10 @@
 
     iput-boolean v4, p1, Lcom/android/systemui/qs/QSTile$SignalState;->visible:Z
 
-    .line 85
     iget-boolean v4, p1, Lcom/android/systemui/qs/QSTile$SignalState;->visible:Z
 
     if-nez v4, :cond_1
 
-    .line 117
     :cond_0
     :goto_0
     return-void
@@ -289,22 +237,16 @@
     :cond_1
     move-object v0, p2
 
-    .line 86
     check-cast v0, Lcom/android/systemui/qs/tiles/CellularTile$CallbackInfo;
 
-    .line 87
-    .local v0, "cb":Lcom/android/systemui/qs/tiles/CellularTile$CallbackInfo;
     if-eqz v0, :cond_0
 
-    .line 89
     iget-object v4, p0, Lcom/android/systemui/qs/tiles/CellularTile;->mContext:Landroid/content/Context;
 
     invoke-virtual {v4}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v2
 
-    .line 90
-    .local v2, "r":Landroid/content/res/Resources;
     iget-boolean v4, v0, Lcom/android/systemui/qs/tiles/CellularTile$CallbackInfo;->noSim:Z
 
     if-eqz v4, :cond_2
@@ -314,12 +256,10 @@
     :goto_1
     iput v4, p1, Lcom/android/systemui/qs/QSTile$SignalState;->iconId:I
 
-    .line 94
     iget-boolean v4, v0, Lcom/android/systemui/qs/tiles/CellularTile$CallbackInfo;->isDataTypeIconWide:Z
 
     iput-boolean v4, p1, Lcom/android/systemui/qs/QSTile$SignalState;->isOverlayIconWide:Z
 
-    .line 95
     iget-boolean v4, v0, Lcom/android/systemui/qs/tiles/CellularTile$CallbackInfo;->noSim:Z
 
     if-nez v4, :cond_6
@@ -329,7 +269,6 @@
     :goto_2
     iput-boolean v4, p1, Lcom/android/systemui/qs/QSTile$SignalState;->autoMirrorDrawable:Z
 
-    .line 96
     iget-boolean v4, v0, Lcom/android/systemui/qs/tiles/CellularTile$CallbackInfo;->enabled:Z
 
     if-eqz v4, :cond_7
@@ -347,7 +286,6 @@
     :goto_3
     iput v4, p1, Lcom/android/systemui/qs/QSTile$SignalState;->overlayIconId:I
 
-    .line 99
     iget v4, p1, Lcom/android/systemui/qs/QSTile$SignalState;->iconId:I
 
     if-eq v4, v5, :cond_8
@@ -357,7 +295,6 @@
     :goto_4
     iput-boolean v4, p1, Lcom/android/systemui/qs/QSTile$SignalState;->filter:Z
 
-    .line 100
     iget-boolean v4, v0, Lcom/android/systemui/qs/tiles/CellularTile$CallbackInfo;->enabled:Z
 
     if-eqz v4, :cond_9
@@ -371,7 +308,6 @@
     :goto_5
     iput-boolean v4, p1, Lcom/android/systemui/qs/QSTile$SignalState;->activityIn:Z
 
-    .line 101
     iget-boolean v4, v0, Lcom/android/systemui/qs/tiles/CellularTile$CallbackInfo;->enabled:Z
 
     if-eqz v4, :cond_a
@@ -385,7 +321,6 @@
     :goto_6
     iput-boolean v4, p1, Lcom/android/systemui/qs/QSTile$SignalState;->activityOut:Z
 
-    .line 103
     iget-boolean v4, v0, Lcom/android/systemui/qs/tiles/CellularTile$CallbackInfo;->enabled:Z
 
     if-eqz v4, :cond_b
@@ -399,7 +334,6 @@
     :goto_7
     iput-object v4, p1, Lcom/android/systemui/qs/QSTile$SignalState;->label:Ljava/lang/String;
 
-    .line 107
     iget-boolean v4, v0, Lcom/android/systemui/qs/tiles/CellularTile$CallbackInfo;->enabled:Z
 
     if-eqz v4, :cond_c
@@ -410,8 +344,6 @@
 
     iget-object v3, v0, Lcom/android/systemui/qs/tiles/CellularTile$CallbackInfo;->signalContentDescription:Ljava/lang/String;
 
-    .line 110
-    .local v3, "signalContentDesc":Ljava/lang/String;
     :goto_8
     iget-boolean v4, v0, Lcom/android/systemui/qs/tiles/CellularTile$CallbackInfo;->enabled:Z
 
@@ -427,8 +359,6 @@
 
     iget-object v1, v0, Lcom/android/systemui/qs/tiles/CellularTile$CallbackInfo;->dataContentDescription:Ljava/lang/String;
 
-    .line 113
-    .local v1, "dataContentDesc":Ljava/lang/String;
     :goto_9
     const v4, 0x7f0b009c
 
@@ -454,9 +384,6 @@
 
     goto/16 :goto_0
 
-    .line 90
-    .end local v1    # "dataContentDesc":Ljava/lang/String;
-    .end local v3    # "signalContentDesc":Ljava/lang/String;
     :cond_2
     iget-boolean v4, v0, Lcom/android/systemui/qs/tiles/CellularTile$CallbackInfo;->enabled:Z
 
@@ -488,34 +415,28 @@
     :cond_6
     move v4, v7
 
-    .line 95
     goto/16 :goto_2
 
     :cond_7
     move v4, v7
 
-    .line 96
     goto :goto_3
 
     :cond_8
     move v4, v7
 
-    .line 99
     goto :goto_4
 
     :cond_9
     move v4, v7
 
-    .line 100
     goto :goto_5
 
     :cond_a
     move v4, v7
 
-    .line 101
     goto :goto_6
 
-    .line 103
     :cond_b
     const v4, 0x7f0b00e2
 
@@ -525,7 +446,6 @@
 
     goto :goto_7
 
-    .line 107
     :cond_c
     const v4, 0x7f0b006c
 
@@ -535,8 +455,6 @@
 
     goto :goto_8
 
-    .line 110
-    .restart local v3    # "signalContentDesc":Ljava/lang/String;
     :cond_d
     const v4, 0x7f0b005a
 
@@ -549,14 +467,9 @@
 
 .method protected bridge synthetic handleUpdateState(Lcom/android/systemui/qs/QSTile$State;Ljava/lang/Object;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/systemui/qs/QSTile$State;
-    .param p2, "x1"    # Ljava/lang/Object;
 
-    .prologue
-    .line 36
     check-cast p1, Lcom/android/systemui/qs/QSTile$SignalState;
 
-    .end local p1    # "x0":Lcom/android/systemui/qs/QSTile$State;
     invoke-virtual {p0, p1, p2}, Lcom/android/systemui/qs/tiles/CellularTile;->handleUpdateState(Lcom/android/systemui/qs/QSTile$SignalState;Ljava/lang/Object;)V
 
     return-void
@@ -565,8 +478,6 @@
 .method protected newTileState()Lcom/android/systemui/qs/QSTile$SignalState;
     .locals 1
 
-    .prologue
-    .line 51
     new-instance v0, Lcom/android/systemui/qs/QSTile$SignalState;
 
     invoke-direct {v0}, Lcom/android/systemui/qs/QSTile$SignalState;-><init>()V
@@ -577,8 +488,6 @@
 .method protected bridge synthetic newTileState()Lcom/android/systemui/qs/QSTile$State;
     .locals 1
 
-    .prologue
-    .line 36
     invoke-virtual {p0}, Lcom/android/systemui/qs/tiles/CellularTile;->newTileState()Lcom/android/systemui/qs/QSTile$SignalState;
 
     move-result-object v0
@@ -588,24 +497,18 @@
 
 .method public setListening(Z)V
     .locals 2
-    .param p1, "listening"    # Z
 
-    .prologue
-    .line 61
     if-eqz p1, :cond_0
 
-    .line 62
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/CellularTile;->mController:Lcom/android/systemui/statusbar/policy/NetworkController;
 
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/CellularTile;->mCallback:Lcom/android/systemui/statusbar/policy/NetworkController$NetworkSignalChangedCallback;
 
     invoke-interface {v0, v1}, Lcom/android/systemui/statusbar/policy/NetworkController;->addNetworkSignalChangedCallback(Lcom/android/systemui/statusbar/policy/NetworkController$NetworkSignalChangedCallback;)V
 
-    .line 66
     :goto_0
     return-void
 
-    .line 64
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/CellularTile;->mController:Lcom/android/systemui/statusbar/policy/NetworkController;
 

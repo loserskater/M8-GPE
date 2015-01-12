@@ -25,8 +25,6 @@
 .method static constructor <clinit>()V
     .locals 2
 
-    .prologue
-    .line 34
     const-string v0, "DozeParameters"
 
     const/4 v1, 0x3
@@ -42,24 +40,17 @@
 
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 0
-    .param p1, "context"    # Landroid/content/Context;
 
-    .prologue
-    .line 42
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 43
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/DozeParameters;->mContext:Landroid/content/Context;
 
-    .line 44
     return-void
 .end method
 
 .method static synthetic access$100()Z
     .locals 1
 
-    .prologue
-    .line 32
     sget-boolean v0, Lcom/android/systemui/statusbar/phone/DozeParameters;->DEBUG:Z
 
     return v0
@@ -67,11 +58,7 @@
 
 .method private getBoolean(Ljava/lang/String;I)Z
     .locals 1
-    .param p1, "propName"    # Ljava/lang/String;
-    .param p2, "resId"    # I
 
-    .prologue
-    .line 120
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/DozeParameters;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -91,11 +78,7 @@
 
 .method private getInt(Ljava/lang/String;I)I
     .locals 3
-    .param p1, "propName"    # Ljava/lang/String;
-    .param p2, "resId"    # I
 
-    .prologue
-    .line 124
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/DozeParameters;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -110,8 +93,6 @@
 
     move-result v0
 
-    .line 125
-    .local v0, "value":I
     const/4 v1, 0x0
 
     const/16 v2, 0x2710
@@ -125,11 +106,7 @@
 
 .method private getString(Ljava/lang/String;I)Ljava/lang/String;
     .locals 1
-    .param p1, "propName"    # Ljava/lang/String;
-    .param p2, "resId"    # I
 
-    .prologue
-    .line 129
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/DozeParameters;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0, p2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
@@ -147,15 +124,11 @@
 # virtual methods
 .method public dump(Ljava/io/PrintWriter;)V
     .locals 1
-    .param p1, "pw"    # Ljava/io/PrintWriter;
 
-    .prologue
-    .line 47
     const-string v0, "  DozeParameters:"
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 48
     const-string v0, "    getDisplayStateSupported(): "
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -166,7 +139,6 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Z)V
 
-    .line 49
     const-string v0, "    getPulseDuration(): "
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -177,7 +149,6 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(I)V
 
-    .line 50
     const-string v0, "    getPulseInDuration(): "
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -188,7 +159,6 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(I)V
 
-    .line 51
     const-string v0, "    getPulseInVisibleDuration(): "
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -199,7 +169,6 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(I)V
 
-    .line 52
     const-string v0, "    getPulseOutDuration(): "
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -210,7 +179,6 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(I)V
 
-    .line 53
     const-string v0, "    getPulseOnSigMotion(): "
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -221,7 +189,6 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Z)V
 
-    .line 54
     const-string v0, "    getVibrateOnSigMotion(): "
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -232,7 +199,6 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Z)V
 
-    .line 55
     const-string v0, "    getPulseOnPickup(): "
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -243,7 +209,6 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Z)V
 
-    .line 56
     const-string v0, "    getVibrateOnPickup(): "
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -254,7 +219,6 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Z)V
 
-    .line 57
     const-string v0, "    getPulseOnNotifications(): "
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -265,7 +229,6 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Z)V
 
-    .line 58
     const-string v0, "    getPulseSchedule(): "
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -276,7 +239,6 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/Object;)V
 
-    .line 59
     const-string v0, "    getPulseScheduleResets(): "
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -287,7 +249,6 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(I)V
 
-    .line 60
     const-string v0, "    getPickupVibrationThreshold(): "
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -298,15 +259,12 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(I)V
 
-    .line 61
     return-void
 .end method
 
 .method public getDisplayStateSupported()Z
     .locals 2
 
-    .prologue
-    .line 64
     const-string v0, "doze.display.supported"
 
     const v1, 0x7f080013
@@ -321,8 +279,6 @@
 .method public getPickupVibrationThreshold()I
     .locals 2
 
-    .prologue
-    .line 116
     const-string v0, "doze.pickup.vibration.threshold"
 
     const v1, 0x7f090027
@@ -337,8 +293,6 @@
 .method public getPulseDuration()I
     .locals 2
 
-    .prologue
-    .line 68
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/DozeParameters;->getPulseInDuration()I
 
     move-result v0
@@ -361,8 +315,6 @@
 .method public getPulseInDuration()I
     .locals 2
 
-    .prologue
-    .line 72
     const-string v0, "doze.pulse.duration.in"
 
     const v1, 0x7f090028
@@ -377,8 +329,6 @@
 .method public getPulseOnNotifications()Z
     .locals 2
 
-    .prologue
-    .line 100
     const-string v0, "doze.pulse.notifications"
 
     const v1, 0x7f080016
@@ -393,8 +343,6 @@
 .method public getPulseOnPickup()Z
     .locals 2
 
-    .prologue
-    .line 92
     const-string v0, "doze.pulse.pickup"
 
     const v1, 0x7f080015
@@ -409,8 +357,6 @@
 .method public getPulseOnSigMotion()Z
     .locals 2
 
-    .prologue
-    .line 84
     const-string v0, "doze.pulse.sigmotion"
 
     const v1, 0x7f080014
@@ -425,8 +371,6 @@
 .method public getPulseOutDuration()I
     .locals 2
 
-    .prologue
-    .line 80
     const-string v0, "doze.pulse.duration.out"
 
     const v1, 0x7f09002a
@@ -441,8 +385,6 @@
 .method public getPulseSchedule()Lcom/android/systemui/statusbar/phone/DozeParameters$PulseSchedule;
     .locals 3
 
-    .prologue
-    .line 104
     const-string v1, "doze.pulse.schedule"
 
     const v2, 0x7f0b0004
@@ -451,8 +393,6 @@
 
     move-result-object v0
 
-    .line 105
-    .local v0, "spec":Ljava/lang/String;
     sget-object v1, Lcom/android/systemui/statusbar/phone/DozeParameters;->sPulseSchedule:Lcom/android/systemui/statusbar/phone/DozeParameters$PulseSchedule;
 
     if-eqz v1, :cond_0
@@ -470,7 +410,6 @@
 
     if-nez v1, :cond_1
 
-    .line 106
     :cond_0
     invoke-static {v0}, Lcom/android/systemui/statusbar/phone/DozeParameters$PulseSchedule;->parse(Ljava/lang/String;)Lcom/android/systemui/statusbar/phone/DozeParameters$PulseSchedule;
 
@@ -478,7 +417,6 @@
 
     sput-object v1, Lcom/android/systemui/statusbar/phone/DozeParameters;->sPulseSchedule:Lcom/android/systemui/statusbar/phone/DozeParameters$PulseSchedule;
 
-    .line 108
     :cond_1
     sget-object v1, Lcom/android/systemui/statusbar/phone/DozeParameters;->sPulseSchedule:Lcom/android/systemui/statusbar/phone/DozeParameters$PulseSchedule;
 
@@ -488,8 +426,6 @@
 .method public getPulseScheduleResets()I
     .locals 2
 
-    .prologue
-    .line 112
     const-string v0, "doze.pulse.schedule.resets"
 
     const v1, 0x7f090026
@@ -504,8 +440,6 @@
 .method public getPulseVisibleDuration()I
     .locals 2
 
-    .prologue
-    .line 76
     const-string v0, "doze.pulse.duration.visible"
 
     const v1, 0x7f090029
@@ -520,8 +454,6 @@
 .method public getVibrateOnPickup()Z
     .locals 2
 
-    .prologue
-    .line 96
     const-string v0, "doze.vibrate.pickup"
 
     const/4 v1, 0x0
@@ -536,8 +468,6 @@
 .method public getVibrateOnSigMotion()Z
     .locals 2
 
-    .prologue
-    .line 88
     const-string v0, "doze.vibrate.sigmotion"
 
     const/4 v1, 0x0

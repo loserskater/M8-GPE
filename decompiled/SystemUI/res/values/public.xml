@@ -1793,6 +1793,10 @@
     <public type="id" name="zen_conditions" id="0x7f0e0124" />
     <public type="id" name="recent_remove_item" id="0x7f0e0125" />
     <public type="id" name="recent_inspect_item" id="0x7f0e0126" />
+    <public type="id" name="center_clock" id="0x7f0e0127" />
+    <public type="id" name="left_clock" id="0x7f0e0128" />
+    <public type="id" name="center_clock_area" id="0x7f0e0129" />
+    <public type="id" name="left_clock_area" id="0x7f0e012a" />
     <public type="plurals" name="status_bar_accessibility_recent_apps" id="0x7f0f0000" />
     <public type="plurals" name="kg_password_wrong_pin_code" id="0x7f0f0001" />
     <public type="plurals" name="kg_password_wrong_puk_code" id="0x7f0f0002" />

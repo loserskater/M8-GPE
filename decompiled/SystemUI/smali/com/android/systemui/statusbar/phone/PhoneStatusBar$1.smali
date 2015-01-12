@@ -21,10 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/statusbar/phone/PhoneStatusBar;Landroid/os/Handler;)V
     .locals 0
-    .param p2, "x0"    # Landroid/os/Handler;
 
-    .prologue
-    .line 369
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$1;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
@@ -36,12 +33,9 @@
 # virtual methods
 .method public onChange(Z)V
     .locals 4
-    .param p1, "selfChange"    # Z
 
-    .prologue
     const/4 v0, 0x0
 
-    .line 372
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$1;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     iget-object v1, v1, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mContext:Landroid/content/Context;
@@ -67,8 +61,6 @@
 
     const/4 v0, 0x1
 
-    .line 381
-    .local v0, "userSetup":Z
     :cond_0
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$1;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
@@ -79,13 +71,11 @@
 
     if-eq v0, v1, :cond_1
 
-    .line 382
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$1;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     # setter for: Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mUserSetup:Z
     invoke-static {v1, v0}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->access$102(Lcom/android/systemui/statusbar/phone/PhoneStatusBar;Z)Z
 
-    .line 383
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$1;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     # getter for: Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mUserSetup:Z
@@ -101,12 +91,10 @@
 
     if-eqz v1, :cond_1
 
-    .line 384
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$1;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     invoke-virtual {v1}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->animateCollapseQuickSettings()V
 
-    .line 386
     :cond_1
     return-void
 .end method

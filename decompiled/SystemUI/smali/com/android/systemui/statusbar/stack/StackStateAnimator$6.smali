@@ -22,8 +22,6 @@
 .method constructor <init>(Lcom/android/systemui/statusbar/stack/StackStateAnimator;)V
     .locals 0
 
-    .prologue
-    .line 502
     iput-object p1, p0, Lcom/android/systemui/statusbar/stack/StackStateAnimator$6;->this$0:Lcom/android/systemui/statusbar/stack/StackStateAnimator;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,9 +33,6 @@
 # virtual methods
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 0
-    .param p1, "animation"    # Landroid/animation/Animator;
 
-    .prologue
-    .line 506
     return-void
 .end method

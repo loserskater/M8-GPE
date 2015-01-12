@@ -27,8 +27,6 @@
 .method constructor <init>(Lcom/android/systemui/qs/QSPanel;Lcom/android/systemui/qs/QSPanel$TileRecord;)V
     .locals 0
 
-    .prologue
-    .line 287
     iput-object p1, p0, Lcom/android/systemui/qs/QSPanel$3;->this$0:Lcom/android/systemui/qs/QSPanel;
 
     iput-object p2, p0, Lcom/android/systemui/qs/QSPanel$3;->val$r:Lcom/android/systemui/qs/QSPanel$TileRecord;
@@ -42,16 +40,12 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 1
-    .param p1, "v"    # Landroid/view/View;
 
-    .prologue
-    .line 290
     iget-object v0, p0, Lcom/android/systemui/qs/QSPanel$3;->val$r:Lcom/android/systemui/qs/QSPanel$TileRecord;
 
     iget-object v0, v0, Lcom/android/systemui/qs/QSPanel$TileRecord;->tile:Lcom/android/systemui/qs/QSTile;
 
     invoke-virtual {v0}, Lcom/android/systemui/qs/QSTile;->click()V
 
-    .line 291
     return-void
 .end method

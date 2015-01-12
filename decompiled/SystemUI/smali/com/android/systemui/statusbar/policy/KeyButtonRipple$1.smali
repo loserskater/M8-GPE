@@ -22,8 +22,6 @@
 .method constructor <init>(Lcom/android/systemui/statusbar/policy/KeyButtonRipple;)V
     .locals 0
 
-    .prologue
-    .line 341
     iput-object p1, p0, Lcom/android/systemui/statusbar/policy/KeyButtonRipple$1;->this$0:Lcom/android/systemui/statusbar/policy/KeyButtonRipple;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,10 +33,7 @@
 # virtual methods
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
-    .param p1, "animation"    # Landroid/animation/Animator;
 
-    .prologue
-    .line 344
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/KeyButtonRipple$1;->this$0:Lcom/android/systemui/statusbar/policy/KeyButtonRipple;
 
     # getter for: Lcom/android/systemui/statusbar/policy/KeyButtonRipple;->mRunningAnimations:Ljava/util/HashSet;
@@ -48,7 +43,6 @@
 
     invoke-virtual {v0, p1}, Ljava/util/HashSet;->remove(Ljava/lang/Object;)Z
 
-    .line 345
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/KeyButtonRipple$1;->this$0:Lcom/android/systemui/statusbar/policy/KeyButtonRipple;
 
     # getter for: Lcom/android/systemui/statusbar/policy/KeyButtonRipple;->mRunningAnimations:Ljava/util/HashSet;
@@ -71,7 +65,6 @@
 
     if-nez v0, :cond_0
 
-    .line 346
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/KeyButtonRipple$1;->this$0:Lcom/android/systemui/statusbar/policy/KeyButtonRipple;
 
     const/4 v1, 0x0
@@ -79,12 +72,10 @@
     # setter for: Lcom/android/systemui/statusbar/policy/KeyButtonRipple;->mDrawingHardwareGlow:Z
     invoke-static {v0, v1}, Lcom/android/systemui/statusbar/policy/KeyButtonRipple;->access$302(Lcom/android/systemui/statusbar/policy/KeyButtonRipple;Z)Z
 
-    .line 347
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/KeyButtonRipple$1;->this$0:Lcom/android/systemui/statusbar/policy/KeyButtonRipple;
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/policy/KeyButtonRipple;->invalidateSelf()V
 
-    .line 349
     :cond_0
     return-void
 .end method

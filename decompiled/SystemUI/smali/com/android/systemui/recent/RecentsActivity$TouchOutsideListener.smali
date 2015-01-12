@@ -26,18 +26,13 @@
 # direct methods
 .method public constructor <init>(Lcom/android/systemui/recent/RecentsActivity;Lcom/android/systemui/statusbar/StatusBarPanel;)V
     .locals 0
-    .param p2, "panel"    # Lcom/android/systemui/statusbar/StatusBarPanel;
 
-    .prologue
-    .line 73
     iput-object p1, p0, Lcom/android/systemui/recent/RecentsActivity$TouchOutsideListener;->this$0:Lcom/android/systemui/recent/RecentsActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 74
     iput-object p2, p0, Lcom/android/systemui/recent/RecentsActivity$TouchOutsideListener;->mPanel:Lcom/android/systemui/statusbar/StatusBarPanel;
 
-    .line 75
     return-void
 .end method
 
@@ -45,17 +40,11 @@
 # virtual methods
 .method public onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
     .locals 4
-    .param p1, "v"    # Landroid/view/View;
-    .param p2, "ev"    # Landroid/view/MotionEvent;
 
-    .prologue
-    .line 78
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v0
 
-    .line 79
-    .local v0, "action":I
     const/4 v1, 0x4
 
     if-eq v0, v1, :cond_0
@@ -82,16 +71,13 @@
 
     if-nez v1, :cond_1
 
-    .line 82
     :cond_0
     iget-object v1, p0, Lcom/android/systemui/recent/RecentsActivity$TouchOutsideListener;->this$0:Lcom/android/systemui/recent/RecentsActivity;
 
     invoke-virtual {v1}, Lcom/android/systemui/recent/RecentsActivity;->dismissAndGoHome()V
 
-    .line 83
     const/4 v1, 0x1
 
-    .line 85
     :goto_0
     return v1
 

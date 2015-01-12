@@ -24,8 +24,6 @@
 .method constructor <init>(Lcom/android/systemui/SearchPanelCircleView;Ljava/lang/Runnable;)V
     .locals 0
 
-    .prologue
-    .line 268
     iput-object p1, p0, Lcom/android/systemui/SearchPanelCircleView$6;->this$0:Lcom/android/systemui/SearchPanelCircleView;
 
     iput-object p2, p0, Lcom/android/systemui/SearchPanelCircleView$6;->val$endRunnable:Ljava/lang/Runnable;
@@ -39,10 +37,7 @@
 # virtual methods
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
-    .param p1, "animation"    # Landroid/animation/Animator;
 
-    .prologue
-    .line 271
     iget-object v0, p0, Lcom/android/systemui/SearchPanelCircleView$6;->this$0:Lcom/android/systemui/SearchPanelCircleView;
 
     const/4 v1, 0x0
@@ -50,17 +45,14 @@
     # setter for: Lcom/android/systemui/SearchPanelCircleView;->mOffsetAnimator:Landroid/animation/ValueAnimator;
     invoke-static {v0, v1}, Lcom/android/systemui/SearchPanelCircleView;->access$602(Lcom/android/systemui/SearchPanelCircleView;Landroid/animation/ValueAnimator;)Landroid/animation/ValueAnimator;
 
-    .line 272
     iget-object v0, p0, Lcom/android/systemui/SearchPanelCircleView$6;->val$endRunnable:Ljava/lang/Runnable;
 
     if-eqz v0, :cond_0
 
-    .line 273
     iget-object v0, p0, Lcom/android/systemui/SearchPanelCircleView$6;->val$endRunnable:Ljava/lang/Runnable;
 
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
-    .line 275
     :cond_0
     return-void
 .end method

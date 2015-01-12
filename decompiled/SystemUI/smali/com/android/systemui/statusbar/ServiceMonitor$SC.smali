@@ -30,8 +30,6 @@
 .method private constructor <init>(Lcom/android/systemui/statusbar/ServiceMonitor;)V
     .locals 0
 
-    .prologue
-    .line 113
     iput-object p1, p0, Lcom/android/systemui/statusbar/ServiceMonitor$SC;->this$0:Lcom/android/systemui/statusbar/ServiceMonitor;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,11 +39,7 @@
 
 .method synthetic constructor <init>(Lcom/android/systemui/statusbar/ServiceMonitor;Lcom/android/systemui/statusbar/ServiceMonitor$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/systemui/statusbar/ServiceMonitor;
-    .param p2, "x1"    # Lcom/android/systemui/statusbar/ServiceMonitor$1;
 
-    .prologue
-    .line 113
     invoke-direct {p0, p1}, Lcom/android/systemui/statusbar/ServiceMonitor$SC;-><init>(Lcom/android/systemui/statusbar/ServiceMonitor;)V
 
     return-void
@@ -56,8 +50,6 @@
 .method public binderDied()V
     .locals 4
 
-    .prologue
-    .line 136
     iget-object v0, p0, Lcom/android/systemui/statusbar/ServiceMonitor$SC;->this$0:Lcom/android/systemui/statusbar/ServiceMonitor;
 
     # getter for: Lcom/android/systemui/statusbar/ServiceMonitor;->mDebug:Z
@@ -78,7 +70,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 137
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/ServiceMonitor$SC;->this$0:Lcom/android/systemui/statusbar/ServiceMonitor;
 
@@ -104,17 +95,12 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 138
     return-void
 .end method
 
 .method public onServiceConnected(Landroid/content/ComponentName;Landroid/os/IBinder;)V
     .locals 4
-    .param p1, "name"    # Landroid/content/ComponentName;
-    .param p2, "service"    # Landroid/os/IBinder;
 
-    .prologue
-    .line 118
     iget-object v1, p0, Lcom/android/systemui/statusbar/ServiceMonitor$SC;->this$0:Lcom/android/systemui/statusbar/ServiceMonitor;
 
     # getter for: Lcom/android/systemui/statusbar/ServiceMonitor;->mDebug:Z
@@ -161,14 +147,11 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 119
     :cond_0
     iput-object p1, p0, Lcom/android/systemui/statusbar/ServiceMonitor$SC;->mName:Landroid/content/ComponentName;
 
-    .line 120
     iput-object p2, p0, Lcom/android/systemui/statusbar/ServiceMonitor$SC;->mService:Landroid/os/IBinder;
 
-    .line 122
     const/4 v1, 0x0
 
     :try_start_0
@@ -176,16 +159,12 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 126
     :goto_0
     return-void
 
-    .line 123
     :catch_0
     move-exception v0
 
-    .line 124
-    .local v0, "e":Landroid/os/RemoteException;
     iget-object v1, p0, Lcom/android/systemui/statusbar/ServiceMonitor$SC;->this$0:Lcom/android/systemui/statusbar/ServiceMonitor;
 
     # getter for: Lcom/android/systemui/statusbar/ServiceMonitor;->mTag:Ljava/lang/String;
@@ -202,10 +181,7 @@
 
 .method public onServiceDisconnected(Landroid/content/ComponentName;)V
     .locals 5
-    .param p1, "name"    # Landroid/content/ComponentName;
 
-    .prologue
-    .line 129
     iget-object v1, p0, Lcom/android/systemui/statusbar/ServiceMonitor$SC;->this$0:Lcom/android/systemui/statusbar/ServiceMonitor;
 
     # getter for: Lcom/android/systemui/statusbar/ServiceMonitor;->mDebug:Z
@@ -242,7 +218,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 130
     :cond_0
     iget-object v1, p0, Lcom/android/systemui/statusbar/ServiceMonitor$SC;->mService:Landroid/os/IBinder;
 
@@ -252,8 +227,6 @@
 
     move-result v0
 
-    .line 131
-    .local v0, "unlinked":Z
     iget-object v1, p0, Lcom/android/systemui/statusbar/ServiceMonitor$SC;->this$0:Lcom/android/systemui/statusbar/ServiceMonitor;
 
     # getter for: Lcom/android/systemui/statusbar/ServiceMonitor;->mDebug:Z
@@ -290,7 +263,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 132
     :cond_1
     iget-object v1, p0, Lcom/android/systemui/statusbar/ServiceMonitor$SC;->this$0:Lcom/android/systemui/statusbar/ServiceMonitor;
 
@@ -316,6 +288,5 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 133
     return-void
 .end method

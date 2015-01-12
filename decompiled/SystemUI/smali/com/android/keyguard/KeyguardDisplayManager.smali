@@ -33,8 +33,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .prologue
-    .line 33
     const/4 v0, 0x0
 
     sput-boolean v0, Lcom/android/keyguard/KeyguardDisplayManager;->DEBUG:Z
@@ -44,30 +42,23 @@
 
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 2
-    .param p1, "context"    # Landroid/content/Context;
 
-    .prologue
-    .line 39
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 63
     new-instance v0, Lcom/android/keyguard/KeyguardDisplayManager$1;
 
     invoke-direct {v0, p0}, Lcom/android/keyguard/KeyguardDisplayManager$1;-><init>(Lcom/android/keyguard/KeyguardDisplayManager;)V
 
     iput-object v0, p0, Lcom/android/keyguard/KeyguardDisplayManager;->mMediaRouterCallback:Landroid/media/MediaRouter$SimpleCallback;
 
-    .line 84
     new-instance v0, Lcom/android/keyguard/KeyguardDisplayManager$2;
 
     invoke-direct {v0, p0}, Lcom/android/keyguard/KeyguardDisplayManager$2;-><init>(Lcom/android/keyguard/KeyguardDisplayManager;)V
 
     iput-object v0, p0, Lcom/android/keyguard/KeyguardDisplayManager;->mOnDismissListener:Landroid/content/DialogInterface$OnDismissListener;
 
-    .line 40
     iput-object p1, p0, Lcom/android/keyguard/KeyguardDisplayManager;->mContext:Landroid/content/Context;
 
-    .line 41
     iget-object v0, p0, Lcom/android/keyguard/KeyguardDisplayManager;->mContext:Landroid/content/Context;
 
     const-string v1, "media_router"
@@ -80,15 +71,12 @@
 
     iput-object v0, p0, Lcom/android/keyguard/KeyguardDisplayManager;->mMediaRouter:Landroid/media/MediaRouter;
 
-    .line 42
     return-void
 .end method
 
 .method static synthetic access$000()Z
     .locals 1
 
-    .prologue
-    .line 31
     sget-boolean v0, Lcom/android/keyguard/KeyguardDisplayManager;->DEBUG:Z
 
     return v0
@@ -96,10 +84,7 @@
 
 .method static synthetic access$100(Lcom/android/keyguard/KeyguardDisplayManager;)Z
     .locals 1
-    .param p0, "x0"    # Lcom/android/keyguard/KeyguardDisplayManager;
 
-    .prologue
-    .line 31
     iget-boolean v0, p0, Lcom/android/keyguard/KeyguardDisplayManager;->mShowing:Z
 
     return v0
@@ -110,15 +95,12 @@
 .method public hide()V
     .locals 3
 
-    .prologue
     const/4 v2, 0x0
 
-    .line 55
     iget-boolean v0, p0, Lcom/android/keyguard/KeyguardDisplayManager;->mShowing:Z
 
     if-eqz v0, :cond_1
 
-    .line 56
     sget-boolean v0, Lcom/android/keyguard/KeyguardDisplayManager;->DEBUG:Z
 
     if-eqz v0, :cond_0
@@ -129,7 +111,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 57
     :cond_0
     iget-object v0, p0, Lcom/android/keyguard/KeyguardDisplayManager;->mMediaRouter:Landroid/media/MediaRouter;
 
@@ -137,29 +118,23 @@
 
     invoke-virtual {v0, v1}, Landroid/media/MediaRouter;->removeCallback(Landroid/media/MediaRouter$Callback;)V
 
-    .line 58
     invoke-virtual {p0, v2}, Lcom/android/keyguard/KeyguardDisplayManager;->updateDisplays(Z)V
 
-    .line 60
     :cond_1
     iput-boolean v2, p0, Lcom/android/keyguard/KeyguardDisplayManager;->mShowing:Z
 
-    .line 61
     return-void
 .end method
 
 .method public show()V
     .locals 5
 
-    .prologue
     const/4 v4, 0x1
 
-    .line 45
     iget-boolean v0, p0, Lcom/android/keyguard/KeyguardDisplayManager;->mShowing:Z
 
     if-nez v0, :cond_1
 
-    .line 46
     sget-boolean v0, Lcom/android/keyguard/KeyguardDisplayManager;->DEBUG:Z
 
     if-eqz v0, :cond_0
@@ -170,7 +145,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 47
     :cond_0
     iget-object v0, p0, Lcom/android/keyguard/KeyguardDisplayManager;->mMediaRouter:Landroid/media/MediaRouter;
 
@@ -182,30 +156,23 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/media/MediaRouter;->addCallback(ILandroid/media/MediaRouter$Callback;I)V
 
-    .line 49
     invoke-virtual {p0, v4}, Lcom/android/keyguard/KeyguardDisplayManager;->updateDisplays(Z)V
 
-    .line 51
     :cond_1
     iput-boolean v4, p0, Lcom/android/keyguard/KeyguardDisplayManager;->mShowing:Z
 
-    .line 52
     return-void
 .end method
 
 .method protected updateDisplays(Z)V
     .locals 8
-    .param p1, "showing"    # Z
 
-    .prologue
     const/4 v3, 0x1
 
     const/4 v4, 0x0
 
-    .line 93
     if-eqz p1, :cond_6
 
-    .line 94
     iget-object v5, p0, Lcom/android/keyguard/KeyguardDisplayManager;->mMediaRouter:Landroid/media/MediaRouter;
 
     const/4 v6, 0x4
@@ -214,8 +181,6 @@
 
     move-result-object v2
 
-    .line 96
-    .local v2, "route":Landroid/media/MediaRouter$RouteInfo;
     if-eqz v2, :cond_4
 
     invoke-virtual {v2}, Landroid/media/MediaRouter$RouteInfo;->getPlaybackType()I
@@ -224,8 +189,6 @@
 
     if-ne v5, v3, :cond_4
 
-    .line 98
-    .local v3, "useDisplay":Z
     :goto_0
     if-eqz v3, :cond_5
 
@@ -233,8 +196,6 @@
 
     move-result-object v1
 
-    .line 100
-    .local v1, "presentationDisplay":Landroid/view/Display;
     :goto_1
     iget-object v5, p0, Lcom/android/keyguard/KeyguardDisplayManager;->mPresentation:Landroid/app/Presentation;
 
@@ -248,7 +209,6 @@
 
     if-eq v5, v1, :cond_1
 
-    .line 101
     sget-boolean v5, Lcom/android/keyguard/KeyguardDisplayManager;->DEBUG:Z
 
     if-eqz v5, :cond_0
@@ -281,16 +241,13 @@
 
     invoke-static {v5, v6}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 102
     :cond_0
     iget-object v5, p0, Lcom/android/keyguard/KeyguardDisplayManager;->mPresentation:Landroid/app/Presentation;
 
     invoke-virtual {v5}, Landroid/app/Presentation;->dismiss()V
 
-    .line 103
     iput-object v4, p0, Lcom/android/keyguard/KeyguardDisplayManager;->mPresentation:Landroid/app/Presentation;
 
-    .line 106
     :cond_1
     iget-object v5, p0, Lcom/android/keyguard/KeyguardDisplayManager;->mPresentation:Landroid/app/Presentation;
 
@@ -298,7 +255,6 @@
 
     if-eqz v1, :cond_3
 
-    .line 107
     sget-boolean v5, Lcom/android/keyguard/KeyguardDisplayManager;->DEBUG:Z
 
     if-eqz v5, :cond_2
@@ -325,7 +281,6 @@
 
     invoke-static {v5, v6}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 108
     :cond_2
     new-instance v5, Lcom/android/keyguard/KeyguardDisplayManager$KeyguardPresentation;
 
@@ -335,14 +290,12 @@
 
     iput-object v5, p0, Lcom/android/keyguard/KeyguardDisplayManager;->mPresentation:Landroid/app/Presentation;
 
-    .line 109
     iget-object v5, p0, Lcom/android/keyguard/KeyguardDisplayManager;->mPresentation:Landroid/app/Presentation;
 
     iget-object v6, p0, Lcom/android/keyguard/KeyguardDisplayManager;->mOnDismissListener:Landroid/content/DialogInterface$OnDismissListener;
 
     invoke-virtual {v5, v6}, Landroid/app/Presentation;->setOnDismissListener(Landroid/content/DialogInterface$OnDismissListener;)V
 
-    .line 111
     :try_start_0
     iget-object v5, p0, Lcom/android/keyguard/KeyguardDisplayManager;->mPresentation:Landroid/app/Presentation;
 
@@ -350,62 +303,42 @@
     :try_end_0
     .catch Landroid/view/WindowManager$InvalidDisplayException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 123
-    .end local v1    # "presentationDisplay":Landroid/view/Display;
-    .end local v2    # "route":Landroid/media/MediaRouter$RouteInfo;
-    .end local v3    # "useDisplay":Z
     :cond_3
     :goto_2
     return-void
 
-    .line 96
-    .restart local v2    # "route":Landroid/media/MediaRouter$RouteInfo;
     :cond_4
     const/4 v3, 0x0
 
     goto :goto_0
 
-    .restart local v3    # "useDisplay":Z
     :cond_5
     move-object v1, v4
 
-    .line 98
     goto :goto_1
 
-    .line 112
-    .restart local v1    # "presentationDisplay":Landroid/view/Display;
     :catch_0
     move-exception v0
 
-    .line 113
-    .local v0, "ex":Landroid/view/WindowManager$InvalidDisplayException;
     const-string v5, "KeyguardDisplayManager"
 
     const-string v6, "Invalid display:"
 
     invoke-static {v5, v6, v0}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 114
     iput-object v4, p0, Lcom/android/keyguard/KeyguardDisplayManager;->mPresentation:Landroid/app/Presentation;
 
     goto :goto_2
 
-    .line 118
-    .end local v0    # "ex":Landroid/view/WindowManager$InvalidDisplayException;
-    .end local v1    # "presentationDisplay":Landroid/view/Display;
-    .end local v2    # "route":Landroid/media/MediaRouter$RouteInfo;
-    .end local v3    # "useDisplay":Z
     :cond_6
     iget-object v5, p0, Lcom/android/keyguard/KeyguardDisplayManager;->mPresentation:Landroid/app/Presentation;
 
     if-eqz v5, :cond_3
 
-    .line 119
     iget-object v5, p0, Lcom/android/keyguard/KeyguardDisplayManager;->mPresentation:Landroid/app/Presentation;
 
     invoke-virtual {v5}, Landroid/app/Presentation;->dismiss()V
 
-    .line 120
     iput-object v4, p0, Lcom/android/keyguard/KeyguardDisplayManager;->mPresentation:Landroid/app/Presentation;
 
     goto :goto_2

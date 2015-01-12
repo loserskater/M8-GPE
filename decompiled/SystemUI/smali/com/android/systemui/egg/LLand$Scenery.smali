@@ -32,16 +32,11 @@
 # direct methods
 .method public constructor <init>(Lcom/android/systemui/egg/LLand;Landroid/content/Context;)V
     .locals 0
-    .param p2, "context"    # Landroid/content/Context;
 
-    .prologue
-    .line 909
     iput-object p1, p0, Lcom/android/systemui/egg/LLand$Scenery;->this$0:Lcom/android/systemui/egg/LLand;
 
-    .line 910
     invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 911
     return-void
 .end method
 
@@ -49,13 +44,7 @@
 # virtual methods
 .method public step(JJFF)V
     .locals 3
-    .param p1, "t_ms"    # J
-    .param p3, "dt_ms"    # J
-    .param p5, "t"    # F
-    .param p6, "dt"    # F
 
-    .prologue
-    .line 915
     invoke-virtual {p0}, Lcom/android/systemui/egg/LLand$Scenery;->getTranslationX()F
 
     move-result v0
@@ -77,6 +66,5 @@
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/egg/LLand$Scenery;->setTranslationX(F)V
 
-    .line 916
     return-void
 .end method

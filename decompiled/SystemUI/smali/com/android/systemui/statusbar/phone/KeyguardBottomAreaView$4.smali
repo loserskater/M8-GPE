@@ -22,8 +22,6 @@
 .method constructor <init>(Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;)V
     .locals 0
 
-    .prologue
-    .line 465
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$4;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
 
     invoke-direct {p0}, Lcom/android/keyguard/KeyguardUpdateMonitorCallback;-><init>()V
@@ -35,44 +33,33 @@
 # virtual methods
 .method public onScreenTurnedOff(I)V
     .locals 1
-    .param p1, "why"    # I
 
-    .prologue
-    .line 478
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$4;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
 
     # invokes: Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->updateLockIcon()V
     invoke-static {v0}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->access$500(Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;)V
 
-    .line 479
     return-void
 .end method
 
 .method public onScreenTurnedOn()V
     .locals 1
 
-    .prologue
-    .line 473
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$4;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
 
     # invokes: Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->updateLockIcon()V
     invoke-static {v0}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->access$500(Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;)V
 
-    .line 474
     return-void
 .end method
 
 .method public onUserSwitchComplete(I)V
     .locals 1
-    .param p1, "userId"    # I
 
-    .prologue
-    .line 468
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$4;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
 
     # invokes: Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->updateCameraVisibility()V
     invoke-static {v0}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->access$400(Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;)V
 
-    .line 469
     return-void
 .end method

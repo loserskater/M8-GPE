@@ -27,8 +27,6 @@
 .method constructor <init>(Lcom/android/systemui/recents/views/TaskView;Ljava/lang/Runnable;)V
     .locals 0
 
-    .prologue
-    .line 535
     iput-object p1, p0, Lcom/android/systemui/recents/views/TaskView$9;->this$0:Lcom/android/systemui/recents/views/TaskView;
 
     iput-object p2, p0, Lcom/android/systemui/recents/views/TaskView$9;->val$r:Ljava/lang/Runnable;
@@ -43,19 +41,15 @@
 .method public run()V
     .locals 2
 
-    .prologue
-    .line 543
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView$9;->val$r:Ljava/lang/Runnable;
 
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
-    .line 546
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView$9;->this$0:Lcom/android/systemui/recents/views/TaskView;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/recents/views/TaskView;->setClipViewInStack(Z)V
 
-    .line 547
     return-void
 .end method

@@ -24,8 +24,6 @@
 .method constructor <init>(Lcom/android/systemui/ExpandHelper;Landroid/view/View;)V
     .locals 0
 
-    .prologue
-    .line 549
     iput-object p1, p0, Lcom/android/systemui/ExpandHelper$2;->this$0:Lcom/android/systemui/ExpandHelper;
 
     iput-object p2, p0, Lcom/android/systemui/ExpandHelper$2;->val$scaledView:Landroid/view/View;
@@ -39,10 +37,7 @@
 # virtual methods
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 3
-    .param p1, "animation"    # Landroid/animation/Animator;
 
-    .prologue
-    .line 552
     iget-object v0, p0, Lcom/android/systemui/ExpandHelper$2;->this$0:Lcom/android/systemui/ExpandHelper;
 
     # getter for: Lcom/android/systemui/ExpandHelper;->mCallback:Lcom/android/systemui/ExpandHelper$Callback;
@@ -56,7 +51,6 @@
 
     invoke-interface {v0, v1, v2}, Lcom/android/systemui/ExpandHelper$Callback;->setUserLockedChild(Landroid/view/View;Z)V
 
-    .line 553
     iget-object v0, p0, Lcom/android/systemui/ExpandHelper$2;->this$0:Lcom/android/systemui/ExpandHelper;
 
     # getter for: Lcom/android/systemui/ExpandHelper;->mScaleAnimation:Landroid/animation/ObjectAnimator;
@@ -66,6 +60,5 @@
 
     invoke-virtual {v0, p0}, Landroid/animation/ObjectAnimator;->removeListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 554
     return-void
 .end method

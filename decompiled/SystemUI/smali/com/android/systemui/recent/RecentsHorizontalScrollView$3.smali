@@ -27,8 +27,6 @@
 .method constructor <init>(Lcom/android/systemui/recent/RecentsHorizontalScrollView;Landroid/view/View;)V
     .locals 0
 
-    .prologue
-    .line 129
     iput-object p1, p0, Lcom/android/systemui/recent/RecentsHorizontalScrollView$3;->this$0:Lcom/android/systemui/recent/RecentsHorizontalScrollView;
 
     iput-object p2, p0, Lcom/android/systemui/recent/RecentsHorizontalScrollView$3;->val$view:Landroid/view/View;
@@ -42,10 +40,7 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 2
-    .param p1, "v"    # Landroid/view/View;
 
-    .prologue
-    .line 131
     iget-object v0, p0, Lcom/android/systemui/recent/RecentsHorizontalScrollView$3;->this$0:Lcom/android/systemui/recent/RecentsHorizontalScrollView;
 
     # getter for: Lcom/android/systemui/recent/RecentsHorizontalScrollView;->mCallback:Lcom/android/systemui/recent/RecentsCallback;
@@ -57,6 +52,5 @@
 
     invoke-interface {v0, v1}, Lcom/android/systemui/recent/RecentsCallback;->handleOnClick(Landroid/view/View;)V
 
-    .line 132
     return-void
 .end method

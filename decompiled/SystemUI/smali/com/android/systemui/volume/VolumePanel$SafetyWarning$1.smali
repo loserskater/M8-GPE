@@ -22,8 +22,6 @@
 .method constructor <init>(Lcom/android/systemui/volume/VolumePanel$SafetyWarning;)V
     .locals 0
 
-    .prologue
-    .line 323
     iput-object p1, p0, Lcom/android/systemui/volume/VolumePanel$SafetyWarning$1;->this$0:Lcom/android/systemui/volume/VolumePanel$SafetyWarning;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,11 +33,7 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 2
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .prologue
-    .line 326
     const-string v0, "android.intent.action.CLOSE_SYSTEM_DIALOGS"
 
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
@@ -52,7 +46,6 @@
 
     if-eqz v0, :cond_1
 
-    .line 327
     # getter for: Lcom/android/systemui/volume/VolumePanel;->LOGD:Z
     invoke-static {}, Lcom/android/systemui/volume/VolumePanel;->access$000()Z
 
@@ -66,19 +59,16 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 328
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/volume/VolumePanel$SafetyWarning$1;->this$0:Lcom/android/systemui/volume/VolumePanel$SafetyWarning;
 
     invoke-virtual {v0}, Lcom/android/systemui/volume/VolumePanel$SafetyWarning;->cancel()V
 
-    .line 329
     iget-object v0, p0, Lcom/android/systemui/volume/VolumePanel$SafetyWarning$1;->this$0:Lcom/android/systemui/volume/VolumePanel$SafetyWarning;
 
     # invokes: Lcom/android/systemui/volume/VolumePanel$SafetyWarning;->cleanUp()V
     invoke-static {v0}, Lcom/android/systemui/volume/VolumePanel$SafetyWarning;->access$400(Lcom/android/systemui/volume/VolumePanel$SafetyWarning;)V
 
-    .line 331
     :cond_1
     return-void
 .end method

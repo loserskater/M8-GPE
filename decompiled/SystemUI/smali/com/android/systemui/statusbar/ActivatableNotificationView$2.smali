@@ -22,8 +22,6 @@
 .method constructor <init>(Lcom/android/systemui/statusbar/ActivatableNotificationView;)V
     .locals 0
 
-    .prologue
-    .line 287
     iput-object p1, p0, Lcom/android/systemui/statusbar/ActivatableNotificationView$2;->this$0:Lcom/android/systemui/statusbar/ActivatableNotificationView;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,10 +33,7 @@
 # virtual methods
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
-    .param p1, "animation"    # Landroid/animation/Animator;
 
-    .prologue
-    .line 290
     iget-object v0, p0, Lcom/android/systemui/statusbar/ActivatableNotificationView$2;->this$0:Lcom/android/systemui/statusbar/ActivatableNotificationView;
 
     # getter for: Lcom/android/systemui/statusbar/ActivatableNotificationView;->mDimmed:Z
@@ -48,7 +43,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 291
     iget-object v0, p0, Lcom/android/systemui/statusbar/ActivatableNotificationView$2;->this$0:Lcom/android/systemui/statusbar/ActivatableNotificationView;
 
     # getter for: Lcom/android/systemui/statusbar/ActivatableNotificationView;->mBackgroundNormal:Lcom/android/systemui/statusbar/NotificationBackgroundView;
@@ -60,7 +54,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/NotificationBackgroundView;->setVisibility(I)V
 
-    .line 293
     :cond_0
     return-void
 .end method

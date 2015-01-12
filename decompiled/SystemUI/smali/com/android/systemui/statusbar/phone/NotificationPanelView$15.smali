@@ -31,8 +31,6 @@
 .method constructor <init>(Landroid/view/View;III)V
     .locals 0
 
-    .prologue
-    .line 1776
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$15;->val$target:Landroid/view/View;
 
     iput p2, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$15;->val$r:I
@@ -50,10 +48,7 @@
 # virtual methods
 .method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 5
-    .param p1, "animation"    # Landroid/animation/ValueAnimator;
 
-    .prologue
-    .line 1779
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object v1
@@ -64,8 +59,6 @@
 
     move-result v0
 
-    .line 1780
-    .local v0, "value":I
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$15;->val$target:Landroid/view/View;
 
     iget v2, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$15;->val$r:I
@@ -80,6 +73,5 @@
 
     invoke-virtual {v1, v2}, Landroid/view/View;->setBackgroundColor(I)V
 
-    .line 1781
     return-void
 .end method
