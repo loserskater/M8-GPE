@@ -27,6 +27,8 @@
 .method constructor <init>(Lcom/android/systemui/recents/views/TaskView;Lcom/android/systemui/recents/views/TaskView;)V
     .locals 0
 
+    .prologue
+    .line 566
     iput-object p1, p0, Lcom/android/systemui/recents/views/TaskView$10;->this$0:Lcom/android/systemui/recents/views/TaskView;
 
     iput-object p2, p0, Lcom/android/systemui/recents/views/TaskView$10;->val$tv:Lcom/android/systemui/recents/views/TaskView;
@@ -41,6 +43,8 @@
 .method public run()V
     .locals 2
 
+    .prologue
+    .line 569
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView$10;->this$0:Lcom/android/systemui/recents/views/TaskView;
 
     iget-object v0, v0, Lcom/android/systemui/recents/views/TaskView;->mCb:Lcom/android/systemui/recents/views/TaskView$TaskViewCallbacks;
@@ -49,5 +53,6 @@
 
     invoke-interface {v0, v1}, Lcom/android/systemui/recents/views/TaskView$TaskViewCallbacks;->onTaskViewDismissed(Lcom/android/systemui/recents/views/TaskView;)V
 
+    .line 570
     return-void
 .end method

@@ -25,6 +25,8 @@
 .method constructor <init>(Lcom/android/keyguard/SlidingChallengeLayout;)V
     .locals 0
 
+    .prologue
+    .line 172
     iput-object p1, p0, Lcom/android/keyguard/SlidingChallengeLayout$5;->this$0:Lcom/android/keyguard/SlidingChallengeLayout;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,10 +38,14 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 1
+    .param p1, "v"    # Landroid/view/View;
 
+    .prologue
+    .line 175
     iget-object v0, p0, Lcom/android/keyguard/SlidingChallengeLayout$5;->this$0:Lcom/android/keyguard/SlidingChallengeLayout;
 
     invoke-virtual {v0}, Lcom/android/keyguard/SlidingChallengeLayout;->hideBouncer()V
 
+    .line 176
     return-void
 .end method

@@ -25,6 +25,8 @@
 .method constructor <init>(Lcom/android/systemui/keyguard/KeyguardViewMediator;)V
     .locals 0
 
+    .prologue
+    .line 1264
     iput-object p1, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator$5;->this$0:Lcom/android/systemui/keyguard/KeyguardViewMediator;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,6 +39,8 @@
 .method public run()V
     .locals 4
 
+    .prologue
+    .line 1271
     :try_start_0
     iget-object v1, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator$5;->this$0:Lcom/android/systemui/keyguard/KeyguardViewMediator;
 
@@ -71,12 +75,16 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 1277
     :goto_0
     return-void
 
+    .line 1274
     :catch_0
     move-exception v0
 
+    .line 1275
+    .local v0, "e":Landroid/os/RemoteException;
     const-string v1, "KeyguardViewMediator"
 
     const-string v2, "Error while calling WindowManager"

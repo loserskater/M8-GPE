@@ -39,6 +39,8 @@
 .method static constructor <clinit>()V
     .locals 3
 
+    .prologue
+    .line 48
     const-string v0, "MobileDataController"
 
     const/4 v1, 0x3
@@ -49,6 +51,7 @@
 
     sput-boolean v0, Lcom/android/systemui/statusbar/policy/MobileDataController;->DEBUG:Z
 
+    .line 52
     new-instance v0, Ljava/lang/StringBuilder;
 
     const/16 v1, 0x32
@@ -57,6 +60,7 @@
 
     sput-object v0, Lcom/android/systemui/statusbar/policy/MobileDataController;->PERIOD_BUILDER:Ljava/lang/StringBuilder;
 
+    .line 53
     new-instance v0, Ljava/util/Formatter;
 
     sget-object v1, Lcom/android/systemui/statusbar/policy/MobileDataController;->PERIOD_BUILDER:Ljava/lang/StringBuilder;
@@ -74,23 +78,30 @@
 
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 1
+    .param p1, "context"    # Landroid/content/Context;
 
+    .prologue
+    .line 65
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 66
     iput-object p1, p0, Lcom/android/systemui/statusbar/policy/MobileDataController;->mContext:Landroid/content/Context;
 
+    .line 67
     invoke-static {p1}, Landroid/telephony/TelephonyManager;->from(Landroid/content/Context;)Landroid/telephony/TelephonyManager;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/policy/MobileDataController;->mTelephonyManager:Landroid/telephony/TelephonyManager;
 
+    .line 68
     invoke-static {p1}, Landroid/net/ConnectivityManager;->from(Landroid/content/Context;)Landroid/net/ConnectivityManager;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/policy/MobileDataController;->mConnectivityManager:Landroid/net/ConnectivityManager;
 
+    .line 69
     const-string v0, "netstats"
 
     invoke-static {v0}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
@@ -103,6 +114,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/policy/MobileDataController;->mStatsService:Landroid/net/INetworkStatsService;
 
+    .line 71
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/MobileDataController;->mContext:Landroid/content/Context;
 
     invoke-static {v0}, Landroid/net/NetworkPolicyManager;->from(Landroid/content/Context;)Landroid/net/NetworkPolicyManager;
@@ -111,16 +123,23 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/policy/MobileDataController;->mPolicyManager:Landroid/net/NetworkPolicyManager;
 
+    .line 72
     return-void
 .end method
 
 .method private static addMonth(Landroid/text/format/Time;I)Landroid/text/format/Time;
     .locals 4
+    .param p0, "t"    # Landroid/text/format/Time;
+    .param p1, "months"    # I
 
+    .prologue
+    .line 97
     new-instance v0, Landroid/text/format/Time;
 
     invoke-direct {v0, p0}, Landroid/text/format/Time;-><init>(Landroid/text/format/Time;)V
 
+    .line 98
+    .local v0, "rt":Landroid/text/format/Time;
     iget v1, p0, Landroid/text/format/Time;->monthDay:I
 
     iget v2, p0, Landroid/text/format/Time;->month:I
@@ -131,18 +150,23 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/text/format/Time;->set(III)V
 
+    .line 99
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/text/format/Time;->normalize(Z)J
 
+    .line 100
     return-object v0
 .end method
 
 .method private findNetworkPolicy(Landroid/net/NetworkTemplate;)Landroid/net/NetworkPolicy;
     .locals 6
+    .param p1, "template"    # Landroid/net/NetworkTemplate;
 
+    .prologue
     const/4 v4, 0x0
 
+    .line 165
     iget-object v5, p0, Lcom/android/systemui/statusbar/policy/MobileDataController;->mPolicyManager:Landroid/net/NetworkPolicyManager;
 
     if-eqz v5, :cond_0
@@ -152,10 +176,12 @@
     :cond_0
     move-object v3, v4
 
+    .line 175
     :cond_1
     :goto_0
     return-object v3
 
+    .line 166
     :cond_2
     iget-object v5, p0, Lcom/android/systemui/statusbar/policy/MobileDataController;->mPolicyManager:Landroid/net/NetworkPolicyManager;
 
@@ -163,22 +189,31 @@
 
     move-result-object v2
 
+    .line 167
+    .local v2, "policies":[Landroid/net/NetworkPolicy;
     if-nez v2, :cond_3
 
     move-object v3, v4
 
     goto :goto_0
 
+    .line 168
     :cond_3
     array-length v0, v2
 
+    .line 169
+    .local v0, "N":I
     const/4 v1, 0x0
 
+    .local v1, "i":I
     :goto_1
     if-ge v1, v0, :cond_5
 
+    .line 170
     aget-object v3, v2, v1
 
+    .line 171
+    .local v3, "policy":Landroid/net/NetworkPolicy;
     if-eqz v3, :cond_4
 
     iget-object v5, v3, Landroid/net/NetworkPolicy;->template:Landroid/net/NetworkTemplate;
@@ -189,26 +224,36 @@
 
     if-nez v5, :cond_1
 
+    .line 169
     :cond_4
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_1
 
+    .end local v3    # "policy":Landroid/net/NetworkPolicy;
     :cond_5
     move-object v3, v4
 
+    .line 175
     goto :goto_0
 .end method
 
 .method private formatDateRange(JJ)Ljava/lang/String;
     .locals 11
+    .param p1, "start"    # J
+    .param p3, "end"    # J
 
+    .prologue
+    .line 215
     const v8, 0x10010
 
+    .line 216
+    .local v8, "flags":I
     sget-object v9, Lcom/android/systemui/statusbar/policy/MobileDataController;->PERIOD_BUILDER:Ljava/lang/StringBuilder;
 
     monitor-enter v9
 
+    .line 217
     :try_start_0
     sget-object v0, Lcom/android/systemui/statusbar/policy/MobileDataController;->PERIOD_BUILDER:Ljava/lang/StringBuilder;
 
@@ -216,6 +261,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->setLength(I)V
 
+    .line 218
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/MobileDataController;->mContext:Landroid/content/Context;
 
     sget-object v1, Lcom/android/systemui/statusbar/policy/MobileDataController;->PERIOD_FORMATTER:Ljava/util/Formatter;
@@ -240,6 +286,7 @@
 
     return-object v0
 
+    .line 220
     :catchall_0
     move-exception v0
 
@@ -252,25 +299,35 @@
 
 .method private static getActiveSubscriberId(Landroid/content/Context;)Ljava/lang/String;
     .locals 2
+    .param p0, "context"    # Landroid/content/Context;
 
+    .prologue
+    .line 209
     invoke-static {p0}, Landroid/telephony/TelephonyManager;->from(Landroid/content/Context;)Landroid/telephony/TelephonyManager;
 
     move-result-object v1
 
+    .line 210
+    .local v1, "tele":Landroid/telephony/TelephonyManager;
     invoke-virtual {v1}, Landroid/telephony/TelephonyManager;->getSubscriberId()Ljava/lang/String;
 
     move-result-object v0
 
+    .line 211
+    .local v0, "actualSubscriberId":Ljava/lang/String;
     return-object v0
 .end method
 
 .method private getSession()Landroid/net/INetworkStatsSession;
     .locals 3
 
+    .prologue
+    .line 75
     iget-object v1, p0, Lcom/android/systemui/statusbar/policy/MobileDataController;->mSession:Landroid/net/INetworkStatsSession;
 
     if-nez v1, :cond_0
 
+    .line 77
     :try_start_0
     iget-object v1, p0, Lcom/android/systemui/statusbar/policy/MobileDataController;->mStatsService:Landroid/net/INetworkStatsService;
 
@@ -283,15 +340,19 @@
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_1
 
+    .line 84
     :cond_0
     :goto_0
     iget-object v1, p0, Lcom/android/systemui/statusbar/policy/MobileDataController;->mSession:Landroid/net/INetworkStatsSession;
 
     return-object v1
 
+    .line 78
     :catch_0
     move-exception v0
 
+    .line 79
+    .local v0, "e":Landroid/os/RemoteException;
     const-string v1, "MobileDataController"
 
     const-string v2, "Failed to open stats session"
@@ -300,9 +361,13 @@
 
     goto :goto_0
 
+    .line 80
+    .end local v0    # "e":Landroid/os/RemoteException;
     :catch_1
     move-exception v0
 
+    .line 81
+    .local v0, "e":Ljava/lang/RuntimeException;
     const-string v1, "MobileDataController"
 
     const-string v2, "Failed to open stats session"
@@ -314,7 +379,10 @@
 
 .method private static historyEntryToString(Landroid/net/NetworkStatsHistory$Entry;)Ljava/lang/String;
     .locals 4
+    .param p0, "entry"    # Landroid/net/NetworkStatsHistory$Entry;
 
+    .prologue
+    .line 179
     if-nez p0, :cond_0
 
     const/4 v0, 0x0
@@ -440,7 +508,10 @@
 
 .method private warn(Ljava/lang/String;)Lcom/android/systemui/statusbar/policy/NetworkController$DataUsageInfo;
     .locals 3
+    .param p1, "msg"    # Ljava/lang/String;
 
+    .prologue
+    .line 92
     const-string v0, "MobileDataController"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -463,6 +534,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 93
     const/4 v0, 0x0
 
     return-object v0
@@ -473,6 +545,8 @@
 .method public getDataUsageInfo()Lcom/android/systemui/statusbar/policy/NetworkController$DataUsageInfo;
     .locals 32
 
+    .prologue
+    .line 104
     move-object/from16 v0, p0
 
     iget-object v12, v0, Lcom/android/systemui/statusbar/policy/MobileDataController;->mContext:Landroid/content/Context;
@@ -481,8 +555,11 @@
 
     move-result-object v22
 
+    .line 105
+    .local v22, "subscriberId":Ljava/lang/String;
     if-nez v22, :cond_0
 
+    .line 106
     const-string v12, "no subscriber id"
 
     move-object/from16 v0, p0
@@ -491,16 +568,21 @@
 
     move-result-object v26
 
+    .line 160
     :goto_0
     return-object v26
 
+    .line 108
     :cond_0
     invoke-direct/range {p0 .. p0}, Lcom/android/systemui/statusbar/policy/MobileDataController;->getSession()Landroid/net/INetworkStatsSession;
 
     move-result-object v21
 
+    .line 109
+    .local v21, "session":Landroid/net/INetworkStatsSession;
     if-nez v21, :cond_1
 
+    .line 110
     const-string v12, "no stats session"
 
     move-object/from16 v0, p0
@@ -511,11 +593,14 @@
 
     goto :goto_0
 
+    .line 112
     :cond_1
     invoke-static/range {v22 .. v22}, Landroid/net/NetworkTemplate;->buildTemplateMobileAll(Ljava/lang/String;)Landroid/net/NetworkTemplate;
 
     move-result-object v23
 
+    .line 113
+    .local v23, "template":Landroid/net/NetworkTemplate;
     move-object/from16 v0, p0
 
     move-object/from16 v1, v23
@@ -524,6 +609,8 @@
 
     move-result-object v19
 
+    .line 115
+    .local v19, "policy":Landroid/net/NetworkPolicy;
     :try_start_0
     move-object/from16 v0, p0
 
@@ -539,10 +626,14 @@
 
     move-result-object v5
 
+    .line 116
+    .local v5, "history":Landroid/net/NetworkStatsHistory;
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v10
 
+    .line 118
+    .local v10, "now":J
     if-eqz v19, :cond_5
 
     move-object/from16 v0, v19
@@ -551,6 +642,7 @@
 
     if-lez v12, :cond_5
 
+    .line 120
     sget-boolean v12, Lcom/android/systemui/statusbar/policy/MobileDataController;->DEBUG:Z
 
     if-eqz v12, :cond_2
@@ -601,6 +693,7 @@
 
     invoke-static {v12, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 122
     :cond_2
     new-instance v18, Landroid/text/format/Time;
 
@@ -612,8 +705,11 @@
 
     invoke-direct {v0, v12}, Landroid/text/format/Time;-><init>(Ljava/lang/String;)V
 
+    .line 123
+    .local v18, "nowTime":Landroid/text/format/Time;
     invoke-virtual/range {v18 .. v18}, Landroid/text/format/Time;->setToNow()V
 
+    .line 124
     new-instance v20, Landroid/text/format/Time;
 
     move-object/from16 v0, v20
@@ -622,6 +718,8 @@
 
     invoke-direct {v0, v1}, Landroid/text/format/Time;-><init>(Landroid/text/format/Time;)V
 
+    .line 125
+    .local v20, "policyTime":Landroid/text/format/Time;
     move-object/from16 v0, v19
 
     iget v12, v0, Landroid/net/NetworkPolicy;->cycleDay:I
@@ -646,12 +744,14 @@
 
     invoke-virtual {v0, v12, v1, v2}, Landroid/text/format/Time;->set(III)V
 
+    .line 126
     const/4 v12, 0x0
 
     move-object/from16 v0, v20
 
     invoke-virtual {v0, v12}, Landroid/text/format/Time;->normalize(Z)J
 
+    .line 127
     move-object/from16 v0, v18
 
     move-object/from16 v1, v20
@@ -662,6 +762,7 @@
 
     if-eqz v12, :cond_4
 
+    .line 128
     const/4 v12, 0x0
 
     move-object/from16 v0, v20
@@ -670,6 +771,8 @@
 
     move-result-wide v6
 
+    .line 129
+    .local v6, "start":J
     const/4 v12, 0x1
 
     move-object/from16 v0, v20
@@ -686,21 +789,31 @@
 
     move-result-wide v8
 
+    .line 139
+    .end local v18    # "nowTime":Landroid/text/format/Time;
+    .end local v20    # "policyTime":Landroid/text/format/Time;
+    .local v8, "end":J
     :goto_1
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v16
 
+    .line 140
+    .local v16, "callStart":J
     const/4 v12, 0x0
 
     invoke-virtual/range {v5 .. v12}, Landroid/net/NetworkStatsHistory;->getValues(JJJLandroid/net/NetworkStatsHistory$Entry;)Landroid/net/NetworkStatsHistory$Entry;
 
     move-result-object v13
 
+    .line 141
+    .local v13, "entry":Landroid/net/NetworkStatsHistory$Entry;
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v14
 
+    .line 142
+    .local v14, "callEnd":J
     sget-boolean v12, Lcom/android/systemui/statusbar/policy/MobileDataController;->DEBUG:Z
 
     if-eqz v12, :cond_3
@@ -773,9 +886,11 @@
 
     invoke-static {v12, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 145
     :cond_3
     if-nez v13, :cond_6
 
+    .line 146
     const-string v12, "no entry data"
 
     move-object/from16 v0, p0
@@ -786,6 +901,14 @@
 
     goto/16 :goto_0
 
+    .line 131
+    .end local v6    # "start":J
+    .end local v8    # "end":J
+    .end local v13    # "entry":Landroid/net/NetworkStatsHistory$Entry;
+    .end local v14    # "callEnd":J
+    .end local v16    # "callStart":J
+    .restart local v18    # "nowTime":Landroid/text/format/Time;
+    .restart local v20    # "policyTime":Landroid/text/format/Time;
     :cond_4
     const/4 v12, -0x1
 
@@ -803,6 +926,8 @@
 
     move-result-wide v6
 
+    .line 132
+    .restart local v6    # "start":J
     const/4 v12, 0x0
 
     move-object/from16 v0, v20
@@ -811,17 +936,30 @@
 
     move-result-wide v8
 
+    .restart local v8    # "end":J
     goto :goto_1
 
+    .line 136
+    .end local v6    # "start":J
+    .end local v8    # "end":J
+    .end local v18    # "nowTime":Landroid/text/format/Time;
+    .end local v20    # "policyTime":Landroid/text/format/Time;
     :cond_5
     move-wide v8, v10
 
+    .line 137
+    .restart local v8    # "end":J
     const-wide v28, 0x90321000L
 
     sub-long v6, v10, v28
 
+    .restart local v6    # "start":J
     goto/16 :goto_1
 
+    .line 148
+    .restart local v13    # "entry":Landroid/net/NetworkStatsHistory$Entry;
+    .restart local v14    # "callEnd":J
+    .restart local v16    # "callStart":J
     :cond_6
     iget-wide v0, v13, Landroid/net/NetworkStatsHistory$Entry;->rxBytes:J
 
@@ -833,16 +971,21 @@
 
     add-long v24, v28, v30
 
+    .line 149
+    .local v24, "totalBytes":J
     new-instance v26, Lcom/android/systemui/statusbar/policy/NetworkController$DataUsageInfo;
 
     invoke-direct/range {v26 .. v26}, Lcom/android/systemui/statusbar/policy/NetworkController$DataUsageInfo;-><init>()V
 
+    .line 150
+    .local v26, "usage":Lcom/android/systemui/statusbar/policy/NetworkController$DataUsageInfo;
     move-wide/from16 v0, v24
 
     move-object/from16 v2, v26
 
     iput-wide v0, v2, Lcom/android/systemui/statusbar/policy/NetworkController$DataUsageInfo;->usageLevel:J
 
+    .line 151
     move-object/from16 v0, p0
 
     invoke-direct {v0, v6, v7, v8, v9}, Lcom/android/systemui/statusbar/policy/MobileDataController;->formatDateRange(JJ)Ljava/lang/String;
@@ -853,8 +996,10 @@
 
     iput-object v12, v0, Lcom/android/systemui/statusbar/policy/NetworkController$DataUsageInfo;->period:Ljava/lang/String;
 
+    .line 152
     if-eqz v19, :cond_9
 
+    .line 153
     move-object/from16 v0, v19
 
     iget-wide v0, v0, Landroid/net/NetworkPolicy;->limitBytes:J
@@ -880,6 +1025,7 @@
 
     iput-wide v0, v2, Lcom/android/systemui/statusbar/policy/NetworkController$DataUsageInfo;->limitLevel:J
 
+    .line 154
     move-object/from16 v0, v19
 
     iget-wide v0, v0, Landroid/net/NetworkPolicy;->warningBytes:J
@@ -909,9 +1055,21 @@
 
     goto/16 :goto_0
 
+    .line 159
+    .end local v5    # "history":Landroid/net/NetworkStatsHistory;
+    .end local v6    # "start":J
+    .end local v8    # "end":J
+    .end local v10    # "now":J
+    .end local v13    # "entry":Landroid/net/NetworkStatsHistory$Entry;
+    .end local v14    # "callEnd":J
+    .end local v16    # "callStart":J
+    .end local v24    # "totalBytes":J
+    .end local v26    # "usage":Lcom/android/systemui/statusbar/policy/NetworkController$DataUsageInfo;
     :catch_0
     move-exception v4
 
+    .line 160
+    .local v4, "e":Landroid/os/RemoteException;
     const-string v12, "remote call failed"
 
     move-object/from16 v0, p0
@@ -922,16 +1080,29 @@
 
     goto/16 :goto_0
 
+    .line 153
+    .end local v4    # "e":Landroid/os/RemoteException;
+    .restart local v5    # "history":Landroid/net/NetworkStatsHistory;
+    .restart local v6    # "start":J
+    .restart local v8    # "end":J
+    .restart local v10    # "now":J
+    .restart local v13    # "entry":Landroid/net/NetworkStatsHistory$Entry;
+    .restart local v14    # "callEnd":J
+    .restart local v16    # "callStart":J
+    .restart local v24    # "totalBytes":J
+    .restart local v26    # "usage":Lcom/android/systemui/statusbar/policy/NetworkController$DataUsageInfo;
     :cond_7
     const-wide/16 v28, 0x0
 
     goto :goto_2
 
+    .line 154
     :cond_8
     const-wide/16 v28, 0x0
 
     goto :goto_3
 
+    .line 156
     :cond_9
     const-wide v28, 0x80000000L
 
@@ -950,6 +1121,8 @@
 .method public isMobileDataEnabled()Z
     .locals 1
 
+    .prologue
+    .line 205
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/MobileDataController;->mTelephonyManager:Landroid/telephony/TelephonyManager;
 
     invoke-virtual {v0}, Landroid/telephony/TelephonyManager;->getDataEnabled()Z
@@ -962,8 +1135,10 @@
 .method public isMobileDataSupported()Z
     .locals 3
 
+    .prologue
     const/4 v0, 0x0
 
+    .line 200
     iget-object v1, p0, Lcom/android/systemui/statusbar/policy/MobileDataController;->mConnectivityManager:Landroid/net/ConnectivityManager;
 
     invoke-virtual {v1, v0}, Landroid/net/ConnectivityManager;->isNetworkSupported(I)Z
@@ -990,27 +1165,37 @@
 
 .method public setCallback(Lcom/android/systemui/statusbar/policy/MobileDataController$Callback;)V
     .locals 0
+    .param p1, "callback"    # Lcom/android/systemui/statusbar/policy/MobileDataController$Callback;
 
+    .prologue
+    .line 88
     iput-object p1, p0, Lcom/android/systemui/statusbar/policy/MobileDataController;->mCallback:Lcom/android/systemui/statusbar/policy/MobileDataController$Callback;
 
+    .line 89
     return-void
 .end method
 
 .method public setMobileDataEnabled(Z)V
     .locals 1
+    .param p1, "enabled"    # Z
 
+    .prologue
+    .line 192
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/MobileDataController;->mTelephonyManager:Landroid/telephony/TelephonyManager;
 
     invoke-virtual {v0, p1}, Landroid/telephony/TelephonyManager;->setDataEnabled(Z)V
 
+    .line 193
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/MobileDataController;->mCallback:Lcom/android/systemui/statusbar/policy/MobileDataController$Callback;
 
     if-eqz v0, :cond_0
 
+    .line 194
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/MobileDataController;->mCallback:Lcom/android/systemui/statusbar/policy/MobileDataController$Callback;
 
     invoke-interface {v0, p1}, Lcom/android/systemui/statusbar/policy/MobileDataController$Callback;->onMobileDataEnabled(Z)V
 
+    .line 196
     :cond_0
     return-void
 .end method

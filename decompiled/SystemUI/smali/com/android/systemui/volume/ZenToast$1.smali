@@ -27,6 +27,8 @@
 .method constructor <init>(Lcom/android/systemui/volume/ZenToast;Landroid/widget/TextView;)V
     .locals 0
 
+    .prologue
+    .line 114
     iput-object p1, p0, Lcom/android/systemui/volume/ZenToast$1;->this$0:Lcom/android/systemui/volume/ZenToast;
 
     iput-object p2, p0, Lcom/android/systemui/volume/ZenToast$1;->val$message:Landroid/widget/TextView;
@@ -40,7 +42,10 @@
 # virtual methods
 .method public onViewAttachedToWindow(Landroid/view/View;)V
     .locals 2
+    .param p1, "v"    # Landroid/view/View;
 
+    .prologue
+    .line 122
     iget-object v0, p0, Lcom/android/systemui/volume/ZenToast$1;->this$0:Lcom/android/systemui/volume/ZenToast;
 
     # getter for: Lcom/android/systemui/volume/ZenToast;->mZenToast:Landroid/view/View;
@@ -56,11 +61,15 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->announceForAccessibility(Ljava/lang/CharSequence;)V
 
+    .line 123
     return-void
 .end method
 
 .method public onViewDetachedFromWindow(Landroid/view/View;)V
     .locals 0
+    .param p1, "v"    # Landroid/view/View;
 
+    .prologue
+    .line 118
     return-void
 .end method

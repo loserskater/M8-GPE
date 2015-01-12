@@ -27,6 +27,8 @@
 .method constructor <init>(Lcom/android/systemui/volume/VolumePanel;Lcom/android/systemui/volume/VolumePanel$StreamControl;)V
     .locals 0
 
+    .prologue
+    .line 626
     iput-object p1, p0, Lcom/android/systemui/volume/VolumePanel$6;->this$0:Lcom/android/systemui/volume/VolumePanel;
 
     iput-object p2, p0, Lcom/android/systemui/volume/VolumePanel$6;->val$sc:Lcom/android/systemui/volume/VolumePanel$StreamControl;
@@ -40,12 +42,16 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 2
+    .param p1, "v"    # Landroid/view/View;
 
+    .prologue
+    .line 629
     iget-object v0, p0, Lcom/android/systemui/volume/VolumePanel$6;->this$0:Lcom/android/systemui/volume/VolumePanel;
 
     # invokes: Lcom/android/systemui/volume/VolumePanel;->resetTimeout()V
     invoke-static {v0}, Lcom/android/systemui/volume/VolumePanel;->access$800(Lcom/android/systemui/volume/VolumePanel;)V
 
+    .line 630
     iget-object v0, p0, Lcom/android/systemui/volume/VolumePanel$6;->this$0:Lcom/android/systemui/volume/VolumePanel;
 
     iget-object v1, p0, Lcom/android/systemui/volume/VolumePanel$6;->val$sc:Lcom/android/systemui/volume/VolumePanel$StreamControl;
@@ -53,5 +59,6 @@
     # invokes: Lcom/android/systemui/volume/VolumePanel;->toggle(Lcom/android/systemui/volume/VolumePanel$StreamControl;)V
     invoke-static {v0, v1}, Lcom/android/systemui/volume/VolumePanel;->access$1300(Lcom/android/systemui/volume/VolumePanel;Lcom/android/systemui/volume/VolumePanel$StreamControl;)V
 
+    .line 631
     return-void
 .end method

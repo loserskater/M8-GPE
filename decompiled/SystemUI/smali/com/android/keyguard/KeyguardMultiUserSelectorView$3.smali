@@ -27,6 +27,8 @@
 .method constructor <init>(Lcom/android/keyguard/KeyguardMultiUserSelectorView;Lcom/android/keyguard/KeyguardMultiUserAvatar;)V
     .locals 0
 
+    .prologue
+    .line 153
     iput-object p1, p0, Lcom/android/keyguard/KeyguardMultiUserSelectorView$3;->this$0:Lcom/android/keyguard/KeyguardMultiUserSelectorView;
 
     iput-object p2, p0, Lcom/android/keyguard/KeyguardMultiUserSelectorView$3;->val$avatar:Lcom/android/keyguard/KeyguardMultiUserAvatar;
@@ -41,6 +43,8 @@
 .method public run()V
     .locals 4
 
+    .prologue
+    .line 156
     iget-object v1, p0, Lcom/android/keyguard/KeyguardMultiUserSelectorView$3;->this$0:Lcom/android/keyguard/KeyguardMultiUserSelectorView;
 
     iget-object v2, p0, Lcom/android/keyguard/KeyguardMultiUserSelectorView$3;->val$avatar:Lcom/android/keyguard/KeyguardMultiUserAvatar;
@@ -48,6 +52,7 @@
     # setter for: Lcom/android/keyguard/KeyguardMultiUserSelectorView;->mActiveUserAvatar:Lcom/android/keyguard/KeyguardMultiUserAvatar;
     invoke-static {v1, v2}, Lcom/android/keyguard/KeyguardMultiUserSelectorView;->access$002(Lcom/android/keyguard/KeyguardMultiUserSelectorView;Lcom/android/keyguard/KeyguardMultiUserAvatar;)Lcom/android/keyguard/KeyguardMultiUserAvatar;
 
+    .line 158
     :try_start_0
     invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
 
@@ -65,12 +70,16 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 163
     :goto_0
     return-void
 
+    .line 160
     :catch_0
     move-exception v0
 
+    .line 161
+    .local v0, "re":Landroid/os/RemoteException;
     const-string v1, "KeyguardMultiUserSelectorView"
 
     new-instance v2, Ljava/lang/StringBuilder;

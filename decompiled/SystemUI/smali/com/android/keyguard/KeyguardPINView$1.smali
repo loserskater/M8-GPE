@@ -25,6 +25,8 @@
 .method constructor <init>(Lcom/android/keyguard/KeyguardPINView;)V
     .locals 0
 
+    .prologue
+    .line 113
     iput-object p1, p0, Lcom/android/keyguard/KeyguardPINView$1;->this$0:Lcom/android/keyguard/KeyguardPINView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,6 +39,8 @@
 .method public run()V
     .locals 2
 
+    .prologue
+    .line 116
     iget-object v0, p0, Lcom/android/keyguard/KeyguardPINView$1;->this$0:Lcom/android/keyguard/KeyguardPINView;
 
     const/4 v1, 0x1
@@ -44,5 +48,6 @@
     # invokes: Lcom/android/keyguard/KeyguardPINView;->enableClipping(Z)V
     invoke-static {v0, v1}, Lcom/android/keyguard/KeyguardPINView;->access$000(Lcom/android/keyguard/KeyguardPINView;Z)V
 
+    .line 117
     return-void
 .end method

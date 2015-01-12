@@ -25,6 +25,8 @@
 .method constructor <init>(Lcom/android/keyguard/KeyguardTransportControlView;)V
     .locals 0
 
+    .prologue
+    .line 181
     iput-object p1, p0, Lcom/android/keyguard/KeyguardTransportControlView$4;->this$0:Lcom/android/keyguard/KeyguardTransportControlView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,7 +38,10 @@
 # virtual methods
 .method public onLongClick(Landroid/view/View;)Z
     .locals 1
+    .param p1, "v"    # Landroid/view/View;
 
+    .prologue
+    .line 184
     iget-object v0, p0, Lcom/android/keyguard/KeyguardTransportControlView$4;->this$0:Lcom/android/keyguard/KeyguardTransportControlView;
 
     # getter for: Lcom/android/keyguard/KeyguardTransportControlView;->mSeekEnabled:Z
@@ -46,12 +51,14 @@
 
     if-eqz v0, :cond_0
 
+    .line 185
     iget-object v0, p0, Lcom/android/keyguard/KeyguardTransportControlView$4;->this$0:Lcom/android/keyguard/KeyguardTransportControlView;
 
     invoke-virtual {v0}, Lcom/android/keyguard/KeyguardTransportControlView;->tryToggleSeekBar()Z
 
     move-result v0
 
+    .line 187
     :goto_0
     return v0
 

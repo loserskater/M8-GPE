@@ -24,6 +24,8 @@
 .method constructor <init>(Lcom/android/systemui/DessertCaseView;Landroid/view/View;)V
     .locals 0
 
+    .prologue
+    .line 331
     iput-object p1, p0, Lcom/android/systemui/DessertCaseView$3;->this$0:Lcom/android/systemui/DessertCaseView;
 
     iput-object p2, p0, Lcom/android/systemui/DessertCaseView$3;->val$v:Landroid/view/View;
@@ -37,7 +39,10 @@
 # virtual methods
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 3
+    .param p1, "animator"    # Landroid/animation/Animator;
 
+    .prologue
+    .line 339
     iget-object v0, p0, Lcom/android/systemui/DessertCaseView$3;->val$v:Landroid/view/View;
 
     const/4 v1, 0x0
@@ -46,12 +51,16 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/view/View;->setLayerType(ILandroid/graphics/Paint;)V
 
+    .line 340
     return-void
 .end method
 
 .method public onAnimationStart(Landroid/animation/Animator;)V
     .locals 3
+    .param p1, "animator"    # Landroid/animation/Animator;
 
+    .prologue
+    .line 334
     iget-object v0, p0, Lcom/android/systemui/DessertCaseView$3;->val$v:Landroid/view/View;
 
     const/4 v1, 0x2
@@ -60,9 +69,11 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/view/View;->setLayerType(ILandroid/graphics/Paint;)V
 
+    .line 335
     iget-object v0, p0, Lcom/android/systemui/DessertCaseView$3;->val$v:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->buildLayer()V
 
+    .line 336
     return-void
 .end method

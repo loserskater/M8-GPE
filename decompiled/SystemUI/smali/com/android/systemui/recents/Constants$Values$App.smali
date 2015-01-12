@@ -28,18 +28,23 @@
 .method static constructor <clinit>()V
     .locals 1
 
+    .prologue
+    .line 63
     const/16 v0, 0x400
 
     sput v0, Lcom/android/systemui/recents/Constants$Values$App;->AppWidgetHostId:I
 
+    .line 64
     const-string v0, "searchAppWidgetId"
 
     sput-object v0, Lcom/android/systemui/recents/Constants$Values$App;->Key_SearchAppWidgetId:Ljava/lang/String;
 
+    .line 65
     const-string v0, "debugModeEnabled"
 
     sput-object v0, Lcom/android/systemui/recents/Constants$Values$App;->Key_DebugModeEnabled:Ljava/lang/String;
 
+    .line 66
     const-string v0, "A"
 
     sput-object v0, Lcom/android/systemui/recents/Constants$Values$App;->DebugModeVersion:Ljava/lang/String;
@@ -50,6 +55,8 @@
 .method public constructor <init>()V
     .locals 0
 
+    .prologue
+    .line 62
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

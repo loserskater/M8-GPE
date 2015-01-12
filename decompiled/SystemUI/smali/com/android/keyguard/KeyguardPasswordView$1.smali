@@ -27,6 +27,8 @@
 .method constructor <init>(Lcom/android/keyguard/KeyguardPasswordView;I)V
     .locals 0
 
+    .prologue
+    .line 90
     iput-object p1, p0, Lcom/android/keyguard/KeyguardPasswordView$1;->this$0:Lcom/android/keyguard/KeyguardPasswordView;
 
     iput p2, p0, Lcom/android/keyguard/KeyguardPasswordView$1;->val$reason:I
@@ -41,8 +43,10 @@
 .method public run()V
     .locals 3
 
+    .prologue
     const/4 v2, 0x1
 
+    .line 93
     iget-object v0, p0, Lcom/android/keyguard/KeyguardPasswordView$1;->this$0:Lcom/android/keyguard/KeyguardPasswordView;
 
     # getter for: Lcom/android/keyguard/KeyguardPasswordView;->mPasswordEntry:Landroid/widget/TextView;
@@ -52,6 +56,7 @@
 
     invoke-virtual {v0}, Landroid/widget/TextView;->requestFocus()Z
 
+    .line 94
     iget v0, p0, Lcom/android/keyguard/KeyguardPasswordView$1;->val$reason:I
 
     if-ne v0, v2, :cond_0
@@ -65,6 +70,7 @@
 
     if-eqz v0, :cond_1
 
+    .line 95
     :cond_0
     iget-object v0, p0, Lcom/android/keyguard/KeyguardPasswordView$1;->this$0:Lcom/android/keyguard/KeyguardPasswordView;
 
@@ -79,6 +85,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/view/inputmethod/InputMethodManager;->showSoftInput(Landroid/view/View;I)Z
 
+    .line 97
     :cond_1
     return-void
 .end method

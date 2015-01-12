@@ -25,6 +25,8 @@
 .method constructor <init>(Lcom/android/systemui/recents/views/TaskStackView;)V
     .locals 0
 
+    .prologue
+    .line 129
     iput-object p1, p0, Lcom/android/systemui/recents/views/TaskStackView$3;->this$0:Lcom/android/systemui/recents/views/TaskStackView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,17 +39,23 @@
 .method public run()V
     .locals 4
 
+    .prologue
+    .line 133
     iget-object v3, p0, Lcom/android/systemui/recents/views/TaskStackView$3;->this$0:Lcom/android/systemui/recents/views/TaskStackView;
 
     invoke-virtual {v3}, Lcom/android/systemui/recents/views/TaskStackView;->getChildCount()I
 
     move-result v0
 
+    .line 134
+    .local v0, "childCount":I
     const/4 v1, 0x0
 
+    .local v1, "i":I
     :goto_0
     if-ge v1, v0, :cond_0
 
+    .line 135
     iget-object v3, p0, Lcom/android/systemui/recents/views/TaskStackView$3;->this$0:Lcom/android/systemui/recents/views/TaskStackView;
 
     invoke-virtual {v3, v1}, Lcom/android/systemui/recents/views/TaskStackView;->getChildAt(I)Landroid/view/View;
@@ -56,12 +64,17 @@
 
     check-cast v2, Lcom/android/systemui/recents/views/TaskView;
 
+    .line 136
+    .local v2, "tv":Lcom/android/systemui/recents/views/TaskView;
     invoke-virtual {v2}, Lcom/android/systemui/recents/views/TaskView;->startNoUserInteractionAnimation()V
 
+    .line 134
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
+    .line 138
+    .end local v2    # "tv":Lcom/android/systemui/recents/views/TaskView;
     :cond_0
     return-void
 .end method

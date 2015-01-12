@@ -22,6 +22,8 @@
 .method constructor <init>(Landroid/view/View;)V
     .locals 0
 
+    .prologue
+    .line 1784
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$16;->val$target:Landroid/view/View;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -33,7 +35,10 @@
 # virtual methods
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 3
+    .param p1, "animation"    # Landroid/animation/Animator;
 
+    .prologue
+    .line 1787
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$16;->val$target:Landroid/view/View;
 
     const v1, 0x7f0e002a
@@ -42,5 +47,6 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
 
+    .line 1788
     return-void
 .end method

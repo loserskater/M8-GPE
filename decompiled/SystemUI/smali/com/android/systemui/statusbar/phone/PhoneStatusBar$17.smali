@@ -25,6 +25,8 @@
 .method constructor <init>(Lcom/android/systemui/statusbar/phone/PhoneStatusBar;)V
     .locals 0
 
+    .prologue
+    .line 1004
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$17;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,8 +39,10 @@
 .method public onPreDraw()Z
     .locals 5
 
+    .prologue
     const/4 v4, 0x1
 
+    .line 1007
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$17;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     # getter for: Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mDrawCount:I
@@ -48,6 +52,7 @@
 
     if-ne v0, v4, :cond_0
 
+    .line 1008
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$17;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mStatusBarView:Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;
@@ -58,6 +63,7 @@
 
     invoke-virtual {v0, p0}, Landroid/view/ViewTreeObserver;->removeOnPreDrawListener(Landroid/view/ViewTreeObserver$OnPreDrawListener;)V
 
+    .line 1009
     const-string v0, "extraRasterBucket"
 
     const v1, 0x3f733333
@@ -68,6 +74,7 @@
 
     invoke-static {v0, v1}, Landroid/view/HardwareCanvas;->setProperty(Ljava/lang/String;Ljava/lang/String;)V
 
+    .line 1011
     const-string v0, "extraRasterBucket"
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$17;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
@@ -108,11 +115,13 @@
 
     invoke-static {v0, v1}, Landroid/view/HardwareCanvas;->setProperty(Ljava/lang/String;Ljava/lang/String;)V
 
+    .line 1017
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$17;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     # operator++ for: Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mDrawCount:I
     invoke-static {v0}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->access$3808(Lcom/android/systemui/statusbar/phone/PhoneStatusBar;)I
 
+    .line 1018
     return v4
 .end method

@@ -26,6 +26,8 @@
 .method private constructor <init>(Lcom/android/systemui/qs/tiles/CastTile;)V
     .locals 0
 
+    .prologue
+    .line 128
     iput-object p1, p0, Lcom/android/systemui/qs/tiles/CastTile$Callback;->this$0:Lcom/android/systemui/qs/tiles/CastTile;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,7 +37,11 @@
 
 .method synthetic constructor <init>(Lcom/android/systemui/qs/tiles/CastTile;Lcom/android/systemui/qs/tiles/CastTile$1;)V
     .locals 0
+    .param p1, "x0"    # Lcom/android/systemui/qs/tiles/CastTile;
+    .param p2, "x1"    # Lcom/android/systemui/qs/tiles/CastTile$1;
 
+    .prologue
+    .line 128
     invoke-direct {p0, p1}, Lcom/android/systemui/qs/tiles/CastTile$Callback;-><init>(Lcom/android/systemui/qs/tiles/CastTile;)V
 
     return-void
@@ -46,21 +52,27 @@
 .method public onCastDevicesChanged()V
     .locals 1
 
+    .prologue
+    .line 131
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/CastTile$Callback;->this$0:Lcom/android/systemui/qs/tiles/CastTile;
 
     # invokes: Lcom/android/systemui/qs/tiles/CastTile;->refreshState()V
     invoke-static {v0}, Lcom/android/systemui/qs/tiles/CastTile;->access$300(Lcom/android/systemui/qs/tiles/CastTile;)V
 
+    .line 132
     return-void
 .end method
 
 .method public onKeyguardChanged()V
     .locals 1
 
+    .prologue
+    .line 136
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/CastTile$Callback;->this$0:Lcom/android/systemui/qs/tiles/CastTile;
 
     # invokes: Lcom/android/systemui/qs/tiles/CastTile;->refreshState()V
     invoke-static {v0}, Lcom/android/systemui/qs/tiles/CastTile;->access$400(Lcom/android/systemui/qs/tiles/CastTile;)V
 
+    .line 137
     return-void
 .end method

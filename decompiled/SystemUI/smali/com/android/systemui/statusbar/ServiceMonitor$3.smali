@@ -22,6 +22,8 @@
 .method constructor <init>(Lcom/android/systemui/statusbar/ServiceMonitor;)V
     .locals 0
 
+    .prologue
+    .line 141
     iput-object p1, p0, Lcom/android/systemui/statusbar/ServiceMonitor$3;->this$0:Lcom/android/systemui/statusbar/ServiceMonitor;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -33,7 +35,11 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 4
+    .param p1, "context"    # Landroid/content/Context;
+    .param p2, "intent"    # Landroid/content/Intent;
 
+    .prologue
+    .line 143
     invoke-virtual {p2}, Landroid/content/Intent;->getData()Landroid/net/Uri;
 
     move-result-object v1
@@ -42,6 +48,8 @@
 
     move-result-object v0
 
+    .line 144
+    .local v0, "pkg":Ljava/lang/String;
     iget-object v1, p0, Lcom/android/systemui/statusbar/ServiceMonitor$3;->this$0:Lcom/android/systemui/statusbar/ServiceMonitor;
 
     # getter for: Lcom/android/systemui/statusbar/ServiceMonitor;->mServiceName:Landroid/content/ComponentName;
@@ -68,6 +76,7 @@
 
     if-eqz v1, :cond_0
 
+    .line 145
     iget-object v1, p0, Lcom/android/systemui/statusbar/ServiceMonitor$3;->this$0:Lcom/android/systemui/statusbar/ServiceMonitor;
 
     # getter for: Lcom/android/systemui/statusbar/ServiceMonitor;->mHandler:Landroid/os/Handler;
@@ -90,6 +99,7 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
+    .line 147
     :cond_0
     return-void
 .end method

@@ -22,6 +22,8 @@
 .method constructor <init>(Lcom/android/keyguard/KeyguardUpdateMonitor;)V
     .locals 0
 
+    .prologue
+    .line 406
     iput-object p1, p0, Lcom/android/keyguard/KeyguardUpdateMonitor$3;->this$0:Lcom/android/keyguard/KeyguardUpdateMonitor;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -33,15 +35,21 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 7
+    .param p1, "context"    # Landroid/content/Context;
+    .param p2, "intent"    # Landroid/content/Intent;
 
+    .prologue
     const/16 v5, 0x145
 
     const/4 v6, 0x0
 
+    .line 409
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
+    .line 410
+    .local v0, "action":Ljava/lang/String;
     const-string v1, "android.app.action.NEXT_ALARM_CLOCK_CHANGED"
 
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -50,6 +58,7 @@
 
     if-eqz v1, :cond_1
 
+    .line 411
     iget-object v1, p0, Lcom/android/keyguard/KeyguardUpdateMonitor$3;->this$0:Lcom/android/keyguard/KeyguardUpdateMonitor;
 
     # getter for: Lcom/android/keyguard/KeyguardUpdateMonitor;->mHandler:Landroid/os/Handler;
@@ -61,10 +70,12 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
+    .line 425
     :cond_0
     :goto_0
     return-void
 
+    .line 412
     :cond_1
     const-string v1, "android.intent.action.USER_INFO_CHANGED"
 
@@ -74,6 +85,7 @@
 
     if-eqz v1, :cond_2
 
+    .line 413
     iget-object v1, p0, Lcom/android/keyguard/KeyguardUpdateMonitor$3;->this$0:Lcom/android/keyguard/KeyguardUpdateMonitor;
 
     # getter for: Lcom/android/keyguard/KeyguardUpdateMonitor;->mHandler:Landroid/os/Handler;
@@ -108,6 +120,7 @@
 
     goto :goto_0
 
+    .line 415
     :cond_2
     const-string v1, "com.android.facelock.FACE_UNLOCK_STARTED"
 
@@ -117,6 +130,7 @@
 
     if-eqz v1, :cond_3
 
+    .line 416
     iget-object v1, p0, Lcom/android/keyguard/KeyguardUpdateMonitor$3;->this$0:Lcom/android/keyguard/KeyguardUpdateMonitor;
 
     # getter for: Lcom/android/keyguard/KeyguardUpdateMonitor;->mHandler:Landroid/os/Handler;
@@ -145,6 +159,7 @@
 
     goto :goto_0
 
+    .line 418
     :cond_3
     const-string v1, "com.android.facelock.FACE_UNLOCK_STOPPED"
 
@@ -154,6 +169,7 @@
 
     if-eqz v1, :cond_4
 
+    .line 419
     iget-object v1, p0, Lcom/android/keyguard/KeyguardUpdateMonitor$3;->this$0:Lcom/android/keyguard/KeyguardUpdateMonitor;
 
     # getter for: Lcom/android/keyguard/KeyguardUpdateMonitor;->mHandler:Landroid/os/Handler;
@@ -180,6 +196,7 @@
 
     goto :goto_0
 
+    .line 421
     :cond_4
     const-string v1, "android.app.action.DEVICE_POLICY_MANAGER_STATE_CHANGED"
 
@@ -189,6 +206,7 @@
 
     if-eqz v1, :cond_0
 
+    .line 423
     iget-object v1, p0, Lcom/android/keyguard/KeyguardUpdateMonitor$3;->this$0:Lcom/android/keyguard/KeyguardUpdateMonitor;
 
     # getter for: Lcom/android/keyguard/KeyguardUpdateMonitor;->mHandler:Landroid/os/Handler;

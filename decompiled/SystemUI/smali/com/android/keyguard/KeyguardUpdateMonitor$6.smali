@@ -21,7 +21,10 @@
 # direct methods
 .method constructor <init>(Lcom/android/keyguard/KeyguardUpdateMonitor;Landroid/os/Handler;)V
     .locals 0
+    .param p2, "x0"    # Landroid/os/Handler;
 
+    .prologue
+    .line 674
     iput-object p1, p0, Lcom/android/keyguard/KeyguardUpdateMonitor$6;->this$0:Lcom/android/keyguard/KeyguardUpdateMonitor;
 
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
@@ -33,9 +36,13 @@
 # virtual methods
 .method public onChange(Z)V
     .locals 2
+    .param p1, "selfChange"    # Z
 
+    .prologue
+    .line 677
     invoke-super {p0, p1}, Landroid/database/ContentObserver;->onChange(Z)V
 
+    .line 678
     iget-object v0, p0, Lcom/android/keyguard/KeyguardUpdateMonitor$6;->this$0:Lcom/android/keyguard/KeyguardUpdateMonitor;
 
     iget-object v1, p0, Lcom/android/keyguard/KeyguardUpdateMonitor$6;->this$0:Lcom/android/keyguard/KeyguardUpdateMonitor;
@@ -48,6 +55,7 @@
     # setter for: Lcom/android/keyguard/KeyguardUpdateMonitor;->mDeviceProvisioned:Z
     invoke-static {v0, v1}, Lcom/android/keyguard/KeyguardUpdateMonitor;->access$1802(Lcom/android/keyguard/KeyguardUpdateMonitor;Z)Z
 
+    .line 679
     iget-object v0, p0, Lcom/android/keyguard/KeyguardUpdateMonitor$6;->this$0:Lcom/android/keyguard/KeyguardUpdateMonitor;
 
     # getter for: Lcom/android/keyguard/KeyguardUpdateMonitor;->mDeviceProvisioned:Z
@@ -57,6 +65,7 @@
 
     if-eqz v0, :cond_0
 
+    .line 680
     iget-object v0, p0, Lcom/android/keyguard/KeyguardUpdateMonitor$6;->this$0:Lcom/android/keyguard/KeyguardUpdateMonitor;
 
     # getter for: Lcom/android/keyguard/KeyguardUpdateMonitor;->mHandler:Landroid/os/Handler;
@@ -68,6 +77,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
+    .line 683
     :cond_0
     return-void
 .end method

@@ -35,6 +35,8 @@
 .method constructor <init>(Lcom/android/keyguard/KeyguardMultiUserSelectorView;)V
     .locals 0
 
+    .prologue
+    .line 108
     iput-object p1, p0, Lcom/android/keyguard/KeyguardMultiUserSelectorView$2;->this$0:Lcom/android/keyguard/KeyguardMultiUserSelectorView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -46,7 +48,11 @@
 # virtual methods
 .method public compare(Landroid/content/pm/UserInfo;Landroid/content/pm/UserInfo;)I
     .locals 2
+    .param p1, "lhs"    # Landroid/content/pm/UserInfo;
+    .param p2, "rhs"    # Landroid/content/pm/UserInfo;
 
+    .prologue
+    .line 111
     iget v0, p1, Landroid/content/pm/UserInfo;->serialNumber:I
 
     iget v1, p2, Landroid/content/pm/UserInfo;->serialNumber:I
@@ -58,11 +64,17 @@
 
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 1
+    .param p1, "x0"    # Ljava/lang/Object;
+    .param p2, "x1"    # Ljava/lang/Object;
 
+    .prologue
+    .line 108
     check-cast p1, Landroid/content/pm/UserInfo;
 
+    .end local p1    # "x0":Ljava/lang/Object;
     check-cast p2, Landroid/content/pm/UserInfo;
 
+    .end local p2    # "x1":Ljava/lang/Object;
     invoke-virtual {p0, p1, p2}, Lcom/android/keyguard/KeyguardMultiUserSelectorView$2;->compare(Landroid/content/pm/UserInfo;Landroid/content/pm/UserInfo;)I
 
     move-result v0

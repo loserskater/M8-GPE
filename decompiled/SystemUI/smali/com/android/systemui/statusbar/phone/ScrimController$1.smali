@@ -27,6 +27,8 @@
 .method constructor <init>(Lcom/android/systemui/statusbar/phone/ScrimController;Lcom/android/systemui/statusbar/ScrimView;)V
     .locals 0
 
+    .prologue
+    .line 283
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/ScrimController$1;->this$0:Lcom/android/systemui/statusbar/phone/ScrimController;
 
     iput-object p2, p0, Lcom/android/systemui/statusbar/phone/ScrimController$1;->val$scrim:Lcom/android/systemui/statusbar/ScrimView;
@@ -40,9 +42,12 @@
 # virtual methods
 .method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 3
+    .param p1, "animation"    # Landroid/animation/ValueAnimator;
 
+    .prologue
     const/4 v2, 0x0
 
+    .line 286
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object v1
@@ -53,6 +58,8 @@
 
     move-result v0
 
+    .line 287
+    .local v0, "value":I
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/ScrimController$1;->val$scrim:Lcom/android/systemui/statusbar/ScrimView;
 
     invoke-static {v0, v2, v2, v2}, Landroid/graphics/Color;->argb(IIII)I
@@ -61,5 +68,6 @@
 
     invoke-virtual {v1, v2}, Lcom/android/systemui/statusbar/ScrimView;->setScrimColor(I)V
 
+    .line 288
     return-void
 .end method

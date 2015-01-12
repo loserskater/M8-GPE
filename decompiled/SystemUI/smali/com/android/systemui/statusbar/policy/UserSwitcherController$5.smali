@@ -25,6 +25,8 @@
 .method constructor <init>(Lcom/android/systemui/statusbar/policy/UserSwitcherController;)V
     .locals 0
 
+    .prologue
+    .line 520
     iput-object p1, p0, Lcom/android/systemui/statusbar/policy/UserSwitcherController$5;->this$0:Lcom/android/systemui/statusbar/policy/UserSwitcherController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,10 +39,13 @@
 .method public onKeyguardChanged()V
     .locals 1
 
+    .prologue
+    .line 523
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/UserSwitcherController$5;->this$0:Lcom/android/systemui/statusbar/policy/UserSwitcherController;
 
     # invokes: Lcom/android/systemui/statusbar/policy/UserSwitcherController;->notifyAdapters()V
     invoke-static {v0}, Lcom/android/systemui/statusbar/policy/UserSwitcherController;->access$400(Lcom/android/systemui/statusbar/policy/UserSwitcherController;)V
 
+    .line 524
     return-void
 .end method

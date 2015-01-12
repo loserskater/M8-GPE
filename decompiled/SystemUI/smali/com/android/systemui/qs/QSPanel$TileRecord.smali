@@ -37,6 +37,8 @@
 .method private constructor <init>()V
     .locals 1
 
+    .prologue
+    .line 521
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Lcom/android/systemui/qs/QSPanel$Record;-><init>(Lcom/android/systemui/qs/QSPanel$1;)V
@@ -46,7 +48,10 @@
 
 .method synthetic constructor <init>(Lcom/android/systemui/qs/QSPanel$1;)V
     .locals 0
+    .param p1, "x0"    # Lcom/android/systemui/qs/QSPanel$1;
 
+    .prologue
+    .line 521
     invoke-direct {p0}, Lcom/android/systemui/qs/QSPanel$TileRecord;-><init>()V
 
     return-void

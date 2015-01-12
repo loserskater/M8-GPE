@@ -27,6 +27,8 @@
 .method constructor <init>(Lcom/android/systemui/DessertCaseView;Landroid/widget/ImageView;)V
     .locals 0
 
+    .prologue
+    .line 284
     iput-object p1, p0, Lcom/android/systemui/DessertCaseView$2;->this$0:Lcom/android/systemui/DessertCaseView;
 
     iput-object p2, p0, Lcom/android/systemui/DessertCaseView$2;->val$v:Landroid/widget/ImageView;
@@ -40,7 +42,10 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 4
+    .param p1, "view"    # Landroid/view/View;
 
+    .prologue
+    .line 287
     iget-object v0, p0, Lcom/android/systemui/DessertCaseView$2;->this$0:Lcom/android/systemui/DessertCaseView;
 
     iget-object v1, p0, Lcom/android/systemui/DessertCaseView$2;->val$v:Landroid/widget/ImageView;
@@ -49,6 +54,7 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/android/systemui/DessertCaseView;->place(Landroid/view/View;Z)V
 
+    .line 288
     iget-object v0, p0, Lcom/android/systemui/DessertCaseView$2;->this$0:Lcom/android/systemui/DessertCaseView;
 
     new-instance v1, Lcom/android/systemui/DessertCaseView$2$1;
@@ -59,5 +65,6 @@
 
     invoke-virtual {v0, v1, v2, v3}, Lcom/android/systemui/DessertCaseView;->postDelayed(Ljava/lang/Runnable;J)Z
 
+    .line 289
     return-void
 .end method

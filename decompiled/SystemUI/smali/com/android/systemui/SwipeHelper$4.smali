@@ -29,6 +29,8 @@
 .method constructor <init>(Lcom/android/systemui/SwipeHelper;Landroid/view/View;Z)V
     .locals 0
 
+    .prologue
+    .line 372
     iput-object p1, p0, Lcom/android/systemui/SwipeHelper$4;->this$0:Lcom/android/systemui/SwipeHelper;
 
     iput-object p2, p0, Lcom/android/systemui/SwipeHelper$4;->val$animView:Landroid/view/View;
@@ -44,7 +46,10 @@
 # virtual methods
 .method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 3
+    .param p1, "animation"    # Landroid/animation/ValueAnimator;
 
+    .prologue
+    .line 374
     iget-object v0, p0, Lcom/android/systemui/SwipeHelper$4;->this$0:Lcom/android/systemui/SwipeHelper;
 
     iget-object v1, p0, Lcom/android/systemui/SwipeHelper$4;->val$animView:Landroid/view/View;
@@ -54,5 +59,6 @@
     # invokes: Lcom/android/systemui/SwipeHelper;->updateSwipeProgressFromOffset(Landroid/view/View;Z)V
     invoke-static {v0, v1, v2}, Lcom/android/systemui/SwipeHelper;->access$500(Lcom/android/systemui/SwipeHelper;Landroid/view/View;Z)V
 
+    .line 375
     return-void
 .end method

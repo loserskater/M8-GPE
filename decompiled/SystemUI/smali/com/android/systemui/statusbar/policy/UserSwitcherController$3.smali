@@ -21,7 +21,10 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/statusbar/policy/UserSwitcherController;Landroid/os/Handler;)V
     .locals 0
+    .param p2, "x0"    # Landroid/os/Handler;
 
+    .prologue
+    .line 333
     iput-object p1, p0, Lcom/android/systemui/statusbar/policy/UserSwitcherController$3;->this$0:Lcom/android/systemui/statusbar/policy/UserSwitcherController;
 
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
@@ -33,11 +36,14 @@
 # virtual methods
 .method public onChange(Z)V
     .locals 5
+    .param p1, "selfChange"    # Z
 
+    .prologue
     const/4 v1, 0x1
 
     const/4 v2, 0x0
 
+    .line 335
     iget-object v3, p0, Lcom/android/systemui/statusbar/policy/UserSwitcherController$3;->this$0:Lcom/android/systemui/statusbar/policy/UserSwitcherController;
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/UserSwitcherController$3;->this$0:Lcom/android/systemui/statusbar/policy/UserSwitcherController;
@@ -65,6 +71,7 @@
     # setter for: Lcom/android/systemui/statusbar/policy/UserSwitcherController;->mSimpleUserSwitcher:Z
     invoke-static {v3, v0}, Lcom/android/systemui/statusbar/policy/UserSwitcherController;->access$202(Lcom/android/systemui/statusbar/policy/UserSwitcherController;Z)Z
 
+    .line 337
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/UserSwitcherController$3;->this$0:Lcom/android/systemui/statusbar/policy/UserSwitcherController;
 
     iget-object v3, p0, Lcom/android/systemui/statusbar/policy/UserSwitcherController$3;->this$0:Lcom/android/systemui/statusbar/policy/UserSwitcherController;
@@ -90,6 +97,7 @@
     # setter for: Lcom/android/systemui/statusbar/policy/UserSwitcherController;->mAddUsersWhenLocked:Z
     invoke-static {v0, v1}, Lcom/android/systemui/statusbar/policy/UserSwitcherController;->access$802(Lcom/android/systemui/statusbar/policy/UserSwitcherController;Z)Z
 
+    .line 339
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/UserSwitcherController$3;->this$0:Lcom/android/systemui/statusbar/policy/UserSwitcherController;
 
     const/16 v1, -0x2710
@@ -97,15 +105,18 @@
     # invokes: Lcom/android/systemui/statusbar/policy/UserSwitcherController;->refreshUsers(I)V
     invoke-static {v0, v1}, Lcom/android/systemui/statusbar/policy/UserSwitcherController;->access$700(Lcom/android/systemui/statusbar/policy/UserSwitcherController;I)V
 
+    .line 340
     return-void
 
     :cond_0
     move v0, v2
 
+    .line 335
     goto :goto_0
 
     :cond_1
     move v1, v2
 
+    .line 337
     goto :goto_1
 .end method

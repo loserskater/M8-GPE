@@ -25,6 +25,8 @@
 .method constructor <init>(Lcom/android/systemui/volume/VolumeUI;)V
     .locals 0
 
+    .prologue
+    .line 107
     iput-object p1, p0, Lcom/android/systemui/volume/VolumeUI$1;->this$0:Lcom/android/systemui/volume/VolumeUI;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,6 +39,8 @@
 .method public onInteraction()V
     .locals 3
 
+    .prologue
+    .line 116
     iget-object v1, p0, Lcom/android/systemui/volume/VolumeUI$1;->this$0:Lcom/android/systemui/volume/VolumeUI;
 
     const-class v2, Lcom/android/systemui/keyguard/KeyguardViewMediator;
@@ -47,17 +51,24 @@
 
     check-cast v0, Lcom/android/systemui/keyguard/KeyguardViewMediator;
 
+    .line 117
+    .local v0, "kvm":Lcom/android/systemui/keyguard/KeyguardViewMediator;
     if-eqz v0, :cond_0
 
+    .line 118
     invoke-virtual {v0}, Lcom/android/systemui/keyguard/KeyguardViewMediator;->userActivity()V
 
+    .line 120
     :cond_0
     return-void
 .end method
 
 .method public onVisible(Z)V
     .locals 2
+    .param p1, "visible"    # Z
 
+    .prologue
+    .line 124
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeUI$1;->this$0:Lcom/android/systemui/volume/VolumeUI;
 
     # getter for: Lcom/android/systemui/volume/VolumeUI;->mAudioManager:Landroid/media/AudioManager;
@@ -76,6 +87,7 @@
 
     if-eqz v0, :cond_0
 
+    .line 125
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeUI$1;->this$0:Lcom/android/systemui/volume/VolumeUI;
 
     # getter for: Lcom/android/systemui/volume/VolumeUI;->mAudioManager:Landroid/media/AudioManager;
@@ -92,6 +104,7 @@
 
     invoke-virtual {v0, v1, p1}, Landroid/media/AudioManager;->notifyVolumeControllerVisible(Landroid/media/IVolumeController;Z)V
 
+    .line 127
     :cond_0
     return-void
 .end method
@@ -99,6 +112,8 @@
 .method public onZenSettings()V
     .locals 2
 
+    .prologue
+    .line 110
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeUI$1;->this$0:Lcom/android/systemui/volume/VolumeUI;
 
     # getter for: Lcom/android/systemui/volume/VolumeUI;->mHandler:Landroid/os/Handler;
@@ -115,6 +130,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
+    .line 111
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeUI$1;->this$0:Lcom/android/systemui/volume/VolumeUI;
 
     # getter for: Lcom/android/systemui/volume/VolumeUI;->mHandler:Landroid/os/Handler;
@@ -131,5 +147,6 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
+    .line 112
     return-void
 .end method

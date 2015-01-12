@@ -18,6 +18,8 @@
 .method constructor <init>()V
     .locals 0
 
+    .prologue
+    .line 185
     invoke-direct {p0}, Landroid/view/ViewOutlineProvider;-><init>()V
 
     return-void
@@ -27,15 +29,23 @@
 # virtual methods
 .method public getOutline(Landroid/view/View;Landroid/graphics/Outline;)V
     .locals 5
+    .param p1, "view"    # Landroid/view/View;
+    .param p2, "outline"    # Landroid/graphics/Outline;
 
+    .prologue
+    .line 188
     invoke-virtual {p1}, Landroid/view/View;->getPaddingLeft()I
 
     move-result v0
 
+    .line 189
+    .local v0, "outlineLeft":I
     invoke-virtual {p1}, Landroid/view/View;->getPaddingTop()I
 
     move-result v1
 
+    .line 192
+    .local v1, "outlineTop":I
     invoke-virtual {p1}, Landroid/view/View;->getWidth()I
 
     move-result v2
@@ -62,5 +72,6 @@
 
     invoke-virtual {p2, v0, v1, v2, v3}, Landroid/graphics/Outline;->setRect(IIII)V
 
+    .line 195
     return-void
 .end method

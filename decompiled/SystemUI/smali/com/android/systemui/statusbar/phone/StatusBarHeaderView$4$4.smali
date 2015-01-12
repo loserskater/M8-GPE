@@ -27,6 +27,8 @@
 .method constructor <init>(Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$4;Lcom/android/systemui/qs/QSTile$DetailAdapter;)V
     .locals 0
 
+    .prologue
+    .line 763
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$4$4;->this$1:Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$4;
 
     iput-object p2, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$4$4;->val$detail:Lcom/android/systemui/qs/QSTile$DetailAdapter;
@@ -40,7 +42,10 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 2
+    .param p1, "v"    # Landroid/view/View;
 
+    .prologue
+    .line 766
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$4$4;->val$detail:Lcom/android/systemui/qs/QSTile$DetailAdapter;
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$4$4;->this$1:Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$4;
@@ -63,8 +68,10 @@
     :goto_0
     invoke-interface {v1, v0}, Lcom/android/systemui/qs/QSTile$DetailAdapter;->setToggleState(Z)V
 
+    .line 767
     return-void
 
+    .line 766
     :cond_0
     const/4 v0, 0x0
 

@@ -25,6 +25,8 @@
 .method constructor <init>(Lcom/android/keyguard/KeyguardSecurityContainer;)V
     .locals 0
 
+    .prologue
+    .line 474
     iput-object p1, p0, Lcom/android/keyguard/KeyguardSecurityContainer$2;->this$0:Lcom/android/keyguard/KeyguardSecurityContainer;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,24 +38,34 @@
 # virtual methods
 .method public dismiss(Z)V
     .locals 0
+    .param p1, "securityVerified"    # Z
 
+    .prologue
+    .line 484
     return-void
 .end method
 
 .method public reportUnlockAttempt(Z)V
     .locals 0
+    .param p1, "success"    # Z
 
+    .prologue
+    .line 480
     return-void
 .end method
 
 .method public showBackupSecurity()V
     .locals 0
 
+    .prologue
+    .line 478
     return-void
 .end method
 
 .method public userActivity()V
     .locals 0
 
+    .prologue
+    .line 476
     return-void
 .end method

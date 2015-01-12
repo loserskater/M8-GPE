@@ -25,6 +25,8 @@
 .method constructor <init>(Lcom/android/systemui/statusbar/ActivatableNotificationView;)V
     .locals 0
 
+    .prologue
+    .line 177
     iput-object p1, p0, Lcom/android/systemui/statusbar/ActivatableNotificationView$1;->this$0:Lcom/android/systemui/statusbar/ActivatableNotificationView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,11 +39,14 @@
 .method public run()V
     .locals 2
 
+    .prologue
+    .line 180
     iget-object v0, p0, Lcom/android/systemui/statusbar/ActivatableNotificationView$1;->this$0:Lcom/android/systemui/statusbar/ActivatableNotificationView;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/ActivatableNotificationView;->makeInactive(Z)V
 
+    .line 181
     return-void
 .end method

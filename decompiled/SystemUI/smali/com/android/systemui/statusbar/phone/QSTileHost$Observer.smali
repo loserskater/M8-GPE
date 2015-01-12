@@ -24,8 +24,11 @@
 .method public constructor <init>(Lcom/android/systemui/statusbar/phone/QSTileHost;)V
     .locals 2
 
+    .prologue
+    .line 296
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/QSTileHost$Observer;->this$0:Lcom/android/systemui/statusbar/phone/QSTileHost;
 
+    .line 297
     new-instance v0, Landroid/os/Handler;
 
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
@@ -36,6 +39,7 @@
 
     invoke-direct {p0, v0}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
 
+    .line 298
     return-void
 .end method
 
@@ -43,22 +47,30 @@
 # virtual methods
 .method public onChange(ZLandroid/net/Uri;)V
     .locals 1
+    .param p1, "selfChange"    # Z
+    .param p2, "uri"    # Landroid/net/Uri;
 
+    .prologue
+    .line 311
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/QSTileHost$Observer;->this$0:Lcom/android/systemui/statusbar/phone/QSTileHost;
 
     # invokes: Lcom/android/systemui/statusbar/phone/QSTileHost;->recreateTiles()V
     invoke-static {v0}, Lcom/android/systemui/statusbar/phone/QSTileHost;->access$000(Lcom/android/systemui/statusbar/phone/QSTileHost;)V
 
+    .line 312
     return-void
 .end method
 
 .method public register()V
     .locals 4
 
+    .prologue
+    .line 301
     iget-boolean v0, p0, Lcom/android/systemui/statusbar/phone/QSTileHost$Observer;->mRegistered:Z
 
     if-eqz v0, :cond_0
 
+    .line 302
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/QSTileHost$Observer;->this$0:Lcom/android/systemui/statusbar/phone/QSTileHost;
 
     # getter for: Lcom/android/systemui/statusbar/phone/QSTileHost;->mContext:Landroid/content/Context;
@@ -72,6 +84,7 @@
 
     invoke-virtual {v0, p0}, Landroid/content/ContentResolver;->unregisterContentObserver(Landroid/database/ContentObserver;)V
 
+    .line 304
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/QSTileHost$Observer;->this$0:Lcom/android/systemui/statusbar/phone/QSTileHost;
 
@@ -105,9 +118,11 @@
 
     invoke-virtual {v0, v1, v2, p0, v3}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;I)V
 
+    .line 306
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/systemui/statusbar/phone/QSTileHost$Observer;->mRegistered:Z
 
+    .line 307
     return-void
 .end method

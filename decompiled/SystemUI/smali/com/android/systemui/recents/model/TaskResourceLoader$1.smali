@@ -31,6 +31,8 @@
 .method constructor <init>(Lcom/android/systemui/recents/model/TaskResourceLoader;Lcom/android/systemui/recents/model/Task;Landroid/graphics/Bitmap;Landroid/graphics/drawable/Drawable;)V
     .locals 0
 
+    .prologue
+    .line 217
     iput-object p1, p0, Lcom/android/systemui/recents/model/TaskResourceLoader$1;->this$0:Lcom/android/systemui/recents/model/TaskResourceLoader;
 
     iput-object p2, p0, Lcom/android/systemui/recents/model/TaskResourceLoader$1;->val$t:Lcom/android/systemui/recents/model/Task;
@@ -49,6 +51,8 @@
 .method public run()V
     .locals 3
 
+    .prologue
+    .line 220
     iget-object v0, p0, Lcom/android/systemui/recents/model/TaskResourceLoader$1;->val$t:Lcom/android/systemui/recents/model/Task;
 
     iget-object v1, p0, Lcom/android/systemui/recents/model/TaskResourceLoader$1;->val$newThumbnail:Landroid/graphics/Bitmap;
@@ -57,5 +61,6 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/android/systemui/recents/model/Task;->notifyTaskDataLoaded(Landroid/graphics/Bitmap;Landroid/graphics/drawable/Drawable;)V
 
+    .line 221
     return-void
 .end method

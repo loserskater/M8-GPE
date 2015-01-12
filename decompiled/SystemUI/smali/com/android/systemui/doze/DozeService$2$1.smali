@@ -25,6 +25,8 @@
 .method constructor <init>(Lcom/android/systemui/doze/DozeService$2;)V
     .locals 0
 
+    .prologue
+    .line 219
     iput-object p1, p0, Lcom/android/systemui/doze/DozeService$2$1;->this$1:Lcom/android/systemui/doze/DozeService$2;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,6 +39,8 @@
 .method public onPulseFinished()V
     .locals 2
 
+    .prologue
+    .line 229
     iget-object v0, p0, Lcom/android/systemui/doze/DozeService$2$1;->this$1:Lcom/android/systemui/doze/DozeService$2;
 
     iget-object v0, v0, Lcom/android/systemui/doze/DozeService$2;->this$0:Lcom/android/systemui/doze/DozeService;
@@ -59,6 +63,7 @@
 
     if-eqz v0, :cond_0
 
+    .line 230
     iget-object v0, p0, Lcom/android/systemui/doze/DozeService$2$1;->this$1:Lcom/android/systemui/doze/DozeService$2;
 
     iget-object v0, v0, Lcom/android/systemui/doze/DozeService$2;->this$0:Lcom/android/systemui/doze/DozeService;
@@ -68,6 +73,7 @@
     # setter for: Lcom/android/systemui/doze/DozeService;->mPulsing:Z
     invoke-static {v0, v1}, Lcom/android/systemui/doze/DozeService;->access$202(Lcom/android/systemui/doze/DozeService;Z)Z
 
+    .line 231
     iget-object v0, p0, Lcom/android/systemui/doze/DozeService$2$1;->this$1:Lcom/android/systemui/doze/DozeService$2;
 
     iget-object v0, v0, Lcom/android/systemui/doze/DozeService$2;->this$0:Lcom/android/systemui/doze/DozeService;
@@ -75,6 +81,7 @@
     # invokes: Lcom/android/systemui/doze/DozeService;->turnDisplayOff()V
     invoke-static {v0}, Lcom/android/systemui/doze/DozeService;->access$500(Lcom/android/systemui/doze/DozeService;)V
 
+    .line 233
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/doze/DozeService$2$1;->this$1:Lcom/android/systemui/doze/DozeService$2;
 
@@ -87,12 +94,15 @@
 
     invoke-virtual {v0}, Landroid/os/PowerManager$WakeLock;->release()V
 
+    .line 234
     return-void
 .end method
 
 .method public onPulseStarted()V
     .locals 1
 
+    .prologue
+    .line 222
     iget-object v0, p0, Lcom/android/systemui/doze/DozeService$2$1;->this$1:Lcom/android/systemui/doze/DozeService$2;
 
     iget-object v0, v0, Lcom/android/systemui/doze/DozeService$2;->this$0:Lcom/android/systemui/doze/DozeService;
@@ -115,6 +125,7 @@
 
     if-eqz v0, :cond_0
 
+    .line 223
     iget-object v0, p0, Lcom/android/systemui/doze/DozeService$2$1;->this$1:Lcom/android/systemui/doze/DozeService$2;
 
     iget-object v0, v0, Lcom/android/systemui/doze/DozeService$2;->this$0:Lcom/android/systemui/doze/DozeService;
@@ -122,6 +133,7 @@
     # invokes: Lcom/android/systemui/doze/DozeService;->turnDisplayOn()V
     invoke-static {v0}, Lcom/android/systemui/doze/DozeService;->access$400(Lcom/android/systemui/doze/DozeService;)V
 
+    .line 225
     :cond_0
     return-void
 .end method

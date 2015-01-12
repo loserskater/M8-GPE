@@ -22,6 +22,8 @@
 .method constructor <init>(Lcom/android/systemui/statusbar/policy/Clock;)V
     .locals 0
 
+    .prologue
+    .line 116
     iput-object p1, p0, Lcom/android/systemui/statusbar/policy/Clock$1;->this$0:Lcom/android/systemui/statusbar/policy/Clock;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -33,11 +35,17 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 5
+    .param p1, "context"    # Landroid/content/Context;
+    .param p2, "intent"    # Landroid/content/Intent;
 
+    .prologue
+    .line 119
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
+    .line 120
+    .local v0, "action":Ljava/lang/String;
     const-string v3, "android.intent.action.TIMEZONE_CHANGED"
 
     invoke-virtual {v0, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -46,12 +54,15 @@
 
     if-eqz v3, :cond_1
 
+    .line 121
     const-string v3, "time-zone"
 
     invoke-virtual {p2, v3}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
+    .line 122
+    .local v2, "tz":Ljava/lang/String;
     iget-object v3, p0, Lcom/android/systemui/statusbar/policy/Clock$1;->this$0:Lcom/android/systemui/statusbar/policy/Clock;
 
     invoke-static {v2}, Ljava/util/TimeZone;->getTimeZone(Ljava/lang/String;)Ljava/util/TimeZone;
@@ -65,6 +76,7 @@
     # setter for: Lcom/android/systemui/statusbar/policy/Clock;->mCalendar:Ljava/util/Calendar;
     invoke-static {v3, v4}, Lcom/android/systemui/statusbar/policy/Clock;->access$002(Lcom/android/systemui/statusbar/policy/Clock;Ljava/util/Calendar;)Ljava/util/Calendar;
 
+    .line 123
     iget-object v3, p0, Lcom/android/systemui/statusbar/policy/Clock$1;->this$0:Lcom/android/systemui/statusbar/policy/Clock;
 
     # getter for: Lcom/android/systemui/statusbar/policy/Clock;->mClockFormat:Ljava/text/SimpleDateFormat;
@@ -74,6 +86,7 @@
 
     if-eqz v3, :cond_0
 
+    .line 124
     iget-object v3, p0, Lcom/android/systemui/statusbar/policy/Clock$1;->this$0:Lcom/android/systemui/statusbar/policy/Clock;
 
     # getter for: Lcom/android/systemui/statusbar/policy/Clock;->mClockFormat:Ljava/text/SimpleDateFormat;
@@ -94,14 +107,18 @@
 
     invoke-virtual {v3, v4}, Ljava/text/SimpleDateFormat;->setTimeZone(Ljava/util/TimeZone;)V
 
+    .line 133
+    .end local v2    # "tz":Ljava/lang/String;
     :cond_0
     :goto_0
     iget-object v3, p0, Lcom/android/systemui/statusbar/policy/Clock$1;->this$0:Lcom/android/systemui/statusbar/policy/Clock;
 
     invoke-virtual {v3}, Lcom/android/systemui/statusbar/policy/Clock;->updateClock()V
 
+    .line 134
     return-void
 
+    .line 126
     :cond_1
     const-string v3, "android.intent.action.CONFIGURATION_CHANGED"
 
@@ -111,6 +128,7 @@
 
     if-eqz v3, :cond_0
 
+    .line 127
     iget-object v3, p0, Lcom/android/systemui/statusbar/policy/Clock$1;->this$0:Lcom/android/systemui/statusbar/policy/Clock;
 
     invoke-virtual {v3}, Lcom/android/systemui/statusbar/policy/Clock;->getResources()Landroid/content/res/Resources;
@@ -123,6 +141,8 @@
 
     iget-object v1, v3, Landroid/content/res/Configuration;->locale:Ljava/util/Locale;
 
+    .line 128
+    .local v1, "newLocale":Ljava/util/Locale;
     iget-object v3, p0, Lcom/android/systemui/statusbar/policy/Clock$1;->this$0:Lcom/android/systemui/statusbar/policy/Clock;
 
     # getter for: Lcom/android/systemui/statusbar/policy/Clock;->mLocale:Ljava/util/Locale;
@@ -136,11 +156,13 @@
 
     if-nez v3, :cond_0
 
+    .line 129
     iget-object v3, p0, Lcom/android/systemui/statusbar/policy/Clock$1;->this$0:Lcom/android/systemui/statusbar/policy/Clock;
 
     # setter for: Lcom/android/systemui/statusbar/policy/Clock;->mLocale:Ljava/util/Locale;
     invoke-static {v3, v1}, Lcom/android/systemui/statusbar/policy/Clock;->access$202(Lcom/android/systemui/statusbar/policy/Clock;Ljava/util/Locale;)Ljava/util/Locale;
 
+    .line 130
     iget-object v3, p0, Lcom/android/systemui/statusbar/policy/Clock$1;->this$0:Lcom/android/systemui/statusbar/policy/Clock;
 
     const-string v4, ""

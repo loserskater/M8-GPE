@@ -25,6 +25,8 @@
 .method constructor <init>(Lcom/android/keyguard/CameraWidgetFrame;)V
     .locals 0
 
+    .prologue
+    .line 78
     iput-object p1, p0, Lcom/android/keyguard/CameraWidgetFrame$2;->this$0:Lcom/android/keyguard/CameraWidgetFrame;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,6 +39,8 @@
 .method public run()V
     .locals 4
 
+    .prologue
+    .line 81
     iget-object v1, p0, Lcom/android/keyguard/CameraWidgetFrame$2;->this$0:Lcom/android/keyguard/CameraWidgetFrame;
 
     # getter for: Lcom/android/keyguard/CameraWidgetFrame;->mTransitioning:Z
@@ -46,9 +50,11 @@
 
     if-nez v1, :cond_0
 
+    .line 87
     :goto_0
     return-void
 
+    .line 83
     :cond_0
     iget-object v1, p0, Lcom/android/keyguard/CameraWidgetFrame$2;->this$0:Lcom/android/keyguard/CameraWidgetFrame;
 
@@ -64,6 +70,8 @@
 
     move-result-object v0
 
+    .line 84
+    .local v0, "worker":Landroid/os/Handler;
     :goto_1
     iget-object v1, p0, Lcom/android/keyguard/CameraWidgetFrame$2;->this$0:Lcom/android/keyguard/CameraWidgetFrame;
 
@@ -74,6 +82,7 @@
     # setter for: Lcom/android/keyguard/CameraWidgetFrame;->mLaunchCameraStart:J
     invoke-static {v1, v2, v3}, Lcom/android/keyguard/CameraWidgetFrame;->access$302(Lcom/android/keyguard/CameraWidgetFrame;J)J
 
+    .line 86
     iget-object v1, p0, Lcom/android/keyguard/CameraWidgetFrame$2;->this$0:Lcom/android/keyguard/CameraWidgetFrame;
 
     # getter for: Lcom/android/keyguard/CameraWidgetFrame;->mActivityLauncher:Lcom/android/keyguard/KeyguardActivityLauncher;
@@ -92,6 +101,8 @@
 
     goto :goto_0
 
+    .line 83
+    .end local v0    # "worker":Landroid/os/Handler;
     :cond_1
     iget-object v1, p0, Lcom/android/keyguard/CameraWidgetFrame$2;->this$0:Lcom/android/keyguard/CameraWidgetFrame;
 

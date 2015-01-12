@@ -23,13 +23,18 @@
 # direct methods
 .method protected constructor <init>(Lcom/android/keyguard/KeyguardSimPinView;Ljava/lang/String;)V
     .locals 0
+    .param p2, "pin"    # Ljava/lang/String;
 
+    .prologue
+    .line 117
     iput-object p1, p0, Lcom/android/keyguard/KeyguardSimPinView$CheckSimPin;->this$0:Lcom/android/keyguard/KeyguardSimPinView;
 
     invoke-direct {p0}, Ljava/lang/Thread;-><init>()V
 
+    .line 118
     iput-object p2, p0, Lcom/android/keyguard/KeyguardSimPinView$CheckSimPin;->mPin:Ljava/lang/String;
 
+    .line 119
     return-void
 .end method
 
@@ -41,6 +46,8 @@
 .method public run()V
     .locals 5
 
+    .prologue
+    .line 126
     :try_start_0
     const-string v2, "KeyguardSimPinView"
 
@@ -48,6 +55,7 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 127
     const-string v2, "phone"
 
     invoke-static {v2}, Landroid/os/ServiceManager;->checkService(Ljava/lang/String;)Landroid/os/IBinder;
@@ -64,6 +72,8 @@
 
     move-result-object v1
 
+    .line 129
+    .local v1, "result":[I
     const-string v2, "KeyguardSimPinView"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -104,6 +114,7 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 130
     iget-object v2, p0, Lcom/android/keyguard/KeyguardSimPinView$CheckSimPin;->this$0:Lcom/android/keyguard/KeyguardSimPinView;
 
     new-instance v3, Lcom/android/keyguard/KeyguardSimPinView$CheckSimPin$1;
@@ -114,18 +125,24 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 143
+    .end local v1    # "result":[I
     :goto_0
     return-void
 
+    .line 135
     :catch_0
     move-exception v0
 
+    .line 136
+    .local v0, "e":Landroid/os/RemoteException;
     const-string v2, "KeyguardSimPinView"
 
     const-string v3, "RemoteException for supplyPinReportResult:"
 
     invoke-static {v2, v3, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
+    .line 137
     iget-object v2, p0, Lcom/android/keyguard/KeyguardSimPinView$CheckSimPin;->this$0:Lcom/android/keyguard/KeyguardSimPinView;
 
     new-instance v3, Lcom/android/keyguard/KeyguardSimPinView$CheckSimPin$2;

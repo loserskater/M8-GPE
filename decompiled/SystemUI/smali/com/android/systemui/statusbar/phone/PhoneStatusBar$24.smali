@@ -24,6 +24,8 @@
 .method constructor <init>(Lcom/android/systemui/statusbar/phone/PhoneStatusBar;Landroid/view/View;)V
     .locals 0
 
+    .prologue
+    .line 1704
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$24;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     iput-object p2, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$24;->val$nlo:Landroid/view/View;
@@ -37,12 +39,16 @@
 # virtual methods
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
+    .param p1, "_a"    # Landroid/animation/Animator;
 
+    .prologue
+    .line 1707
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$24;->val$nlo:Landroid/view/View;
 
     const/16 v1, 0x8
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
+    .line 1708
     return-void
 .end method

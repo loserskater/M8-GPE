@@ -22,6 +22,8 @@
 .method constructor <init>(Lcom/android/systemui/volume/VolumePanel;)V
     .locals 0
 
+    .prologue
+    .line 1442
     iput-object p1, p0, Lcom/android/systemui/volume/VolumePanel$10;->this$0:Lcom/android/systemui/volume/VolumePanel;
 
     invoke-direct {p0}, Landroid/media/session/MediaController$Callback;-><init>()V
@@ -33,10 +35,14 @@
 # virtual methods
 .method public onAudioInfoChanged(Landroid/media/session/MediaController$PlaybackInfo;)V
     .locals 1
+    .param p1, "info"    # Landroid/media/session/MediaController$PlaybackInfo;
 
+    .prologue
+    .line 1444
     iget-object v0, p0, Lcom/android/systemui/volume/VolumePanel$10;->this$0:Lcom/android/systemui/volume/VolumePanel;
 
     invoke-virtual {v0}, Lcom/android/systemui/volume/VolumePanel;->onRemoteVolumeUpdateIfShown()V
 
+    .line 1445
     return-void
 .end method

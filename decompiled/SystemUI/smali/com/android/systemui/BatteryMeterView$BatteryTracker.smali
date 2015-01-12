@@ -40,14 +40,18 @@
 .method private constructor <init>(Lcom/android/systemui/BatteryMeterView;)V
     .locals 1
 
+    .prologue
+    .line 79
     iput-object p1, p0, Lcom/android/systemui/BatteryMeterView$BatteryTracker;->this$0:Lcom/android/systemui/BatteryMeterView;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
+    .line 83
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/android/systemui/BatteryMeterView$BatteryTracker;->level:I
 
+    .line 92
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/systemui/BatteryMeterView$BatteryTracker;->testmode:Z
@@ -57,7 +61,11 @@
 
 .method synthetic constructor <init>(Lcom/android/systemui/BatteryMeterView;Lcom/android/systemui/BatteryMeterView$1;)V
     .locals 0
+    .param p1, "x0"    # Lcom/android/systemui/BatteryMeterView;
+    .param p2, "x1"    # Lcom/android/systemui/BatteryMeterView$1;
 
+    .prologue
+    .line 79
     invoke-direct {p0, p1}, Lcom/android/systemui/BatteryMeterView$BatteryTracker;-><init>(Lcom/android/systemui/BatteryMeterView;)V
 
     return-void
@@ -67,15 +75,21 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 6
+    .param p1, "context"    # Landroid/content/Context;
+    .param p2, "intent"    # Landroid/content/Intent;
 
+    .prologue
     const/4 v2, 0x1
 
     const/4 v3, 0x0
 
+    .line 96
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
+    .line 97
+    .local v0, "action":Ljava/lang/String;
     const-string v1, "android.intent.action.BATTERY_CHANGED"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -84,6 +98,7 @@
 
     if-eqz v1, :cond_3
 
+    .line 98
     iget-boolean v1, p0, Lcom/android/systemui/BatteryMeterView$BatteryTracker;->testmode:Z
 
     if-eqz v1, :cond_1
@@ -96,10 +111,12 @@
 
     if-nez v1, :cond_1
 
+    .line 149
     :cond_0
     :goto_0
     return-void
 
+    .line 100
     :cond_1
     const/high16 v1, 0x42c80000
 
@@ -129,6 +146,7 @@
 
     iput v1, p0, Lcom/android/systemui/BatteryMeterView$BatteryTracker;->level:I
 
+    .line 104
     const-string v1, "plugged"
 
     invoke-virtual {p2, v1, v3}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
@@ -137,6 +155,7 @@
 
     iput v1, p0, Lcom/android/systemui/BatteryMeterView$BatteryTracker;->plugType:I
 
+    .line 105
     iget v1, p0, Lcom/android/systemui/BatteryMeterView$BatteryTracker;->plugType:I
 
     if-eqz v1, :cond_2
@@ -146,6 +165,7 @@
     :goto_1
     iput-boolean v1, p0, Lcom/android/systemui/BatteryMeterView$BatteryTracker;->plugged:Z
 
+    .line 106
     const-string v1, "health"
 
     invoke-virtual {p2, v1, v2}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
@@ -154,6 +174,7 @@
 
     iput v1, p0, Lcom/android/systemui/BatteryMeterView$BatteryTracker;->health:I
 
+    .line 108
     const-string v1, "status"
 
     invoke-virtual {p2, v1, v2}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
@@ -162,6 +183,7 @@
 
     iput v1, p0, Lcom/android/systemui/BatteryMeterView$BatteryTracker;->status:I
 
+    .line 110
     const-string v1, "technology"
 
     invoke-virtual {p2, v1}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
@@ -170,6 +192,7 @@
 
     iput-object v1, p0, Lcom/android/systemui/BatteryMeterView$BatteryTracker;->technology:Ljava/lang/String;
 
+    .line 111
     const-string v1, "voltage"
 
     invoke-virtual {p2, v1, v3}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
@@ -178,6 +201,7 @@
 
     iput v1, p0, Lcom/android/systemui/BatteryMeterView$BatteryTracker;->voltage:I
 
+    .line 112
     const-string v1, "temperature"
 
     invoke-virtual {p2, v1, v3}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
@@ -186,6 +210,7 @@
 
     iput v1, p0, Lcom/android/systemui/BatteryMeterView$BatteryTracker;->temperature:I
 
+    .line 114
     iget-object v1, p0, Lcom/android/systemui/BatteryMeterView$BatteryTracker;->this$0:Lcom/android/systemui/BatteryMeterView;
 
     const v4, 0x7f0b0085
@@ -206,6 +231,7 @@
 
     invoke-virtual {v1, v2}, Lcom/android/systemui/BatteryMeterView;->setContentDescription(Ljava/lang/CharSequence;)V
 
+    .line 116
     iget-object v1, p0, Lcom/android/systemui/BatteryMeterView$BatteryTracker;->this$0:Lcom/android/systemui/BatteryMeterView;
 
     invoke-virtual {v1}, Lcom/android/systemui/BatteryMeterView;->postInvalidate()V
@@ -215,8 +241,10 @@
     :cond_2
     move v1, v3
 
+    .line 105
     goto :goto_1
 
+    .line 117
     :cond_3
     const-string v1, "com.android.systemui.BATTERY_LEVEL_TEST"
 
@@ -226,8 +254,10 @@
 
     if-eqz v1, :cond_0
 
+    .line 118
     iput-boolean v2, p0, Lcom/android/systemui/BatteryMeterView$BatteryTracker;->testmode:Z
 
+    .line 119
     iget-object v1, p0, Lcom/android/systemui/BatteryMeterView$BatteryTracker;->this$0:Lcom/android/systemui/BatteryMeterView;
 
     new-instance v2, Lcom/android/systemui/BatteryMeterView$BatteryTracker$1;

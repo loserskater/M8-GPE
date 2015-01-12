@@ -25,6 +25,8 @@
 .method constructor <init>(Lcom/android/systemui/statusbar/ExpandableNotificationRow;)V
     .locals 0
 
+    .prologue
+    .line 171
     iput-object p1, p0, Lcom/android/systemui/statusbar/ExpandableNotificationRow$1;->this$0:Lcom/android/systemui/statusbar/ExpandableNotificationRow;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,14 +38,20 @@
 # virtual methods
 .method public onInflate(Landroid/view/ViewStub;Landroid/view/View;)V
     .locals 2
+    .param p1, "stub"    # Landroid/view/ViewStub;
+    .param p2, "inflated"    # Landroid/view/View;
 
+    .prologue
+    .line 174
     iget-object v0, p0, Lcom/android/systemui/statusbar/ExpandableNotificationRow$1;->this$0:Lcom/android/systemui/statusbar/ExpandableNotificationRow;
 
     check-cast p2, Lcom/android/systemui/statusbar/NotificationGuts;
 
+    .end local p2    # "inflated":Landroid/view/View;
     # setter for: Lcom/android/systemui/statusbar/ExpandableNotificationRow;->mGuts:Lcom/android/systemui/statusbar/NotificationGuts;
     invoke-static {v0, p2}, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->access$002(Lcom/android/systemui/statusbar/ExpandableNotificationRow;Lcom/android/systemui/statusbar/NotificationGuts;)Lcom/android/systemui/statusbar/NotificationGuts;
 
+    .line 175
     iget-object v0, p0, Lcom/android/systemui/statusbar/ExpandableNotificationRow$1;->this$0:Lcom/android/systemui/statusbar/ExpandableNotificationRow;
 
     # getter for: Lcom/android/systemui/statusbar/ExpandableNotificationRow;->mGuts:Lcom/android/systemui/statusbar/NotificationGuts;
@@ -59,6 +67,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/NotificationGuts;->setClipTopAmount(I)V
 
+    .line 176
     iget-object v0, p0, Lcom/android/systemui/statusbar/ExpandableNotificationRow$1;->this$0:Lcom/android/systemui/statusbar/ExpandableNotificationRow;
 
     # getter for: Lcom/android/systemui/statusbar/ExpandableNotificationRow;->mGuts:Lcom/android/systemui/statusbar/NotificationGuts;
@@ -74,5 +83,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/NotificationGuts;->setActualHeight(I)V
 
+    .line 177
     return-void
 .end method

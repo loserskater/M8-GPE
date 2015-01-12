@@ -29,6 +29,8 @@
 .method constructor <init>(Lcom/android/systemui/recents/views/TaskView;Landroid/view/View;Lcom/android/systemui/recents/views/TaskView;)V
     .locals 0
 
+    .prologue
+    .line 864
     iput-object p1, p0, Lcom/android/systemui/recents/views/TaskView$11;->this$0:Lcom/android/systemui/recents/views/TaskView;
 
     iput-object p2, p0, Lcom/android/systemui/recents/views/TaskView$11;->val$v:Landroid/view/View;
@@ -45,6 +47,8 @@
 .method public run()V
     .locals 2
 
+    .prologue
+    .line 869
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView$11;->val$v:Landroid/view/View;
 
     iget-object v1, p0, Lcom/android/systemui/recents/views/TaskView$11;->this$0:Lcom/android/systemui/recents/views/TaskView;
@@ -55,10 +59,12 @@
 
     if-ne v0, v1, :cond_0
 
+    .line 870
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView$11;->this$0:Lcom/android/systemui/recents/views/TaskView;
 
     invoke-virtual {v0}, Lcom/android/systemui/recents/views/TaskView;->dismissTask()V
 
+    .line 872
     :cond_0
     return-void
 .end method

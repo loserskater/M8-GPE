@@ -21,7 +21,10 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/statusbar/phone/QSTileHost;Landroid/content/Context;)V
     .locals 0
+    .param p2, "x0"    # Landroid/content/Context;
 
+    .prologue
+    .line 115
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/QSTileHost$1;->this$0:Lcom/android/systemui/statusbar/phone/QSTileHost;
 
     invoke-direct {p0, p2}, Lcom/android/systemui/settings/CurrentUserTracker;-><init>(Landroid/content/Context;)V
@@ -33,12 +36,16 @@
 # virtual methods
 .method public onUserSwitched(I)V
     .locals 3
+    .param p1, "newUserId"    # I
 
+    .prologue
+    .line 118
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/QSTileHost$1;->this$0:Lcom/android/systemui/statusbar/phone/QSTileHost;
 
     # invokes: Lcom/android/systemui/statusbar/phone/QSTileHost;->recreateTiles()V
     invoke-static {v2}, Lcom/android/systemui/statusbar/phone/QSTileHost;->access$000(Lcom/android/systemui/statusbar/phone/QSTileHost;)V
 
+    .line 119
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/QSTileHost$1;->this$0:Lcom/android/systemui/statusbar/phone/QSTileHost;
 
     # getter for: Lcom/android/systemui/statusbar/phone/QSTileHost;->mTiles:Ljava/util/LinkedHashMap;
@@ -54,6 +61,7 @@
 
     move-result-object v0
 
+    .local v0, "i$":Ljava/util/Iterator;
     :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
@@ -67,10 +75,14 @@
 
     check-cast v1, Lcom/android/systemui/qs/QSTile;
 
+    .line 120
+    .local v1, "tile":Lcom/android/systemui/qs/QSTile;, "Lcom/android/systemui/qs/QSTile<*>;"
     invoke-virtual {v1, p1}, Lcom/android/systemui/qs/QSTile;->userSwitch(I)V
 
     goto :goto_0
 
+    .line 122
+    .end local v1    # "tile":Lcom/android/systemui/qs/QSTile;, "Lcom/android/systemui/qs/QSTile<*>;"
     :cond_0
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/QSTileHost$1;->this$0:Lcom/android/systemui/statusbar/phone/QSTileHost;
 
@@ -81,6 +93,7 @@
 
     invoke-interface {v2, p1}, Lcom/android/systemui/statusbar/policy/SecurityController;->onUserSwitched(I)V
 
+    .line 123
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/QSTileHost$1;->this$0:Lcom/android/systemui/statusbar/phone/QSTileHost;
 
     # getter for: Lcom/android/systemui/statusbar/phone/QSTileHost;->mObserver:Lcom/android/systemui/statusbar/phone/QSTileHost$Observer;
@@ -90,5 +103,6 @@
 
     invoke-virtual {v2}, Lcom/android/systemui/statusbar/phone/QSTileHost$Observer;->register()V
 
+    .line 124
     return-void
 .end method

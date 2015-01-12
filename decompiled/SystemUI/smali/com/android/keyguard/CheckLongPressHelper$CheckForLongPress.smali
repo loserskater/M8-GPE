@@ -25,6 +25,8 @@
 .method constructor <init>(Lcom/android/keyguard/CheckLongPressHelper;)V
     .locals 0
 
+    .prologue
+    .line 31
     iput-object p1, p0, Lcom/android/keyguard/CheckLongPressHelper$CheckForLongPress;->this$0:Lcom/android/keyguard/CheckLongPressHelper;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,6 +39,8 @@
 .method public run()V
     .locals 2
 
+    .prologue
+    .line 33
     iget-object v0, p0, Lcom/android/keyguard/CheckLongPressHelper$CheckForLongPress;->this$0:Lcom/android/keyguard/CheckLongPressHelper;
 
     # getter for: Lcom/android/keyguard/CheckLongPressHelper;->mView:Landroid/view/View;
@@ -72,6 +76,7 @@
 
     if-nez v0, :cond_0
 
+    .line 35
     iget-object v0, p0, Lcom/android/keyguard/CheckLongPressHelper$CheckForLongPress;->this$0:Lcom/android/keyguard/CheckLongPressHelper;
 
     # getter for: Lcom/android/keyguard/CheckLongPressHelper;->mView:Landroid/view/View;
@@ -85,6 +90,7 @@
 
     if-eqz v0, :cond_0
 
+    .line 36
     iget-object v0, p0, Lcom/android/keyguard/CheckLongPressHelper$CheckForLongPress;->this$0:Lcom/android/keyguard/CheckLongPressHelper;
 
     # getter for: Lcom/android/keyguard/CheckLongPressHelper;->mView:Landroid/view/View;
@@ -96,6 +102,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setPressed(Z)V
 
+    .line 37
     iget-object v0, p0, Lcom/android/keyguard/CheckLongPressHelper$CheckForLongPress;->this$0:Lcom/android/keyguard/CheckLongPressHelper;
 
     const/4 v1, 0x1
@@ -103,6 +110,7 @@
     # setter for: Lcom/android/keyguard/CheckLongPressHelper;->mHasPerformedLongPress:Z
     invoke-static {v0, v1}, Lcom/android/keyguard/CheckLongPressHelper;->access$102(Lcom/android/keyguard/CheckLongPressHelper;Z)Z
 
+    .line 40
     :cond_0
     return-void
 .end method

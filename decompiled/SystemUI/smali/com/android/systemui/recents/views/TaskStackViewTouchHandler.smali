@@ -56,6 +56,8 @@
 .method static constructor <clinit>()V
     .locals 1
 
+    .prologue
+    .line 30
     const/4 v0, -0x1
 
     sput v0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->INACTIVE_POINTER_ID:I
@@ -65,39 +67,53 @@
 
 .method public constructor <init>(Landroid/content/Context;Lcom/android/systemui/recents/views/TaskStackView;Lcom/android/systemui/recents/RecentsConfiguration;Lcom/android/systemui/recents/views/TaskStackViewScroller;)V
     .locals 5
+    .param p1, "context"    # Landroid/content/Context;
+    .param p2, "sv"    # Lcom/android/systemui/recents/views/TaskStackView;
+    .param p3, "config"    # Lcom/android/systemui/recents/RecentsConfiguration;
+    .param p4, "scroller"    # Lcom/android/systemui/recents/views/TaskStackViewScroller;
 
+    .prologue
+    .line 58
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 44
     sget v2, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->INACTIVE_POINTER_ID:I
 
     iput v2, p0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mActivePointerId:I
 
+    .line 45
     const/4 v2, 0x0
 
     iput-object v2, p0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mActiveTaskView:Lcom/android/systemui/recents/views/TaskView;
 
+    .line 59
     invoke-static {p1}, Landroid/view/ViewConfiguration;->get(Landroid/content/Context;)Landroid/view/ViewConfiguration;
 
     move-result-object v0
 
+    .line 60
+    .local v0, "configuration":Landroid/view/ViewConfiguration;
     invoke-virtual {v0}, Landroid/view/ViewConfiguration;->getScaledMinimumFlingVelocity()I
 
     move-result v2
 
     iput v2, p0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mMinimumVelocity:I
 
+    .line 61
     invoke-virtual {v0}, Landroid/view/ViewConfiguration;->getScaledMaximumFlingVelocity()I
 
     move-result v2
 
     iput v2, p0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mMaximumVelocity:I
 
+    .line 62
     invoke-virtual {v0}, Landroid/view/ViewConfiguration;->getScaledTouchSlop()I
 
     move-result v2
 
     iput v2, p0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mScrollTouchSlop:I
 
+    .line 63
     invoke-virtual {v0}, Landroid/view/ViewConfiguration;->getScaledPagingTouchSlop()I
 
     move-result v2
@@ -106,12 +122,16 @@
 
     iput v2, p0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mPagingTouchSlop:F
 
+    .line 64
     iput-object p2, p0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mSv:Lcom/android/systemui/recents/views/TaskStackView;
 
+    .line 65
     iput-object p4, p0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mScroller:Lcom/android/systemui/recents/views/TaskStackViewScroller;
 
+    .line 66
     iput-object p3, p0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mConfig:Lcom/android/systemui/recents/RecentsConfiguration;
 
+    .line 68
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v2
@@ -122,6 +142,8 @@
 
     iget v1, v2, Landroid/util/DisplayMetrics;->density:F
 
+    .line 69
+    .local v1, "densityScale":F
     new-instance v2, Lcom/android/systemui/recents/views/SwipeHelper;
 
     const/4 v3, 0x0
@@ -132,12 +154,14 @@
 
     iput-object v2, p0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mSwipeHelper:Lcom/android/systemui/recents/views/SwipeHelper;
 
+    .line 70
     iget-object v2, p0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mSwipeHelper:Lcom/android/systemui/recents/views/SwipeHelper;
 
     const/high16 v3, 0x3f800000
 
     invoke-virtual {v2, v3}, Lcom/android/systemui/recents/views/SwipeHelper;->setMinAlpha(F)V
 
+    .line 71
     return-void
 .end method
 
@@ -145,7 +169,10 @@
 # virtual methods
 .method public canChildBeDismissed(Landroid/view/View;)Z
     .locals 1
+    .param p1, "v"    # Landroid/view/View;
 
+    .prologue
+    .line 348
     const/4 v0, 0x1
 
     return v0
@@ -153,11 +180,16 @@
 
 .method createMotionEventForStackScroll(Landroid/view/MotionEvent;)Landroid/view/MotionEvent;
     .locals 4
+    .param p1, "ev"    # Landroid/view/MotionEvent;
 
+    .prologue
+    .line 109
     invoke-static {p1}, Landroid/view/MotionEvent;->obtainNoHistory(Landroid/view/MotionEvent;)Landroid/view/MotionEvent;
 
     move-result-object v0
 
+    .line 110
+    .local v0, "pev":Landroid/view/MotionEvent;
     const/4 v1, 0x0
 
     iget-object v2, p0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mScroller:Lcom/android/systemui/recents/views/TaskStackViewScroller;
@@ -176,23 +208,32 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/view/MotionEvent;->setLocation(FF)V
 
+    .line 111
     return-object v0
 .end method
 
 .method findViewAtPoint(II)Lcom/android/systemui/recents/views/TaskView;
     .locals 6
+    .param p1, "x"    # I
+    .param p2, "y"    # I
 
+    .prologue
+    .line 95
     iget-object v3, p0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mSv:Lcom/android/systemui/recents/views/TaskStackView;
 
     invoke-virtual {v3}, Lcom/android/systemui/recents/views/TaskStackView;->getChildCount()I
 
     move-result v0
 
+    .line 96
+    .local v0, "childCount":I
     add-int/lit8 v1, v0, -0x1
 
+    .local v1, "i":I
     :goto_0
     if-ltz v1, :cond_1
 
+    .line 97
     iget-object v3, p0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mSv:Lcom/android/systemui/recents/views/TaskStackView;
 
     invoke-virtual {v3, v1}, Lcom/android/systemui/recents/views/TaskStackView;->getChildAt(I)Landroid/view/View;
@@ -201,12 +242,15 @@
 
     check-cast v2, Lcom/android/systemui/recents/views/TaskView;
 
+    .line 98
+    .local v2, "tv":Lcom/android/systemui/recents/views/TaskView;
     invoke-virtual {v2}, Lcom/android/systemui/recents/views/TaskView;->getVisibility()I
 
     move-result v3
 
     if-nez v3, :cond_0
 
+    .line 99
     iget-object v3, p0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mSv:Lcom/android/systemui/recents/views/TaskStackView;
 
     int-to-float v4, p1
@@ -219,14 +263,20 @@
 
     if-eqz v3, :cond_0
 
+    .line 104
+    .end local v2    # "tv":Lcom/android/systemui/recents/views/TaskView;
     :goto_1
     return-object v2
 
+    .line 96
+    .restart local v2    # "tv":Lcom/android/systemui/recents/views/TaskView;
     :cond_0
     add-int/lit8 v1, v1, -0x1
 
     goto :goto_0
 
+    .line 104
+    .end local v2    # "tv":Lcom/android/systemui/recents/views/TaskView;
     :cond_1
     const/4 v2, 0x0
 
@@ -235,7 +285,10 @@
 
 .method public getChildAtPosition(Landroid/view/MotionEvent;)Landroid/view/View;
     .locals 2
+    .param p1, "ev"    # Landroid/view/MotionEvent;
 
+    .prologue
+    .line 343
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v0
@@ -258,19 +311,24 @@
 .method initOrResetVelocityTracker()V
     .locals 1
 
+    .prologue
+    .line 75
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mVelocityTracker:Landroid/view/VelocityTracker;
 
     if-nez v0, :cond_0
 
+    .line 76
     invoke-static {}, Landroid/view/VelocityTracker;->obtain()Landroid/view/VelocityTracker;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mVelocityTracker:Landroid/view/VelocityTracker;
 
+    .line 80
     :goto_0
     return-void
 
+    .line 78
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mVelocityTracker:Landroid/view/VelocityTracker;
 
@@ -282,33 +340,44 @@
 .method initVelocityTrackerIfNotExists()V
     .locals 1
 
+    .prologue
+    .line 82
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mVelocityTracker:Landroid/view/VelocityTracker;
 
     if-nez v0, :cond_0
 
+    .line 83
     invoke-static {}, Landroid/view/VelocityTracker;->obtain()Landroid/view/VelocityTracker;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mVelocityTracker:Landroid/view/VelocityTracker;
 
+    .line 85
     :cond_0
     return-void
 .end method
 
 .method public onBeginDrag(Landroid/view/View;)V
     .locals 4
+    .param p1, "v"    # Landroid/view/View;
 
+    .prologue
     const/4 v3, 0x0
 
+    .line 353
     move-object v1, p1
 
     check-cast v1, Lcom/android/systemui/recents/views/TaskView;
 
+    .line 355
+    .local v1, "tv":Lcom/android/systemui/recents/views/TaskView;
     invoke-virtual {v1, v3}, Lcom/android/systemui/recents/views/TaskView;->setClipViewInStack(Z)V
 
+    .line 357
     invoke-virtual {v1, v3}, Lcom/android/systemui/recents/views/TaskView;->setTouchEnabled(Z)V
 
+    .line 359
     iget-object v2, p0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mSv:Lcom/android/systemui/recents/views/TaskStackView;
 
     iget-object v2, v2, Lcom/android/systemui/recents/views/TaskStackView;->mConfig:Lcom/android/systemui/recents/RecentsConfiguration;
@@ -317,55 +386,74 @@
 
     invoke-virtual {v1, v3, v2}, Lcom/android/systemui/recents/views/TaskView;->animateFooterVisibility(ZI)V
 
+    .line 361
     iget-object v2, p0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mSv:Lcom/android/systemui/recents/views/TaskStackView;
 
     invoke-virtual {v2}, Lcom/android/systemui/recents/views/TaskStackView;->getParent()Landroid/view/ViewParent;
 
     move-result-object v0
 
+    .line 362
+    .local v0, "parent":Landroid/view/ViewParent;
     if-eqz v0, :cond_0
 
+    .line 363
     const/4 v2, 0x1
 
     invoke-interface {v0, v2}, Landroid/view/ViewParent;->requestDisallowInterceptTouchEvent(Z)V
 
+    .line 365
     :cond_0
     return-void
 .end method
 
 .method public onChildDismissed(Landroid/view/View;)V
     .locals 2
+    .param p1, "v"    # Landroid/view/View;
 
+    .prologue
     const/4 v1, 0x1
 
+    .line 374
     move-object v0, p1
 
     check-cast v0, Lcom/android/systemui/recents/views/TaskView;
 
+    .line 376
+    .local v0, "tv":Lcom/android/systemui/recents/views/TaskView;
     invoke-virtual {v0, v1}, Lcom/android/systemui/recents/views/TaskView;->setClipViewInStack(Z)V
 
+    .line 378
     invoke-virtual {v0, v1}, Lcom/android/systemui/recents/views/TaskView;->setTouchEnabled(Z)V
 
+    .line 380
     iget-object v1, p0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mSv:Lcom/android/systemui/recents/views/TaskStackView;
 
     invoke-virtual {v1, v0}, Lcom/android/systemui/recents/views/TaskStackView;->onTaskViewDismissed(Lcom/android/systemui/recents/views/TaskView;)V
 
+    .line 381
     return-void
 .end method
 
 .method public onDragCancelled(Landroid/view/View;)V
     .locals 0
+    .param p1, "v"    # Landroid/view/View;
 
+    .prologue
+    .line 397
     return-void
 .end method
 
 .method public onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 11
+    .param p1, "ev"    # Landroid/view/MotionEvent;
 
+    .prologue
     const/4 v8, 0x1
 
     const/4 v7, 0x0
 
+    .line 117
     iget-object v9, p0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mSv:Lcom/android/systemui/recents/views/TaskStackView;
 
     invoke-virtual {v9}, Lcom/android/systemui/recents/views/TaskStackView;->getChildCount()I
@@ -376,18 +464,25 @@
 
     move v2, v8
 
+    .line 118
+    .local v2, "hasChildren":Z
     :goto_0
     if-nez v2, :cond_2
 
+    .line 187
     :cond_0
     :goto_1
     return v7
 
+    .end local v2    # "hasChildren":Z
     :cond_1
     move v2, v7
 
+    .line 117
     goto :goto_0
 
+    .line 123
+    .restart local v2    # "hasChildren":Z
     :cond_2
     iget-object v9, p0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mSwipeHelper:Lcom/android/systemui/recents/views/SwipeHelper;
 
@@ -397,14 +492,17 @@
 
     iput-boolean v9, p0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mInterceptedBySwipeHelper:Z
 
+    .line 124
     iget-boolean v9, p0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mInterceptedBySwipeHelper:Z
 
     if-eqz v9, :cond_3
 
     move v7, v8
 
+    .line 125
     goto :goto_1
 
+    .line 128
     :cond_3
     iget-object v9, p0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mScroller:Lcom/android/systemui/recents/views/TaskStackViewScroller;
 
@@ -433,15 +531,20 @@
     :cond_4
     move v4, v8
 
+    .line 130
+    .local v4, "wasScrolling":Z
     :goto_2
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v0
 
+    .line 131
+    .local v0, "action":I
     and-int/lit16 v9, v0, 0xff
 
     packed-switch v9, :pswitch_data_0
 
+    .line 187
     :cond_5
     :goto_3
     if-nez v4, :cond_6
@@ -455,11 +558,17 @@
 
     goto :goto_1
 
+    .end local v0    # "action":I
+    .end local v4    # "wasScrolling":Z
     :cond_7
     move v4, v7
 
+    .line 128
     goto :goto_2
 
+    .line 134
+    .restart local v0    # "action":I
+    .restart local v4    # "wasScrolling":Z
     :pswitch_0
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
@@ -471,6 +580,7 @@
 
     iput v9, p0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mInitialMotionX:I
 
+    .line 135
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
 
     move-result v9
@@ -481,6 +591,7 @@
 
     iput v9, p0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mInitialMotionY:I
 
+    .line 136
     iget-object v9, p0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mSv:Lcom/android/systemui/recents/views/TaskStackView;
 
     iget-object v9, v9, Lcom/android/systemui/recents/views/TaskStackView;->mLayoutAlgorithm:Lcom/android/systemui/recents/views/TaskStackViewLayoutAlgorithm;
@@ -495,12 +606,14 @@
 
     iput v9, p0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mInitialP:F
 
+    .line 137
     invoke-virtual {p1, v7}, Landroid/view/MotionEvent;->getPointerId(I)I
 
     move-result v9
 
     iput v9, p0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mActivePointerId:I
 
+    .line 138
     iget v9, p0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mLastMotionX:I
 
     iget v10, p0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mLastMotionY:I
@@ -511,16 +624,20 @@
 
     iput-object v9, p0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mActiveTaskView:Lcom/android/systemui/recents/views/TaskView;
 
+    .line 140
     iget-object v9, p0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mScroller:Lcom/android/systemui/recents/views/TaskStackViewScroller;
 
     invoke-virtual {v9}, Lcom/android/systemui/recents/views/TaskStackViewScroller;->stopScroller()V
 
+    .line 141
     iget-object v9, p0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mScroller:Lcom/android/systemui/recents/views/TaskStackViewScroller;
 
     invoke-virtual {v9}, Lcom/android/systemui/recents/views/TaskStackViewScroller;->stopBoundScrollAnimation()V
 
+    .line 143
     invoke-virtual {p0}, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->initOrResetVelocityTracker()V
 
+    .line 144
     iget-object v9, p0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mVelocityTracker:Landroid/view/VelocityTracker;
 
     invoke-virtual {p0, p1}, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->createMotionEventForStackScroll(Landroid/view/MotionEvent;)Landroid/view/MotionEvent;
@@ -529,6 +646,7 @@
 
     invoke-virtual {v9, v10}, Landroid/view/VelocityTracker;->addMovement(Landroid/view/MotionEvent;)V
 
+    .line 146
     iget-object v9, p0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mScroller:Lcom/android/systemui/recents/views/TaskStackViewScroller;
 
     invoke-virtual {v9}, Lcom/android/systemui/recents/views/TaskStackViewScroller;->isScrolling()Z
@@ -539,6 +657,7 @@
 
     goto :goto_3
 
+    .line 150
     :pswitch_1
     iget v9, p0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mActivePointerId:I
 
@@ -546,24 +665,31 @@
 
     if-eq v9, v10, :cond_5
 
+    .line 152
     iget v9, p0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mActivePointerId:I
 
     invoke-virtual {p1, v9}, Landroid/view/MotionEvent;->findPointerIndex(I)I
 
     move-result v1
 
+    .line 153
+    .local v1, "activePointerIndex":I
     invoke-virtual {p1, v1}, Landroid/view/MotionEvent;->getY(I)F
 
     move-result v9
 
     float-to-int v6, v9
 
+    .line 154
+    .local v6, "y":I
     invoke-virtual {p1, v1}, Landroid/view/MotionEvent;->getX(I)F
 
     move-result v9
 
     float-to-int v5, v9
 
+    .line 155
+    .local v5, "x":I
     iget v9, p0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mInitialMotionY:I
 
     sub-int v9, v6, v9
@@ -576,10 +702,13 @@
 
     if-le v9, v10, :cond_8
 
+    .line 157
     iput-boolean v8, p0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mIsScrolling:Z
 
+    .line 159
     invoke-virtual {p0}, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->initVelocityTrackerIfNotExists()V
 
+    .line 160
     iget-object v9, p0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mVelocityTracker:Landroid/view/VelocityTracker;
 
     invoke-virtual {p0, p1}, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->createMotionEventForStackScroll(Landroid/view/MotionEvent;)Landroid/view/MotionEvent;
@@ -588,21 +717,29 @@
 
     invoke-virtual {v9, v10}, Landroid/view/VelocityTracker;->addMovement(Landroid/view/MotionEvent;)V
 
+    .line 162
     iget-object v9, p0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mSv:Lcom/android/systemui/recents/views/TaskStackView;
 
     invoke-virtual {v9}, Lcom/android/systemui/recents/views/TaskStackView;->getParent()Landroid/view/ViewParent;
 
     move-result-object v3
 
+    .line 163
+    .local v3, "parent":Landroid/view/ViewParent;
     if-eqz v3, :cond_8
 
+    .line 164
     invoke-interface {v3, v8}, Landroid/view/ViewParent;->requestDisallowInterceptTouchEvent(Z)V
 
+    .line 168
+    .end local v3    # "parent":Landroid/view/ViewParent;
     :cond_8
     iput v5, p0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mLastMotionX:I
 
+    .line 169
     iput v6, p0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mLastMotionY:I
 
+    .line 170
     iget-object v9, p0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mSv:Lcom/android/systemui/recents/views/TaskStackView;
 
     iget-object v9, v9, Lcom/android/systemui/recents/views/TaskStackView;->mLayoutAlgorithm:Lcom/android/systemui/recents/views/TaskStackViewLayoutAlgorithm;
@@ -617,29 +754,39 @@
 
     goto/16 :goto_3
 
+    .line 176
+    .end local v1    # "activePointerIndex":I
+    .end local v5    # "x":I
+    .end local v6    # "y":I
     :pswitch_2
     iget-object v9, p0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mScroller:Lcom/android/systemui/recents/views/TaskStackViewScroller;
 
     invoke-virtual {v9}, Lcom/android/systemui/recents/views/TaskStackViewScroller;->animateBoundScroll()Landroid/animation/ObjectAnimator;
 
+    .line 178
     iput-boolean v7, p0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mIsScrolling:Z
 
+    .line 179
     sget v9, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->INACTIVE_POINTER_ID:I
 
     iput v9, p0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mActivePointerId:I
 
+    .line 180
     const/4 v9, 0x0
 
     iput-object v9, p0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mActiveTaskView:Lcom/android/systemui/recents/views/TaskView;
 
+    .line 181
     const/4 v9, 0x0
 
     iput v9, p0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mTotalPMotion:F
 
+    .line 182
     invoke-virtual {p0}, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->recycleVelocityTracker()V
 
     goto/16 :goto_3
 
+    .line 131
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0
@@ -651,17 +798,24 @@
 
 .method public onSnapBackCompleted(Landroid/view/View;)V
     .locals 3
+    .param p1, "v"    # Landroid/view/View;
 
+    .prologue
     const/4 v2, 0x1
 
+    .line 385
     move-object v0, p1
 
     check-cast v0, Lcom/android/systemui/recents/views/TaskView;
 
+    .line 387
+    .local v0, "tv":Lcom/android/systemui/recents/views/TaskView;
     invoke-virtual {v0, v2}, Lcom/android/systemui/recents/views/TaskView;->setClipViewInStack(Z)V
 
+    .line 389
     invoke-virtual {v0, v2}, Lcom/android/systemui/recents/views/TaskView;->setTouchEnabled(Z)V
 
+    .line 391
     iget-object v1, p0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mSv:Lcom/android/systemui/recents/views/TaskStackView;
 
     iget-object v1, v1, Lcom/android/systemui/recents/views/TaskStackView;->mConfig:Lcom/android/systemui/recents/RecentsConfiguration;
@@ -670,18 +824,26 @@
 
     invoke-virtual {v0, v2, v1}, Lcom/android/systemui/recents/views/TaskView;->animateFooterVisibility(ZI)V
 
+    .line 392
     return-void
 .end method
 
 .method public onSwipeChanged(Landroid/view/View;F)V
     .locals 0
+    .param p1, "v"    # Landroid/view/View;
+    .param p2, "delta"    # F
 
+    .prologue
+    .line 370
     return-void
 .end method
 
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 30
+    .param p1, "ev"    # Landroid/view/MotionEvent;
 
+    .prologue
+    .line 194
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mSv:Lcom/android/systemui/recents/views/TaskStackView;
@@ -694,19 +856,27 @@
 
     const/16 v18, 0x1
 
+    .line 195
+    .local v18, "hasChildren":Z
     :goto_0
     if-nez v18, :cond_1
 
+    .line 196
     const/4 v2, 0x0
 
+    .line 336
     :goto_1
     return v2
 
+    .line 194
+    .end local v18    # "hasChildren":Z
     :cond_0
     const/16 v18, 0x0
 
     goto :goto_0
 
+    .line 200
+    .restart local v18    # "hasChildren":Z
     :cond_1
     move-object/from16 v0, p0
 
@@ -726,21 +896,27 @@
 
     if-eqz v2, :cond_2
 
+    .line 201
     const/4 v2, 0x1
 
     goto :goto_1
 
+    .line 205
     :cond_2
     invoke-virtual/range {p0 .. p0}, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->initVelocityTrackerIfNotExists()V
 
+    .line 207
     invoke-virtual/range {p1 .. p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v13
 
+    .line 208
+    .local v13, "action":I
     and-int/lit16 v2, v13, 0xff
 
     packed-switch v2, :pswitch_data_0
 
+    .line 336
     :cond_3
     :goto_2
     :pswitch_0
@@ -748,6 +924,7 @@
 
     goto :goto_1
 
+    .line 211
     :pswitch_1
     invoke-virtual/range {p1 .. p1}, Landroid/view/MotionEvent;->getX()F
 
@@ -763,6 +940,7 @@
 
     iput v2, v0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mInitialMotionX:I
 
+    .line 212
     invoke-virtual/range {p1 .. p1}, Landroid/view/MotionEvent;->getY()F
 
     move-result v2
@@ -777,6 +955,7 @@
 
     iput v2, v0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mInitialMotionY:I
 
+    .line 213
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mSv:Lcom/android/systemui/recents/views/TaskStackView;
@@ -799,6 +978,7 @@
 
     iput v2, v0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mInitialP:F
 
+    .line 214
     const/4 v2, 0x0
 
     move-object/from16 v0, p1
@@ -811,6 +991,7 @@
 
     iput v2, v0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mActivePointerId:I
 
+    .line 215
     move-object/from16 v0, p0
 
     iget v2, v0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mLastMotionX:I
@@ -829,20 +1010,24 @@
 
     iput-object v2, v0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mActiveTaskView:Lcom/android/systemui/recents/views/TaskView;
 
+    .line 217
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mScroller:Lcom/android/systemui/recents/views/TaskStackViewScroller;
 
     invoke-virtual {v2}, Lcom/android/systemui/recents/views/TaskStackViewScroller;->stopScroller()V
 
+    .line 218
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mScroller:Lcom/android/systemui/recents/views/TaskStackViewScroller;
 
     invoke-virtual {v2}, Lcom/android/systemui/recents/views/TaskStackViewScroller;->stopBoundScrollAnimation()V
 
+    .line 220
     invoke-virtual/range {p0 .. p0}, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->initOrResetVelocityTracker()V
 
+    .line 221
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mVelocityTracker:Landroid/view/VelocityTracker;
@@ -853,6 +1038,7 @@
 
     invoke-virtual {v2, v3}, Landroid/view/VelocityTracker;->addMovement(Landroid/view/MotionEvent;)V
 
+    .line 223
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mSv:Lcom/android/systemui/recents/views/TaskStackView;
@@ -861,8 +1047,11 @@
 
     move-result-object v23
 
+    .line 224
+    .local v23, "parent":Landroid/view/ViewParent;
     if-eqz v23, :cond_3
 
+    .line 225
     const/4 v2, 0x1
 
     move-object/from16 v0, v23
@@ -871,11 +1060,15 @@
 
     goto :goto_2
 
+    .line 230
+    .end local v23    # "parent":Landroid/view/ViewParent;
     :pswitch_2
     invoke-virtual/range {p1 .. p1}, Landroid/view/MotionEvent;->getActionIndex()I
 
     move-result v19
 
+    .line 231
+    .local v19, "index":I
     move-object/from16 v0, p1
 
     move/from16 v1, v19
@@ -888,6 +1081,7 @@
 
     iput v2, v0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mActivePointerId:I
 
+    .line 232
     move-object/from16 v0, p1
 
     move/from16 v1, v19
@@ -902,6 +1096,7 @@
 
     iput v2, v0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mLastMotionX:I
 
+    .line 233
     move-object/from16 v0, p1
 
     move/from16 v1, v19
@@ -916,6 +1111,7 @@
 
     iput v2, v0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mLastMotionY:I
 
+    .line 234
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mSv:Lcom/android/systemui/recents/views/TaskStackView;
@@ -936,6 +1132,8 @@
 
     goto/16 :goto_2
 
+    .line 238
+    .end local v19    # "index":I
     :pswitch_3
     move-object/from16 v0, p0
 
@@ -945,6 +1143,7 @@
 
     if-eq v2, v3, :cond_3
 
+    .line 240
     move-object/from16 v0, p0
 
     iget v2, v0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mActivePointerId:I
@@ -955,6 +1154,8 @@
 
     move-result v14
 
+    .line 241
+    .local v14, "activePointerIndex":I
     move-object/from16 v0, p1
 
     invoke-virtual {v0, v14}, Landroid/view/MotionEvent;->getX(I)F
@@ -965,6 +1166,8 @@
 
     move/from16 v27, v0
 
+    .line 242
+    .local v27, "x":I
     move-object/from16 v0, p1
 
     invoke-virtual {v0, v14}, Landroid/view/MotionEvent;->getY(I)F
@@ -975,6 +1178,8 @@
 
     move/from16 v28, v0
 
+    .line 243
+    .local v28, "y":I
     move-object/from16 v0, p0
 
     iget v2, v0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mInitialMotionY:I
@@ -985,6 +1190,8 @@
 
     move-result v29
 
+    .line 244
+    .local v29, "yTotal":I
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mSv:Lcom/android/systemui/recents/views/TaskStackView;
@@ -997,18 +1204,23 @@
 
     move-result v15
 
+    .line 245
+    .local v15, "curP":F
     move-object/from16 v0, p0
 
     iget v2, v0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mLastP:F
 
     sub-float v17, v2, v15
 
+    .line 246
+    .local v17, "deltaP":F
     move-object/from16 v0, p0
 
     iget-boolean v2, v0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mIsScrolling:Z
 
     if-nez v2, :cond_4
 
+    .line 247
     move-object/from16 v0, p0
 
     iget v2, v0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mScrollTouchSlop:I
@@ -1017,14 +1229,17 @@
 
     if-le v0, v2, :cond_4
 
+    .line 248
     const/4 v2, 0x1
 
     move-object/from16 v0, p0
 
     iput-boolean v2, v0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mIsScrolling:Z
 
+    .line 250
     invoke-virtual/range {p0 .. p0}, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->initOrResetVelocityTracker()V
 
+    .line 251
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mVelocityTracker:Landroid/view/VelocityTracker;
@@ -1035,6 +1250,7 @@
 
     invoke-virtual {v2, v3}, Landroid/view/VelocityTracker;->addMovement(Landroid/view/MotionEvent;)V
 
+    .line 253
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mSv:Lcom/android/systemui/recents/views/TaskStackView;
@@ -1043,14 +1259,19 @@
 
     move-result-object v23
 
+    .line 254
+    .restart local v23    # "parent":Landroid/view/ViewParent;
     if-eqz v23, :cond_4
 
+    .line 255
     const/4 v2, 0x1
 
     move-object/from16 v0, v23
 
     invoke-interface {v0, v2}, Landroid/view/ViewParent;->requestDisallowInterceptTouchEvent(Z)V
 
+    .line 259
+    .end local v23    # "parent":Landroid/view/ViewParent;
     :cond_4
     move-object/from16 v0, p0
 
@@ -1058,6 +1279,7 @@
 
     if-eqz v2, :cond_6
 
+    .line 260
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mScroller:Lcom/android/systemui/recents/views/TaskStackViewScroller;
@@ -1066,6 +1288,8 @@
 
     move-result v16
 
+    .line 261
+    .local v16, "curStackScroll":F
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mScroller:Lcom/android/systemui/recents/views/TaskStackViewScroller;
@@ -1076,6 +1300,8 @@
 
     move-result v22
 
+    .line 262
+    .local v22, "overScrollAmount":F
     const/4 v2, 0x0
 
     move/from16 v0, v22
@@ -1086,6 +1312,7 @@
 
     if-eqz v2, :cond_5
 
+    .line 265
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mConfig:Lcom/android/systemui/recents/RecentsConfiguration;
@@ -1094,6 +1321,8 @@
 
     move/from16 v20, v0
 
+    .line 266
+    .local v20, "maxOverScroll":F
     const/high16 v2, 0x3f800000
 
     move/from16 v0, v20
@@ -1110,6 +1339,8 @@
 
     mul-float v17, v17, v2
 
+    .line 269
+    .end local v20    # "maxOverScroll":F
     :cond_5
     move-object/from16 v0, p0
 
@@ -1119,6 +1350,7 @@
 
     invoke-virtual {v2, v3}, Lcom/android/systemui/recents/views/TaskStackViewScroller;->setStackScroll(F)V
 
+    .line 270
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mScroller:Lcom/android/systemui/recents/views/TaskStackViewScroller;
@@ -1129,12 +1361,16 @@
 
     if-eqz v2, :cond_7
 
+    .line 271
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mVelocityTracker:Landroid/view/VelocityTracker;
 
     invoke-virtual {v2}, Landroid/view/VelocityTracker;->clear()V
 
+    .line 276
+    .end local v16    # "curStackScroll":F
+    .end local v22    # "overScrollAmount":F
     :cond_6
     :goto_3
     move/from16 v0, v27
@@ -1143,12 +1379,14 @@
 
     iput v0, v1, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mLastMotionX:I
 
+    .line 277
     move/from16 v0, v28
 
     move-object/from16 v1, p0
 
     iput v0, v1, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mLastMotionY:I
 
+    .line 278
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mSv:Lcom/android/systemui/recents/views/TaskStackView;
@@ -1167,6 +1405,7 @@
 
     iput v2, v0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mLastP:F
 
+    .line 279
     move-object/from16 v0, p0
 
     iget v2, v0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mTotalPMotion:F
@@ -1183,6 +1422,9 @@
 
     goto/16 :goto_2
 
+    .line 273
+    .restart local v16    # "curStackScroll":F
+    .restart local v22    # "overScrollAmount":F
     :cond_7
     move-object/from16 v0, p0
 
@@ -1196,6 +1438,15 @@
 
     goto :goto_3
 
+    .line 283
+    .end local v14    # "activePointerIndex":I
+    .end local v15    # "curP":F
+    .end local v16    # "curStackScroll":F
+    .end local v17    # "deltaP":F
+    .end local v22    # "overScrollAmount":F
+    .end local v27    # "x":I
+    .end local v28    # "y":I
+    .end local v29    # "yTotal":I
     :pswitch_4
     move-object/from16 v0, p0
 
@@ -1203,6 +1454,8 @@
 
     move-object/from16 v26, v0
 
+    .line 284
+    .local v26, "velocityTracker":Landroid/view/VelocityTracker;
     const/16 v2, 0x3e8
 
     move-object/from16 v0, p0
@@ -1215,6 +1468,7 @@
 
     invoke-virtual {v0, v2, v3}, Landroid/view/VelocityTracker;->computeCurrentVelocity(IF)V
 
+    .line 285
     move-object/from16 v0, p0
 
     iget v2, v0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mActivePointerId:I
@@ -1227,6 +1481,8 @@
 
     float-to-int v6, v2
 
+    .line 286
+    .local v6, "velocity":I
     move-object/from16 v0, p0
 
     iget-boolean v2, v0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mIsScrolling:Z
@@ -1243,6 +1499,7 @@
 
     if-le v2, v3, :cond_9
 
+    .line 287
     const/high16 v2, 0x3f800000
 
     int-to-float v3, v6
@@ -1269,6 +1526,8 @@
 
     float-to-int v12, v2
 
+    .line 291
+    .local v12, "overscrollRange":I
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mScroller:Lcom/android/systemui/recents/views/TaskStackViewScroller;
@@ -1335,12 +1594,15 @@
 
     invoke-virtual/range {v2 .. v12}, Landroid/widget/OverScroller;->fling(IIIIIIIIII)V
 
+    .line 298
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mSv:Lcom/android/systemui/recents/views/TaskStackView;
 
     invoke-virtual {v2}, Lcom/android/systemui/recents/views/TaskStackView;->invalidate()V
 
+    .line 304
+    .end local v12    # "overscrollRange":I
     :cond_8
     :goto_4
     sget v2, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->INACTIVE_POINTER_ID:I
@@ -1349,22 +1611,26 @@
 
     iput v2, v0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mActivePointerId:I
 
+    .line 305
     const/4 v2, 0x0
 
     move-object/from16 v0, p0
 
     iput-boolean v2, v0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mIsScrolling:Z
 
+    .line 306
     const/4 v2, 0x0
 
     move-object/from16 v0, p0
 
     iput v2, v0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mTotalPMotion:F
 
+    .line 307
     invoke-virtual/range {p0 .. p0}, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->recycleVelocityTracker()V
 
     goto/16 :goto_2
 
+    .line 299
     :cond_9
     move-object/from16 v0, p0
 
@@ -1376,6 +1642,7 @@
 
     if-eqz v2, :cond_8
 
+    .line 301
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mScroller:Lcom/android/systemui/recents/views/TaskStackViewScroller;
@@ -1384,11 +1651,16 @@
 
     goto :goto_4
 
+    .line 311
+    .end local v6    # "velocity":I
+    .end local v26    # "velocityTracker":Landroid/view/VelocityTracker;
     :pswitch_5
     invoke-virtual/range {p1 .. p1}, Landroid/view/MotionEvent;->getActionIndex()I
 
     move-result v25
 
+    .line 312
+    .local v25, "pointerIndex":I
     move-object/from16 v0, p1
 
     move/from16 v1, v25
@@ -1397,6 +1669,8 @@
 
     move-result v24
 
+    .line 313
+    .local v24, "pointerId":I
     move-object/from16 v0, p0
 
     iget v2, v0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mActivePointerId:I
@@ -1405,10 +1679,13 @@
 
     if-ne v0, v2, :cond_3
 
+    .line 315
     if-nez v25, :cond_a
 
     const/16 v21, 0x1
 
+    .line 316
+    .local v21, "newPointerIndex":I
     :goto_5
     move-object/from16 v0, p1
 
@@ -1422,6 +1699,7 @@
 
     iput v2, v0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mActivePointerId:I
 
+    .line 317
     move-object/from16 v0, p1
 
     move/from16 v1, v21
@@ -1436,6 +1714,7 @@
 
     iput v2, v0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mLastMotionX:I
 
+    .line 318
     move-object/from16 v0, p1
 
     move/from16 v1, v21
@@ -1450,6 +1729,7 @@
 
     iput v2, v0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mLastMotionY:I
 
+    .line 319
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mSv:Lcom/android/systemui/recents/views/TaskStackView;
@@ -1468,6 +1748,7 @@
 
     iput v2, v0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mLastP:F
 
+    .line 320
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mVelocityTracker:Landroid/view/VelocityTracker;
@@ -1476,11 +1757,16 @@
 
     goto/16 :goto_2
 
+    .line 315
+    .end local v21    # "newPointerIndex":I
     :cond_a
     const/16 v21, 0x0
 
     goto :goto_5
 
+    .line 325
+    .end local v24    # "pointerId":I
+    .end local v25    # "pointerIndex":I
     :pswitch_6
     move-object/from16 v0, p0
 
@@ -1492,12 +1778,14 @@
 
     if-eqz v2, :cond_b
 
+    .line 327
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mScroller:Lcom/android/systemui/recents/views/TaskStackViewScroller;
 
     invoke-virtual {v2}, Lcom/android/systemui/recents/views/TaskStackViewScroller;->animateBoundScroll()Landroid/animation/ObjectAnimator;
 
+    .line 329
     :cond_b
     sget v2, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->INACTIVE_POINTER_ID:I
 
@@ -1505,22 +1793,26 @@
 
     iput v2, v0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mActivePointerId:I
 
+    .line 330
     const/4 v2, 0x0
 
     move-object/from16 v0, p0
 
     iput-boolean v2, v0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mIsScrolling:Z
 
+    .line 331
     const/4 v2, 0x0
 
     move-object/from16 v0, p0
 
     iput v2, v0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mTotalPMotion:F
 
+    .line 332
     invoke-virtual/range {p0 .. p0}, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->recycleVelocityTracker()V
 
     goto/16 :goto_2
 
+    .line 208
     nop
 
     :pswitch_data_0
@@ -1538,18 +1830,23 @@
 .method recycleVelocityTracker()V
     .locals 1
 
+    .prologue
+    .line 87
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mVelocityTracker:Landroid/view/VelocityTracker;
 
     if-eqz v0, :cond_0
 
+    .line 88
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mVelocityTracker:Landroid/view/VelocityTracker;
 
     invoke-virtual {v0}, Landroid/view/VelocityTracker;->recycle()V
 
+    .line 89
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mVelocityTracker:Landroid/view/VelocityTracker;
 
+    .line 91
     :cond_0
     return-void
 .end method

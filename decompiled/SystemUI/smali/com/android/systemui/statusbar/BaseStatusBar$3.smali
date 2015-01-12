@@ -22,6 +22,8 @@
 .method constructor <init>(Lcom/android/systemui/statusbar/BaseStatusBar;)V
     .locals 0
 
+    .prologue
+    .line 262
     iput-object p1, p0, Lcom/android/systemui/statusbar/BaseStatusBar$3;->this$0:Lcom/android/systemui/statusbar/BaseStatusBar;
 
     invoke-direct {p0}, Landroid/widget/RemoteViews$OnClickHandler;-><init>()V
@@ -31,7 +33,13 @@
 
 .method static synthetic access$300(Lcom/android/systemui/statusbar/BaseStatusBar$3;Landroid/view/View;Landroid/app/PendingIntent;Landroid/content/Intent;)Z
     .locals 1
+    .param p0, "x0"    # Lcom/android/systemui/statusbar/BaseStatusBar$3;
+    .param p1, "x1"    # Landroid/view/View;
+    .param p2, "x2"    # Landroid/app/PendingIntent;
+    .param p3, "x3"    # Landroid/content/Intent;
 
+    .prologue
+    .line 262
     invoke-direct {p0, p1, p2, p3}, Lcom/android/systemui/statusbar/BaseStatusBar$3;->superOnClickHandler(Landroid/view/View;Landroid/app/PendingIntent;Landroid/content/Intent;)Z
 
     move-result v0
@@ -41,7 +49,12 @@
 
 .method private superOnClickHandler(Landroid/view/View;Landroid/app/PendingIntent;Landroid/content/Intent;)Z
     .locals 1
+    .param p1, "view"    # Landroid/view/View;
+    .param p2, "pendingIntent"    # Landroid/app/PendingIntent;
+    .param p3, "fillInIntent"    # Landroid/content/Intent;
 
+    .prologue
+    .line 313
     invoke-super {p0, p1, p2, p3}, Landroid/widget/RemoteViews$OnClickHandler;->onClickHandler(Landroid/view/View;Landroid/app/PendingIntent;Landroid/content/Intent;)Z
 
     move-result v0
@@ -53,11 +66,17 @@
 # virtual methods
 .method public onClickHandler(Landroid/view/View;Landroid/app/PendingIntent;Landroid/content/Intent;)Z
     .locals 9
+    .param p1, "view"    # Landroid/view/View;
+    .param p2, "pendingIntent"    # Landroid/app/PendingIntent;
+    .param p3, "fillInIntent"    # Landroid/content/Intent;
 
+    .prologue
+    .line 266
     sget-boolean v0, Lcom/android/systemui/statusbar/BaseStatusBar;->DEBUG:Z
 
     if-eqz v0, :cond_0
 
+    .line 267
     const-string v0, "StatusBar"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -80,6 +99,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 274
     :cond_0
     :try_start_0
     invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
@@ -90,13 +110,17 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 277
     :goto_0
     invoke-virtual {p2}, Landroid/app/PendingIntent;->isActivity()Z
 
     move-result v7
 
+    .line 278
+    .local v7, "isActivity":Z
     if-eqz v7, :cond_1
 
+    .line 279
     iget-object v0, p0, Lcom/android/systemui/statusbar/BaseStatusBar$3;->this$0:Lcom/android/systemui/statusbar/BaseStatusBar;
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/BaseStatusBar;->mStatusBarKeyguardViewManager:Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;
@@ -105,6 +129,8 @@
 
     move-result v2
 
+    .line 280
+    .local v2, "keyguardShowing":Z
     iget-object v0, p0, Lcom/android/systemui/statusbar/BaseStatusBar$3;->this$0:Lcom/android/systemui/statusbar/BaseStatusBar;
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/BaseStatusBar;->mContext:Landroid/content/Context;
@@ -121,6 +147,8 @@
 
     move-result v3
 
+    .line 282
+    .local v3, "afterKeyguardGone":Z
     iget-object v8, p0, Lcom/android/systemui/statusbar/BaseStatusBar$3;->this$0:Lcom/android/systemui/statusbar/BaseStatusBar;
 
     new-instance v0, Lcom/android/systemui/statusbar/BaseStatusBar$3$1;
@@ -137,8 +165,12 @@
 
     invoke-virtual {v8, v0, v3}, Lcom/android/systemui/statusbar/BaseStatusBar;->dismissKeyguardThenExecute(Lcom/android/keyguard/KeyguardHostView$OnDismissAction;Z)V
 
+    .line 305
     const/4 v0, 0x1
 
+    .line 307
+    .end local v2    # "keyguardShowing":Z
+    .end local v3    # "afterKeyguardGone":Z
     :goto_1
     return v0
 
@@ -149,6 +181,8 @@
 
     goto :goto_1
 
+    .line 275
+    .end local v7    # "isActivity":Z
     :catch_0
     move-exception v0
 

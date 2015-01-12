@@ -25,6 +25,8 @@
 .method constructor <init>(Lcom/android/systemui/statusbar/DragDownHelper;)V
     .locals 0
 
+    .prologue
+    .line 193
     iput-object p1, p0, Lcom/android/systemui/statusbar/DragDownHelper$2;->this$0:Lcom/android/systemui/statusbar/DragDownHelper;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,7 +38,10 @@
 # virtual methods
 .method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 2
+    .param p1, "animation"    # Landroid/animation/ValueAnimator;
 
+    .prologue
+    .line 196
     iget-object v0, p0, Lcom/android/systemui/statusbar/DragDownHelper$2;->this$0:Lcom/android/systemui/statusbar/DragDownHelper;
 
     # getter for: Lcom/android/systemui/statusbar/DragDownHelper;->mDragDownCallback:Lcom/android/systemui/statusbar/DragDownHelper$DragDownCallback;
@@ -56,5 +61,6 @@
 
     invoke-interface {v1, v0}, Lcom/android/systemui/statusbar/DragDownHelper$DragDownCallback;->setEmptyDragAmount(F)V
 
+    .line 197
     return-void
 .end method

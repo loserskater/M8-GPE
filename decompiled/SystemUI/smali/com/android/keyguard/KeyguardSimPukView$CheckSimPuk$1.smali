@@ -27,6 +27,8 @@
 .method constructor <init>(Lcom/android/keyguard/KeyguardSimPukView$CheckSimPuk;[I)V
     .locals 0
 
+    .prologue
+    .line 183
     iput-object p1, p0, Lcom/android/keyguard/KeyguardSimPukView$CheckSimPuk$1;->this$1:Lcom/android/keyguard/KeyguardSimPukView$CheckSimPuk;
 
     iput-object p2, p0, Lcom/android/keyguard/KeyguardSimPukView$CheckSimPuk$1;->val$result:[I
@@ -41,6 +43,8 @@
 .method public run()V
     .locals 4
 
+    .prologue
+    .line 185
     iget-object v0, p0, Lcom/android/keyguard/KeyguardSimPukView$CheckSimPuk$1;->this$1:Lcom/android/keyguard/KeyguardSimPukView$CheckSimPuk;
 
     iget-object v1, p0, Lcom/android/keyguard/KeyguardSimPukView$CheckSimPuk$1;->val$result:[I
@@ -57,5 +61,6 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/android/keyguard/KeyguardSimPukView$CheckSimPuk;->onSimLockChangedResponse(II)V
 
+    .line 186
     return-void
 .end method

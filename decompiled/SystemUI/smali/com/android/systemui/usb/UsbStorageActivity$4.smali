@@ -25,6 +25,8 @@
 .method constructor <init>(Lcom/android/systemui/usb/UsbStorageActivity;)V
     .locals 0
 
+    .prologue
+    .line 173
     iput-object p1, p0, Lcom/android/systemui/usb/UsbStorageActivity$4;->this$0:Lcom/android/systemui/usb/UsbStorageActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,6 +39,8 @@
 .method public run()V
     .locals 2
 
+    .prologue
+    .line 176
     iget-object v0, p0, Lcom/android/systemui/usb/UsbStorageActivity$4;->this$0:Lcom/android/systemui/usb/UsbStorageActivity;
 
     iget-object v1, p0, Lcom/android/systemui/usb/UsbStorageActivity$4;->this$0:Lcom/android/systemui/usb/UsbStorageActivity;
@@ -53,5 +57,6 @@
     # invokes: Lcom/android/systemui/usb/UsbStorageActivity;->switchDisplay(Z)V
     invoke-static {v0, v1}, Lcom/android/systemui/usb/UsbStorageActivity;->access$100(Lcom/android/systemui/usb/UsbStorageActivity;Z)V
 
+    .line 177
     return-void
 .end method

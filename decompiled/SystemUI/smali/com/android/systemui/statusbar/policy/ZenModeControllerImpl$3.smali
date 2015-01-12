@@ -22,6 +22,8 @@
 .method constructor <init>(Lcom/android/systemui/statusbar/policy/ZenModeControllerImpl;)V
     .locals 0
 
+    .prologue
+    .line 219
     iput-object p1, p0, Lcom/android/systemui/statusbar/policy/ZenModeControllerImpl$3;->this$0:Lcom/android/systemui/statusbar/policy/ZenModeControllerImpl;
 
     invoke-direct {p0}, Landroid/service/notification/IConditionListener$Stub;-><init>()V
@@ -33,7 +35,10 @@
 # virtual methods
 .method public onConditionsReceived([Landroid/service/notification/Condition;)V
     .locals 3
+    .param p1, "conditions"    # [Landroid/service/notification/Condition;
 
+    .prologue
+    .line 222
     # getter for: Lcom/android/systemui/statusbar/policy/ZenModeControllerImpl;->DEBUG:Z
     invoke-static {}, Lcom/android/systemui/statusbar/policy/ZenModeControllerImpl;->access$200()Z
 
@@ -85,6 +90,7 @@
 
     invoke-static {v1, v0}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 224
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/ZenModeControllerImpl$3;->this$0:Lcom/android/systemui/statusbar/policy/ZenModeControllerImpl;
 
@@ -95,14 +101,17 @@
 
     if-nez v0, :cond_2
 
+    .line 226
     :goto_1
     return-void
 
+    .line 222
     :cond_1
     array-length v0, p1
 
     goto :goto_0
 
+    .line 225
     :cond_2
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/ZenModeControllerImpl$3;->this$0:Lcom/android/systemui/statusbar/policy/ZenModeControllerImpl;
 

@@ -25,6 +25,8 @@
 .method constructor <init>(Lcom/android/keyguard/KeyguardSecurityContainer;)V
     .locals 0
 
+    .prologue
+    .line 434
     iput-object p1, p0, Lcom/android/keyguard/KeyguardSecurityContainer$1;->this$0:Lcom/android/keyguard/KeyguardSecurityContainer;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,7 +38,10 @@
 # virtual methods
 .method public dismiss(Z)V
     .locals 1
+    .param p1, "authenticated"    # Z
 
+    .prologue
+    .line 443
     iget-object v0, p0, Lcom/android/keyguard/KeyguardSecurityContainer$1;->this$0:Lcom/android/keyguard/KeyguardSecurityContainer;
 
     # getter for: Lcom/android/keyguard/KeyguardSecurityContainer;->mSecurityCallback:Lcom/android/keyguard/KeyguardSecurityContainer$SecurityCallback;
@@ -46,12 +51,16 @@
 
     invoke-interface {v0, p1}, Lcom/android/keyguard/KeyguardSecurityContainer$SecurityCallback;->dismiss(Z)Z
 
+    .line 444
     return-void
 .end method
 
 .method public reportUnlockAttempt(Z)V
     .locals 3
+    .param p1, "success"    # Z
 
+    .prologue
+    .line 451
     iget-object v1, p0, Lcom/android/keyguard/KeyguardSecurityContainer$1;->this$0:Lcom/android/keyguard/KeyguardSecurityContainer;
 
     # getter for: Lcom/android/keyguard/KeyguardSecurityContainer;->mContext:Landroid/content/Context;
@@ -63,10 +72,14 @@
 
     move-result-object v0
 
+    .line 452
+    .local v0, "monitor":Lcom/android/keyguard/KeyguardUpdateMonitor;
     if-eqz p1, :cond_0
 
+    .line 453
     invoke-virtual {v0}, Lcom/android/keyguard/KeyguardUpdateMonitor;->clearFailedUnlockAttempts()V
 
+    .line 454
     iget-object v1, p0, Lcom/android/keyguard/KeyguardSecurityContainer$1;->this$0:Lcom/android/keyguard/KeyguardSecurityContainer;
 
     # getter for: Lcom/android/keyguard/KeyguardSecurityContainer;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
@@ -76,9 +89,11 @@
 
     invoke-virtual {v1}, Lcom/android/internal/widget/LockPatternUtils;->reportSuccessfulPasswordAttempt()V
 
+    .line 462
     :goto_0
     return-void
 
+    .line 456
     :cond_0
     iget-object v1, p0, Lcom/android/keyguard/KeyguardSecurityContainer$1;->this$0:Lcom/android/keyguard/KeyguardSecurityContainer;
 
@@ -91,10 +106,12 @@
 
     if-ne v1, v2, :cond_1
 
+    .line 457
     invoke-virtual {v0}, Lcom/android/keyguard/KeyguardUpdateMonitor;->reportFailedBiometricUnlockAttempt()V
 
     goto :goto_0
 
+    .line 459
     :cond_1
     iget-object v1, p0, Lcom/android/keyguard/KeyguardSecurityContainer$1;->this$0:Lcom/android/keyguard/KeyguardSecurityContainer;
 
@@ -107,17 +124,22 @@
 .method public showBackupSecurity()V
     .locals 1
 
+    .prologue
+    .line 466
     iget-object v0, p0, Lcom/android/keyguard/KeyguardSecurityContainer$1;->this$0:Lcom/android/keyguard/KeyguardSecurityContainer;
 
     # invokes: Lcom/android/keyguard/KeyguardSecurityContainer;->showBackupSecurityScreen()V
     invoke-static {v0}, Lcom/android/keyguard/KeyguardSecurityContainer;->access$600(Lcom/android/keyguard/KeyguardSecurityContainer;)V
 
+    .line 467
     return-void
 .end method
 
 .method public userActivity()V
     .locals 1
 
+    .prologue
+    .line 437
     iget-object v0, p0, Lcom/android/keyguard/KeyguardSecurityContainer$1;->this$0:Lcom/android/keyguard/KeyguardSecurityContainer;
 
     # getter for: Lcom/android/keyguard/KeyguardSecurityContainer;->mSecurityCallback:Lcom/android/keyguard/KeyguardSecurityContainer$SecurityCallback;
@@ -127,6 +149,7 @@
 
     if-eqz v0, :cond_0
 
+    .line 438
     iget-object v0, p0, Lcom/android/keyguard/KeyguardSecurityContainer$1;->this$0:Lcom/android/keyguard/KeyguardSecurityContainer;
 
     # getter for: Lcom/android/keyguard/KeyguardSecurityContainer;->mSecurityCallback:Lcom/android/keyguard/KeyguardSecurityContainer$SecurityCallback;
@@ -136,6 +159,7 @@
 
     invoke-interface {v0}, Lcom/android/keyguard/KeyguardSecurityContainer$SecurityCallback;->userActivity()V
 
+    .line 440
     :cond_0
     return-void
 .end method

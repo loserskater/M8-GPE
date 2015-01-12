@@ -25,6 +25,8 @@
 .method constructor <init>(Lcom/android/systemui/volume/VolumePanel;)V
     .locals 0
 
+    .prologue
+    .line 490
     iput-object p1, p0, Lcom/android/systemui/volume/VolumePanel$4;->this$0:Lcom/android/systemui/volume/VolumePanel;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,7 +38,10 @@
 # virtual methods
 .method public onExpanded(Z)V
     .locals 1
+    .param p1, "expanded"    # Z
 
+    .prologue
+    .line 505
     iget-object v0, p0, Lcom/android/systemui/volume/VolumePanel$4;->this$0:Lcom/android/systemui/volume/VolumePanel;
 
     # getter for: Lcom/android/systemui/volume/VolumePanel;->mZenPanelExpanded:Z
@@ -46,20 +51,24 @@
 
     if-ne v0, p1, :cond_0
 
+    .line 509
     :goto_0
     return-void
 
+    .line 506
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/volume/VolumePanel$4;->this$0:Lcom/android/systemui/volume/VolumePanel;
 
     # setter for: Lcom/android/systemui/volume/VolumePanel;->mZenPanelExpanded:Z
     invoke-static {v0, p1}, Lcom/android/systemui/volume/VolumePanel;->access$1002(Lcom/android/systemui/volume/VolumePanel;Z)Z
 
+    .line 507
     iget-object v0, p0, Lcom/android/systemui/volume/VolumePanel$4;->this$0:Lcom/android/systemui/volume/VolumePanel;
 
     # invokes: Lcom/android/systemui/volume/VolumePanel;->updateTimeoutDelay()V
     invoke-static {v0}, Lcom/android/systemui/volume/VolumePanel;->access$1100(Lcom/android/systemui/volume/VolumePanel;)V
 
+    .line 508
     iget-object v0, p0, Lcom/android/systemui/volume/VolumePanel$4;->this$0:Lcom/android/systemui/volume/VolumePanel;
 
     # invokes: Lcom/android/systemui/volume/VolumePanel;->resetTimeout()V
@@ -71,17 +80,22 @@
 .method public onInteraction()V
     .locals 1
 
+    .prologue
+    .line 500
     iget-object v0, p0, Lcom/android/systemui/volume/VolumePanel$4;->this$0:Lcom/android/systemui/volume/VolumePanel;
 
     # invokes: Lcom/android/systemui/volume/VolumePanel;->resetTimeout()V
     invoke-static {v0}, Lcom/android/systemui/volume/VolumePanel;->access$800(Lcom/android/systemui/volume/VolumePanel;)V
 
+    .line 501
     return-void
 .end method
 
 .method public onMoreSettings()V
     .locals 1
 
+    .prologue
+    .line 493
     iget-object v0, p0, Lcom/android/systemui/volume/VolumePanel$4;->this$0:Lcom/android/systemui/volume/VolumePanel;
 
     # getter for: Lcom/android/systemui/volume/VolumePanel;->mCallback:Lcom/android/systemui/volume/VolumePanel$Callback;
@@ -91,6 +105,7 @@
 
     if-eqz v0, :cond_0
 
+    .line 494
     iget-object v0, p0, Lcom/android/systemui/volume/VolumePanel$4;->this$0:Lcom/android/systemui/volume/VolumePanel;
 
     # getter for: Lcom/android/systemui/volume/VolumePanel;->mCallback:Lcom/android/systemui/volume/VolumePanel$Callback;
@@ -100,6 +115,7 @@
 
     invoke-interface {v0}, Lcom/android/systemui/volume/VolumePanel$Callback;->onZenSettings()V
 
+    .line 496
     :cond_0
     return-void
 .end method

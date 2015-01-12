@@ -25,6 +25,8 @@
 .method constructor <init>(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)V
     .locals 0
 
+    .prologue
+    .line 1152
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$11;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,7 +38,10 @@
 # virtual methods
 .method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 2
+    .param p1, "animation"    # Landroid/animation/ValueAnimator;
 
+    .prologue
+    .line 1155
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$11;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
@@ -52,5 +57,6 @@
     # invokes: Lcom/android/systemui/statusbar/phone/NotificationPanelView;->setQsExpansion(F)V
     invoke-static {v1, v0}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->access$1600(Lcom/android/systemui/statusbar/phone/NotificationPanelView;F)V
 
+    .line 1156
     return-void
 .end method

@@ -27,6 +27,8 @@
 .method constructor <init>(Lcom/android/systemui/settings/BrightnessController;F)V
     .locals 0
 
+    .prologue
+    .line 218
     iput-object p1, p0, Lcom/android/systemui/settings/BrightnessController$3;->this$0:Lcom/android/systemui/settings/BrightnessController;
 
     iput p2, p0, Lcom/android/systemui/settings/BrightnessController$3;->val$adj:F
@@ -41,6 +43,8 @@
 .method public run()V
     .locals 4
 
+    .prologue
+    .line 220
     iget-object v0, p0, Lcom/android/systemui/settings/BrightnessController$3;->this$0:Lcom/android/systemui/settings/BrightnessController;
 
     # getter for: Lcom/android/systemui/settings/BrightnessController;->mContext:Landroid/content/Context;
@@ -60,5 +64,6 @@
 
     invoke-static {v0, v1, v2, v3}, Landroid/provider/Settings$System;->putFloatForUser(Landroid/content/ContentResolver;Ljava/lang/String;FI)Z
 
+    .line 223
     return-void
 .end method

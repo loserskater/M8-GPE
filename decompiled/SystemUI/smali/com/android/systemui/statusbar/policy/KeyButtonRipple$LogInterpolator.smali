@@ -21,6 +21,8 @@
 .method private constructor <init>()V
     .locals 0
 
+    .prologue
+    .line 355
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -28,7 +30,10 @@
 
 .method synthetic constructor <init>(Lcom/android/systemui/statusbar/policy/KeyButtonRipple$1;)V
     .locals 0
+    .param p1, "x0"    # Lcom/android/systemui/statusbar/policy/KeyButtonRipple$1;
 
+    .prologue
+    .line 355
     invoke-direct {p0}, Lcom/android/systemui/statusbar/policy/KeyButtonRipple$LogInterpolator;-><init>()V
 
     return-void
@@ -38,7 +43,10 @@
 # virtual methods
 .method public getInterpolation(F)F
     .locals 8
+    .param p1, "input"    # F
 
+    .prologue
+    .line 358
     const/high16 v0, 0x3f800000
 
     const-wide/high16 v2, 0x4079000000000000L

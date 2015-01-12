@@ -23,13 +23,20 @@
 # direct methods
 .method public constructor <init>(Landroid/content/ComponentName;I)V
     .locals 0
+    .param p1, "cn"    # Landroid/content/ComponentName;
+    .param p2, "user"    # I
 
+    .prologue
+    .line 47
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 48
     iput-object p1, p0, Lcom/android/systemui/recents/model/Task$ComponentNameKey;->component:Landroid/content/ComponentName;
 
+    .line 49
     iput p2, p0, Lcom/android/systemui/recents/model/Task$ComponentNameKey;->userId:I
 
+    .line 50
     return-void
 .end method
 
@@ -37,16 +44,22 @@
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
     .locals 3
+    .param p1, "o"    # Ljava/lang/Object;
 
+    .prologue
     const/4 v1, 0x0
 
+    .line 59
     instance-of v0, p1, Lcom/android/systemui/recents/model/Task$ComponentNameKey;
 
     if-nez v0, :cond_0
 
+    .line 62
+    .end local p1    # "o":Ljava/lang/Object;
     :goto_0
     return v1
 
+    .restart local p1    # "o":Ljava/lang/Object;
     :cond_0
     iget-object v2, p0, Lcom/android/systemui/recents/model/Task$ComponentNameKey;->component:Landroid/content/ComponentName;
 
@@ -66,6 +79,7 @@
 
     check-cast p1, Lcom/android/systemui/recents/model/Task$ComponentNameKey;
 
+    .end local p1    # "o":Ljava/lang/Object;
     iget v2, p1, Lcom/android/systemui/recents/model/Task$ComponentNameKey;->userId:I
 
     if-ne v0, v2, :cond_1
@@ -86,6 +100,8 @@
 .method public hashCode()I
     .locals 3
 
+    .prologue
+    .line 54
     const/4 v0, 0x2
 
     new-array v0, v0, [Ljava/lang/Object;

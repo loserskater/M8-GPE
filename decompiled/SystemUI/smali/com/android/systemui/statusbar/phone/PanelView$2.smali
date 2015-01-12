@@ -24,6 +24,8 @@
 .method constructor <init>(Lcom/android/systemui/statusbar/phone/PanelView;)V
     .locals 0
 
+    .prologue
+    .line 147
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/PanelView$2;->this$0:Lcom/android/systemui/statusbar/phone/PanelView;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,17 +37,24 @@
 # virtual methods
 .method public onAnimationCancel(Landroid/animation/Animator;)V
     .locals 1
+    .param p1, "animation"    # Landroid/animation/Animator;
 
+    .prologue
+    .line 152
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/systemui/statusbar/phone/PanelView$2;->mCancelled:Z
 
+    .line 153
     return-void
 .end method
 
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
+    .param p1, "animation"    # Landroid/animation/Animator;
 
+    .prologue
+    .line 157
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PanelView$2;->this$0:Lcom/android/systemui/statusbar/phone/PanelView;
 
     const/4 v1, 0x0
@@ -53,6 +62,7 @@
     # setter for: Lcom/android/systemui/statusbar/phone/PanelView;->mPeekAnimator:Landroid/animation/ObjectAnimator;
     invoke-static {v0, v1}, Lcom/android/systemui/statusbar/phone/PanelView;->access$202(Lcom/android/systemui/statusbar/phone/PanelView;Landroid/animation/ObjectAnimator;)Landroid/animation/ObjectAnimator;
 
+    .line 158
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PanelView$2;->this$0:Lcom/android/systemui/statusbar/phone/PanelView;
 
     # getter for: Lcom/android/systemui/statusbar/phone/PanelView;->mCollapseAfterPeek:Z
@@ -66,6 +76,7 @@
 
     if-nez v0, :cond_0
 
+    .line 159
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PanelView$2;->this$0:Lcom/android/systemui/statusbar/phone/PanelView;
 
     new-instance v1, Lcom/android/systemui/statusbar/phone/PanelView$2$1;
@@ -74,6 +85,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/phone/PanelView;->postOnAnimation(Ljava/lang/Runnable;)V
 
+    .line 166
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PanelView$2;->this$0:Lcom/android/systemui/statusbar/phone/PanelView;
 
@@ -82,5 +94,6 @@
     # setter for: Lcom/android/systemui/statusbar/phone/PanelView;->mCollapseAfterPeek:Z
     invoke-static {v0, v1}, Lcom/android/systemui/statusbar/phone/PanelView;->access$302(Lcom/android/systemui/statusbar/phone/PanelView;Z)Z
 
+    .line 167
     return-void
 .end method

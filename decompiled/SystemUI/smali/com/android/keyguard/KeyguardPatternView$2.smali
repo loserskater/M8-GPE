@@ -21,7 +21,11 @@
 # direct methods
 .method constructor <init>(Lcom/android/keyguard/KeyguardPatternView;JJ)V
     .locals 0
+    .param p2, "x0"    # J
+    .param p4, "x1"    # J
 
+    .prologue
+    .line 244
     iput-object p1, p0, Lcom/android/keyguard/KeyguardPatternView$2;->this$0:Lcom/android/keyguard/KeyguardPatternView;
 
     invoke-direct {p0, p2, p3, p4, p5}, Landroid/os/CountDownTimer;-><init>(JJ)V
@@ -34,6 +38,8 @@
 .method public onFinish()V
     .locals 2
 
+    .prologue
+    .line 255
     iget-object v0, p0, Lcom/android/keyguard/KeyguardPatternView$2;->this$0:Lcom/android/keyguard/KeyguardPatternView;
 
     # getter for: Lcom/android/keyguard/KeyguardPatternView;->mLockPatternView:Lcom/android/internal/widget/LockPatternView;
@@ -45,25 +51,32 @@
 
     invoke-virtual {v0, v1}, Lcom/android/internal/widget/LockPatternView;->setEnabled(Z)V
 
+    .line 256
     iget-object v0, p0, Lcom/android/keyguard/KeyguardPatternView$2;->this$0:Lcom/android/keyguard/KeyguardPatternView;
 
     # invokes: Lcom/android/keyguard/KeyguardPatternView;->displayDefaultSecurityMessage()V
     invoke-static {v0}, Lcom/android/keyguard/KeyguardPatternView;->access$800(Lcom/android/keyguard/KeyguardPatternView;)V
 
+    .line 257
     return-void
 .end method
 
 .method public onTick(J)V
     .locals 7
+    .param p1, "millisUntilFinished"    # J
 
+    .prologue
     const/4 v6, 0x1
 
+    .line 248
     const-wide/16 v2, 0x3e8
 
     div-long v2, p1, v2
 
     long-to-int v0, v2
 
+    .line 249
+    .local v0, "secondsRemaining":I
     iget-object v1, p0, Lcom/android/keyguard/KeyguardPatternView$2;->this$0:Lcom/android/keyguard/KeyguardPatternView;
 
     # getter for: Lcom/android/keyguard/KeyguardPatternView;->mSecurityMessageDisplay:Lcom/android/keyguard/SecurityMessageDisplay;
@@ -85,5 +98,6 @@
 
     invoke-interface {v1, v2, v6, v3}, Lcom/android/keyguard/SecurityMessageDisplay;->setMessage(IZ[Ljava/lang/Object;)V
 
+    .line 251
     return-void
 .end method

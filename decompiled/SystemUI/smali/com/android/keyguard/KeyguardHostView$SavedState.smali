@@ -39,6 +39,8 @@
 .method static constructor <clinit>()V
     .locals 1
 
+    .prologue
+    .line 839
     new-instance v0, Lcom/android/keyguard/KeyguardHostView$SavedState$1;
 
     invoke-direct {v0}, Lcom/android/keyguard/KeyguardHostView$SavedState$1;-><init>()V
@@ -50,31 +52,39 @@
 
 .method private constructor <init>(Landroid/os/Parcel;)V
     .locals 1
+    .param p1, "in"    # Landroid/os/Parcel;
 
+    .prologue
+    .line 825
     invoke-direct {p0, p1}, Landroid/view/View$BaseSavedState;-><init>(Landroid/os/Parcel;)V
 
+    .line 817
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/keyguard/KeyguardHostView$SavedState;->appWidgetToShow:I
 
+    .line 818
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v0, p0, Lcom/android/keyguard/KeyguardHostView$SavedState;->insets:Landroid/graphics/Rect;
 
+    .line 826
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Lcom/android/keyguard/KeyguardHostView$SavedState;->transportState:I
 
+    .line 827
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Lcom/android/keyguard/KeyguardHostView$SavedState;->appWidgetToShow:I
 
+    .line 828
     const/4 v0, 0x0
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->readParcelable(Ljava/lang/ClassLoader;)Landroid/os/Parcelable;
@@ -85,12 +95,17 @@
 
     iput-object v0, p0, Lcom/android/keyguard/KeyguardHostView$SavedState;->insets:Landroid/graphics/Rect;
 
+    .line 829
     return-void
 .end method
 
 .method synthetic constructor <init>(Landroid/os/Parcel;Lcom/android/keyguard/KeyguardHostView$1;)V
     .locals 0
+    .param p1, "x0"    # Landroid/os/Parcel;
+    .param p2, "x1"    # Lcom/android/keyguard/KeyguardHostView$1;
 
+    .prologue
+    .line 815
     invoke-direct {p0, p1}, Lcom/android/keyguard/KeyguardHostView$SavedState;-><init>(Landroid/os/Parcel;)V
 
     return-void
@@ -98,19 +113,25 @@
 
 .method constructor <init>(Landroid/os/Parcelable;)V
     .locals 1
+    .param p1, "superState"    # Landroid/os/Parcelable;
 
+    .prologue
+    .line 821
     invoke-direct {p0, p1}, Landroid/view/View$BaseSavedState;-><init>(Landroid/os/Parcelable;)V
 
+    .line 817
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/keyguard/KeyguardHostView$SavedState;->appWidgetToShow:I
 
+    .line 818
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v0, p0, Lcom/android/keyguard/KeyguardHostView$SavedState;->insets:Landroid/graphics/Rect;
 
+    .line 822
     return-void
 .end method
 
@@ -118,22 +139,30 @@
 # virtual methods
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 2
+    .param p1, "out"    # Landroid/os/Parcel;
+    .param p2, "flags"    # I
 
+    .prologue
+    .line 833
     invoke-super {p0, p1, p2}, Landroid/view/View$BaseSavedState;->writeToParcel(Landroid/os/Parcel;I)V
 
+    .line 834
     iget v0, p0, Lcom/android/keyguard/KeyguardHostView$SavedState;->transportState:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 835
     iget v0, p0, Lcom/android/keyguard/KeyguardHostView$SavedState;->appWidgetToShow:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
+    .line 836
     iget-object v0, p0, Lcom/android/keyguard/KeyguardHostView$SavedState;->insets:Landroid/graphics/Rect;
 
     const/4 v1, 0x0
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeParcelable(Landroid/os/Parcelable;I)V
 
+    .line 837
     return-void
 .end method

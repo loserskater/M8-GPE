@@ -64,12 +64,15 @@
 .method static constructor <clinit>()V
     .locals 4
 
+    .prologue
     const/4 v3, 0x4
 
+    .line 49
     sget-boolean v0, Lcom/android/systemui/power/PowerUI;->DEBUG:Z
 
     sput-boolean v0, Lcom/android/systemui/power/PowerNotificationWarnings;->DEBUG:Z
 
+    .line 58
     new-array v0, v3, [Ljava/lang/String;
 
     const/4 v1, 0x0
@@ -98,6 +101,7 @@
 
     sput-object v0, Lcom/android/systemui/power/PowerNotificationWarnings;->SHOWING_STRINGS:[Ljava/lang/String;
 
+    .line 69
     new-instance v0, Landroid/media/AudioAttributes$Builder;
 
     invoke-direct {v0}, Landroid/media/AudioAttributes$Builder;-><init>()V
@@ -123,15 +127,21 @@
 
 .method public constructor <init>(Landroid/content/Context;Lcom/android/systemui/statusbar/phone/PhoneStatusBar;)V
     .locals 2
+    .param p1, "context"    # Landroid/content/Context;
+    .param p2, "phoneStatusBar"    # Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
+    .prologue
+    .line 95
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 77
     new-instance v0, Landroid/os/Handler;
 
     invoke-direct {v0}, Landroid/os/Handler;-><init>()V
 
     iput-object v0, p0, Lcom/android/systemui/power/PowerNotificationWarnings;->mHandler:Landroid/os/Handler;
 
+    .line 78
     new-instance v0, Lcom/android/systemui/power/PowerNotificationWarnings$Receiver;
 
     const/4 v1, 0x0
@@ -140,6 +150,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/power/PowerNotificationWarnings;->mReceiver:Lcom/android/systemui/power/PowerNotificationWarnings$Receiver;
 
+    .line 79
     const-string v0, "android.intent.action.POWER_USAGE_SUMMARY"
 
     invoke-static {v0}, Lcom/android/systemui/power/PowerNotificationWarnings;->settings(Ljava/lang/String;)Landroid/content/Intent;
@@ -148,6 +159,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/power/PowerNotificationWarnings;->mOpenBatterySettings:Landroid/content/Intent;
 
+    .line 80
     const-string v0, "android.settings.BATTERY_SAVER_SETTINGS"
 
     invoke-static {v0}, Lcom/android/systemui/power/PowerNotificationWarnings;->settings(Ljava/lang/String;)Landroid/content/Intent;
@@ -156,14 +168,17 @@
 
     iput-object v0, p0, Lcom/android/systemui/power/PowerNotificationWarnings;->mOpenSaverSettings:Landroid/content/Intent;
 
+    .line 394
     new-instance v0, Lcom/android/systemui/power/PowerNotificationWarnings$2;
 
     invoke-direct {v0, p0}, Lcom/android/systemui/power/PowerNotificationWarnings$2;-><init>(Lcom/android/systemui/power/PowerNotificationWarnings;)V
 
     iput-object v0, p0, Lcom/android/systemui/power/PowerNotificationWarnings;->mStartSaverMode:Landroid/content/DialogInterface$OnClickListener;
 
+    .line 96
     iput-object p1, p0, Lcom/android/systemui/power/PowerNotificationWarnings;->mContext:Landroid/content/Context;
 
+    .line 97
     const-string v0, "notification"
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -174,6 +189,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/power/PowerNotificationWarnings;->mNoMan:Landroid/app/NotificationManager;
 
+    .line 98
     const-string v0, "power"
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -184,16 +200,22 @@
 
     iput-object v0, p0, Lcom/android/systemui/power/PowerNotificationWarnings;->mPowerMan:Landroid/os/PowerManager;
 
+    .line 99
     iget-object v0, p0, Lcom/android/systemui/power/PowerNotificationWarnings;->mReceiver:Lcom/android/systemui/power/PowerNotificationWarnings$Receiver;
 
     invoke-virtual {v0}, Lcom/android/systemui/power/PowerNotificationWarnings$Receiver;->init()V
 
+    .line 100
     return-void
 .end method
 
 .method static synthetic access$102(Lcom/android/systemui/power/PowerNotificationWarnings;Lcom/android/systemui/statusbar/phone/SystemUIDialog;)Lcom/android/systemui/statusbar/phone/SystemUIDialog;
     .locals 0
+    .param p0, "x0"    # Lcom/android/systemui/power/PowerNotificationWarnings;
+    .param p1, "x1"    # Lcom/android/systemui/statusbar/phone/SystemUIDialog;
 
+    .prologue
+    .line 47
     iput-object p1, p0, Lcom/android/systemui/power/PowerNotificationWarnings;->mSaverConfirmation:Lcom/android/systemui/statusbar/phone/SystemUIDialog;
 
     return-object p1
@@ -201,7 +223,10 @@
 
 .method static synthetic access$200(Lcom/android/systemui/power/PowerNotificationWarnings;)Landroid/os/Handler;
     .locals 1
+    .param p0, "x0"    # Lcom/android/systemui/power/PowerNotificationWarnings;
 
+    .prologue
+    .line 47
     iget-object v0, p0, Lcom/android/systemui/power/PowerNotificationWarnings;->mHandler:Landroid/os/Handler;
 
     return-object v0
@@ -209,7 +234,10 @@
 
 .method static synthetic access$300(Lcom/android/systemui/power/PowerNotificationWarnings;)Landroid/content/Context;
     .locals 1
+    .param p0, "x0"    # Lcom/android/systemui/power/PowerNotificationWarnings;
 
+    .prologue
+    .line 47
     iget-object v0, p0, Lcom/android/systemui/power/PowerNotificationWarnings;->mContext:Landroid/content/Context;
 
     return-object v0
@@ -217,7 +245,10 @@
 
 .method static synthetic access$400(Lcom/android/systemui/power/PowerNotificationWarnings;)V
     .locals 0
+    .param p0, "x0"    # Lcom/android/systemui/power/PowerNotificationWarnings;
 
+    .prologue
+    .line 47
     invoke-direct {p0}, Lcom/android/systemui/power/PowerNotificationWarnings;->dismissLowBatteryNotification()V
 
     return-void
@@ -225,7 +256,10 @@
 
 .method static synthetic access$500(Lcom/android/systemui/power/PowerNotificationWarnings;)Landroid/content/Intent;
     .locals 1
+    .param p0, "x0"    # Lcom/android/systemui/power/PowerNotificationWarnings;
 
+    .prologue
+    .line 47
     iget-object v0, p0, Lcom/android/systemui/power/PowerNotificationWarnings;->mOpenBatterySettings:Landroid/content/Intent;
 
     return-object v0
@@ -233,7 +267,10 @@
 
 .method static synthetic access$600(Lcom/android/systemui/power/PowerNotificationWarnings;)V
     .locals 0
+    .param p0, "x0"    # Lcom/android/systemui/power/PowerNotificationWarnings;
 
+    .prologue
+    .line 47
     invoke-direct {p0}, Lcom/android/systemui/power/PowerNotificationWarnings;->showStartSaverConfirmation()V
 
     return-void
@@ -241,7 +278,10 @@
 
 .method static synthetic access$700(Lcom/android/systemui/power/PowerNotificationWarnings;)V
     .locals 0
+    .param p0, "x0"    # Lcom/android/systemui/power/PowerNotificationWarnings;
 
+    .prologue
+    .line 47
     invoke-direct {p0}, Lcom/android/systemui/power/PowerNotificationWarnings;->dismissSaverNotification()V
 
     return-void
@@ -249,7 +289,11 @@
 
 .method static synthetic access$800(Lcom/android/systemui/power/PowerNotificationWarnings;Z)V
     .locals 0
+    .param p0, "x0"    # Lcom/android/systemui/power/PowerNotificationWarnings;
+    .param p1, "x1"    # Z
 
+    .prologue
+    .line 47
     invoke-direct {p0, p1}, Lcom/android/systemui/power/PowerNotificationWarnings;->setSaverMode(Z)V
 
     return-void
@@ -257,7 +301,10 @@
 
 .method private addStopSaverAction(Landroid/app/Notification$Builder;)V
     .locals 3
+    .param p1, "nb"    # Landroid/app/Notification$Builder;
 
+    .prologue
+    .line 227
     const/4 v0, 0x0
 
     iget-object v1, p0, Lcom/android/systemui/power/PowerNotificationWarnings;->mContext:Landroid/content/Context;
@@ -276,20 +323,26 @@
 
     invoke-virtual {p1, v0, v1, v2}, Landroid/app/Notification$Builder;->addAction(ILjava/lang/CharSequence;Landroid/app/PendingIntent;)Landroid/app/Notification$Builder;
 
+    .line 230
     return-void
 .end method
 
 .method private attachLowBatterySound(Landroid/app/Notification$Builder;)V
     .locals 11
+    .param p1, "b"    # Landroid/app/Notification$Builder;
 
+    .prologue
     const/4 v10, 0x1
 
+    .line 297
     iget-object v6, p0, Lcom/android/systemui/power/PowerNotificationWarnings;->mContext:Landroid/content/Context;
 
     invoke-virtual {v6}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
+    .line 299
+    .local v0, "cr":Landroid/content/ContentResolver;
     const-string v6, "low_battery_sound_timeout"
 
     const/4 v7, 0x0
@@ -298,6 +351,8 @@
 
     move-result v1
 
+    .line 301
+    .local v1, "silenceAfter":I
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v6
@@ -306,6 +361,8 @@
 
     sub-long v2, v6, v8
 
+    .line 302
+    .local v2, "offTime":J
     if-lez v1, :cond_1
 
     iget-wide v6, p0, Lcom/android/systemui/power/PowerNotificationWarnings;->mScreenOffTime:J
@@ -322,6 +379,7 @@
 
     if-lez v6, :cond_1
 
+    .line 305
     const-string v6, "PowerUI.Notification"
 
     new-instance v7, Ljava/lang/StringBuilder;
@@ -360,21 +418,25 @@
 
     invoke-static {v6, v7}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 325
     :cond_0
     :goto_0
     return-void
 
+    .line 310
     :cond_1
     sget-boolean v6, Lcom/android/systemui/power/PowerNotificationWarnings;->DEBUG:Z
 
     if-eqz v6, :cond_2
 
+    .line 311
     const-string v6, "PowerUI.Notification"
 
     const-string v7, "playing low battery sound. pick-a-doop!"
 
     invoke-static {v6, v7}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 314
     :cond_2
     const-string v6, "power_sounds_enabled"
 
@@ -384,14 +446,18 @@
 
     if-ne v6, v10, :cond_0
 
+    .line 315
     const-string v6, "low_battery_sound"
 
     invoke-static {v0, v6}, Landroid/provider/Settings$Global;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v4
 
+    .line 317
+    .local v4, "soundPath":Ljava/lang/String;
     if-eqz v4, :cond_0
 
+    .line 318
     new-instance v6, Ljava/lang/StringBuilder;
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
@@ -414,12 +480,16 @@
 
     move-result-object v5
 
+    .line 319
+    .local v5, "soundUri":Landroid/net/Uri;
     if-eqz v5, :cond_0
 
+    .line 320
     sget-object v6, Lcom/android/systemui/power/PowerNotificationWarnings;->AUDIO_ATTRIBUTES:Landroid/media/AudioAttributes;
 
     invoke-virtual {p1, v5, v6}, Landroid/app/Notification$Builder;->setSound(Landroid/net/Uri;Landroid/media/AudioAttributes;)Landroid/app/Notification$Builder;
 
+    .line 321
     sget-boolean v6, Lcom/android/systemui/power/PowerNotificationWarnings;->DEBUG:Z
 
     if-eqz v6, :cond_0
@@ -452,6 +522,8 @@
 .method private dismissInvalidChargerNotification()V
     .locals 2
 
+    .prologue
+    .line 333
     iget-boolean v0, p0, Lcom/android/systemui/power/PowerNotificationWarnings;->mInvalidCharger:Z
 
     if-eqz v0, :cond_0
@@ -462,19 +534,24 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 334
     :cond_0
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/systemui/power/PowerNotificationWarnings;->mInvalidCharger:Z
 
+    .line 335
     invoke-direct {p0}, Lcom/android/systemui/power/PowerNotificationWarnings;->updateNotification()V
 
+    .line 336
     return-void
 .end method
 
 .method private dismissLowBatteryNotification()V
     .locals 2
 
+    .prologue
+    .line 273
     iget-boolean v0, p0, Lcom/android/systemui/power/PowerNotificationWarnings;->mWarning:Z
 
     if-eqz v0, :cond_0
@@ -485,19 +562,24 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 274
     :cond_0
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/systemui/power/PowerNotificationWarnings;->mWarning:Z
 
+    .line 275
     invoke-direct {p0}, Lcom/android/systemui/power/PowerNotificationWarnings;->updateNotification()V
 
+    .line 276
     return-void
 .end method
 
 .method private dismissSaverNotification()V
     .locals 2
 
+    .prologue
+    .line 233
     iget-boolean v0, p0, Lcom/android/systemui/power/PowerNotificationWarnings;->mSaver:Z
 
     if-eqz v0, :cond_0
@@ -508,19 +590,24 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 234
     :cond_0
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/systemui/power/PowerNotificationWarnings;->mSaver:Z
 
+    .line 235
     invoke-direct {p0}, Lcom/android/systemui/power/PowerNotificationWarnings;->updateNotification()V
 
+    .line 236
     return-void
 .end method
 
 .method private hasBatterySettings()Z
     .locals 2
 
+    .prologue
+    .line 279
     iget-object v0, p0, Lcom/android/systemui/power/PowerNotificationWarnings;->mOpenBatterySettings:Landroid/content/Intent;
 
     iget-object v1, p0, Lcom/android/systemui/power/PowerNotificationWarnings;->mContext:Landroid/content/Context;
@@ -549,6 +636,8 @@
 .method private hasSaverSettings()Z
     .locals 2
 
+    .prologue
+    .line 283
     iget-object v0, p0, Lcom/android/systemui/power/PowerNotificationWarnings;->mOpenSaverSettings:Landroid/content/Intent;
 
     iget-object v1, p0, Lcom/android/systemui/power/PowerNotificationWarnings;->mContext:Landroid/content/Context;
@@ -576,9 +665,12 @@
 
 .method private pendingActivity(Landroid/content/Intent;)Landroid/app/PendingIntent;
     .locals 6
+    .param p1, "intent"    # Landroid/content/Intent;
 
+    .prologue
     const/4 v1, 0x0
 
+    .line 239
     iget-object v0, p0, Lcom/android/systemui/power/PowerNotificationWarnings;->mContext:Landroid/content/Context;
 
     const/4 v4, 0x0
@@ -598,9 +690,12 @@
 
 .method private pendingBroadcast(Ljava/lang/String;)Landroid/app/PendingIntent;
     .locals 4
+    .param p1, "action"    # Ljava/lang/String;
 
+    .prologue
     const/4 v3, 0x0
 
+    .line 244
     iget-object v0, p0, Lcom/android/systemui/power/PowerNotificationWarnings;->mContext:Landroid/content/Context;
 
     new-instance v1, Landroid/content/Intent;
@@ -618,17 +713,24 @@
 
 .method private setSaverMode(Z)V
     .locals 1
+    .param p1, "mode"    # Z
 
+    .prologue
+    .line 363
     iget-object v0, p0, Lcom/android/systemui/power/PowerNotificationWarnings;->mPowerMan:Landroid/os/PowerManager;
 
     invoke-virtual {v0, p1}, Landroid/os/PowerManager;->setPowerSaveMode(Z)Z
 
+    .line 364
     return-void
 .end method
 
 .method private static settings(Ljava/lang/String;)Landroid/content/Intent;
     .locals 2
+    .param p0, "action"    # Ljava/lang/String;
 
+    .prologue
+    .line 249
     new-instance v0, Landroid/content/Intent;
 
     invoke-direct {v0, p0}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
@@ -645,8 +747,10 @@
 .method private showInvalidChargerNotification()V
     .locals 7
 
+    .prologue
     const/4 v6, 0x1
 
+    .line 152
     new-instance v2, Landroid/app/Notification$Builder;
 
     iget-object v3, p0, Lcom/android/systemui/power/PowerNotificationWarnings;->mContext:Landroid/content/Context;
@@ -731,14 +835,19 @@
 
     move-result-object v1
 
+    .line 164
+    .local v1, "nb":Landroid/app/Notification$Builder;
     invoke-virtual {v1}, Landroid/app/Notification$Builder;->build()Landroid/app/Notification;
 
     move-result-object v0
 
+    .line 165
+    .local v0, "n":Landroid/app/Notification;
     iget-object v2, v0, Landroid/app/Notification;->headsUpContentView:Landroid/widget/RemoteViews;
 
     if-eqz v2, :cond_0
 
+    .line 166
     iget-object v2, v0, Landroid/app/Notification;->headsUpContentView:Landroid/widget/RemoteViews;
 
     const v3, 0x1020034
@@ -747,6 +856,7 @@
 
     invoke-virtual {v2, v3, v4}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
 
+    .line 168
     :cond_0
     iget-object v2, p0, Lcom/android/systemui/power/PowerNotificationWarnings;->mNoMan:Landroid/app/NotificationManager;
 
@@ -758,14 +868,17 @@
 
     invoke-virtual {v2, v3, v4, v0, v5}, Landroid/app/NotificationManager;->notifyAsUser(Ljava/lang/String;ILandroid/app/Notification;Landroid/os/UserHandle;)V
 
+    .line 169
     return-void
 .end method
 
 .method private showSaverNotification()V
     .locals 6
 
+    .prologue
     const/4 v4, 0x1
 
+    .line 209
     new-instance v1, Landroid/app/Notification$Builder;
 
     iget-object v2, p0, Lcom/android/systemui/power/PowerNotificationWarnings;->mContext:Landroid/content/Context;
@@ -838,14 +951,18 @@
 
     move-result-object v0
 
+    .line 219
+    .local v0, "nb":Landroid/app/Notification$Builder;
     invoke-direct {p0, v0}, Lcom/android/systemui/power/PowerNotificationWarnings;->addStopSaverAction(Landroid/app/Notification$Builder;)V
 
+    .line 220
     invoke-direct {p0}, Lcom/android/systemui/power/PowerNotificationWarnings;->hasSaverSettings()Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
+    .line 221
     iget-object v1, p0, Lcom/android/systemui/power/PowerNotificationWarnings;->mOpenSaverSettings:Landroid/content/Intent;
 
     invoke-direct {p0, v1}, Lcom/android/systemui/power/PowerNotificationWarnings;->pendingActivity(Landroid/content/Intent;)Landroid/app/PendingIntent;
@@ -854,6 +971,7 @@
 
     invoke-virtual {v0, v1}, Landroid/app/Notification$Builder;->setContentIntent(Landroid/app/PendingIntent;)Landroid/app/Notification$Builder;
 
+    .line 223
     :cond_0
     iget-object v1, p0, Lcom/android/systemui/power/PowerNotificationWarnings;->mNoMan:Landroid/app/NotificationManager;
 
@@ -869,19 +987,24 @@
 
     invoke-virtual {v1, v2, v3, v4, v5}, Landroid/app/NotificationManager;->notifyAsUser(Ljava/lang/String;ILandroid/app/Notification;Landroid/os/UserHandle;)V
 
+    .line 224
     return-void
 .end method
 
 .method private showStartSaverConfirmation()V
     .locals 3
 
+    .prologue
+    .line 345
     iget-object v1, p0, Lcom/android/systemui/power/PowerNotificationWarnings;->mSaverConfirmation:Lcom/android/systemui/statusbar/phone/SystemUIDialog;
 
     if-eqz v1, :cond_0
 
+    .line 360
     :goto_0
     return-void
 
+    .line 346
     :cond_0
     new-instance v0, Lcom/android/systemui/statusbar/phone/SystemUIDialog;
 
@@ -889,38 +1012,47 @@
 
     invoke-direct {v0, v1}, Lcom/android/systemui/statusbar/phone/SystemUIDialog;-><init>(Landroid/content/Context;)V
 
+    .line 347
+    .local v0, "d":Lcom/android/systemui/statusbar/phone/SystemUIDialog;
     const v1, 0x7f0b0018
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/phone/SystemUIDialog;->setTitle(I)V
 
+    .line 348
     const v1, 0x104067e
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/phone/SystemUIDialog;->setMessage(I)V
 
+    .line 349
     const/high16 v1, 0x1040000
 
     const/4 v2, 0x0
 
     invoke-virtual {v0, v1, v2}, Lcom/android/systemui/statusbar/phone/SystemUIDialog;->setNegativeButton(ILandroid/content/DialogInterface$OnClickListener;)V
 
+    .line 350
     const v1, 0x7f0b0019
 
     iget-object v2, p0, Lcom/android/systemui/power/PowerNotificationWarnings;->mStartSaverMode:Landroid/content/DialogInterface$OnClickListener;
 
     invoke-virtual {v0, v1, v2}, Lcom/android/systemui/statusbar/phone/SystemUIDialog;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)V
 
+    .line 351
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/phone/SystemUIDialog;->setShowForAllUsers(Z)V
 
+    .line 352
     new-instance v1, Lcom/android/systemui/power/PowerNotificationWarnings$1;
 
     invoke-direct {v1, p0}, Lcom/android/systemui/power/PowerNotificationWarnings$1;-><init>(Lcom/android/systemui/power/PowerNotificationWarnings;)V
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/phone/SystemUIDialog;->setOnDismissListener(Landroid/content/DialogInterface$OnDismissListener;)V
 
+    .line 358
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/SystemUIDialog;->show()V
 
+    .line 359
     iput-object v0, p0, Lcom/android/systemui/power/PowerNotificationWarnings;->mSaverConfirmation:Lcom/android/systemui/statusbar/phone/SystemUIDialog;
 
     goto :goto_0
@@ -929,16 +1061,20 @@
 .method private showWarningNotification()V
     .locals 9
 
+    .prologue
     const/4 v8, 0x1
 
     const/4 v7, 0x0
 
+    .line 172
     iget-boolean v3, p0, Lcom/android/systemui/power/PowerNotificationWarnings;->mSaver:Z
 
     if-eqz v3, :cond_3
 
     const v2, 0x7f0b0013
 
+    .line 174
+    .local v2, "textRes":I
     :goto_0
     new-instance v3, Landroid/app/Notification$Builder;
 
@@ -1030,12 +1166,15 @@
 
     move-result-object v1
 
+    .line 187
+    .local v1, "nb":Landroid/app/Notification$Builder;
     invoke-direct {p0}, Lcom/android/systemui/power/PowerNotificationWarnings;->hasBatterySettings()Z
 
     move-result v3
 
     if-eqz v3, :cond_0
 
+    .line 188
     const-string v3, "PNW.batterySettings"
 
     invoke-direct {p0, v3}, Lcom/android/systemui/power/PowerNotificationWarnings;->pendingBroadcast(Ljava/lang/String;)Landroid/app/PendingIntent;
@@ -1044,11 +1183,13 @@
 
     invoke-virtual {v1, v3}, Landroid/app/Notification$Builder;->setContentIntent(Landroid/app/PendingIntent;)Landroid/app/Notification$Builder;
 
+    .line 190
     :cond_0
     iget-boolean v3, p0, Lcom/android/systemui/power/PowerNotificationWarnings;->mSaver:Z
 
     if-nez v3, :cond_4
 
+    .line 191
     iget-object v3, p0, Lcom/android/systemui/power/PowerNotificationWarnings;->mContext:Landroid/content/Context;
 
     const v4, 0x7f0b001a
@@ -1065,24 +1206,31 @@
 
     invoke-virtual {v1, v7, v3, v4}, Landroid/app/Notification$Builder;->addAction(ILjava/lang/CharSequence;Landroid/app/PendingIntent;)Landroid/app/Notification$Builder;
 
+    .line 197
     :goto_1
     iget-boolean v3, p0, Lcom/android/systemui/power/PowerNotificationWarnings;->mPlaySound:Z
 
     if-eqz v3, :cond_1
 
+    .line 198
     invoke-direct {p0, v1}, Lcom/android/systemui/power/PowerNotificationWarnings;->attachLowBatterySound(Landroid/app/Notification$Builder;)V
 
+    .line 199
     iput-boolean v7, p0, Lcom/android/systemui/power/PowerNotificationWarnings;->mPlaySound:Z
 
+    .line 201
     :cond_1
     invoke-virtual {v1}, Landroid/app/Notification$Builder;->build()Landroid/app/Notification;
 
     move-result-object v0
 
+    .line 202
+    .local v0, "n":Landroid/app/Notification;
     iget-object v3, v0, Landroid/app/Notification;->headsUpContentView:Landroid/widget/RemoteViews;
 
     if-eqz v3, :cond_2
 
+    .line 203
     iget-object v3, v0, Landroid/app/Notification;->headsUpContentView:Landroid/widget/RemoteViews;
 
     const v4, 0x1020034
@@ -1091,6 +1239,7 @@
 
     invoke-virtual {v3, v4, v5}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
 
+    .line 205
     :cond_2
     iget-object v3, p0, Lcom/android/systemui/power/PowerNotificationWarnings;->mNoMan:Landroid/app/NotificationManager;
 
@@ -1102,13 +1251,21 @@
 
     invoke-virtual {v3, v4, v5, v0, v6}, Landroid/app/NotificationManager;->notifyAsUser(Ljava/lang/String;ILandroid/app/Notification;Landroid/os/UserHandle;)V
 
+    .line 206
     return-void
 
+    .line 172
+    .end local v0    # "n":Landroid/app/Notification;
+    .end local v1    # "nb":Landroid/app/Notification$Builder;
+    .end local v2    # "textRes":I
     :cond_3
     const v2, 0x7f0b0012
 
     goto/16 :goto_0
 
+    .line 195
+    .restart local v1    # "nb":Landroid/app/Notification$Builder;
+    .restart local v2    # "textRes":I
     :cond_4
     invoke-direct {p0, v1}, Lcom/android/systemui/power/PowerNotificationWarnings;->addStopSaverAction(Landroid/app/Notification$Builder;)V
 
@@ -1118,6 +1275,8 @@
 .method private updateNotification()V
     .locals 3
 
+    .prologue
+    .line 134
     sget-boolean v0, Lcom/android/systemui/power/PowerNotificationWarnings;->DEBUG:Z
 
     if-eqz v0, :cond_0
@@ -1182,46 +1341,57 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 136
     :cond_0
     iget-boolean v0, p0, Lcom/android/systemui/power/PowerNotificationWarnings;->mInvalidCharger:Z
 
     if-eqz v0, :cond_1
 
+    .line 137
     invoke-direct {p0}, Lcom/android/systemui/power/PowerNotificationWarnings;->showInvalidChargerNotification()V
 
+    .line 138
     const/4 v0, 0x3
 
     iput v0, p0, Lcom/android/systemui/power/PowerNotificationWarnings;->mShowing:I
 
+    .line 149
     :goto_0
     return-void
 
+    .line 139
     :cond_1
     iget-boolean v0, p0, Lcom/android/systemui/power/PowerNotificationWarnings;->mWarning:Z
 
     if-eqz v0, :cond_2
 
+    .line 140
     invoke-direct {p0}, Lcom/android/systemui/power/PowerNotificationWarnings;->showWarningNotification()V
 
+    .line 141
     const/4 v0, 0x1
 
     iput v0, p0, Lcom/android/systemui/power/PowerNotificationWarnings;->mShowing:I
 
     goto :goto_0
 
+    .line 142
     :cond_2
     iget-boolean v0, p0, Lcom/android/systemui/power/PowerNotificationWarnings;->mSaver:Z
 
     if-eqz v0, :cond_3
 
+    .line 143
     invoke-direct {p0}, Lcom/android/systemui/power/PowerNotificationWarnings;->showSaverNotification()V
 
+    .line 144
     const/4 v0, 0x2
 
     iput v0, p0, Lcom/android/systemui/power/PowerNotificationWarnings;->mShowing:I
 
     goto :goto_0
 
+    .line 146
     :cond_3
     iget-object v0, p0, Lcom/android/systemui/power/PowerNotificationWarnings;->mNoMan:Landroid/app/NotificationManager;
 
@@ -1231,6 +1401,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/app/NotificationManager;->cancel(Ljava/lang/String;I)V
 
+    .line 147
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/systemui/power/PowerNotificationWarnings;->mShowing:I
@@ -1243,14 +1414,19 @@
 .method public dismissInvalidChargerWarning()V
     .locals 0
 
+    .prologue
+    .line 329
     invoke-direct {p0}, Lcom/android/systemui/power/PowerNotificationWarnings;->dismissInvalidChargerNotification()V
 
+    .line 330
     return-void
 .end method
 
 .method public dismissLowBatteryWarning()V
     .locals 3
 
+    .prologue
+    .line 268
     sget-boolean v0, Lcom/android/systemui/power/PowerNotificationWarnings;->DEBUG:Z
 
     if-eqz v0, :cond_0
@@ -1279,15 +1455,20 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 269
     :cond_0
     invoke-direct {p0}, Lcom/android/systemui/power/PowerNotificationWarnings;->dismissLowBatteryNotification()V
 
+    .line 270
     return-void
 .end method
 
 .method public dump(Ljava/io/PrintWriter;)V
     .locals 2
+    .param p1, "pw"    # Ljava/io/PrintWriter;
 
+    .prologue
+    .line 104
     const-string v0, "mSaver="
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -1296,6 +1477,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Z)V
 
+    .line 105
     const-string v0, "mWarning="
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -1304,6 +1486,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Z)V
 
+    .line 106
     const-string v0, "mPlaySound="
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -1312,6 +1495,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Z)V
 
+    .line 107
     const-string v0, "mInvalidCharger="
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -1320,6 +1504,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Z)V
 
+    .line 108
     const-string v0, "mShowing="
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -1332,6 +1517,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
+    .line 109
     const-string v0, "mSaverConfirmation="
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -1345,8 +1531,10 @@
     :goto_0
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
+    .line 110
     return-void
 
+    .line 109
     :cond_0
     const/4 v0, 0x0
 
@@ -1356,6 +1544,8 @@
 .method public isInvalidChargerWarningShowing()Z
     .locals 1
 
+    .prologue
+    .line 258
     iget-boolean v0, p0, Lcom/android/systemui/power/PowerNotificationWarnings;->mInvalidCharger:Z
 
     return v0
@@ -1364,18 +1554,25 @@
 .method public showInvalidChargerWarning()V
     .locals 1
 
+    .prologue
+    .line 340
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/systemui/power/PowerNotificationWarnings;->mInvalidCharger:Z
 
+    .line 341
     invoke-direct {p0}, Lcom/android/systemui/power/PowerNotificationWarnings;->updateNotification()V
 
+    .line 342
     return-void
 .end method
 
 .method public showLowBatteryWarning(Z)V
     .locals 3
+    .param p1, "playSound"    # Z
 
+    .prologue
+    .line 288
     const-string v0, "PowerUI.Notification"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1422,22 +1619,30 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 291
     iput-boolean p1, p0, Lcom/android/systemui/power/PowerNotificationWarnings;->mPlaySound:Z
 
+    .line 292
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/systemui/power/PowerNotificationWarnings;->mWarning:Z
 
+    .line 293
     invoke-direct {p0}, Lcom/android/systemui/power/PowerNotificationWarnings;->updateNotification()V
 
+    .line 294
     return-void
 .end method
 
 .method public showSaverMode(Z)V
     .locals 1
+    .param p1, "mode"    # Z
 
+    .prologue
+    .line 126
     iput-boolean p1, p0, Lcom/android/systemui/power/PowerNotificationWarnings;->mSaver:Z
 
+    .line 127
     iget-boolean v0, p0, Lcom/android/systemui/power/PowerNotificationWarnings;->mSaver:Z
 
     if-eqz v0, :cond_0
@@ -1446,40 +1651,55 @@
 
     if-eqz v0, :cond_0
 
+    .line 128
     iget-object v0, p0, Lcom/android/systemui/power/PowerNotificationWarnings;->mSaverConfirmation:Lcom/android/systemui/statusbar/phone/SystemUIDialog;
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/SystemUIDialog;->dismiss()V
 
+    .line 130
     :cond_0
     invoke-direct {p0}, Lcom/android/systemui/power/PowerNotificationWarnings;->updateNotification()V
 
+    .line 131
     return-void
 .end method
 
 .method public update(IIJ)V
     .locals 3
+    .param p1, "batteryLevel"    # I
+    .param p2, "bucket"    # I
+    .param p3, "screenOffTime"    # J
 
+    .prologue
+    .line 114
     iput p1, p0, Lcom/android/systemui/power/PowerNotificationWarnings;->mBatteryLevel:I
 
+    .line 115
     if-ltz p2, :cond_1
 
+    .line 116
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Lcom/android/systemui/power/PowerNotificationWarnings;->mBucketDroppedNegativeTimeMs:J
 
+    .line 120
     :cond_0
     :goto_0
     iput p2, p0, Lcom/android/systemui/power/PowerNotificationWarnings;->mBucket:I
 
+    .line 121
     iput-wide p3, p0, Lcom/android/systemui/power/PowerNotificationWarnings;->mScreenOffTime:J
 
+    .line 122
     return-void
 
+    .line 117
     :cond_1
     iget v0, p0, Lcom/android/systemui/power/PowerNotificationWarnings;->mBucket:I
 
     if-ge p2, v0, :cond_0
 
+    .line 118
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
@@ -1492,7 +1712,10 @@
 .method public updateLowBatteryWarning()V
     .locals 0
 
+    .prologue
+    .line 263
     invoke-direct {p0}, Lcom/android/systemui/power/PowerNotificationWarnings;->updateNotification()V
 
+    .line 264
     return-void
 .end method

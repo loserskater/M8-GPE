@@ -31,9 +31,17 @@
 # direct methods
 .method public constructor <init>(ILandroid/content/Intent;IJJ)V
     .locals 2
+    .param p1, "id"    # I
+    .param p2, "intent"    # Landroid/content/Intent;
+    .param p3, "userId"    # I
+    .param p4, "firstActiveTime"    # J
+    .param p6, "lastActiveTime"    # J
 
+    .prologue
+    .line 76
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 77
     new-instance v0, Lcom/android/systemui/recents/model/Task$ComponentNameKey;
 
     invoke-virtual {p2}, Landroid/content/Intent;->getComponent()Landroid/content/ComponentName;
@@ -44,16 +52,22 @@
 
     iput-object v0, p0, Lcom/android/systemui/recents/model/Task$TaskKey;->mComponentNameKey:Lcom/android/systemui/recents/model/Task$ComponentNameKey;
 
+    .line 78
     iput p1, p0, Lcom/android/systemui/recents/model/Task$TaskKey;->id:I
 
+    .line 79
     iput-object p2, p0, Lcom/android/systemui/recents/model/Task$TaskKey;->baseIntent:Landroid/content/Intent;
 
+    .line 80
     iput p3, p0, Lcom/android/systemui/recents/model/Task$TaskKey;->userId:I
 
+    .line 81
     iput-wide p4, p0, Lcom/android/systemui/recents/model/Task$TaskKey;->firstActiveTime:J
 
+    .line 82
     iput-wide p6, p0, Lcom/android/systemui/recents/model/Task$TaskKey;->lastActiveTime:J
 
+    .line 83
     return-void
 .end method
 
@@ -61,16 +75,22 @@
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
     .locals 3
+    .param p1, "o"    # Ljava/lang/Object;
 
+    .prologue
     const/4 v1, 0x0
 
+    .line 92
     instance-of v0, p1, Lcom/android/systemui/recents/model/Task$TaskKey;
 
     if-nez v0, :cond_0
 
+    .line 95
+    .end local p1    # "o":Ljava/lang/Object;
     :goto_0
     return v1
 
+    .restart local p1    # "o":Ljava/lang/Object;
     :cond_0
     iget v2, p0, Lcom/android/systemui/recents/model/Task$TaskKey;->id:I
 
@@ -86,6 +106,7 @@
 
     check-cast p1, Lcom/android/systemui/recents/model/Task$TaskKey;
 
+    .end local p1    # "o":Ljava/lang/Object;
     iget v2, p1, Lcom/android/systemui/recents/model/Task$TaskKey;->userId:I
 
     if-ne v0, v2, :cond_1
@@ -106,6 +127,8 @@
 .method public getComponentNameKey()Lcom/android/systemui/recents/model/Task$ComponentNameKey;
     .locals 1
 
+    .prologue
+    .line 87
     iget-object v0, p0, Lcom/android/systemui/recents/model/Task$TaskKey;->mComponentNameKey:Lcom/android/systemui/recents/model/Task$ComponentNameKey;
 
     return-object v0
@@ -114,6 +137,8 @@
 .method public hashCode()I
     .locals 2
 
+    .prologue
+    .line 101
     iget v0, p0, Lcom/android/systemui/recents/model/Task$TaskKey;->id:I
 
     shl-int/lit8 v0, v0, 0x5
@@ -128,6 +153,8 @@
 .method public toString()Ljava/lang/String;
     .locals 4
 
+    .prologue
+    .line 106
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

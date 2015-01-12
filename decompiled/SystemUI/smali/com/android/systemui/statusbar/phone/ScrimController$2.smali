@@ -24,6 +24,8 @@
 .method constructor <init>(Lcom/android/systemui/statusbar/phone/ScrimController;Lcom/android/systemui/statusbar/ScrimView;)V
     .locals 0
 
+    .prologue
+    .line 295
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/ScrimController$2;->this$0:Lcom/android/systemui/statusbar/phone/ScrimController;
 
     iput-object p2, p0, Lcom/android/systemui/statusbar/phone/ScrimController$2;->val$scrim:Lcom/android/systemui/statusbar/ScrimView;
@@ -37,9 +39,12 @@
 # virtual methods
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 3
+    .param p1, "animation"    # Landroid/animation/Animator;
 
+    .prologue
     const/4 v2, 0x0
 
+    .line 298
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/ScrimController$2;->this$0:Lcom/android/systemui/statusbar/phone/ScrimController;
 
     # getter for: Lcom/android/systemui/statusbar/phone/ScrimController;->mOnAnimationFinished:Ljava/lang/Runnable;
@@ -49,6 +54,7 @@
 
     if-eqz v0, :cond_0
 
+    .line 299
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/ScrimController$2;->this$0:Lcom/android/systemui/statusbar/phone/ScrimController;
 
     # getter for: Lcom/android/systemui/statusbar/phone/ScrimController;->mOnAnimationFinished:Ljava/lang/Runnable;
@@ -58,11 +64,13 @@
 
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
+    .line 300
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/ScrimController$2;->this$0:Lcom/android/systemui/statusbar/phone/ScrimController;
 
     # setter for: Lcom/android/systemui/statusbar/phone/ScrimController;->mOnAnimationFinished:Ljava/lang/Runnable;
     invoke-static {v0, v2}, Lcom/android/systemui/statusbar/phone/ScrimController;->access$002(Lcom/android/systemui/statusbar/phone/ScrimController;Ljava/lang/Runnable;)Ljava/lang/Runnable;
 
+    .line 302
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/ScrimController$2;->val$scrim:Lcom/android/systemui/statusbar/ScrimView;
 
@@ -70,5 +78,6 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/android/systemui/statusbar/ScrimView;->setTag(ILjava/lang/Object;)V
 
+    .line 303
     return-void
 .end method

@@ -25,6 +25,8 @@
 .method constructor <init>(Landroid/bluetooth/BluetoothA2dpSink;)V
     .locals 0
 
+    .prologue
+    .line 152
     iput-object p1, p0, Lcom/android/systemui/statusbar/policy/BluetoothUtil$3;->val$sink:Landroid/bluetooth/BluetoothA2dpSink;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,7 +38,10 @@
 # virtual methods
 .method public connect(Landroid/bluetooth/BluetoothDevice;)Z
     .locals 1
+    .param p1, "device"    # Landroid/bluetooth/BluetoothDevice;
 
+    .prologue
+    .line 155
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/BluetoothUtil$3;->val$sink:Landroid/bluetooth/BluetoothA2dpSink;
 
     invoke-virtual {v0, p1}, Landroid/bluetooth/BluetoothA2dpSink;->connect(Landroid/bluetooth/BluetoothDevice;)Z
@@ -48,7 +53,10 @@
 
 .method public disconnect(Landroid/bluetooth/BluetoothDevice;)Z
     .locals 1
+    .param p1, "device"    # Landroid/bluetooth/BluetoothDevice;
 
+    .prologue
+    .line 160
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/BluetoothUtil$3;->val$sink:Landroid/bluetooth/BluetoothA2dpSink;
 
     invoke-virtual {v0, p1}, Landroid/bluetooth/BluetoothA2dpSink;->disconnect(Landroid/bluetooth/BluetoothDevice;)Z

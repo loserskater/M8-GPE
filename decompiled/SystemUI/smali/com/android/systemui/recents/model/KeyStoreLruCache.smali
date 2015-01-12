@@ -42,21 +42,28 @@
 # direct methods
 .method public constructor <init>(I)V
     .locals 1
+    .param p1, "cacheSize"    # I
 
+    .prologue
+    .line 35
+    .local p0, "this":Lcom/android/systemui/recents/model/KeyStoreLruCache;, "Lcom/android/systemui/recents/model/KeyStoreLruCache<TV;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 31
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Lcom/android/systemui/recents/model/KeyStoreLruCache;->mTaskKeys:Ljava/util/HashMap;
 
+    .line 36
     new-instance v0, Lcom/android/systemui/recents/model/KeyStoreLruCache$1;
 
     invoke-direct {v0, p0, p1}, Lcom/android/systemui/recents/model/KeyStoreLruCache$1;-><init>(Lcom/android/systemui/recents/model/KeyStoreLruCache;I)V
 
     iput-object v0, p0, Lcom/android/systemui/recents/model/KeyStoreLruCache;->mCache:Landroid/util/LruCache;
 
+    .line 43
     return-void
 .end method
 
@@ -65,19 +72,25 @@
 .method final evictAll()V
     .locals 1
 
+    .prologue
+    .line 80
+    .local p0, "this":Lcom/android/systemui/recents/model/KeyStoreLruCache;, "Lcom/android/systemui/recents/model/KeyStoreLruCache<TV;>;"
     iget-object v0, p0, Lcom/android/systemui/recents/model/KeyStoreLruCache;->mCache:Landroid/util/LruCache;
 
     invoke-virtual {v0}, Landroid/util/LruCache;->evictAll()V
 
+    .line 81
     iget-object v0, p0, Lcom/android/systemui/recents/model/KeyStoreLruCache;->mTaskKeys:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->clear()V
 
+    .line 82
     return-void
 .end method
 
 .method final get(Lcom/android/systemui/recents/model/Task$TaskKey;)Ljava/lang/Object;
     .locals 2
+    .param p1, "key"    # Lcom/android/systemui/recents/model/Task$TaskKey;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -86,6 +99,9 @@
         }
     .end annotation
 
+    .prologue
+    .line 47
+    .local p0, "this":Lcom/android/systemui/recents/model/KeyStoreLruCache;, "Lcom/android/systemui/recents/model/KeyStoreLruCache<TV;>;"
     iget-object v0, p0, Lcom/android/systemui/recents/model/KeyStoreLruCache;->mCache:Landroid/util/LruCache;
 
     iget v1, p1, Lcom/android/systemui/recents/model/Task$TaskKey;->id:I
@@ -103,6 +119,7 @@
 
 .method final getAndInvalidateIfModified(Lcom/android/systemui/recents/model/Task$TaskKey;)Ljava/lang/Object;
     .locals 6
+    .param p1, "key"    # Lcom/android/systemui/recents/model/Task$TaskKey;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -111,6 +128,9 @@
         }
     .end annotation
 
+    .prologue
+    .line 54
+    .local p0, "this":Lcom/android/systemui/recents/model/KeyStoreLruCache;, "Lcom/android/systemui/recents/model/KeyStoreLruCache<TV;>;"
     iget-object v1, p0, Lcom/android/systemui/recents/model/KeyStoreLruCache;->mTaskKeys:Ljava/util/HashMap;
 
     iget v2, p1, Lcom/android/systemui/recents/model/Task$TaskKey;->id:I
@@ -125,6 +145,8 @@
 
     check-cast v0, Lcom/android/systemui/recents/model/Task$TaskKey;
 
+    .line 55
+    .local v0, "lastKey":Lcom/android/systemui/recents/model/Task$TaskKey;
     if-eqz v0, :cond_0
 
     iget-wide v2, v0, Lcom/android/systemui/recents/model/Task$TaskKey;->lastActiveTime:J
@@ -135,10 +157,13 @@
 
     if-gez v1, :cond_0
 
+    .line 58
     invoke-virtual {p0, p1}, Lcom/android/systemui/recents/model/KeyStoreLruCache;->remove(Lcom/android/systemui/recents/model/Task$TaskKey;)V
 
+    .line 59
     const/4 v1, 0x0
 
+    .line 63
     :goto_0
     return-object v1
 
@@ -160,6 +185,7 @@
 
 .method final put(Lcom/android/systemui/recents/model/Task$TaskKey;Ljava/lang/Object;)V
     .locals 2
+    .param p1, "key"    # Lcom/android/systemui/recents/model/Task$TaskKey;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -168,6 +194,10 @@
         }
     .end annotation
 
+    .prologue
+    .line 68
+    .local p0, "this":Lcom/android/systemui/recents/model/KeyStoreLruCache;, "Lcom/android/systemui/recents/model/KeyStoreLruCache<TV;>;"
+    .local p2, "value":Ljava/lang/Object;, "TV;"
     iget-object v0, p0, Lcom/android/systemui/recents/model/KeyStoreLruCache;->mCache:Landroid/util/LruCache;
 
     iget v1, p1, Lcom/android/systemui/recents/model/Task$TaskKey;->id:I
@@ -178,6 +208,7 @@
 
     invoke-virtual {v0, v1, p2}, Landroid/util/LruCache;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 69
     iget-object v0, p0, Lcom/android/systemui/recents/model/KeyStoreLruCache;->mTaskKeys:Ljava/util/HashMap;
 
     iget v1, p1, Lcom/android/systemui/recents/model/Task$TaskKey;->id:I
@@ -188,12 +219,17 @@
 
     invoke-virtual {v0, v1, p1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 70
     return-void
 .end method
 
 .method final remove(Lcom/android/systemui/recents/model/Task$TaskKey;)V
     .locals 2
+    .param p1, "key"    # Lcom/android/systemui/recents/model/Task$TaskKey;
 
+    .prologue
+    .line 74
+    .local p0, "this":Lcom/android/systemui/recents/model/KeyStoreLruCache;, "Lcom/android/systemui/recents/model/KeyStoreLruCache<TV;>;"
     iget-object v0, p0, Lcom/android/systemui/recents/model/KeyStoreLruCache;->mCache:Landroid/util/LruCache;
 
     iget v1, p1, Lcom/android/systemui/recents/model/Task$TaskKey;->id:I
@@ -204,6 +240,7 @@
 
     invoke-virtual {v0, v1}, Landroid/util/LruCache;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 75
     iget-object v0, p0, Lcom/android/systemui/recents/model/KeyStoreLruCache;->mTaskKeys:Ljava/util/HashMap;
 
     iget v1, p1, Lcom/android/systemui/recents/model/Task$TaskKey;->id:I
@@ -214,15 +251,21 @@
 
     invoke-virtual {v0, v1}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 76
     return-void
 .end method
 
 .method final trimToSize(I)V
     .locals 1
+    .param p1, "cacheSize"    # I
 
+    .prologue
+    .line 91
+    .local p0, "this":Lcom/android/systemui/recents/model/KeyStoreLruCache;, "Lcom/android/systemui/recents/model/KeyStoreLruCache<TV;>;"
     iget-object v0, p0, Lcom/android/systemui/recents/model/KeyStoreLruCache;->mCache:Landroid/util/LruCache;
 
     invoke-virtual {v0, p1}, Landroid/util/LruCache;->resize(I)V
 
+    .line 92
     return-void
 .end method

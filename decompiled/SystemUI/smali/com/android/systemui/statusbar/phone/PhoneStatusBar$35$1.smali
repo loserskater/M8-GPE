@@ -25,6 +25,8 @@
 .method constructor <init>(Lcom/android/systemui/statusbar/phone/PhoneStatusBar$35;)V
     .locals 0
 
+    .prologue
+    .line 3040
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$35$1;->this$1:Lcom/android/systemui/statusbar/phone/PhoneStatusBar$35;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,6 +39,8 @@
 .method public run()V
     .locals 4
 
+    .prologue
+    .line 3043
     :try_start_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$35$1;->this$1:Lcom/android/systemui/statusbar/phone/PhoneStatusBar$35;
 
@@ -50,12 +54,14 @@
 
     if-nez v0, :cond_0
 
+    .line 3044
     invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
 
     move-result-object v0
 
     invoke-interface {v0}, Landroid/app/IActivityManager;->keyguardWaitingForActivityDrawn()V
 
+    .line 3047
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$35$1;->this$1:Lcom/android/systemui/statusbar/phone/PhoneStatusBar$35;
 
@@ -65,6 +71,7 @@
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
+    .line 3049
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$35$1;->this$1:Lcom/android/systemui/statusbar/phone/PhoneStatusBar$35;
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$35;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
@@ -83,6 +90,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->startActivityAsUser(Landroid/content/Intent;Landroid/os/UserHandle;)V
 
+    .line 3051
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$35$1;->this$1:Lcom/android/systemui/statusbar/phone/PhoneStatusBar$35;
 
     iget-object v1, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$35;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
@@ -106,14 +114,17 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 3055
     :goto_1
     return-void
 
+    .line 3051
     :cond_1
     const/4 v0, 0x0
 
     goto :goto_0
 
+    .line 3053
     :catch_0
     move-exception v0
 

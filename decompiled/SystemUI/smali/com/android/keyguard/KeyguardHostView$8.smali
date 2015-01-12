@@ -27,6 +27,8 @@
 .method constructor <init>(Lcom/android/keyguard/KeyguardHostView;I)V
     .locals 0
 
+    .prologue
+    .line 919
     iput-object p1, p0, Lcom/android/keyguard/KeyguardHostView$8;->this$0:Lcom/android/keyguard/KeyguardHostView;
 
     iput p2, p0, Lcom/android/keyguard/KeyguardHostView$8;->val$pageToShow:I
@@ -41,6 +43,8 @@
 .method public run()V
     .locals 2
 
+    .prologue
+    .line 922
     iget-object v0, p0, Lcom/android/keyguard/KeyguardHostView$8;->this$0:Lcom/android/keyguard/KeyguardHostView;
 
     # getter for: Lcom/android/keyguard/KeyguardHostView;->mAppWidgetContainer:Lcom/android/keyguard/KeyguardWidgetPager;
@@ -52,5 +56,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/keyguard/KeyguardWidgetPager;->setCurrentPage(I)V
 
+    .line 923
     return-void
 .end method

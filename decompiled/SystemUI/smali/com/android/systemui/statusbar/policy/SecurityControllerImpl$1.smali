@@ -22,6 +22,8 @@
 .method constructor <init>(Lcom/android/systemui/statusbar/policy/SecurityControllerImpl;)V
     .locals 0
 
+    .prologue
+    .line 187
     iput-object p1, p0, Lcom/android/systemui/statusbar/policy/SecurityControllerImpl$1;->this$0:Lcom/android/systemui/statusbar/policy/SecurityControllerImpl;
 
     invoke-direct {p0}, Landroid/net/ConnectivityManager$NetworkCallback;-><init>()V
@@ -33,7 +35,10 @@
 # virtual methods
 .method public onAvailable(Landroid/net/Network;)V
     .locals 4
+    .param p1, "network"    # Landroid/net/Network;
 
+    .prologue
+    .line 190
     iget-object v1, p0, Lcom/android/systemui/statusbar/policy/SecurityControllerImpl$1;->this$0:Lcom/android/systemui/statusbar/policy/SecurityControllerImpl;
 
     # getter for: Lcom/android/systemui/statusbar/policy/SecurityControllerImpl;->mConnectivityManager:Landroid/net/ConnectivityManager;
@@ -45,6 +50,8 @@
 
     move-result-object v0
 
+    .line 192
+    .local v0, "networkCapabilities":Landroid/net/NetworkCapabilities;
     # getter for: Lcom/android/systemui/statusbar/policy/SecurityControllerImpl;->DEBUG:Z
     invoke-static {}, Lcom/android/systemui/statusbar/policy/SecurityControllerImpl;->access$100()Z
 
@@ -86,6 +93,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 193
     :cond_0
     const/4 v1, 0x4
 
@@ -95,6 +103,7 @@
 
     if-eqz v1, :cond_1
 
+    .line 194
     iget-object v1, p0, Lcom/android/systemui/statusbar/policy/SecurityControllerImpl$1;->this$0:Lcom/android/systemui/statusbar/policy/SecurityControllerImpl;
 
     iget v2, p1, Landroid/net/Network;->netId:I
@@ -102,13 +111,17 @@
     # invokes: Lcom/android/systemui/statusbar/policy/SecurityControllerImpl;->setCurrentNetid(I)V
     invoke-static {v1, v2}, Lcom/android/systemui/statusbar/policy/SecurityControllerImpl;->access$200(Lcom/android/systemui/statusbar/policy/SecurityControllerImpl;I)V
 
+    .line 196
     :cond_1
     return-void
 .end method
 
 .method public onLost(Landroid/net/Network;)V
     .locals 3
+    .param p1, "network"    # Landroid/net/Network;
 
+    .prologue
+    .line 202
     # getter for: Lcom/android/systemui/statusbar/policy/SecurityControllerImpl;->DEBUG:Z
     invoke-static {}, Lcom/android/systemui/statusbar/policy/SecurityControllerImpl;->access$100()Z
 
@@ -140,6 +153,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 203
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/SecurityControllerImpl$1;->this$0:Lcom/android/systemui/statusbar/policy/SecurityControllerImpl;
 
@@ -152,6 +166,7 @@
 
     if-ne v0, v1, :cond_1
 
+    .line 204
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/SecurityControllerImpl$1;->this$0:Lcom/android/systemui/statusbar/policy/SecurityControllerImpl;
 
     const/4 v1, -0x1
@@ -159,6 +174,7 @@
     # invokes: Lcom/android/systemui/statusbar/policy/SecurityControllerImpl;->setCurrentNetid(I)V
     invoke-static {v0, v1}, Lcom/android/systemui/statusbar/policy/SecurityControllerImpl;->access$200(Lcom/android/systemui/statusbar/policy/SecurityControllerImpl;I)V
 
+    .line 206
     :cond_1
     return-void
 .end method

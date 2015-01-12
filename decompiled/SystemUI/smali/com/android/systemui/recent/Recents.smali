@@ -18,12 +18,16 @@
 .method public constructor <init>()V
     .locals 1
 
+    .prologue
+    .line 41
     invoke-direct {p0}, Lcom/android/systemui/SystemUI;-><init>()V
 
+    .line 46
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/systemui/recent/Recents;->mUseAlternateRecents:Z
 
+    .line 48
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/systemui/recent/Recents;->mBootCompleted:Z
@@ -33,7 +37,11 @@
 
 .method static synthetic access$000(Lcom/android/systemui/recent/Recents;Landroid/content/Intent;)V
     .locals 0
+    .param p0, "x0"    # Lcom/android/systemui/recent/Recents;
+    .param p1, "x1"    # Landroid/content/Intent;
 
+    .prologue
+    .line 41
     invoke-direct {p0, p1}, Lcom/android/systemui/recent/Recents;->sendBroadcastSafely(Landroid/content/Intent;)V
 
     return-void
@@ -41,14 +49,19 @@
 
 .method private sendBroadcastSafely(Landroid/content/Intent;)V
     .locals 3
+    .param p1, "intent"    # Landroid/content/Intent;
 
+    .prologue
+    .line 301
     iget-boolean v0, p0, Lcom/android/systemui/recent/Recents;->mBootCompleted:Z
 
     if-nez v0, :cond_0
 
+    .line 303
     :goto_0
     return-void
 
+    .line 302
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/recent/Recents;->mContext:Landroid/content/Context;
 
@@ -65,14 +78,20 @@
 
 .method private startActivitySafely(Landroid/content/Intent;Landroid/os/Bundle;)V
     .locals 3
+    .param p1, "intent"    # Landroid/content/Intent;
+    .param p2, "opts"    # Landroid/os/Bundle;
 
+    .prologue
+    .line 309
     iget-boolean v0, p0, Lcom/android/systemui/recent/Recents;->mBootCompleted:Z
 
     if-nez v0, :cond_0
 
+    .line 311
     :goto_0
     return-void
 
+    .line 310
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/recent/Recents;->mContext:Landroid/content/Context;
 
@@ -92,17 +111,22 @@
 .method public cancelPreloadingRecents()V
     .locals 3
 
+    .prologue
+    .line 264
     iget-boolean v1, p0, Lcom/android/systemui/recent/Recents;->mUseAlternateRecents:Z
 
     if-eqz v1, :cond_0
 
+    .line 265
     iget-object v1, p0, Lcom/android/systemui/recent/Recents;->mAlternateRecents:Lcom/android/systemui/recents/AlternateRecentsComponent;
 
     invoke-virtual {v1}, Lcom/android/systemui/recents/AlternateRecentsComponent;->onCancelPreloadingRecents()V
 
+    .line 274
     :goto_0
     return-void
 
+    .line 267
     :cond_0
     new-instance v0, Landroid/content/Intent;
 
@@ -110,14 +134,18 @@
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
+    .line 268
+    .local v0, "intent":Landroid/content/Intent;
     const-string v1, "com.android.systemui"
 
     const-string v2, "com.android.systemui.recent.RecentsPreloadReceiver"
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
+    .line 270
     invoke-direct {p0, v0}, Lcom/android/systemui/recent/Recents;->sendBroadcastSafely(Landroid/content/Intent;)V
 
+    .line 272
     iget-object v1, p0, Lcom/android/systemui/recent/Recents;->mContext:Landroid/content/Context;
 
     invoke-static {v1}, Lcom/android/systemui/recent/RecentTasksLoader;->getInstance(Landroid/content/Context;)Lcom/android/systemui/recent/RecentTasksLoader;
@@ -131,18 +159,25 @@
 
 .method public hideRecents(ZZ)V
     .locals 2
+    .param p1, "triggeredFromAltTab"    # Z
+    .param p2, "triggeredFromHomeKey"    # Z
 
+    .prologue
+    .line 81
     iget-boolean v1, p0, Lcom/android/systemui/recent/Recents;->mUseAlternateRecents:Z
 
     if-eqz v1, :cond_0
 
+    .line 82
     iget-object v1, p0, Lcom/android/systemui/recent/Recents;->mAlternateRecents:Lcom/android/systemui/recents/AlternateRecentsComponent;
 
     invoke-virtual {v1, p1, p2}, Lcom/android/systemui/recents/AlternateRecentsComponent;->onHideRecents(ZZ)V
 
+    .line 90
     :goto_0
     return-void
 
+    .line 84
     :cond_0
     new-instance v0, Landroid/content/Intent;
 
@@ -150,12 +185,16 @@
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
+    .line 85
+    .local v0, "intent":Landroid/content/Intent;
     const-string v1, "com.android.systemui"
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setPackage(Ljava/lang/String;)Landroid/content/Intent;
 
+    .line 86
     invoke-direct {p0, v0}, Lcom/android/systemui/recent/Recents;->sendBroadcastSafely(Landroid/content/Intent;)V
 
+    .line 88
     iget-object v1, p0, Lcom/android/systemui/recent/Recents;->mContext:Landroid/content/Context;
 
     invoke-static {v1}, Lcom/android/systemui/recent/RecentTasksLoader;->getInstance(Landroid/content/Context;)Lcom/android/systemui/recent/RecentTasksLoader;
@@ -170,37 +209,48 @@
 .method protected onBootCompleted()V
     .locals 1
 
+    .prologue
+    .line 64
     iget-boolean v0, p0, Lcom/android/systemui/recent/Recents;->mUseAlternateRecents:Z
 
     if-eqz v0, :cond_0
 
+    .line 65
     iget-object v0, p0, Lcom/android/systemui/recent/Recents;->mAlternateRecents:Lcom/android/systemui/recents/AlternateRecentsComponent;
 
     if-eqz v0, :cond_0
 
+    .line 66
     iget-object v0, p0, Lcom/android/systemui/recent/Recents;->mAlternateRecents:Lcom/android/systemui/recents/AlternateRecentsComponent;
 
     invoke-virtual {v0}, Lcom/android/systemui/recents/AlternateRecentsComponent;->onBootCompleted()V
 
+    .line 69
     :cond_0
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/systemui/recent/Recents;->mBootCompleted:Z
 
+    .line 70
     return-void
 .end method
 
 .method protected onConfigurationChanged(Landroid/content/res/Configuration;)V
     .locals 1
+    .param p1, "newConfig"    # Landroid/content/res/Configuration;
 
+    .prologue
+    .line 243
     iget-boolean v0, p0, Lcom/android/systemui/recent/Recents;->mUseAlternateRecents:Z
 
     if-eqz v0, :cond_0
 
+    .line 244
     iget-object v0, p0, Lcom/android/systemui/recent/Recents;->mAlternateRecents:Lcom/android/systemui/recents/AlternateRecentsComponent;
 
     invoke-virtual {v0, p1}, Lcom/android/systemui/recents/AlternateRecentsComponent;->onConfigurationChanged(Landroid/content/res/Configuration;)V
 
+    .line 246
     :cond_0
     return-void
 .end method
@@ -208,17 +258,22 @@
 .method public preloadRecents()V
     .locals 3
 
+    .prologue
+    .line 250
     iget-boolean v1, p0, Lcom/android/systemui/recent/Recents;->mUseAlternateRecents:Z
 
     if-eqz v1, :cond_0
 
+    .line 251
     iget-object v1, p0, Lcom/android/systemui/recent/Recents;->mAlternateRecents:Lcom/android/systemui/recents/AlternateRecentsComponent;
 
     invoke-virtual {v1}, Lcom/android/systemui/recents/AlternateRecentsComponent;->onPreloadRecents()V
 
+    .line 260
     :goto_0
     return-void
 
+    .line 253
     :cond_0
     new-instance v0, Landroid/content/Intent;
 
@@ -226,14 +281,18 @@
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
+    .line 254
+    .local v0, "intent":Landroid/content/Intent;
     const-string v1, "com.android.systemui"
 
     const-string v2, "com.android.systemui.recent.RecentsPreloadReceiver"
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
+    .line 256
     invoke-direct {p0, v0}, Lcom/android/systemui/recent/Recents;->sendBroadcastSafely(Landroid/content/Intent;)V
 
+    .line 258
     iget-object v1, p0, Lcom/android/systemui/recent/Recents;->mContext:Landroid/content/Context;
 
     invoke-static {v1}, Lcom/android/systemui/recent/RecentTasksLoader;->getInstance(Landroid/content/Context;)Lcom/android/systemui/recent/RecentTasksLoader;
@@ -247,15 +306,20 @@
 
 .method public setCallback(Lcom/android/systemui/RecentsComponent$Callbacks;)V
     .locals 1
+    .param p1, "cb"    # Lcom/android/systemui/RecentsComponent$Callbacks;
 
+    .prologue
+    .line 292
     iget-boolean v0, p0, Lcom/android/systemui/recent/Recents;->mUseAlternateRecents:Z
 
     if-eqz v0, :cond_0
 
+    .line 293
     iget-object v0, p0, Lcom/android/systemui/recent/Recents;->mAlternateRecents:Lcom/android/systemui/recents/AlternateRecentsComponent;
 
     invoke-virtual {v0, p1}, Lcom/android/systemui/recents/AlternateRecentsComponent;->setRecentsComponentCallback(Lcom/android/systemui/RecentsComponent$Callbacks;)V
 
+    .line 295
     :cond_0
     return-void
 .end method
@@ -263,14 +327,18 @@
 .method public showNextAffiliatedTask()V
     .locals 1
 
+    .prologue
+    .line 278
     iget-boolean v0, p0, Lcom/android/systemui/recent/Recents;->mUseAlternateRecents:Z
 
     if-eqz v0, :cond_0
 
+    .line 279
     iget-object v0, p0, Lcom/android/systemui/recent/Recents;->mAlternateRecents:Lcom/android/systemui/recents/AlternateRecentsComponent;
 
     invoke-virtual {v0}, Lcom/android/systemui/recents/AlternateRecentsComponent;->onShowNextAffiliatedTask()V
 
+    .line 281
     :cond_0
     return-void
 .end method
@@ -278,29 +346,39 @@
 .method public showPrevAffiliatedTask()V
     .locals 1
 
+    .prologue
+    .line 285
     iget-boolean v0, p0, Lcom/android/systemui/recent/Recents;->mUseAlternateRecents:Z
 
     if-eqz v0, :cond_0
 
+    .line 286
     iget-object v0, p0, Lcom/android/systemui/recent/Recents;->mAlternateRecents:Lcom/android/systemui/recents/AlternateRecentsComponent;
 
     invoke-virtual {v0}, Lcom/android/systemui/recents/AlternateRecentsComponent;->onShowPrevAffiliatedTask()V
 
+    .line 288
     :cond_0
     return-void
 .end method
 
 .method public showRecents(ZLandroid/view/View;)V
     .locals 1
+    .param p1, "triggeredFromAltTab"    # Z
+    .param p2, "statusBarView"    # Landroid/view/View;
 
+    .prologue
+    .line 74
     iget-boolean v0, p0, Lcom/android/systemui/recent/Recents;->mUseAlternateRecents:Z
 
     if-eqz v0, :cond_0
 
+    .line 75
     iget-object v0, p0, Lcom/android/systemui/recent/Recents;->mAlternateRecents:Lcom/android/systemui/recents/AlternateRecentsComponent;
 
     invoke-virtual {v0, p1, p2}, Lcom/android/systemui/recents/AlternateRecentsComponent;->onShowRecents(ZLandroid/view/View;)V
 
+    .line 77
     :cond_0
     return-void
 .end method
@@ -308,14 +386,18 @@
 .method public start()V
     .locals 2
 
+    .prologue
+    .line 52
     iget-boolean v0, p0, Lcom/android/systemui/recent/Recents;->mUseAlternateRecents:Z
 
     if-eqz v0, :cond_1
 
+    .line 53
     iget-object v0, p0, Lcom/android/systemui/recent/Recents;->mAlternateRecents:Lcom/android/systemui/recents/AlternateRecentsComponent;
 
     if-nez v0, :cond_0
 
+    .line 54
     new-instance v0, Lcom/android/systemui/recents/AlternateRecentsComponent;
 
     iget-object v1, p0, Lcom/android/systemui/recent/Recents;->mContext:Landroid/content/Context;
@@ -324,22 +406,30 @@
 
     iput-object v0, p0, Lcom/android/systemui/recent/Recents;->mAlternateRecents:Lcom/android/systemui/recents/AlternateRecentsComponent;
 
+    .line 56
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/recent/Recents;->mAlternateRecents:Lcom/android/systemui/recents/AlternateRecentsComponent;
 
     invoke-virtual {v0}, Lcom/android/systemui/recents/AlternateRecentsComponent;->onStart()V
 
+    .line 59
     :cond_1
     const-class v0, Lcom/android/systemui/RecentsComponent;
 
     invoke-virtual {p0, v0, p0}, Lcom/android/systemui/recent/Recents;->putComponent(Ljava/lang/Class;Ljava/lang/Object;)V
 
+    .line 60
     return-void
 .end method
 
 .method public toggleRecents(Landroid/view/Display;ILandroid/view/View;)V
     .locals 38
+    .param p1, "display"    # Landroid/view/Display;
+    .param p2, "layoutDirection"    # I
+    .param p3, "statusBarView"    # Landroid/view/View;
 
+    .prologue
+    .line 94
     move-object/from16 v0, p0
 
     iget-boolean v0, v0, Lcom/android/systemui/recent/Recents;->mUseAlternateRecents:Z
@@ -348,6 +438,7 @@
 
     if-eqz v34, :cond_0
 
+    .line 96
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/systemui/recent/Recents;->mAlternateRecents:Lcom/android/systemui/recents/AlternateRecentsComponent;
@@ -360,9 +451,11 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/recents/AlternateRecentsComponent;->onToggleRecents(Landroid/view/View;)V
 
+    .line 239
     :goto_0
     return-void
 
+    .line 100
     :cond_0
     const-string v34, "Recents"
 
@@ -370,6 +463,7 @@
 
     invoke-static/range {v34 .. v35}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 102
     :try_start_0
     move-object/from16 v0, p0
 
@@ -385,6 +479,8 @@
 
     move-result-object v13
 
+    .line 104
+    .local v13, "firstTask":Lcom/android/systemui/recent/TaskDescription;
     new-instance v15, Landroid/content/Intent;
 
     const-string v34, "com.android.systemui.recent.action.TOGGLE_RECENTS"
@@ -393,6 +489,8 @@
 
     invoke-direct {v15, v0}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
+    .line 105
+    .local v15, "intent":Landroid/content/Intent;
     const-string v34, "com.android.systemui"
 
     const-string v35, "com.android.systemui.recent.RecentsActivity"
@@ -403,14 +501,17 @@
 
     invoke-virtual {v15, v0, v1}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
+    .line 107
     const/high16 v34, 0x10800000
 
     move/from16 v0, v34
 
     invoke-virtual {v15, v0}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
+    .line 110
     if-nez v13, :cond_2
 
+    .line 111
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/systemui/recent/Recents;->mContext:Landroid/content/Context;
@@ -423,6 +524,7 @@
 
     if-eqz v34, :cond_1
 
+    .line 112
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/systemui/recent/Recents;->mContext:Landroid/content/Context;
@@ -437,6 +539,8 @@
 
     move-result-object v18
 
+    .line 115
+    .local v18, "opts":Landroid/app/ActivityOptions;
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/systemui/recent/Recents;->mContext:Landroid/content/Context;
@@ -465,9 +569,15 @@
 
     goto :goto_0
 
+    .line 236
+    .end local v13    # "firstTask":Lcom/android/systemui/recent/TaskDescription;
+    .end local v15    # "intent":Landroid/content/Intent;
+    .end local v18    # "opts":Landroid/app/ActivityOptions;
     :catch_0
     move-exception v11
 
+    .line 237
+    .local v11, "e":Landroid/content/ActivityNotFoundException;
     const-string v34, "Recents"
 
     const-string v35, "Failed to launch RecentAppsIntent"
@@ -480,6 +590,10 @@
 
     goto :goto_0
 
+    .line 119
+    .end local v11    # "e":Landroid/content/ActivityNotFoundException;
+    .restart local v13    # "firstTask":Lcom/android/systemui/recent/TaskDescription;
+    .restart local v15    # "intent":Landroid/content/Intent;
     :cond_1
     :try_start_1
     move-object/from16 v0, p0
@@ -502,9 +616,12 @@
 
     goto/16 :goto_0
 
+    .line 124
     :cond_2
     const/4 v12, 0x0
 
+    .line 125
+    .local v12, "first":Landroid/graphics/Bitmap;
     invoke-virtual {v13}, Lcom/android/systemui/recent/TaskDescription;->getThumbnail()Landroid/graphics/drawable/Drawable;
 
     move-result-object v34
@@ -517,6 +634,7 @@
 
     if-eqz v34, :cond_3
 
+    .line 126
     invoke-virtual {v13}, Lcom/android/systemui/recent/TaskDescription;->getThumbnail()Landroid/graphics/drawable/Drawable;
 
     move-result-object v34
@@ -527,6 +645,7 @@
 
     move-result-object v12
 
+    .line 132
     :goto_1
     move-object/from16 v0, p0
 
@@ -538,6 +657,8 @@
 
     move-result-object v23
 
+    .line 134
+    .local v23, "res":Landroid/content/res/Resources;
     const v34, 0x7f0c0003
 
     move-object/from16 v0, v23
@@ -554,6 +675,8 @@
 
     move/from16 v30, v0
 
+    .line 136
+    .local v30, "thumbWidth":F
     const v34, 0x7f0c0004
 
     move-object/from16 v0, v23
@@ -570,8 +693,11 @@
 
     move/from16 v27, v0
 
+    .line 138
+    .local v27, "thumbHeight":F
     if-nez v12, :cond_4
 
+    .line 139
     new-instance v34, Ljava/lang/RuntimeException;
 
     const-string v35, "Recents thumbnail is null"
@@ -580,6 +706,10 @@
 
     throw v34
 
+    .line 128
+    .end local v23    # "res":Landroid/content/res/Resources;
+    .end local v27    # "thumbHeight":F
+    .end local v30    # "thumbWidth":F
     :cond_3
     const/16 v34, 0x1
 
@@ -591,6 +721,7 @@
 
     move-result-object v12
 
+    .line 129
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/systemui/recent/Recents;->mContext:Landroid/content/Context;
@@ -605,6 +736,8 @@
 
     move-result-object v7
 
+    .line 130
+    .local v7, "d":Landroid/graphics/drawable/Drawable;
     new-instance v34, Landroid/graphics/Canvas;
 
     move-object/from16 v0, v34
@@ -617,6 +750,11 @@
 
     goto :goto_1
 
+    .line 141
+    .end local v7    # "d":Landroid/graphics/drawable/Drawable;
+    .restart local v23    # "res":Landroid/content/res/Resources;
+    .restart local v27    # "thumbHeight":F
+    .restart local v30    # "thumbWidth":F
     :cond_4
     invoke-virtual {v12}, Landroid/graphics/Bitmap;->getWidth()I
 
@@ -646,6 +784,7 @@
 
     if-eqz v34, :cond_6
 
+    .line 142
     :cond_5
     move/from16 v0, v30
 
@@ -671,8 +810,10 @@
 
     move-result-object v12
 
+    .line 144
     if-nez v12, :cond_6
 
+    .line 145
     new-instance v34, Ljava/lang/RuntimeException;
 
     const-string v35, "Recents thumbnail is null"
@@ -681,19 +822,25 @@
 
     throw v34
 
+    .line 150
     :cond_6
     new-instance v10, Landroid/util/DisplayMetrics;
 
     invoke-direct {v10}, Landroid/util/DisplayMetrics;-><init>()V
 
+    .line 151
+    .local v10, "dm":Landroid/util/DisplayMetrics;
     move-object/from16 v0, p1
 
     invoke-virtual {v0, v10}, Landroid/view/Display;->getMetrics(Landroid/util/DisplayMetrics;)V
 
+    .line 154
     invoke-virtual/range {v23 .. v23}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
 
     move-result-object v6
 
+    .line 157
+    .local v6, "config":Landroid/content/res/Configuration;
     iget v0, v6, Landroid/content/res/Configuration;->orientation:I
 
     move/from16 v34, v0
@@ -706,6 +853,7 @@
 
     if-ne v0, v1, :cond_8
 
+    .line 158
     const v34, 0x7f0c000e
 
     move-object/from16 v0, v23
@@ -720,6 +868,8 @@
 
     int-to-float v4, v0
 
+    .line 160
+    .local v4, "appLabelLeftMargin":F
     const v34, 0x7f0c000d
 
     move-object/from16 v0, v23
@@ -734,6 +884,8 @@
 
     int-to-float v5, v0
 
+    .line 162
+    .local v5, "appLabelWidth":F
     const v34, 0x7f0c000b
 
     move-object/from16 v0, v23
@@ -750,6 +902,8 @@
 
     move/from16 v28, v0
 
+    .line 164
+    .local v28, "thumbLeftMargin":F
     const v34, 0x7f0c0005
 
     move-object/from16 v0, v23
@@ -766,6 +920,8 @@
 
     move/from16 v26, v0
 
+    .line 167
+    .local v26, "thumbBgPadding":F
     add-float v34, v4, v5
 
     add-float v34, v34, v28
@@ -778,6 +934,8 @@
 
     add-float v31, v34, v35
 
+    .line 173
+    .local v31, "width":F
     iget v0, v10, Landroid/util/DisplayMetrics;->widthPixels:I
 
     move/from16 v34, v0
@@ -808,6 +966,8 @@
 
     move/from16 v32, v0
 
+    .line 175
+    .local v32, "x":I
     iget v0, v10, Landroid/util/DisplayMetrics;->heightPixels:I
 
     move/from16 v34, v0
@@ -838,6 +998,8 @@
 
     move/from16 v33, v0
 
+    .line 178
+    .local v33, "y":I
     const/16 v34, 0x1
 
     move/from16 v0, p2
@@ -846,6 +1008,7 @@
 
     if-ne v0, v1, :cond_7
 
+    .line 179
     iget v0, v10, Landroid/util/DisplayMetrics;->widthPixels:I
 
     move/from16 v34, v0
@@ -864,6 +1027,11 @@
 
     sub-int v32, v34, v35
 
+    .line 222
+    .end local v4    # "appLabelLeftMargin":F
+    .end local v5    # "appLabelWidth":F
+    .end local v28    # "thumbLeftMargin":F
+    .end local v31    # "width":F
     :cond_7
     :goto_2
     new-instance v34, Lcom/android/systemui/recent/Recents$1;
@@ -886,6 +1054,8 @@
 
     move-result-object v18
 
+    .line 233
+    .restart local v18    # "opts":Landroid/app/ActivityOptions;
     const-string v34, "com.android.systemui.recent.WAITING_FOR_WINDOW_ANIMATION"
 
     const/16 v35, 0x1
@@ -896,6 +1066,7 @@
 
     invoke-virtual {v15, v0, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
+    .line 234
     invoke-virtual/range {v18 .. v18}, Landroid/app/ActivityOptions;->toBundle()Landroid/os/Bundle;
 
     move-result-object v34
@@ -908,6 +1079,11 @@
 
     goto/16 :goto_0
 
+    .line 184
+    .end local v18    # "opts":Landroid/app/ActivityOptions;
+    .end local v26    # "thumbBgPadding":F
+    .end local v32    # "x":I
+    .end local v33    # "y":I
     :cond_8
     const v34, 0x7f0c00b8
 
@@ -925,6 +1101,8 @@
 
     move/from16 v29, v0
 
+    .line 186
+    .local v29, "thumbTopMargin":F
     const v34, 0x7f0c0005
 
     move-object/from16 v0, v23
@@ -941,6 +1119,8 @@
 
     move/from16 v26, v0
 
+    .line 188
+    .restart local v26    # "thumbBgPadding":F
     const v34, 0x7f0c000c
 
     move-object/from16 v0, v23
@@ -957,6 +1137,8 @@
 
     move/from16 v25, v0
 
+    .line 190
+    .local v25, "textPadding":F
     const v34, 0x7f0c0006
 
     move-object/from16 v0, v23
@@ -973,16 +1155,21 @@
 
     move/from16 v17, v0
 
+    .line 192
+    .local v17, "labelTextSize":F
     new-instance v19, Landroid/graphics/Paint;
 
     invoke-direct/range {v19 .. v19}, Landroid/graphics/Paint;-><init>()V
 
+    .line 193
+    .local v19, "p":Landroid/graphics/Paint;
     move-object/from16 v0, v19
 
     move/from16 v1, v17
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setTextSize(F)V
 
+    .line 194
     invoke-virtual/range {v19 .. v19}, Landroid/graphics/Paint;->getFontMetricsInt()Landroid/graphics/Paint$FontMetricsInt;
 
     move-result-object v34
@@ -1011,6 +1198,8 @@
 
     move/from16 v16, v0
 
+    .line 196
+    .local v16, "labelTextHeight":F
     const v34, 0x7f0c0007
 
     move-object/from16 v0, v23
@@ -1025,10 +1214,13 @@
 
     int-to-float v9, v0
 
+    .line 198
+    .local v9, "descriptionTextSize":F
     move-object/from16 v0, v19
 
     invoke-virtual {v0, v9}, Landroid/graphics/Paint;->setTextSize(F)V
 
+    .line 199
     invoke-virtual/range {v19 .. v19}, Landroid/graphics/Paint;->getFontMetricsInt()Landroid/graphics/Paint$FontMetricsInt;
 
     move-result-object v34
@@ -1055,6 +1247,8 @@
 
     int-to-float v8, v0
 
+    .line 202
+    .local v8, "descriptionTextHeight":F
     const v34, 0x1050010
 
     move-object/from16 v0, v23
@@ -1071,8 +1265,12 @@
 
     move/from16 v24, v0
 
+    .line 204
+    .local v24, "statusBarHeight":F
     move/from16 v21, v24
 
+    .line 206
+    .local v21, "recentsItemTopPadding":F
     add-float v34, v29, v27
 
     const/high16 v35, 0x40000000
@@ -1091,6 +1289,8 @@
 
     add-float v14, v34, v8
 
+    .line 210
+    .local v14, "height":F
     const v34, 0x7f0c000f
 
     move-object/from16 v0, v23
@@ -1107,6 +1307,8 @@
 
     move/from16 v20, v0
 
+    .line 212
+    .local v20, "recentsItemRightPadding":F
     const v34, 0x7f0c000a
 
     move-object/from16 v0, v23
@@ -1123,6 +1325,8 @@
 
     move/from16 v22, v0
 
+    .line 214
+    .local v22, "recentsScrollViewRightPadding":F
     iget v0, v10, Landroid/util/DisplayMetrics;->widthPixels:I
 
     move/from16 v34, v0
@@ -1157,6 +1361,8 @@
 
     move/from16 v32, v0
 
+    .line 218
+    .restart local v32    # "x":I
     iget v0, v10, Landroid/util/DisplayMetrics;->heightPixels:I
 
     move/from16 v34, v0
@@ -1191,5 +1397,6 @@
 
     move/from16 v33, v0
 
+    .restart local v33    # "y":I
     goto/16 :goto_2
 .end method

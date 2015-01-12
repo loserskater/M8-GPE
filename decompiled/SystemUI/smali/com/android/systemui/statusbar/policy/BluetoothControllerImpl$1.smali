@@ -31,6 +31,8 @@
 .method constructor <init>(Lcom/android/systemui/statusbar/policy/BluetoothControllerImpl;ZLandroid/bluetooth/BluetoothDevice;Ljava/lang/String;)V
     .locals 0
 
+    .prologue
+    .line 206
     iput-object p1, p0, Lcom/android/systemui/statusbar/policy/BluetoothControllerImpl$1;->this$0:Lcom/android/systemui/statusbar/policy/BluetoothControllerImpl;
 
     iput-boolean p2, p0, Lcom/android/systemui/statusbar/policy/BluetoothControllerImpl$1;->val$connect:Z
@@ -48,7 +50,11 @@
 # virtual methods
 .method public onServiceConnected(ILandroid/bluetooth/BluetoothProfile;)V
     .locals 5
+    .param p1, "profile"    # I
+    .param p2, "proxy"    # Landroid/bluetooth/BluetoothProfile;
 
+    .prologue
+    .line 209
     # getter for: Lcom/android/systemui/statusbar/policy/BluetoothControllerImpl;->DEBUG:Z
     invoke-static {}, Lcom/android/systemui/statusbar/policy/BluetoothControllerImpl;->access$100()Z
 
@@ -82,13 +88,17 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 210
     :cond_0
     invoke-static {p2}, Lcom/android/systemui/statusbar/policy/BluetoothUtil;->getProfile(Landroid/bluetooth/BluetoothProfile;)Lcom/android/systemui/statusbar/policy/BluetoothUtil$Profile;
 
     move-result-object v1
 
+    .line 211
+    .local v1, "p":Lcom/android/systemui/statusbar/policy/BluetoothUtil$Profile;
     if-nez v1, :cond_2
 
+    .line 212
     const-string v2, "BluetoothController"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -115,10 +125,12 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 218
     :cond_1
     :goto_0
     return-void
 
+    .line 214
     :cond_2
     iget-boolean v2, p0, Lcom/android/systemui/statusbar/policy/BluetoothControllerImpl$1;->val$connect:Z
 
@@ -130,6 +142,8 @@
 
     move-result v0
 
+    .line 215
+    .local v0, "ok":Z
     :goto_1
     # getter for: Lcom/android/systemui/statusbar/policy/BluetoothControllerImpl;->DEBUG:Z
     invoke-static {}, Lcom/android/systemui/statusbar/policy/BluetoothControllerImpl;->access$100()Z
@@ -187,6 +201,8 @@
 
     goto :goto_0
 
+    .line 214
+    .end local v0    # "ok":Z
     :cond_3
     iget-object v2, p0, Lcom/android/systemui/statusbar/policy/BluetoothControllerImpl$1;->val$device:Landroid/bluetooth/BluetoothDevice;
 
@@ -196,6 +212,8 @@
 
     goto :goto_1
 
+    .line 215
+    .restart local v0    # "ok":Z
     :cond_4
     const-string v2, "failed"
 
@@ -204,7 +222,10 @@
 
 .method public onServiceDisconnected(I)V
     .locals 3
+    .param p1, "profile"    # I
 
+    .prologue
+    .line 222
     # getter for: Lcom/android/systemui/statusbar/policy/BluetoothControllerImpl;->DEBUG:Z
     invoke-static {}, Lcom/android/systemui/statusbar/policy/BluetoothControllerImpl;->access$100()Z
 
@@ -238,6 +259,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 223
     :cond_0
     return-void
 .end method

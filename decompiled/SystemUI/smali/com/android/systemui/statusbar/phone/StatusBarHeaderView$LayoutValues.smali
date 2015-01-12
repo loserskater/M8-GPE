@@ -54,8 +54,11 @@
 .method private constructor <init>()V
     .locals 1
 
+    .prologue
+    .line 646
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 652
     const/high16 v0, 0x3f800000
 
     iput v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$LayoutValues;->timeScale:F
@@ -65,7 +68,10 @@
 
 .method synthetic constructor <init>(Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$1;)V
     .locals 0
+    .param p1, "x0"    # Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$1;
 
+    .prologue
+    .line 646
     invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$LayoutValues;-><init>()V
 
     return-void
@@ -75,13 +81,18 @@
 # virtual methods
 .method public interpoloate(Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$LayoutValues;Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$LayoutValues;F)V
     .locals 8
+    .param p1, "v1"    # Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$LayoutValues;
+    .param p2, "v2"    # Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$LayoutValues;
+    .param p3, "t"    # F
 
+    .prologue
     const/high16 v7, 0x40000000
 
     const/4 v6, 0x0
 
     const/high16 v5, 0x3f800000
 
+    .line 667
     iget v3, p1, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$LayoutValues;->timeScale:F
 
     sub-float v4, v5, p3
@@ -96,6 +107,7 @@
 
     iput v3, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$LayoutValues;->timeScale:F
 
+    .line 668
     iget v3, p1, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$LayoutValues;->clockY:F
 
     sub-float v4, v5, p3
@@ -110,6 +122,7 @@
 
     iput v3, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$LayoutValues;->clockY:F
 
+    .line 669
     iget v3, p1, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$LayoutValues;->dateY:F
 
     sub-float v4, v5, p3
@@ -124,6 +137,7 @@
 
     iput v3, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$LayoutValues;->dateY:F
 
+    .line 670
     iget v3, p1, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$LayoutValues;->avatarScale:F
 
     sub-float v4, v5, p3
@@ -138,6 +152,7 @@
 
     iput v3, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$LayoutValues;->avatarScale:F
 
+    .line 671
     iget v3, p1, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$LayoutValues;->avatarX:F
 
     sub-float v4, v5, p3
@@ -152,6 +167,7 @@
 
     iput v3, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$LayoutValues;->avatarX:F
 
+    .line 672
     iget v3, p1, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$LayoutValues;->avatarY:F
 
     sub-float v4, v5, p3
@@ -166,6 +182,7 @@
 
     iput v3, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$LayoutValues;->avatarY:F
 
+    .line 673
     iget v3, p1, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$LayoutValues;->batteryX:F
 
     sub-float v4, v5, p3
@@ -180,6 +197,7 @@
 
     iput v3, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$LayoutValues;->batteryX:F
 
+    .line 674
     iget v3, p1, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$LayoutValues;->batteryY:F
 
     sub-float v4, v5, p3
@@ -194,6 +212,7 @@
 
     iput v3, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$LayoutValues;->batteryY:F
 
+    .line 675
     iget v3, p1, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$LayoutValues;->settingsTranslation:F
 
     sub-float v4, v5, p3
@@ -208,6 +227,7 @@
 
     iput v3, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$LayoutValues;->settingsTranslation:F
 
+    .line 677
     const/high16 v3, 0x3f000000
 
     sub-float v3, p3, v3
@@ -218,6 +238,8 @@
 
     mul-float v0, v3, v7
 
+    .line 678
+    .local v0, "t1":F
     iget v3, p1, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$LayoutValues;->settingsRotation:F
 
     sub-float v4, v5, v0
@@ -232,6 +254,7 @@
 
     iput v3, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$LayoutValues;->settingsRotation:F
 
+    .line 679
     iget v3, p1, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$LayoutValues;->emergencyCallsOnlyAlpha:F
 
     sub-float v4, v5, v0
@@ -246,12 +269,15 @@
 
     iput v3, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$LayoutValues;->emergencyCallsOnlyAlpha:F
 
+    .line 682
     mul-float v3, v7, p3
 
     invoke-static {v5, v3}, Ljava/lang/Math;->min(FF)F
 
     move-result v1
 
+    .line 683
+    .local v1, "t2":F
     iget v3, p1, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$LayoutValues;->signalClusterAlpha:F
 
     sub-float v4, v5, v1
@@ -266,6 +292,7 @@
 
     iput v3, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$LayoutValues;->signalClusterAlpha:F
 
+    .line 685
     const v3, 0x3f333333
 
     sub-float v3, p3, v3
@@ -278,6 +305,8 @@
 
     div-float v2, v3, v4
 
+    .line 686
+    .local v2, "t3":F
     iget v3, p1, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$LayoutValues;->batteryLevelAlpha:F
 
     sub-float v4, v5, v2
@@ -292,6 +321,7 @@
 
     iput v3, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$LayoutValues;->batteryLevelAlpha:F
 
+    .line 687
     iget v3, p1, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$LayoutValues;->settingsAlpha:F
 
     sub-float v4, v5, v2
@@ -306,6 +336,7 @@
 
     iput v3, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$LayoutValues;->settingsAlpha:F
 
+    .line 688
     iget v3, p1, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$LayoutValues;->dateExpandedAlpha:F
 
     sub-float v4, v5, v2
@@ -320,6 +351,7 @@
 
     iput v3, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$LayoutValues;->dateExpandedAlpha:F
 
+    .line 689
     iget v3, p1, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$LayoutValues;->dateCollapsedAlpha:F
 
     sub-float v4, v5, v2
@@ -334,6 +366,7 @@
 
     iput v3, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$LayoutValues;->dateCollapsedAlpha:F
 
+    .line 690
     iget v3, p1, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$LayoutValues;->alarmStatusAlpha:F
 
     sub-float v4, v5, v2
@@ -348,5 +381,6 @@
 
     iput v3, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$LayoutValues;->alarmStatusAlpha:F
 
+    .line 691
     return-void
 .end method

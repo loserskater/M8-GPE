@@ -29,6 +29,8 @@
 .method constructor <init>(Lcom/android/keyguard/KeyguardSimPinView$1;II)V
     .locals 0
 
+    .prologue
+    .line 192
     iput-object p1, p0, Lcom/android/keyguard/KeyguardSimPinView$1$1;->this$1:Lcom/android/keyguard/KeyguardSimPinView$1;
 
     iput p2, p0, Lcom/android/keyguard/KeyguardSimPinView$1$1;->val$result:I
@@ -45,8 +47,10 @@
 .method public run()V
     .locals 4
 
+    .prologue
     const/4 v3, 0x1
 
+    .line 194
     iget-object v0, p0, Lcom/android/keyguard/KeyguardSimPinView$1$1;->this$1:Lcom/android/keyguard/KeyguardSimPinView$1;
 
     iget-object v0, v0, Lcom/android/keyguard/KeyguardSimPinView$1;->this$0:Lcom/android/keyguard/KeyguardSimPinView;
@@ -58,6 +62,7 @@
 
     if-eqz v0, :cond_0
 
+    .line 195
     iget-object v0, p0, Lcom/android/keyguard/KeyguardSimPinView$1$1;->this$1:Lcom/android/keyguard/KeyguardSimPinView$1;
 
     iget-object v0, v0, Lcom/android/keyguard/KeyguardSimPinView$1;->this$0:Lcom/android/keyguard/KeyguardSimPinView;
@@ -69,11 +74,13 @@
 
     invoke-virtual {v0}, Landroid/app/ProgressDialog;->hide()V
 
+    .line 197
     :cond_0
     iget v0, p0, Lcom/android/keyguard/KeyguardSimPinView$1$1;->val$result:I
 
     if-nez v0, :cond_1
 
+    .line 198
     iget-object v0, p0, Lcom/android/keyguard/KeyguardSimPinView$1$1;->this$1:Lcom/android/keyguard/KeyguardSimPinView$1;
 
     iget-object v0, v0, Lcom/android/keyguard/KeyguardSimPinView$1;->this$0:Lcom/android/keyguard/KeyguardSimPinView;
@@ -88,6 +95,7 @@
 
     invoke-virtual {v0}, Lcom/android/keyguard/KeyguardUpdateMonitor;->reportSimUnlocked()V
 
+    .line 199
     iget-object v0, p0, Lcom/android/keyguard/KeyguardSimPinView$1$1;->this$1:Lcom/android/keyguard/KeyguardSimPinView$1;
 
     iget-object v0, v0, Lcom/android/keyguard/KeyguardSimPinView$1;->this$0:Lcom/android/keyguard/KeyguardSimPinView;
@@ -96,6 +104,7 @@
 
     invoke-interface {v0, v3}, Lcom/android/keyguard/KeyguardSecurityCallback;->dismiss(Z)V
 
+    .line 221
     :goto_0
     iget-object v0, p0, Lcom/android/keyguard/KeyguardSimPinView$1$1;->this$1:Lcom/android/keyguard/KeyguardSimPinView$1;
 
@@ -105,6 +114,7 @@
 
     invoke-interface {v0}, Lcom/android/keyguard/KeyguardSecurityCallback;->userActivity()V
 
+    .line 222
     iget-object v0, p0, Lcom/android/keyguard/KeyguardSimPinView$1$1;->this$1:Lcom/android/keyguard/KeyguardSimPinView$1;
 
     iget-object v0, v0, Lcom/android/keyguard/KeyguardSimPinView$1;->this$0:Lcom/android/keyguard/KeyguardSimPinView;
@@ -114,19 +124,23 @@
     # setter for: Lcom/android/keyguard/KeyguardSimPinView;->mCheckSimPinThread:Lcom/android/keyguard/KeyguardSimPinView$CheckSimPin;
     invoke-static {v0, v1}, Lcom/android/keyguard/KeyguardSimPinView;->access$302(Lcom/android/keyguard/KeyguardSimPinView;Lcom/android/keyguard/KeyguardSimPinView$CheckSimPin;)Lcom/android/keyguard/KeyguardSimPinView$CheckSimPin;
 
+    .line 223
     return-void
 
+    .line 201
     :cond_1
     iget v0, p0, Lcom/android/keyguard/KeyguardSimPinView$1$1;->val$result:I
 
     if-ne v0, v3, :cond_3
 
+    .line 202
     iget v0, p0, Lcom/android/keyguard/KeyguardSimPinView$1$1;->val$attemptsRemaining:I
 
     const/4 v1, 0x2
 
     if-gt v0, v1, :cond_2
 
+    .line 204
     iget-object v0, p0, Lcom/android/keyguard/KeyguardSimPinView$1$1;->this$1:Lcom/android/keyguard/KeyguardSimPinView$1;
 
     iget-object v0, v0, Lcom/android/keyguard/KeyguardSimPinView$1;->this$0:Lcom/android/keyguard/KeyguardSimPinView;
@@ -140,6 +154,7 @@
 
     invoke-virtual {v0}, Landroid/app/Dialog;->show()V
 
+    .line 219
     :goto_1
     iget-object v0, p0, Lcom/android/keyguard/KeyguardSimPinView$1$1;->this$1:Lcom/android/keyguard/KeyguardSimPinView$1;
 
@@ -149,6 +164,7 @@
 
     goto :goto_0
 
+    .line 207
     :cond_2
     iget-object v0, p0, Lcom/android/keyguard/KeyguardSimPinView$1$1;->this$1:Lcom/android/keyguard/KeyguardSimPinView$1;
 
@@ -171,6 +187,7 @@
 
     goto :goto_1
 
+    .line 213
     :cond_3
     iget-object v0, p0, Lcom/android/keyguard/KeyguardSimPinView$1$1;->this$1:Lcom/android/keyguard/KeyguardSimPinView$1;
 

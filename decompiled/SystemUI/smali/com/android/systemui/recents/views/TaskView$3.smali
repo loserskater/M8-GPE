@@ -25,6 +25,8 @@
 .method constructor <init>(Lcom/android/systemui/recents/views/TaskView;)V
     .locals 0
 
+    .prologue
+    .line 309
     iput-object p1, p0, Lcom/android/systemui/recents/views/TaskView$3;->this$0:Lcom/android/systemui/recents/views/TaskView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,7 +38,10 @@
 # virtual methods
 .method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 3
+    .param p1, "animation"    # Landroid/animation/ValueAnimator;
 
+    .prologue
+    .line 312
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object v1
@@ -47,6 +52,8 @@
 
     move-result v0
 
+    .line 313
+    .local v0, "y":I
     iget-object v1, p0, Lcom/android/systemui/recents/views/TaskView$3;->this$0:Lcom/android/systemui/recents/views/TaskView;
 
     iget-object v1, v1, Lcom/android/systemui/recents/views/TaskView;->mHeaderView:Lcom/android/systemui/recents/views/TaskViewHeader;
@@ -55,5 +62,6 @@
 
     invoke-virtual {v1, v2}, Lcom/android/systemui/recents/views/TaskViewHeader;->setTranslationY(F)V
 
+    .line 314
     return-void
 .end method

@@ -27,6 +27,8 @@
 .method constructor <init>(Lcom/android/systemui/qs/QSPanel;Landroid/content/Intent;)V
     .locals 0
 
+    .prologue
+    .line 347
     iput-object p1, p0, Lcom/android/systemui/qs/QSPanel$5;->this$0:Lcom/android/systemui/qs/QSPanel;
 
     iput-object p2, p0, Lcom/android/systemui/qs/QSPanel$5;->val$settingsIntent:Landroid/content/Intent;
@@ -40,7 +42,10 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 2
+    .param p1, "v"    # Landroid/view/View;
 
+    .prologue
+    .line 350
     iget-object v0, p0, Lcom/android/systemui/qs/QSPanel$5;->this$0:Lcom/android/systemui/qs/QSPanel;
 
     # getter for: Lcom/android/systemui/qs/QSPanel;->mHost:Lcom/android/systemui/statusbar/phone/QSTileHost;
@@ -52,5 +57,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/phone/QSTileHost;->startSettingsActivity(Landroid/content/Intent;)V
 
+    .line 351
     return-void
 .end method

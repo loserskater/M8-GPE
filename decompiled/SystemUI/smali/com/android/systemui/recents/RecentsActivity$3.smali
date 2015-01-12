@@ -25,6 +25,8 @@
 .method constructor <init>(Lcom/android/systemui/recents/RecentsActivity;)V
     .locals 0
 
+    .prologue
+    .line 176
     iput-object p1, p0, Lcom/android/systemui/recents/RecentsActivity$3;->this$0:Lcom/android/systemui/recents/RecentsActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,9 +39,12 @@
 .method public run()V
     .locals 1
 
+    .prologue
+    .line 179
     iget-object v0, p0, Lcom/android/systemui/recents/RecentsActivity$3;->this$0:Lcom/android/systemui/recents/RecentsActivity;
 
     invoke-virtual {v0}, Lcom/android/systemui/recents/RecentsActivity;->onDebugModeTriggered()V
 
+    .line 180
     return-void
 .end method

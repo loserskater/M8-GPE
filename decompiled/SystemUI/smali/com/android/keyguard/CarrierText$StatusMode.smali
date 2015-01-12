@@ -47,6 +47,7 @@
 .method static constructor <clinit>()V
     .locals 8
 
+    .prologue
     const/4 v7, 0x4
 
     const/4 v6, 0x3
@@ -57,6 +58,7 @@
 
     const/4 v3, 0x0
 
+    .line 68
     new-instance v0, Lcom/android/keyguard/CarrierText$StatusMode;
 
     const-string v1, "Normal"
@@ -65,6 +67,7 @@
 
     sput-object v0, Lcom/android/keyguard/CarrierText$StatusMode;->Normal:Lcom/android/keyguard/CarrierText$StatusMode;
 
+    .line 69
     new-instance v0, Lcom/android/keyguard/CarrierText$StatusMode;
 
     const-string v1, "NetworkLocked"
@@ -73,6 +76,7 @@
 
     sput-object v0, Lcom/android/keyguard/CarrierText$StatusMode;->NetworkLocked:Lcom/android/keyguard/CarrierText$StatusMode;
 
+    .line 70
     new-instance v0, Lcom/android/keyguard/CarrierText$StatusMode;
 
     const-string v1, "SimMissing"
@@ -81,6 +85,7 @@
 
     sput-object v0, Lcom/android/keyguard/CarrierText$StatusMode;->SimMissing:Lcom/android/keyguard/CarrierText$StatusMode;
 
+    .line 71
     new-instance v0, Lcom/android/keyguard/CarrierText$StatusMode;
 
     const-string v1, "SimMissingLocked"
@@ -89,6 +94,7 @@
 
     sput-object v0, Lcom/android/keyguard/CarrierText$StatusMode;->SimMissingLocked:Lcom/android/keyguard/CarrierText$StatusMode;
 
+    .line 72
     new-instance v0, Lcom/android/keyguard/CarrierText$StatusMode;
 
     const-string v1, "SimPukLocked"
@@ -97,6 +103,7 @@
 
     sput-object v0, Lcom/android/keyguard/CarrierText$StatusMode;->SimPukLocked:Lcom/android/keyguard/CarrierText$StatusMode;
 
+    .line 73
     new-instance v0, Lcom/android/keyguard/CarrierText$StatusMode;
 
     const-string v1, "SimLocked"
@@ -107,6 +114,7 @@
 
     sput-object v0, Lcom/android/keyguard/CarrierText$StatusMode;->SimLocked:Lcom/android/keyguard/CarrierText$StatusMode;
 
+    .line 74
     new-instance v0, Lcom/android/keyguard/CarrierText$StatusMode;
 
     const-string v1, "SimPermDisabled"
@@ -117,6 +125,7 @@
 
     sput-object v0, Lcom/android/keyguard/CarrierText$StatusMode;->SimPermDisabled:Lcom/android/keyguard/CarrierText$StatusMode;
 
+    .line 75
     new-instance v0, Lcom/android/keyguard/CarrierText$StatusMode;
 
     const-string v1, "SimNotReady"
@@ -127,6 +136,7 @@
 
     sput-object v0, Lcom/android/keyguard/CarrierText$StatusMode;->SimNotReady:Lcom/android/keyguard/CarrierText$StatusMode;
 
+    .line 67
     const/16 v0, 0x8
 
     new-array v0, v0, [Lcom/android/keyguard/CarrierText$StatusMode;
@@ -182,6 +192,8 @@
         }
     .end annotation
 
+    .prologue
+    .line 67
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -189,7 +201,10 @@
 
 .method public static valueOf(Ljava/lang/String;)Lcom/android/keyguard/CarrierText$StatusMode;
     .locals 1
+    .param p0, "name"    # Ljava/lang/String;
 
+    .prologue
+    .line 67
     const-class v0, Lcom/android/keyguard/CarrierText$StatusMode;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -204,6 +219,8 @@
 .method public static values()[Lcom/android/keyguard/CarrierText$StatusMode;
     .locals 1
 
+    .prologue
+    .line 67
     sget-object v0, Lcom/android/keyguard/CarrierText$StatusMode;->$VALUES:[Lcom/android/keyguard/CarrierText$StatusMode;
 
     invoke-virtual {v0}, [Lcom/android/keyguard/CarrierText$StatusMode;->clone()Ljava/lang/Object;
