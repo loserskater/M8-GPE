@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/systemui/statusbar/BaseStatusBar$7;)V
     .locals 0
 
-    .prologue
-    .line 753
     iput-object p1, p0, Lcom/android/systemui/statusbar/BaseStatusBar$7$1;->this$1:Lcom/android/systemui/statusbar/BaseStatusBar$7;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,8 +37,6 @@
 .method public run()V
     .locals 4
 
-    .prologue
-    .line 756
     :try_start_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/BaseStatusBar$7$1;->this$1:Lcom/android/systemui/statusbar/BaseStatusBar$7;
 
@@ -48,14 +44,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 757
     invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
 
     move-result-object v0
 
     invoke-interface {v0}, Landroid/app/IActivityManager;->keyguardWaitingForActivityDrawn()V
 
-    .line 760
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/BaseStatusBar$7$1;->this$1:Lcom/android/systemui/statusbar/BaseStatusBar$7;
 
@@ -91,7 +85,6 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/app/TaskStackBuilder;->startActivities(Landroid/os/Bundle;Landroid/os/UserHandle;)V
 
-    .line 764
     iget-object v0, p0, Lcom/android/systemui/statusbar/BaseStatusBar$7$1;->this$1:Lcom/android/systemui/statusbar/BaseStatusBar$7;
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/BaseStatusBar$7;->this$0:Lcom/android/systemui/statusbar/BaseStatusBar;
@@ -104,11 +97,9 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 767
     :goto_0
     return-void
 
-    .line 765
     :catch_0
     move-exception v0
 

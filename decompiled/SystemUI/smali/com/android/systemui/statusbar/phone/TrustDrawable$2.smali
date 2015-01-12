@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/systemui/statusbar/phone/TrustDrawable;)V
     .locals 0
 
-    .prologue
-    .line 269
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/TrustDrawable$2;->this$0:Lcom/android/systemui/statusbar/phone/TrustDrawable;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,10 +36,7 @@
 # virtual methods
 .method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 2
-    .param p1, "animation"    # Landroid/animation/ValueAnimator;
 
-    .prologue
-    .line 272
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/TrustDrawable$2;->this$0:Lcom/android/systemui/statusbar/phone/TrustDrawable;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
@@ -57,11 +52,9 @@
     # setter for: Lcom/android/systemui/statusbar/phone/TrustDrawable;->mCurInnerRadius:F
     invoke-static {v1, v0}, Lcom/android/systemui/statusbar/phone/TrustDrawable;->access$202(Lcom/android/systemui/statusbar/phone/TrustDrawable;F)F
 
-    .line 273
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/TrustDrawable$2;->this$0:Lcom/android/systemui/statusbar/phone/TrustDrawable;
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/TrustDrawable;->invalidateSelf()V
 
-    .line 274
     return-void
 .end method

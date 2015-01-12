@@ -22,8 +22,6 @@
 .method constructor <init>(Lcom/android/systemui/volume/ZenModePanel;)V
     .locals 0
 
-    .prologue
-    .line 596
     iput-object p1, p0, Lcom/android/systemui/volume/ZenModePanel$8;->this$0:Lcom/android/systemui/volume/ZenModePanel;
 
     invoke-direct {p0}, Lcom/android/systemui/statusbar/policy/ZenModeController$Callback;-><init>()V
@@ -35,10 +33,7 @@
 # virtual methods
 .method public onConditionsChanged([Landroid/service/notification/Condition;)V
     .locals 2
-    .param p1, "conditions"    # [Landroid/service/notification/Condition;
 
-    .prologue
-    .line 603
     iget-object v0, p0, Lcom/android/systemui/volume/ZenModePanel$8;->this$0:Lcom/android/systemui/volume/ZenModePanel;
 
     # getter for: Lcom/android/systemui/volume/ZenModePanel;->mHandler:Lcom/android/systemui/volume/ZenModePanel$H;
@@ -54,16 +49,12 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 604
     return-void
 .end method
 
 .method public onExitConditionChanged(Landroid/service/notification/Condition;)V
     .locals 2
-    .param p1, "exitCondition"    # Landroid/service/notification/Condition;
 
-    .prologue
-    .line 608
     iget-object v0, p0, Lcom/android/systemui/volume/ZenModePanel$8;->this$0:Lcom/android/systemui/volume/ZenModePanel;
 
     # getter for: Lcom/android/systemui/volume/ZenModePanel;->mHandler:Lcom/android/systemui/volume/ZenModePanel$H;
@@ -79,16 +70,12 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 609
     return-void
 .end method
 
 .method public onZenChanged(I)V
     .locals 3
-    .param p1, "zen"    # I
 
-    .prologue
-    .line 599
     iget-object v0, p0, Lcom/android/systemui/volume/ZenModePanel$8;->this$0:Lcom/android/systemui/volume/ZenModePanel;
 
     # getter for: Lcom/android/systemui/volume/ZenModePanel;->mHandler:Lcom/android/systemui/volume/ZenModePanel$H;
@@ -106,6 +93,5 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 600
     return-void
 .end method

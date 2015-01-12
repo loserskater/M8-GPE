@@ -27,8 +27,6 @@
 .method constructor <init>(Lcom/android/systemui/statusbar/StackScrollerDecorView;Ljava/lang/Runnable;)V
     .locals 0
 
-    .prologue
-    .line 93
     iput-object p1, p0, Lcom/android/systemui/statusbar/StackScrollerDecorView$1;->this$0:Lcom/android/systemui/statusbar/StackScrollerDecorView;
 
     iput-object p2, p0, Lcom/android/systemui/statusbar/StackScrollerDecorView$1;->val$onFinishedRunnable:Ljava/lang/Runnable;
@@ -43,8 +41,6 @@
 .method public run()V
     .locals 2
 
-    .prologue
-    .line 96
     iget-object v0, p0, Lcom/android/systemui/statusbar/StackScrollerDecorView$1;->this$0:Lcom/android/systemui/statusbar/StackScrollerDecorView;
 
     const/4 v1, 0x0
@@ -52,17 +48,14 @@
     # setter for: Lcom/android/systemui/statusbar/StackScrollerDecorView;->mAnimating:Z
     invoke-static {v0, v1}, Lcom/android/systemui/statusbar/StackScrollerDecorView;->access$002(Lcom/android/systemui/statusbar/StackScrollerDecorView;Z)Z
 
-    .line 97
     iget-object v0, p0, Lcom/android/systemui/statusbar/StackScrollerDecorView$1;->val$onFinishedRunnable:Ljava/lang/Runnable;
 
     if-eqz v0, :cond_0
 
-    .line 98
     iget-object v0, p0, Lcom/android/systemui/statusbar/StackScrollerDecorView$1;->val$onFinishedRunnable:Ljava/lang/Runnable;
 
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
-    .line 100
     :cond_0
     return-void
 .end method

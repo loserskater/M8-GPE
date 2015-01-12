@@ -22,8 +22,6 @@
 .method constructor <init>(Lcom/android/systemui/statusbar/policy/ZenModeControllerImpl;)V
     .locals 0
 
-    .prologue
-    .line 229
     iput-object p1, p0, Lcom/android/systemui/statusbar/policy/ZenModeControllerImpl$4;->this$0:Lcom/android/systemui/statusbar/policy/ZenModeControllerImpl;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,11 +33,7 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 2
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .prologue
-    .line 232
     const-string v0, "android.app.action.NEXT_ALARM_CLOCK_CHANGED"
 
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
@@ -52,13 +46,11 @@
 
     if-eqz v0, :cond_0
 
-    .line 233
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/ZenModeControllerImpl$4;->this$0:Lcom/android/systemui/statusbar/policy/ZenModeControllerImpl;
 
     # invokes: Lcom/android/systemui/statusbar/policy/ZenModeControllerImpl;->fireNextAlarmChanged()V
     invoke-static {v0}, Lcom/android/systemui/statusbar/policy/ZenModeControllerImpl;->access$500(Lcom/android/systemui/statusbar/policy/ZenModeControllerImpl;)V
 
-    .line 235
     :cond_0
     const-string v0, "android.os.action.ACTION_EFFECTS_SUPPRESSOR_CHANGED"
 
@@ -72,13 +64,11 @@
 
     if-eqz v0, :cond_1
 
-    .line 236
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/ZenModeControllerImpl$4;->this$0:Lcom/android/systemui/statusbar/policy/ZenModeControllerImpl;
 
     # invokes: Lcom/android/systemui/statusbar/policy/ZenModeControllerImpl;->fireEffectsSuppressorChanged()V
     invoke-static {v0}, Lcom/android/systemui/statusbar/policy/ZenModeControllerImpl;->access$600(Lcom/android/systemui/statusbar/policy/ZenModeControllerImpl;)V
 
-    .line 238
     :cond_1
     return-void
 .end method

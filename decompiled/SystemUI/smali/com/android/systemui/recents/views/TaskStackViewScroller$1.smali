@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/systemui/recents/views/TaskStackViewScroller;)V
     .locals 0
 
-    .prologue
-    .line 138
     iput-object p1, p0, Lcom/android/systemui/recents/views/TaskStackViewScroller$1;->this$0:Lcom/android/systemui/recents/views/TaskStackViewScroller;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,10 +36,7 @@
 # virtual methods
 .method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 2
-    .param p1, "animation"    # Landroid/animation/ValueAnimator;
 
-    .prologue
-    .line 141
     iget-object v1, p0, Lcom/android/systemui/recents/views/TaskStackViewScroller$1;->this$0:Lcom/android/systemui/recents/views/TaskStackViewScroller;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
@@ -56,6 +51,5 @@
 
     invoke-virtual {v1, v0}, Lcom/android/systemui/recents/views/TaskStackViewScroller;->setStackScroll(F)V
 
-    .line 142
     return-void
 .end method

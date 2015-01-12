@@ -27,8 +27,6 @@
 .method constructor <init>(Lcom/android/systemui/volume/ZenModePanel;Lcom/android/systemui/volume/ZenModePanel$ConditionTag;)V
     .locals 0
 
-    .prologue
-    .line 436
     iput-object p1, p0, Lcom/android/systemui/volume/ZenModePanel$4;->this$0:Lcom/android/systemui/volume/ZenModePanel;
 
     iput-object p2, p0, Lcom/android/systemui/volume/ZenModePanel$4;->val$tag:Lcom/android/systemui/volume/ZenModePanel$ConditionTag;
@@ -42,11 +40,7 @@
 # virtual methods
 .method public onCheckedChanged(Landroid/widget/CompoundButton;Z)V
     .locals 6
-    .param p1, "buttonView"    # Landroid/widget/CompoundButton;
-    .param p2, "isChecked"    # Z
 
-    .prologue
-    .line 439
     iget-object v3, p0, Lcom/android/systemui/volume/ZenModePanel$4;->this$0:Lcom/android/systemui/volume/ZenModePanel;
 
     # getter for: Lcom/android/systemui/volume/ZenModePanel;->mExpanded:Z
@@ -58,7 +52,6 @@
 
     if-eqz p2, :cond_3
 
-    .line 440
     # getter for: Lcom/android/systemui/volume/ZenModePanel;->DEBUG:Z
     invoke-static {}, Lcom/android/systemui/volume/ZenModePanel;->access$600()Z
 
@@ -97,7 +90,6 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 441
     :cond_0
     iget-object v3, p0, Lcom/android/systemui/volume/ZenModePanel$4;->this$0:Lcom/android/systemui/volume/ZenModePanel;
 
@@ -110,15 +102,11 @@
 
     move-result v0
 
-    .line 442
-    .local v0, "N":I
     const/4 v2, 0x0
 
-    .local v2, "i":I
     :goto_0
     if-ge v2, v0, :cond_2
 
-    .line 443
     iget-object v3, p0, Lcom/android/systemui/volume/ZenModePanel$4;->this$0:Lcom/android/systemui/volume/ZenModePanel;
 
     # invokes: Lcom/android/systemui/volume/ZenModePanel;->getConditionTagAt(I)Lcom/android/systemui/volume/ZenModePanel$ConditionTag;
@@ -126,19 +114,15 @@
 
     move-result-object v1
 
-    .line 444
-    .local v1, "childTag":Lcom/android/systemui/volume/ZenModePanel$ConditionTag;
     iget-object v3, p0, Lcom/android/systemui/volume/ZenModePanel$4;->val$tag:Lcom/android/systemui/volume/ZenModePanel$ConditionTag;
 
     if-ne v1, v3, :cond_1
 
-    .line 442
     :goto_1
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 445
     :cond_1
     iget-object v3, v1, Lcom/android/systemui/volume/ZenModePanel$ConditionTag;->rb:Landroid/widget/RadioButton;
 
@@ -148,8 +132,6 @@
 
     goto :goto_1
 
-    .line 447
-    .end local v1    # "childTag":Lcom/android/systemui/volume/ZenModePanel$ConditionTag;
     :cond_2
     iget-object v3, p0, Lcom/android/systemui/volume/ZenModePanel$4;->this$0:Lcom/android/systemui/volume/ZenModePanel;
 
@@ -160,7 +142,6 @@
     # invokes: Lcom/android/systemui/volume/ZenModePanel;->select(Landroid/service/notification/Condition;)V
     invoke-static {v3, v4}, Lcom/android/systemui/volume/ZenModePanel;->access$1000(Lcom/android/systemui/volume/ZenModePanel;Landroid/service/notification/Condition;)V
 
-    .line 448
     iget-object v3, p0, Lcom/android/systemui/volume/ZenModePanel$4;->this$0:Lcom/android/systemui/volume/ZenModePanel;
 
     iget-object v4, p0, Lcom/android/systemui/volume/ZenModePanel$4;->val$tag:Lcom/android/systemui/volume/ZenModePanel$ConditionTag;
@@ -168,9 +149,6 @@
     # invokes: Lcom/android/systemui/volume/ZenModePanel;->announceConditionSelection(Lcom/android/systemui/volume/ZenModePanel$ConditionTag;)V
     invoke-static {v3, v4}, Lcom/android/systemui/volume/ZenModePanel;->access$1100(Lcom/android/systemui/volume/ZenModePanel;Lcom/android/systemui/volume/ZenModePanel$ConditionTag;)V
 
-    .line 450
-    .end local v0    # "N":I
-    .end local v2    # "i":I
     :cond_3
     return-void
 .end method

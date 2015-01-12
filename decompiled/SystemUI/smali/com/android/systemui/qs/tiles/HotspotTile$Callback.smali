@@ -25,8 +25,6 @@
 .method private constructor <init>(Lcom/android/systemui/qs/tiles/HotspotTile;)V
     .locals 0
 
-    .prologue
-    .line 87
     iput-object p1, p0, Lcom/android/systemui/qs/tiles/HotspotTile$Callback;->this$0:Lcom/android/systemui/qs/tiles/HotspotTile;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,11 +34,7 @@
 
 .method synthetic constructor <init>(Lcom/android/systemui/qs/tiles/HotspotTile;Lcom/android/systemui/qs/tiles/HotspotTile$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/systemui/qs/tiles/HotspotTile;
-    .param p2, "x1"    # Lcom/android/systemui/qs/tiles/HotspotTile$1;
 
-    .prologue
-    .line 87
     invoke-direct {p0, p1}, Lcom/android/systemui/qs/tiles/HotspotTile$Callback;-><init>(Lcom/android/systemui/qs/tiles/HotspotTile;)V
 
     return-void
@@ -50,15 +44,11 @@
 # virtual methods
 .method public onHotspotChanged(Z)V
     .locals 1
-    .param p1, "enabled"    # Z
 
-    .prologue
-    .line 90
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/HotspotTile$Callback;->this$0:Lcom/android/systemui/qs/tiles/HotspotTile;
 
     # invokes: Lcom/android/systemui/qs/tiles/HotspotTile;->refreshState()V
     invoke-static {v0}, Lcom/android/systemui/qs/tiles/HotspotTile;->access$100(Lcom/android/systemui/qs/tiles/HotspotTile;)V
 
-    .line 91
     return-void
 .end method

@@ -22,8 +22,6 @@
 .method constructor <init>(Lcom/android/systemui/volume/VolumePanel;)V
     .locals 0
 
-    .prologue
-    .line 1430
     iput-object p1, p0, Lcom/android/systemui/volume/VolumePanel$9;->this$0:Lcom/android/systemui/volume/VolumePanel;
 
     invoke-direct {p0}, Lcom/android/systemui/statusbar/policy/ZenModeController$Callback;-><init>()V
@@ -36,8 +34,6 @@
 .method public onEffectsSupressorChanged()V
     .locals 3
 
-    .prologue
-    .line 1437
     iget-object v0, p0, Lcom/android/systemui/volume/VolumePanel$9;->this$0:Lcom/android/systemui/volume/VolumePanel;
 
     const/16 v1, 0xf
@@ -59,18 +55,14 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 1439
     return-void
 .end method
 
 .method public onZenAvailableChanged(Z)V
     .locals 4
-    .param p1, "available"    # Z
 
-    .prologue
     const/4 v1, 0x0
 
-    .line 1433
     iget-object v2, p0, Lcom/android/systemui/volume/VolumePanel$9;->this$0:Lcom/android/systemui/volume/VolumePanel;
 
     const/16 v3, 0xd
@@ -86,12 +78,10 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 1434
     return-void
 
     :cond_0
     move v0, v1
 
-    .line 1433
     goto :goto_0
 .end method

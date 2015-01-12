@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/systemui/volume/VolumePanel;)V
     .locals 0
 
-    .prologue
-    .line 378
     iput-object p1, p0, Lcom/android/systemui/volume/VolumePanel$2;->this$0:Lcom/android/systemui/volume/VolumePanel;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,10 +36,7 @@
 # virtual methods
 .method public onDismiss(Landroid/content/DialogInterface;)V
     .locals 2
-    .param p1, "dialog"    # Landroid/content/DialogInterface;
 
-    .prologue
-    .line 381
     iget-object v0, p0, Lcom/android/systemui/volume/VolumePanel$2;->this$0:Lcom/android/systemui/volume/VolumePanel;
 
     const/4 v1, -0x1
@@ -49,7 +44,6 @@
     # setter for: Lcom/android/systemui/volume/VolumePanel;->mActiveStreamType:I
     invoke-static {v0, v1}, Lcom/android/systemui/volume/VolumePanel;->access$502(Lcom/android/systemui/volume/VolumePanel;I)I
 
-    .line 382
     iget-object v0, p0, Lcom/android/systemui/volume/VolumePanel$2;->this$0:Lcom/android/systemui/volume/VolumePanel;
 
     # getter for: Lcom/android/systemui/volume/VolumePanel;->mAudioManager:Landroid/media/AudioManager;
@@ -66,7 +60,6 @@
 
     invoke-virtual {v0, v1}, Landroid/media/AudioManager;->forceVolumeControlStream(I)V
 
-    .line 383
     iget-object v0, p0, Lcom/android/systemui/volume/VolumePanel$2;->this$0:Lcom/android/systemui/volume/VolumePanel;
 
     const/4 v1, 0x0
@@ -74,6 +67,5 @@
     # invokes: Lcom/android/systemui/volume/VolumePanel;->setZenPanelVisible(Z)V
     invoke-static {v0, v1}, Lcom/android/systemui/volume/VolumePanel;->access$700(Lcom/android/systemui/volume/VolumePanel;Z)V
 
-    .line 384
     return-void
 .end method

@@ -25,8 +25,6 @@
 .method constructor <init>(Landroid/bluetooth/BluetoothPan;)V
     .locals 0
 
-    .prologue
-    .line 208
     iput-object p1, p0, Lcom/android/systemui/statusbar/policy/BluetoothUtil$7;->val$pan:Landroid/bluetooth/BluetoothPan;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,10 +36,7 @@
 # virtual methods
 .method public connect(Landroid/bluetooth/BluetoothDevice;)Z
     .locals 1
-    .param p1, "device"    # Landroid/bluetooth/BluetoothDevice;
 
-    .prologue
-    .line 211
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/BluetoothUtil$7;->val$pan:Landroid/bluetooth/BluetoothPan;
 
     invoke-virtual {v0, p1}, Landroid/bluetooth/BluetoothPan;->connect(Landroid/bluetooth/BluetoothDevice;)Z
@@ -53,10 +48,7 @@
 
 .method public disconnect(Landroid/bluetooth/BluetoothDevice;)Z
     .locals 1
-    .param p1, "device"    # Landroid/bluetooth/BluetoothDevice;
 
-    .prologue
-    .line 216
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/BluetoothUtil$7;->val$pan:Landroid/bluetooth/BluetoothPan;
 
     invoke-virtual {v0, p1}, Landroid/bluetooth/BluetoothPan;->disconnect(Landroid/bluetooth/BluetoothDevice;)Z

@@ -24,8 +24,6 @@
 .method constructor <init>(Lcom/android/systemui/statusbar/stack/StackStateAnimator;)V
     .locals 0
 
-    .prologue
-    .line 688
     iput-object p1, p0, Lcom/android/systemui/statusbar/stack/StackStateAnimator$10;->this$0:Lcom/android/systemui/statusbar/stack/StackStateAnimator;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -37,24 +35,17 @@
 # virtual methods
 .method public onAnimationCancel(Landroid/animation/Animator;)V
     .locals 1
-    .param p1, "animation"    # Landroid/animation/Animator;
 
-    .prologue
-    .line 702
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/systemui/statusbar/stack/StackStateAnimator$10;->mWasCancelled:Z
 
-    .line 703
     return-void
 .end method
 
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
-    .param p1, "animation"    # Landroid/animation/Animator;
 
-    .prologue
-    .line 693
     iget-object v0, p0, Lcom/android/systemui/statusbar/stack/StackStateAnimator$10;->this$0:Lcom/android/systemui/statusbar/stack/StackStateAnimator;
 
     # getter for: Lcom/android/systemui/statusbar/stack/StackStateAnimator;->mAnimatorSet:Ljava/util/Set;
@@ -64,7 +55,6 @@
 
     invoke-interface {v0, p1}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
 
-    .line 694
     iget-object v0, p0, Lcom/android/systemui/statusbar/stack/StackStateAnimator$10;->this$0:Lcom/android/systemui/statusbar/stack/StackStateAnimator;
 
     # getter for: Lcom/android/systemui/statusbar/stack/StackStateAnimator;->mAnimatorSet:Ljava/util/Set;
@@ -82,13 +72,11 @@
 
     if-nez v0, :cond_0
 
-    .line 695
     iget-object v0, p0, Lcom/android/systemui/statusbar/stack/StackStateAnimator$10;->this$0:Lcom/android/systemui/statusbar/stack/StackStateAnimator;
 
     # invokes: Lcom/android/systemui/statusbar/stack/StackStateAnimator;->onAnimationFinished()V
     invoke-static {v0}, Lcom/android/systemui/statusbar/stack/StackStateAnimator;->access$100(Lcom/android/systemui/statusbar/stack/StackStateAnimator;)V
 
-    .line 697
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/stack/StackStateAnimator$10;->this$0:Lcom/android/systemui/statusbar/stack/StackStateAnimator;
 
@@ -99,20 +87,15 @@
 
     invoke-virtual {v0, p0}, Ljava/util/Stack;->push(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 698
     return-void
 .end method
 
 .method public onAnimationStart(Landroid/animation/Animator;)V
     .locals 1
-    .param p1, "animation"    # Landroid/animation/Animator;
 
-    .prologue
-    .line 707
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/systemui/statusbar/stack/StackStateAnimator$10;->mWasCancelled:Z
 
-    .line 708
     return-void
 .end method

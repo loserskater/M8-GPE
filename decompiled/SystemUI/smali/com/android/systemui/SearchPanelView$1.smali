@@ -29,8 +29,6 @@
 .method constructor <init>(Lcom/android/systemui/SearchPanelView;Landroid/content/Intent;Landroid/app/ActivityOptions;)V
     .locals 0
 
-    .prologue
-    .line 97
     iput-object p1, p0, Lcom/android/systemui/SearchPanelView$1;->this$0:Lcom/android/systemui/SearchPanelView;
 
     iput-object p2, p0, Lcom/android/systemui/SearchPanelView$1;->val$intent:Landroid/content/Intent;
@@ -47,8 +45,6 @@
 .method public run()V
     .locals 5
 
-    .prologue
-    .line 100
     iget-object v0, p0, Lcom/android/systemui/SearchPanelView$1;->this$0:Lcom/android/systemui/SearchPanelView;
 
     # getter for: Lcom/android/systemui/SearchPanelView;->mContext:Landroid/content/Context;
@@ -72,6 +68,5 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/content/Context;->startActivityAsUser(Landroid/content/Intent;Landroid/os/Bundle;Landroid/os/UserHandle;)V
 
-    .line 102
     return-void
 .end method

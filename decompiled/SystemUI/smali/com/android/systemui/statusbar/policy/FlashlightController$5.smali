@@ -22,8 +22,6 @@
 .method constructor <init>(Lcom/android/systemui/statusbar/policy/FlashlightController;)V
     .locals 0
 
-    .prologue
-    .line 343
     iput-object p1, p0, Lcom/android/systemui/statusbar/policy/FlashlightController$5;->this$0:Lcom/android/systemui/statusbar/policy/FlashlightController;
 
     invoke-direct {p0}, Landroid/hardware/camera2/CameraManager$AvailabilityCallback;-><init>()V
@@ -33,15 +31,11 @@
 
 .method private setCameraAvailable(Z)V
     .locals 4
-    .param p1, "available"    # Z
 
-    .prologue
-    .line 362
     iget-object v2, p0, Lcom/android/systemui/statusbar/policy/FlashlightController$5;->this$0:Lcom/android/systemui/statusbar/policy/FlashlightController;
 
     monitor-enter v2
 
-    .line 363
     :try_start_0
     iget-object v1, p0, Lcom/android/systemui/statusbar/policy/FlashlightController$5;->this$0:Lcom/android/systemui/statusbar/policy/FlashlightController;
 
@@ -54,23 +48,18 @@
 
     const/4 v0, 0x1
 
-    .line 364
-    .local v0, "changed":Z
     :goto_0
     iget-object v1, p0, Lcom/android/systemui/statusbar/policy/FlashlightController$5;->this$0:Lcom/android/systemui/statusbar/policy/FlashlightController;
 
     # setter for: Lcom/android/systemui/statusbar/policy/FlashlightController;->mCameraAvailable:Z
     invoke-static {v1, p1}, Lcom/android/systemui/statusbar/policy/FlashlightController;->access$1002(Lcom/android/systemui/statusbar/policy/FlashlightController;Z)Z
 
-    .line 365
     monitor-exit v2
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 366
     if-eqz v0, :cond_1
 
-    .line 367
     # getter for: Lcom/android/systemui/statusbar/policy/FlashlightController;->DEBUG:Z
     invoke-static {}, Lcom/android/systemui/statusbar/policy/FlashlightController;->access$800()Z
 
@@ -106,25 +95,20 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 368
     :cond_0
     iget-object v1, p0, Lcom/android/systemui/statusbar/policy/FlashlightController$5;->this$0:Lcom/android/systemui/statusbar/policy/FlashlightController;
 
     # invokes: Lcom/android/systemui/statusbar/policy/FlashlightController;->dispatchAvailabilityChanged(Z)V
     invoke-static {v1, p1}, Lcom/android/systemui/statusbar/policy/FlashlightController;->access$1100(Lcom/android/systemui/statusbar/policy/FlashlightController;Z)V
 
-    .line 370
     :cond_1
     return-void
 
-    .line 363
-    .end local v0    # "changed":Z
     :cond_2
     const/4 v0, 0x0
 
     goto :goto_0
 
-    .line 365
     :catchall_0
     move-exception v1
 
@@ -140,10 +124,7 @@
 # virtual methods
 .method public onCameraAvailable(Ljava/lang/String;)V
     .locals 3
-    .param p1, "cameraId"    # Ljava/lang/String;
 
-    .prologue
-    .line 346
     # getter for: Lcom/android/systemui/statusbar/policy/FlashlightController;->DEBUG:Z
     invoke-static {}, Lcom/android/systemui/statusbar/policy/FlashlightController;->access$800()Z
 
@@ -179,7 +160,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 347
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/FlashlightController$5;->this$0:Lcom/android/systemui/statusbar/policy/FlashlightController;
 
@@ -194,22 +174,17 @@
 
     if-eqz v0, :cond_1
 
-    .line 348
     const/4 v0, 0x1
 
     invoke-direct {p0, v0}, Lcom/android/systemui/statusbar/policy/FlashlightController$5;->setCameraAvailable(Z)V
 
-    .line 350
     :cond_1
     return-void
 .end method
 
 .method public onCameraUnavailable(Ljava/lang/String;)V
     .locals 3
-    .param p1, "cameraId"    # Ljava/lang/String;
 
-    .prologue
-    .line 354
     # getter for: Lcom/android/systemui/statusbar/policy/FlashlightController;->DEBUG:Z
     invoke-static {}, Lcom/android/systemui/statusbar/policy/FlashlightController;->access$800()Z
 
@@ -245,7 +220,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 355
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/FlashlightController$5;->this$0:Lcom/android/systemui/statusbar/policy/FlashlightController;
 
@@ -260,12 +234,10 @@
 
     if-eqz v0, :cond_1
 
-    .line 356
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Lcom/android/systemui/statusbar/policy/FlashlightController$5;->setCameraAvailable(Z)V
 
-    .line 358
     :cond_1
     return-void
 .end method

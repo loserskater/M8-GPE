@@ -33,17 +33,11 @@
 # direct methods
 .method public constructor <init>(Lcom/android/systemui/doze/DozeService;IZZ)V
     .locals 1
-    .param p2, "type"    # I
-    .param p3, "configured"    # Z
-    .param p4, "debugVibrate"    # Z
 
-    .prologue
-    .line 432
     iput-object p1, p0, Lcom/android/systemui/doze/DozeService$TriggerSensor;->this$0:Lcom/android/systemui/doze/DozeService;
 
     invoke-direct {p0}, Landroid/hardware/TriggerEventListener;-><init>()V
 
-    .line 433
     # getter for: Lcom/android/systemui/doze/DozeService;->mSensors:Landroid/hardware/SensorManager;
     invoke-static {p1}, Lcom/android/systemui/doze/DozeService;->access$1700(Lcom/android/systemui/doze/DozeService;)Landroid/hardware/SensorManager;
 
@@ -55,21 +49,16 @@
 
     iput-object v0, p0, Lcom/android/systemui/doze/DozeService$TriggerSensor;->mSensor:Landroid/hardware/Sensor;
 
-    .line 434
     iput-boolean p3, p0, Lcom/android/systemui/doze/DozeService$TriggerSensor;->mConfigured:Z
 
-    .line 435
     iput-boolean p4, p0, Lcom/android/systemui/doze/DozeService$TriggerSensor;->mDebugVibrate:Z
 
-    .line 436
     return-void
 .end method
 
 .method private updateListener()V
     .locals 2
 
-    .prologue
-    .line 451
     iget-boolean v0, p0, Lcom/android/systemui/doze/DozeService$TriggerSensor;->mConfigured:Z
 
     if-eqz v0, :cond_0
@@ -78,12 +67,10 @@
 
     if-nez v0, :cond_1
 
-    .line 458
     :cond_0
     :goto_0
     return-void
 
-    .line 452
     :cond_1
     iget-boolean v0, p0, Lcom/android/systemui/doze/DozeService$TriggerSensor;->mRequested:Z
 
@@ -93,7 +80,6 @@
 
     if-nez v0, :cond_2
 
-    .line 453
     iget-object v0, p0, Lcom/android/systemui/doze/DozeService$TriggerSensor;->this$0:Lcom/android/systemui/doze/DozeService;
 
     # getter for: Lcom/android/systemui/doze/DozeService;->mSensors:Landroid/hardware/SensorManager;
@@ -111,13 +97,11 @@
 
     goto :goto_0
 
-    .line 454
     :cond_2
     iget-boolean v0, p0, Lcom/android/systemui/doze/DozeService$TriggerSensor;->mRegistered:Z
 
     if-eqz v0, :cond_0
 
-    .line 455
     iget-object v0, p0, Lcom/android/systemui/doze/DozeService$TriggerSensor;->this$0:Lcom/android/systemui/doze/DozeService;
 
     # getter for: Lcom/android/systemui/doze/DozeService;->mSensors:Landroid/hardware/SensorManager;
@@ -129,7 +113,6 @@
 
     invoke-virtual {v0, p0, v1}, Landroid/hardware/SensorManager;->cancelTriggerSensor(Landroid/hardware/TriggerEventListener;Landroid/hardware/Sensor;)Z
 
-    .line 456
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/systemui/doze/DozeService$TriggerSensor;->mRegistered:Z
@@ -141,12 +124,9 @@
 # virtual methods
 .method public onTrigger(Landroid/hardware/TriggerEvent;)V
     .locals 8
-    .param p1, "event"    # Landroid/hardware/TriggerEvent;
 
-    .prologue
     const/4 v3, 0x1
 
-    .line 472
     iget-object v4, p0, Lcom/android/systemui/doze/DozeService$TriggerSensor;->this$0:Lcom/android/systemui/doze/DozeService;
 
     # getter for: Lcom/android/systemui/doze/DozeService;->mWakeLock:Landroid/os/PowerManager$WakeLock;
@@ -156,7 +136,6 @@
 
     invoke-virtual {v4}, Landroid/os/PowerManager$WakeLock;->acquire()V
 
-    .line 474
     :try_start_0
     # getter for: Lcom/android/systemui/doze/DozeService;->DEBUG:Z
     invoke-static {}, Lcom/android/systemui/doze/DozeService;->access$700()Z
@@ -197,13 +176,11 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 475
     :cond_0
     iget-boolean v4, p0, Lcom/android/systemui/doze/DozeService$TriggerSensor;->mDebugVibrate:Z
 
     if-eqz v4, :cond_1
 
-    .line 476
     iget-object v4, p0, Lcom/android/systemui/doze/DozeService$TriggerSensor;->this$0:Lcom/android/systemui/doze/DozeService;
 
     # getter for: Lcom/android/systemui/doze/DozeService;->mContext:Landroid/content/Context;
@@ -219,11 +196,8 @@
 
     check-cast v2, Landroid/os/Vibrator;
 
-    .line 478
-    .local v2, "v":Landroid/os/Vibrator;
     if-eqz v2, :cond_1
 
-    .line 479
     const-wide/16 v4, 0x3e8
 
     new-instance v6, Landroid/media/AudioAttributes$Builder;
@@ -248,20 +222,16 @@
 
     invoke-virtual {v2, v4, v5, v6}, Landroid/os/Vibrator;->vibrate(JLandroid/media/AudioAttributes;)V
 
-    .line 485
-    .end local v2    # "v":Landroid/os/Vibrator;
     :cond_1
     iget-object v4, p0, Lcom/android/systemui/doze/DozeService$TriggerSensor;->this$0:Lcom/android/systemui/doze/DozeService;
 
     # invokes: Lcom/android/systemui/doze/DozeService;->requestPulse()V
     invoke-static {v4}, Lcom/android/systemui/doze/DozeService;->access$900(Lcom/android/systemui/doze/DozeService;)V
 
-    .line 486
     const/4 v4, 0x1
 
     invoke-virtual {p0, v4}, Lcom/android/systemui/doze/DozeService$TriggerSensor;->setListening(Z)V
 
-    .line 490
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v4
@@ -275,8 +245,6 @@
 
     sub-long v0, v4, v6
 
-    .line 492
-    .local v0, "timeSinceNotification":J
     iget-object v4, p0, Lcom/android/systemui/doze/DozeService$TriggerSensor;->this$0:Lcom/android/systemui/doze/DozeService;
 
     # getter for: Lcom/android/systemui/doze/DozeService;->mDozeParameters:Lcom/android/systemui/statusbar/phone/DozeParameters;
@@ -294,12 +262,9 @@
 
     if-gez v4, :cond_4
 
-    .line 494
-    .local v3, "withinVibrationThreshold":Z
     :goto_0
     if-eqz v3, :cond_5
 
-    .line 495
     # getter for: Lcom/android/systemui/doze/DozeService;->DEBUG:Z
     invoke-static {}, Lcom/android/systemui/doze/DozeService;->access$700()Z
 
@@ -318,7 +283,6 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 499
     :cond_2
     :goto_1
     iget-object v4, p0, Lcom/android/systemui/doze/DozeService$TriggerSensor;->mSensor:Landroid/hardware/Sensor;
@@ -331,12 +295,10 @@
 
     if-ne v4, v5, :cond_3
 
-    .line 500
     invoke-static {v3}, Lcom/android/systemui/doze/DozeLog;->tracePickupPulse(Z)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 503
     :cond_3
     iget-object v4, p0, Lcom/android/systemui/doze/DozeService$TriggerSensor;->this$0:Lcom/android/systemui/doze/DozeService;
 
@@ -347,18 +309,13 @@
 
     invoke-virtual {v4}, Landroid/os/PowerManager$WakeLock;->release()V
 
-    .line 505
     return-void
 
-    .line 492
-    .end local v3    # "withinVibrationThreshold":Z
     :cond_4
     const/4 v3, 0x0
 
     goto :goto_0
 
-    .line 497
-    .restart local v3    # "withinVibrationThreshold":Z
     :cond_5
     :try_start_1
     iget-object v4, p0, Lcom/android/systemui/doze/DozeService$TriggerSensor;->this$0:Lcom/android/systemui/doze/DozeService;
@@ -370,9 +327,6 @@
 
     goto :goto_1
 
-    .line 503
-    .end local v0    # "timeSinceNotification":J
-    .end local v3    # "withinVibrationThreshold":Z
     :catchall_0
     move-exception v4
 
@@ -390,23 +344,17 @@
 
 .method public setDisabled(Z)V
     .locals 1
-    .param p1, "disabled"    # Z
 
-    .prologue
-    .line 445
     iget-boolean v0, p0, Lcom/android/systemui/doze/DozeService$TriggerSensor;->mDisabled:Z
 
     if-ne v0, p1, :cond_0
 
-    .line 448
     :goto_0
     return-void
 
-    .line 446
     :cond_0
     iput-boolean p1, p0, Lcom/android/systemui/doze/DozeService$TriggerSensor;->mDisabled:Z
 
-    .line 447
     invoke-direct {p0}, Lcom/android/systemui/doze/DozeService$TriggerSensor;->updateListener()V
 
     goto :goto_0
@@ -414,23 +362,17 @@
 
 .method public setListening(Z)V
     .locals 1
-    .param p1, "listen"    # Z
 
-    .prologue
-    .line 439
     iget-boolean v0, p0, Lcom/android/systemui/doze/DozeService$TriggerSensor;->mRequested:Z
 
     if-ne v0, p1, :cond_0
 
-    .line 442
     :goto_0
     return-void
 
-    .line 440
     :cond_0
     iput-boolean p1, p0, Lcom/android/systemui/doze/DozeService$TriggerSensor;->mRequested:Z
 
-    .line 441
     invoke-direct {p0}, Lcom/android/systemui/doze/DozeService$TriggerSensor;->updateListener()V
 
     goto :goto_0
@@ -439,8 +381,6 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .prologue
-    .line 462
     new-instance v0, Ljava/lang/StringBuilder;
 
     const-string v1, "{mRegistered="

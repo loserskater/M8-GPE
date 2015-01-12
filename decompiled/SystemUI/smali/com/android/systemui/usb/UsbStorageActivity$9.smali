@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/systemui/usb/UsbStorageActivity;)V
     .locals 0
 
-    .prologue
-    .line 274
     iput-object p1, p0, Lcom/android/systemui/usb/UsbStorageActivity$9;->this$0:Lcom/android/systemui/usb/UsbStorageActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,13 +37,10 @@
 .method public run()V
     .locals 1
 
-    .prologue
-    .line 277
     iget-object v0, p0, Lcom/android/systemui/usb/UsbStorageActivity$9;->this$0:Lcom/android/systemui/usb/UsbStorageActivity;
 
     # invokes: Lcom/android/systemui/usb/UsbStorageActivity;->checkStorageUsersAsync()V
     invoke-static {v0}, Lcom/android/systemui/usb/UsbStorageActivity;->access$900(Lcom/android/systemui/usb/UsbStorageActivity;)V
 
-    .line 278
     return-void
 .end method

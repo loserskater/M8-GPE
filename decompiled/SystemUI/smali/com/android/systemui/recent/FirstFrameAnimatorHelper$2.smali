@@ -27,8 +27,6 @@
 .method constructor <init>(Lcom/android/systemui/recent/FirstFrameAnimatorHelper;Landroid/animation/ValueAnimator;)V
     .locals 0
 
-    .prologue
-    .line 114
     iput-object p1, p0, Lcom/android/systemui/recent/FirstFrameAnimatorHelper$2;->this$0:Lcom/android/systemui/recent/FirstFrameAnimatorHelper;
 
     iput-object p2, p0, Lcom/android/systemui/recent/FirstFrameAnimatorHelper$2;->val$animation:Landroid/animation/ValueAnimator;
@@ -43,14 +41,11 @@
 .method public run()V
     .locals 2
 
-    .prologue
-    .line 116
     iget-object v0, p0, Lcom/android/systemui/recent/FirstFrameAnimatorHelper$2;->val$animation:Landroid/animation/ValueAnimator;
 
     iget-object v1, p0, Lcom/android/systemui/recent/FirstFrameAnimatorHelper$2;->this$0:Lcom/android/systemui/recent/FirstFrameAnimatorHelper;
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->removeUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 117
     return-void
 .end method

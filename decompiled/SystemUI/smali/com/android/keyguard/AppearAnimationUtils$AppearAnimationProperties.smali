@@ -28,8 +28,6 @@
 .method public constructor <init>(Lcom/android/keyguard/AppearAnimationUtils;)V
     .locals 0
 
-    .prologue
-    .line 182
     iput-object p1, p0, Lcom/android/keyguard/AppearAnimationUtils$AppearAnimationProperties;->this$0:Lcom/android/keyguard/AppearAnimationUtils;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

@@ -21,16 +21,11 @@
 # direct methods
 .method public constructor <init>(Lcom/android/systemui/egg/LLand;Landroid/content/Context;)V
     .locals 2
-    .param p2, "context"    # Landroid/content/Context;
 
-    .prologue
-    .line 931
     iput-object p1, p0, Lcom/android/systemui/egg/LLand$Cloud;->this$0:Lcom/android/systemui/egg/LLand;
 
-    .line 932
     invoke-direct {p0, p1, p2}, Lcom/android/systemui/egg/LLand$Scenery;-><init>(Lcom/android/systemui/egg/LLand;Landroid/content/Context;)V
 
-    .line 933
     invoke-static {}, Lcom/android/systemui/egg/LLand;->frand()F
 
     move-result v0
@@ -46,7 +41,6 @@
     :goto_0
     invoke-virtual {p0, v0}, Lcom/android/systemui/egg/LLand$Cloud;->setBackgroundResource(I)V
 
-    .line 934
     invoke-virtual {p0}, Lcom/android/systemui/egg/LLand$Cloud;->getBackground()Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
@@ -55,7 +49,6 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
 
-    .line 935
     # getter for: Lcom/android/systemui/egg/LLand;->PARAMS:Lcom/android/systemui/egg/LLand$Params;
     invoke-static {}, Lcom/android/systemui/egg/LLand;->access$200()Lcom/android/systemui/egg/LLand$Params;
 
@@ -78,12 +71,10 @@
 
     iput v0, p0, Lcom/android/systemui/egg/LLand$Cloud;->w:I
 
-    .line 936
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/systemui/egg/LLand$Cloud;->z:F
 
-    .line 937
     const v0, 0x3e19999a
 
     const/high16 v1, 0x3f000000
@@ -94,10 +85,8 @@
 
     iput v0, p0, Lcom/android/systemui/egg/LLand$Cloud;->v:F
 
-    .line 938
     return-void
 
-    .line 933
     :cond_0
     const v0, 0x7f020007
 

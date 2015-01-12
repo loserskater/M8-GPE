@@ -34,8 +34,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .prologue
-    .line 369
     invoke-direct {p0}, Lcom/android/systemui/qs/QSTile$State;-><init>()V
 
     return-void
@@ -45,20 +43,15 @@
 # virtual methods
 .method public copyTo(Lcom/android/systemui/qs/QSTile$State;)Z
     .locals 6
-    .param p1, "other"    # Lcom/android/systemui/qs/QSTile$State;
 
-    .prologue
     const/4 v3, 0x1
 
     const/4 v2, 0x0
 
-    .line 380
     move-object v1, p1
 
     check-cast v1, Lcom/android/systemui/qs/QSTile$SignalState;
 
-    .line 381
-    .local v1, "o":Lcom/android/systemui/qs/QSTile$SignalState;
     iget-boolean v4, v1, Lcom/android/systemui/qs/QSTile$SignalState;->enabled:Z
 
     iget-boolean v5, p0, Lcom/android/systemui/qs/QSTile$SignalState;->enabled:Z
@@ -98,44 +91,35 @@
     :cond_0
     move v0, v3
 
-    .line 386
-    .local v0, "changed":Z
     :goto_0
     iget-boolean v4, p0, Lcom/android/systemui/qs/QSTile$SignalState;->enabled:Z
 
     iput-boolean v4, v1, Lcom/android/systemui/qs/QSTile$SignalState;->enabled:Z
 
-    .line 387
     iget-boolean v4, p0, Lcom/android/systemui/qs/QSTile$SignalState;->connected:Z
 
     iput-boolean v4, v1, Lcom/android/systemui/qs/QSTile$SignalState;->connected:Z
 
-    .line 388
     iget-boolean v4, p0, Lcom/android/systemui/qs/QSTile$SignalState;->activityIn:Z
 
     iput-boolean v4, v1, Lcom/android/systemui/qs/QSTile$SignalState;->activityIn:Z
 
-    .line 389
     iget-boolean v4, p0, Lcom/android/systemui/qs/QSTile$SignalState;->activityOut:Z
 
     iput-boolean v4, v1, Lcom/android/systemui/qs/QSTile$SignalState;->activityOut:Z
 
-    .line 390
     iget v4, p0, Lcom/android/systemui/qs/QSTile$SignalState;->overlayIconId:I
 
     iput v4, v1, Lcom/android/systemui/qs/QSTile$SignalState;->overlayIconId:I
 
-    .line 391
     iget-boolean v4, p0, Lcom/android/systemui/qs/QSTile$SignalState;->filter:Z
 
     iput-boolean v4, v1, Lcom/android/systemui/qs/QSTile$SignalState;->filter:Z
 
-    .line 392
     iget-boolean v4, p0, Lcom/android/systemui/qs/QSTile$SignalState;->isOverlayIconWide:Z
 
     iput-boolean v4, v1, Lcom/android/systemui/qs/QSTile$SignalState;->isOverlayIconWide:Z
 
-    .line 393
     invoke-super {p0, p1}, Lcom/android/systemui/qs/QSTile$State;->copyTo(Lcom/android/systemui/qs/QSTile$State;)Z
 
     move-result v4
@@ -150,25 +134,19 @@
     :cond_2
     return v2
 
-    .end local v0    # "changed":Z
     :cond_3
     move v0, v2
 
-    .line 381
     goto :goto_0
 .end method
 
 .method protected toStringBuilder()Ljava/lang/StringBuilder;
     .locals 4
 
-    .prologue
-    .line 398
     invoke-super {p0}, Lcom/android/systemui/qs/QSTile$State;->toStringBuilder()Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 399
-    .local v0, "rt":Ljava/lang/StringBuilder;
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->length()I
 
     move-result v1
@@ -197,7 +175,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->insert(ILjava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 400
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->length()I
 
     move-result v1
@@ -226,7 +203,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->insert(ILjava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 401
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->length()I
 
     move-result v1
@@ -255,7 +231,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->insert(ILjava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 402
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->length()I
 
     move-result v1
@@ -284,7 +259,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->insert(ILjava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 403
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->length()I
 
     move-result v1
@@ -313,7 +287,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->insert(ILjava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 404
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->length()I
 
     move-result v1
@@ -342,7 +315,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->insert(ILjava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 405
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->length()I
 
     move-result v1
@@ -371,6 +343,5 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->insert(ILjava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 406
     return-object v0
 .end method

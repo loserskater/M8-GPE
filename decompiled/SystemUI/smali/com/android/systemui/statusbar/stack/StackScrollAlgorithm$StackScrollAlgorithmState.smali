@@ -47,13 +47,10 @@
 .method constructor <init>(Lcom/android/systemui/statusbar/stack/StackScrollAlgorithm;)V
     .locals 1
 
-    .prologue
-    .line 826
     iput-object p1, p0, Lcom/android/systemui/statusbar/stack/StackScrollAlgorithm$StackScrollAlgorithmState;->this$0:Lcom/android/systemui/statusbar/stack/StackScrollAlgorithm;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 866
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V

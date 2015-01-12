@@ -24,8 +24,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .prologue
-    .line 26
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -35,12 +33,7 @@
 # virtual methods
 .method public dump(Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V
     .locals 0
-    .param p1, "fd"    # Ljava/io/FileDescriptor;
-    .param p2, "pw"    # Ljava/io/PrintWriter;
-    .param p3, "args"    # [Ljava/lang/String;
 
-    .prologue
-    .line 36
     return-void
 .end method
 
@@ -56,9 +49,6 @@
         }
     .end annotation
 
-    .prologue
-    .line 43
-    .local p1, "interfaceType":Ljava/lang/Class;, "Ljava/lang/Class<TT;>;"
     iget-object v0, p0, Lcom/android/systemui/SystemUI;->mComponents:Ljava/util/Map;
 
     if-eqz v0, :cond_0
@@ -81,17 +71,12 @@
 .method protected onBootCompleted()V
     .locals 0
 
-    .prologue
-    .line 39
     return-void
 .end method
 
 .method protected onConfigurationChanged(Landroid/content/res/Configuration;)V
     .locals 0
-    .param p1, "newConfig"    # Landroid/content/res/Configuration;
 
-    .prologue
-    .line 33
     return-void
 .end method
 
@@ -107,20 +92,14 @@
         }
     .end annotation
 
-    .prologue
-    .line 47
-    .local p1, "interfaceType":Ljava/lang/Class;, "Ljava/lang/Class<TT;>;"
-    .local p2, "component":Ljava/lang/Object;, "TC;"
     iget-object v0, p0, Lcom/android/systemui/SystemUI;->mComponents:Ljava/util/Map;
 
     if-eqz v0, :cond_0
 
-    .line 48
     iget-object v0, p0, Lcom/android/systemui/SystemUI;->mComponents:Ljava/util/Map;
 
     invoke-interface {v0, p1, p2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 50
     :cond_0
     return-void
 .end method

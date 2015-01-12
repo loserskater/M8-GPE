@@ -27,8 +27,6 @@
 .method constructor <init>(Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;Lcom/android/internal/policy/IKeyguardShowCallback;)V
     .locals 0
 
-    .prologue
-    .line 168
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager$1;->this$0:Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;
 
     iput-object p2, p0, Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager$1;->val$callback:Lcom/android/internal/policy/IKeyguardShowCallback;
@@ -43,8 +41,6 @@
 .method public run()V
     .locals 3
 
-    .prologue
-    .line 172
     :try_start_0
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager$1;->val$callback:Lcom/android/internal/policy/IKeyguardShowCallback;
 
@@ -63,16 +59,12 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 176
     :goto_0
     return-void
 
-    .line 173
     :catch_0
     move-exception v0
 
-    .line 174
-    .local v0, "e":Landroid/os/RemoteException;
     # getter for: Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;->TAG:Ljava/lang/String;
     invoke-static {}, Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;->access$100()Ljava/lang/String;
 

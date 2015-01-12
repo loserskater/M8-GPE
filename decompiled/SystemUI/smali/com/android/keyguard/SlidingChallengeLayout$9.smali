@@ -24,8 +24,6 @@
 .method constructor <init>(Lcom/android/keyguard/SlidingChallengeLayout;Z)V
     .locals 0
 
-    .prologue
-    .line 1061
     iput-object p1, p0, Lcom/android/keyguard/SlidingChallengeLayout$9;->this$0:Lcom/android/keyguard/SlidingChallengeLayout;
 
     iput-boolean p2, p0, Lcom/android/keyguard/SlidingChallengeLayout$9;->val$show:Z
@@ -39,10 +37,7 @@
 # virtual methods
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
-    .param p1, "animation"    # Landroid/animation/Animator;
 
-    .prologue
-    .line 1068
     iget-object v0, p0, Lcom/android/keyguard/SlidingChallengeLayout$9;->this$0:Lcom/android/keyguard/SlidingChallengeLayout;
 
     iget-boolean v1, p0, Lcom/android/keyguard/SlidingChallengeLayout$9;->val$show:Z
@@ -50,16 +45,12 @@
     # invokes: Lcom/android/keyguard/SlidingChallengeLayout;->onFadeEnd(Z)V
     invoke-static {v0, v1}, Lcom/android/keyguard/SlidingChallengeLayout;->access$200(Lcom/android/keyguard/SlidingChallengeLayout;Z)V
 
-    .line 1069
     return-void
 .end method
 
 .method public onAnimationStart(Landroid/animation/Animator;)V
     .locals 2
-    .param p1, "animation"    # Landroid/animation/Animator;
 
-    .prologue
-    .line 1064
     iget-object v0, p0, Lcom/android/keyguard/SlidingChallengeLayout$9;->this$0:Lcom/android/keyguard/SlidingChallengeLayout;
 
     iget-boolean v1, p0, Lcom/android/keyguard/SlidingChallengeLayout$9;->val$show:Z
@@ -67,6 +58,5 @@
     # invokes: Lcom/android/keyguard/SlidingChallengeLayout;->onFadeStart(Z)V
     invoke-static {v0, v1}, Lcom/android/keyguard/SlidingChallengeLayout;->access$100(Lcom/android/keyguard/SlidingChallengeLayout;Z)V
 
-    .line 1065
     return-void
 .end method

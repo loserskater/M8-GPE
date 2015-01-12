@@ -59,7 +59,6 @@
 .method static constructor <clinit>()V
     .locals 15
 
-    .prologue
     const/4 v14, 0x4
 
     const/4 v13, 0x3
@@ -70,7 +69,6 @@
 
     const/4 v2, 0x0
 
-    .line 171
     new-instance v0, Lcom/android/systemui/volume/VolumePanel$StreamResources;
 
     const-string v1, "BluetoothSCOStream"
@@ -89,7 +87,6 @@
 
     sput-object v0, Lcom/android/systemui/volume/VolumePanel$StreamResources;->BluetoothSCOStream:Lcom/android/systemui/volume/VolumePanel$StreamResources;
 
-    .line 176
     new-instance v3, Lcom/android/systemui/volume/VolumePanel$StreamResources;
 
     const-string v4, "RingerStream"
@@ -110,7 +107,6 @@
 
     sput-object v3, Lcom/android/systemui/volume/VolumePanel$StreamResources;->RingerStream:Lcom/android/systemui/volume/VolumePanel$StreamResources;
 
-    .line 181
     new-instance v3, Lcom/android/systemui/volume/VolumePanel$StreamResources;
 
     const-string v4, "VoiceStream"
@@ -131,7 +127,6 @@
 
     sput-object v3, Lcom/android/systemui/volume/VolumePanel$StreamResources;->VoiceStream:Lcom/android/systemui/volume/VolumePanel$StreamResources;
 
-    .line 186
     new-instance v3, Lcom/android/systemui/volume/VolumePanel$StreamResources;
 
     const-string v4, "AlarmStream"
@@ -152,7 +147,6 @@
 
     sput-object v3, Lcom/android/systemui/volume/VolumePanel$StreamResources;->AlarmStream:Lcom/android/systemui/volume/VolumePanel$StreamResources;
 
-    .line 191
     new-instance v3, Lcom/android/systemui/volume/VolumePanel$StreamResources;
 
     const-string v4, "MediaStream"
@@ -173,7 +167,6 @@
 
     sput-object v3, Lcom/android/systemui/volume/VolumePanel$StreamResources;->MediaStream:Lcom/android/systemui/volume/VolumePanel$StreamResources;
 
-    .line 196
     new-instance v3, Lcom/android/systemui/volume/VolumePanel$StreamResources;
 
     const-string v4, "NotificationStream"
@@ -194,7 +187,6 @@
 
     sput-object v3, Lcom/android/systemui/volume/VolumePanel$StreamResources;->NotificationStream:Lcom/android/systemui/volume/VolumePanel$StreamResources;
 
-    .line 202
     new-instance v3, Lcom/android/systemui/volume/VolumePanel$StreamResources;
 
     const-string v4, "MasterStream"
@@ -215,7 +207,6 @@
 
     sput-object v3, Lcom/android/systemui/volume/VolumePanel$StreamResources;->MasterStream:Lcom/android/systemui/volume/VolumePanel$StreamResources;
 
-    .line 207
     new-instance v3, Lcom/android/systemui/volume/VolumePanel$StreamResources;
 
     const-string v4, "RemoteStream"
@@ -236,7 +227,6 @@
 
     sput-object v3, Lcom/android/systemui/volume/VolumePanel$StreamResources;->RemoteStream:Lcom/android/systemui/volume/VolumePanel$StreamResources;
 
-    .line 170
     const/16 v0, 0x8
 
     new-array v0, v0, [Lcom/android/systemui/volume/VolumePanel$StreamResources;
@@ -286,46 +276,30 @@
 
 .method private constructor <init>(Ljava/lang/String;IIIIIZ)V
     .locals 0
-    .param p3, "streamType"    # I
-    .param p4, "descRes"    # I
-    .param p5, "iconRes"    # I
-    .param p6, "iconMuteRes"    # I
-    .param p7, "show"    # Z
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(IIIIZ)V"
         }
     .end annotation
 
-    .prologue
-    .line 220
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 221
     iput p3, p0, Lcom/android/systemui/volume/VolumePanel$StreamResources;->streamType:I
 
-    .line 222
     iput p4, p0, Lcom/android/systemui/volume/VolumePanel$StreamResources;->descRes:I
 
-    .line 223
     iput p5, p0, Lcom/android/systemui/volume/VolumePanel$StreamResources;->iconRes:I
 
-    .line 224
     iput p6, p0, Lcom/android/systemui/volume/VolumePanel$StreamResources;->iconMuteRes:I
 
-    .line 225
     iput-boolean p7, p0, Lcom/android/systemui/volume/VolumePanel$StreamResources;->show:Z
 
-    .line 226
     return-void
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Lcom/android/systemui/volume/VolumePanel$StreamResources;
     .locals 1
-    .param p0, "name"    # Ljava/lang/String;
 
-    .prologue
-    .line 170
     const-class v0, Lcom/android/systemui/volume/VolumePanel$StreamResources;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -340,8 +314,6 @@
 .method public static values()[Lcom/android/systemui/volume/VolumePanel$StreamResources;
     .locals 1
 
-    .prologue
-    .line 170
     sget-object v0, Lcom/android/systemui/volume/VolumePanel$StreamResources;->$VALUES:[Lcom/android/systemui/volume/VolumePanel$StreamResources;
 
     invoke-virtual {v0}, [Lcom/android/systemui/volume/VolumePanel$StreamResources;->clone()Ljava/lang/Object;

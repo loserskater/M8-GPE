@@ -22,8 +22,6 @@
 .method constructor <init>(Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;)V
     .locals 0
 
-    .prologue
-    .line 922
     iput-object p1, p0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$WifiHandler;->this$0:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -35,26 +33,20 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 2
-    .param p1, "msg"    # Landroid/os/Message;
 
-    .prologue
-    .line 925
     iget v0, p1, Landroid/os/Message;->what:I
 
     sparse-switch v0, :sswitch_data_0
 
-    .line 944
     :cond_0
     :goto_0
     return-void
 
-    .line 927
     :sswitch_0
     iget v0, p1, Landroid/os/Message;->arg1:I
 
     if-nez v0, :cond_1
 
-    .line 928
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$WifiHandler;->this$0:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;->mWifiChannel:Lcom/android/internal/util/AsyncChannel;
@@ -69,7 +61,6 @@
 
     goto :goto_0
 
-    .line 931
     :cond_1
     const-string v0, "StatusBar.NetworkController"
 
@@ -79,7 +70,6 @@
 
     goto :goto_0
 
-    .line 935
     :sswitch_1
     iget v0, p1, Landroid/os/Message;->arg1:I
 
@@ -89,21 +79,18 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 936
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$WifiHandler;->this$0:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;
 
     iget v1, p1, Landroid/os/Message;->arg1:I
 
     iput v1, v0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;->mWifiActivity:I
 
-    .line 937
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$WifiHandler;->this$0:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;->refreshViews()V
 
     goto :goto_0
 
-    .line 925
     nop
 
     :sswitch_data_0

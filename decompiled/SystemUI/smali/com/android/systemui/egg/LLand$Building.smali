@@ -21,16 +21,11 @@
 # direct methods
 .method public constructor <init>(Lcom/android/systemui/egg/LLand;Landroid/content/Context;)V
     .locals 2
-    .param p2, "context"    # Landroid/content/Context;
 
-    .prologue
-    .line 920
     iput-object p1, p0, Lcom/android/systemui/egg/LLand$Building;->this$0:Lcom/android/systemui/egg/LLand;
 
-    .line 921
     invoke-direct {p0, p1, p2}, Lcom/android/systemui/egg/LLand$Scenery;-><init>(Lcom/android/systemui/egg/LLand;Landroid/content/Context;)V
 
-    .line 923
     # getter for: Lcom/android/systemui/egg/LLand;->PARAMS:Lcom/android/systemui/egg/LLand$Params;
     invoke-static {}, Lcom/android/systemui/egg/LLand;->access$200()Lcom/android/systemui/egg/LLand$Params;
 
@@ -51,12 +46,10 @@
 
     iput v0, p0, Lcom/android/systemui/egg/LLand$Building;->w:I
 
-    .line 924
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/systemui/egg/LLand$Building;->h:I
 
-    .line 926
     # getter for: Lcom/android/systemui/egg/LLand;->PARAMS:Lcom/android/systemui/egg/LLand$Params;
     invoke-static {}, Lcom/android/systemui/egg/LLand;->access$200()Lcom/android/systemui/egg/LLand$Params;
 
@@ -66,6 +59,5 @@
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/egg/LLand$Building;->setTranslationZ(F)V
 
-    .line 927
     return-void
 .end method

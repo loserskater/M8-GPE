@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/keyguard/PagedView;)V
     .locals 0
 
-    .prologue
-    .line 2045
     iput-object p1, p0, Lcom/android/keyguard/PagedView$2;->this$0:Lcom/android/keyguard/PagedView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,14 +37,11 @@
 .method public run()V
     .locals 2
 
-    .prologue
-    .line 2048
     iget-object v0, p0, Lcom/android/keyguard/PagedView$2;->this$0:Lcom/android/keyguard/PagedView;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lcom/android/keyguard/PagedView;->hideScrollingIndicator(Z)V
 
-    .line 2049
     return-void
 .end method

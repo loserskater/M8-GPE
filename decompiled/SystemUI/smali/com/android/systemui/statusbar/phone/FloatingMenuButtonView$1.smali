@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/systemui/statusbar/phone/FloatingMenuButtonView;)V
     .locals 0
 
-    .prologue
-    .line 217
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/FloatingMenuButtonView$1;->this$0:Lcom/android/systemui/statusbar/phone/FloatingMenuButtonView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,14 +36,11 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 12
-    .param p1, "clickView"    # Landroid/view/View;
 
-    .prologue
     const/16 v1, 0x52
 
     const/4 v2, 0x0
 
-    .line 221
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/FloatingMenuButtonView$1;->this$0:Lcom/android/systemui/statusbar/phone/FloatingMenuButtonView;
 
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
@@ -64,7 +59,6 @@
     # invokes: Lcom/android/systemui/statusbar/phone/FloatingMenuButtonView;->sendEvent(IIIJJ)V
     invoke-static/range {v0 .. v7}, Lcom/android/systemui/statusbar/phone/FloatingMenuButtonView;->access$100(Lcom/android/systemui/statusbar/phone/FloatingMenuButtonView;IIIJJ)V
 
-    .line 222
     iget-object v4, p0, Lcom/android/systemui/statusbar/phone/FloatingMenuButtonView$1;->this$0:Lcom/android/systemui/statusbar/phone/FloatingMenuButtonView;
 
     const/4 v6, 0x1
@@ -87,13 +81,11 @@
     # invokes: Lcom/android/systemui/statusbar/phone/FloatingMenuButtonView;->sendEvent(IIIJJ)V
     invoke-static/range {v4 .. v11}, Lcom/android/systemui/statusbar/phone/FloatingMenuButtonView;->access$100(Lcom/android/systemui/statusbar/phone/FloatingMenuButtonView;IIIJJ)V
 
-    .line 224
     const-string v0, "FloatingMenu"
 
     const-string v1, "click.sendMenuEvent!"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 225
     return-void
 .end method

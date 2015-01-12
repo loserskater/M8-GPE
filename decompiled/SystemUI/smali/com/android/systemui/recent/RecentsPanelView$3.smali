@@ -27,8 +27,6 @@
 .method constructor <init>(Lcom/android/systemui/recent/RecentsPanelView;Landroid/view/View;)V
     .locals 0
 
-    .prologue
-    .line 783
     iput-object p1, p0, Lcom/android/systemui/recent/RecentsPanelView$3;->this$0:Lcom/android/systemui/recent/RecentsPanelView;
 
     iput-object p2, p0, Lcom/android/systemui/recent/RecentsPanelView$3;->val$thumbnailView:Landroid/view/View;
@@ -42,17 +40,13 @@
 # virtual methods
 .method public onDismiss(Landroid/widget/PopupMenu;)V
     .locals 2
-    .param p1, "menu"    # Landroid/widget/PopupMenu;
 
-    .prologue
-    .line 785
     iget-object v0, p0, Lcom/android/systemui/recent/RecentsPanelView$3;->val$thumbnailView:Landroid/view/View;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setSelected(Z)V
 
-    .line 786
     iget-object v0, p0, Lcom/android/systemui/recent/RecentsPanelView$3;->this$0:Lcom/android/systemui/recent/RecentsPanelView;
 
     const/4 v1, 0x0
@@ -60,6 +54,5 @@
     # setter for: Lcom/android/systemui/recent/RecentsPanelView;->mPopup:Landroid/widget/PopupMenu;
     invoke-static {v0, v1}, Lcom/android/systemui/recent/RecentsPanelView;->access$1102(Lcom/android/systemui/recent/RecentsPanelView;Landroid/widget/PopupMenu;)Landroid/widget/PopupMenu;
 
-    .line 787
     return-void
 .end method

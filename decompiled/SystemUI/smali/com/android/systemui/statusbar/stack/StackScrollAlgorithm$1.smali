@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/systemui/statusbar/stack/StackScrollAlgorithm;)V
     .locals 0
 
-    .prologue
-    .line 758
     iput-object p1, p0, Lcom/android/systemui/statusbar/stack/StackScrollAlgorithm$1;->this$0:Lcom/android/systemui/statusbar/stack/StackScrollAlgorithm;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,18 +36,7 @@
 # virtual methods
 .method public onLayoutChange(Landroid/view/View;IIIIIIII)V
     .locals 3
-    .param p1, "v"    # Landroid/view/View;
-    .param p2, "left"    # I
-    .param p3, "top"    # I
-    .param p4, "right"    # I
-    .param p5, "bottom"    # I
-    .param p6, "oldLeft"    # I
-    .param p7, "oldTop"    # I
-    .param p8, "oldRight"    # I
-    .param p9, "oldBottom"    # I
 
-    .prologue
-    .line 763
     iget-object v0, p0, Lcom/android/systemui/statusbar/stack/StackScrollAlgorithm$1;->this$0:Lcom/android/systemui/statusbar/stack/StackScrollAlgorithm;
 
     # getter for: Lcom/android/systemui/statusbar/stack/StackScrollAlgorithm;->mFirstChildWhileExpanding:Lcom/android/systemui/statusbar/ExpandableView;
@@ -59,7 +46,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 764
     iget-object v0, p0, Lcom/android/systemui/statusbar/stack/StackScrollAlgorithm$1;->this$0:Lcom/android/systemui/statusbar/stack/StackScrollAlgorithm;
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/stack/StackScrollAlgorithm$1;->this$0:Lcom/android/systemui/statusbar/stack/StackScrollAlgorithm;
@@ -79,14 +65,11 @@
     # setter for: Lcom/android/systemui/statusbar/stack/StackScrollAlgorithm;->mFirstChildMaxHeight:I
     invoke-static {v0, v1}, Lcom/android/systemui/statusbar/stack/StackScrollAlgorithm;->access$102(Lcom/android/systemui/statusbar/stack/StackScrollAlgorithm;I)I
 
-    .line 769
     :goto_0
     invoke-virtual {p1, p0}, Landroid/view/View;->removeOnLayoutChangeListener(Landroid/view/View$OnLayoutChangeListener;)V
 
-    .line 770
     return-void
 
-    .line 767
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/stack/StackScrollAlgorithm$1;->this$0:Lcom/android/systemui/statusbar/stack/StackScrollAlgorithm;
 

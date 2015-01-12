@@ -30,8 +30,6 @@
 .method constructor <init>(Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;Ljava/lang/Runnable;Lcom/android/systemui/statusbar/KeyguardAffordanceView;Z)V
     .locals 0
 
-    .prologue
-    .line 210
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper$3;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;
 
     iput-object p2, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper$3;->val$onFinishedListener:Ljava/lang/Runnable;
@@ -49,29 +47,21 @@
 # virtual methods
 .method public onAnimationCancel(Landroid/animation/Animator;)V
     .locals 1
-    .param p1, "animation"    # Landroid/animation/Animator;
 
-    .prologue
-    .line 215
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper$3;->mCancelled:Z
 
-    .line 216
     return-void
 .end method
 
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 3
-    .param p1, "animation"    # Landroid/animation/Animator;
 
-    .prologue
-    .line 220
     iget-boolean v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper$3;->mCancelled:Z
 
     if-eqz v0, :cond_0
 
-    .line 221
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper$3;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;
 
     const/4 v1, 0x0
@@ -79,23 +69,19 @@
     # setter for: Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->mSwipeAnimator:Landroid/animation/Animator;
     invoke-static {v0, v1}, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->access$002(Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;Landroid/animation/Animator;)Landroid/animation/Animator;
 
-    .line 222
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper$3;->val$onFinishedListener:Ljava/lang/Runnable;
 
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
-    .line 223
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper$3;->val$targetView:Lcom/android/systemui/statusbar/KeyguardAffordanceView;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->showArrow(Z)V
 
-    .line 227
     :goto_0
     return-void
 
-    .line 225
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper$3;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;
 

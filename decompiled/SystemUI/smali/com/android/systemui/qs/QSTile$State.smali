@@ -34,11 +34,8 @@
 .method public constructor <init>()V
     .locals 1
 
-    .prologue
-    .line 302
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 309
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/systemui/qs/QSTile$State;->autoMirrorDrawable:Z
@@ -50,10 +47,7 @@
 # virtual methods
 .method public copyTo(Lcom/android/systemui/qs/QSTile$State;)Z
     .locals 3
-    .param p1, "other"    # Lcom/android/systemui/qs/QSTile$State;
 
-    .prologue
-    .line 312
     if-nez p1, :cond_0
 
     new-instance v1, Ljava/lang/IllegalArgumentException;
@@ -62,7 +56,6 @@
 
     throw v1
 
-    .line 313
     :cond_0
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
@@ -84,7 +77,6 @@
 
     throw v1
 
-    .line 314
     :cond_1
     iget-boolean v1, p1, Lcom/android/systemui/qs/QSTile$State;->visible:Z
 
@@ -159,48 +151,37 @@
     :cond_2
     const/4 v0, 0x1
 
-    .line 322
-    .local v0, "changed":Z
     :goto_0
     iget-boolean v1, p0, Lcom/android/systemui/qs/QSTile$State;->visible:Z
 
     iput-boolean v1, p1, Lcom/android/systemui/qs/QSTile$State;->visible:Z
 
-    .line 323
     iget v1, p0, Lcom/android/systemui/qs/QSTile$State;->iconId:I
 
     iput v1, p1, Lcom/android/systemui/qs/QSTile$State;->iconId:I
 
-    .line 324
     iget-object v1, p0, Lcom/android/systemui/qs/QSTile$State;->icon:Landroid/graphics/drawable/Drawable;
 
     iput-object v1, p1, Lcom/android/systemui/qs/QSTile$State;->icon:Landroid/graphics/drawable/Drawable;
 
-    .line 325
     iget-object v1, p0, Lcom/android/systemui/qs/QSTile$State;->label:Ljava/lang/String;
 
     iput-object v1, p1, Lcom/android/systemui/qs/QSTile$State;->label:Ljava/lang/String;
 
-    .line 326
     iget-object v1, p0, Lcom/android/systemui/qs/QSTile$State;->contentDescription:Ljava/lang/String;
 
     iput-object v1, p1, Lcom/android/systemui/qs/QSTile$State;->contentDescription:Ljava/lang/String;
 
-    .line 327
     iget-object v1, p0, Lcom/android/systemui/qs/QSTile$State;->dualLabelContentDescription:Ljava/lang/String;
 
     iput-object v1, p1, Lcom/android/systemui/qs/QSTile$State;->dualLabelContentDescription:Ljava/lang/String;
 
-    .line 328
     iget-boolean v1, p0, Lcom/android/systemui/qs/QSTile$State;->autoMirrorDrawable:Z
 
     iput-boolean v1, p1, Lcom/android/systemui/qs/QSTile$State;->autoMirrorDrawable:Z
 
-    .line 329
     return v0
 
-    .line 314
-    .end local v0    # "changed":Z
     :cond_3
     const/4 v0, 0x0
 
@@ -210,8 +191,6 @@
 .method public toString()Ljava/lang/String;
     .locals 1
 
-    .prologue
-    .line 334
     invoke-virtual {p0}, Lcom/android/systemui/qs/QSTile$State;->toStringBuilder()Ljava/lang/StringBuilder;
 
     move-result-object v0
@@ -226,8 +205,6 @@
 .method protected toStringBuilder()Ljava/lang/StringBuilder;
     .locals 3
 
-    .prologue
-    .line 338
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -246,8 +223,6 @@
 
     move-result-object v0
 
-    .line 339
-    .local v0, "sb":Ljava/lang/StringBuilder;
     const-string v1, "visible="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -258,7 +233,6 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    .line 340
     const-string v1, ",iconId="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -269,7 +243,6 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 341
     const-string v1, ",icon="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -280,7 +253,6 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    .line 342
     const-string v1, ",label="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -291,7 +263,6 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 343
     const-string v1, ",contentDescription="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -302,7 +273,6 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 344
     const-string v1, ",dualLabelContentDescription="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -313,7 +283,6 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 345
     const-string v1, ",autoMirrorDrawable="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -324,7 +293,6 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    .line 346
     const/16 v1, 0x5d
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;

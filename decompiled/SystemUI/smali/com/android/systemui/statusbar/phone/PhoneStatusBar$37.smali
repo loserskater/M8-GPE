@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/systemui/statusbar/phone/PhoneStatusBar;)V
     .locals 0
 
-    .prologue
-    .line 3130
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$37;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,8 +37,6 @@
 .method public run()V
     .locals 1
 
-    .prologue
-    .line 3133
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$37;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     # getter for: Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mStatusBarKeyguardViewManager:Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;
@@ -50,6 +46,5 @@
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;->dismiss()V
 
-    .line 3134
     return-void
 .end method

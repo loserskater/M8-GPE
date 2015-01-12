@@ -22,8 +22,6 @@
 .method private constructor <init>(Lcom/android/systemui/power/PowerNotificationWarnings;)V
     .locals 0
 
-    .prologue
-    .line 366
     iput-object p1, p0, Lcom/android/systemui/power/PowerNotificationWarnings$Receiver;->this$0:Lcom/android/systemui/power/PowerNotificationWarnings;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -33,11 +31,7 @@
 
 .method synthetic constructor <init>(Lcom/android/systemui/power/PowerNotificationWarnings;Lcom/android/systemui/power/PowerNotificationWarnings$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/systemui/power/PowerNotificationWarnings;
-    .param p2, "x1"    # Lcom/android/systemui/power/PowerNotificationWarnings$1;
 
-    .prologue
-    .line 366
     invoke-direct {p0, p1}, Lcom/android/systemui/power/PowerNotificationWarnings$Receiver;-><init>(Lcom/android/systemui/power/PowerNotificationWarnings;)V
 
     return-void
@@ -48,29 +42,22 @@
 .method public init()V
     .locals 4
 
-    .prologue
-    .line 369
     new-instance v0, Landroid/content/IntentFilter;
 
     invoke-direct {v0}, Landroid/content/IntentFilter;-><init>()V
 
-    .line 370
-    .local v0, "filter":Landroid/content/IntentFilter;
     const-string v1, "PNW.batterySettings"
 
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 371
     const-string v1, "PNW.startSaver"
 
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 372
     const-string v1, "PNW.stopSaver"
 
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 373
     iget-object v1, p0, Lcom/android/systemui/power/PowerNotificationWarnings$Receiver;->this$0:Lcom/android/systemui/power/PowerNotificationWarnings;
 
     # getter for: Lcom/android/systemui/power/PowerNotificationWarnings;->mContext:Landroid/content/Context;
@@ -89,23 +76,16 @@
 
     invoke-virtual {v1, p0, v0, v2, v3}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;Ljava/lang/String;Landroid/os/Handler;)Landroid/content/Intent;
 
-    .line 374
     return-void
 .end method
 
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 4
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .prologue
-    .line 378
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 379
-    .local v0, "action":Ljava/lang/String;
     const-string v1, "PowerUI.Notification"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -128,7 +108,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 380
     const-string v1, "PNW.batterySettings"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -137,13 +116,11 @@
 
     if-eqz v1, :cond_1
 
-    .line 381
     iget-object v1, p0, Lcom/android/systemui/power/PowerNotificationWarnings$Receiver;->this$0:Lcom/android/systemui/power/PowerNotificationWarnings;
 
     # invokes: Lcom/android/systemui/power/PowerNotificationWarnings;->dismissLowBatteryNotification()V
     invoke-static {v1}, Lcom/android/systemui/power/PowerNotificationWarnings;->access$400(Lcom/android/systemui/power/PowerNotificationWarnings;)V
 
-    .line 382
     iget-object v1, p0, Lcom/android/systemui/power/PowerNotificationWarnings$Receiver;->this$0:Lcom/android/systemui/power/PowerNotificationWarnings;
 
     # getter for: Lcom/android/systemui/power/PowerNotificationWarnings;->mContext:Landroid/content/Context;
@@ -162,12 +139,10 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/content/Context;->startActivityAsUser(Landroid/content/Intent;Landroid/os/UserHandle;)V
 
-    .line 391
     :cond_0
     :goto_0
     return-void
 
-    .line 383
     :cond_1
     const-string v1, "PNW.startSaver"
 
@@ -177,13 +152,11 @@
 
     if-eqz v1, :cond_2
 
-    .line 384
     iget-object v1, p0, Lcom/android/systemui/power/PowerNotificationWarnings$Receiver;->this$0:Lcom/android/systemui/power/PowerNotificationWarnings;
 
     # invokes: Lcom/android/systemui/power/PowerNotificationWarnings;->dismissLowBatteryNotification()V
     invoke-static {v1}, Lcom/android/systemui/power/PowerNotificationWarnings;->access$400(Lcom/android/systemui/power/PowerNotificationWarnings;)V
 
-    .line 385
     iget-object v1, p0, Lcom/android/systemui/power/PowerNotificationWarnings$Receiver;->this$0:Lcom/android/systemui/power/PowerNotificationWarnings;
 
     # invokes: Lcom/android/systemui/power/PowerNotificationWarnings;->showStartSaverConfirmation()V
@@ -191,7 +164,6 @@
 
     goto :goto_0
 
-    .line 386
     :cond_2
     const-string v1, "PNW.stopSaver"
 
@@ -201,19 +173,16 @@
 
     if-eqz v1, :cond_0
 
-    .line 387
     iget-object v1, p0, Lcom/android/systemui/power/PowerNotificationWarnings$Receiver;->this$0:Lcom/android/systemui/power/PowerNotificationWarnings;
 
     # invokes: Lcom/android/systemui/power/PowerNotificationWarnings;->dismissSaverNotification()V
     invoke-static {v1}, Lcom/android/systemui/power/PowerNotificationWarnings;->access$700(Lcom/android/systemui/power/PowerNotificationWarnings;)V
 
-    .line 388
     iget-object v1, p0, Lcom/android/systemui/power/PowerNotificationWarnings$Receiver;->this$0:Lcom/android/systemui/power/PowerNotificationWarnings;
 
     # invokes: Lcom/android/systemui/power/PowerNotificationWarnings;->dismissLowBatteryNotification()V
     invoke-static {v1}, Lcom/android/systemui/power/PowerNotificationWarnings;->access$400(Lcom/android/systemui/power/PowerNotificationWarnings;)V
 
-    .line 389
     iget-object v1, p0, Lcom/android/systemui/power/PowerNotificationWarnings$Receiver;->this$0:Lcom/android/systemui/power/PowerNotificationWarnings;
 
     const/4 v2, 0x0

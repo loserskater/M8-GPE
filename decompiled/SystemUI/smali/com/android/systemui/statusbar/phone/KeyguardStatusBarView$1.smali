@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;)V
     .locals 0
 
-    .prologue
-    .line 143
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView$1;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,11 +36,7 @@
 # virtual methods
 .method public onUserInfoChanged(Ljava/lang/String;Landroid/graphics/drawable/Drawable;)V
     .locals 1
-    .param p1, "name"    # Ljava/lang/String;
-    .param p2, "picture"    # Landroid/graphics/drawable/Drawable;
 
-    .prologue
-    .line 146
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView$1;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;
 
     # getter for: Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->mMultiUserAvatar:Landroid/widget/ImageView;
@@ -52,6 +46,5 @@
 
     invoke-virtual {v0, p2}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 147
     return-void
 .end method

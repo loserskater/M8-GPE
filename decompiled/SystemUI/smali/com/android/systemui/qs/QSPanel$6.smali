@@ -22,8 +22,6 @@
 .method constructor <init>(Lcom/android/systemui/qs/QSPanel;)V
     .locals 0
 
-    .prologue
-    .line 529
     iput-object p1, p0, Lcom/android/systemui/qs/QSPanel$6;->this$0:Lcom/android/systemui/qs/QSPanel;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,10 +33,7 @@
 # virtual methods
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
-    .param p1, "animation"    # Landroid/animation/Animator;
 
-    .prologue
-    .line 531
     iget-object v0, p0, Lcom/android/systemui/qs/QSPanel$6;->this$0:Lcom/android/systemui/qs/QSPanel;
 
     # getter for: Lcom/android/systemui/qs/QSPanel;->mDetailContent:Landroid/view/ViewGroup;
@@ -48,7 +43,6 @@
 
     invoke-virtual {v0}, Landroid/view/ViewGroup;->removeAllViews()V
 
-    .line 532
     iget-object v0, p0, Lcom/android/systemui/qs/QSPanel$6;->this$0:Lcom/android/systemui/qs/QSPanel;
 
     const/4 v1, 0x0
@@ -56,6 +50,5 @@
     # invokes: Lcom/android/systemui/qs/QSPanel;->setDetailRecord(Lcom/android/systemui/qs/QSPanel$Record;)V
     invoke-static {v0, v1}, Lcom/android/systemui/qs/QSPanel;->access$1300(Lcom/android/systemui/qs/QSPanel;Lcom/android/systemui/qs/QSPanel$Record;)V
 
-    .line 533
     return-void
 .end method

@@ -25,16 +25,11 @@
 # direct methods
 .method public constructor <init>(Lcom/android/systemui/statusbar/policy/ZenModeControllerImpl;Landroid/os/Handler;)V
     .locals 1
-    .param p2, "handler"    # Landroid/os/Handler;
 
-    .prologue
-    .line 246
     iput-object p1, p0, Lcom/android/systemui/statusbar/policy/ZenModeControllerImpl$SetupObserver;->this$0:Lcom/android/systemui/statusbar/policy/ZenModeControllerImpl;
 
-    .line 247
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
 
-    .line 248
     # getter for: Lcom/android/systemui/statusbar/policy/ZenModeControllerImpl;->mContext:Landroid/content/Context;
     invoke-static {p1}, Lcom/android/systemui/statusbar/policy/ZenModeControllerImpl;->access$700(Lcom/android/systemui/statusbar/policy/ZenModeControllerImpl;)Landroid/content/Context;
 
@@ -46,7 +41,6 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/policy/ZenModeControllerImpl$SetupObserver;->mResolver:Landroid/content/ContentResolver;
 
-    .line 249
     return-void
 .end method
 
@@ -55,10 +49,8 @@
 .method public isDeviceProvisioned()Z
     .locals 3
 
-    .prologue
     const/4 v0, 0x0
 
-    .line 256
     iget-object v1, p0, Lcom/android/systemui/statusbar/policy/ZenModeControllerImpl$SetupObserver;->mResolver:Landroid/content/ContentResolver;
 
     const-string v2, "device_provisioned"
@@ -78,10 +70,8 @@
 .method public isUserSetup()Z
     .locals 4
 
-    .prologue
     const/4 v0, 0x0
 
-    .line 252
     iget-object v1, p0, Lcom/android/systemui/statusbar/policy/ZenModeControllerImpl$SetupObserver;->mResolver:Landroid/content/ContentResolver;
 
     const-string v2, "user_setup_complete"
@@ -107,11 +97,7 @@
 
 .method public onChange(ZLandroid/net/Uri;)V
     .locals 2
-    .param p1, "selfChange"    # Z
-    .param p2, "uri"    # Landroid/net/Uri;
 
-    .prologue
-    .line 272
     const-string v0, "device_provisioned"
 
     invoke-static {v0}, Landroid/provider/Settings$Global;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
@@ -136,7 +122,6 @@
 
     if-eqz v0, :cond_1
 
-    .line 274
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/ZenModeControllerImpl$SetupObserver;->this$0:Lcom/android/systemui/statusbar/policy/ZenModeControllerImpl;
 
@@ -149,7 +134,6 @@
     # invokes: Lcom/android/systemui/statusbar/policy/ZenModeControllerImpl;->fireZenAvailableChanged(Z)V
     invoke-static {v0, v1}, Lcom/android/systemui/statusbar/policy/ZenModeControllerImpl;->access$900(Lcom/android/systemui/statusbar/policy/ZenModeControllerImpl;Z)V
 
-    .line 276
     :cond_1
     return-void
 .end method
@@ -157,20 +141,16 @@
 .method public register()V
     .locals 4
 
-    .prologue
     const/4 v3, 0x0
 
-    .line 260
     iget-boolean v0, p0, Lcom/android/systemui/statusbar/policy/ZenModeControllerImpl$SetupObserver;->mRegistered:Z
 
     if-eqz v0, :cond_0
 
-    .line 261
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/ZenModeControllerImpl$SetupObserver;->mResolver:Landroid/content/ContentResolver;
 
     invoke-virtual {v0, p0}, Landroid/content/ContentResolver;->unregisterContentObserver(Landroid/database/ContentObserver;)V
 
-    .line 263
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/ZenModeControllerImpl$SetupObserver;->mResolver:Landroid/content/ContentResolver;
 
@@ -182,7 +162,6 @@
 
     invoke-virtual {v0, v1, v3, p0}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 
-    .line 265
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/ZenModeControllerImpl$SetupObserver;->mResolver:Landroid/content/ContentResolver;
 
     const-string v1, "user_setup_complete"
@@ -200,7 +179,6 @@
 
     invoke-virtual {v0, v1, v3, p0, v2}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;I)V
 
-    .line 267
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/ZenModeControllerImpl$SetupObserver;->this$0:Lcom/android/systemui/statusbar/policy/ZenModeControllerImpl;
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/policy/ZenModeControllerImpl$SetupObserver;->this$0:Lcom/android/systemui/statusbar/policy/ZenModeControllerImpl;
@@ -212,6 +190,5 @@
     # invokes: Lcom/android/systemui/statusbar/policy/ZenModeControllerImpl;->fireZenAvailableChanged(Z)V
     invoke-static {v0, v1}, Lcom/android/systemui/statusbar/policy/ZenModeControllerImpl;->access$900(Lcom/android/systemui/statusbar/policy/ZenModeControllerImpl;Z)V
 
-    .line 268
     return-void
 .end method

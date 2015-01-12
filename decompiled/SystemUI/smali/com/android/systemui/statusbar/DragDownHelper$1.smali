@@ -24,8 +24,6 @@
 .method constructor <init>(Lcom/android/systemui/statusbar/DragDownHelper;Lcom/android/systemui/statusbar/ExpandableView;)V
     .locals 0
 
-    .prologue
-    .line 180
     iput-object p1, p0, Lcom/android/systemui/statusbar/DragDownHelper$1;->this$0:Lcom/android/systemui/statusbar/DragDownHelper;
 
     iput-object p2, p0, Lcom/android/systemui/statusbar/DragDownHelper$1;->val$child:Lcom/android/systemui/statusbar/ExpandableView;
@@ -39,10 +37,7 @@
 # virtual methods
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 3
-    .param p1, "animation"    # Landroid/animation/Animator;
 
-    .prologue
-    .line 183
     iget-object v0, p0, Lcom/android/systemui/statusbar/DragDownHelper$1;->this$0:Lcom/android/systemui/statusbar/DragDownHelper;
 
     # getter for: Lcom/android/systemui/statusbar/DragDownHelper;->mCallback:Lcom/android/systemui/ExpandHelper$Callback;
@@ -56,6 +51,5 @@
 
     invoke-interface {v0, v1, v2}, Lcom/android/systemui/ExpandHelper$Callback;->setUserLockedChild(Landroid/view/View;Z)V
 
-    .line 184
     return-void
 .end method

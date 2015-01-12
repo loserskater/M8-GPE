@@ -22,8 +22,6 @@
 .method constructor <init>(Lcom/android/systemui/recents/views/TaskViewHeader;)V
     .locals 0
 
-    .prologue
-    .line 299
     iput-object p1, p0, Lcom/android/systemui/recents/views/TaskViewHeader$3;->this$0:Lcom/android/systemui/recents/views/TaskViewHeader;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,10 +33,7 @@
 # virtual methods
 .method public onAnimationStart(Landroid/animation/Animator;)V
     .locals 2
-    .param p1, "animation"    # Landroid/animation/Animator;
 
-    .prologue
-    .line 302
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskViewHeader$3;->this$0:Lcom/android/systemui/recents/views/TaskViewHeader;
 
     iget-object v0, v0, Lcom/android/systemui/recents/views/TaskViewHeader;->mBackground:Landroid/graphics/drawable/RippleDrawable;
@@ -49,6 +44,5 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/drawable/RippleDrawable;->setState([I)Z
 
-    .line 303
     return-void
 .end method

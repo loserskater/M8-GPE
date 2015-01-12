@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/keyguard/KeyguardHostView;)V
     .locals 0
 
-    .prologue
-    .line 648
     iput-object p1, p0, Lcom/android/keyguard/KeyguardHostView$5;->this$0:Lcom/android/keyguard/KeyguardHostView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,10 +36,7 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 2
-    .param p1, "v"    # Landroid/view/View;
 
-    .prologue
-    .line 652
     iget-object v0, p0, Lcom/android/keyguard/KeyguardHostView$5;->this$0:Lcom/android/keyguard/KeyguardHostView;
 
     invoke-virtual {v0}, Lcom/android/keyguard/KeyguardHostView;->getActivityLauncher()Lcom/android/keyguard/KeyguardActivityLauncher;
@@ -52,6 +47,5 @@
 
     invoke-virtual {v0, v1}, Lcom/android/keyguard/KeyguardActivityLauncher;->launchWidgetPicker(I)V
 
-    .line 653
     return-void
 .end method

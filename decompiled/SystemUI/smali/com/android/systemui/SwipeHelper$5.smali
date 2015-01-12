@@ -26,8 +26,6 @@
 .method constructor <init>(Lcom/android/systemui/SwipeHelper;Landroid/view/View;Z)V
     .locals 0
 
-    .prologue
-    .line 377
     iput-object p1, p0, Lcom/android/systemui/SwipeHelper$5;->this$0:Lcom/android/systemui/SwipeHelper;
 
     iput-object p2, p0, Lcom/android/systemui/SwipeHelper$5;->val$animView:Landroid/view/View;
@@ -43,10 +41,7 @@
 # virtual methods
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 3
-    .param p1, "animator"    # Landroid/animation/Animator;
 
-    .prologue
-    .line 379
     iget-object v0, p0, Lcom/android/systemui/SwipeHelper$5;->this$0:Lcom/android/systemui/SwipeHelper;
 
     iget-object v1, p0, Lcom/android/systemui/SwipeHelper$5;->val$animView:Landroid/view/View;
@@ -56,7 +51,6 @@
     # invokes: Lcom/android/systemui/SwipeHelper;->updateSwipeProgressFromOffset(Landroid/view/View;Z)V
     invoke-static {v0, v1, v2}, Lcom/android/systemui/SwipeHelper;->access$500(Lcom/android/systemui/SwipeHelper;Landroid/view/View;Z)V
 
-    .line 380
     iget-object v0, p0, Lcom/android/systemui/SwipeHelper$5;->this$0:Lcom/android/systemui/SwipeHelper;
 
     # getter for: Lcom/android/systemui/SwipeHelper;->mCallback:Lcom/android/systemui/SwipeHelper$Callback;
@@ -68,6 +62,5 @@
 
     invoke-interface {v0, v1}, Lcom/android/systemui/SwipeHelper$Callback;->onChildSnappedBack(Landroid/view/View;)V
 
-    .line 381
     return-void
 .end method

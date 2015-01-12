@@ -22,8 +22,6 @@
 .method constructor <init>(Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;)V
     .locals 0
 
-    .prologue
-    .line 453
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$3;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,11 +33,7 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 2
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .prologue
-    .line 455
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$3;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
 
     new-instance v1, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$3$1;
@@ -48,6 +42,5 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->post(Ljava/lang/Runnable;)Z
 
-    .line 461
     return-void
 .end method

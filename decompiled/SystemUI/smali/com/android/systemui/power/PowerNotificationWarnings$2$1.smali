@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/systemui/power/PowerNotificationWarnings$2;)V
     .locals 0
 
-    .prologue
-    .line 397
     iput-object p1, p0, Lcom/android/systemui/power/PowerNotificationWarnings$2$1;->this$1:Lcom/android/systemui/power/PowerNotificationWarnings$2;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,8 +37,6 @@
 .method public run()V
     .locals 2
 
-    .prologue
-    .line 400
     iget-object v0, p0, Lcom/android/systemui/power/PowerNotificationWarnings$2$1;->this$1:Lcom/android/systemui/power/PowerNotificationWarnings$2;
 
     iget-object v0, v0, Lcom/android/systemui/power/PowerNotificationWarnings$2;->this$0:Lcom/android/systemui/power/PowerNotificationWarnings;
@@ -50,6 +46,5 @@
     # invokes: Lcom/android/systemui/power/PowerNotificationWarnings;->setSaverMode(Z)V
     invoke-static {v0, v1}, Lcom/android/systemui/power/PowerNotificationWarnings;->access$800(Lcom/android/systemui/power/PowerNotificationWarnings;Z)V
 
-    .line 401
     return-void
 .end method

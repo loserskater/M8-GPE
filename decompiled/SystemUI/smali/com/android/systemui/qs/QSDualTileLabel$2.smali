@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/systemui/qs/QSDualTileLabel;)V
     .locals 0
 
-    .prologue
-    .line 199
     iput-object p1, p0, Lcom/android/systemui/qs/QSDualTileLabel$2;->this$0:Lcom/android/systemui/qs/QSDualTileLabel;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,13 +37,10 @@
 .method public run()V
     .locals 1
 
-    .prologue
-    .line 202
     iget-object v0, p0, Lcom/android/systemui/qs/QSDualTileLabel$2;->this$0:Lcom/android/systemui/qs/QSDualTileLabel;
 
     # invokes: Lcom/android/systemui/qs/QSDualTileLabel;->updateText()V
     invoke-static {v0}, Lcom/android/systemui/qs/QSDualTileLabel;->access$100(Lcom/android/systemui/qs/QSDualTileLabel;)V
 
-    .line 203
     return-void
 .end method

@@ -24,16 +24,11 @@
 # direct methods
 .method public constructor <init>(F)V
     .locals 0
-    .param p1, "foc"    # F
 
-    .prologue
-    .line 479
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 480
     iput p1, p0, Lcom/android/keyguard/KeyguardWidgetPager$ZInterpolator;->focalLength:F
 
-    .line 481
     return-void
 .end method
 
@@ -41,12 +36,9 @@
 # virtual methods
 .method public getInterpolation(F)F
     .locals 4
-    .param p1, "input"    # F
 
-    .prologue
     const/high16 v3, 0x3f800000
 
-    .line 484
     iget v0, p0, Lcom/android/keyguard/KeyguardWidgetPager$ZInterpolator;->focalLength:F
 
     iget v1, p0, Lcom/android/keyguard/KeyguardWidgetPager$ZInterpolator;->focalLength:F

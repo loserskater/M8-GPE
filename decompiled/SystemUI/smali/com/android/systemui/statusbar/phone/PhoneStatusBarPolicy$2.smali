@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/systemui/statusbar/phone/PhoneStatusBarPolicy;)V
     .locals 0
 
-    .prologue
-    .line 303
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBarPolicy$2;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBarPolicy;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,13 +37,10 @@
 .method public onCastDevicesChanged()V
     .locals 1
 
-    .prologue
-    .line 306
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBarPolicy$2;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBarPolicy;
 
     # invokes: Lcom/android/systemui/statusbar/phone/PhoneStatusBarPolicy;->updateCast()V
     invoke-static {v0}, Lcom/android/systemui/statusbar/phone/PhoneStatusBarPolicy;->access$600(Lcom/android/systemui/statusbar/phone/PhoneStatusBarPolicy;)V
 
-    .line 307
     return-void
 .end method

@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/keyguard/KeyguardPasswordView;)V
     .locals 0
 
-    .prologue
-    .line 139
     iput-object p1, p0, Lcom/android/keyguard/KeyguardPasswordView$3;->this$0:Lcom/android/keyguard/KeyguardPasswordView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,48 +36,31 @@
 # virtual methods
 .method public afterTextChanged(Landroid/text/Editable;)V
     .locals 1
-    .param p1, "s"    # Landroid/text/Editable;
 
-    .prologue
-    .line 147
     iget-object v0, p0, Lcom/android/keyguard/KeyguardPasswordView$3;->this$0:Lcom/android/keyguard/KeyguardPasswordView;
 
     iget-object v0, v0, Lcom/android/keyguard/KeyguardPasswordView;->mCallback:Lcom/android/keyguard/KeyguardSecurityCallback;
 
     if-eqz v0, :cond_0
 
-    .line 148
     iget-object v0, p0, Lcom/android/keyguard/KeyguardPasswordView$3;->this$0:Lcom/android/keyguard/KeyguardPasswordView;
 
     iget-object v0, v0, Lcom/android/keyguard/KeyguardPasswordView;->mCallback:Lcom/android/keyguard/KeyguardSecurityCallback;
 
     invoke-interface {v0}, Lcom/android/keyguard/KeyguardSecurityCallback;->userActivity()V
 
-    .line 150
     :cond_0
     return-void
 .end method
 
 .method public beforeTextChanged(Ljava/lang/CharSequence;III)V
     .locals 0
-    .param p1, "s"    # Ljava/lang/CharSequence;
-    .param p2, "start"    # I
-    .param p3, "count"    # I
-    .param p4, "after"    # I
 
-    .prologue
-    .line 144
     return-void
 .end method
 
 .method public onTextChanged(Ljava/lang/CharSequence;III)V
     .locals 0
-    .param p1, "s"    # Ljava/lang/CharSequence;
-    .param p2, "start"    # I
-    .param p3, "before"    # I
-    .param p4, "count"    # I
 
-    .prologue
-    .line 141
     return-void
 .end method

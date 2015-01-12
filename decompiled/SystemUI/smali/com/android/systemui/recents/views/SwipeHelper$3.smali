@@ -29,8 +29,6 @@
 .method constructor <init>(Lcom/android/systemui/recents/views/SwipeHelper;ZLandroid/view/View;)V
     .locals 0
 
-    .prologue
-    .line 270
     iput-object p1, p0, Lcom/android/systemui/recents/views/SwipeHelper$3;->this$0:Lcom/android/systemui/recents/views/SwipeHelper;
 
     iput-boolean p2, p0, Lcom/android/systemui/recents/views/SwipeHelper$3;->val$canAnimViewBeDismissed:Z
@@ -46,15 +44,11 @@
 # virtual methods
 .method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 3
-    .param p1, "animation"    # Landroid/animation/ValueAnimator;
 
-    .prologue
-    .line 273
     iget-boolean v0, p0, Lcom/android/systemui/recents/views/SwipeHelper$3;->val$canAnimViewBeDismissed:Z
 
     if-eqz v0, :cond_0
 
-    .line 274
     iget-object v0, p0, Lcom/android/systemui/recents/views/SwipeHelper$3;->val$view:Landroid/view/View;
 
     iget-object v1, p0, Lcom/android/systemui/recents/views/SwipeHelper$3;->this$0:Lcom/android/systemui/recents/views/SwipeHelper;
@@ -67,7 +61,6 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setAlpha(F)V
 
-    .line 276
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/recents/views/SwipeHelper$3;->this$0:Lcom/android/systemui/recents/views/SwipeHelper;
 
@@ -88,6 +81,5 @@
 
     invoke-interface {v0, v1, v2}, Lcom/android/systemui/recents/views/SwipeHelper$Callback;->onSwipeChanged(Landroid/view/View;F)V
 
-    .line 277
     return-void
 .end method

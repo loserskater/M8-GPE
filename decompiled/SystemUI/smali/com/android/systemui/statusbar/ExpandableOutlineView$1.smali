@@ -22,8 +22,6 @@
 .method constructor <init>(Lcom/android/systemui/statusbar/ExpandableOutlineView;)V
     .locals 0
 
-    .prologue
-    .line 37
     iput-object p1, p0, Lcom/android/systemui/statusbar/ExpandableOutlineView$1;->this$0:Lcom/android/systemui/statusbar/ExpandableOutlineView;
 
     invoke-direct {p0}, Landroid/view/ViewOutlineProvider;-><init>()V
@@ -35,11 +33,7 @@
 # virtual methods
 .method public getOutline(Landroid/view/View;Landroid/graphics/Outline;)V
     .locals 5
-    .param p1, "view"    # Landroid/view/View;
-    .param p2, "outline"    # Landroid/graphics/Outline;
 
-    .prologue
-    .line 40
     iget-object v0, p0, Lcom/android/systemui/statusbar/ExpandableOutlineView$1;->this$0:Lcom/android/systemui/statusbar/ExpandableOutlineView;
 
     # getter for: Lcom/android/systemui/statusbar/ExpandableOutlineView;->mCustomOutline:Z
@@ -49,7 +43,6 @@
 
     if-nez v0, :cond_0
 
-    .line 41
     const/4 v0, 0x0
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/ExpandableOutlineView$1;->this$0:Lcom/android/systemui/statusbar/ExpandableOutlineView;
@@ -76,11 +69,9 @@
 
     invoke-virtual {p2, v0, v1, v2, v3}, Landroid/graphics/Outline;->setRect(IIII)V
 
-    .line 48
     :goto_0
     return-void
 
-    .line 46
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/ExpandableOutlineView$1;->this$0:Lcom/android/systemui/statusbar/ExpandableOutlineView;
 

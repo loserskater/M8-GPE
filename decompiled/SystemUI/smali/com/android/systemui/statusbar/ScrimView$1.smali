@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/systemui/statusbar/ScrimView;)V
     .locals 0
 
-    .prologue
-    .line 41
     iput-object p1, p0, Lcom/android/systemui/statusbar/ScrimView$1;->this$0:Lcom/android/systemui/statusbar/ScrimView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,10 +36,7 @@
 # virtual methods
 .method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 2
-    .param p1, "animation"    # Landroid/animation/ValueAnimator;
 
-    .prologue
-    .line 44
     iget-object v1, p0, Lcom/android/systemui/statusbar/ScrimView$1;->this$0:Lcom/android/systemui/statusbar/ScrimView;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
@@ -57,11 +52,9 @@
     # setter for: Lcom/android/systemui/statusbar/ScrimView;->mViewAlpha:F
     invoke-static {v1, v0}, Lcom/android/systemui/statusbar/ScrimView;->access$002(Lcom/android/systemui/statusbar/ScrimView;F)F
 
-    .line 45
     iget-object v0, p0, Lcom/android/systemui/statusbar/ScrimView$1;->this$0:Lcom/android/systemui/statusbar/ScrimView;
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/ScrimView;->invalidate()V
 
-    .line 46
     return-void
 .end method

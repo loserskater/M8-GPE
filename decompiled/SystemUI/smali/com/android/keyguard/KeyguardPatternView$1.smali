@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/keyguard/KeyguardPatternView;)V
     .locals 0
 
-    .prologue
-    .line 75
     iput-object p1, p0, Lcom/android/keyguard/KeyguardPatternView$1;->this$0:Lcom/android/keyguard/KeyguardPatternView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,8 +37,6 @@
 .method public run()V
     .locals 1
 
-    .prologue
-    .line 77
     iget-object v0, p0, Lcom/android/keyguard/KeyguardPatternView$1;->this$0:Lcom/android/keyguard/KeyguardPatternView;
 
     # getter for: Lcom/android/keyguard/KeyguardPatternView;->mLockPatternView:Lcom/android/internal/widget/LockPatternView;
@@ -50,6 +46,5 @@
 
     invoke-virtual {v0}, Lcom/android/internal/widget/LockPatternView;->clearPattern()V
 
-    .line 78
     return-void
 .end method

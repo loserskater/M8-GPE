@@ -22,8 +22,6 @@
 .method private constructor <init>(Lcom/android/systemui/statusbar/phone/PhoneStatusBar$DozeServiceHost;)V
     .locals 0
 
-    .prologue
-    .line 4171
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$DozeServiceHost$H;->this$1:Lcom/android/systemui/statusbar/phone/PhoneStatusBar$DozeServiceHost;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -33,11 +31,7 @@
 
 .method synthetic constructor <init>(Lcom/android/systemui/statusbar/phone/PhoneStatusBar$DozeServiceHost;Lcom/android/systemui/statusbar/phone/PhoneStatusBar$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/systemui/statusbar/phone/PhoneStatusBar$DozeServiceHost;
-    .param p2, "x1"    # Lcom/android/systemui/statusbar/phone/PhoneStatusBar$1;
 
-    .prologue
-    .line 4171
     invoke-direct {p0, p1}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$DozeServiceHost$H;-><init>(Lcom/android/systemui/statusbar/phone/PhoneStatusBar$DozeServiceHost;)V
 
     return-void
@@ -47,19 +41,14 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 2
-    .param p1, "msg"    # Landroid/os/Message;
 
-    .prologue
-    .line 4178
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 4189
     :goto_0
     return-void
 
-    .line 4180
     :pswitch_0
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$DozeServiceHost$H;->this$1:Lcom/android/systemui/statusbar/phone/PhoneStatusBar$DozeServiceHost;
 
@@ -72,7 +61,6 @@
 
     goto :goto_0
 
-    .line 4183
     :pswitch_1
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$DozeServiceHost$H;->this$1:Lcom/android/systemui/statusbar/phone/PhoneStatusBar$DozeServiceHost;
 
@@ -85,7 +73,6 @@
 
     goto :goto_0
 
-    .line 4186
     :pswitch_2
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$DozeServiceHost$H;->this$1:Lcom/android/systemui/statusbar/phone/PhoneStatusBar$DozeServiceHost;
 
@@ -94,7 +81,6 @@
 
     goto :goto_0
 
-    .line 4178
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0

@@ -22,8 +22,6 @@
 .method constructor <init>(Lcom/android/systemui/statusbar/ServiceMonitor;)V
     .locals 0
 
-    .prologue
-    .line 69
     iput-object p1, p0, Lcom/android/systemui/statusbar/ServiceMonitor$1;->this$0:Lcom/android/systemui/statusbar/ServiceMonitor;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -35,19 +33,14 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 2
-    .param p1, "msg"    # Landroid/os/Message;
 
-    .prologue
-    .line 71
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 91
     :goto_0
     return-void
 
-    .line 73
     :pswitch_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/ServiceMonitor$1;->this$0:Lcom/android/systemui/statusbar/ServiceMonitor;
 
@@ -56,7 +49,6 @@
 
     goto :goto_0
 
-    .line 76
     :pswitch_1
     iget-object v0, p0, Lcom/android/systemui/statusbar/ServiceMonitor$1;->this$0:Lcom/android/systemui/statusbar/ServiceMonitor;
 
@@ -65,7 +57,6 @@
 
     goto :goto_0
 
-    .line 79
     :pswitch_2
     iget-object v0, p0, Lcom/android/systemui/statusbar/ServiceMonitor$1;->this$0:Lcom/android/systemui/statusbar/ServiceMonitor;
 
@@ -74,7 +65,6 @@
 
     goto :goto_0
 
-    .line 82
     :pswitch_3
     iget-object v1, p0, Lcom/android/systemui/statusbar/ServiceMonitor$1;->this$0:Lcom/android/systemui/statusbar/ServiceMonitor;
 
@@ -87,7 +77,6 @@
 
     goto :goto_0
 
-    .line 85
     :pswitch_4
     iget-object v0, p0, Lcom/android/systemui/statusbar/ServiceMonitor$1;->this$0:Lcom/android/systemui/statusbar/ServiceMonitor;
 
@@ -96,7 +85,6 @@
 
     goto :goto_0
 
-    .line 88
     :pswitch_5
     iget-object v1, p0, Lcom/android/systemui/statusbar/ServiceMonitor$1;->this$0:Lcom/android/systemui/statusbar/ServiceMonitor;
 
@@ -109,7 +97,6 @@
 
     goto :goto_0
 
-    .line 71
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0

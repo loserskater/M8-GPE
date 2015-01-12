@@ -22,8 +22,6 @@
 .method private constructor <init>(Lcom/android/systemui/usb/StorageNotification;)V
     .locals 0
 
-    .prologue
-    .line 67
     iput-object p1, p0, Lcom/android/systemui/usb/StorageNotification$StorageNotificationEventListener;->this$0:Lcom/android/systemui/usb/StorageNotification;
 
     invoke-direct {p0}, Landroid/os/storage/StorageEventListener;-><init>()V
@@ -33,11 +31,7 @@
 
 .method synthetic constructor <init>(Lcom/android/systemui/usb/StorageNotification;Lcom/android/systemui/usb/StorageNotification$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/systemui/usb/StorageNotification;
-    .param p2, "x1"    # Lcom/android/systemui/usb/StorageNotification$1;
 
-    .prologue
-    .line 67
     invoke-direct {p0, p1}, Lcom/android/systemui/usb/StorageNotification$StorageNotificationEventListener;-><init>(Lcom/android/systemui/usb/StorageNotification;)V
 
     return-void
@@ -47,12 +41,7 @@
 # virtual methods
 .method public onStorageStateChanged(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
     .locals 2
-    .param p1, "path"    # Ljava/lang/String;
-    .param p2, "oldState"    # Ljava/lang/String;
-    .param p3, "newState"    # Ljava/lang/String;
 
-    .prologue
-    .line 78
     iget-object v0, p0, Lcom/android/systemui/usb/StorageNotification$StorageNotificationEventListener;->this$0:Lcom/android/systemui/usb/StorageNotification;
 
     # getter for: Lcom/android/systemui/usb/StorageNotification;->mAsyncEventHandler:Landroid/os/Handler;
@@ -66,16 +55,12 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 84
     return-void
 .end method
 
 .method public onUsbMassStorageConnectionChanged(Z)V
     .locals 2
-    .param p1, "connected"    # Z
 
-    .prologue
-    .line 69
     iget-object v0, p0, Lcom/android/systemui/usb/StorageNotification$StorageNotificationEventListener;->this$0:Lcom/android/systemui/usb/StorageNotification;
 
     # getter for: Lcom/android/systemui/usb/StorageNotification;->mAsyncEventHandler:Landroid/os/Handler;
@@ -89,6 +74,5 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 75
     return-void
 .end method

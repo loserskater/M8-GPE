@@ -22,8 +22,6 @@
 .method constructor <init>(Lcom/android/systemui/volume/ZenToast;)V
     .locals 0
 
-    .prologue
-    .line 151
     iput-object p1, p0, Lcom/android/systemui/volume/ZenToast$3;->this$0:Lcom/android/systemui/volume/ZenToast;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,11 +33,7 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 4
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .prologue
-    .line 154
     # getter for: Lcom/android/systemui/volume/ZenToast;->ACTION_SHOW:Ljava/lang/String;
     invoke-static {}, Lcom/android/systemui/volume/ZenToast;->access$300()Ljava/lang/String;
 
@@ -55,7 +49,6 @@
 
     if-eqz v2, :cond_1
 
-    .line 155
     const-string v2, "zen"
 
     const/4 v3, 0x1
@@ -64,29 +57,21 @@
 
     move-result v1
 
-    .line 156
-    .local v1, "zen":I
     const-string v2, "text"
 
     invoke-virtual {p2, v2}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 157
-    .local v0, "text":Ljava/lang/String;
     iget-object v2, p0, Lcom/android/systemui/volume/ZenToast$3;->this$0:Lcom/android/systemui/volume/ZenToast;
 
     # invokes: Lcom/android/systemui/volume/ZenToast;->handleShow(ILjava/lang/String;)V
     invoke-static {v2, v1, v0}, Lcom/android/systemui/volume/ZenToast;->access$100(Lcom/android/systemui/volume/ZenToast;ILjava/lang/String;)V
 
-    .line 161
-    .end local v0    # "text":Ljava/lang/String;
-    .end local v1    # "zen":I
     :cond_0
     :goto_0
     return-void
 
-    .line 158
     :cond_1
     # getter for: Lcom/android/systemui/volume/ZenToast;->ACTION_HIDE:Ljava/lang/String;
     invoke-static {}, Lcom/android/systemui/volume/ZenToast;->access$400()Ljava/lang/String;
@@ -103,7 +88,6 @@
 
     if-eqz v2, :cond_0
 
-    .line 159
     iget-object v2, p0, Lcom/android/systemui/volume/ZenToast$3;->this$0:Lcom/android/systemui/volume/ZenToast;
 
     # invokes: Lcom/android/systemui/volume/ZenToast;->handleHide()V

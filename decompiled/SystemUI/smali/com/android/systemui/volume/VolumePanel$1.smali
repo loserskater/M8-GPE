@@ -21,10 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/volume/VolumePanel;Landroid/content/Context;)V
     .locals 0
-    .param p2, "x0"    # Landroid/content/Context;
 
-    .prologue
-    .line 362
     iput-object p1, p0, Lcom/android/systemui/volume/VolumePanel$1;->this$0:Lcom/android/systemui/volume/VolumePanel;
 
     invoke-direct {p0, p2}, Landroid/app/Dialog;-><init>(Landroid/content/Context;)V
@@ -36,10 +33,7 @@
 # virtual methods
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 4
-    .param p1, "event"    # Landroid/view/MotionEvent;
 
-    .prologue
-    .line 365
     invoke-virtual {p0}, Lcom/android/systemui/volume/VolumePanel$1;->isShowing()Z
 
     move-result v0
@@ -61,7 +55,6 @@
 
     if-nez v0, :cond_0
 
-    .line 367
     iget-object v0, p0, Lcom/android/systemui/volume/VolumePanel$1;->this$0:Lcom/android/systemui/volume/VolumePanel;
 
     const-wide/16 v2, 0x0
@@ -69,10 +62,8 @@
     # invokes: Lcom/android/systemui/volume/VolumePanel;->forceTimeout(J)V
     invoke-static {v0, v2, v3}, Lcom/android/systemui/volume/VolumePanel;->access$300(Lcom/android/systemui/volume/VolumePanel;J)V
 
-    .line 368
     const/4 v0, 0x1
 
-    .line 370
     :goto_0
     return v0
 

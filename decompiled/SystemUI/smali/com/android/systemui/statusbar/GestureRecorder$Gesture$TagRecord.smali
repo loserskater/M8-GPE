@@ -25,25 +25,16 @@
 # direct methods
 .method public constructor <init>(Lcom/android/systemui/statusbar/GestureRecorder$Gesture;JLjava/lang/String;Ljava/lang/String;)V
     .locals 0
-    .param p2, "when"    # J
-    .param p4, "tag"    # Ljava/lang/String;
-    .param p5, "info"    # Ljava/lang/String;
 
-    .prologue
-    .line 80
     iput-object p1, p0, Lcom/android/systemui/statusbar/GestureRecorder$Gesture$TagRecord;->this$1:Lcom/android/systemui/statusbar/GestureRecorder$Gesture;
 
     invoke-direct {p0, p1}, Lcom/android/systemui/statusbar/GestureRecorder$Gesture$Record;-><init>(Lcom/android/systemui/statusbar/GestureRecorder$Gesture;)V
 
-    .line 81
     iput-wide p2, p0, Lcom/android/systemui/statusbar/GestureRecorder$Gesture$TagRecord;->time:J
 
-    .line 82
     iput-object p4, p0, Lcom/android/systemui/statusbar/GestureRecorder$Gesture$TagRecord;->tag:Ljava/lang/String;
 
-    .line 83
     iput-object p5, p0, Lcom/android/systemui/statusbar/GestureRecorder$Gesture$TagRecord;->info:Ljava/lang/String;
 
-    .line 84
     return-void
 .end method

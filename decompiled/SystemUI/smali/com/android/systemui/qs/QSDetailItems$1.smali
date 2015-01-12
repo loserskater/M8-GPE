@@ -27,8 +27,6 @@
 .method constructor <init>(Lcom/android/systemui/qs/QSDetailItems;Lcom/android/systemui/qs/QSDetailItems$Item;)V
     .locals 0
 
-    .prologue
-    .line 173
     iput-object p1, p0, Lcom/android/systemui/qs/QSDetailItems$1;->this$0:Lcom/android/systemui/qs/QSDetailItems;
 
     iput-object p2, p0, Lcom/android/systemui/qs/QSDetailItems$1;->val$item:Lcom/android/systemui/qs/QSDetailItems$Item;
@@ -42,10 +40,7 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 2
-    .param p1, "v"    # Landroid/view/View;
 
-    .prologue
-    .line 176
     iget-object v0, p0, Lcom/android/systemui/qs/QSDetailItems$1;->this$0:Lcom/android/systemui/qs/QSDetailItems;
 
     # getter for: Lcom/android/systemui/qs/QSDetailItems;->mCallback:Lcom/android/systemui/qs/QSDetailItems$Callback;
@@ -55,7 +50,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 177
     iget-object v0, p0, Lcom/android/systemui/qs/QSDetailItems$1;->this$0:Lcom/android/systemui/qs/QSDetailItems;
 
     # getter for: Lcom/android/systemui/qs/QSDetailItems;->mCallback:Lcom/android/systemui/qs/QSDetailItems$Callback;
@@ -67,7 +61,6 @@
 
     invoke-interface {v0, v1}, Lcom/android/systemui/qs/QSDetailItems$Callback;->onDetailItemClick(Lcom/android/systemui/qs/QSDetailItems$Item;)V
 
-    .line 179
     :cond_0
     return-void
 .end method

@@ -22,8 +22,6 @@
 .method constructor <init>(Lcom/android/keyguard/KeyguardMessageArea;)V
     .locals 0
 
-    .prologue
-    .line 132
     iput-object p1, p0, Lcom/android/keyguard/KeyguardMessageArea$2;->this$0:Lcom/android/keyguard/KeyguardMessageArea;
 
     invoke-direct {p0}, Lcom/android/keyguard/KeyguardUpdateMonitorCallback;-><init>()V
@@ -35,31 +33,24 @@
 # virtual methods
 .method public onScreenTurnedOff(I)V
     .locals 2
-    .param p1, "why"    # I
 
-    .prologue
-    .line 134
     iget-object v0, p0, Lcom/android/keyguard/KeyguardMessageArea$2;->this$0:Lcom/android/keyguard/KeyguardMessageArea;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lcom/android/keyguard/KeyguardMessageArea;->setSelected(Z)V
 
-    .line 135
     return-void
 .end method
 
 .method public onScreenTurnedOn()V
     .locals 2
 
-    .prologue
-    .line 137
     iget-object v0, p0, Lcom/android/keyguard/KeyguardMessageArea$2;->this$0:Lcom/android/keyguard/KeyguardMessageArea;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Lcom/android/keyguard/KeyguardMessageArea;->setSelected(Z)V
 
-    .line 138
     return-void
 .end method

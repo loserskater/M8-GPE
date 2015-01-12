@@ -26,8 +26,6 @@
 .method constructor <init>(Lcom/android/systemui/recents/views/TaskViewThumbnail;Ljava/lang/Runnable;)V
     .locals 0
 
-    .prologue
-    .line 253
     iput-object p1, p0, Lcom/android/systemui/recents/views/TaskViewThumbnail$2;->this$0:Lcom/android/systemui/recents/views/TaskViewThumbnail;
 
     iput-object p2, p0, Lcom/android/systemui/recents/views/TaskViewThumbnail$2;->val$postAnimRunnable:Ljava/lang/Runnable;
@@ -41,34 +39,25 @@
 # virtual methods
 .method public onAnimationCancel(Landroid/animation/Animator;)V
     .locals 1
-    .param p1, "animation"    # Landroid/animation/Animator;
 
-    .prologue
-    .line 258
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/systemui/recents/views/TaskViewThumbnail$2;->mCancelled:Z
 
-    .line 259
     return-void
 .end method
 
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
-    .param p1, "animation"    # Landroid/animation/Animator;
 
-    .prologue
-    .line 263
     iget-boolean v0, p0, Lcom/android/systemui/recents/views/TaskViewThumbnail$2;->mCancelled:Z
 
     if-nez v0, :cond_0
 
-    .line 264
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskViewThumbnail$2;->val$postAnimRunnable:Ljava/lang/Runnable;
 
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
-    .line 266
     :cond_0
     return-void
 .end method

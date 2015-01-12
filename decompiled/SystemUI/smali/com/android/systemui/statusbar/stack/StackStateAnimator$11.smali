@@ -27,8 +27,6 @@
 .method constructor <init>(Lcom/android/systemui/statusbar/stack/StackStateAnimator;Lcom/android/systemui/statusbar/ExpandableView;)V
     .locals 0
 
-    .prologue
-    .line 795
     iput-object p1, p0, Lcom/android/systemui/statusbar/stack/StackStateAnimator$11;->this$0:Lcom/android/systemui/statusbar/stack/StackStateAnimator;
 
     iput-object p2, p0, Lcom/android/systemui/statusbar/stack/StackStateAnimator$11;->val$changingView:Lcom/android/systemui/statusbar/ExpandableView;
@@ -43,8 +41,6 @@
 .method public run()V
     .locals 2
 
-    .prologue
-    .line 799
     iget-object v0, p0, Lcom/android/systemui/statusbar/stack/StackStateAnimator$11;->this$0:Lcom/android/systemui/statusbar/stack/StackStateAnimator;
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/stack/StackStateAnimator;->mHostLayout:Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;
@@ -57,6 +53,5 @@
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroupOverlay;->remove(Landroid/view/View;)V
 
-    .line 800
     return-void
 .end method

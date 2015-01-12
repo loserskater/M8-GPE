@@ -22,8 +22,6 @@
 .method constructor <init>(Lcom/android/systemui/statusbar/policy/CastControllerImpl;)V
     .locals 0
 
-    .prologue
-    .line 273
     iput-object p1, p0, Lcom/android/systemui/statusbar/policy/CastControllerImpl$1;->this$0:Lcom/android/systemui/statusbar/policy/CastControllerImpl;
 
     invoke-direct {p0}, Landroid/media/MediaRouter$SimpleCallback;-><init>()V
@@ -35,11 +33,7 @@
 # virtual methods
 .method public onRouteAdded(Landroid/media/MediaRouter;Landroid/media/MediaRouter$RouteInfo;)V
     .locals 3
-    .param p1, "router"    # Landroid/media/MediaRouter;
-    .param p2, "route"    # Landroid/media/MediaRouter$RouteInfo;
 
-    .prologue
-    .line 276
     # getter for: Lcom/android/systemui/statusbar/policy/CastControllerImpl;->DEBUG:Z
     invoke-static {}, Lcom/android/systemui/statusbar/policy/CastControllerImpl;->access$000()Z
 
@@ -74,24 +68,18 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 277
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/CastControllerImpl$1;->this$0:Lcom/android/systemui/statusbar/policy/CastControllerImpl;
 
     # invokes: Lcom/android/systemui/statusbar/policy/CastControllerImpl;->updateRemoteDisplays()V
     invoke-static {v0}, Lcom/android/systemui/statusbar/policy/CastControllerImpl;->access$200(Lcom/android/systemui/statusbar/policy/CastControllerImpl;)V
 
-    .line 278
     return-void
 .end method
 
 .method public onRouteChanged(Landroid/media/MediaRouter;Landroid/media/MediaRouter$RouteInfo;)V
     .locals 3
-    .param p1, "router"    # Landroid/media/MediaRouter;
-    .param p2, "route"    # Landroid/media/MediaRouter$RouteInfo;
 
-    .prologue
-    .line 281
     # getter for: Lcom/android/systemui/statusbar/policy/CastControllerImpl;->DEBUG:Z
     invoke-static {}, Lcom/android/systemui/statusbar/policy/CastControllerImpl;->access$000()Z
 
@@ -126,24 +114,18 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 282
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/CastControllerImpl$1;->this$0:Lcom/android/systemui/statusbar/policy/CastControllerImpl;
 
     # invokes: Lcom/android/systemui/statusbar/policy/CastControllerImpl;->updateRemoteDisplays()V
     invoke-static {v0}, Lcom/android/systemui/statusbar/policy/CastControllerImpl;->access$200(Lcom/android/systemui/statusbar/policy/CastControllerImpl;)V
 
-    .line 283
     return-void
 .end method
 
 .method public onRouteRemoved(Landroid/media/MediaRouter;Landroid/media/MediaRouter$RouteInfo;)V
     .locals 3
-    .param p1, "router"    # Landroid/media/MediaRouter;
-    .param p2, "route"    # Landroid/media/MediaRouter$RouteInfo;
 
-    .prologue
-    .line 286
     # getter for: Lcom/android/systemui/statusbar/policy/CastControllerImpl;->DEBUG:Z
     invoke-static {}, Lcom/android/systemui/statusbar/policy/CastControllerImpl;->access$000()Z
 
@@ -178,25 +160,18 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 287
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/CastControllerImpl$1;->this$0:Lcom/android/systemui/statusbar/policy/CastControllerImpl;
 
     # invokes: Lcom/android/systemui/statusbar/policy/CastControllerImpl;->updateRemoteDisplays()V
     invoke-static {v0}, Lcom/android/systemui/statusbar/policy/CastControllerImpl;->access$200(Lcom/android/systemui/statusbar/policy/CastControllerImpl;)V
 
-    .line 288
     return-void
 .end method
 
 .method public onRouteSelected(Landroid/media/MediaRouter;ILandroid/media/MediaRouter$RouteInfo;)V
     .locals 3
-    .param p1, "router"    # Landroid/media/MediaRouter;
-    .param p2, "type"    # I
-    .param p3, "route"    # Landroid/media/MediaRouter$RouteInfo;
 
-    .prologue
-    .line 291
     # getter for: Lcom/android/systemui/statusbar/policy/CastControllerImpl;->DEBUG:Z
     invoke-static {}, Lcom/android/systemui/statusbar/policy/CastControllerImpl;->access$000()Z
 
@@ -241,25 +216,18 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 292
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/CastControllerImpl$1;->this$0:Lcom/android/systemui/statusbar/policy/CastControllerImpl;
 
     # invokes: Lcom/android/systemui/statusbar/policy/CastControllerImpl;->updateRemoteDisplays()V
     invoke-static {v0}, Lcom/android/systemui/statusbar/policy/CastControllerImpl;->access$200(Lcom/android/systemui/statusbar/policy/CastControllerImpl;)V
 
-    .line 293
     return-void
 .end method
 
 .method public onRouteUnselected(Landroid/media/MediaRouter;ILandroid/media/MediaRouter$RouteInfo;)V
     .locals 3
-    .param p1, "router"    # Landroid/media/MediaRouter;
-    .param p2, "type"    # I
-    .param p3, "route"    # Landroid/media/MediaRouter$RouteInfo;
 
-    .prologue
-    .line 296
     # getter for: Lcom/android/systemui/statusbar/policy/CastControllerImpl;->DEBUG:Z
     invoke-static {}, Lcom/android/systemui/statusbar/policy/CastControllerImpl;->access$000()Z
 
@@ -304,13 +272,11 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 297
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/CastControllerImpl$1;->this$0:Lcom/android/systemui/statusbar/policy/CastControllerImpl;
 
     # invokes: Lcom/android/systemui/statusbar/policy/CastControllerImpl;->updateRemoteDisplays()V
     invoke-static {v0}, Lcom/android/systemui/statusbar/policy/CastControllerImpl;->access$200(Lcom/android/systemui/statusbar/policy/CastControllerImpl;)V
 
-    .line 298
     return-void
 .end method

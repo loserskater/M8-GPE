@@ -25,22 +25,15 @@
 # direct methods
 .method protected constructor <init>(Lcom/android/keyguard/KeyguardSimPukView;Ljava/lang/String;Ljava/lang/String;)V
     .locals 0
-    .param p2, "puk"    # Ljava/lang/String;
-    .param p3, "pin"    # Ljava/lang/String;
 
-    .prologue
-    .line 169
     iput-object p1, p0, Lcom/android/keyguard/KeyguardSimPukView$CheckSimPuk;->this$0:Lcom/android/keyguard/KeyguardSimPukView;
 
     invoke-direct {p0}, Ljava/lang/Thread;-><init>()V
 
-    .line 170
     iput-object p2, p0, Lcom/android/keyguard/KeyguardSimPukView$CheckSimPuk;->mPuk:Ljava/lang/String;
 
-    .line 171
     iput-object p3, p0, Lcom/android/keyguard/KeyguardSimPukView$CheckSimPuk;->mPin:Ljava/lang/String;
 
-    .line 172
     return-void
 .end method
 
@@ -52,8 +45,6 @@
 .method public run()V
     .locals 5
 
-    .prologue
-    .line 179
     :try_start_0
     const-string v2, "KeyguardSimPukView"
 
@@ -61,7 +52,6 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 180
     const-string v2, "phone"
 
     invoke-static {v2}, Landroid/os/ServiceManager;->checkService(Ljava/lang/String;)Landroid/os/IBinder;
@@ -80,8 +70,6 @@
 
     move-result-object v1
 
-    .line 182
-    .local v1, "result":[I
     const-string v2, "KeyguardSimPukView"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -122,7 +110,6 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 183
     iget-object v2, p0, Lcom/android/keyguard/KeyguardSimPukView$CheckSimPuk;->this$0:Lcom/android/keyguard/KeyguardSimPukView;
 
     new-instance v3, Lcom/android/keyguard/KeyguardSimPukView$CheckSimPuk$1;
@@ -133,24 +120,18 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 196
-    .end local v1    # "result":[I
     :goto_0
     return-void
 
-    .line 188
     :catch_0
     move-exception v0
 
-    .line 189
-    .local v0, "e":Landroid/os/RemoteException;
     const-string v2, "KeyguardSimPukView"
 
     const-string v3, "RemoteException for supplyPukReportResult:"
 
     invoke-static {v2, v3, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 190
     iget-object v2, p0, Lcom/android/keyguard/KeyguardSimPukView$CheckSimPuk;->this$0:Lcom/android/keyguard/KeyguardSimPukView;
 
     new-instance v3, Lcom/android/keyguard/KeyguardSimPukView$CheckSimPuk$2;

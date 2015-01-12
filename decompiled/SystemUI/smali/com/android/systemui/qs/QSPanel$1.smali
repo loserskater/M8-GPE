@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/systemui/qs/QSPanel;)V
     .locals 0
 
-    .prologue
-    .line 109
     iput-object p1, p0, Lcom/android/systemui/qs/QSPanel$1;->this$0:Lcom/android/systemui/qs/QSPanel;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,14 +36,10 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 1
-    .param p1, "v"    # Landroid/view/View;
 
-    .prologue
-    .line 112
     iget-object v0, p0, Lcom/android/systemui/qs/QSPanel$1;->this$0:Lcom/android/systemui/qs/QSPanel;
 
     invoke-virtual {v0}, Lcom/android/systemui/qs/QSPanel;->closeDetail()V
 
-    .line 113
     return-void
 .end method

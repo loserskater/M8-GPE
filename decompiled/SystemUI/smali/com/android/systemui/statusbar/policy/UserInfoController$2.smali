@@ -22,8 +22,6 @@
 .method constructor <init>(Lcom/android/systemui/statusbar/policy/UserInfoController;)V
     .locals 0
 
-    .prologue
-    .line 89
     iput-object p1, p0, Lcom/android/systemui/statusbar/policy/UserInfoController$2;->this$0:Lcom/android/systemui/statusbar/policy/UserInfoController;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,17 +33,11 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 6
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .prologue
-    .line 92
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 93
-    .local v0, "action":Ljava/lang/String;
     const-string v4, "android.provider.Contacts.PROFILE_CHANGED"
 
     invoke-virtual {v4, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -62,7 +54,6 @@
 
     if-eqz v4, :cond_1
 
-    .line 96
     :cond_0
     :try_start_0
     invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
@@ -75,8 +66,6 @@
 
     iget v2, v4, Landroid/content/pm/UserInfo;->id:I
 
-    .line 97
-    .local v2, "currentUser":I
     const-string v4, "android.intent.extra.user_handle"
 
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/policy/UserInfoController$2;->getSendingUserId()I
@@ -87,30 +76,21 @@
 
     move-result v1
 
-    .line 99
-    .local v1, "changedUser":I
     if-ne v1, v2, :cond_1
 
-    .line 100
     iget-object v4, p0, Lcom/android/systemui/statusbar/policy/UserInfoController$2;->this$0:Lcom/android/systemui/statusbar/policy/UserInfoController;
 
     invoke-virtual {v4}, Lcom/android/systemui/statusbar/policy/UserInfoController;->reloadUserInfo()V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 106
-    .end local v1    # "changedUser":I
-    .end local v2    # "currentUser":I
     :cond_1
     :goto_0
     return-void
 
-    .line 102
     :catch_0
     move-exception v3
 
-    .line 103
-    .local v3, "e":Landroid/os/RemoteException;
     const-string v4, "UserInfoController"
 
     const-string v5, "Couldn\'t get current user id for profile change"

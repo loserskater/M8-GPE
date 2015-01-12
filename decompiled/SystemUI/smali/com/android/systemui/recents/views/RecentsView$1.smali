@@ -29,15 +29,12 @@
 .method constructor <init>(Lcom/android/systemui/recents/views/RecentsView;Lcom/android/systemui/recents/misc/SystemServicesProxy;)V
     .locals 1
 
-    .prologue
-    .line 446
     iput-object p1, p0, Lcom/android/systemui/recents/views/RecentsView$1;->this$0:Lcom/android/systemui/recents/views/RecentsView;
 
     iput-object p2, p0, Lcom/android/systemui/recents/views/RecentsView$1;->val$ssp:Lcom/android/systemui/recents/misc/SystemServicesProxy;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 447
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/systemui/recents/views/RecentsView$1;->mTriggered:Z
@@ -50,13 +47,10 @@
 .method public onAnimationStarted()V
     .locals 4
 
-    .prologue
-    .line 450
     iget-boolean v0, p0, Lcom/android/systemui/recents/views/RecentsView$1;->mTriggered:Z
 
     if-nez v0, :cond_0
 
-    .line 451
     iget-object v0, p0, Lcom/android/systemui/recents/views/RecentsView$1;->this$0:Lcom/android/systemui/recents/views/RecentsView;
 
     new-instance v1, Lcom/android/systemui/recents/views/RecentsView$1$1;
@@ -67,12 +61,10 @@
 
     invoke-virtual {v0, v1, v2, v3}, Lcom/android/systemui/recents/views/RecentsView;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 457
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/systemui/recents/views/RecentsView$1;->mTriggered:Z
 
-    .line 459
     :cond_0
     return-void
 .end method

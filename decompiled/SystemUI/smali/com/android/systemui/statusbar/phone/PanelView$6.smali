@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/systemui/statusbar/phone/PanelView;)V
     .locals 0
 
-    .prologue
-    .line 804
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/PanelView$6;->this$0:Lcom/android/systemui/statusbar/phone/PanelView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,27 +37,22 @@
 .method public run()V
     .locals 2
 
-    .prologue
-    .line 807
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PanelView$6;->this$0:Lcom/android/systemui/statusbar/phone/PanelView;
 
     # invokes: Lcom/android/systemui/statusbar/phone/PanelView;->notifyExpandingFinished()V
     invoke-static {v0}, Lcom/android/systemui/statusbar/phone/PanelView;->access$500(Lcom/android/systemui/statusbar/phone/PanelView;)V
 
-    .line 808
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PanelView$6;->this$0:Lcom/android/systemui/statusbar/phone/PanelView;
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/phone/PanelView;->mStatusBar:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->onHintFinished()V
 
-    .line 809
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PanelView$6;->this$0:Lcom/android/systemui/statusbar/phone/PanelView;
 
     const/4 v1, 0x0
 
     iput-boolean v1, v0, Lcom/android/systemui/statusbar/phone/PanelView;->mHintAnimationRunning:Z
 
-    .line 810
     return-void
 .end method

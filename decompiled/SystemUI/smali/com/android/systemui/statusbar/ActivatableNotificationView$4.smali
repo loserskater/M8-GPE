@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/systemui/statusbar/ActivatableNotificationView;)V
     .locals 0
 
-    .prologue
-    .line 538
     iput-object p1, p0, Lcom/android/systemui/statusbar/ActivatableNotificationView$4;->this$0:Lcom/android/systemui/statusbar/ActivatableNotificationView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,10 +36,7 @@
 # virtual methods
 .method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 2
-    .param p1, "animation"    # Landroid/animation/ValueAnimator;
 
-    .prologue
-    .line 541
     iget-object v1, p0, Lcom/android/systemui/statusbar/ActivatableNotificationView$4;->this$0:Lcom/android/systemui/statusbar/ActivatableNotificationView;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
@@ -57,23 +52,19 @@
     # setter for: Lcom/android/systemui/statusbar/ActivatableNotificationView;->mAppearAnimationFraction:F
     invoke-static {v1, v0}, Lcom/android/systemui/statusbar/ActivatableNotificationView;->access$402(Lcom/android/systemui/statusbar/ActivatableNotificationView;F)F
 
-    .line 542
     iget-object v0, p0, Lcom/android/systemui/statusbar/ActivatableNotificationView$4;->this$0:Lcom/android/systemui/statusbar/ActivatableNotificationView;
 
     # invokes: Lcom/android/systemui/statusbar/ActivatableNotificationView;->updateAppearAnimationAlpha()V
     invoke-static {v0}, Lcom/android/systemui/statusbar/ActivatableNotificationView;->access$500(Lcom/android/systemui/statusbar/ActivatableNotificationView;)V
 
-    .line 543
     iget-object v0, p0, Lcom/android/systemui/statusbar/ActivatableNotificationView$4;->this$0:Lcom/android/systemui/statusbar/ActivatableNotificationView;
 
     # invokes: Lcom/android/systemui/statusbar/ActivatableNotificationView;->updateAppearRect()V
     invoke-static {v0}, Lcom/android/systemui/statusbar/ActivatableNotificationView;->access$600(Lcom/android/systemui/statusbar/ActivatableNotificationView;)V
 
-    .line 544
     iget-object v0, p0, Lcom/android/systemui/statusbar/ActivatableNotificationView$4;->this$0:Lcom/android/systemui/statusbar/ActivatableNotificationView;
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/ActivatableNotificationView;->invalidate()V
 
-    .line 545
     return-void
 .end method

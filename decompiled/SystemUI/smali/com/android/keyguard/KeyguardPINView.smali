@@ -24,35 +24,25 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
 
-    .prologue
-    .line 40
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, v0}, Lcom/android/keyguard/KeyguardPINView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 41
     return-void
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 2
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
 
-    .prologue
-    .line 44
     invoke-direct {p0, p1, p2}, Lcom/android/keyguard/KeyguardPinBasedInputView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 45
     new-instance v0, Lcom/android/keyguard/AppearAnimationUtils;
 
     invoke-direct {v0, p1}, Lcom/android/keyguard/AppearAnimationUtils;-><init>(Landroid/content/Context;)V
 
     iput-object v0, p0, Lcom/android/keyguard/KeyguardPINView;->mAppearAnimationUtils:Lcom/android/keyguard/AppearAnimationUtils;
 
-    .line 46
     invoke-virtual {p0}, Lcom/android/keyguard/KeyguardPINView;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -65,17 +55,12 @@
 
     iput v0, p0, Lcom/android/keyguard/KeyguardPINView;->mDisappearYTranslation:I
 
-    .line 48
     return-void
 .end method
 
 .method static synthetic access$000(Lcom/android/keyguard/KeyguardPINView;Z)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/keyguard/KeyguardPINView;
-    .param p1, "x1"    # Z
 
-    .prologue
-    .line 28
     invoke-direct {p0, p1}, Lcom/android/keyguard/KeyguardPINView;->enableClipping(Z)V
 
     return-void
@@ -83,38 +68,29 @@
 
 .method private enableClipping(Z)V
     .locals 1
-    .param p1, "enable"    # Z
 
-    .prologue
-    .line 134
     iget-object v0, p0, Lcom/android/keyguard/KeyguardPINView;->mKeyguardBouncerFrame:Landroid/view/ViewGroup;
 
     invoke-virtual {v0, p1}, Landroid/view/ViewGroup;->setClipToPadding(Z)V
 
-    .line 135
     iget-object v0, p0, Lcom/android/keyguard/KeyguardPINView;->mKeyguardBouncerFrame:Landroid/view/ViewGroup;
 
     invoke-virtual {v0, p1}, Landroid/view/ViewGroup;->setClipChildren(Z)V
 
-    .line 136
     iget-object v0, p0, Lcom/android/keyguard/KeyguardPINView;->mRow1:Landroid/view/ViewGroup;
 
     invoke-virtual {v0, p1}, Landroid/view/ViewGroup;->setClipToPadding(Z)V
 
-    .line 137
     iget-object v0, p0, Lcom/android/keyguard/KeyguardPINView;->mRow2:Landroid/view/ViewGroup;
 
     invoke-virtual {v0, p1}, Landroid/view/ViewGroup;->setClipToPadding(Z)V
 
-    .line 138
     iget-object v0, p0, Lcom/android/keyguard/KeyguardPINView;->mRow3:Landroid/view/ViewGroup;
 
     invoke-virtual {v0, p1}, Landroid/view/ViewGroup;->setClipToPadding(Z)V
 
-    .line 139
     invoke-virtual {p0, p1}, Lcom/android/keyguard/KeyguardPINView;->setClipChildren(Z)V
 
-    .line 140
     return-void
 .end method
 
@@ -123,8 +99,6 @@
 .method protected getPasswordTextViewId()I
     .locals 1
 
-    .prologue
-    .line 61
     sget v0, Lcom/android/keyguard/R$id;->pinEntry:I
 
     return v0
@@ -133,8 +107,6 @@
 .method public getWrongPasswordStringId()I
     .locals 1
 
-    .prologue
-    .line 82
     sget v0, Lcom/android/keyguard/R$string;->kg_wrong_pin:I
 
     return v0
@@ -143,8 +115,6 @@
 .method public hasOverlappingRendering()Z
     .locals 1
 
-    .prologue
-    .line 144
     const/4 v0, 0x0
 
     return v0
@@ -153,11 +123,8 @@
 .method protected onFinishInflate()V
     .locals 1
 
-    .prologue
-    .line 66
     invoke-super {p0}, Lcom/android/keyguard/KeyguardPinBasedInputView;->onFinishInflate()V
 
-    .line 68
     sget v0, Lcom/android/keyguard/R$id;->keyguard_bouncer_frame:I
 
     invoke-virtual {p0, v0}, Lcom/android/keyguard/KeyguardPINView;->findViewById(I)Landroid/view/View;
@@ -168,7 +135,6 @@
 
     iput-object v0, p0, Lcom/android/keyguard/KeyguardPINView;->mKeyguardBouncerFrame:Landroid/view/ViewGroup;
 
-    .line 69
     sget v0, Lcom/android/keyguard/R$id;->row0:I
 
     invoke-virtual {p0, v0}, Lcom/android/keyguard/KeyguardPINView;->findViewById(I)Landroid/view/View;
@@ -179,7 +145,6 @@
 
     iput-object v0, p0, Lcom/android/keyguard/KeyguardPINView;->mRow0:Landroid/view/ViewGroup;
 
-    .line 70
     sget v0, Lcom/android/keyguard/R$id;->row1:I
 
     invoke-virtual {p0, v0}, Lcom/android/keyguard/KeyguardPINView;->findViewById(I)Landroid/view/View;
@@ -190,7 +155,6 @@
 
     iput-object v0, p0, Lcom/android/keyguard/KeyguardPINView;->mRow1:Landroid/view/ViewGroup;
 
-    .line 71
     sget v0, Lcom/android/keyguard/R$id;->row2:I
 
     invoke-virtual {p0, v0}, Lcom/android/keyguard/KeyguardPINView;->findViewById(I)Landroid/view/View;
@@ -201,7 +165,6 @@
 
     iput-object v0, p0, Lcom/android/keyguard/KeyguardPINView;->mRow2:Landroid/view/ViewGroup;
 
-    .line 72
     sget v0, Lcom/android/keyguard/R$id;->row3:I
 
     invoke-virtual {p0, v0}, Lcom/android/keyguard/KeyguardPINView;->findViewById(I)Landroid/view/View;
@@ -212,7 +175,6 @@
 
     iput-object v0, p0, Lcom/android/keyguard/KeyguardPINView;->mRow3:Landroid/view/ViewGroup;
 
-    .line 73
     sget v0, Lcom/android/keyguard/R$id;->divider:I
 
     invoke-virtual {p0, v0}, Lcom/android/keyguard/KeyguardPINView;->findViewById(I)Landroid/view/View;
@@ -221,18 +183,14 @@
 
     iput-object v0, p0, Lcom/android/keyguard/KeyguardPINView;->mDivider:Landroid/view/View;
 
-    .line 74
     return-void
 .end method
 
 .method protected resetState()V
     .locals 3
 
-    .prologue
-    .line 51
     invoke-super {p0}, Lcom/android/keyguard/KeyguardPinBasedInputView;->resetState()V
 
-    .line 52
     iget-object v0, p0, Lcom/android/keyguard/KeyguardPINView;->mContext:Landroid/content/Context;
 
     invoke-static {v0}, Lcom/android/keyguard/KeyguardUpdateMonitor;->getInstance(Landroid/content/Context;)Lcom/android/keyguard/KeyguardUpdateMonitor;
@@ -245,7 +203,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 53
     iget-object v0, p0, Lcom/android/keyguard/KeyguardPINView;->mSecurityMessageDisplay:Lcom/android/keyguard/SecurityMessageDisplay;
 
     sget v1, Lcom/android/keyguard/R$string;->faceunlock_multiple_failures:I
@@ -254,11 +211,9 @@
 
     invoke-interface {v0, v1, v2}, Lcom/android/keyguard/SecurityMessageDisplay;->setMessage(IZ)V
 
-    .line 57
     :goto_0
     return-void
 
-    .line 55
     :cond_0
     iget-object v0, p0, Lcom/android/keyguard/KeyguardPINView;->mSecurityMessageDisplay:Lcom/android/keyguard/SecurityMessageDisplay;
 
@@ -274,15 +229,12 @@
 .method public showUsabilityHint()V
     .locals 0
 
-    .prologue
-    .line 78
     return-void
 .end method
 
 .method public startAppearAnimation()V
     .locals 10
 
-    .prologue
     const/4 v9, 0x0
 
     const/4 v8, 0x3
@@ -293,15 +245,12 @@
 
     const/4 v5, 0x0
 
-    .line 87
     invoke-direct {p0, v5}, Lcom/android/keyguard/KeyguardPINView;->enableClipping(Z)V
 
-    .line 88
     const/high16 v0, 0x3f800000
 
     invoke-virtual {p0, v0}, Lcom/android/keyguard/KeyguardPINView;->setAlpha(F)V
 
-    .line 89
     iget-object v0, p0, Lcom/android/keyguard/KeyguardPINView;->mAppearAnimationUtils:Lcom/android/keyguard/AppearAnimationUtils;
 
     invoke-virtual {v0}, Lcom/android/keyguard/AppearAnimationUtils;->getStartTranslation()F
@@ -310,7 +259,6 @@
 
     invoke-virtual {p0, v0}, Lcom/android/keyguard/KeyguardPINView;->setTranslationY(F)V
 
-    .line 90
     invoke-virtual {p0}, Lcom/android/keyguard/KeyguardPINView;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
@@ -335,7 +283,6 @@
 
     invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->translationY(F)Landroid/view/ViewPropertyAnimator;
 
-    .line 94
     iget-object v0, p0, Lcom/android/keyguard/KeyguardPINView;->mAppearAnimationUtils:Lcom/android/keyguard/AppearAnimationUtils;
 
     const/4 v1, 0x6
@@ -482,16 +429,12 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/android/keyguard/AppearAnimationUtils;->startAppearAnimation([[Landroid/view/View;Ljava/lang/Runnable;)V
 
-    .line 119
     return-void
 .end method
 
 .method public startDisappearAnimation(Ljava/lang/Runnable;)Z
     .locals 4
-    .param p1, "finishRunnable"    # Ljava/lang/Runnable;
 
-    .prologue
-    .line 123
     invoke-virtual {p0}, Lcom/android/keyguard/KeyguardPINView;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
@@ -530,7 +473,6 @@
 
     invoke-virtual {v0, p1}, Landroid/view/ViewPropertyAnimator;->withEndAction(Ljava/lang/Runnable;)Landroid/view/ViewPropertyAnimator;
 
-    .line 130
     const/4 v0, 0x1
 
     return v0

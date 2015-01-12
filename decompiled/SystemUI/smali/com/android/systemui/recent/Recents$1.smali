@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/systemui/recent/Recents;)V
     .locals 0
 
-    .prologue
-    .line 225
     iput-object p1, p0, Lcom/android/systemui/recent/Recents$1;->this$0:Lcom/android/systemui/recent/Recents;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,26 +37,20 @@
 .method public onAnimationStarted()V
     .locals 2
 
-    .prologue
-    .line 227
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "com.android.systemui.recent.action.WINDOW_ANIMATION_START"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 229
-    .local v0, "intent":Landroid/content/Intent;
     const-string v1, "com.android.systemui"
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setPackage(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 230
     iget-object v1, p0, Lcom/android/systemui/recent/Recents$1;->this$0:Lcom/android/systemui/recent/Recents;
 
     # invokes: Lcom/android/systemui/recent/Recents;->sendBroadcastSafely(Landroid/content/Intent;)V
     invoke-static {v1, v0}, Lcom/android/systemui/recent/Recents;->access$000(Lcom/android/systemui/recent/Recents;Landroid/content/Intent;)V
 
-    .line 231
     return-void
 .end method

@@ -26,18 +26,13 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/recent/RecentsPanelView;Landroid/view/View;)V
     .locals 0
-    .param p2, "other"    # Landroid/view/View;
 
-    .prologue
-    .line 108
     iput-object p1, p0, Lcom/android/systemui/recent/RecentsPanelView$OnLongClickDelegate;->this$0:Lcom/android/systemui/recent/RecentsPanelView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 109
     iput-object p2, p0, Lcom/android/systemui/recent/RecentsPanelView$OnLongClickDelegate;->mOtherView:Landroid/view/View;
 
-    .line 110
     return-void
 .end method
 
@@ -45,10 +40,7 @@
 # virtual methods
 .method public onLongClick(Landroid/view/View;)Z
     .locals 1
-    .param p1, "v"    # Landroid/view/View;
 
-    .prologue
-    .line 112
     iget-object v0, p0, Lcom/android/systemui/recent/RecentsPanelView$OnLongClickDelegate;->mOtherView:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->performLongClick()Z

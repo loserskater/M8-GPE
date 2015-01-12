@@ -25,8 +25,6 @@
 .method constructor <init>(Lcom/android/systemui/statusbar/phone/PhoneStatusBar;)V
     .locals 0
 
-    .prologue
-    .line 951
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$15;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,8 +37,6 @@
 .method public run()V
     .locals 2
 
-    .prologue
-    .line 955
     :try_start_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$15;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
@@ -60,11 +56,9 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 957
     :goto_0
     return-void
 
-    .line 956
     :catch_0
     move-exception v0
 

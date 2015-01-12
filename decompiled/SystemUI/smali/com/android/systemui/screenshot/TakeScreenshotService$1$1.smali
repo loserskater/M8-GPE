@@ -27,8 +27,6 @@
 .method constructor <init>(Lcom/android/systemui/screenshot/TakeScreenshotService$1;Landroid/os/Messenger;)V
     .locals 0
 
-    .prologue
-    .line 41
     iput-object p1, p0, Lcom/android/systemui/screenshot/TakeScreenshotService$1$1;->this$1:Lcom/android/systemui/screenshot/TakeScreenshotService$1;
 
     iput-object p2, p0, Lcom/android/systemui/screenshot/TakeScreenshotService$1$1;->val$callback:Landroid/os/Messenger;
@@ -43,8 +41,6 @@
 .method public run()V
     .locals 3
 
-    .prologue
-    .line 43
     const/4 v1, 0x0
 
     const/4 v2, 0x1
@@ -53,8 +49,6 @@
 
     move-result-object v0
 
-    .line 45
-    .local v0, "reply":Landroid/os/Message;
     :try_start_0
     iget-object v1, p0, Lcom/android/systemui/screenshot/TakeScreenshotService$1$1;->val$callback:Landroid/os/Messenger;
 
@@ -62,11 +56,9 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 48
     :goto_0
     return-void
 
-    .line 46
     :catch_0
     move-exception v1
 

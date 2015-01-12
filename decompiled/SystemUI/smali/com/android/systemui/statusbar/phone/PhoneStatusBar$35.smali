@@ -33,8 +33,6 @@
 .method constructor <init>(Lcom/android/systemui/statusbar/phone/PhoneStatusBar;ZZLandroid/content/Intent;Z)V
     .locals 0
 
-    .prologue
-    .line 3037
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$35;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     iput-boolean p2, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$35;->val$keyguardShowing:Z
@@ -55,29 +53,24 @@
 .method public onDismiss()Z
     .locals 3
 
-    .prologue
     const/4 v2, 0x1
 
-    .line 3040
     new-instance v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$35$1;
 
     invoke-direct {v0, p0}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$35$1;-><init>(Lcom/android/systemui/statusbar/phone/PhoneStatusBar$35;)V
 
     invoke-static {v0}, Landroid/os/AsyncTask;->execute(Ljava/lang/Runnable;)V
 
-    .line 3057
     iget-boolean v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$35;->val$dismissShade:Z
 
     if-eqz v0, :cond_0
 
-    .line 3058
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$35;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1, v2}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->animateCollapsePanels(IZ)V
 
-    .line 3060
     :cond_0
     return v2
 .end method

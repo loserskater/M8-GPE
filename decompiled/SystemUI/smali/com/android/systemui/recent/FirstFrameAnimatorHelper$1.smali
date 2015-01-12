@@ -25,11 +25,8 @@
 .method constructor <init>()V
     .locals 2
 
-    .prologue
-    .line 67
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 68
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
@@ -44,11 +41,8 @@
 .method public onDraw()V
     .locals 0
 
-    .prologue
-    .line 70
     # operator++ for: Lcom/android/systemui/recent/FirstFrameAnimatorHelper;->sGlobalFrameCounter:J
     invoke-static {}, Lcom/android/systemui/recent/FirstFrameAnimatorHelper;->access$008()J
 
-    .line 76
     return-void
 .end method

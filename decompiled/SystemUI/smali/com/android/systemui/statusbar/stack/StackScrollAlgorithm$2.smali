@@ -27,8 +27,6 @@
 .method constructor <init>(Lcom/android/systemui/statusbar/stack/StackScrollAlgorithm;Landroid/view/ViewGroup;)V
     .locals 0
 
-    .prologue
-    .line 807
     iput-object p1, p0, Lcom/android/systemui/statusbar/stack/StackScrollAlgorithm$2;->this$0:Lcom/android/systemui/statusbar/stack/StackScrollAlgorithm;
 
     iput-object p2, p0, Lcom/android/systemui/statusbar/stack/StackScrollAlgorithm$2;->val$hostView:Landroid/view/ViewGroup;
@@ -43,8 +41,6 @@
 .method public run()V
     .locals 2
 
-    .prologue
-    .line 810
     iget-object v0, p0, Lcom/android/systemui/statusbar/stack/StackScrollAlgorithm$2;->this$0:Lcom/android/systemui/statusbar/stack/StackScrollAlgorithm;
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/stack/StackScrollAlgorithm$2;->val$hostView:Landroid/view/ViewGroup;
@@ -52,6 +48,5 @@
     # invokes: Lcom/android/systemui/statusbar/stack/StackScrollAlgorithm;->updateFirstChildHeightWhileExpanding(Landroid/view/ViewGroup;)V
     invoke-static {v0, v1}, Lcom/android/systemui/statusbar/stack/StackScrollAlgorithm;->access$300(Lcom/android/systemui/statusbar/stack/StackScrollAlgorithm;Landroid/view/ViewGroup;)V
 
-    .line 811
     return-void
 .end method
