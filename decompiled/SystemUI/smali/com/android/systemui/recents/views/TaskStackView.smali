@@ -61,6 +61,8 @@
 
 .field mLayoutAlgorithm:Lcom/android/systemui/recents/views/TaskStackViewLayoutAlgorithm;
 
+.field private mPopup:Landroid/widget/PopupMenu;
+
 .field mPrevAccessibilityFocusedIndex:I
 
 .field mRequestUpdateClippingListener:Landroid/animation/ValueAnimator$AnimatorUpdateListener;
@@ -283,6 +285,14 @@
     iput-object v0, p0, Lcom/android/systemui/recents/views/TaskStackView;->mUIDozeTrigger:Lcom/android/systemui/recents/misc/DozeTrigger;
 
     return-void
+.end method
+
+.method static synthetic access$002(Lcom/android/systemui/recents/views/TaskStackView;Landroid/widget/PopupMenu;)Landroid/widget/PopupMenu;
+    .locals 0
+
+    iput-object p1, p0, Lcom/android/systemui/recents/views/TaskStackView;->mPopup:Landroid/widget/PopupMenu;
+
+    return-object p1
 .end method
 
 .method private updateStackTransforms(Ljava/util/ArrayList;Ljava/util/ArrayList;F[IZ)Z
@@ -671,6 +681,18 @@
     return-object v0
 .end method
 
+.method public dismissAllTasks()V
+    .locals 1
+
+    new-instance v0, Lcom/android/systemui/recents/views/TaskStackView$5;
+
+    invoke-direct {v0, p0}, Lcom/android/systemui/recents/views/TaskStackView$5;-><init>(Lcom/android/systemui/recents/views/TaskStackView;)V
+
+    invoke-virtual {p0, v0}, Lcom/android/systemui/recents/views/TaskStackView;->post(Ljava/lang/Runnable;)Z
+
+    return-void
+.end method
+
 .method public dismissFocusedTask()V
     .locals 4
 
@@ -1009,9 +1031,9 @@
 
     if-eqz v3, :cond_1
 
-    new-instance v4, Lcom/android/systemui/recents/views/TaskStackView$6;
+    new-instance v4, Lcom/android/systemui/recents/views/TaskStackView$9;
 
-    invoke-direct {v4, p0, v1}, Lcom/android/systemui/recents/views/TaskStackView$6;-><init>(Lcom/android/systemui/recents/views/TaskStackView;Lcom/android/systemui/recents/model/Task;)V
+    invoke-direct {v4, p0, v1}, Lcom/android/systemui/recents/views/TaskStackView$9;-><init>(Lcom/android/systemui/recents/views/TaskStackView;Lcom/android/systemui/recents/model/Task;)V
 
     invoke-virtual {v3, v4}, Lcom/android/systemui/recents/views/TaskView;->startDeleteTaskAnimation(Ljava/lang/Runnable;)V
 
@@ -1979,6 +2001,157 @@
     return-void
 .end method
 
+.method public onTaskViewLongClicked(Lcom/android/systemui/recents/views/TaskView;)V
+    .locals 12
+
+    const/4 v3, 0x1
+
+    const/4 v8, 0x0
+
+    new-instance v6, Landroid/widget/PopupMenu;
+
+    invoke-virtual {p0}, Lcom/android/systemui/recents/views/TaskStackView;->getContext()Landroid/content/Context;
+
+    move-result-object v9
+
+    iget-object v10, p1, Lcom/android/systemui/recents/views/TaskView;->mHeaderView:Lcom/android/systemui/recents/views/TaskViewHeader;
+
+    iget-object v10, v10, Lcom/android/systemui/recents/views/TaskViewHeader;->mApplicationIcon:Landroid/widget/ImageView;
+
+    invoke-direct {v6, v9, v10}, Landroid/widget/PopupMenu;-><init>(Landroid/content/Context;Landroid/view/View;)V
+
+    iput-object v6, p0, Lcom/android/systemui/recents/views/TaskStackView;->mPopup:Landroid/widget/PopupMenu;
+
+    invoke-virtual {v6}, Landroid/widget/PopupMenu;->getMenuInflater()Landroid/view/MenuInflater;
+
+    move-result-object v9
+
+    const/high16 v10, 0x7f100000
+
+    invoke-virtual {v6}, Landroid/widget/PopupMenu;->getMenu()Landroid/view/Menu;
+
+    move-result-object v11
+
+    invoke-virtual {v9, v10, v11}, Landroid/view/MenuInflater;->inflate(ILandroid/view/Menu;)V
+
+    invoke-virtual {p1}, Lcom/android/systemui/recents/views/TaskView;->getTask()Lcom/android/systemui/recents/model/Task;
+
+    move-result-object v7
+
+    iget-object v9, v7, Lcom/android/systemui/recents/model/Task;->key:Lcom/android/systemui/recents/model/Task$TaskKey;
+
+    iget-object v9, v9, Lcom/android/systemui/recents/model/Task$TaskKey;->baseIntent:Landroid/content/Intent;
+
+    invoke-virtual {v9}, Landroid/content/Intent;->getComponent()Landroid/content/ComponentName;
+
+    move-result-object v9
+
+    invoke-virtual {v9}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
+
+    move-result-object v4
+
+    :try_start_0
+    invoke-virtual {p0}, Lcom/android/systemui/recents/views/TaskStackView;->getContext()Landroid/content/Context;
+
+    move-result-object v9
+
+    invoke-virtual {v9}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
+
+    move-result-object v5
+
+    const/4 v9, 0x0
+
+    invoke-virtual {v5, v4, v9}, Landroid/content/pm/PackageManager;->getApplicationInfo(Ljava/lang/String;I)Landroid/content/pm/ApplicationInfo;
+
+    move-result-object v0
+
+    invoke-virtual {p0}, Lcom/android/systemui/recents/views/TaskStackView;->getContext()Landroid/content/Context;
+
+    move-result-object v9
+
+    const-string v10, "device_policy"
+
+    invoke-virtual {v9, v10}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/app/admin/DevicePolicyManager;
+
+    invoke-virtual {v1, v4}, Landroid/app/admin/DevicePolicyManager;->packageHasActiveAdmins(Ljava/lang/String;)Z
+
+    move-result v2
+
+    iget v9, v0, Landroid/content/pm/ApplicationInfo;->flags:I
+
+    and-int/lit8 v9, v9, 0x41
+
+    if-eq v9, v3, :cond_2
+
+    :goto_0
+    if-eqz v3, :cond_0
+
+    if-eqz v2, :cond_1
+
+    :cond_0
+    invoke-virtual {v6}, Landroid/widget/PopupMenu;->getMenu()Landroid/view/Menu;
+
+    move-result-object v8
+
+    const v9, 0x7f0e012a
+
+    invoke-interface {v8, v9}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
+
+    move-result-object v8
+
+    const/4 v9, 0x0
+
+    invoke-interface {v8, v9}, Landroid/view/MenuItem;->setEnabled(Z)Landroid/view/MenuItem;
+
+    invoke-virtual {v6}, Landroid/widget/PopupMenu;->getMenu()Landroid/view/Menu;
+
+    move-result-object v8
+
+    const v9, 0x7f0e012b
+
+    invoke-interface {v8, v9}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
+
+    move-result-object v8
+
+    const/4 v9, 0x0
+
+    invoke-interface {v8, v9}, Landroid/view/MenuItem;->setEnabled(Z)Landroid/view/MenuItem;
+    :try_end_0
+    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
+
+    :cond_1
+    :goto_1
+    new-instance v8, Lcom/android/systemui/recents/views/TaskStackView$7;
+
+    invoke-direct {v8, p0, p1, v4}, Lcom/android/systemui/recents/views/TaskStackView$7;-><init>(Lcom/android/systemui/recents/views/TaskStackView;Lcom/android/systemui/recents/views/TaskView;Ljava/lang/String;)V
+
+    invoke-virtual {v6, v8}, Landroid/widget/PopupMenu;->setOnMenuItemClickListener(Landroid/widget/PopupMenu$OnMenuItemClickListener;)V
+
+    new-instance v8, Lcom/android/systemui/recents/views/TaskStackView$8;
+
+    invoke-direct {v8, p0}, Lcom/android/systemui/recents/views/TaskStackView$8;-><init>(Lcom/android/systemui/recents/views/TaskStackView;)V
+
+    invoke-virtual {v6, v8}, Landroid/widget/PopupMenu;->setOnDismissListener(Landroid/widget/PopupMenu$OnDismissListener;)V
+
+    invoke-virtual {v6}, Landroid/widget/PopupMenu;->show()V
+
+    return-void
+
+    :cond_2
+    move v3, v8
+
+    goto :goto_0
+
+    :catch_0
+    move-exception v8
+
+    goto :goto_1
+.end method
+
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 1
 
@@ -2380,9 +2553,9 @@
     :cond_5
     iget-object v5, p1, Lcom/android/systemui/recents/views/ViewAnimation$TaskViewEnterContext;->postAnimationTrigger:Lcom/android/systemui/recents/misc/ReferenceCountedTrigger;
 
-    new-instance v6, Lcom/android/systemui/recents/views/TaskStackView$5;
+    new-instance v6, Lcom/android/systemui/recents/views/TaskStackView$6;
 
-    invoke-direct {v6, p0}, Lcom/android/systemui/recents/views/TaskStackView$5;-><init>(Lcom/android/systemui/recents/views/TaskStackView;)V
+    invoke-direct {v6, p0}, Lcom/android/systemui/recents/views/TaskStackView$6;-><init>(Lcom/android/systemui/recents/views/TaskStackView;)V
 
     invoke-virtual {v5, v6}, Lcom/android/systemui/recents/misc/ReferenceCountedTrigger;->addLastDecrementRunnable(Ljava/lang/Runnable;)V
 

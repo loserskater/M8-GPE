@@ -255,7 +255,7 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "2" || file_getprop("/tmp/
   #Theme extract
   #
   if file_getprop("/tmp/aroma/themes.prop","selected.1") == "2" then
-    ui_print("Stock Theme");
+    ui_print("Dark Theme");
     package_extract_dir("aroma/theme/dark", "/system");
   endif;
 endif;

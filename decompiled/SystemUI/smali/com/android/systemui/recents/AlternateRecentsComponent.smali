@@ -1515,7 +1515,7 @@
 
     :cond_3
     :goto_5
-    invoke-static {}, Ljava/lang/System;->nanoTime()J
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v10
 
@@ -1574,7 +1574,7 @@
 .method toggleRecentsActivity()V
     .locals 8
 
-    invoke-static {}, Ljava/lang/System;->nanoTime()J
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v4
 
@@ -1582,7 +1582,7 @@
 
     sub-long/2addr v4, v6
 
-    const-wide/32 v6, 0x14dc9380
+    const-wide/16 v6, 0x15e
 
     cmp-long v3, v4, v6
 
@@ -1630,7 +1630,7 @@
 
     invoke-virtual {v3, v0, v4}, Landroid/content/Context;->sendBroadcastAsUser(Landroid/content/Intent;Landroid/os/UserHandle;)V
 
-    invoke-static {}, Ljava/lang/System;->nanoTime()J
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v4
 

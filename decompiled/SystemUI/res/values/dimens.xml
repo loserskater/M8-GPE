@@ -268,4 +268,9 @@
     <dimen name="password_char_padding">8.0dip</dimen>
     <dimen name="date_owner_info_margin">10.0dip</dimen>
     <dimen name="disappear_y_translation">-32.0dip</dimen>
+    <dimen name="floating_action_button_height">54.0dip</dimen>
+    <dimen name="floating_action_button_width">54.0dip</dimen>
+    <dimen name="floating_action_button_translation_z">12.0dip</dimen>
+    <dimen name="floating_action_button_margin_side">32.0dip</dimen>
+    <dimen name="floating_action_button_margin_bottom">45.0dip</dimen>
 </resources>

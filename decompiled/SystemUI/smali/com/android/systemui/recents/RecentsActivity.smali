@@ -1394,6 +1394,18 @@
 
     invoke-virtual {v13, v14}, Lcom/android/systemui/recents/views/RecentsView;->setSearchBarVisibility(I)V
 
+    const v13, 0x7f0e0127
+
+    move-object/from16 v0, p0
+
+    invoke-virtual {v0, v13}, Lcom/android/systemui/recents/RecentsActivity;->findViewById(I)Landroid/view/View;
+
+    move-result-object v13
+
+    const/16 v14, 0x8
+
+    invoke-virtual {v13, v14}, Landroid/view/View;->setVisibility(I)V
+
     :goto_6
     move-object/from16 v0, p0
 
@@ -1419,6 +1431,18 @@
     invoke-virtual {v13, v14}, Landroid/view/View;->setVisibility(I)V
 
     :cond_b
+    const v13, 0x7f0e0127
+
+    move-object/from16 v0, p0
+
+    invoke-virtual {v0, v13}, Lcom/android/systemui/recents/RecentsActivity;->findViewById(I)Landroid/view/View;
+
+    move-result-object v13
+
+    const/4 v14, 0x0
+
+    invoke-virtual {v13, v14}, Landroid/view/View;->setVisibility(I)V
+
     move-object/from16 v0, p0
 
     iget-object v13, v0, Lcom/android/systemui/recents/RecentsActivity;->mRecentsView:Lcom/android/systemui/recents/views/RecentsView;

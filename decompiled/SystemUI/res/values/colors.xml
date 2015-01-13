@@ -66,4 +66,6 @@
     <color name="facelock_spotlight_mask">#cc000000</color>
     <color name="clock_white">#ffffffff</color>
     <color name="clock_gray">#80ffffff</color>
+    <color name="fab_color">#ffdc4c3c</color>
+    <color name="floating_action_button_icon_color">#ffffffff</color>
 </resources>

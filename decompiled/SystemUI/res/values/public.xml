@@ -271,6 +271,8 @@
     <public type="drawable" name="ic_media_pause" id="0x7f020149" />
     <public type="drawable" name="ic_media_stop" id="0x7f02014a" />
     <public type="drawable" name="ic_contact_picture" id="0x7f02014b" />
+    <public type="drawable" name="fab" id="0x7f02014c" />
+    <public type="drawable" name="floating_action_button" id="0x7f02014d" />
     <public type="drawable" name="bg_protect" id="0x7f020001" />
     <public type="drawable" name="bottom_divider_glow" id="0x7f020002" />
     <public type="drawable" name="btn_fab_recents" id="0x7f020005" />
@@ -369,6 +371,7 @@
     <public type="drawable" name="top_divider_glow" id="0x7f02013f" />
     <public type="drawable" name="ic_qs_default_user" id="0x7f02006c" />
     <public type="drawable" name="recents_task_shadow" id="0x7f0200ed" />
+    <public type="drawable" name="ic_notify_clear_normal" id="0x7f02014e" />
     <public type="drawable" name="APKTOOL_DUMMY_002d" id="0x7f02002d" />
     <public type="mipmap" name="ic_daydreams" id="0x7f030000" />
     <public type="mipmap" name="ic_launcher_dreams" id="0x7f030001" />
@@ -451,6 +454,7 @@
     <public type="layout" name="zen_mode_panel" id="0x7f04004e" />
     <public type="layout" name="zen_toast" id="0x7f04004f" />
     <public type="layout" name="keyguard_eca" id="0x7f040050" />
+    <public type="layout" name="floating_action_button" id="0x7f040051" />
     <public type="layout" name="keyguard_host_view" id="0x7f04000d" />
     <public type="layout" name="keyguard_widget_pager" id="0x7f040021" />
     <public type="anim" name="heads_up_enter" id="0x7f050000" />
@@ -570,6 +574,8 @@
     <public type="color" name="clock_gray" id="0x7f070041" />
     <public type="color" name="qs_user_detail_name" id="0x7f070042" />
     <public type="color" name="segmented_button_text_selector" id="0x7f070043" />
+    <public type="color" name="fab_color" id="0x7f070044" />
+    <public type="color" name="floating_action_button_icon_color" id="0x7f070045" />
     <public type="bool" name="config_recents_interface_for_tablets" id="0x7f080000" />
     <public type="bool" name="config_recents_thumbnail_image_fits_to_xy" id="0x7f080001" />
     <public type="bool" name="config_recents_use_hardware_layers" id="0x7f080002" />
@@ -1482,6 +1488,11 @@
     <public type="dimen" name="password_char_padding" id="0x7f0c010e" />
     <public type="dimen" name="date_owner_info_margin" id="0x7f0c010f" />
     <public type="dimen" name="disappear_y_translation" id="0x7f0c0110" />
+    <public type="dimen" name="floating_action_button_height" id="0x7f0c0117" />
+    <public type="dimen" name="floating_action_button_width" id="0x7f0c0118" />
+    <public type="dimen" name="floating_action_button_translation_z" id="0x7f0c0119" />
+    <public type="dimen" name="floating_action_button_margin_side" id="0x7f0c011a" />
+    <public type="dimen" name="floating_action_button_margin_bottom" id="0x7f0c011b" />
     <public type="dimen" name="peek_height" id="0x7f0c00b9" />
     <public type="dimen" name="keyguard_pattern_unlock_status_line_font_size" id="0x7f0c0116" />
     <public type="dimen" name="notification_panel_min_height" id="0x7f0c00ba" />
@@ -1793,10 +1804,15 @@
     <public type="id" name="zen_conditions" id="0x7f0e0124" />
     <public type="id" name="recent_remove_item" id="0x7f0e0125" />
     <public type="id" name="recent_inspect_item" id="0x7f0e0126" />
-    <public type="id" name="center_clock" id="0x7f0e0127" />
-    <public type="id" name="left_clock" id="0x7f0e0128" />
-    <public type="id" name="center_clock_area" id="0x7f0e0129" />
-    <public type="id" name="left_clock_area" id="0x7f0e012a" />
+    <public type="id" name="floating_action_button" id="0x7f0e0127" />
+    <public type="id" name="clear_recents" id="0x7f0e0128" />
+    <public type="id" name="recent_force_stop" id="0x7f0e0129" />
+    <public type="id" name="recent_wipe_app" id="0x7f0e012a" />
+    <public type="id" name="recent_uninstall" id="0x7f0e012b" />
+    <public type="id" name="center_clock" id="0x7f0e012c" />
+    <public type="id" name="left_clock" id="0x7f0e012d" />
+    <public type="id" name="center_clock_area" id="0x7f0e012e" />
+    <public type="id" name="left_clock_area" id="0x7f0e012f" />
     <public type="plurals" name="status_bar_accessibility_recent_apps" id="0x7f0f0000" />
     <public type="plurals" name="kg_password_wrong_pin_code" id="0x7f0f0001" />
     <public type="plurals" name="kg_password_wrong_puk_code" id="0x7f0f0002" />

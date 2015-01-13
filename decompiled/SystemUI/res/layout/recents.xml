@@ -6,4 +6,5 @@
     <ViewStub android:id="@id/empty_view_stub" android:layout="@layout/recents_empty" android:layout_width="fill_parent" android:layout_height="fill_parent" />
     <ViewStub android:id="@id/debug_overlay_stub" android:layout="@layout/recents_debug_overlay" android:layout_width="fill_parent" android:layout_height="fill_parent" />
     <ImageView android:layout_gravity="bottom|center" android:id="@id/nav_bar_scrim" android:layout_width="fill_parent" android:layout_height="wrap_content" android:src="@drawable/recents_lower_gradient" android:scaleType="fitXY" />
+    <include layout="@layout/floating_action_button" />
 </FrameLayout>

@@ -32,3 +32,6 @@
 
 .method public abstract onTaskViewFullScreenTransitionCompleted()V
 .end method
+
+.method public abstract onTaskViewLongClicked(Lcom/android/systemui/recents/views/TaskView;)V
+.end method
