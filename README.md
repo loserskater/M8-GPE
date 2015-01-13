@@ -6,7 +6,8 @@
  
  
  With the help of:
-@[danvdh](http://forum.xda-developers.com/member.php?u=4830253)  
+ 
+ @[danvdh](http://forum.xda-developers.com/member.php?u=4830253)  
 @[Kryten2k35](http://forum.xda-developers.com/member.php?u=3443334)
 
 
@@ -21,5 +22,5 @@ If you're still having issues with flashing try running this command
 
 		git config --global core.eol lf
 
-
+### Xda Thread
 Xda link will go [HERE](http://forum.xda-developers.com/htc-one-m8/development) after we release.
