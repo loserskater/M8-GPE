@@ -368,7 +368,8 @@ if prop("type.prop","selected")=="2"||prop("type.prop","selected")=="3" then
 		"CM Browser",     "Material design web browser, will replace Chrome in /system",                 0,      #-- item.0.2
 		"Calendar",       "AOSP Calendar. will replace Google Calendar in /system",                      0,      #-- item.0.3
 	    "File Manager",   "Material design file explorer",                                               0,      #-- item.0.4
-        "Music",          "Eleven, material design music player, will replace google music in /system",  0       #-- item.0.5
+        "Music",          "Eleven, material design music player, will replace google music in /system",  0,      #-- item.0.5
+		"Sound Recorder", "",                                                                            0       #-- item.0.6
     
 	);
     write(

@@ -175,6 +175,12 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "2" || file_getprop("/tmp/
     delete_recursive("/system/priv-app/Eleven");
 	package_extract_dir("system/app/Music2", "/system/app/Music2");
   endif;
+  if file_getprop("/tmp/aroma/cm.prop","item.0.6") == "1" then
+    ui_print("Adding Sound Recorder");
+    package_extract_dir("aroma/cm_apps/soundrecorder", "/system");
+  else
+    delete_recursive("/system/app/SoundRecorder");
+  endif;
   #
   #Camera/Gallery
   #
