@@ -2,3 +2,5 @@ M8-GPE*.zip
 temp/*
 build/
 dist/
+decompiled/*.jar
+decompiled/*.apk
