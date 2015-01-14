@@ -20197,7 +20197,7 @@
 
     const-string v12, "enable_music_controls"
 
-    const/4 v13, 0x2
+    const/4 v13, 0x0
 
     const/4 v14, -0x2
 
@@ -20209,7 +20209,7 @@
 
     const-string v12, "music_controls_timeout"
 
-    const/4 v13, 0x2
+    const/16 v13, 0x1f4
 
     const/4 v14, -0x2
 
@@ -20221,7 +20221,7 @@
 
     const-string v12, "volume_up_action"
 
-    const/4 v13, 0x2
+    const/16 v13, 0x57
 
     const/4 v14, -0x2
 
@@ -20233,7 +20233,7 @@
 
     const-string v12, "volume_down_action"
 
-    const/4 v13, 0x2
+    const/16 v13, 0x58
 
     const/4 v14, -0x2
 
