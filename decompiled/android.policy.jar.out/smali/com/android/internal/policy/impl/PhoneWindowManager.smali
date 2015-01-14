@@ -13539,7 +13539,7 @@
 
     :cond_14
     :goto_9
-    if-eqz v5, :cond_11
+    if-eqz v5, :cond_19
 
     invoke-virtual/range {p0 .. p0}, Lcom/android/internal/policy/impl/PhoneWindowManager;->getTelecommService()Landroid/telecom/TelecomManager;
 
