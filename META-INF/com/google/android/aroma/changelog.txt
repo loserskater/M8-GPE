@@ -8,5 +8,7 @@
 <*>Extra settings
    Clock position
    Music controls
+   Volume panel timeout
+   Heads up timeout
 <*>Advanced Power Menu
 <*>AppOps> Settings>Security>AppOps
