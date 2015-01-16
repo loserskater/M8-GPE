@@ -203,6 +203,8 @@
 
 .field mAwake:Z
 
+.field mBackLongPress:Ljava/lang/Runnable;
+
 .field mBootMessageNeedsHiding:Z
 
 .field mBootMsgDialog:Landroid/app/ProgressDialog;
@@ -1052,6 +1054,12 @@
 
     iput-object v0, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mScreenshotRunnable:Ljava/lang/Runnable;
 
+    new-instance v0, Lcom/android/internal/policy/impl/PhoneWindowManager$BackKill;
+
+    invoke-direct {v0, p0}, Lcom/android/internal/policy/impl/PhoneWindowManager$BackKill;-><init>(Lcom/android/internal/policy/impl/PhoneWindowManager;)V
+
+    iput-object v0, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mBackLongPress:Ljava/lang/Runnable;
+
     new-instance v0, Lcom/android/internal/policy/impl/PhoneWindowManager$8;
 
     invoke-direct {v0, p0}, Lcom/android/internal/policy/impl/PhoneWindowManager$8;-><init>(Lcom/android/internal/policy/impl/PhoneWindowManager;)V
@@ -1165,6 +1173,17 @@
     invoke-direct {p0}, Lcom/android/internal/policy/impl/PhoneWindowManager;->updateSystemUiVisibilityLw()I
 
     move-result v0
+
+    return v0
+.end method
+
+.method static synthetic access$1400(Lcom/android/internal/policy/impl/PhoneWindowManager;)I
+    .locals 1
+    .param p0, "x0"    # Lcom/android/internal/policy/impl/PhoneWindowManager;
+
+    .prologue
+    .line 146
+    iget v0, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mCurrentUserId:I
 
     return v0
 .end method
@@ -11717,6 +11736,25 @@
     iput-boolean v4, v0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mPendingMetaAction:Z
 
     :cond_c
+    const/4 v4, 0x4
+
+    move/from16 v0, v25
+
+    if-ne v0, v4, :cond_next
+
+    if-nez v20, :cond_next
+
+    move-object/from16 v0, p0
+
+    iget-object v4, v0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mHandler:Landroid/os/Handler;
+
+    move-object/from16 v0, p0
+
+    iget-object v6, v0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mBackLongPress:Ljava/lang/Runnable;
+
+    invoke-virtual {v4, v6}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
+
+    :cond_next
     const/4 v4, 0x3
 
     move/from16 v0, v25
@@ -12298,6 +12336,7 @@
     invoke-virtual {v4, v0, v6}, Landroid/content/Context;->startActivityAsUser(Landroid/content/Intent;Landroid/os/UserHandle;)V
 
     :cond_2b
+    :goto_back
     move-object/from16 v0, p0
 
     iget-boolean v4, v0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mSearchKeyShortcutPending:Z
@@ -12587,7 +12626,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_2b
+    if-eqz v4, :cond_back
 
     if-eqz v20, :cond_37
 
@@ -12617,6 +12656,69 @@
     invoke-direct {v0, v4}, Lcom/android/internal/policy/impl/PhoneWindowManager;->launchAssistAction(Ljava/lang/String;)V
 
     goto :goto_b
+	
+    :cond_back
+    const/4 v4, 0x4
+
+    move/from16 v0, v25
+
+    if-ne v0, v4, :cond_2b
+
+    move-object/from16 v0, p0
+
+    iget-object v4, v0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v4}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v4
+
+    const-string v6, "longpress_back_kill_enable"
+
+    const/4 v7, 0x0
+
+    invoke-static {v4, v6, v7}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+
+    move-result v4
+
+    const/4 v6, 0x1
+
+    if-ne v4, v6, :cond_2b
+
+    if-eqz v20, :cond_2b
+
+    if-nez v32, :cond_2b
+
+    move-object/from16 v0, p0
+
+    iget-object v4, v0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v4}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v4
+
+    const-string v6, "longpress_back_kill_timeout"
+
+    const/16 v7, 0x7d0
+
+    invoke-static {v4, v6, v7}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+
+    move-result v7
+
+    int-to-long v8, v7
+
+    move-object/from16 v0, p0
+
+    iget-object v4, v0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mHandler:Landroid/os/Handler;
+
+    move-object/from16 v0, p0
+
+    iget-object v6, v0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mBackLongPress:Ljava/lang/Runnable;
+
+    move-object/from16 v0, p0
+
+    invoke-virtual {v4, v6, v8, v9}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
+
+    goto/16 :goto_back
 
     :catch_0
     move-exception v21
