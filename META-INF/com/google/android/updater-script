@@ -6,19 +6,20 @@ unmount("/cache");
 #
 if file_getprop("/tmp/aroma/type.prop","selected") == "4" then
   set_progress(0.1);
-  mount("ext4", "EMMC", "/dev/block/platform/msm_sdcc.1/by-name/system", "/system");
-  mount("ext4", "EMMC", "/dev/block/platform/msm_sdcc.1/by-name/cache", "/cache");
-  mount("ext4", "EMMC", "/dev/block/platform/msm_sdcc.1/by-name/data", "/data");
+  mount("ext4", "EMMC", "/dev/block/mmcblk0p45", "/system");
+  mount("ext4", "EMMC", "/dev/block/mmcblk0p46", "/cache");
+  mount("ext4", "EMMC", "/dev/block/mmcblk0p47", "/data");
   ui_print("@Deleting Necessary Modules/Parts/Data");
   delete_recursive("/system/lib/modules");
   set_progress(0.5);
   if file_getprop("/tmp/aroma/kernel.prop","selected.1") == "1" then
     ui_print("@Installing Stock Kernel");
     package_extract_dir("system/lib/modules", "/system/lib/modules");
-    assert(package_extract_file("boot.img", "/tmp/boot.img"), run_program("/sbin/dd", "if=/tmp/boot.img", "of=/dev/block/mmcblk0p42"));
+    package_extract_file("boot.img", "/dev/block/mmcblk0p42");
   endif;
   ui_print("@Formating Cache");
-  run_program("/sbin/mke2fs", "-t", "ext4", "-m", "0", "/dev/block/mmcblk0p46");
+  format("ext4", "EMMC", "/dev/block/mmcblk0p46", "0", "/cache");
+  delete_recursive("/data/dalvik-cache");
   set_progress(1.0);
 endif;
 #
@@ -29,11 +30,11 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "3" then
   set_progress(0.01);
   if file_getprop("/tmp/aroma/wipe.prop","selected.0") != "1" then
     ui_print("@Formatting Cache");
-    run_program("/sbin/mke2fs", "-t", "ext4", "-m", "0", "/dev/block/mmcblk0p46");
+    format("ext4", "EMMC", "/dev/block/mmcblk0p46", "0", "/cache");
   endif;
-  mount("ext4", "EMMC", "/dev/block/platform/msm_sdcc.1/by-name/system", "/system");
-  mount("ext4", "EMMC", "/dev/block/platform/msm_sdcc.1/by-name/cache", "/cache");
-  mount("ext4", "EMMC", "/dev/block/platform/msm_sdcc.1/by-name/data", "/data");
+  mount("ext4", "EMMC", "/dev/block/mmcblk0p45", "/system");
+  mount("ext4", "EMMC", "/dev/block/mmcblk0p46", "/cache");
+  mount("ext4", "EMMC", "/dev/block/mmcblk0p47", "/data");
   if file_getprop("/tmp/aroma/wipe.prop","selected.0") != "1" then
     ui_print("@Formatting Dalvik");
     delete_recursive("/data/dalvik-cache");
@@ -47,17 +48,22 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "1" || file_getprop("/tmp/
   ui_print("@Installing Rom");
   set_progress(0.01);
   ui_print("@Formatting System");
-  run_program("/sbin/mke2fs", "-t", "ext4", "-m", "0", "/dev/block/mmcblk0p45");
+  format("ext4", "EMMC", "/dev/block/mmcblk0p45", "0", "/system");
   set_progress(0.10);
   ui_print("@Formatting Cache");
-  run_program("/sbin/mke2fs", "-t", "ext4", "-m", "0", "/dev/block/mmcblk0p46");
-  mount("ext4", "EMMC", "/dev/block/platform/msm_sdcc.1/by-name/system", "/system");
-  mount("ext4", "EMMC", "/dev/block/platform/msm_sdcc.1/by-name/cache", "/cache");
-  mount("ext4", "EMMC", "/dev/block/platform/msm_sdcc.1/by-name/data", "/data");
+  format("ext4", "EMMC", "/dev/block/mmcblk0p46", "0", "/cache");
+  mount("ext4", "EMMC", "/dev/block/mmcblk0p45", "/system");
+  mount("ext4", "EMMC", "/dev/block/mmcblk0p46", "/cache");
+  mount("ext4", "EMMC", "/dev/block/mmcblk0p47", "/data");
+  ui_print("@Formatting Dalvik");
+  delete_recursive("/data/dalvik-cache");
+  delete_recursive("/data/local");
   set_progress(0.15);
   if file_getprop("/tmp/aroma/wipe.prop","selected.0") == "1" then
     ui_print("@Formatting Data");
-    run_program("/sbin/sh", "-c", "find /data/* -maxdepth 0 -type d ! -name 'media' -exec rm -rf {} +");
+	package_extract_file("aroma/scripts/wipe.sh", "/tmp/wipe.sh");
+	set_perm(0, 0, 0777, "/tmp/wipe.sh");
+	run_program("/tmp/wipe.sh");
   endif;
   set_progress(0.20);
   ui_print("@Extracting System");
@@ -71,11 +77,11 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "1" || file_getprop("/tmp/
     if file_getprop("/tmp/aroma/kernel.prop","selected.1") == "1" then
       ui_print("@Installing Stock Kernel");
       package_extract_dir("system/lib/modules", "/system/lib/modules");
-      assert(package_extract_file("boot.img", "/tmp/boot.img"), run_program("/sbin/dd", "if=/tmp/boot.img", "of=/dev/block/mmcblk0p42"));
+      package_extract_file("boot.img", "/dev/block/mmcblk0p42");
     endif;
   else
     ui_print("@Installing Kernel");
-    assert(package_extract_file("boot.img", "/tmp/boot.img"), run_program("/sbin/dd", "if=/tmp/boot.img", "of=/dev/block/mmcblk0p42"));
+    package_extract_file("boot.img", "/dev/block/mmcblk0p42");
   endif;
   set_progress(0.60);
 endif;
@@ -243,11 +249,12 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "2" || file_getprop("/tmp/
     ui_print("Adding SunBeam");
     package_extract_dir("aroma/livewallpaper/sunbeam", "/system");
   else
-    delete_recursive("/system/app/sunbeam");
+    delete_recursive("/system/app/SunBeam");
   endif;
   #
   #THEMES Preparing theme
   #
+  set_progress(0.84);
   ui_print("@Preparing Theme Install");
   if file_getprop("/tmp/aroma/type.prop","selected") == "3" then
     package_extract_dir("system/priv-app/AppOps", "/system/priv-app/AppOps");
@@ -260,14 +267,14 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "2" || file_getprop("/tmp/
   #
   #Theme extract
   #
-  if file_getprop("/tmp/aroma/themes.prop","selected.1") == "2" then
+  if file_getprop("/tmp/aroma/themes.prop","selected.0") == "2" then
     ui_print("Dark Theme");
     package_extract_dir("aroma/theme/dark", "/system");
   endif;
 endif;
 ui_print("@Finishing up");
-set_progress(0.85);
-if file_getprop("/tmp/aroma/type.prop","selected") == "1" || file_getprop("/tmp/aroma/type.prop","selected") == "2" || file_getprop("/tmp/aroma/type.prop","selected") == "3" then
+set_progress(0.87);
+if file_getprop("/tmp/aroma/type.prop","selected") == "1" || file_getprop("/tmp/aroma/type.prop","selected") == "2" then
   ui_print("@Installing busybox");
   run_program("/system/xbin/busybox", "--install", "-s", "/system/xbin");
   ui_print("@Creating symlinks");
