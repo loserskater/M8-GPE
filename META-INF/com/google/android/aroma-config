@@ -366,9 +366,9 @@ if prop("type.prop","selected")=="2"||prop("type.prop","selected")=="3" then
 										  
 	    "Audio FX",       "Will replace MusicFX",                                                        0,      #-- item.0.1
 		"CM Browser",     "Material design web browser, will replace Chrome in /system",                 0,      #-- item.0.2
-		"Calendar",       "AOSP Calendar. will replace Google Calendar in /system",                      0,      #-- item.0.3
+		"Calendar",       "AOSP Calendar, will replace Google Calendar in /system",                      0,      #-- item.0.3
 	    "File Manager",   "Material design file explorer",                                               0,      #-- item.0.4
-        "Music",          "Eleven, material design music player, will replace google music in /system",  0,      #-- item.0.5
+        "Music",          "Material design music player, will replace Google music in /system",          0,      #-- item.0.5
 		"Sound Recorder", "",                                                                            0       #-- item.0.6
     
 	);
@@ -406,13 +406,13 @@ if prop("type.prop","selected")=="2"||prop("type.prop","selected")=="3" then
       #-- Will be saved in /tmp/aroma/camera.prop
         "camera.prop",
         
-       "Camera",           "",                                                     2,       		
-		"Stock Google",    "Stock camera. HDR available, no saving to SDcard",     1,       #-- item.1.1
-		"Moto X",          "Motorola Camera. saving to SD card supported, no HDR", 0,       #-- item.1.2
+       "Camera",           "",                                                                2,       		
+		"Stock Google",    "Stock camera. HDR available, saving to SDcard not available",     1,       #-- item.1.1
+		"Moto X",          "Motorola Camera. saving to SD card supported, no HDR",            0,       #-- item.1.2
 		
-	   "Gallery",          "",                                                     2,
-	     "CM Gallery",      "",                                                    0,       #-- item.2.1
-		 "MotoX Gallery",  "",                                                     0        #-- item.2.2
+	   "Gallery",          "",                                                                2,
+	     "CM Gallery",     "",                                                                0,       #-- item.2.1
+		 "MotoX Gallery",  "",                                                                0        #-- item.2.2
 			  
     );
 	write(
