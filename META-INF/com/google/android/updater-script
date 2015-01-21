@@ -160,7 +160,7 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "2" || file_getprop("/tmp/
 	delete_recursive("/system/app/Chrome");
   else
     delete_recursive("/system/priv-app/Browser+");
-	delete_recursive("/system/priv-app/GooglBookmarksSync");
+	delete_recursive("/system/priv-app/GoogleBookmarksSync");
   endif;
   if file_getprop("/tmp/aroma/cm.prop","item.0.3") == "1" then
     ui_print("Adding AOSP Calendar");
