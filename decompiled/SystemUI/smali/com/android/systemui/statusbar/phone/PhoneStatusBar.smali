@@ -11670,89 +11670,42 @@
 .end method
 
 .method public showClock(Z)V
-    .locals 7
-    
-	const/16 v5, 0x8
+    .locals 3
 
-    const/4 v4, 0x0
+    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mStatusBarView:Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;
 
-    iget-object v3, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mStatusBarView:Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;
-
-    if-nez v3, :cond_1
+    if-nez v1, :cond_1
 
     :cond_0
     :goto_0
     return-void
 
     :cond_1
-    iget-object v3, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mStatusBarView:Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;
+    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mStatusBarView:Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;
 
-    const v6, 0x7f0e0076
+    const v2, 0x7f0e0076
 
-    invoke-virtual {v3, v6}, Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v1, v2}, Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
-    if-eqz v0, :cond_2
-
-    if-eqz p1, :cond_4
-
-    move v3, v4
-
-    :goto_1
-    invoke-virtual {v0, v3}, Landroid/view/View;->setVisibility(I)V
-
-    :cond_2
-    iget-object v3, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mStatusBarView:Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;
-
-    const v6, 0x7f0e012c
-
-    invoke-virtual {v3, v6}, Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;->findViewById(I)Landroid/view/View;
-
-    move-result-object v1
-
-    if-eqz v0, :cond_3
-
-    if-eqz p1, :cond_5
-
-    move v3, v4
-
-    :goto_2
-    invoke-virtual {v1, v3}, Landroid/view/View;->setVisibility(I)V
-
-    :cond_3
-    iget-object v3, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mStatusBarView:Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;
-
-    const v6, 0x7f0e012d
-
-    invoke-virtual {v3, v6}, Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;->findViewById(I)Landroid/view/View;
-
-    move-result-object v2
-
     if-eqz v0, :cond_0
 
-    if-eqz p1, :cond_6
+    if-eqz p1, :cond_2
 
-    :goto_3
-    invoke-virtual {v2, v4}, Landroid/view/View;->setVisibility(I)V
+    const/4 v1, 0x0
+
+    :goto_1
+    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
     goto :goto_0
 
-    :cond_4
-    move v3, v5
+    :cond_2
+    const/16 v1, 0x8
 
     goto :goto_1
-
-    :cond_5
-    const/4 v3, 0x4
-
-    goto :goto_2
-
-    :cond_6
-    move v4, v5
-
-    goto :goto_3
 .end method
+
 
 .method public showKeyguard()V
     .locals 5

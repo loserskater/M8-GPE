@@ -1591,11 +1591,11 @@
 
     sget-object v1, Lcom/android/systemui/volume/VolumePanel;->sSafetyWarning:Landroid/app/AlertDialog;
 
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_0
 
-    if-nez v0, :cond_2
+    if-nez v0, :cond_1
 
-    :cond_1
+    :cond_0
     invoke-virtual {p0, v6}, Lcom/android/systemui/volume/VolumePanel;->removeMessages(I)V
 
     iget-object v1, p0, Lcom/android/systemui/volume/VolumePanel;->mContext:Landroid/content/Context;
@@ -1611,7 +1611,7 @@
     invoke-static {v1, v4, v0}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
 
     move-result v1
-	
+
     int-to-long v2, v1
 
     invoke-virtual {p0, v6, v2, v3}, Lcom/android/systemui/volume/VolumePanel;->sendEmptyMessageDelayed(IJ)Z
@@ -1620,7 +1620,7 @@
 
     invoke-virtual {p0, v7}, Lcom/android/systemui/volume/VolumePanel;->sendEmptyMessage(I)Z
 
-    :cond_2
+    :cond_1
     return-void
 .end method
 
