@@ -10,5 +10,8 @@
    Music controls
    Volume panel timeout
    Heads up timeout
+   Disable heads up
+   Long press back to kill
+   Ime notification
 <*>Advanced Power Menu
 <*>AppOps> Settings>Security>AppOps
