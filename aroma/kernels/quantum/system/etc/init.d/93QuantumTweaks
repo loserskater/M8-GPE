@@ -1,0 +1,32 @@
+#!/system/bin/sh
+
+#################################Kernel Tweaks#######################################
+busybox sysctl -e -w kernel.random.read_wakeup_threshold=4096;
+busybox sysctl -e -w kernel.random.write_wakeup_threshold=4096;
+
+MMC=`ls -d /sys/block/mmc*`;
+for i in $MMC;
+do
+echo "0" > $i/queue/iostats;
+echo 0 > $i/queue/rotational;
+echo "0" > $i/queue/add_random;
+echo "2" > $i/queue/rq_affinity;
+done;
+
+# row tweaks
+echo 100 > /sys/block/mmcblk0/queue/iosched/hp_read_quantum
+echo 75 > /sys/block/mmcblk0/queue/iosched/rp_read_quantum
+echo 5 > /sys/block/mmcblk0/queue/iosched/hp_swrite_quantum
+echo 4 > /sys/block/mmcblk0/queue/iosched/rp_swrite_quantum
+echo 4 > /sys/block/mmcblk0/queue/iosched/rp_write_quantum
+echo 3 > /sys/block/mmcblk0/queue/iosched/lp_read_quantum
+echo 2 > /sys/block/mmcblk0/queue/iosched/lp_swrite_quantum
+echo 10 > /sys/block/mmcblk0/queue/iosched/read_idle
+echo 25 > /sys/block/mmcblk0/queue/iosched/read_idle_freq
+## N4 and N10 have a new version of row with corrected entry for lsq and renamed ri and rif
+[ `cat /sys/block/mmcblk0/queue/iosched/lp_swrite_quantum` != "2" ] && echo 2 > /sys/block/mmcblk0/queue/iosched/lp_swrite_quantum
+echo 10 > /sys/block/mmcblk0/queue/iosched/rd_idle_data
+echo 25 > /sys/block/mmcblk0/queue/iosched/rd_idle_data_freq
+echo "done"
+
+echo "Tweaks Applied!"

@@ -11,11 +11,39 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "4" then
   mount("ext4", "EMMC", "/dev/block/mmcblk0p47", "/data");
   ui_print("@Deleting Necessary Modules/Parts/Data");
   delete_recursive("/system/lib/modules");
+  delete("/system/etc/init.d/97quantumsettings");
+  delete("/system/etc/init.d/99elementalx");
+  delete("/system/etc/init.d/99elementalx~");
+  delete("/system/etc/init.d/01-cam");
+  delete("/system/etc/init.d/01-dt2w");
+  delete("/system/etc/init.d/01-fastc");
+  delete("/system/etc/init.d/01-fsync");
+  delete("/system/etc/init.d/01-pocket");
+  delete("/system/etc/init.d/01-s2s");
+  delete("/system/etc/init.d/01-s2w");
+  delete("/system/etc/elementalx.conf");
+  delete("/system/etc/skydragon.conf");
+  delete("/system/etc/init.d/99zram.sh");
+  delete("/system/etc/init.d/85s2s.sh");
   set_progress(0.5);
+  package_extract_dir("system/lib/modules", "/system/lib/modules");
   if file_getprop("/tmp/aroma/kernel.prop","selected.1") == "1" then
     ui_print("@Installing Stock Kernel");
-    package_extract_dir("system/lib/modules", "/system/lib/modules");
     package_extract_file("boot.img", "/dev/block/mmcblk0p42");
+	symlink("/system/lib/modules/pronto/pronto_wlan.ko", "/system/lib/modules/wlan.ko");
+  endif;
+  if file_getprop("/tmp/aroma/kernel.prop","selected.1") == "2" then
+    ui_print("@Installing Quantum by PwnCakes 193");
+	package_extract_dir("aroma/kernels/quantum/system", "/system");
+	set_perm_recursive(0, 2000, 0755, 0755, "/system/etc/init.d/93QuantumTweaks");
+    set_perm_recursive(0, 2000, 0755, 0755, "/system/etc/init.d/97QuantumSettings");
+    set_perm_recursive(0, 2000, 0755, 0755, "/system/etc/init.d/98remount_fullext4");
+    set_perm_recursive(0, 2000, 0755, 0755, "/system/bin/fstrim");
+    set_perm_recursive(0, 0, 0755, 0644, "/system/lib/modules");
+    symlink("/system/lib/modules/pronto/pronto_wlan.ko", "/system/lib/modules/wlan.ko");
+    package_extract_file("aroma/kernels/quantum/boot.img", "/dev/block/mmcblk0p42");
+	ui_print("Running FSTRIM, this might take a while");
+    run_program("/system/bin/fstrim", "-v", "/system");
   endif;
   ui_print("@Formating Cache");
   format("ext4", "EMMC", "/dev/block/mmcblk0p46", "0", "/cache");
@@ -81,6 +109,13 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "1" || file_getprop("/tmp/
       package_extract_dir("system/lib/modules", "/system/lib/modules");
       package_extract_file("boot.img", "/dev/block/mmcblk0p42");
     endif;
+	if file_getprop("/tmp/aroma/kernel.prop","selected.1") == "2" then
+      ui_print("@Installing Quantum by PwnCakes 193");
+	  package_extract_dir("aroma/kernels/quantum/system", "/system");
+      package_extract_file("aroma/kernels/quantum/boot.img", "/dev/block/mmcblk0p42");
+	  ui_print("Running FSTRIM, this might take a while");
+      run_program("/system/bin/fstrim", "-v", "/system");
+	endif;
   else
     ui_print("@Installing Kernel");
     package_extract_file("boot.img", "/dev/block/mmcblk0p42");

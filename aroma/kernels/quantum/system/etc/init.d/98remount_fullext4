@@ -1,0 +1,11 @@
+#!/system/bin/sh
+
+if ( mount | grep -w ext4 ) then
+	echo "EXT4 Partition Found!"
+	echo "Remounting..."
+	mount -o rw,remount -t ext4 /dev/block/mmcblk0p46 /cache;
+	mount -o rw,remount -t ext4 /dev/block/mmcblk0p47 /data;
+	mount -o rw,remount -t ext4 /dev/block/mmcblk0p45 /system;
+else
+	echo "EXT4 Partition Not Found!"
+fi;
