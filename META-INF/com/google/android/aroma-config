@@ -483,7 +483,7 @@ selectbox(
   
   "Kernel Options", "",                        2,
    "Default",    "Stock kernel",               1,     #-- selected.1 = 1
-   "Quantum",    "Kernel by PwnCakes193",      3      #-- selected.1 = 2
+   "Quantum",    "Kernel by PwnCakes193",      0      #-- selected.1 = 2
 );
 write(
   #-- Absolute path into the file

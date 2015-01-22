@@ -33,7 +33,7 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "4" then
 	symlink("/system/lib/modules/pronto/pronto_wlan.ko", "/system/lib/modules/wlan.ko");
   endif;
   if file_getprop("/tmp/aroma/kernel.prop","selected.1") == "2" then
-    ui_print("@Installing Quantum by PwnCakes 193");
+    ui_print("@Installing Quantum by PwnCakes193");
 	package_extract_dir("aroma/kernels/quantum/system", "/system");
 	set_perm_recursive(0, 2000, 0755, 0755, "/system/etc/init.d/93QuantumTweaks");
     set_perm_recursive(0, 2000, 0755, 0755, "/system/etc/init.d/97QuantumSettings");
@@ -103,14 +103,12 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "1" || file_getprop("/tmp/
     package_extract_dir("data", "/data");
   endif;
   if file_getprop("/tmp/aroma/type.prop","selected") != "1" then
-    delete_recursive("/system/lib/modules");
     if file_getprop("/tmp/aroma/kernel.prop","selected.1") == "1" then
       ui_print("@Installing Stock Kernel");
-      package_extract_dir("system/lib/modules", "/system/lib/modules");
       package_extract_file("boot.img", "/dev/block/mmcblk0p42");
     endif;
 	if file_getprop("/tmp/aroma/kernel.prop","selected.1") == "2" then
-      ui_print("@Installing Quantum by PwnCakes 193");
+      ui_print("@Installing Quantum by PwnCakes193");
 	  package_extract_dir("aroma/kernels/quantum/system", "/system");
       package_extract_file("aroma/kernels/quantum/boot.img", "/dev/block/mmcblk0p42");
 	  ui_print("Running FSTRIM, this might take a while");
