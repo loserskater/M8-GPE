@@ -3,6 +3,19 @@
 .source "KeyguardPINView.java"
 
 
+# static fields
+.field private static sNumbers:Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/List",
+            "<",
+            "Ljava/lang/Integer;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+
 # instance fields
 .field private final mAppearAnimationUtils:Lcom/android/keyguard/AppearAnimationUtils;
 
@@ -22,6 +35,112 @@
 
 
 # direct methods
+.method static constructor <clinit>()V
+    .locals 7
+
+    const/4 v6, 0x4
+
+    const/4 v5, 0x3
+
+    const/4 v4, 0x2
+
+    const/4 v2, 0x1
+
+    const/4 v3, 0x0
+
+    const/16 v0, 0xa
+
+    new-array v0, v0, [Ljava/lang/Integer;
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    aput-object v1, v0, v3
+
+    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    aput-object v1, v0, v2
+
+    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    aput-object v1, v0, v4
+
+    invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    aput-object v1, v0, v5
+
+    const/4 v1, 0x5
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    aput-object v1, v0, v6
+
+    const/4 v1, 0x5
+
+    const/4 v2, 0x6
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x6
+
+    const/4 v2, 0x7
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x7
+
+    const/16 v2, 0x8
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0x8
+
+    const/16 v2, 0x9
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0x9
+
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    aput-object v2, v0, v1
+
+    invoke-static {v0}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/android/keyguard/KeyguardPINView;->sNumbers:Ljava/util/List;
+
+    return-void
+.end method
+
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 1
 
@@ -58,7 +177,15 @@
     return-void
 .end method
 
-.method static synthetic access$000(Lcom/android/keyguard/KeyguardPINView;Z)V
+.method static synthetic access$000(Lcom/android/keyguard/KeyguardPINView;Ljava/lang/String;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lcom/android/keyguard/KeyguardPINView;->validateQuickUnlock(Ljava/lang/String;)V
+
+    return-void
+.end method
+
+.method static synthetic access$100(Lcom/android/keyguard/KeyguardPINView;Z)V
     .locals 0
 
     invoke-direct {p0, p1}, Lcom/android/keyguard/KeyguardPINView;->enableClipping(Z)V
@@ -94,6 +221,43 @@
     return-void
 .end method
 
+.method private validateQuickUnlock(Ljava/lang/String;)V
+    .locals 3
+
+    const/4 v2, 0x1
+
+    if-eqz p1, :cond_0
+
+    invoke-virtual {p1}, Ljava/lang/String;->length()I
+
+    move-result v0
+
+    const/4 v1, 0x3
+
+    if-le v0, v1, :cond_0
+
+    iget-object v0, p0, Lcom/android/keyguard/KeyguardPINView;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
+
+    invoke-virtual {v0, p1}, Lcom/android/internal/widget/LockPatternUtils;->checkPassword(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/android/keyguard/KeyguardPINView;->mCallback:Lcom/android/keyguard/KeyguardSecurityCallback;
+
+    invoke-interface {v0, v2}, Lcom/android/keyguard/KeyguardSecurityCallback;->reportUnlockAttempt(Z)V
+
+    iget-object v0, p0, Lcom/android/keyguard/KeyguardPINView;->mCallback:Lcom/android/keyguard/KeyguardSecurityCallback;
+
+    invoke-interface {v0, v2}, Lcom/android/keyguard/KeyguardSecurityCallback;->dismiss(Z)V
+
+    invoke-virtual {p0, v2}, Lcom/android/keyguard/KeyguardPINView;->resetPasswordText(Z)V
+
+    :cond_0
+    return-void
+.end method
+
 
 # virtual methods
 .method protected getPasswordTextViewId()I
@@ -121,69 +285,254 @@
 .end method
 
 .method protected onFinishInflate()V
-    .locals 1
+    .locals 12
+
+    const/4 v9, 0x1
+
+    const/4 v10, 0x0
 
     invoke-super {p0}, Lcom/android/keyguard/KeyguardPinBasedInputView;->onFinishInflate()V
 
-    sget v0, Lcom/android/keyguard/R$id;->keyguard_bouncer_frame:I
+    sget v8, Lcom/android/keyguard/R$id;->keyguard_bouncer_frame:I
 
-    invoke-virtual {p0, v0}, Lcom/android/keyguard/KeyguardPINView;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v8}, Lcom/android/keyguard/KeyguardPINView;->findViewById(I)Landroid/view/View;
+
+    move-result-object v8
+
+    check-cast v8, Landroid/view/ViewGroup;
+
+    iput-object v8, p0, Lcom/android/keyguard/KeyguardPINView;->mKeyguardBouncerFrame:Landroid/view/ViewGroup;
+
+    sget v8, Lcom/android/keyguard/R$id;->row0:I
+
+    invoke-virtual {p0, v8}, Lcom/android/keyguard/KeyguardPINView;->findViewById(I)Landroid/view/View;
+
+    move-result-object v8
+
+    check-cast v8, Landroid/view/ViewGroup;
+
+    iput-object v8, p0, Lcom/android/keyguard/KeyguardPINView;->mRow0:Landroid/view/ViewGroup;
+
+    sget v8, Lcom/android/keyguard/R$id;->row1:I
+
+    invoke-virtual {p0, v8}, Lcom/android/keyguard/KeyguardPINView;->findViewById(I)Landroid/view/View;
+
+    move-result-object v8
+
+    check-cast v8, Landroid/view/ViewGroup;
+
+    iput-object v8, p0, Lcom/android/keyguard/KeyguardPINView;->mRow1:Landroid/view/ViewGroup;
+
+    sget v8, Lcom/android/keyguard/R$id;->row2:I
+
+    invoke-virtual {p0, v8}, Lcom/android/keyguard/KeyguardPINView;->findViewById(I)Landroid/view/View;
+
+    move-result-object v8
+
+    check-cast v8, Landroid/view/ViewGroup;
+
+    iput-object v8, p0, Lcom/android/keyguard/KeyguardPINView;->mRow2:Landroid/view/ViewGroup;
+
+    sget v8, Lcom/android/keyguard/R$id;->row3:I
+
+    invoke-virtual {p0, v8}, Lcom/android/keyguard/KeyguardPINView;->findViewById(I)Landroid/view/View;
+
+    move-result-object v8
+
+    check-cast v8, Landroid/view/ViewGroup;
+
+    iput-object v8, p0, Lcom/android/keyguard/KeyguardPINView;->mRow3:Landroid/view/ViewGroup;
+
+    sget v8, Lcom/android/keyguard/R$id;->divider:I
+
+    invoke-virtual {p0, v8}, Lcom/android/keyguard/KeyguardPINView;->findViewById(I)Landroid/view/View;
+
+    move-result-object v8
+
+    iput-object v8, p0, Lcom/android/keyguard/KeyguardPINView;->mDivider:Landroid/view/View;
+
+    invoke-virtual {p0}, Lcom/android/keyguard/KeyguardPINView;->getContext()Landroid/content/Context;
+
+    move-result-object v8
+
+    invoke-virtual {v8}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v8
+
+    const-string v11, "quick_unlock"
+
+    invoke-static {v8, v11, v10}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+
+    move-result v8
+
+    if-ne v8, v9, :cond_1
+
+    move v4, v9
+
+    :goto_0
+    invoke-virtual {p0}, Lcom/android/keyguard/KeyguardPINView;->getContext()Landroid/content/Context;
+
+    move-result-object v8
+
+    invoke-virtual {v8}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v8
+
+    const-string v11, "scramble_pin"
+
+    invoke-static {v8, v11, v10}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+
+    move-result v8
+
+    if-ne v8, v9, :cond_2
+
+    move v5, v9
+
+    :goto_1
+    if-eqz v5, :cond_5
+
+    sget-object v8, Lcom/android/keyguard/KeyguardPINView;->sNumbers:Ljava/util/List;
+
+    invoke-static {v8}, Ljava/util/Collections;->shuffle(Ljava/util/List;)V
+
+    sget v8, Lcom/android/keyguard/R$id;->keyguard_bouncer_frame:I
+
+    invoke-virtual {p0, v8}, Lcom/android/keyguard/KeyguardPINView;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
-    check-cast v0, Landroid/view/ViewGroup;
+    check-cast v0, Landroid/widget/LinearLayout;
 
-    iput-object v0, p0, Lcom/android/keyguard/KeyguardPINView;->mKeyguardBouncerFrame:Landroid/view/ViewGroup;
+    new-instance v7, Ljava/util/ArrayList;
 
-    sget v0, Lcom/android/keyguard/R$id;->row0:I
+    invoke-direct {v7}, Ljava/util/ArrayList;-><init>()V
 
-    invoke-virtual {p0, v0}, Lcom/android/keyguard/KeyguardPINView;->findViewById(I)Landroid/view/View;
+    const/4 v1, 0x0
 
-    move-result-object v0
+    :goto_2
+    invoke-virtual {v0}, Landroid/widget/LinearLayout;->getChildCount()I
 
-    check-cast v0, Landroid/view/ViewGroup;
+    move-result v8
 
-    iput-object v0, p0, Lcom/android/keyguard/KeyguardPINView;->mRow0:Landroid/view/ViewGroup;
+    if-ge v1, v8, :cond_4
 
-    sget v0, Lcom/android/keyguard/R$id;->row1:I
+    invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->getChildAt(I)Landroid/view/View;
 
-    invoke-virtual {p0, v0}, Lcom/android/keyguard/KeyguardPINView;->findViewById(I)Landroid/view/View;
+    move-result-object v8
 
-    move-result-object v0
+    instance-of v8, v8, Landroid/widget/LinearLayout;
 
-    check-cast v0, Landroid/view/ViewGroup;
+    if-eqz v8, :cond_3
 
-    iput-object v0, p0, Lcom/android/keyguard/KeyguardPINView;->mRow1:Landroid/view/ViewGroup;
+    invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->getChildAt(I)Landroid/view/View;
 
-    sget v0, Lcom/android/keyguard/R$id;->row2:I
+    move-result-object v3
 
-    invoke-virtual {p0, v0}, Lcom/android/keyguard/KeyguardPINView;->findViewById(I)Landroid/view/View;
+    check-cast v3, Landroid/widget/LinearLayout;
 
-    move-result-object v0
+    const/4 v2, 0x0
 
-    check-cast v0, Landroid/view/ViewGroup;
+    :goto_3
+    invoke-virtual {v3}, Landroid/widget/LinearLayout;->getChildCount()I
 
-    iput-object v0, p0, Lcom/android/keyguard/KeyguardPINView;->mRow2:Landroid/view/ViewGroup;
+    move-result v8
 
-    sget v0, Lcom/android/keyguard/R$id;->row3:I
+    if-ge v2, v8, :cond_3
 
-    invoke-virtual {p0, v0}, Lcom/android/keyguard/KeyguardPINView;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v3, v2}, Landroid/widget/LinearLayout;->getChildAt(I)Landroid/view/View;
 
-    move-result-object v0
+    move-result-object v6
 
-    check-cast v0, Landroid/view/ViewGroup;
+    invoke-virtual {v6}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    iput-object v0, p0, Lcom/android/keyguard/KeyguardPINView;->mRow3:Landroid/view/ViewGroup;
+    move-result-object v8
 
-    sget v0, Lcom/android/keyguard/R$id;->divider:I
+    const-class v9, Lcom/android/keyguard/NumPadKey;
 
-    invoke-virtual {p0, v0}, Lcom/android/keyguard/KeyguardPINView;->findViewById(I)Landroid/view/View;
+    if-ne v8, v9, :cond_0
 
-    move-result-object v0
+    check-cast v6, Lcom/android/keyguard/NumPadKey;
 
-    iput-object v0, p0, Lcom/android/keyguard/KeyguardPINView;->mDivider:Landroid/view/View;
+    invoke-interface {v7, v6}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
+    :cond_0
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_3
+
+    :cond_1
+    move v4, v10
+
+    goto :goto_0
+
+    :cond_2
+    move v5, v10
+
+    goto :goto_1
+
+    :cond_3
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_2
+
+    :cond_4
+    const/4 v1, 0x0
+
+    :goto_4
+    sget-object v8, Lcom/android/keyguard/KeyguardPINView;->sNumbers:Ljava/util/List;
+
+    invoke-interface {v8}, Ljava/util/List;->size()I
+
+    move-result v8
+
+    if-ge v1, v8, :cond_5
+
+    invoke-interface {v7, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v6
+
+    check-cast v6, Lcom/android/keyguard/NumPadKey;
+
+    sget-object v8, Lcom/android/keyguard/KeyguardPINView;->sNumbers:Ljava/util/List;
+
+    invoke-interface {v8, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v8
+
+    check-cast v8, Ljava/lang/Integer;
+
+    invoke-virtual {v8}, Ljava/lang/Integer;->intValue()I
+
+    move-result v8
+
+    invoke-virtual {v6, v8}, Lcom/android/keyguard/NumPadKey;->setDigit(I)V
+
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_4
+
+    :cond_5
+    if-eqz v4, :cond_6
+
+    iget-object v8, p0, Lcom/android/keyguard/KeyguardPINView;->mPasswordEntry:Lcom/android/keyguard/PasswordTextView;
+
+    new-instance v9, Lcom/android/keyguard/KeyguardPINView$1;
+
+    invoke-direct {v9, p0}, Lcom/android/keyguard/KeyguardPINView$1;-><init>(Lcom/android/keyguard/KeyguardPINView;)V
+
+    invoke-virtual {v8, v9}, Lcom/android/keyguard/PasswordTextView;->setQuickUnlockListener(Lcom/android/keyguard/PasswordTextView$QuickUnlockListener;)V
+
+    :goto_5
     return-void
+
+    :cond_6
+    iget-object v8, p0, Lcom/android/keyguard/KeyguardPINView;->mPasswordEntry:Lcom/android/keyguard/PasswordTextView;
+
+    const/4 v9, 0x0
+
+    invoke-virtual {v8, v9}, Lcom/android/keyguard/PasswordTextView;->setQuickUnlockListener(Lcom/android/keyguard/PasswordTextView$QuickUnlockListener;)V
+
+    goto :goto_5
 .end method
 
 .method protected resetState()V
@@ -423,9 +772,9 @@
 
     aput-object v3, v1, v2
 
-    new-instance v2, Lcom/android/keyguard/KeyguardPINView$1;
+    new-instance v2, Lcom/android/keyguard/KeyguardPINView$2;
 
-    invoke-direct {v2, p0}, Lcom/android/keyguard/KeyguardPINView$1;-><init>(Lcom/android/keyguard/KeyguardPINView;)V
+    invoke-direct {v2, p0}, Lcom/android/keyguard/KeyguardPINView$2;-><init>(Lcom/android/keyguard/KeyguardPINView;)V
 
     invoke-virtual {v0, v1, v2}, Lcom/android/keyguard/AppearAnimationUtils;->startAppearAnimation([[Landroid/view/View;Ljava/lang/Runnable;)V
 
