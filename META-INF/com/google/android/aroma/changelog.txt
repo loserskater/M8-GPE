@@ -14,5 +14,8 @@ Heads up timeout
 Disable heads up
 Long press back to kill
 Ime notification
+Hide alarm icon
+Quick unlock
+Scramble pin lock
 <b>*Advanced Power Menu</b>
 <b>*AppOps> Settings>Security>AppOps</b>
