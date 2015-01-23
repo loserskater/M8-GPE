@@ -3,7 +3,6 @@ ini_set("force_colorspace","rgba");
 ini_set("dp","6");
 theme("material");
 ini_set("rom_name", "M8_GPE LRX22C.H5");
-ini_set("rom_version", "resread("version.txt")");
 ini_set("rom_authors", "enewman17, loserskater");
 loadlang("langs/en.lang");
 fontresload( "0", "ttf/Roboto-Regular.ttf", "12" );
@@ -39,10 +38,8 @@ textbox(
     "Welcome",
   
   #-- Subtitle
-    "<b>"+ini_get("rom_name")+"<b>\n\n"+
-	ini_get("rom_version")+"\n\n"+
-	"Brought to you by"\n+
-	ini_get("rom_authors"),
+    ini_get("rom_name")+"\n"+
+	resread("version.txt"),
   
   #-- Icon
     "@welcome",

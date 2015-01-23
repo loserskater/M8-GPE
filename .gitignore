@@ -5,3 +5,4 @@ dist/
 decompiled/*.jar
 decompiled/*.apk
 META-INF/com/google/android/arom/version.txt
+*Thumbs.db*
