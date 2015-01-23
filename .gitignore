@@ -4,5 +4,5 @@ build/
 dist/
 decompiled/*.jar
 decompiled/*.apk
-*/aroma/version.txt
-*Thumbs.db*
+*version.txt
+*Thumbs.db
