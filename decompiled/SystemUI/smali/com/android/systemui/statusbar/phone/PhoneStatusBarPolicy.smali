@@ -330,6 +330,14 @@
     return-void
 .end method
 
+.method static synthetic access$600(Lcom/android/systemui/statusbar/phone/PhoneStatusBarPolicy;)V
+    .locals 0
+
+    invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/PhoneStatusBarPolicy;->updateCast()V
+
+    return-void
+.end method
+
 .method static synthetic access$702(Lcom/android/systemui/statusbar/phone/PhoneStatusBarPolicy;Z)Z
     .locals 0
 
@@ -344,14 +352,6 @@
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBarPolicy;->mContext:Landroid/content/Context;
 
     return-object v0
-.end method
-
-.method static synthetic access$600(Lcom/android/systemui/statusbar/phone/PhoneStatusBarPolicy;)V
-    .locals 0
-
-    invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/PhoneStatusBarPolicy;->updateCast()V
-
-    return-void
 .end method
 
 .method private updateAlarm()V

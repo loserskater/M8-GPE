@@ -506,6 +506,7 @@
     <public type="array" name="batterymeter_color_values" id="0x7f060001" />
     <public type="array" name="batterymeter_bolt_points" id="0x7f060002" />
     <public type="array" name="lockscreen_num_pad_klondike" id="0x7f060003" />
+    <public type="array" name="batterymeter_inverted_bolt_points" id="0x7f060004" />
     <public type="color" name="system_bar_background_opaque" id="0x7f070000" />
     <public type="color" name="system_bar_background_semi_transparent" id="0x7f070001" />
     <public type="color" name="system_bar_background_transparent" id="0x7f070002" />
@@ -1642,7 +1643,7 @@
     <public type="id" name="multi_user_avatar" id="0x7f0e0082" />
     <public type="id" name="system_icons_super_container" id="0x7f0e0083" />
     <public type="id" name="system_icons_container" id="0x7f0e0084" />
-    <public type="id" name="battery_level" id="0x7f0e0085" />
+    <public type="id" name="battery_level_text" id="0x7f0e0085" />
     <public type="id" name="keyguard_carrier_text" id="0x7f0e0086" />
     <public type="id" name="keyguard_status_view" id="0x7f0e0087" />
     <public type="id" name="keyguard_clock_container" id="0x7f0e0088" />

@@ -106,7 +106,7 @@
     <item type="id" name="multi_user_avatar">false</item>
     <item type="id" name="system_icons_super_container">false</item>
     <item type="id" name="system_icons_container">false</item>
-    <item type="id" name="battery_level">false</item>
+    <item type="id" name="battery_level_text">false</item>
     <item type="id" name="keyguard_carrier_text">false</item>
     <item type="id" name="keyguard_status_view">false</item>
     <item type="id" name="keyguard_clock_container">false</item>
