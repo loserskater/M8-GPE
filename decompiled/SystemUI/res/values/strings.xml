@@ -544,4 +544,6 @@ Try again in %d seconds."</string>
     <string name="keyguard_transport_play_description">Play button</string>
     <string name="keyguard_transport_stop_description">Stop button</string>
     <string name="keyguard_carrier_default">No service.</string>
+    <string name="left_shortcut_hint">Swipe right for %1$s</string>
+    <string name="right_shortcut_hint">Swipe left for %1$s</string>
 </resources>

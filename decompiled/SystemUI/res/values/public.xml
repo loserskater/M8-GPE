@@ -1204,6 +1204,8 @@
     <public type="string" name="keyguard_transport_play_description" id="0x7f0b01e4" />
     <public type="string" name="keyguard_transport_stop_description" id="0x7f0b01e5" />
     <public type="string" name="keyguard_carrier_default" id="0x7f0b01e6" />
+    <public type="string" name="left_shortcut_hint" id="0x7f0b01e9" />
+    <public type="string" name="right_shortcut_hint" id="0x7f0b01ea" />
     <public type="string" name="status_bar_date_formatter" id="0x7f0b0006" />
     <public type="string" name="toast_rotation_locked" id="0x7f0b0158" />
     <public type="string" name="APKTOOL_DUMMY_0159" id="0x7f0b0159" />
