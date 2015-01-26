@@ -343,3 +343,8 @@ ro.gps.agps_provider=1
 ro.pip.gated=0
 
 persist.sys.media.use-awesome=1
+
+# OTA Updates
+ro.ota.romname=M8-GPE
+ro.ota.version=1
+ro.ota.manifest=https://romhut.com/roms/m8-gpe/ota.xml
