@@ -1,14 +1,11 @@
 .class Lcom/android/systemui/statusbar/phone/NotificationPanelView$1;
-.super Ljava/lang/Object;
+.super Landroid/view/GestureDetector$SimpleOnGestureListener;
 .source "NotificationPanelView.java"
-
-# interfaces
-.implements Landroid/view/View$OnLayoutChangeListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/systemui/statusbar/phone/NotificationPanelView;->onFinishInflate()V
+    value = Lcom/android/systemui/statusbar/phone/NotificationPanelView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -27,26 +24,41 @@
 
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$1;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Landroid/view/GestureDetector$SimpleOnGestureListener;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onLayoutChange(Landroid/view/View;IIIIIIII)V
-    .locals 3
+.method public onDoubleTap(Landroid/view/MotionEvent;)Z
+    .locals 4
 
-    sub-int v0, p5, p3
+    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$1;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
-    sub-int v1, p9, p7
+    # getter for: Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mContext:Landroid/content/Context;
+    invoke-static {v1}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->access$000(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)Landroid/content/Context;
 
-    if-eq v0, v1, :cond_0
+    move-result-object v1
 
-    iget-object v2, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$1;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
+    const-string v2, "power"
 
-    invoke-virtual {v2}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->onScrollChanged()V
+    invoke-virtual {v1, v2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/os/PowerManager;
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getEventTime()J
+
+    move-result-wide v2
+
+    invoke-virtual {v0, v2, v3}, Landroid/os/PowerManager;->goToSleep(J)V
 
     :cond_0
-    return-void
+    const/4 v1, 0x1
+
+    return v1
 .end method

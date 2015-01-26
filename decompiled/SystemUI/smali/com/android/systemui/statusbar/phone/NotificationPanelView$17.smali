@@ -1,50 +1,46 @@
-.class Lcom/android/systemui/statusbar/phone/NotificationPanelView$17;
-.super Ljava/lang/Object;
+.class final Lcom/android/systemui/statusbar/phone/NotificationPanelView$17;
+.super Landroid/animation/AnimatorListenerAdapter;
 .source "NotificationPanelView.java"
-
-# interfaces
-.implements Ljava/lang/Runnable;
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/android/systemui/statusbar/phone/NotificationPanelView;
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lcom/android/systemui/statusbar/phone/NotificationPanelView;->setBackgroundColorAlpha(Landroid/view/View;IIZ)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
+    accessFlags = 0x8
     name = null
 .end annotation
 
 
 # instance fields
-.field final synthetic this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
+.field final synthetic val$target:Landroid/view/View;
 
 
 # direct methods
-.method constructor <init>(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)V
+.method constructor <init>(Landroid/view/View;)V
     .locals 0
 
-    iput-object p1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$17;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
+    iput-object p1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$17;->val$target:Landroid/view/View;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public run()V
-    .locals 1
+.method public onAnimationEnd(Landroid/animation/Animator;)V
+    .locals 3
 
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$17;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$17;->val$target:Landroid/view/View;
 
-    # getter for: Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mHeader:Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;
-    invoke-static {v0}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->access$1200(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;
+    const v1, 0x7f0e002a
 
-    move-result-object v0
+    const/4 v2, 0x0
 
-    invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->updateEverything()V
+    invoke-virtual {v0, v1, v2}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
 
     return-void
 .end method
