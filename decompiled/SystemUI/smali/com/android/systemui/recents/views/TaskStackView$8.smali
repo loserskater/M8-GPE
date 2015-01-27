@@ -42,7 +42,7 @@
     const/4 v1, 0x0
 
     # setter for: Lcom/android/systemui/recents/views/TaskStackView;->mPopup:Landroid/widget/PopupMenu;
-    invoke-static {v0, v1}, Lcom/android/systemui/recents/views/TaskStackView;->access$002(Lcom/android/systemui/recents/views/TaskStackView;Landroid/widget/PopupMenu;)Landroid/widget/PopupMenu;
+    invoke-static {v0, v1}, Lcom/android/systemui/recents/views/TaskStackView;->access$102(Lcom/android/systemui/recents/views/TaskStackView;Landroid/widget/PopupMenu;)Landroid/widget/PopupMenu;
 
     return-void
 .end method

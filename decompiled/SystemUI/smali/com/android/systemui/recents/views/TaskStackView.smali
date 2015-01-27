@@ -287,12 +287,50 @@
     return-void
 .end method
 
-.method static synthetic access$002(Lcom/android/systemui/recents/views/TaskStackView;Landroid/widget/PopupMenu;)Landroid/widget/PopupMenu;
+.method static synthetic access$000(Lcom/android/systemui/recents/views/TaskStackView;)Z
+    .locals 1
+
+    invoke-direct {p0}, Lcom/android/systemui/recents/views/TaskStackView;->dismissAll()Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method static synthetic access$102(Lcom/android/systemui/recents/views/TaskStackView;Landroid/widget/PopupMenu;)Landroid/widget/PopupMenu;
     .locals 0
 
     iput-object p1, p0, Lcom/android/systemui/recents/views/TaskStackView;->mPopup:Landroid/widget/PopupMenu;
 
     return-object p1
+.end method
+
+.method private dismissAll()Z
+    .locals 3
+
+    const/4 v0, 0x1
+
+    iget-object v1, p0, Lcom/android/systemui/recents/views/TaskStackView;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v1
+
+    const-string v2, "recents_clear_all_dismiss_all"
+
+    invoke-static {v1, v2, v0}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+
+    move-result v1
+
+    if-ne v1, v0, :cond_0
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
 .end method
 
 .method private updateStackTransforms(Ljava/util/ArrayList;Ljava/util/ArrayList;F[IZ)Z

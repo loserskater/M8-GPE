@@ -165,6 +165,68 @@
     goto :goto_0
 .end method
 
+.method public endFABanimation()V
+    .locals 4
+
+    invoke-virtual {p0}, Lcom/android/systemui/recents/views/RecentsView;->getParent()Landroid/view/ViewParent;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/view/View;
+
+    const v1, 0x7f0e0127
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/android/systemui/recents/views/RecentsView;->mFloatingButton:Landroid/view/View;
+
+    iget-object v0, p0, Lcom/android/systemui/recents/views/RecentsView;->mFloatingButton:Landroid/view/View;
+
+    invoke-virtual {v0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
+
+    move-result-object v0
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
+
+    move-result-object v0
+
+    const-wide/16 v2, 0x0
+
+    invoke-virtual {v0, v2, v3}, Landroid/view/ViewPropertyAnimator;->setStartDelay(J)Landroid/view/ViewPropertyAnimator;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/android/systemui/recents/views/RecentsView;->mConfig:Lcom/android/systemui/recents/RecentsConfiguration;
+
+    iget v1, v1, Lcom/android/systemui/recents/RecentsConfiguration;->taskBarExitAnimDuration:I
+
+    int-to-long v2, v1
+
+    invoke-virtual {v0, v2, v3}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/android/systemui/recents/views/RecentsView;->mConfig:Lcom/android/systemui/recents/RecentsConfiguration;
+
+    iget-object v1, v1, Lcom/android/systemui/recents/RecentsConfiguration;->fastOutLinearInInterpolator:Landroid/view/animation/Interpolator;
+
+    invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)Landroid/view/ViewPropertyAnimator;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->withLayer()Landroid/view/ViewPropertyAnimator;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->start()V
+
+    return-void
+.end method
+
 .method public focusNextTask(Z)V
     .locals 5
 
@@ -739,6 +801,10 @@
 
     packed-switch v10, :pswitch_data_0
 
+    const/16 v2, 0x51
+
+    iput v2, v12, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
+
     :goto_1
     move-object/from16 v0, p0
 
@@ -833,13 +899,6 @@
 
     goto :goto_1
 
-    :pswitch_5
-    const/16 v2, 0x51
-
-    iput v2, v12, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
-
-    goto :goto_1
-
     :cond_3
     move-object/from16 v0, p0
 
@@ -858,6 +917,8 @@
 
     return-void
 
+    nop
+
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_1
@@ -865,7 +926,6 @@
         :pswitch_2
         :pswitch_3
         :pswitch_4
-        :pswitch_5
     .end packed-switch
 .end method
 
@@ -1613,6 +1673,72 @@
     iget-object v4, p0, Lcom/android/systemui/recents/views/RecentsView;->mCb:Lcom/android/systemui/recents/views/RecentsView$RecentsViewCallbacks;
 
     invoke-interface {v4}, Lcom/android/systemui/recents/views/RecentsView$RecentsViewCallbacks;->onExitToHomeAnimationTriggered()V
+
+    return-void
+.end method
+
+.method public startFABanimation()V
+    .locals 4
+
+    invoke-virtual {p0}, Lcom/android/systemui/recents/views/RecentsView;->getParent()Landroid/view/ViewParent;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/view/View;
+
+    const v1, 0x7f0e0127
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/android/systemui/recents/views/RecentsView;->mFloatingButton:Landroid/view/View;
+
+    iget-object v0, p0, Lcom/android/systemui/recents/views/RecentsView;->mFloatingButton:Landroid/view/View;
+
+    invoke-virtual {v0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
+
+    move-result-object v0
+
+    const/high16 v1, 0x3f800000
+
+    invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/android/systemui/recents/views/RecentsView;->mConfig:Lcom/android/systemui/recents/RecentsConfiguration;
+
+    iget v1, v1, Lcom/android/systemui/recents/RecentsConfiguration;->taskBarEnterAnimDelay:I
+
+    int-to-long v2, v1
+
+    invoke-virtual {v0, v2, v3}, Landroid/view/ViewPropertyAnimator;->setStartDelay(J)Landroid/view/ViewPropertyAnimator;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/android/systemui/recents/views/RecentsView;->mConfig:Lcom/android/systemui/recents/RecentsConfiguration;
+
+    iget v1, v1, Lcom/android/systemui/recents/RecentsConfiguration;->taskBarEnterAnimDuration:I
+
+    int-to-long v2, v1
+
+    invoke-virtual {v0, v2, v3}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/android/systemui/recents/views/RecentsView;->mConfig:Lcom/android/systemui/recents/RecentsConfiguration;
+
+    iget-object v1, v1, Lcom/android/systemui/recents/RecentsConfiguration;->fastOutLinearInInterpolator:Landroid/view/animation/Interpolator;
+
+    invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)Landroid/view/ViewPropertyAnimator;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->withLayer()Landroid/view/ViewPropertyAnimator;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->start()V
 
     return-void
 .end method

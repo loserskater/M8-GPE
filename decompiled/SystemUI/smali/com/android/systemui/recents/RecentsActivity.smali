@@ -370,6 +370,10 @@
 
     invoke-virtual {v0}, Lcom/android/systemui/recents/RecentsActivity$FinishRecentsRunnable;->run()V
 
+    iget-object v0, p0, Lcom/android/systemui/recents/RecentsActivity;->mRecentsView:Lcom/android/systemui/recents/views/RecentsView;
+
+    invoke-virtual {v0}, Lcom/android/systemui/recents/views/RecentsView;->endFABanimation()V
+
     return-void
 .end method
 
@@ -389,6 +393,10 @@
     const/4 v0, 0x1
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/recents/RecentsActivity;->dismissRecentsToFocusedTaskOrHome(Z)Z
+
+    iget-object v0, p0, Lcom/android/systemui/recents/RecentsActivity;->mRecentsView:Lcom/android/systemui/recents/views/RecentsView;
+
+    invoke-virtual {v0}, Lcom/android/systemui/recents/views/RecentsView;->endFABanimation()V
 
     goto :goto_0
 .end method
@@ -765,6 +773,10 @@
 
     invoke-virtual {v0}, Lcom/android/systemui/recents/views/SystemBarScrimViews;->startEnterRecentsAnimation()V
 
+    iget-object v0, p0, Lcom/android/systemui/recents/RecentsActivity;->mRecentsView:Lcom/android/systemui/recents/views/RecentsView;
+
+    invoke-virtual {v0}, Lcom/android/systemui/recents/views/RecentsView;->startFABanimation()V
+
     return-void
 .end method
 
@@ -774,6 +786,10 @@
     iget-object v0, p0, Lcom/android/systemui/recents/RecentsActivity;->mScrimViews:Lcom/android/systemui/recents/views/SystemBarScrimViews;
 
     invoke-virtual {v0}, Lcom/android/systemui/recents/views/SystemBarScrimViews;->startExitRecentsAnimation()V
+
+    iget-object v0, p0, Lcom/android/systemui/recents/RecentsActivity;->mRecentsView:Lcom/android/systemui/recents/views/RecentsView;
+
+    invoke-virtual {v0}, Lcom/android/systemui/recents/views/RecentsView;->endFABanimation()V
 
     return-void
 .end method
@@ -1009,6 +1025,10 @@
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/recents/RecentsActivity;->dismissRecentsToHomeRaw(Z)V
 
+    iget-object v0, p0, Lcom/android/systemui/recents/RecentsActivity;->mRecentsView:Lcom/android/systemui/recents/views/RecentsView;
+
+    invoke-virtual {v0}, Lcom/android/systemui/recents/views/RecentsView;->endFABanimation()V
+
     return-void
 .end method
 
@@ -1020,6 +1040,10 @@
     invoke-static {v0}, Lcom/android/systemui/recents/AlternateRecentsComponent;->notifyVisibilityChanged(Z)V
 
     iput-boolean v0, p0, Lcom/android/systemui/recents/RecentsActivity;->mVisible:Z
+
+    iget-object v0, p0, Lcom/android/systemui/recents/RecentsActivity;->mRecentsView:Lcom/android/systemui/recents/views/RecentsView;
+
+    invoke-virtual {v0}, Lcom/android/systemui/recents/views/RecentsView;->endFABanimation()V
 
     return-void
 .end method
