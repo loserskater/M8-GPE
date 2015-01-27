@@ -1814,8 +1814,6 @@
     <public type="id" name="recent_uninstall" id="0x7f0e012b" />
     <public type="id" name="center_clock" id="0x7f0e012c" />
     <public type="id" name="left_clock" id="0x7f0e012d" />
-    <public type="id" name="center_clock_area" id="0x7f0e012e" />
-    <public type="id" name="left_clock_area" id="0x7f0e012f" />
     <public type="plurals" name="status_bar_accessibility_recent_apps" id="0x7f0f0000" />
     <public type="plurals" name="kg_password_wrong_pin_code" id="0x7f0f0001" />
     <public type="plurals" name="kg_password_wrong_puk_code" id="0x7f0f0002" />

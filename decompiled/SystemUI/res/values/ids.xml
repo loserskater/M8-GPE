@@ -273,8 +273,7 @@
     <item type="id" name="recent_force_stop">false</item>
     <item type="id" name="recent_wipe_app">false</item>
     <item type="id" name="recent_uninstall">false</item>
-    <item type="id" name="center_clock">false</item>
     <item type="id" name="left_clock">false</item>
-    <item type="id" name="center_clock_area">false</item>
-    <item type="id" name="left_clock_area">false</item>
+    <item type="id" name="center_clock_layout">false</item>
+    <item type="id" name="center_clock">false</item>
 </resources>
