@@ -9979,6 +9979,24 @@
 
     move-object/from16 v0, p0
 
+    iget-object v3, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mStatusBarView:Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;
+
+    const v4, 0x7f0e0085
+
+    invoke-virtual {v3, v4}, Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;->findViewById(I)Landroid/view/View;
+
+    move-result-object v3
+
+    check-cast v3, Lcom/android/systemui/BatteryLevelTextView;
+
+    move-object/from16 v0, p0
+
+    iget-object v4, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mBatteryController:Lcom/android/systemui/statusbar/policy/BatteryController;
+
+    invoke-virtual {v3, v4}, Lcom/android/systemui/BatteryLevelTextView;->setBatteryController(Lcom/android/systemui/statusbar/policy/BatteryController;)V
+
+    move-object/from16 v0, p0
+
     iget-object v3, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mKeyguardStatusBar:Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;
 
     move-object/from16 v0, p0
