@@ -407,6 +407,7 @@ if prop("type.prop","selected")=="2"||prop("type.prop","selected")=="3" then
        "Camera",           "",                                                                2,       		
 		"Stock Google",    "Stock camera. HDR available, saving to SDcard not available",     1,       #-- item.1.1
 		"Moto X",          "Motorola Camera. saving to SD card supported, no HDR",            0,       #-- item.1.2
+		"Sense",           "Includes camera and gallery",            						  0,       #-- item.1.3
 		
 	   "Gallery",          "",                                                                2,
 	     "CM Gallery",     "",                                                                0,       #-- item.2.1

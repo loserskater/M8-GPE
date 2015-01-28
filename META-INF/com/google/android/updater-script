@@ -240,6 +240,25 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "2" || file_getprop("/tmp/
   else
     delete_recursive("/system/priv-app/MotoCamera");
   endif;
+  if file_getprop("/tmp/aroma/camera.prop","item.1.3") == "1" then
+    ui_print("Adding Sense Camera & Gallery");
+    package_extract_dir("aroma/cameras/sense", "/system");
+  else
+    delete_recursive("/system/priv-app/HMS_Gallery");
+    delete_recursive("/system/priv-app/HTCCamera");
+    delete_recursive("/system/priv-app/PhotoEdit");
+    delete_recursive("/system/priv-app/VideoTalkEnhancement");
+	package_extract_file("system/bin/mm-qcamera-app", "/system/bin/mm-qcamera-app");
+	package_extract_file("system/bin/mm-qcamera-daemon", "/system/bin/mm-qcamera-daemon");
+	delete("/system/etc/permissions/com.htc.vte.xml");
+	delete_recursive("/system/vendor/lib");
+	delete_recursive("/system/lib");
+	package_extract_dir("system/vendor/lib", "/system/vendor/lib");
+	package_extract_dir("system/lib", "/system/lib");
+	if file_getprop("/tmp/aroma/kernel.prop","selected.1") == "2" then
+	  package_extract_dir("aroma/kernels/quantum/system/lib/modules", "/system/lib/modules");
+	endif;
+  endif;
   if file_getprop("/tmp/aroma/camera.prop","item.2.1") == "1" then
     ui_print("Adding CM Gallery2");
     package_extract_dir("aroma/cm_apps/gallery2", "/system");
@@ -311,7 +330,7 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "2" || file_getprop("/tmp/
 endif;
 ui_print("@Finishing up");
 set_progress(0.87);
-if file_getprop("/tmp/aroma/type.prop","selected") == "1" || file_getprop("/tmp/aroma/type.prop","selected") == "2" then
+if file_getprop("/tmp/aroma/type.prop","selected") == "1" || file_getprop("/tmp/aroma/type.prop","selected") == "2" || file_getprop("/tmp/aroma/camera.prop","item.1.3") == "1" then
   ui_print("@Installing busybox");
   run_program("/system/xbin/busybox", "--install", "-s", "/system/xbin");
   ui_print("@Creating symlinks");
