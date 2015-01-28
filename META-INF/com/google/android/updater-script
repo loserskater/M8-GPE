@@ -118,6 +118,21 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "1" || file_getprop("/tmp/
     ui_print("@Installing Kernel");
     package_extract_file("boot.img", "/dev/block/mmcblk0p42");
   endif;
+  if file_getprop("/tmp/aroma/carrier.prop","selected.0") != "1" then
+    package_extract_dir("aroma/carrier/tmp_files", "/tmp");
+	set_perm_recursive(0, 0, 0755, 0755, "/tmp");
+	if file_getprop("/tmp/aroma/carrier.prop","selected.0") == "2" then
+      package_extract_dir("aroma/carrier/sprint/system", "/system");
+      package_extract_dir("aroma/carrier/sprint/framework", "/tmp");
+      run_program("/tmp/patch_carrier.sh", "/system/framework/framework-res.apk");
+      set_perm(0, 0, 0644, "/system/framework/framework-res.apk");
+	else
+      package_extract_dir("aroma/carrier/verizon/system", "/system");
+	  package_extract_dir("aroma/carrier/verizon/framework", "/tmp");
+      run_program("/tmp/patch_carrier.sh", "/system/framework/framework-res.apk");
+      set_perm(0, 0, 0644, "/system/framework/framework-res.apk");
+	endif;
+  endif;
   set_progress(0.60);
 endif;
 #
