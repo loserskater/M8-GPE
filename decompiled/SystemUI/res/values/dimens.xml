@@ -273,4 +273,6 @@
     <dimen name="floating_action_button_translation_z">12.0dip</dimen>
     <dimen name="floating_action_button_margin_side">152.0dip</dimen>
     <dimen name="floating_action_button_margin_bottom">60.0dip</dimen>
+    <dimen name="net_traffic_single_text_size">8.0dip</dimen>
+    <dimen name="net_traffic_multi_text_size">8.0dip</dimen>
 </resources>
