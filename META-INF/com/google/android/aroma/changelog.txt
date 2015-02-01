@@ -1,15 +1,11 @@
 <b>*New Additions</b>
-Potential memory leak fix
-Battery mod
-Use volume keys to move cursor
-Lockscreen shortcuts
-Double tap status bar to sleep
-One finger quick settings
-OTA support
-HTC IME libs
-<b>*Updates</b>
-CM apps
-Busybox
+Multi-Carrier support (beta) needs testing.
+Network traffic meter
+Nav bar height (*requires a reboot)
+Sense camera and gallery
+ElementalX kernel
+Recents clear all FAB moved to center, added fade in animation.
+.75 to animations
 <b>*Fixes</b>
-Dark theme
-Extra settings defaults should match system on fresh boot
+Battery mod
+HTC keyboard
