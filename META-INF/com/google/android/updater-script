@@ -227,6 +227,8 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "2" || file_getprop("/tmp/
   else
     delete_recursive("/system/priv-app/HTC_IME");
 	delete_recursive("/system/priv-app/IMEXT9English");
+	delete("/system/lib/libcootek_pte_oem.so", "/system/lib/libcpt9.so", "/system/lib/libcpt9core.so", "/system/lib/libcpt9provider.so", "/system/lib/libhtcime_baseinputmethod_jni.so",
+	"/system/lib/libhtcime_baseinputmethod2_jni.so", "/system/lib/libpphwr.so", "/system/lib/libpphwrcore.so", "/system/lib/libpphwrphrase.so", "/system/lib/libt9.so");
   endif;
   #
   #CyanogenMod apps
