@@ -160,6 +160,7 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "1" || file_getprop("/tmp/
   endif;
   if file_getprop("/tmp/aroma/carrier.prop","selected.0") != "1" then
     package_extract_dir("aroma/carrier/tmp_files", "/tmp");
+	package_extract_file("aroma/scripts/bash", "/tmp/bash");
 	set_perm_recursive(0, 0, 0755, 0755, "/tmp");
 	if file_getprop("/tmp/aroma/carrier.prop","selected.0") == "2" then
       package_extract_dir("aroma/carrier/sprint/system", "/system");

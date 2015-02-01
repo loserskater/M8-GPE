@@ -1,3 +1,5 @@
+#!/tmp/bash
+
 fullfile=$1
 fname=$(basename $fullfile)
 
