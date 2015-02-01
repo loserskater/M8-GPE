@@ -1,0 +1,157 @@
+#!/system/bin/sh
+
+ELEX_CONF="/system/etc/elementalx.conf"
+ELEX_LOGFILE="/data/local/tmp/elementalx.log"
+
+if [ -f $ELEX_LOGFILE ]; then
+  mv $ELEX_LOGFILE $ELEX_LOGFILE.2;
+fi
+
+echo $(date) >> $ELEX_LOGFILE
+
+#Find PVS bin
+PVS="`cat /sys/module/clock_krait_8974/parameters/pvs_number`"
+echo PVS: $PVS >> $ELEX_LOGFILE;
+
+#Set Wake Gestures
+if [ "`grep WG=1 $ELEX_CONF`" ]; then
+  echo 1 > /sys/android_touch/wake_gestures
+  echo Wake gestures enabled >> $ELEX_LOGFILE;
+else
+  echo 0 > /sys/android_touch/wake_gestures
+  echo Wake gestures disabled >> $ELEX_LOGFILE;
+fi
+
+#Set Sweep2wake
+S2W="`grep S2W $ELEX_CONF | cut -d '=' -f2`"
+  echo $S2W > /sys/android_touch/sweep2wake
+  echo Sweep2wake $S2W >> $ELEX_LOGFILE;
+
+#Set Doubletap2wake
+if [ "`grep DT2W=1 $ELEX_CONF`" ]; then
+  echo 1 > /sys/android_touch/doubletap2wake
+  echo Doubletap2wake enabled >> $ELEX_LOGFILE;
+else
+  echo 0 > /sys/android_touch/doubletap2wake
+  echo Doubletap2wake disabled >> $ELEX_LOGFILE;
+fi
+
+#Set Sweep2sleep
+if [ "`grep S2S=1 $ELEX_CONF`" ]; then
+  echo 1 > /sys/android_touch/sweep2sleep
+  echo Sweep2sleep right enabled >> $ELEX_LOGFILE;
+elif [ "`grep S2S=2 $ELEX_CONF`" ]; then
+  echo 2 > /sys/android_touch/sweep2sleep
+  echo Sweep2sleep left enabled >> $ELEX_LOGFILE;
+elif [ "`grep S2S=3 $ELEX_CONF`" ]; then
+  echo 3 > /sys/android_touch/sweep2sleep
+  echo Sweep2sleep left and right enabled >> $ELEX_LOGFILE;
+else
+  echo 0 > /sys/android_touch/sweep2sleep
+  echo Sweep2sleep disabled >> $ELEX_LOGFILE;
+fi
+
+#Set Wake vibration strength
+WVIB="`grep WVIB $ELEX_CONF | cut -d '=' -f2`"
+  echo $WVIB > /sys/android_touch/vib_strength
+  echo Wake vibration strength $WVIB >> $ELEX_LOGFILE;
+
+#Set Pocket Detection
+if [ "`grep POCKET=1 $ELEX_CONF`" ]; then
+  echo 1 > /sys/android_touch/pocket_detect
+  echo Pocket detection enabled >> $ELEX_LOGFILE;
+else
+  echo 0 > /sys/android_touch/pocket_detect
+  echo Pocket detection disabled >> $ELEX_LOGFILE;
+fi
+
+#Set Camera Launch
+if [ "`grep CAM=0 $ELEX_CONF`" ]; then
+  echo 0 > /sys/android_touch/camera_gesture
+  echo Volume buttons launch camera disabled >> $ELEX_LOGFILE;
+else
+  echo 1 > /sys/android_touch/camera_gesture
+  echo Volume buttons launch camera enabled >> $ELEX_LOGFILE;
+fi
+
+#Set FASTCHARGE
+if [ "`grep FC=1 $ELEX_CONF`" ]; then
+  echo 1 > /sys/kernel/fast_charge/force_fast_charge
+  echo USB Fastcharge enabled >> $ELEX_LOGFILE;
+else
+  echo 0 > /sys/kernel/fast_charge/force_fast_charge
+  echo USB Fastcharge disabled >> $ELEX_LOGFILE;
+fi
+
+#Set fsync
+if [ "`grep FSYNC=0 $ELEX_CONF`" ]; then
+  echo 0 > /sys/module/sync/parameters/fsync_enabled;
+  echo fsync disabled >> $ELEX_LOGFILE;
+else
+  echo 1 > /sys/module/sync/parameters/fsync_enabled;
+  echo fsync enabled >> $ELEX_LOGFILE;
+fi
+
+#Set Max screen off
+if [ "`grep MAXSCROFF=1 $ELEX_CONF`" ]; then
+  echo 1 > /sys/devices/system/cpu/cpu0/cpufreq/screen_off_max
+  echo Max screen off frequency enabled >> $ELEX_LOGFILE;
+else
+  echo 0 > /sys/devices/system/cpu/cpu0/cpufreq/screen_off_max
+  echo Max screen off frequency disabled >> $ELEX_LOGFILE;
+fi
+
+#Set vibration
+SVIB=`grep "SVIB" $ELEX_CONF | cut -d '=' -f2`
+echo $SVIB > /sys/class/timed_output/vibrator/voltage_level;
+echo Vibration strength\: $SVIB >> $ELEX_LOGFILE;
+
+#gboost settings
+if [ "`grep GBOOST=0 $ELEX_CONF`" ]; then
+  echo 0 > /sys/devices/system/cpu/cpufreq/ondemand/gboost;
+  echo gboost disabled >> $ELEX_LOGFILE;
+fi
+
+#cover settings
+if [ "`grep COVER=0 $ELEX_CONF`" ]; then
+  echo 1 > /sys/module/hall_sensor/parameters/disable_cover;
+  echo Cover sensor disabled >> $ELEX_LOGFILE;
+fi
+
+#backlight dimmer settings
+if [ "`grep BL=1 $ELEX_CONF`" ]; then
+  echo 1 > /sys/backlight_dimmer/backlight_dimmer;
+  echo Backlight dimmer enabled >> $ELEX_LOGFILE;
+elif [ "`grep BL=2 $ELEX_CONF`" ]; then
+  echo 2 > /sys/backlight_dimmer/backlight_dimmer;
+  echo Backlight dimmest enabled >> $ELEX_LOGFILE;
+fi
+
+#GPU Governor settings
+if [ "`grep GPU_GOV=2 $ELEX_CONF`" ]; then
+  echo simple_ondemand > /sys/class/kgsl/kgsl-3d0/devfreq/governor;
+  echo simple_ondemand GPU Governor >> $ELEX_LOGFILE;
+else
+  echo Stock GPU Governor >> $ELEX_LOGFILE;
+fi
+
+#GPU Frequency settings
+if [ "`grep GPU_FREQ=578 $ELEX_CONF`" ]; then
+  echo GPU freq 578MHz >> $ELEX_LOGFILE;
+elif [ "`grep GPU_FREQ=462 $ELEX_CONF`" ]; then
+  echo 462400000 > /sys/class/kgsl/kgsl-3d0/max_gpuclk;
+  echo GPU freq 462MHz >> $ELEX_LOGFILE;
+elif [ "`grep GPU_FREQ=389 $ELEX_CONF`" ]; then
+  echo 389000000 > /sys/class/kgsl/kgsl-3d0/max_gpuclk;
+  echo GPU freq 389MHz >> $ELEX_LOGFILE;
+fi
+
+#update saved config
+cp /system/etc/elementalx.conf /sdcard/.elementalx.backup
+
+if [ "`grep PERMISSIVE=1 $ELEX_CONF`" ]; then
+  setenforce 0;
+  echo selinux permissive >> $ELEX_LOGFILE;
+fi
+
+exit 0
