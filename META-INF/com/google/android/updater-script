@@ -307,17 +307,27 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "2" || file_getprop("/tmp/
     delete_recursive("/system/priv-app/HTCCamera");
 	delete("/system/framework/HTCExtension.jar");
 	delete("/system/etc/permissions/com.htc.software.market.xml");
-	delete("/system/lib/libalDE_SDE_TWO.so", "/system/lib/libalDynamicWarping_SDW_TWO.so", "/system/lib/libbv_panodata_hdk_v6.so", "/system/lib/libexif_lib1_jni_v08.so",
+	delete("/system/lib/libbv_panodata_hdk_v6.so", "/system/lib/libexif_lib1_jni_v08.so",
 	"/system/lib/libexif_lib1_v08.so", "/system/lib/libexif2.so", "/system/lib/libfeatures_android.so", "/system/lib/libgifdecoder.so", "/system/lib/libgifdecoder2.so",
 	"/system/lib/libgluegen-rt.so", "/system/lib/libgnustl_shared.so", "/system/lib/libHMSGallery_almashot-clr.so", "/system/lib/libHMSGallery_almashot-seamless.so", "/system/lib/libHMSGallery_enhancer_vheffects.so",
-	"/system/lib/libHMSGallery_eOkao.so", "/system/lib/libHMSGallery_imagelib.so", "/system/lib/libHMSGallery_libAnalyst.so", "/system/lib/libHMSGallery_libBokehLibEngine.so", "/system/lib/libHMSGallery_libCutAndPaste.so",
-	"/system/lib/libHMSGallery_libDepthmapJni.so", "/system/lib/libHMSGallery_libDualLensEngine.so", "/system/lib/libHMSGallery_libDuoShare.so", "/system/lib/libHMSGallery_libFaceDetection.so", "/system/lib/libHMSGallery_libFaceFusion.so",
-	"/system/lib/libHMSGallery_libglcv.so", "/system/lib/libHMSGallery_libImageAlignment.so", "/system/lib/libHMSGallery_libJointEngine.so", "/system/lib/libHMSGallery_libMatrix.so", "/system/lib/libHMSGallery_libNEONImage.so",
+	"/system/lib/libHMSGallery_eOkao.so", "/system/lib/libHMSGallery_imagelib.so", "/system/lib/libHMSGallery_libAnalyst.so", "/system/lib/libHMSGallery_libCutAndPaste.so",
+	"/system/lib/libHMSGallery_libDuoShare.so", "/system/lib/libHMSGallery_libglcv.so", "/system/lib/libHMSGallery_libImageAlignment.so", "/system/lib/libHMSGallery_libNEONImage.so",
 	"/system/lib/libHMSGallery_libNewTimeBreakin.so", "/system/lib/libHMSGallery_libThumbnailUtility.so", "/system/lib/libHMSGallery_sunny.so", "/system/lib/libHMSGallery_swapheap.so", "/system/lib/libHMSGallery_yuvimage.so",
 	"/system/lib/libhtccamera.so", "/system/lib/libimage_codec_engine.so", "/system/lib/libimage_feature.so", "/system/lib/libimindexer.so", "/system/lib/libimindexer_android.so",
-	"/system/lib/libjni_fe.so", "/system/lib/libjni_gifCreator.so", "/system/lib/libjocl.so", "/system/lib/libmorpho_edit_engine.so", "/system/lib/libmorpho_frame_overlay.so",
+    "/system/lib/libjocl.so", "/system/lib/libmorpho_edit_engine.so", "/system/lib/libmorpho_frame_overlay.so",
 	"/system/lib/libmorpho_image_converter.so", "/system/lib/libmorpho_image_stitcher3.so", "/system/lib/libmorpho_image_transform.so", "/system/lib/libmorpho_jpeg_io.so", "/system/lib/libmorpho_memory_allocator.so",
 	"/system/lib/libomron_common.so", "/system/lib/libopencv_porting.so", "/system/lib/libpanoglviewer_hdk_v14.so", "/system/lib/libpanoramaplus.so", "/system/lib/libpanostitcher.so", "/system/lib/libvima.so");	
+    package_extract_file("system/framework/libalDE_SDE_TWO.so", "/system/framework/libalDE_SDE_TWO.so");
+	package_extract_file("system/framework/libalDynamicWarping_SDW_TWO.so", "/system/framework/libalDynamicWarping_SDW_TWO.so");
+	package_extract_file("system/framework/libHMSGallery_libBokehLibEngine.so", "/system/framework/libHMSGallery_libBokehLibEngine.so");
+	package_extract_file("system/framework/libHMSGallery_libDepthmapJni.so", "/system/framework/libHMSGallery_libDepthmapJni.so");
+	package_extract_file("system/framework/libHMSGallery_libDualLensEngine.so", "/system/framework/libHMSGallery_libDualLensEngine.so");
+	package_extract_file("system/framework/libHMSGallery_libFaceDetection.so", "/system/framework/libHMSGallery_libFaceDetection.so");
+	package_extract_file("system/framework/libHMSGallery_libFaceFusion.so", "/system/framework/libHMSGallery_libFaceFusion.so");
+	package_extract_file("system/framework/libHMSGallery_libJointEngine.so", "/system/framework/libHMSGallery_libJointEngine.so");
+	package_extract_file("system/framework/libHMSGallery_libMatrix.so", "/system/framework/libHMSGallery_libMatrix.so");
+	package_extract_file("system/framework/libjni_fe.so", "/system/framework/libjni_fe.so");
+	package_extract_file("system/framework/libjni_gifCreator.so", "/system/framework/libjni_gifCreator.so");
   endif;
   if file_getprop("/tmp/aroma/camera.prop","item.2.1") == "1" then
     ui_print("Adding CM Gallery2");
