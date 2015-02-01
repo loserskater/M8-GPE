@@ -297,22 +297,24 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "2" || file_getprop("/tmp/
   endif;
   if file_getprop("/tmp/aroma/camera.prop","item.1.3") == "1" then
     ui_print("Adding Sense Camera & Gallery");
-    package_extract_dir("aroma/cameras/sense", "/system");
+    package_extract_dir("aroma/cameras/sense/system", "/system");
+	package_extract_dir("aroma/cameras/sense/data", "/data");
   else
     delete_recursive("/system/priv-app/HMS_Gallery");
     delete_recursive("/system/priv-app/HTCCamera");
-    delete_recursive("/system/priv-app/PhotoEdit");
-    delete_recursive("/system/priv-app/VideoTalkEnhancement");
-	package_extract_file("system/bin/mm-qcamera-app", "/system/bin/mm-qcamera-app");
-	package_extract_file("system/bin/mm-qcamera-daemon", "/system/bin/mm-qcamera-daemon");
-	delete("/system/etc/permissions/com.htc.vte.xml");
-	delete_recursive("/system/vendor/lib");
-	delete_recursive("/system/lib");
-	package_extract_dir("system/vendor/lib", "/system/vendor/lib");
-	package_extract_dir("system/lib", "/system/lib");
-	if file_getprop("/tmp/aroma/kernel.prop","selected.1") == "2" then
-	  package_extract_dir("aroma/kernels/quantum/system/lib/modules", "/system/lib/modules");
-	endif;
+	delete("/system/framework/HTCExtension.jar");
+	delete("/system/etc/permissions/com.htc.software.market.xml");
+	delete("/system/lib/libalDE_SDE_TWO.so", "/system/lib/libalDynamicWarping_SDW_TWO.so", "/system/lib/libbv_panodata_hdk_v6.so", "/system/lib/libexif_lib1_jni_v08.so",
+	"/system/lib/libexif_lib1_v08.so", "/system/lib/libexif2.so", "/system/lib/libfeatures_android.so", "/system/lib/libgifdecoder.so", "/system/lib/libgifdecoder2.so",
+	"/system/lib/libgluegen-rt.so", "/system/lib/libgnustl_shared.so", "/system/lib/libHMSGallery_almashot-clr.so", "/system/lib/libHMSGallery_almashot-seamless.so", "/system/lib/libHMSGallery_enhancer_vheffects.so",
+	"/system/lib/libHMSGallery_eOkao.so", "/system/lib/libHMSGallery_imagelib.so", "/system/lib/libHMSGallery_libAnalyst.so", "/system/lib/libHMSGallery_libBokehLibEngine.so", "/system/lib/libHMSGallery_libCutAndPaste.so",
+	"/system/lib/libHMSGallery_libDepthmapJni.so", "/system/lib/libHMSGallery_libDualLensEngine.so", "/system/lib/libHMSGallery_libDuoShare.so", "/system/lib/libHMSGallery_libFaceDetection.so", "/system/lib/libHMSGallery_libFaceFusion.so",
+	"/system/lib/libHMSGallery_libglcv.so", "/system/lib/libHMSGallery_libImageAlignment.so", "/system/lib/libHMSGallery_libJointEngine.so", "/system/lib/libHMSGallery_libMatrix.so", "/system/lib/libHMSGallery_libNEONImage.so",
+	"/system/lib/libHMSGallery_libNewTimeBreakin.so", "/system/lib/libHMSGallery_libThumbnailUtility.so", "/system/lib/libHMSGallery_sunny.so", "/system/lib/libHMSGallery_swapheap.so", "/system/lib/libHMSGallery_yuvimage.so",
+	"/system/lib/libhtccamera.so", "/system/lib/libimage_codec_engine.so", "/system/lib/libimage_feature.so", "/system/lib/libimindexer.so", "/system/lib/libimindexer_android.so",
+	"/system/lib/libjni_fe.so", "/system/lib/libjni_gifCreator.so", "/system/lib/libjocl.so", "/system/lib/libmorpho_edit_engine.so", "/system/lib/libmorpho_frame_overlay.so",
+	"/system/lib/libmorpho_image_converter.so", "/system/lib/libmorpho_image_stitcher3.so", "/system/lib/libmorpho_image_transform.so", "/system/lib/libmorpho_jpeg_io.so", "/system/lib/libmorpho_memory_allocator.so",
+	"/system/lib/libomron_common.so", "/system/lib/libopencv_porting.so", "/system/lib/libpanoglviewer_hdk_v14.so", "/system/lib/libpanoramaplus.so", "/system/lib/libpanostitcher.so", "/system/lib/libvima.so");	
   endif;
   if file_getprop("/tmp/aroma/camera.prop","item.2.1") == "1" then
     ui_print("Adding CM Gallery2");
@@ -385,7 +387,7 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "2" || file_getprop("/tmp/
 endif;
 ui_print("@Finishing up");
 set_progress(0.87);
-if file_getprop("/tmp/aroma/type.prop","selected") == "1" || file_getprop("/tmp/aroma/type.prop","selected") == "2" || file_getprop("/tmp/aroma/camera.prop","item.1.3") == "1" then
+if file_getprop("/tmp/aroma/type.prop","selected") == "1" || file_getprop("/tmp/aroma/type.prop","selected") == "2" then
   ui_print("@Installing busybox");
   run_program("/system/xbin/busybox", "--install", "-s", "/system/xbin");
   ui_print("@Creating symlinks");
