@@ -23,4 +23,4 @@ If you're still having issues with flashing try running this command
 		git config --global core.eol lf
 
 ### Xda Thread
-Xda link will go [HERE](http://forum.xda-developers.com/htc-one-m8/development) after we release.
+[Find us here](http://forum.xda-developers.com/htc-one-m8/development/rom-m8-gpe-01232015-t3010825)
