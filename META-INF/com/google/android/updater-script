@@ -6,9 +6,9 @@ unmount("/cache");
 #
 if file_getprop("/tmp/aroma/type.prop","selected") == "4" then
   set_progress(0.1);
-  mount("ext4", "EMMC", "/dev/block/mmcblk0p45", "/system");
-  mount("ext4", "EMMC", "/dev/block/mmcblk0p46", "/cache");
-  mount("ext4", "EMMC", "/dev/block/mmcblk0p47", "/data");
+  mount("ext4", "EMMC", "/dev/block/platform/msm_sdcc.1/by-name/system", "/system");
+  mount("ext4", "EMMC", "/dev/block/platform/msm_sdcc.1/by-name/cache", "/cache");
+  mount("ext4", "EMMC", "/dev/block/platform/msm_sdcc.1/by-name/data", "/data");
   ui_print("@Deleting Necessary Modules/Parts/Data");
   delete_recursive("/system/lib/modules");
   delete("/system/etc/init.d/97quantumsettings");
@@ -29,7 +29,7 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "4" then
   package_extract_dir("system/lib/modules", "/system/lib/modules");
   if file_getprop("/tmp/aroma/kernel.prop","selected.1") == "1" then
     ui_print("@Installing Stock Kernel");
-    package_extract_file("boot.img", "/dev/block/mmcblk0p42");
+    package_extract_file("boot.img", "/dev/block/platform/msm_sdcc.1/by-name/boot");
 	symlink("/system/lib/modules/pronto/pronto_wlan.ko", "/system/lib/modules/wlan.ko");
   endif;
   if file_getprop("/tmp/aroma/kernel.prop","selected.1") == "2" then
@@ -52,19 +52,19 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "4" then
 	set_perm(0, 0, 0777, "/tmp/abootimg");
 	run_program("/tmp/cmdline.sh");
 	run_program("/tmp/abootimg", "-u", "/tmp/boot.img", "-f", "/tmp/bootimg.cfg");
-	run_program("/tmp/busybox", "dd", "if=/tmp/boot.img", "of=/dev/block/mmcblk0p42");
+	run_program("/tmp/busybox", "dd", "if=/tmp/boot.img", "of=/dev/block/platform/msm_sdcc.1/by-name/boot");
 	symlink("/system/lib/modules/pronto/pronto_wlan.ko", "/system/lib/modules/wlan.ko");
   endif;
   if file_getprop("/tmp/aroma/kernel.prop","selected.1") == "3" then
     ui_print("@Installing Quantum by PwnCakes193");
 	package_extract_dir("aroma/kernels/quantum/system", "/system");
     symlink("/system/lib/modules/pronto/pronto_wlan.ko", "/system/lib/modules/wlan.ko");
-    package_extract_file("aroma/kernels/quantum/boot.img", "/dev/block/mmcblk0p42");
+    package_extract_file("aroma/kernels/quantum/boot.img", "/dev/block/platform/msm_sdcc.1/by-name/boot");
 	ui_print("Running FSTRIM, this might take a while");
     run_program("/system/bin/fstrim", "-v", "/system");
   endif;
   ui_print("@Formating Cache");
-  format("ext4", "EMMC", "/dev/block/mmcblk0p46", "0", "/cache");
+  format("ext4", "EMMC", "/dev/block/platform/msm_sdcc.1/by-name/cache", "0", "/cache");
   delete_recursive("/data/dalvik-cache");
   set_progress(1.0);
 endif;
@@ -76,11 +76,11 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "3" then
   set_progress(0.01);
   if file_getprop("/tmp/aroma/wipe.prop","selected.0") != "1" then
     ui_print("@Formatting Cache");
-    format("ext4", "EMMC", "/dev/block/mmcblk0p46", "0", "/cache");
+    format("ext4", "EMMC", "/dev/block/platform/msm_sdcc.1/by-name/cache", "0", "/cache");
   endif;
-  mount("ext4", "EMMC", "/dev/block/mmcblk0p45", "/system");
-  mount("ext4", "EMMC", "/dev/block/mmcblk0p46", "/cache");
-  mount("ext4", "EMMC", "/dev/block/mmcblk0p47", "/data");
+  mount("ext4", "EMMC", "/dev/block/platform/msm_sdcc.1/by-name/system", "/system");
+  mount("ext4", "EMMC", "/dev/block/platform/msm_sdcc.1/by-name/cache", "/cache");
+  mount("ext4", "EMMC", "/dev/block/platform/msm_sdcc.1/by-name/data", "/data");
   if file_getprop("/tmp/aroma/wipe.prop","selected.0") != "1" then
     ui_print("@Formatting Dalvik");
     delete_recursive("/data/dalvik-cache");
@@ -94,13 +94,13 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "1" || file_getprop("/tmp/
   ui_print("@Installing Rom");
   set_progress(0.01);
   ui_print("@Formatting System");
-  format("ext4", "EMMC", "/dev/block/mmcblk0p45", "0", "/system");
+  format("ext4", "EMMC", "/dev/block/platform/msm_sdcc.1/by-name/system", "0", "/system");
   set_progress(0.10);
   ui_print("@Formatting Cache");
-  format("ext4", "EMMC", "/dev/block/mmcblk0p46", "0", "/cache");
-  mount("ext4", "EMMC", "/dev/block/mmcblk0p45", "/system");
-  mount("ext4", "EMMC", "/dev/block/mmcblk0p46", "/cache");
-  mount("ext4", "EMMC", "/dev/block/mmcblk0p47", "/data");
+  format("ext4", "EMMC", "/dev/block/platform/msm_sdcc.1/by-name/cache", "0", "/cache");
+  mount("ext4", "EMMC", "/dev/block/platform/msm_sdcc.1/by-name/system", "/system");
+  mount("ext4", "EMMC", "/dev/block/platform/msm_sdcc.1/by-name/cache", "/cache");
+  mount("ext4", "EMMC", "/dev/block/platform/msm_sdcc.1/by-name/data", "/data");
   ui_print("@Formatting Dalvik");
   delete_recursive("/data/dalvik-cache");
   delete_recursive("/data/local");
@@ -123,7 +123,7 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "1" || file_getprop("/tmp/
   if file_getprop("/tmp/aroma/type.prop","selected") != "1" then
     if file_getprop("/tmp/aroma/kernel.prop","selected.1") == "1" then
       ui_print("@Installing Stock Kernel");
-      package_extract_file("boot.img", "/dev/block/mmcblk0p42");
+      package_extract_file("boot.img", "/dev/block/platform/msm_sdcc.1/by-name/boot");
     endif;
 	if file_getprop("/tmp/aroma/kernel.prop","selected.1") == "2" then
       ui_print("@Installing Elemental X Kernel");
@@ -145,24 +145,24 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "1" || file_getprop("/tmp/
 	  set_perm(0, 0, 0777, "/tmp/abootimg");
 	  run_program("/tmp/cmdline.sh");
 	  run_program("/tmp/abootimg", "-u", "/tmp/boot.img", "-f", "/tmp/bootimg.cfg");
-	  run_program("/tmp/busybox", "dd", "if=/tmp/boot.img", "of=/dev/block/mmcblk0p42");
+	  run_program("/tmp/busybox", "dd", "if=/tmp/boot.img", "of=/dev/block/platform/msm_sdcc.1/by-name/boot");
     endif;
 	if file_getprop("/tmp/aroma/kernel.prop","selected.1") == "3" then
       ui_print("@Installing Quantum by PwnCakes193");
 	  package_extract_dir("aroma/kernels/quantum/system", "/system");
-      package_extract_file("aroma/kernels/quantum/boot.img", "/dev/block/mmcblk0p42");
+      package_extract_file("aroma/kernels/quantum/boot.img", "/dev/block/platform/msm_sdcc.1/by-name/boot");
 	  ui_print("Running FSTRIM, this might take a while");
       run_program("/system/bin/fstrim", "-v", "/system");
 	endif;
   else
     ui_print("@Installing Kernel");
-    package_extract_file("boot.img", "/dev/block/mmcblk0p42");
+    package_extract_file("boot.img", "/dev/block/platform/msm_sdcc.1/by-name/boot");
   endif;
   if file_getprop("/tmp/aroma/carrier.prop","selected.0") != "1" then
     package_extract_dir("aroma/carrier/tmp_files", "/tmp");
 	package_extract_file("aroma/scripts/bash", "/tmp/bash");
 	set_perm_recursive(0, 0, 0755, 0755, "/tmp");
-	if file_getprop("/tmp/aroma/carrier.prop","selected.0") == "2" then
+	if file_getprop("/tmp/aroma/carrier.prop","selected.0") == "3" then
       package_extract_dir("aroma/carrier/sprint/system", "/system");
       package_extract_dir("aroma/carrier/sprint/framework", "/tmp");
       run_program("/tmp/patch_carrier.sh", "/system/framework/framework-res.apk");
