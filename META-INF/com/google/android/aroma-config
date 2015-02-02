@@ -560,7 +560,7 @@ if prop("type.prop","selected")=="2"||prop("type.prop","selected")=="4" then
     );
   endif;
 endif;
-if prop("kernel.prop","selected.1")=="2"&&prop("type.prop","selected")=="2"||prop("kernel.prop","selected.1")=="2"&&prop("type.prop","selected")=="4" then
+if prop("type.prop","selected")=="2"&&prop("carrier.prop","selected.0")=="1"&&prop("kernel.prop","selected.1")=="3"||prop("type.prop","selected")=="4"&&prop("carrier.prop","selected.0")=="1"&&prop("kernel.prop","selected.1")=="3" then
 selectbox(
   "CPU Settings","","","cpu.prop",
 
