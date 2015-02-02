@@ -23,6 +23,7 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "4" then
   delete("/system/etc/init.d/01-s2w");
   delete("/system/etc/init.d/99zram.sh");
   delete("/system/etc/init.d/85s2s.sh");
+  delete("/system/etc/init.d/92Elite");
   delete("/system/etc/elementalx.conf");
   delete("/system/etc/skydragon.conf");
   set_progress(0.5);
@@ -33,35 +34,49 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "4" then
 	symlink("/system/lib/modules/pronto/pronto_wlan.ko", "/system/lib/modules/wlan.ko");
   endif;
   if file_getprop("/tmp/aroma/kernel.prop","selected.1") == "2" then
-    ui_print("@Installing Elemental X Kernel");
-	package_extract_dir("aroma/kernels/elementalx/config", "/tmp");
-	set_perm(0, 0, 0777, "/tmp/busybox");
-	set_perm(0, 0, 0777, "/tmp/buildconfig.sh");
-    package_extract_dir("aroma/kernels/elementalx/system", "/system");
-	run_program("/tmp/systemcheck.sh");
-	if file_getprop("/tmp/aroma/cpu.prop","selected.3") == "1" then
-	  package_extract_dir("aroma/kernels/elementalx/thermal/elexcool", "/system/etc");
-	endif;
-	if file_getprop("/tmp/aroma/cpu.prop","selected.3") == "2" then
-	  package_extract_dir("aroma/kernels/elementalx/thermal/stockcool", "/system/etc");
-	endif;
-	run_program("/tmp/buildconfig.sh");
-	run_program("/tmp/busybox", "cp", "/tmp/elementalx.conf", "/system/etc/elementalx.conf");
-	package_extract_dir("aroma/kernels/elementalx/boot", "/tmp");
-	set_perm(0, 0, 0777, "/tmp/cmdline.sh");
-	set_perm(0, 0, 0777, "/tmp/abootimg");
-	run_program("/tmp/cmdline.sh");
-	run_program("/tmp/abootimg", "-u", "/tmp/boot.img", "-f", "/tmp/bootimg.cfg");
-	run_program("/tmp/busybox", "dd", "if=/tmp/boot.img", "of=/dev/block/platform/msm_sdcc.1/by-name/boot");
-	symlink("/system/lib/modules/pronto/pronto_wlan.ko", "/system/lib/modules/wlan.ko");
-  endif;
-  if file_getprop("/tmp/aroma/kernel.prop","selected.1") == "3" then
     ui_print("@Installing Quantum by PwnCakes193");
 	package_extract_dir("aroma/kernels/quantum/system", "/system");
     symlink("/system/lib/modules/pronto/pronto_wlan.ko", "/system/lib/modules/wlan.ko");
     package_extract_file("aroma/kernels/quantum/boot.img", "/dev/block/platform/msm_sdcc.1/by-name/boot");
 	ui_print("Running FSTRIM, this might take a while");
     run_program("/system/bin/fstrim", "-v", "/system");
+  endif;
+  if file_getprop("/tmp/aroma/kernel.prop","selected.1") == "3" then
+    if file_getprop("/tmp/aroma/carrier.prop","selected.0") == "1" then
+      ui_print("@Installing Elemental X Kernel");
+	  package_extract_dir("aroma/kernels/elementalx/config", "/tmp");
+	  set_perm(0, 0, 0777, "/tmp/busybox");
+	  set_perm(0, 0, 0777, "/tmp/buildconfig.sh");
+      package_extract_dir("aroma/kernels/elementalx/system", "/system");
+	  run_program("/tmp/systemcheck.sh");
+	  if file_getprop("/tmp/aroma/cpu.prop","selected.3") == "1" then
+	    package_extract_dir("aroma/kernels/elementalx/thermal/elexcool", "/system/etc");
+	  endif;
+	  if file_getprop("/tmp/aroma/cpu.prop","selected.3") == "2" then
+	    package_extract_dir("aroma/kernels/elementalx/thermal/stockcool", "/system/etc");
+	  endif;
+	  run_program("/tmp/buildconfig.sh");
+	  run_program("/tmp/busybox", "cp", "/tmp/elementalx.conf", "/system/etc/elementalx.conf");
+	  package_extract_dir("aroma/kernels/elementalx/boot", "/tmp");
+	  set_perm(0, 0, 0777, "/tmp/cmdline.sh");
+	  set_perm(0, 0, 0777, "/tmp/abootimg");
+	  run_program("/tmp/cmdline.sh");
+	  run_program("/tmp/abootimg", "-u", "/tmp/boot.img", "-f", "/tmp/bootimg.cfg");
+	  run_program("/tmp/busybox", "dd", "if=/tmp/boot.img", "of=/dev/block/platform/msm_sdcc.1/by-name/boot");
+	  symlink("/system/lib/modules/pronto/pronto_wlan.ko", "/system/lib/modules/wlan.ko");
+	else
+	  ui_print("@Installing CodeCraft by Evolutionmods");
+	  package_extract_dir("aroma/kernels/codecraft/system", "/system");
+      symlink("/system/lib/modules/pronto/pronto_wlan.ko", "/system/lib/modules/wlan.ko");
+      package_extract_file("aroma/kernels/codecraft/boot.img", "/dev/block/platform/msm_sdcc.1/by-name/boot");
+  endif;
+  if file_getprop("/tmp/aroma/kernel.prop","selected.1") == "4" then
+      ui_print("@Installing Elite by buckmarble");
+	  package_extract_dir("aroma/kernels/elite/system", "/system");
+      symlink("/system/lib/modules/pronto/pronto_wlan.ko", "/system/lib/modules/wlan.ko");
+      package_extract_file("aroma/kernels/elite/boot.img", "/dev/block/platform/msm_sdcc.1/by-name/boot");
+	  ui_print("Running FSTRIM, this might take a while");
+      run_program("/system/bin/fstrim", "-v", "/system");
   endif;
   ui_print("@Formating Cache");
   format("ext4", "EMMC", "/dev/block/platform/msm_sdcc.1/by-name/cache", "0", "/cache");
@@ -125,35 +140,48 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "1" || file_getprop("/tmp/
       ui_print("@Installing Stock Kernel");
       package_extract_file("boot.img", "/dev/block/platform/msm_sdcc.1/by-name/boot");
     endif;
-	if file_getprop("/tmp/aroma/kernel.prop","selected.1") == "2" then
-      ui_print("@Installing Elemental X Kernel");
-	  package_extract_dir("aroma/kernels/elementalx/config", "/tmp");
-	  set_perm(0, 0, 0777, "/tmp/busybox");
-	  set_perm(0, 0, 0777, "/tmp/buildconfig.sh");
-      package_extract_dir("aroma/kernels/elementalx/system", "/system");
-	  run_program("/tmp/systemcheck.sh");
-	  if file_getprop("/tmp/aroma/cpu.prop","selected.3") == "1" then
-	    package_extract_dir("aroma/kernels/elementalx/thermal/elexcool", "/system/etc");
-	  endif;
-	  if file_getprop("/tmp/aroma/cpu.prop","selected.3") == "2" then
-	    package_extract_dir("aroma/kernels/elementalx/thermal/stockcool", "/system/etc");
-	  endif;
-	  run_program("/tmp/buildconfig.sh");
-	  run_program("/tmp/busybox", "cp", "/tmp/elementalx.conf", "/system/etc/elementalx.conf");
-	  package_extract_dir("aroma/kernels/elementalx/boot", "/tmp");
-	  set_perm(0, 0, 0777, "/tmp/cmdline.sh");
-	  set_perm(0, 0, 0777, "/tmp/abootimg");
-	  run_program("/tmp/cmdline.sh");
-	  run_program("/tmp/abootimg", "-u", "/tmp/boot.img", "-f", "/tmp/bootimg.cfg");
-	  run_program("/tmp/busybox", "dd", "if=/tmp/boot.img", "of=/dev/block/platform/msm_sdcc.1/by-name/boot");
-    endif;
-	if file_getprop("/tmp/aroma/kernel.prop","selected.1") == "3" then
+    if file_getprop("/tmp/aroma/kernel.prop","selected.1") == "2" then
       ui_print("@Installing Quantum by PwnCakes193");
 	  package_extract_dir("aroma/kernels/quantum/system", "/system");
       package_extract_file("aroma/kernels/quantum/boot.img", "/dev/block/platform/msm_sdcc.1/by-name/boot");
 	  ui_print("Running FSTRIM, this might take a while");
       run_program("/system/bin/fstrim", "-v", "/system");
-	endif;
+    endif;
+    if file_getprop("/tmp/aroma/kernel.prop","selected.1") == "3" then
+      if file_getprop("/tmp/aroma/carrier.prop","selected.0") == "1" then
+        ui_print("@Installing Elemental X Kernel");
+	    package_extract_dir("aroma/kernels/elementalx/config", "/tmp");
+	    set_perm(0, 0, 0777, "/tmp/busybox");
+	    set_perm(0, 0, 0777, "/tmp/buildconfig.sh");
+        package_extract_dir("aroma/kernels/elementalx/system", "/system");
+	    run_program("/tmp/systemcheck.sh");
+	    if file_getprop("/tmp/aroma/cpu.prop","selected.3") == "1" then
+	      package_extract_dir("aroma/kernels/elementalx/thermal/elexcool", "/system/etc");
+	    endif;
+	    if file_getprop("/tmp/aroma/cpu.prop","selected.3") == "2" then
+	      package_extract_dir("aroma/kernels/elementalx/thermal/stockcool", "/system/etc");
+	    endif;
+	    run_program("/tmp/buildconfig.sh");
+	    run_program("/tmp/busybox", "cp", "/tmp/elementalx.conf", "/system/etc/elementalx.conf");
+	    package_extract_dir("aroma/kernels/elementalx/boot", "/tmp");
+	    set_perm(0, 0, 0777, "/tmp/cmdline.sh");
+	    set_perm(0, 0, 0777, "/tmp/abootimg");
+	    run_program("/tmp/cmdline.sh");
+	    run_program("/tmp/abootimg", "-u", "/tmp/boot.img", "-f", "/tmp/bootimg.cfg");
+	    run_program("/tmp/busybox", "dd", "if=/tmp/boot.img", "of=/dev/block/platform/msm_sdcc.1/by-name/boot");
+	  else
+	    ui_print("@Installing CodeCraft by Evolutionmods");
+	    package_extract_dir("aroma/kernels/codecraft/system", "/system");
+        package_extract_file("aroma/kernels/codecraft/boot.img", "/dev/block/platform/msm_sdcc.1/by-name/boot");
+      endif;
+    endif;
+    if file_getprop("/tmp/aroma/kernel.prop","selected.1") == "4" then
+        ui_print("@Installing Elite by buckmarble");
+	    package_extract_dir("aroma/kernels/elite/system", "/system");
+        package_extract_file("aroma/kernels/elite/boot.img", "/dev/block/platform/msm_sdcc.1/by-name/boot");
+	    ui_print("Running FSTRIM, this might take a while");
+        run_program("/system/bin/fstrim", "-v", "/system");
+    endif;
   else
     ui_print("@Installing Kernel");
     package_extract_file("boot.img", "/dev/block/platform/msm_sdcc.1/by-name/boot");
