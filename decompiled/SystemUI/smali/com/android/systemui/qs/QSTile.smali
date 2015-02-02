@@ -457,6 +457,12 @@
     return-void
 .end method
 
+.method protected handleLongClick()V
+    .locals 0
+
+    return-void
+.end method
+
 .method protected handleRefreshState(Ljava/lang/Object;)V
     .locals 3
 
@@ -502,6 +508,18 @@
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/qs/QSTile;->handleRefreshState(Ljava/lang/Object;)V
+
+    return-void
+.end method
+
+.method public longClick()V
+    .locals 2
+
+    iget-object v0, p0, Lcom/android/systemui/qs/QSTile;->mHandler:Lcom/android/systemui/qs/QSTile$H;
+
+    const/16 v1, 0xa
+
+    invoke-virtual {v0, v1}, Lcom/android/systemui/qs/QSTile$H;->sendEmptyMessage(I)Z
 
     return-void
 .end method

@@ -42,6 +42,8 @@
 
 .field private final mProjectionManager:Landroid/media/projection/MediaProjectionManager;
 
+.field private final mReceiver:Landroid/content/BroadcastReceiver;
+
 .field private final mRoutes:Landroid/util/ArrayMap;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -73,101 +75,127 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;)V
-    .locals 3
+    .locals 4
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Ljava/util/ArrayList;
+    new-instance v1, Ljava/util/ArrayList;
 
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    iput-object v0, p0, Lcom/android/systemui/statusbar/policy/CastControllerImpl;->mCallbacks:Ljava/util/ArrayList;
+    iput-object v1, p0, Lcom/android/systemui/statusbar/policy/CastControllerImpl;->mCallbacks:Ljava/util/ArrayList;
 
-    new-instance v0, Landroid/util/ArrayMap;
+    new-instance v1, Landroid/util/ArrayMap;
 
-    invoke-direct {v0}, Landroid/util/ArrayMap;-><init>()V
+    invoke-direct {v1}, Landroid/util/ArrayMap;-><init>()V
 
-    iput-object v0, p0, Lcom/android/systemui/statusbar/policy/CastControllerImpl;->mRoutes:Landroid/util/ArrayMap;
+    iput-object v1, p0, Lcom/android/systemui/statusbar/policy/CastControllerImpl;->mRoutes:Landroid/util/ArrayMap;
 
-    new-instance v0, Ljava/lang/Object;
+    new-instance v1, Ljava/lang/Object;
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {v1}, Ljava/lang/Object;-><init>()V
 
-    iput-object v0, p0, Lcom/android/systemui/statusbar/policy/CastControllerImpl;->mDiscoveringLock:Ljava/lang/Object;
+    iput-object v1, p0, Lcom/android/systemui/statusbar/policy/CastControllerImpl;->mDiscoveringLock:Ljava/lang/Object;
 
-    new-instance v0, Ljava/lang/Object;
+    new-instance v1, Ljava/lang/Object;
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {v1}, Ljava/lang/Object;-><init>()V
 
-    iput-object v0, p0, Lcom/android/systemui/statusbar/policy/CastControllerImpl;->mProjectionLock:Ljava/lang/Object;
+    iput-object v1, p0, Lcom/android/systemui/statusbar/policy/CastControllerImpl;->mProjectionLock:Ljava/lang/Object;
 
-    new-instance v0, Lcom/android/systemui/statusbar/policy/CastControllerImpl$1;
+    new-instance v1, Lcom/android/systemui/statusbar/policy/CastControllerImpl$1;
 
-    invoke-direct {v0, p0}, Lcom/android/systemui/statusbar/policy/CastControllerImpl$1;-><init>(Lcom/android/systemui/statusbar/policy/CastControllerImpl;)V
+    invoke-direct {v1, p0}, Lcom/android/systemui/statusbar/policy/CastControllerImpl$1;-><init>(Lcom/android/systemui/statusbar/policy/CastControllerImpl;)V
 
-    iput-object v0, p0, Lcom/android/systemui/statusbar/policy/CastControllerImpl;->mMediaCallback:Landroid/media/MediaRouter$SimpleCallback;
+    iput-object v1, p0, Lcom/android/systemui/statusbar/policy/CastControllerImpl;->mReceiver:Landroid/content/BroadcastReceiver;
 
-    new-instance v0, Lcom/android/systemui/statusbar/policy/CastControllerImpl$2;
+    new-instance v1, Lcom/android/systemui/statusbar/policy/CastControllerImpl$2;
 
-    invoke-direct {v0, p0}, Lcom/android/systemui/statusbar/policy/CastControllerImpl$2;-><init>(Lcom/android/systemui/statusbar/policy/CastControllerImpl;)V
+    invoke-direct {v1, p0}, Lcom/android/systemui/statusbar/policy/CastControllerImpl$2;-><init>(Lcom/android/systemui/statusbar/policy/CastControllerImpl;)V
 
-    iput-object v0, p0, Lcom/android/systemui/statusbar/policy/CastControllerImpl;->mProjectionCallback:Landroid/media/projection/MediaProjectionManager$Callback;
+    iput-object v1, p0, Lcom/android/systemui/statusbar/policy/CastControllerImpl;->mMediaCallback:Landroid/media/MediaRouter$SimpleCallback;
+
+    new-instance v1, Lcom/android/systemui/statusbar/policy/CastControllerImpl$3;
+
+    invoke-direct {v1, p0}, Lcom/android/systemui/statusbar/policy/CastControllerImpl$3;-><init>(Lcom/android/systemui/statusbar/policy/CastControllerImpl;)V
+
+    iput-object v1, p0, Lcom/android/systemui/statusbar/policy/CastControllerImpl;->mProjectionCallback:Landroid/media/projection/MediaProjectionManager$Callback;
 
     iput-object p1, p0, Lcom/android/systemui/statusbar/policy/CastControllerImpl;->mContext:Landroid/content/Context;
 
-    const-string v0, "media_router"
+    const-string v1, "media_router"
 
-    invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {p1, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object v1
 
-    check-cast v0, Landroid/media/MediaRouter;
+    check-cast v1, Landroid/media/MediaRouter;
 
-    iput-object v0, p0, Lcom/android/systemui/statusbar/policy/CastControllerImpl;->mMediaRouter:Landroid/media/MediaRouter;
+    iput-object v1, p0, Lcom/android/systemui/statusbar/policy/CastControllerImpl;->mMediaRouter:Landroid/media/MediaRouter;
 
-    const-string v0, "media_projection"
+    const-string v1, "media_projection"
 
-    invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {p1, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object v1
 
-    check-cast v0, Landroid/media/projection/MediaProjectionManager;
+    check-cast v1, Landroid/media/projection/MediaProjectionManager;
 
-    iput-object v0, p0, Lcom/android/systemui/statusbar/policy/CastControllerImpl;->mProjectionManager:Landroid/media/projection/MediaProjectionManager;
+    iput-object v1, p0, Lcom/android/systemui/statusbar/policy/CastControllerImpl;->mProjectionManager:Landroid/media/projection/MediaProjectionManager;
 
-    iget-object v0, p0, Lcom/android/systemui/statusbar/policy/CastControllerImpl;->mProjectionManager:Landroid/media/projection/MediaProjectionManager;
+    iget-object v1, p0, Lcom/android/systemui/statusbar/policy/CastControllerImpl;->mProjectionManager:Landroid/media/projection/MediaProjectionManager;
 
-    invoke-virtual {v0}, Landroid/media/projection/MediaProjectionManager;->getActiveProjectionInfo()Landroid/media/projection/MediaProjectionInfo;
+    invoke-virtual {v1}, Landroid/media/projection/MediaProjectionManager;->getActiveProjectionInfo()Landroid/media/projection/MediaProjectionInfo;
 
-    move-result-object v0
+    move-result-object v1
 
-    iput-object v0, p0, Lcom/android/systemui/statusbar/policy/CastControllerImpl;->mProjection:Landroid/media/projection/MediaProjectionInfo;
+    iput-object v1, p0, Lcom/android/systemui/statusbar/policy/CastControllerImpl;->mProjection:Landroid/media/projection/MediaProjectionInfo;
 
-    iget-object v0, p0, Lcom/android/systemui/statusbar/policy/CastControllerImpl;->mProjectionManager:Landroid/media/projection/MediaProjectionManager;
+    iget-object v1, p0, Lcom/android/systemui/statusbar/policy/CastControllerImpl;->mProjectionManager:Landroid/media/projection/MediaProjectionManager;
 
-    iget-object v1, p0, Lcom/android/systemui/statusbar/policy/CastControllerImpl;->mProjectionCallback:Landroid/media/projection/MediaProjectionManager$Callback;
+    iget-object v2, p0, Lcom/android/systemui/statusbar/policy/CastControllerImpl;->mProjectionCallback:Landroid/media/projection/MediaProjectionManager$Callback;
 
-    new-instance v2, Landroid/os/Handler;
+    new-instance v3, Landroid/os/Handler;
 
-    invoke-direct {v2}, Landroid/os/Handler;-><init>()V
+    invoke-direct {v3}, Landroid/os/Handler;-><init>()V
 
-    invoke-virtual {v0, v1, v2}, Landroid/media/projection/MediaProjectionManager;->addCallback(Landroid/media/projection/MediaProjectionManager$Callback;Landroid/os/Handler;)V
+    invoke-virtual {v1, v2, v3}, Landroid/media/projection/MediaProjectionManager;->addCallback(Landroid/media/projection/MediaProjectionManager$Callback;Landroid/os/Handler;)V
 
-    sget-boolean v0, Lcom/android/systemui/statusbar/policy/CastControllerImpl;->DEBUG:Z
+    new-instance v0, Landroid/content/IntentFilter;
 
-    if-eqz v0, :cond_0
+    invoke-direct {v0}, Landroid/content/IntentFilter;-><init>()V
 
-    const-string v0, "CastController"
+    const-string v1, "android.hardware.display.action.WIFI_DISPLAY_STATUS_CHANGED"
 
-    const-string v1, "new CastController()"
+    invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    iget-object v1, p0, Lcom/android/systemui/statusbar/policy/CastControllerImpl;->mReceiver:Landroid/content/BroadcastReceiver;
+
+    invoke-virtual {p1, v1, v0}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
+
+    sget-boolean v1, Lcom/android/systemui/statusbar/policy/CastControllerImpl;->DEBUG:Z
+
+    if-eqz v1, :cond_0
+
+    const-string v1, "CastController"
+
+    const-string v2, "new CastController()"
+
+    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     :cond_0
     return-void
 .end method
 
-.method static synthetic access$000()Z
+.method static synthetic access$000(Lcom/android/systemui/statusbar/policy/CastControllerImpl;)V
+    .locals 0
+
+    invoke-direct {p0}, Lcom/android/systemui/statusbar/policy/CastControllerImpl;->updateRemoteDisplays()V
+
+    return-void
+.end method
+
+.method static synthetic access$100()Z
     .locals 1
 
     sget-boolean v0, Lcom/android/systemui/statusbar/policy/CastControllerImpl;->DEBUG:Z
@@ -175,7 +203,7 @@
     return v0
 .end method
 
-.method static synthetic access$100(Landroid/media/MediaRouter$RouteInfo;)Ljava/lang/String;
+.method static synthetic access$200(Landroid/media/MediaRouter$RouteInfo;)Ljava/lang/String;
     .locals 1
 
     invoke-static {p0}, Lcom/android/systemui/statusbar/policy/CastControllerImpl;->routeToString(Landroid/media/MediaRouter$RouteInfo;)Ljava/lang/String;
@@ -183,14 +211,6 @@
     move-result-object v0
 
     return-object v0
-.end method
-
-.method static synthetic access$200(Lcom/android/systemui/statusbar/policy/CastControllerImpl;)V
-    .locals 0
-
-    invoke-direct {p0}, Lcom/android/systemui/statusbar/policy/CastControllerImpl;->updateRemoteDisplays()V
-
-    return-void
 .end method
 
 .method static synthetic access$300(Lcom/android/systemui/statusbar/policy/CastControllerImpl;Landroid/media/projection/MediaProjectionInfo;Z)V
@@ -1216,6 +1236,8 @@
     if-eqz p1, :cond_0
 
     iget-object v1, p1, Lcom/android/systemui/statusbar/policy/CastController$CastDevice;->tag:Ljava/lang/Object;
+
+    instance-of v1, v1, Landroid/media/MediaRouter$RouteInfo;
 
     if-nez v1, :cond_1
 

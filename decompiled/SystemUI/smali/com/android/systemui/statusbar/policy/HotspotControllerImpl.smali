@@ -297,49 +297,6 @@
     goto :goto_1
 .end method
 
-.method public isProvisioningNeeded()Z
-    .locals 4
-
-    const/4 v1, 0x0
-
-    iget-object v2, p0, Lcom/android/systemui/statusbar/policy/HotspotControllerImpl;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v2}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v2
-
-    const v3, 0x1070015
-
-    invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string v2, "net.tethering.noprovisioning"
-
-    invoke-static {v2, v1}, Landroid/os/SystemProperties;->getBoolean(Ljava/lang/String;Z)Z
-
-    move-result v2
-
-    if-nez v2, :cond_0
-
-    if-nez v0, :cond_1
-
-    :cond_0
-    :goto_0
-    return v1
-
-    :cond_1
-    array-length v2, v0
-
-    const/4 v3, 0x2
-
-    if-ne v2, v3, :cond_0
-
-    const/4 v1, 0x1
-
-    goto :goto_0
-.end method
-
 .method public removeCallback(Lcom/android/systemui/statusbar/policy/HotspotController$Callback;)V
     .locals 3
 

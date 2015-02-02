@@ -14,6 +14,10 @@
 .end annotation
 
 
+# static fields
+.field private static final WIRELESS_SETTINGS:Landroid/content/Intent;
+
+
 # instance fields
 .field private mListening:Z
 
@@ -23,6 +27,20 @@
 
 
 # direct methods
+.method static constructor <clinit>()V
+    .locals 2
+
+    new-instance v0, Landroid/content/Intent;
+
+    const-string v1, "android.settings.WIRELESS_SETTINGS"
+
+    invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+
+    sput-object v0, Lcom/android/systemui/qs/tiles/AirplaneModeTile;->WIRELESS_SETTINGS:Landroid/content/Intent;
+
+    return-void
+.end method
+
 .method public constructor <init>(Lcom/android/systemui/qs/QSTile$Host;)V
     .locals 4
 
@@ -141,6 +159,18 @@
     const/4 v0, 0x0
 
     goto :goto_0
+.end method
+
+.method public handleLongClick()V
+    .locals 2
+
+    iget-object v0, p0, Lcom/android/systemui/qs/tiles/AirplaneModeTile;->mHost:Lcom/android/systemui/qs/QSTile$Host;
+
+    sget-object v1, Lcom/android/systemui/qs/tiles/AirplaneModeTile;->WIRELESS_SETTINGS:Landroid/content/Intent;
+
+    invoke-interface {v0, v1}, Lcom/android/systemui/qs/QSTile$Host;->startSettingsActivity(Landroid/content/Intent;)V
+
+    return-void
 .end method
 
 .method protected handleUpdateState(Lcom/android/systemui/qs/QSTile$BooleanState;Ljava/lang/Object;)V

@@ -24,6 +24,8 @@
 # static fields
 .field private static final CELLULAR_SETTINGS:Landroid/content/Intent;
 
+.field private static final WIRELESS_SETTINGS:Landroid/content/Intent;
+
 
 # instance fields
 .field private final mCallback:Lcom/android/systemui/statusbar/policy/NetworkController$NetworkSignalChangedCallback;
@@ -54,6 +56,14 @@
     move-result-object v0
 
     sput-object v0, Lcom/android/systemui/qs/tiles/CellularTile;->CELLULAR_SETTINGS:Landroid/content/Intent;
+
+    new-instance v0, Landroid/content/Intent;
+
+    const-string v1, "android.settings.WIRELESS_SETTINGS"
+
+    invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+
+    sput-object v0, Lcom/android/systemui/qs/tiles/CellularTile;->WIRELESS_SETTINGS:Landroid/content/Intent;
 
     return-void
 .end method
@@ -207,6 +217,18 @@
     invoke-interface {v0, v1}, Lcom/android/systemui/qs/QSTile$Host;->startSettingsActivity(Landroid/content/Intent;)V
 
     goto :goto_0
+.end method
+
+.method protected handleLongClick()V
+    .locals 2
+
+    iget-object v0, p0, Lcom/android/systemui/qs/tiles/CellularTile;->mHost:Lcom/android/systemui/qs/QSTile$Host;
+
+    sget-object v1, Lcom/android/systemui/qs/tiles/CellularTile;->WIRELESS_SETTINGS:Landroid/content/Intent;
+
+    invoke-interface {v0, v1}, Lcom/android/systemui/qs/QSTile$Host;->startSettingsActivity(Landroid/content/Intent;)V
+
+    return-void
 .end method
 
 .method protected handleUpdateState(Lcom/android/systemui/qs/QSTile$SignalState;Ljava/lang/Object;)V

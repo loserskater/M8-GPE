@@ -40,7 +40,7 @@
     iget-object v1, p0, Lcom/android/systemui/statusbar/policy/FlashlightController$5;->this$0:Lcom/android/systemui/statusbar/policy/FlashlightController;
 
     # getter for: Lcom/android/systemui/statusbar/policy/FlashlightController;->mCameraAvailable:Z
-    invoke-static {v1}, Lcom/android/systemui/statusbar/policy/FlashlightController;->access$1000(Lcom/android/systemui/statusbar/policy/FlashlightController;)Z
+    invoke-static {v1}, Lcom/android/systemui/statusbar/policy/FlashlightController;->access$1100(Lcom/android/systemui/statusbar/policy/FlashlightController;)Z
 
     move-result v1
 
@@ -52,7 +52,7 @@
     iget-object v1, p0, Lcom/android/systemui/statusbar/policy/FlashlightController$5;->this$0:Lcom/android/systemui/statusbar/policy/FlashlightController;
 
     # setter for: Lcom/android/systemui/statusbar/policy/FlashlightController;->mCameraAvailable:Z
-    invoke-static {v1, p1}, Lcom/android/systemui/statusbar/policy/FlashlightController;->access$1002(Lcom/android/systemui/statusbar/policy/FlashlightController;Z)Z
+    invoke-static {v1, p1}, Lcom/android/systemui/statusbar/policy/FlashlightController;->access$1102(Lcom/android/systemui/statusbar/policy/FlashlightController;Z)Z
 
     monitor-exit v2
     :try_end_0
@@ -61,7 +61,7 @@
     if-eqz v0, :cond_1
 
     # getter for: Lcom/android/systemui/statusbar/policy/FlashlightController;->DEBUG:Z
-    invoke-static {}, Lcom/android/systemui/statusbar/policy/FlashlightController;->access$800()Z
+    invoke-static {}, Lcom/android/systemui/statusbar/policy/FlashlightController;->access$900()Z
 
     move-result v1
 
@@ -99,7 +99,7 @@
     iget-object v1, p0, Lcom/android/systemui/statusbar/policy/FlashlightController$5;->this$0:Lcom/android/systemui/statusbar/policy/FlashlightController;
 
     # invokes: Lcom/android/systemui/statusbar/policy/FlashlightController;->dispatchAvailabilityChanged(Z)V
-    invoke-static {v1, p1}, Lcom/android/systemui/statusbar/policy/FlashlightController;->access$1100(Lcom/android/systemui/statusbar/policy/FlashlightController;Z)V
+    invoke-static {v1, p1}, Lcom/android/systemui/statusbar/policy/FlashlightController;->access$1200(Lcom/android/systemui/statusbar/policy/FlashlightController;Z)V
 
     :cond_1
     return-void
@@ -126,7 +126,7 @@
     .locals 3
 
     # getter for: Lcom/android/systemui/statusbar/policy/FlashlightController;->DEBUG:Z
-    invoke-static {}, Lcom/android/systemui/statusbar/policy/FlashlightController;->access$800()Z
+    invoke-static {}, Lcom/android/systemui/statusbar/policy/FlashlightController;->access$900()Z
 
     move-result v0
 
@@ -164,7 +164,7 @@
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/FlashlightController$5;->this$0:Lcom/android/systemui/statusbar/policy/FlashlightController;
 
     # getter for: Lcom/android/systemui/statusbar/policy/FlashlightController;->mCameraId:Ljava/lang/String;
-    invoke-static {v0}, Lcom/android/systemui/statusbar/policy/FlashlightController;->access$900(Lcom/android/systemui/statusbar/policy/FlashlightController;)Ljava/lang/String;
+    invoke-static {v0}, Lcom/android/systemui/statusbar/policy/FlashlightController;->access$1000(Lcom/android/systemui/statusbar/policy/FlashlightController;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -186,7 +186,7 @@
     .locals 3
 
     # getter for: Lcom/android/systemui/statusbar/policy/FlashlightController;->DEBUG:Z
-    invoke-static {}, Lcom/android/systemui/statusbar/policy/FlashlightController;->access$800()Z
+    invoke-static {}, Lcom/android/systemui/statusbar/policy/FlashlightController;->access$900()Z
 
     move-result v0
 
@@ -224,7 +224,7 @@
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/FlashlightController$5;->this$0:Lcom/android/systemui/statusbar/policy/FlashlightController;
 
     # getter for: Lcom/android/systemui/statusbar/policy/FlashlightController;->mCameraId:Ljava/lang/String;
-    invoke-static {v0}, Lcom/android/systemui/statusbar/policy/FlashlightController;->access$900(Lcom/android/systemui/statusbar/policy/FlashlightController;)Ljava/lang/String;
+    invoke-static {v0}, Lcom/android/systemui/statusbar/policy/FlashlightController;->access$1000(Lcom/android/systemui/statusbar/policy/FlashlightController;)Ljava/lang/String;
 
     move-result-object v0
 

@@ -3,12 +3,12 @@
 .source "RotationLockTile.java"
 
 # interfaces
-.implements Lcom/android/systemui/statusbar/policy/RotationLockController$RotationLockControllerCallback;
+.implements Ljava/lang/Runnable;
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/android/systemui/qs/tiles/RotationLockTile;
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lcom/android/systemui/qs/tiles/RotationLockTile;->handleUpdateState(Lcom/android/systemui/qs/QSTile$BooleanState;Ljava/lang/Object;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,12 +20,16 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/systemui/qs/tiles/RotationLockTile;
 
+.field final synthetic val$d:Landroid/graphics/drawable/AnimationDrawable;
+
 
 # direct methods
-.method constructor <init>(Lcom/android/systemui/qs/tiles/RotationLockTile;)V
+.method constructor <init>(Lcom/android/systemui/qs/tiles/RotationLockTile;Landroid/graphics/drawable/AnimationDrawable;)V
     .locals 0
 
     iput-object p1, p0, Lcom/android/systemui/qs/tiles/RotationLockTile$1;->this$0:Lcom/android/systemui/qs/tiles/RotationLockTile;
+
+    iput-object p2, p0, Lcom/android/systemui/qs/tiles/RotationLockTile$1;->val$d:Landroid/graphics/drawable/AnimationDrawable;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -34,13 +38,12 @@
 
 
 # virtual methods
-.method public onRotationLockStateChanged(ZZ)V
+.method public run()V
     .locals 1
 
-    iget-object v0, p0, Lcom/android/systemui/qs/tiles/RotationLockTile$1;->this$0:Lcom/android/systemui/qs/tiles/RotationLockTile;
+    iget-object v0, p0, Lcom/android/systemui/qs/tiles/RotationLockTile$1;->val$d:Landroid/graphics/drawable/AnimationDrawable;
 
-    # invokes: Lcom/android/systemui/qs/tiles/RotationLockTile;->refreshState()V
-    invoke-static {v0}, Lcom/android/systemui/qs/tiles/RotationLockTile;->access$000(Lcom/android/systemui/qs/tiles/RotationLockTile;)V
+    invoke-virtual {v0}, Landroid/graphics/drawable/AnimationDrawable;->start()V
 
     return-void
 .end method

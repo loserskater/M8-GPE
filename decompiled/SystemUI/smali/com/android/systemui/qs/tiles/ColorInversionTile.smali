@@ -14,6 +14,10 @@
 .end annotation
 
 
+# static fields
+.field private static final ACCESSIBILITY_SETTINGS:Landroid/content/Intent;
+
+
 # instance fields
 .field private mListening:Z
 
@@ -23,6 +27,20 @@
 
 
 # direct methods
+.method static constructor <clinit>()V
+    .locals 2
+
+    new-instance v0, Landroid/content/Intent;
+
+    const-string v1, "android.settings.ACCESSIBILITY_SETTINGS"
+
+    invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+
+    sput-object v0, Lcom/android/systemui/qs/tiles/ColorInversionTile;->ACCESSIBILITY_SETTINGS:Landroid/content/Intent;
+
+    return-void
+.end method
+
 .method public constructor <init>(Lcom/android/systemui/qs/QSTile$Host;)V
     .locals 5
 
@@ -190,16 +208,26 @@
     return-void
 .end method
 
+.method protected handleLongClick()V
+    .locals 2
+
+    iget-object v0, p0, Lcom/android/systemui/qs/tiles/ColorInversionTile;->mHost:Lcom/android/systemui/qs/QSTile$Host;
+
+    sget-object v1, Lcom/android/systemui/qs/tiles/ColorInversionTile;->ACCESSIBILITY_SETTINGS:Landroid/content/Intent;
+
+    invoke-interface {v0, v1}, Lcom/android/systemui/qs/QSTile$Host;->startSettingsActivity(Landroid/content/Intent;)V
+
+    return-void
+.end method
+
 .method protected handleUpdateState(Lcom/android/systemui/qs/QSTile$BooleanState;Ljava/lang/Object;)V
-    .locals 5
+    .locals 4
 
-    const/4 v3, 0x1
+    const/4 v2, 0x1
 
-    const/4 v2, 0x0
+    instance-of v3, p2, Ljava/lang/Integer;
 
-    instance-of v4, p2, Ljava/lang/Integer;
-
-    if-eqz v4, :cond_2
+    if-eqz v3, :cond_0
 
     check-cast p2, Ljava/lang/Integer;
 
@@ -208,25 +236,11 @@
     move-result v1
 
     :goto_0
-    if-eqz v1, :cond_3
+    if-eqz v1, :cond_1
 
-    move v0, v3
+    move v0, v2
 
     :goto_1
-    if-nez v0, :cond_0
-
-    iget-object v4, p0, Lcom/android/systemui/qs/tiles/ColorInversionTile;->mUsageTracker:Lcom/android/systemui/qs/UsageTracker;
-
-    invoke-virtual {v4}, Lcom/android/systemui/qs/UsageTracker;->isRecentlyUsed()Z
-
-    move-result v4
-
-    if-eqz v4, :cond_1
-
-    :cond_0
-    move v2, v3
-
-    :cond_1
     iput-boolean v2, p1, Lcom/android/systemui/qs/QSTile$BooleanState;->visible:Z
 
     iput-boolean v0, p1, Lcom/android/systemui/qs/QSTile$BooleanState;->value:Z
@@ -241,7 +255,7 @@
 
     iput-object v2, p1, Lcom/android/systemui/qs/QSTile$BooleanState;->label:Ljava/lang/String;
 
-    if-eqz v0, :cond_4
+    if-eqz v0, :cond_2
 
     const v2, 0x7f020073
 
@@ -250,21 +264,21 @@
 
     return-void
 
-    :cond_2
-    iget-object v4, p0, Lcom/android/systemui/qs/tiles/ColorInversionTile;->mSetting:Lcom/android/systemui/qs/SecureSetting;
+    :cond_0
+    iget-object v3, p0, Lcom/android/systemui/qs/tiles/ColorInversionTile;->mSetting:Lcom/android/systemui/qs/SecureSetting;
 
-    invoke-virtual {v4}, Lcom/android/systemui/qs/SecureSetting;->getValue()I
+    invoke-virtual {v3}, Lcom/android/systemui/qs/SecureSetting;->getValue()I
 
     move-result v1
 
     goto :goto_0
 
-    :cond_3
-    move v0, v2
+    :cond_1
+    const/4 v0, 0x0
 
     goto :goto_1
 
-    :cond_4
+    :cond_2
     const v2, 0x7f020072
 
     goto :goto_2

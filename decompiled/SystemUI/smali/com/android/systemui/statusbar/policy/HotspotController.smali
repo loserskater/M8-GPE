@@ -21,9 +21,6 @@
 .method public abstract isHotspotSupported()Z
 .end method
 
-.method public abstract isProvisioningNeeded()Z
-.end method
-
 .method public abstract removeCallback(Lcom/android/systemui/statusbar/policy/HotspotController$Callback;)V
 .end method
 

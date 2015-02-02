@@ -17,6 +17,8 @@
 
 .field private mContext:Landroid/content/Context;
 
+.field private mLastActiveMode:I
+
 .field private mSettingsChangeCallbacks:Ljava/util/ArrayList;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -103,6 +105,21 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/policy/LocationControllerImpl;->mStatusBarManager:Landroid/app/StatusBarManager;
 
+    invoke-virtual {p0}, Lcom/android/systemui/statusbar/policy/LocationControllerImpl;->getLocationCurrentState()I
+
+    move-result v0
+
+    iput v0, p0, Lcom/android/systemui/statusbar/policy/LocationControllerImpl;->mLastActiveMode:I
+
+    iget v0, p0, Lcom/android/systemui/statusbar/policy/LocationControllerImpl;->mLastActiveMode:I
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x3
+
+    iput v0, p0, Lcom/android/systemui/statusbar/policy/LocationControllerImpl;->mLastActiveMode:I
+
+    :cond_0
     new-instance v8, Landroid/content/IntentFilter;
 
     invoke-direct {v8}, Landroid/content/IntentFilter;-><init>()V
@@ -371,6 +388,84 @@
     return-void
 .end method
 
+.method public getLocationCurrentState()I
+    .locals 4
+
+    const/4 v2, 0x0
+
+    invoke-static {}, Landroid/app/ActivityManager;->getCurrentUser()I
+
+    move-result v1
+
+    invoke-direct {p0, v1}, Lcom/android/systemui/statusbar/policy/LocationControllerImpl;->isUserLocationRestricted(I)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_0
+
+    :goto_0
+    return v2
+
+    :cond_0
+    iget-object v3, p0, Lcom/android/systemui/statusbar/policy/LocationControllerImpl;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v3}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v0
+
+    const-string v3, "location_mode"
+
+    invoke-static {v0, v3, v2, v1}, Landroid/provider/Settings$Secure;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
+
+    move-result v2
+
+    goto :goto_0
+.end method
+
+.method public isAdvancedSettingsEnabled()Z
+    .locals 6
+
+    const/4 v2, 0x1
+
+    const/4 v3, 0x0
+
+    iget-object v4, p0, Lcom/android/systemui/statusbar/policy/LocationControllerImpl;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v4}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v1
+
+    const-string v4, "location_mode"
+
+    invoke-static {}, Landroid/app/ActivityManager;->getCurrentUser()I
+
+    move-result v5
+
+    invoke-static {v1, v4, v3, v5}, Landroid/provider/Settings$Secure;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
+
+    move-result v0
+
+    const-string v4, "qs_location_advanced"
+
+    invoke-static {}, Landroid/app/ActivityManager;->getCurrentUser()I
+
+    move-result v5
+
+    invoke-static {v1, v4, v3, v5}, Landroid/provider/Settings$System;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
+
+    move-result v4
+
+    if-ne v4, v2, :cond_0
+
+    :goto_0
+    return v2
+
+    :cond_0
+    move v2, v3
+
+    goto :goto_0
+.end method
+
 .method public isLocationEnabled()Z
     .locals 5
 
@@ -456,14 +551,57 @@
 
     move-result-object v0
 
-    if-eqz p1, :cond_1
+    if-nez p1, :cond_1
 
-    const/4 v2, 0x3
+    invoke-virtual {p0}, Lcom/android/systemui/statusbar/policy/LocationControllerImpl;->getLocationCurrentState()I
+
+    move-result v3
+
+    iput v3, p0, Lcom/android/systemui/statusbar/policy/LocationControllerImpl;->mLastActiveMode:I
 
     :cond_1
+    if-eqz p1, :cond_2
+
+    iget v2, p0, Lcom/android/systemui/statusbar/policy/LocationControllerImpl;->mLastActiveMode:I
+
+    :cond_2
     const-string v3, "location_mode"
 
     invoke-static {v0, v3, v2, v1}, Landroid/provider/Settings$Secure;->putIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)Z
+
+    move-result v2
+
+    goto :goto_0
+.end method
+
+.method public setLocationMode(I)Z
+    .locals 3
+
+    invoke-static {}, Landroid/app/ActivityManager;->getCurrentUser()I
+
+    move-result v1
+
+    invoke-direct {p0, v1}, Lcom/android/systemui/statusbar/policy/LocationControllerImpl;->isUserLocationRestricted(I)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    const/4 v2, 0x0
+
+    :goto_0
+    return v2
+
+    :cond_0
+    iget-object v2, p0, Lcom/android/systemui/statusbar/policy/LocationControllerImpl;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v2}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v0
+
+    const-string v2, "location_mode"
+
+    invoke-static {v0, v2, p1, v1}, Landroid/provider/Settings$Secure;->putIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)Z
 
     move-result v2
 

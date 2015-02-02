@@ -276,5 +276,9 @@
     <item type="id" name="center_clock">false</item>
     <item type="id" name="left_clock">false</item>
     <item type="id" name="center_clock_layout">false</item>
+    <item type="id" name="radiogroup_location">false</item>
+    <item type="id" name="radio_high_accuracy">false</item>
+    <item type="id" name="radio_battery_saving">false</item>
+    <item type="id" name="radio_sensors_only">false</item>
     <item type="id" name="networkTraffic">false</item>
 </resources>

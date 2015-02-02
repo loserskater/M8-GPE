@@ -15,6 +15,12 @@
 .method public abstract addSettingsChangedCallback(Lcom/android/systemui/statusbar/policy/LocationController$LocationSettingsChangeCallback;)V
 .end method
 
+.method public abstract getLocationCurrentState()I
+.end method
+
+.method public abstract isAdvancedSettingsEnabled()Z
+.end method
+
 .method public abstract isLocationEnabled()Z
 .end method
 
@@ -22,4 +28,7 @@
 .end method
 
 .method public abstract setLocationEnabled(Z)Z
+.end method
+
+.method public abstract setLocationMode(I)Z
 .end method

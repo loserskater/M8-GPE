@@ -18,6 +18,9 @@
 .method public abstract addRotationLockControllerCallback(Lcom/android/systemui/statusbar/policy/RotationLockController$RotationLockControllerCallback;)V
 .end method
 
+.method public abstract getRotationLockOrientation()I
+.end method
+
 .method public abstract isRotationLockAffordanceVisible()Z
 .end method
 

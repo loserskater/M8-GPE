@@ -43,7 +43,7 @@
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/FlashlightController$2;->this$0:Lcom/android/systemui/statusbar/policy/FlashlightController;
 
     # getter for: Lcom/android/systemui/statusbar/policy/FlashlightController;->mSession:Landroid/hardware/camera2/CameraCaptureSession;
-    invoke-static {v0}, Lcom/android/systemui/statusbar/policy/FlashlightController;->access$500(Lcom/android/systemui/statusbar/policy/FlashlightController;)Landroid/hardware/camera2/CameraCaptureSession;
+    invoke-static {v0}, Lcom/android/systemui/statusbar/policy/FlashlightController;->access$600(Lcom/android/systemui/statusbar/policy/FlashlightController;)Landroid/hardware/camera2/CameraCaptureSession;
 
     move-result-object v0
 
@@ -52,7 +52,7 @@
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/FlashlightController$2;->this$0:Lcom/android/systemui/statusbar/policy/FlashlightController;
 
     # getter for: Lcom/android/systemui/statusbar/policy/FlashlightController;->mSession:Landroid/hardware/camera2/CameraCaptureSession;
-    invoke-static {v0}, Lcom/android/systemui/statusbar/policy/FlashlightController;->access$500(Lcom/android/systemui/statusbar/policy/FlashlightController;)Landroid/hardware/camera2/CameraCaptureSession;
+    invoke-static {v0}, Lcom/android/systemui/statusbar/policy/FlashlightController;->access$600(Lcom/android/systemui/statusbar/policy/FlashlightController;)Landroid/hardware/camera2/CameraCaptureSession;
 
     move-result-object v0
 
@@ -73,13 +73,23 @@
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/FlashlightController$2;->this$0:Lcom/android/systemui/statusbar/policy/FlashlightController;
 
+    # getter for: Lcom/android/systemui/statusbar/policy/FlashlightController;->mSurface:Landroid/view/Surface;
+    invoke-static {v0}, Lcom/android/systemui/statusbar/policy/FlashlightController;->access$500(Lcom/android/systemui/statusbar/policy/FlashlightController;)Landroid/view/Surface;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/policy/FlashlightController$2;->this$0:Lcom/android/systemui/statusbar/policy/FlashlightController;
+
     # setter for: Lcom/android/systemui/statusbar/policy/FlashlightController;->mSession:Landroid/hardware/camera2/CameraCaptureSession;
-    invoke-static {v0, p1}, Lcom/android/systemui/statusbar/policy/FlashlightController;->access$502(Lcom/android/systemui/statusbar/policy/FlashlightController;Landroid/hardware/camera2/CameraCaptureSession;)Landroid/hardware/camera2/CameraCaptureSession;
+    invoke-static {v0, p1}, Lcom/android/systemui/statusbar/policy/FlashlightController;->access$602(Lcom/android/systemui/statusbar/policy/FlashlightController;Landroid/hardware/camera2/CameraCaptureSession;)Landroid/hardware/camera2/CameraCaptureSession;
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/FlashlightController$2;->this$0:Lcom/android/systemui/statusbar/policy/FlashlightController;
 
     # invokes: Lcom/android/systemui/statusbar/policy/FlashlightController;->postUpdateFlashlight()V
     invoke-static {v0}, Lcom/android/systemui/statusbar/policy/FlashlightController;->access$100(Lcom/android/systemui/statusbar/policy/FlashlightController;)V
 
+    :cond_0
     return-void
 .end method

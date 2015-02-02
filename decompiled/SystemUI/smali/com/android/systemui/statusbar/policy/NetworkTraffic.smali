@@ -145,7 +145,7 @@
 
     move-result-object v1
 
-    const v3, 0x7f0c011c
+    const v3, 0x7f0c011e
 
     invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -153,7 +153,7 @@
 
     iput v3, p0, Lcom/android/systemui/statusbar/policy/NetworkTraffic;->txtSizeSingle:I
 
-    const v3, 0x7f0c011d
+    const v3, 0x7f0c011f
 
     invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -658,7 +658,7 @@
 
     if-eqz v1, :cond_0
 
-    const v0, 0x7f020151
+    const v0, 0x7f02017c
 
     :goto_0
     invoke-virtual {p0, v3, v3, v0, v3}, Lcom/android/systemui/statusbar/policy/NetworkTraffic;->setCompoundDrawablesWithIntrinsicBounds(IIII)V
@@ -676,7 +676,7 @@
 
     if-eqz v1, :cond_1
 
-    const v0, 0x7f020150
+    const v0, 0x7f02017b
 
     goto :goto_0
 
@@ -691,7 +691,7 @@
 
     if-eqz v1, :cond_2
 
-    const v0, 0x7f02014f
+    const v0, 0x7f02017a
 
     goto :goto_0
 

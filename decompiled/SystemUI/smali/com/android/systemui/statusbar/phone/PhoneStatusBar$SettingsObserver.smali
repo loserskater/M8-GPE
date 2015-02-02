@@ -104,5 +104,4 @@
     invoke-virtual {v3}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->updateClockView()V
 
     return-void
-
 .end method

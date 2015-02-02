@@ -25,6 +25,8 @@
 
 .field private final mCast:Lcom/android/systemui/statusbar/policy/CastController;
 
+.field private final mConnectivityManager:Landroid/net/ConnectivityManager;
+
 .field private final mContext:Landroid/content/Context;
 
 .field private final mFlashlight:Lcom/android/systemui/statusbar/policy/FlashlightController;
@@ -47,6 +49,8 @@
 
 .field private final mStatusBar:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
+.field private final mTelephonyManager:Landroid/telephony/TelephonyManager;
+
 .field private final mTiles:Ljava/util/LinkedHashMap;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -62,6 +66,8 @@
 .field private final mUserSwitcherController:Lcom/android/systemui/statusbar/policy/UserSwitcherController;
 
 .field private final mUserTracker:Lcom/android/systemui/settings/CurrentUserTracker;
+
+.field private final mVolume:Lcom/android/systemui/volume/VolumeComponent;
 
 .field private final mZen:Lcom/android/systemui/statusbar/policy/ZenModeController;
 
@@ -83,7 +89,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Landroid/content/Context;Lcom/android/systemui/statusbar/phone/PhoneStatusBar;Lcom/android/systemui/statusbar/policy/BluetoothController;Lcom/android/systemui/statusbar/policy/LocationController;Lcom/android/systemui/statusbar/policy/RotationLockController;Lcom/android/systemui/statusbar/policy/NetworkController;Lcom/android/systemui/statusbar/policy/ZenModeController;Lcom/android/systemui/statusbar/policy/HotspotController;Lcom/android/systemui/statusbar/policy/CastController;Lcom/android/systemui/statusbar/policy/FlashlightController;Lcom/android/systemui/statusbar/policy/UserSwitcherController;Lcom/android/systemui/statusbar/policy/KeyguardMonitor;Lcom/android/systemui/statusbar/policy/SecurityController;)V
+.method public constructor <init>(Landroid/content/Context;Lcom/android/systemui/statusbar/phone/PhoneStatusBar;Lcom/android/systemui/statusbar/policy/BluetoothController;Lcom/android/systemui/statusbar/policy/LocationController;Lcom/android/systemui/statusbar/policy/RotationLockController;Lcom/android/systemui/statusbar/policy/NetworkController;Lcom/android/systemui/statusbar/policy/ZenModeController;Lcom/android/systemui/volume/VolumeComponent;Lcom/android/systemui/statusbar/policy/HotspotController;Lcom/android/systemui/statusbar/policy/CastController;Lcom/android/systemui/statusbar/policy/FlashlightController;Lcom/android/systemui/statusbar/policy/UserSwitcherController;Lcom/android/systemui/statusbar/policy/KeyguardMonitor;Lcom/android/systemui/statusbar/policy/SecurityController;)V
     .locals 4
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -114,21 +120,49 @@
 
     iput-object p7, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mZen:Lcom/android/systemui/statusbar/policy/ZenModeController;
 
-    iput-object p8, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mHotspot:Lcom/android/systemui/statusbar/policy/HotspotController;
+    iput-object p8, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mVolume:Lcom/android/systemui/volume/VolumeComponent;
 
-    iput-object p9, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mCast:Lcom/android/systemui/statusbar/policy/CastController;
+    iput-object p9, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mHotspot:Lcom/android/systemui/statusbar/policy/HotspotController;
 
-    iput-object p10, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mFlashlight:Lcom/android/systemui/statusbar/policy/FlashlightController;
+    iput-object p10, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mCast:Lcom/android/systemui/statusbar/policy/CastController;
 
-    iput-object p11, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mUserSwitcherController:Lcom/android/systemui/statusbar/policy/UserSwitcherController;
+    iput-object p11, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mFlashlight:Lcom/android/systemui/statusbar/policy/FlashlightController;
 
     move-object/from16 v0, p12
 
-    iput-object v0, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mKeyguard:Lcom/android/systemui/statusbar/policy/KeyguardMonitor;
+    iput-object v0, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mUserSwitcherController:Lcom/android/systemui/statusbar/policy/UserSwitcherController;
 
     move-object/from16 v0, p13
 
+    iput-object v0, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mKeyguard:Lcom/android/systemui/statusbar/policy/KeyguardMonitor;
+
+    move-object/from16 v0, p14
+
     iput-object v0, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mSecurity:Lcom/android/systemui/statusbar/policy/SecurityController;
+
+    iget-object v2, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mContext:Landroid/content/Context;
+
+    const-string v3, "connectivity"
+
+    invoke-virtual {v2, v3}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Landroid/net/ConnectivityManager;
+
+    iput-object v2, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mConnectivityManager:Landroid/net/ConnectivityManager;
+
+    iget-object v2, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mContext:Landroid/content/Context;
+
+    const-string v3, "phone"
+
+    invoke-virtual {v2, v3}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Landroid/telephony/TelephonyManager;
+
+    iput-object v2, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mTelephonyManager:Landroid/telephony/TelephonyManager;
 
     new-instance v1, Landroid/os/HandlerThread;
 
@@ -229,172 +263,51 @@
         }
     .end annotation
 
-    const-string v0, "wifi"
-
-    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    new-instance v0, Lcom/android/systemui/qs/tiles/WifiTile;
-
-    invoke-direct {v0, p0}, Lcom/android/systemui/qs/tiles/WifiTile;-><init>(Lcom/android/systemui/qs/QSTile$Host;)V
-
-    :goto_0
-    return-object v0
-
-    :cond_0
-    const-string v0, "bt"
-
-    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    new-instance v0, Lcom/android/systemui/qs/tiles/BluetoothTile;
-
-    invoke-direct {v0, p0}, Lcom/android/systemui/qs/tiles/BluetoothTile;-><init>(Lcom/android/systemui/qs/QSTile$Host;)V
-
-    goto :goto_0
-
-    :cond_1
-    const-string v0, "inversion"
-
-    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_2
-
-    new-instance v0, Lcom/android/systemui/qs/tiles/ColorInversionTile;
-
-    invoke-direct {v0, p0}, Lcom/android/systemui/qs/tiles/ColorInversionTile;-><init>(Lcom/android/systemui/qs/QSTile$Host;)V
-
-    goto :goto_0
-
-    :cond_2
-    const-string v0, "cell"
-
-    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_3
-
-    new-instance v0, Lcom/android/systemui/qs/tiles/CellularTile;
-
-    invoke-direct {v0, p0}, Lcom/android/systemui/qs/tiles/CellularTile;-><init>(Lcom/android/systemui/qs/QSTile$Host;)V
-
-    goto :goto_0
-
-    :cond_3
-    const-string v0, "airplane"
-
-    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_4
-
-    new-instance v0, Lcom/android/systemui/qs/tiles/AirplaneModeTile;
-
-    invoke-direct {v0, p0}, Lcom/android/systemui/qs/tiles/AirplaneModeTile;-><init>(Lcom/android/systemui/qs/QSTile$Host;)V
-
-    goto :goto_0
-
-    :cond_4
-    const-string v0, "rotation"
-
-    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_5
-
-    new-instance v0, Lcom/android/systemui/qs/tiles/RotationLockTile;
-
-    invoke-direct {v0, p0}, Lcom/android/systemui/qs/tiles/RotationLockTile;-><init>(Lcom/android/systemui/qs/QSTile$Host;)V
-
-    goto :goto_0
-
-    :cond_5
-    const-string v0, "flashlight"
-
-    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_6
-
-    new-instance v0, Lcom/android/systemui/qs/tiles/FlashlightTile;
-
-    invoke-direct {v0, p0}, Lcom/android/systemui/qs/tiles/FlashlightTile;-><init>(Lcom/android/systemui/qs/QSTile$Host;)V
-
-    goto :goto_0
-
-    :cond_6
-    const-string v0, "location"
-
-    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_7
-
-    new-instance v0, Lcom/android/systemui/qs/tiles/LocationTile;
-
-    invoke-direct {v0, p0}, Lcom/android/systemui/qs/tiles/LocationTile;-><init>(Lcom/android/systemui/qs/QSTile$Host;)V
-
-    goto :goto_0
-
-    :cond_7
-    const-string v0, "cast"
-
-    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_8
-
-    new-instance v0, Lcom/android/systemui/qs/tiles/CastTile;
-
-    invoke-direct {v0, p0}, Lcom/android/systemui/qs/tiles/CastTile;-><init>(Lcom/android/systemui/qs/QSTile$Host;)V
-
-    goto :goto_0
-
-    :cond_8
-    const-string v0, "hotspot"
-
-    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_9
-
-    new-instance v0, Lcom/android/systemui/qs/tiles/HotspotTile;
-
-    invoke-direct {v0, p0}, Lcom/android/systemui/qs/tiles/HotspotTile;-><init>(Lcom/android/systemui/qs/QSTile$Host;)V
-
-    goto :goto_0
-
-    :cond_9
     const-string v0, "intent("
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     invoke-static {p0, p1}, Lcom/android/systemui/qs/tiles/IntentTile;->create(Lcom/android/systemui/qs/QSTile$Host;Ljava/lang/String;)Lcom/android/systemui/qs/QSTile;
 
     move-result-object v0
 
-    goto/16 :goto_0
+    :goto_0
+    return-object v0
 
-    :cond_a
+    :cond_0
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mContext:Landroid/content/Context;
+
+    invoke-static {v0}, Lcom/android/internal/policy/impl/QSUtils;->getAvailableTiles(Landroid/content/Context;)Ljava/util/List;
+
+    move-result-object v0
+
+    invoke-interface {v0, p1}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    const/4 v0, 0x0
+
+    goto :goto_0
+
+    :cond_1
+    const/4 v0, -0x1
+
+    invoke-virtual {p1}, Ljava/lang/String;->hashCode()I
+
+    move-result v1
+
+    sparse-switch v1, :sswitch_data_0
+
+    :cond_2
+    :goto_1
+    packed-switch v0, :pswitch_data_0
+
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -418,6 +331,478 @@
     invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v0
+
+    :sswitch_0
+    const-string v1, "wifi"
+
+    invoke-virtual {p1, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_2
+
+    const/4 v0, 0x0
+
+    goto :goto_1
+
+    :sswitch_1
+    const-string v1, "bt"
+
+    invoke-virtual {p1, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_2
+
+    const/4 v0, 0x1
+
+    goto :goto_1
+
+    :sswitch_2
+    const-string v1, "inversion"
+
+    invoke-virtual {p1, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_2
+
+    const/4 v0, 0x2
+
+    goto :goto_1
+
+    :sswitch_3
+    const-string v1, "cell"
+
+    invoke-virtual {p1, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_2
+
+    const/4 v0, 0x3
+
+    goto :goto_1
+
+    :sswitch_4
+    const-string v1, "airplane"
+
+    invoke-virtual {p1, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_2
+
+    const/4 v0, 0x4
+
+    goto :goto_1
+
+    :sswitch_5
+    const-string v1, "rotation"
+
+    invoke-virtual {p1, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_2
+
+    const/4 v0, 0x5
+
+    goto :goto_1
+
+    :sswitch_6
+    const-string v1, "flashlight"
+
+    invoke-virtual {p1, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_2
+
+    const/4 v0, 0x6
+
+    goto :goto_1
+
+    :sswitch_7
+    const-string v1, "location"
+
+    invoke-virtual {p1, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_2
+
+    const/4 v0, 0x7
+
+    goto :goto_1
+
+    :sswitch_8
+    const-string v1, "cast"
+
+    invoke-virtual {p1, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_2
+
+    const/16 v0, 0x8
+
+    goto :goto_1
+
+    :sswitch_9
+    const-string v1, "hotspot"
+
+    invoke-virtual {p1, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_2
+
+    const/16 v0, 0x9
+
+    goto/16 :goto_1
+
+    :sswitch_a
+    const-string v1, "notifications"
+
+    invoke-virtual {p1, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_2
+
+    const/16 v0, 0xa
+
+    goto/16 :goto_1
+
+    :sswitch_b
+    const-string v1, "data"
+
+    invoke-virtual {p1, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_2
+
+    const/16 v0, 0xb
+
+    goto/16 :goto_1
+
+    :sswitch_c
+    const-string v1, "roaming"
+
+    invoke-virtual {p1, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_2
+
+    const/16 v0, 0xc
+
+    goto/16 :goto_1
+
+    :sswitch_d
+    const-string v1, "dds"
+
+    invoke-virtual {p1, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_2
+
+    const/16 v0, 0xd
+
+    goto/16 :goto_1
+
+    :sswitch_e
+    const-string v1, "compass"
+
+    invoke-virtual {p1, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_2
+
+    const/16 v0, 0xe
+
+    goto/16 :goto_1
+
+    :sswitch_f
+    const-string v1, "apn"
+
+    invoke-virtual {p1, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_2
+
+    const/16 v0, 0xf
+
+    goto/16 :goto_1
+
+    :sswitch_10
+    const-string v1, "profiles"
+
+    invoke-virtual {p1, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_2
+
+    const/16 v0, 0x10
+
+    goto/16 :goto_1
+
+    :sswitch_11
+    const-string v1, "performance"
+
+    invoke-virtual {p1, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_2
+
+    const/16 v0, 0x11
+
+    goto/16 :goto_1
+
+    :sswitch_12
+    const-string v1, "adb_network"
+
+    invoke-virtual {p1, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_2
+
+    const/16 v0, 0x12
+
+    goto/16 :goto_1
+
+    :sswitch_13
+    const-string v1, "nfc"
+
+    invoke-virtual {p1, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_2
+
+    const/16 v0, 0x13
+
+    goto/16 :goto_1
+
+    :sswitch_14
+    const-string v1, "lockscreen"
+
+    invoke-virtual {p1, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_2
+
+    const/16 v0, 0x14
+
+    goto/16 :goto_1
+
+    :pswitch_0
+    new-instance v0, Lcom/android/systemui/qs/tiles/WifiTile;
+
+    invoke-direct {v0, p0}, Lcom/android/systemui/qs/tiles/WifiTile;-><init>(Lcom/android/systemui/qs/QSTile$Host;)V
+
+    goto/16 :goto_0
+
+    :pswitch_1
+    new-instance v0, Lcom/android/systemui/qs/tiles/BluetoothTile;
+
+    invoke-direct {v0, p0}, Lcom/android/systemui/qs/tiles/BluetoothTile;-><init>(Lcom/android/systemui/qs/QSTile$Host;)V
+
+    goto/16 :goto_0
+
+    :pswitch_2
+    new-instance v0, Lcom/android/systemui/qs/tiles/ColorInversionTile;
+
+    invoke-direct {v0, p0}, Lcom/android/systemui/qs/tiles/ColorInversionTile;-><init>(Lcom/android/systemui/qs/QSTile$Host;)V
+
+    goto/16 :goto_0
+
+    :pswitch_3
+    new-instance v0, Lcom/android/systemui/qs/tiles/CellularTile;
+
+    invoke-direct {v0, p0}, Lcom/android/systemui/qs/tiles/CellularTile;-><init>(Lcom/android/systemui/qs/QSTile$Host;)V
+
+    goto/16 :goto_0
+
+    :pswitch_4
+    new-instance v0, Lcom/android/systemui/qs/tiles/AirplaneModeTile;
+
+    invoke-direct {v0, p0}, Lcom/android/systemui/qs/tiles/AirplaneModeTile;-><init>(Lcom/android/systemui/qs/QSTile$Host;)V
+
+    goto/16 :goto_0
+
+    :pswitch_5
+    new-instance v0, Lcom/android/systemui/qs/tiles/RotationLockTile;
+
+    invoke-direct {v0, p0}, Lcom/android/systemui/qs/tiles/RotationLockTile;-><init>(Lcom/android/systemui/qs/QSTile$Host;)V
+
+    goto/16 :goto_0
+
+    :pswitch_6
+    new-instance v0, Lcom/android/systemui/qs/tiles/FlashlightTile;
+
+    invoke-direct {v0, p0}, Lcom/android/systemui/qs/tiles/FlashlightTile;-><init>(Lcom/android/systemui/qs/QSTile$Host;)V
+
+    goto/16 :goto_0
+
+    :pswitch_7
+    new-instance v0, Lcom/android/systemui/qs/tiles/LocationTile;
+
+    invoke-direct {v0, p0}, Lcom/android/systemui/qs/tiles/LocationTile;-><init>(Lcom/android/systemui/qs/QSTile$Host;)V
+
+    goto/16 :goto_0
+
+    :pswitch_8
+    new-instance v0, Lcom/android/systemui/qs/tiles/CastTile;
+
+    invoke-direct {v0, p0}, Lcom/android/systemui/qs/tiles/CastTile;-><init>(Lcom/android/systemui/qs/QSTile$Host;)V
+
+    goto/16 :goto_0
+
+    :pswitch_9
+    new-instance v0, Lcom/android/systemui/qs/tiles/HotspotTile;
+
+    invoke-direct {v0, p0}, Lcom/android/systemui/qs/tiles/HotspotTile;-><init>(Lcom/android/systemui/qs/QSTile$Host;)V
+
+    goto/16 :goto_0
+
+    :pswitch_a
+    new-instance v0, Lcom/android/systemui/qs/tiles/NotificationsTile;
+
+    invoke-direct {v0, p0}, Lcom/android/systemui/qs/tiles/NotificationsTile;-><init>(Lcom/android/systemui/qs/QSTile$Host;)V
+
+    goto/16 :goto_0
+
+    :pswitch_b
+    new-instance v0, Lcom/android/systemui/qs/tiles/DataTile;
+
+    invoke-direct {v0, p0}, Lcom/android/systemui/qs/tiles/DataTile;-><init>(Lcom/android/systemui/qs/QSTile$Host;)V
+
+    goto/16 :goto_0
+
+    :pswitch_c
+    new-instance v0, Lcom/android/systemui/qs/tiles/RoamingTile;
+
+    invoke-direct {v0, p0}, Lcom/android/systemui/qs/tiles/RoamingTile;-><init>(Lcom/android/systemui/qs/QSTile$Host;)V
+
+    goto/16 :goto_0
+
+    :pswitch_d
+    new-instance v0, Lcom/android/systemui/qs/tiles/DdsTile;
+
+    invoke-direct {v0, p0}, Lcom/android/systemui/qs/tiles/DdsTile;-><init>(Lcom/android/systemui/qs/QSTile$Host;)V
+
+    goto/16 :goto_0
+
+    :pswitch_e
+    new-instance v0, Lcom/android/systemui/qs/tiles/CompassTile;
+
+    invoke-direct {v0, p0}, Lcom/android/systemui/qs/tiles/CompassTile;-><init>(Lcom/android/systemui/qs/QSTile$Host;)V
+
+    goto/16 :goto_0
+
+    :pswitch_f
+    new-instance v0, Lcom/android/systemui/qs/tiles/ApnTile;
+
+    invoke-direct {v0, p0}, Lcom/android/systemui/qs/tiles/ApnTile;-><init>(Lcom/android/systemui/qs/QSTile$Host;)V
+
+    goto/16 :goto_0
+
+    :pswitch_10
+    new-instance v0, Lcom/android/systemui/qs/tiles/ProfilesTile;
+
+    invoke-direct {v0, p0}, Lcom/android/systemui/qs/tiles/ProfilesTile;-><init>(Lcom/android/systemui/qs/QSTile$Host;)V
+
+    goto/16 :goto_0
+
+    :pswitch_11
+    new-instance v0, Lcom/android/systemui/qs/tiles/PerfProfileTile;
+
+    invoke-direct {v0, p0}, Lcom/android/systemui/qs/tiles/PerfProfileTile;-><init>(Lcom/android/systemui/qs/QSTile$Host;)V
+
+    goto/16 :goto_0
+
+    :pswitch_12
+    new-instance v0, Lcom/android/systemui/qs/tiles/AdbOverNetworkTile;
+
+    invoke-direct {v0, p0}, Lcom/android/systemui/qs/tiles/AdbOverNetworkTile;-><init>(Lcom/android/systemui/qs/QSTile$Host;)V
+
+    goto/16 :goto_0
+
+    :pswitch_13
+    new-instance v0, Lcom/android/systemui/qs/tiles/NfcTile;
+
+    invoke-direct {v0, p0}, Lcom/android/systemui/qs/tiles/NfcTile;-><init>(Lcom/android/systemui/qs/QSTile$Host;)V
+
+    goto/16 :goto_0
+
+    :pswitch_14
+    new-instance v0, Lcom/android/systemui/qs/tiles/LockscreenToggleTile;
+
+    invoke-direct {v0, p0}, Lcom/android/systemui/qs/tiles/LockscreenToggleTile;-><init>(Lcom/android/systemui/qs/QSTile$Host;)V
+
+    goto/16 :goto_0
+
+    nop
+
+    :sswitch_data_0
+    .sparse-switch
+        -0x783813ed -> :sswitch_2
+        -0x6c049572 -> :sswitch_12
+        -0x583cefd0 -> :sswitch_11
+        -0x468444da -> :sswitch_6
+        -0x3bbd5416 -> :sswitch_10
+        -0x285a60ae -> :sswitch_4
+        -0x266f082 -> :sswitch_5
+        0xc52 -> :sswitch_1
+        0x17a1f -> :sswitch_f
+        0x183f3 -> :sswitch_d
+        0x1a9ab -> :sswitch_13
+        0x2e7b3f -> :sswitch_8
+        0x2e8962 -> :sswitch_3
+        0x2eefaa -> :sswitch_b
+        0x37af15 -> :sswitch_0
+        0x38a73d12 -> :sswitch_e
+        0x418a9ecf -> :sswitch_9
+        0x4bd694e8 -> :sswitch_a
+        0x517a5c19 -> :sswitch_c
+        0x6adcb957 -> :sswitch_14
+        0x714f9fb5 -> :sswitch_7
+    .end sparse-switch
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+        :pswitch_1
+        :pswitch_2
+        :pswitch_3
+        :pswitch_4
+        :pswitch_5
+        :pswitch_6
+        :pswitch_7
+        :pswitch_8
+        :pswitch_9
+        :pswitch_a
+        :pswitch_b
+        :pswitch_c
+        :pswitch_d
+        :pswitch_e
+        :pswitch_f
+        :pswitch_10
+        :pswitch_11
+        :pswitch_12
+        :pswitch_13
+        :pswitch_14
+    .end packed-switch
 .end method
 
 .method private loadTileSpecs()Ljava/util/List;
@@ -452,17 +837,38 @@
 
     const-string v10, "sysui_qs_tiles"
 
-    iget-object v11, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mUserTracker:Lcom/android/systemui/settings/CurrentUserTracker;
-
-    invoke-virtual {v11}, Lcom/android/systemui/settings/CurrentUserTracker;->getCurrentUserId()I
-
-    move-result v11
-
-    invoke-static {v9, v10, v11}, Landroid/provider/Settings$Secure;->getStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v9, v10}, Landroid/provider/Settings$System;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v7
 
-    if-nez v7, :cond_2
+    sget-boolean v9, Lcom/android/systemui/statusbar/phone/QSTileHost;->DEBUG:Z
+
+    if-eqz v9, :cond_0
+
+    const-string v9, "QSTileHost"
+
+    new-instance v10, Ljava/lang/StringBuilder;
+
+    invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v11, "Config string: "
+
+    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v10
+
+    invoke-virtual {v10, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v10
+
+    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v10
+
+    invoke-static {v9, v10}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_0
+    if-nez v7, :cond_3
 
     const v9, 0x7f0b0002
 
@@ -472,7 +878,7 @@
 
     sget-boolean v9, Lcom/android/systemui/statusbar/phone/QSTileHost;->DEBUG:Z
 
-    if-eqz v9, :cond_0
+    if-eqz v9, :cond_1
 
     const-string v9, "QSTileHost"
 
@@ -496,7 +902,7 @@
 
     invoke-static {v9, v10}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_0
+    :cond_1
     :goto_0
     new-instance v8, Ljava/util/ArrayList;
 
@@ -515,7 +921,7 @@
     const/4 v3, 0x0
 
     :goto_1
-    if-ge v3, v4, :cond_5
+    if-ge v3, v4, :cond_6
 
     aget-object v6, v1, v3
 
@@ -527,18 +933,18 @@
 
     move-result v9
 
-    if-eqz v9, :cond_3
+    if-eqz v9, :cond_4
 
-    :cond_1
+    :cond_2
     :goto_2
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_1
 
-    :cond_2
+    :cond_3
     sget-boolean v9, Lcom/android/systemui/statusbar/phone/QSTileHost;->DEBUG:Z
 
-    if-eqz v9, :cond_0
+    if-eqz v9, :cond_1
 
     const-string v9, "QSTileHost"
 
@@ -564,16 +970,16 @@
 
     goto :goto_0
 
-    :cond_3
+    :cond_4
     const-string v9, "default"
 
     invoke-virtual {v6, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v9
 
-    if-eqz v9, :cond_4
+    if-eqz v9, :cond_5
 
-    if-nez v0, :cond_1
+    if-nez v0, :cond_2
 
     const-string v9, ","
 
@@ -591,17 +997,17 @@
 
     goto :goto_2
 
-    :cond_4
+    :cond_5
     invoke-virtual {v8, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_2
 
-    :cond_5
+    :cond_6
     return-object v8
 .end method
 
 .method private recreateTiles()V
-    .locals 9
+    .locals 8
 
     sget-boolean v6, Lcom/android/systemui/statusbar/phone/QSTileHost;->DEBUG:Z
 
@@ -620,82 +1026,32 @@
 
     iget-object v6, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mTiles:Ljava/util/LinkedHashMap;
 
-    invoke-virtual {v6}, Ljava/util/LinkedHashMap;->entrySet()Ljava/util/Set;
+    invoke-virtual {v6}, Ljava/util/LinkedHashMap;->values()Ljava/util/Collection;
 
     move-result-object v6
 
-    invoke-interface {v6}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+    invoke-interface {v6}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
 
-    :cond_1
     :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v6
 
-    if-eqz v6, :cond_3
+    if-eqz v6, :cond_1
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v3
+    move-result-object v2
 
-    check-cast v3, Ljava/util/Map$Entry;
+    check-cast v2, Lcom/android/systemui/qs/QSTile;
 
-    invoke-interface {v3}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
-
-    move-result-object v6
-
-    invoke-interface {v5, v6}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-nez v6, :cond_1
-
-    sget-boolean v6, Lcom/android/systemui/statusbar/phone/QSTileHost;->DEBUG:Z
-
-    if-eqz v6, :cond_2
-
-    const-string v7, "QSTileHost"
-
-    new-instance v6, Ljava/lang/StringBuilder;
-
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v8, "Destroying tile: "
-
-    invoke-virtual {v6, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    invoke-interface {v3}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
-
-    move-result-object v6
-
-    check-cast v6, Ljava/lang/String;
-
-    invoke-virtual {v8, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-static {v7, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    :cond_2
-    invoke-interface {v3}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
-
-    move-result-object v6
-
-    check-cast v6, Lcom/android/systemui/qs/QSTile;
-
-    invoke-virtual {v6}, Lcom/android/systemui/qs/QSTile;->destroy()V
+    invoke-virtual {v2}, Lcom/android/systemui/qs/QSTile;->destroy()V
 
     goto :goto_0
 
-    :cond_3
+    :cond_1
     new-instance v1, Ljava/util/LinkedHashMap;
 
     invoke-direct {v1}, Ljava/util/LinkedHashMap;-><init>()V
@@ -704,12 +1060,13 @@
 
     move-result-object v0
 
+    :cond_2
     :goto_1
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v6
 
-    if-eqz v6, :cond_6
+    if-eqz v6, :cond_3
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -717,104 +1074,17 @@
 
     check-cast v4, Ljava/lang/String;
 
-    iget-object v6, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mTiles:Ljava/util/LinkedHashMap;
-
-    invoke-virtual {v6, v4}, Ljava/util/LinkedHashMap;->containsKey(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_4
-
-    iget-object v6, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mTiles:Ljava/util/LinkedHashMap;
-
-    invoke-virtual {v6, v4}, Ljava/util/LinkedHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v6
-
-    invoke-virtual {v1, v4, v6}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    goto :goto_1
-
-    :cond_4
-    sget-boolean v6, Lcom/android/systemui/statusbar/phone/QSTileHost;->DEBUG:Z
-
-    if-eqz v6, :cond_5
-
-    const-string v6, "QSTileHost"
-
-    new-instance v7, Ljava/lang/StringBuilder;
-
-    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v8, "Creating tile: "
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    invoke-virtual {v7, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    :cond_5
-    :try_start_0
     invoke-direct {p0, v4}, Lcom/android/systemui/statusbar/phone/QSTileHost;->createTile(Ljava/lang/String;)Lcom/android/systemui/qs/QSTile;
 
-    move-result-object v6
+    move-result-object v3
 
-    invoke-virtual {v1, v4, v6}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_0
-    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
+    if-eqz v3, :cond_2
 
-    goto :goto_1
-
-    :catch_0
-    move-exception v2
-
-    const-string v6, "QSTileHost"
-
-    new-instance v7, Ljava/lang/StringBuilder;
-
-    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v8, "Error creating tile for spec: "
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    invoke-virtual {v7, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-static {v6, v7, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    invoke-virtual {v1, v4, v3}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_1
 
-    :cond_6
-    iget-object v6, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mTiles:Ljava/util/LinkedHashMap;
-
-    invoke-virtual {v6, v1}, Ljava/util/LinkedHashMap;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_8
-
-    :cond_7
-    :goto_2
-    return-void
-
-    :cond_8
+    :cond_3
     iget-object v6, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mTiles:Ljava/util/LinkedHashMap;
 
     invoke-virtual {v6}, Ljava/util/LinkedHashMap;->clear()V
@@ -825,13 +1095,14 @@
 
     iget-object v6, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mCallback:Lcom/android/systemui/qs/QSTile$Host$Callback;
 
-    if-eqz v6, :cond_7
+    if-eqz v6, :cond_4
 
     iget-object v6, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mCallback:Lcom/android/systemui/qs/QSTile$Host$Callback;
 
     invoke-interface {v6}, Lcom/android/systemui/qs/QSTile$Host$Callback;->onTilesChanged()V
 
-    goto :goto_2
+    :cond_4
+    return-void
 .end method
 
 
@@ -959,6 +1230,22 @@
     .locals 1
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mUserSwitcherController:Lcom/android/systemui/statusbar/policy/UserSwitcherController;
+
+    return-object v0
+.end method
+
+.method public getVolumeComponent()Lcom/android/systemui/volume/VolumeComponent;
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mVolume:Lcom/android/systemui/volume/VolumeComponent;
+
+    return-object v0
+.end method
+
+.method public getZenModeController()Lcom/android/systemui/statusbar/policy/ZenModeController;
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mZen:Lcom/android/systemui/statusbar/policy/ZenModeController;
 
     return-object v0
 .end method

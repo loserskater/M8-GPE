@@ -51,6 +51,12 @@
 .method public abstract getRotationLockController()Lcom/android/systemui/statusbar/policy/RotationLockController;
 .end method
 
+.method public abstract getVolumeComponent()Lcom/android/systemui/volume/VolumeComponent;
+.end method
+
+.method public abstract getZenModeController()Lcom/android/systemui/statusbar/policy/ZenModeController;
+.end method
+
 .method public abstract startSettingsActivity(Landroid/content/Intent;)V
 .end method
 

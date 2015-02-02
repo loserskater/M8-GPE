@@ -42,7 +42,7 @@
     const/4 v1, 0x0
 
     # invokes: Lcom/android/systemui/statusbar/policy/FlashlightController;->updateFlashlight(Z)V
-    invoke-static {v0, v1}, Lcom/android/systemui/statusbar/policy/FlashlightController;->access$600(Lcom/android/systemui/statusbar/policy/FlashlightController;Z)V
+    invoke-static {v0, v1}, Lcom/android/systemui/statusbar/policy/FlashlightController;->access$700(Lcom/android/systemui/statusbar/policy/FlashlightController;Z)V
 
     return-void
 .end method

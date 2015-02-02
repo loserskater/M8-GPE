@@ -14,6 +14,10 @@
 .end annotation
 
 
+# static fields
+.field private static final DISPLAY_SETTINGS:Landroid/content/Intent;
+
+
 # instance fields
 .field private final mCallback:Lcom/android/systemui/statusbar/policy/RotationLockController$RotationLockControllerCallback;
 
@@ -21,14 +25,28 @@
 
 
 # direct methods
+.method static constructor <clinit>()V
+    .locals 2
+
+    new-instance v0, Landroid/content/Intent;
+
+    const-string v1, "android.settings.DISPLAY_SETTINGS"
+
+    invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+
+    sput-object v0, Lcom/android/systemui/qs/tiles/RotationLockTile;->DISPLAY_SETTINGS:Landroid/content/Intent;
+
+    return-void
+.end method
+
 .method public constructor <init>(Lcom/android/systemui/qs/QSTile$Host;)V
     .locals 1
 
     invoke-direct {p0, p1}, Lcom/android/systemui/qs/QSTile;-><init>(Lcom/android/systemui/qs/QSTile$Host;)V
 
-    new-instance v0, Lcom/android/systemui/qs/tiles/RotationLockTile$1;
+    new-instance v0, Lcom/android/systemui/qs/tiles/RotationLockTile$2;
 
-    invoke-direct {v0, p0}, Lcom/android/systemui/qs/tiles/RotationLockTile$1;-><init>(Lcom/android/systemui/qs/tiles/RotationLockTile;)V
+    invoke-direct {v0, p0}, Lcom/android/systemui/qs/tiles/RotationLockTile$2;-><init>(Lcom/android/systemui/qs/tiles/RotationLockTile;)V
 
     iput-object v0, p0, Lcom/android/systemui/qs/tiles/RotationLockTile;->mCallback:Lcom/android/systemui/statusbar/policy/RotationLockController$RotationLockControllerCallback;
 
@@ -160,6 +178,18 @@
     goto :goto_1
 .end method
 
+.method protected handleLongClick()V
+    .locals 2
+
+    iget-object v0, p0, Lcom/android/systemui/qs/tiles/RotationLockTile;->mHost:Lcom/android/systemui/qs/QSTile$Host;
+
+    sget-object v1, Lcom/android/systemui/qs/tiles/RotationLockTile;->DISPLAY_SETTINGS:Landroid/content/Intent;
+
+    invoke-interface {v0, v1}, Lcom/android/systemui/qs/QSTile$Host;->startSettingsActivity(Landroid/content/Intent;)V
+
+    return-void
+.end method
+
 .method protected handleUpdateState(Lcom/android/systemui/qs/QSTile$BooleanState;Ljava/lang/Object;)V
     .locals 8
 
@@ -191,33 +221,49 @@
 
     move-result-object v3
 
+    iget-boolean v5, p1, Lcom/android/systemui/qs/QSTile$BooleanState;->value:Z
+
+    if-eq v5, v4, :cond_1
+
     iput-boolean v4, p1, Lcom/android/systemui/qs/QSTile$BooleanState;->value:Z
 
-    if-eqz v4, :cond_4
+    if-eqz v4, :cond_3
 
-    invoke-virtual {v3}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
-
-    move-result-object v5
-
-    iget v5, v5, Landroid/content/res/Configuration;->orientation:I
-
-    const/4 v6, 0x2
-
-    if-eq v5, v6, :cond_1
-
-    const/4 v2, 0x1
+    const v5, 0x7f020175
 
     :goto_1
-    if-eqz v2, :cond_2
+    invoke-virtual {v3, v5}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/graphics/drawable/AnimationDrawable;
+
+    iput-object v0, p1, Lcom/android/systemui/qs/QSTile$BooleanState;->icon:Landroid/graphics/drawable/Drawable;
+
+    iget-object v5, p0, Lcom/android/systemui/qs/tiles/RotationLockTile;->mUiHandler:Landroid/os/Handler;
+
+    new-instance v6, Lcom/android/systemui/qs/tiles/RotationLockTile$1;
+
+    invoke-direct {v6, p0, v0}, Lcom/android/systemui/qs/tiles/RotationLockTile$1;-><init>(Lcom/android/systemui/qs/tiles/RotationLockTile;Landroid/graphics/drawable/AnimationDrawable;)V
+
+    invoke-virtual {v5, v6}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+
+    :cond_1
+    if-eqz v4, :cond_6
+
+    iget-object v5, p0, Lcom/android/systemui/qs/tiles/RotationLockTile;->mController:Lcom/android/systemui/statusbar/policy/RotationLockController;
+
+    invoke-interface {v5}, Lcom/android/systemui/statusbar/policy/RotationLockController;->getRotationLockOrientation()I
+
+    move-result v2
+
+    const/4 v5, 0x1
+
+    if-ne v2, v5, :cond_4
 
     const v1, 0x7f0b00db
 
     :goto_2
-    if-eqz v2, :cond_3
-
-    const v0, 0x7f02007d
-
-    :goto_3
     iget-object v5, p0, Lcom/android/systemui/qs/tiles/RotationLockTile;->mContext:Landroid/content/Context;
 
     invoke-virtual {v5, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
@@ -226,15 +272,20 @@
 
     iput-object v5, p1, Lcom/android/systemui/qs/QSTile$BooleanState;->label:Ljava/lang/String;
 
-    iget-object v5, p0, Lcom/android/systemui/qs/tiles/RotationLockTile;->mContext:Landroid/content/Context;
+    iget-object v5, p1, Lcom/android/systemui/qs/QSTile$BooleanState;->icon:Landroid/graphics/drawable/Drawable;
 
-    invoke-virtual {v5, v0}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+    if-nez v5, :cond_2
+
+    const v5, 0x7f020174
+
+    invoke-virtual {v3, v5}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v5
 
     iput-object v5, p1, Lcom/android/systemui/qs/QSTile$BooleanState;->icon:Landroid/graphics/drawable/Drawable;
 
-    :goto_4
+    :cond_2
+    :goto_3
     const v5, 0x7f0b00ca
 
     const v6, 0x7f0b00c9
@@ -249,22 +300,26 @@
 
     goto :goto_0
 
-    :cond_1
-    const/4 v2, 0x0
+    :cond_3
+    const v5, 0x7f02007e
 
     goto :goto_1
 
-    :cond_2
+    :cond_4
+    const/4 v5, 0x2
+
+    if-ne v2, v5, :cond_5
+
     const v1, 0x7f0b00dc
 
     goto :goto_2
 
-    :cond_3
-    const v0, 0x7f02007c
+    :cond_5
+    const v1, 0x7f0b00da
 
-    goto :goto_3
+    goto :goto_2
 
-    :cond_4
+    :cond_6
     iget-object v5, p0, Lcom/android/systemui/qs/tiles/RotationLockTile;->mContext:Landroid/content/Context;
 
     const v6, 0x7f0b00d9
@@ -275,7 +330,11 @@
 
     iput-object v5, p1, Lcom/android/systemui/qs/QSTile$BooleanState;->label:Ljava/lang/String;
 
-    const v5, 0x7f02007e
+    iget-object v5, p1, Lcom/android/systemui/qs/QSTile$BooleanState;->icon:Landroid/graphics/drawable/Drawable;
+
+    if-nez v5, :cond_2
+
+    const v5, 0x7f020166
 
     invoke-virtual {v3, v5}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -283,7 +342,7 @@
 
     iput-object v5, p1, Lcom/android/systemui/qs/QSTile$BooleanState;->icon:Landroid/graphics/drawable/Drawable;
 
-    goto :goto_4
+    goto :goto_3
 .end method
 
 .method protected bridge synthetic handleUpdateState(Lcom/android/systemui/qs/QSTile$State;Ljava/lang/Object;)V

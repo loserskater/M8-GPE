@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.android.systemui.qs.tiles.LocationDetailView android:orientation="vertical" android:paddingTop="16.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:paddingStart="16.0dip" android:paddingEnd="16.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textAppearance="@style/TextAppearance.QS.DataUsage" android:id="@android:id/title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/quick_settings_location_detail_menu_title" />
+    <LinearLayout android:orientation="vertical" android:paddingLeft="16.0dip" android:paddingTop="16.0dip" android:paddingRight="16.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <RadioGroup android:orientation="vertical" android:id="@id/radiogroup_location" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <RadioButton android:textSize="20.0sp" android:id="@id/radio_high_accuracy" android:paddingLeft="@dimen/detail_radio_group_padding_left" android:paddingTop="@dimen/detail_radio_group_padding" android:paddingRight="@dimen/detail_radio_group_padding" android:paddingBottom="@dimen/detail_radio_group_padding" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/quick_settings_location_detail_mode_high_accuracy_title" />
+            <RadioButton android:textSize="20.0sp" android:id="@id/radio_battery_saving" android:paddingLeft="@dimen/detail_radio_group_padding_left" android:paddingTop="@dimen/detail_radio_group_padding" android:paddingRight="@dimen/detail_radio_group_padding" android:paddingBottom="@dimen/detail_radio_group_padding" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/quick_settings_location_detail_mode_battery_saving_title" />
+            <RadioButton android:textSize="20.0sp" android:id="@id/radio_sensors_only" android:paddingLeft="@dimen/detail_radio_group_padding_left" android:paddingTop="@dimen/detail_radio_group_padding" android:paddingRight="@dimen/detail_radio_group_padding" android:paddingBottom="@dimen/detail_radio_group_padding" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/quick_settings_location_detail_mode_sensors_only_title" />
+        </RadioGroup>
+    </LinearLayout>
+</com.android.systemui.qs.tiles.LocationDetailView>

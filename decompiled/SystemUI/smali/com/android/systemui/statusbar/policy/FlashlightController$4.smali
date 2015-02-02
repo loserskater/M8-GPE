@@ -45,7 +45,7 @@
     const/4 v1, 0x0
 
     # setter for: Lcom/android/systemui/statusbar/policy/FlashlightController;->mFlashlightEnabled:Z
-    invoke-static {v0, v1}, Lcom/android/systemui/statusbar/policy/FlashlightController;->access$702(Lcom/android/systemui/statusbar/policy/FlashlightController;Z)Z
+    invoke-static {v0, v1}, Lcom/android/systemui/statusbar/policy/FlashlightController;->access$802(Lcom/android/systemui/statusbar/policy/FlashlightController;Z)Z
 
     monitor-exit p0
     :try_end_0
@@ -56,7 +56,7 @@
     const/4 v1, 0x1
 
     # invokes: Lcom/android/systemui/statusbar/policy/FlashlightController;->updateFlashlight(Z)V
-    invoke-static {v0, v1}, Lcom/android/systemui/statusbar/policy/FlashlightController;->access$600(Lcom/android/systemui/statusbar/policy/FlashlightController;Z)V
+    invoke-static {v0, v1}, Lcom/android/systemui/statusbar/policy/FlashlightController;->access$700(Lcom/android/systemui/statusbar/policy/FlashlightController;Z)V
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/FlashlightController$4;->this$0:Lcom/android/systemui/statusbar/policy/FlashlightController;
 

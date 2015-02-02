@@ -16,6 +16,8 @@
 
 
 # instance fields
+.field private mClickLong:Landroid/view/View$OnLongClickListener;
+
 .field private mClickPrimary:Landroid/view/View$OnClickListener;
 
 .field private mClickSecondary:Landroid/view/View$OnClickListener;
@@ -304,7 +306,7 @@
     :cond_0
     iget-object v3, p0, Lcom/android/systemui/qs/QSTileView;->mDualLabel:Lcom/android/systemui/qs/QSDualTileLabel;
 
-    if-eqz v3, :cond_1
+    if-eqz v3, :cond_2
 
     iget-object v3, p0, Lcom/android/systemui/qs/QSTileView;->mDualLabel:Lcom/android/systemui/qs/QSDualTileLabel;
 
@@ -314,10 +316,15 @@
 
     iget-object v3, p0, Lcom/android/systemui/qs/QSTileView;->mLabel:Landroid/widget/TextView;
 
+    if-eqz v3, :cond_1
+
+    iget-object v3, p0, Lcom/android/systemui/qs/QSTileView;->mLabel:Landroid/widget/TextView;
+
     invoke-virtual {v3}, Landroid/widget/TextView;->getContentDescription()Ljava/lang/CharSequence;
 
     move-result-object v0
 
+    :cond_1
     iget-object v3, p0, Lcom/android/systemui/qs/QSTileView;->mDualLabel:Lcom/android/systemui/qs/QSDualTileLabel;
 
     invoke-virtual {p0, v3}, Lcom/android/systemui/qs/QSTileView;->removeView(Landroid/view/View;)V
@@ -326,7 +333,7 @@
 
     iput-object v3, p0, Lcom/android/systemui/qs/QSTileView;->mDualLabel:Lcom/android/systemui/qs/QSDualTileLabel;
 
-    :cond_1
+    :cond_2
     iget-object v3, p0, Lcom/android/systemui/qs/QSTileView;->mContext:Landroid/content/Context;
 
     invoke-virtual {v3}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -335,7 +342,7 @@
 
     iget-boolean v3, p0, Lcom/android/systemui/qs/QSTileView;->mDual:Z
 
-    if-eqz v3, :cond_4
+    if-eqz v3, :cond_5
 
     new-instance v3, Lcom/android/systemui/qs/QSDualTileLabel;
 
@@ -401,20 +408,20 @@
 
     invoke-virtual {v3, v7}, Lcom/android/systemui/qs/QSDualTileLabel;->setFocusable(Z)V
 
-    if-eqz v1, :cond_2
+    if-eqz v1, :cond_3
 
     iget-object v3, p0, Lcom/android/systemui/qs/QSTileView;->mDualLabel:Lcom/android/systemui/qs/QSDualTileLabel;
 
     invoke-virtual {v3, v1}, Lcom/android/systemui/qs/QSDualTileLabel;->setText(Ljava/lang/CharSequence;)V
 
-    :cond_2
-    if-eqz v0, :cond_3
+    :cond_3
+    if-eqz v0, :cond_4
 
     iget-object v3, p0, Lcom/android/systemui/qs/QSTileView;->mDualLabel:Lcom/android/systemui/qs/QSDualTileLabel;
 
     invoke-virtual {v3, v0}, Lcom/android/systemui/qs/QSDualTileLabel;->setContentDescription(Ljava/lang/CharSequence;)V
 
-    :cond_3
+    :cond_4
     iget-object v3, p0, Lcom/android/systemui/qs/QSTileView;->mDualLabel:Lcom/android/systemui/qs/QSDualTileLabel;
 
     invoke-virtual {p0, v3}, Lcom/android/systemui/qs/QSTileView;->addView(Landroid/view/View;)V
@@ -422,7 +429,7 @@
     :goto_0
     return-void
 
-    :cond_4
+    :cond_5
     new-instance v3, Landroid/widget/TextView;
 
     iget-object v4, p0, Lcom/android/systemui/qs/QSTileView;->mContext:Landroid/content/Context;
@@ -477,13 +484,13 @@
 
     invoke-virtual {v3, v6}, Landroid/widget/TextView;->setClickable(Z)V
 
-    if-eqz v1, :cond_5
+    if-eqz v1, :cond_6
 
     iget-object v3, p0, Lcom/android/systemui/qs/QSTileView;->mLabel:Landroid/widget/TextView;
 
     invoke-virtual {v3, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    :cond_5
+    :cond_6
     iget-object v3, p0, Lcom/android/systemui/qs/QSTileView;->mLabel:Landroid/widget/TextView;
 
     invoke-virtual {p0, v3}, Lcom/android/systemui/qs/QSTileView;->addView(Landroid/view/View;)V
@@ -536,8 +543,6 @@
     invoke-virtual {v4}, Landroid/view/View;->getHeight()I
 
     move-result v4
-
-    div-int/lit8 v4, v4, 0x2
 
     add-int v1, v3, v4
 
@@ -752,12 +757,14 @@
     goto :goto_1
 .end method
 
-.method public init(Landroid/view/View$OnClickListener;Landroid/view/View$OnClickListener;)V
+.method public init(Landroid/view/View$OnClickListener;Landroid/view/View$OnClickListener;Landroid/view/View$OnLongClickListener;)V
     .locals 0
 
     iput-object p1, p0, Lcom/android/systemui/qs/QSTileView;->mClickPrimary:Landroid/view/View$OnClickListener;
 
     iput-object p2, p0, Lcom/android/systemui/qs/QSTileView;->mClickSecondary:Landroid/view/View$OnClickListener;
+
+    iput-object p3, p0, Lcom/android/systemui/qs/QSTileView;->mClickLong:Landroid/view/View$OnLongClickListener;
 
     return-void
 .end method
@@ -998,18 +1005,13 @@
     :goto_0
     iput-boolean p1, p0, Lcom/android/systemui/qs/QSTileView;->mDual:Z
 
-    if-eqz v0, :cond_0
-
-    invoke-direct {p0}, Lcom/android/systemui/qs/QSTileView;->recreateLabel()V
-
-    :cond_0
     invoke-direct {p0}, Lcom/android/systemui/qs/QSTileView;->getTileBackground()Landroid/graphics/drawable/Drawable;
 
     move-result-object v1
 
     instance-of v2, v1, Landroid/graphics/drawable/RippleDrawable;
 
-    if-eqz v2, :cond_1
+    if-eqz v2, :cond_0
 
     move-object v2, v1
 
@@ -1017,7 +1019,7 @@
 
     invoke-direct {p0, v2}, Lcom/android/systemui/qs/QSTileView;->setRipple(Landroid/graphics/drawable/RippleDrawable;)V
 
-    :cond_1
+    :cond_0
     if-eqz p1, :cond_3
 
     iget-object v2, p0, Lcom/android/systemui/qs/QSTileView;->mTopBackgroundView:Landroid/view/View;
@@ -1025,6 +1027,12 @@
     iget-object v5, p0, Lcom/android/systemui/qs/QSTileView;->mClickPrimary:Landroid/view/View$OnClickListener;
 
     invoke-virtual {v2, v5}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    iget-object v2, p0, Lcom/android/systemui/qs/QSTileView;->mTopBackgroundView:Landroid/view/View;
+
+    iget-object v5, p0, Lcom/android/systemui/qs/QSTileView;->mClickLong:Landroid/view/View$OnLongClickListener;
+
+    invoke-virtual {v2, v5}, Landroid/view/View;->setOnLongClickListener(Landroid/view/View$OnLongClickListener;)V
 
     invoke-virtual {p0, v6}, Lcom/android/systemui/qs/QSTileView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
@@ -1055,6 +1063,13 @@
     :goto_3
     invoke-virtual {v2, v4}, Landroid/view/View;->setVisibility(I)V
 
+    if-eqz v0, :cond_1
+
+    invoke-direct {p0}, Lcom/android/systemui/qs/QSTileView;->recreateLabel()V
+
+    invoke-direct {p0}, Lcom/android/systemui/qs/QSTileView;->updateTopPadding()V
+
+    :cond_1
     invoke-virtual {p0}, Lcom/android/systemui/qs/QSTileView;->postInvalidate()V
 
     return-void
@@ -1076,6 +1091,10 @@
     iget-object v2, p0, Lcom/android/systemui/qs/QSTileView;->mClickPrimary:Landroid/view/View$OnClickListener;
 
     invoke-virtual {p0, v2}, Lcom/android/systemui/qs/QSTileView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    iget-object v2, p0, Lcom/android/systemui/qs/QSTileView;->mClickLong:Landroid/view/View$OnLongClickListener;
+
+    invoke-virtual {p0, v2}, Lcom/android/systemui/qs/QSTileView;->setOnLongClickListener(Landroid/view/View$OnLongClickListener;)V
 
     invoke-virtual {p0, v3}, Lcom/android/systemui/qs/QSTileView;->setImportantForAccessibility(I)V
 

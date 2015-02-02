@@ -270,6 +270,21 @@
     goto/16 :goto_0
 
     :cond_b
+    iget v3, p1, Landroid/os/Message;->what:I
+
+    const/16 v4, 0xa
+
+    if-ne v3, v4, :cond_c
+
+    const-string v1, "handleLongClick"
+
+    iget-object v3, p0, Lcom/android/systemui/qs/QSTile$H;->this$0:Lcom/android/systemui/qs/QSTile;
+
+    invoke-virtual {v3}, Lcom/android/systemui/qs/QSTile;->handleLongClick()V
+
+    goto/16 :goto_0
+
+    :cond_c
     new-instance v3, Ljava/lang/IllegalArgumentException;
 
     new-instance v4, Ljava/lang/StringBuilder;

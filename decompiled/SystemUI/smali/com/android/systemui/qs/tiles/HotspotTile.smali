@@ -22,6 +22,10 @@
 .end annotation
 
 
+# static fields
+.field private static final WIRELESS_SETTINGS:Landroid/content/Intent;
+
+
 # instance fields
 .field private final mCallback:Lcom/android/systemui/qs/tiles/HotspotTile$Callback;
 
@@ -31,6 +35,20 @@
 
 
 # direct methods
+.method static constructor <clinit>()V
+    .locals 2
+
+    new-instance v0, Landroid/content/Intent;
+
+    const-string v1, "android.settings.WIRELESS_SETTINGS"
+
+    invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+
+    sput-object v0, Lcom/android/systemui/qs/tiles/HotspotTile;->WIRELESS_SETTINGS:Landroid/content/Intent;
+
+    return-void
+.end method
+
 .method public constructor <init>(Lcom/android/systemui/qs/QSTile$Host;)V
     .locals 3
 
@@ -163,6 +181,18 @@
     return-void
 .end method
 
+.method protected handleLongClick()V
+    .locals 2
+
+    iget-object v0, p0, Lcom/android/systemui/qs/tiles/HotspotTile;->mHost:Lcom/android/systemui/qs/QSTile$Host;
+
+    sget-object v1, Lcom/android/systemui/qs/tiles/HotspotTile;->WIRELESS_SETTINGS:Landroid/content/Intent;
+
+    invoke-interface {v0, v1}, Lcom/android/systemui/qs/QSTile$Host;->startSettingsActivity(Landroid/content/Intent;)V
+
+    return-void
+.end method
+
 .method protected handleUpdateState(Lcom/android/systemui/qs/QSTile$BooleanState;Ljava/lang/Object;)V
     .locals 2
 
@@ -172,27 +202,6 @@
 
     move-result v0
 
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lcom/android/systemui/qs/tiles/HotspotTile;->mUsageTracker:Lcom/android/systemui/qs/UsageTracker;
-
-    invoke-virtual {v0}, Lcom/android/systemui/qs/UsageTracker;->isRecentlyUsed()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lcom/android/systemui/qs/tiles/HotspotTile;->mController:Lcom/android/systemui/statusbar/policy/HotspotController;
-
-    invoke-interface {v0}, Lcom/android/systemui/statusbar/policy/HotspotController;->isProvisioningNeeded()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
     iput-boolean v0, p1, Lcom/android/systemui/qs/QSTile$BooleanState;->visible:Z
 
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/HotspotTile;->mContext:Landroid/content/Context;
@@ -215,28 +224,23 @@
 
     iget-boolean v0, p1, Lcom/android/systemui/qs/QSTile$BooleanState;->visible:Z
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_0
 
     iget-boolean v0, p1, Lcom/android/systemui/qs/QSTile$BooleanState;->value:Z
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_0
 
     const v0, 0x7f020070
 
-    :goto_1
+    :goto_0
     iput v0, p1, Lcom/android/systemui/qs/QSTile$BooleanState;->iconId:I
 
     return-void
 
     :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-
-    :cond_1
     const v0, 0x7f02006f
 
-    goto :goto_1
+    goto :goto_0
 .end method
 
 .method protected bridge synthetic handleUpdateState(Lcom/android/systemui/qs/QSTile$State;Ljava/lang/Object;)V

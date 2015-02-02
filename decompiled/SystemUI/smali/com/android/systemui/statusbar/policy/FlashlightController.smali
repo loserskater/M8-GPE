@@ -159,7 +159,15 @@
     return-void
 .end method
 
-.method static synthetic access$1000(Lcom/android/systemui/statusbar/policy/FlashlightController;)Z
+.method static synthetic access$1000(Lcom/android/systemui/statusbar/policy/FlashlightController;)Ljava/lang/String;
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/policy/FlashlightController;->mCameraId:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method static synthetic access$1100(Lcom/android/systemui/statusbar/policy/FlashlightController;)Z
     .locals 1
 
     iget-boolean v0, p0, Lcom/android/systemui/statusbar/policy/FlashlightController;->mCameraAvailable:Z
@@ -167,7 +175,7 @@
     return v0
 .end method
 
-.method static synthetic access$1002(Lcom/android/systemui/statusbar/policy/FlashlightController;Z)Z
+.method static synthetic access$1102(Lcom/android/systemui/statusbar/policy/FlashlightController;Z)Z
     .locals 0
 
     iput-boolean p1, p0, Lcom/android/systemui/statusbar/policy/FlashlightController;->mCameraAvailable:Z
@@ -175,7 +183,7 @@
     return p1
 .end method
 
-.method static synthetic access$1100(Lcom/android/systemui/statusbar/policy/FlashlightController;Z)V
+.method static synthetic access$1200(Lcom/android/systemui/statusbar/policy/FlashlightController;Z)V
     .locals 0
 
     invoke-direct {p0, p1}, Lcom/android/systemui/statusbar/policy/FlashlightController;->dispatchAvailabilityChanged(Z)V
@@ -207,7 +215,15 @@
     return-void
 .end method
 
-.method static synthetic access$500(Lcom/android/systemui/statusbar/policy/FlashlightController;)Landroid/hardware/camera2/CameraCaptureSession;
+.method static synthetic access$500(Lcom/android/systemui/statusbar/policy/FlashlightController;)Landroid/view/Surface;
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/policy/FlashlightController;->mSurface:Landroid/view/Surface;
+
+    return-object v0
+.end method
+
+.method static synthetic access$600(Lcom/android/systemui/statusbar/policy/FlashlightController;)Landroid/hardware/camera2/CameraCaptureSession;
     .locals 1
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/FlashlightController;->mSession:Landroid/hardware/camera2/CameraCaptureSession;
@@ -215,7 +231,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$502(Lcom/android/systemui/statusbar/policy/FlashlightController;Landroid/hardware/camera2/CameraCaptureSession;)Landroid/hardware/camera2/CameraCaptureSession;
+.method static synthetic access$602(Lcom/android/systemui/statusbar/policy/FlashlightController;Landroid/hardware/camera2/CameraCaptureSession;)Landroid/hardware/camera2/CameraCaptureSession;
     .locals 0
 
     iput-object p1, p0, Lcom/android/systemui/statusbar/policy/FlashlightController;->mSession:Landroid/hardware/camera2/CameraCaptureSession;
@@ -223,7 +239,7 @@
     return-object p1
 .end method
 
-.method static synthetic access$600(Lcom/android/systemui/statusbar/policy/FlashlightController;Z)V
+.method static synthetic access$700(Lcom/android/systemui/statusbar/policy/FlashlightController;Z)V
     .locals 0
 
     invoke-direct {p0, p1}, Lcom/android/systemui/statusbar/policy/FlashlightController;->updateFlashlight(Z)V
@@ -231,7 +247,7 @@
     return-void
 .end method
 
-.method static synthetic access$702(Lcom/android/systemui/statusbar/policy/FlashlightController;Z)Z
+.method static synthetic access$802(Lcom/android/systemui/statusbar/policy/FlashlightController;Z)Z
     .locals 0
 
     iput-boolean p1, p0, Lcom/android/systemui/statusbar/policy/FlashlightController;->mFlashlightEnabled:Z
@@ -239,20 +255,12 @@
     return p1
 .end method
 
-.method static synthetic access$800()Z
+.method static synthetic access$900()Z
     .locals 1
 
     sget-boolean v0, Lcom/android/systemui/statusbar/policy/FlashlightController;->DEBUG:Z
 
     return v0
-.end method
-
-.method static synthetic access$900(Lcom/android/systemui/statusbar/policy/FlashlightController;)Ljava/lang/String;
-    .locals 1
-
-    iget-object v0, p0, Lcom/android/systemui/statusbar/policy/FlashlightController;->mCameraId:Ljava/lang/String;
-
-    return-object v0
 .end method
 
 .method private cleanUpListenersLocked(Lcom/android/systemui/statusbar/policy/FlashlightController$FlashlightListener;)V

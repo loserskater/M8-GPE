@@ -122,12 +122,24 @@
     return-void
 .end method
 
+.method public getRotationLockOrientation()I
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/policy/RotationLockControllerImpl;->mContext:Landroid/content/Context;
+
+    invoke-static {v0}, Lcom/android/internal/view/RotationPolicy;->getRotationLockOrientation(Landroid/content/Context;)I
+
+    move-result v0
+
+    return v0
+.end method
+
 .method public isRotationLockAffordanceVisible()Z
     .locals 1
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/RotationLockControllerImpl;->mContext:Landroid/content/Context;
 
-    invoke-static {v0}, Lcom/android/internal/view/RotationPolicy;->isRotationLockToggleVisible(Landroid/content/Context;)Z
+    invoke-static {v0}, Lcom/android/internal/view/RotationPolicy;->isRotationSupported(Landroid/content/Context;)Z
 
     move-result v0
 

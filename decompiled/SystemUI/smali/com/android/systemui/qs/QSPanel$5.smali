@@ -3,12 +3,12 @@
 .source "QSPanel.java"
 
 # interfaces
-.implements Landroid/view/View$OnClickListener;
+.implements Landroid/view/View$OnLongClickListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/systemui/qs/QSPanel;->handleShowDetailImpl(Lcom/android/systemui/qs/QSPanel$Record;ZII)V
+    value = Lcom/android/systemui/qs/QSPanel;->addTile(Lcom/android/systemui/qs/QSTile;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,16 +20,16 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/systemui/qs/QSPanel;
 
-.field final synthetic val$settingsIntent:Landroid/content/Intent;
+.field final synthetic val$r:Lcom/android/systemui/qs/QSPanel$TileRecord;
 
 
 # direct methods
-.method constructor <init>(Lcom/android/systemui/qs/QSPanel;Landroid/content/Intent;)V
+.method constructor <init>(Lcom/android/systemui/qs/QSPanel;Lcom/android/systemui/qs/QSPanel$TileRecord;)V
     .locals 0
 
     iput-object p1, p0, Lcom/android/systemui/qs/QSPanel$5;->this$0:Lcom/android/systemui/qs/QSPanel;
 
-    iput-object p2, p0, Lcom/android/systemui/qs/QSPanel$5;->val$settingsIntent:Landroid/content/Intent;
+    iput-object p2, p0, Lcom/android/systemui/qs/QSPanel$5;->val$r:Lcom/android/systemui/qs/QSPanel$TileRecord;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -38,19 +38,16 @@
 
 
 # virtual methods
-.method public onClick(Landroid/view/View;)V
-    .locals 2
+.method public onLongClick(Landroid/view/View;)Z
+    .locals 1
 
-    iget-object v0, p0, Lcom/android/systemui/qs/QSPanel$5;->this$0:Lcom/android/systemui/qs/QSPanel;
+    iget-object v0, p0, Lcom/android/systemui/qs/QSPanel$5;->val$r:Lcom/android/systemui/qs/QSPanel$TileRecord;
 
-    # getter for: Lcom/android/systemui/qs/QSPanel;->mHost:Lcom/android/systemui/statusbar/phone/QSTileHost;
-    invoke-static {v0}, Lcom/android/systemui/qs/QSPanel;->access$900(Lcom/android/systemui/qs/QSPanel;)Lcom/android/systemui/statusbar/phone/QSTileHost;
+    iget-object v0, v0, Lcom/android/systemui/qs/QSPanel$TileRecord;->tile:Lcom/android/systemui/qs/QSTile;
 
-    move-result-object v0
+    invoke-virtual {v0}, Lcom/android/systemui/qs/QSTile;->longClick()V
 
-    iget-object v1, p0, Lcom/android/systemui/qs/QSPanel$5;->val$settingsIntent:Landroid/content/Intent;
+    const/4 v0, 0x1
 
-    invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/phone/QSTileHost;->startSettingsActivity(Landroid/content/Intent;)V
-
-    return-void
+    return v0
 .end method

@@ -273,6 +273,39 @@
     <public type="drawable" name="ic_contact_picture" id="0x7f02014b" />
     <public type="drawable" name="fab" id="0x7f02014c" />
     <public type="drawable" name="floating_action_button" id="0x7f02014d" />
+    <public type="drawable" name="ic_qs_compass_off" id="0x7f020151" />
+    <public type="drawable" name="ic_qs_compass_on" id="0x7f020152" />
+    <public type="drawable" name="ic_qs_location_battery_saving" id="0x7f020159" />
+    <public type="drawable" name="ic_qs_lock_screen_off" id="0x7f02015a" />
+    <public type="drawable" name="ic_qs_lock_screen_on" id="0x7f02015b" />
+    <public type="drawable" name="ic_qs_network_adb_off" id="0x7f02015c" />
+    <public type="drawable" name="ic_qs_network_adb_on" id="0x7f02015d" />
+    <public type="drawable" name="ic_qs_nfc_off" id="0x7f02015e" />
+    <public type="drawable" name="ic_qs_nfc_on" id="0x7f02015f" />
+    <public type="drawable" name="ic_qs_perf_profile_bal_avd" id="0x7f020160" />
+    <public type="drawable" name="ic_qs_perf_profile_highperf_avd" id="0x7f020161" />
+    <public type="drawable" name="ic_qs_perf_profile_pwrsv_avd" id="0x7f020162" />
+    <public type="drawable" name="ic_qs_perf_profile_vector" id="0x7f020163" />
+    <public type="drawable" name="ic_qs_rotation_01" id="0x7f020166" />
+    <public type="drawable" name="ic_qs_rotation_02" id="0x7f020167" />
+    <public type="drawable" name="ic_qs_rotation_03" id="0x7f020168" />
+    <public type="drawable" name="ic_qs_rotation_04" id="0x7f020169" />
+    <public type="drawable" name="ic_qs_rotation_05" id="0x7f02016a" />
+    <public type="drawable" name="ic_qs_rotation_06" id="0x7f02016b" />
+    <public type="drawable" name="ic_qs_rotation_07" id="0x7f02016c" />
+    <public type="drawable" name="ic_qs_rotation_08" id="0x7f02016d" />
+    <public type="drawable" name="ic_qs_rotation_09" id="0x7f02016e" />
+    <public type="drawable" name="ic_qs_rotation_10" id="0x7f02016f" />
+    <public type="drawable" name="ic_qs_rotation_11" id="0x7f020170" />
+    <public type="drawable" name="ic_qs_rotation_12" id="0x7f020171" />
+    <public type="drawable" name="ic_qs_rotation_13" id="0x7f020172" />
+    <public type="drawable" name="ic_qs_rotation_14" id="0x7f020173" />
+    <public type="drawable" name="ic_qs_rotation_15" id="0x7f020174" />
+    <public type="drawable" name="ic_qs_rotation_locked" id="0x7f020175" />
+    <public type="drawable" name="ic_qs_signal_hp" id="0x7f020176" />
+    <public type="drawable" name="ic_qs_system_profiles" id="0x7f020177" />
+    <public type="drawable" name="ic_qs_zen_important" id="0x7f020178" />
+    <public type="drawable" name="ic_qs_zen_on" id="0x7f020179" />
     <public type="drawable" name="bg_protect" id="0x7f020001" />
     <public type="drawable" name="bottom_divider_glow" id="0x7f020002" />
     <public type="drawable" name="btn_fab_recents" id="0x7f020005" />
@@ -370,11 +403,21 @@
     <public type="drawable" name="sym_keyboard_return_holo" id="0x7f02013d" />
     <public type="drawable" name="top_divider_glow" id="0x7f02013f" />
     <public type="drawable" name="ic_qs_default_user" id="0x7f02006c" />
+    <public type="drawable" name="ic_qs_data_off" id="0x7f020153" />
+    <public type="drawable" name="ic_qs_data_off_1" id="0x7f020154" />
+    <public type="drawable" name="ic_qs_data_off_2" id="0x7f020155" />
+    <public type="drawable" name="ic_qs_data_on" id="0x7f020156" />
+    <public type="drawable" name="ic_qs_data_on_1" id="0x7f020157" />
+    <public type="drawable" name="ic_qs_data_on_2" id="0x7f020158" />
+    <public type="drawable" name="ic_qs_roaming_off" id="0x7f020164" />
+    <public type="drawable" name="ic_qs_roaming_on" id="0x7f020165" />
     <public type="drawable" name="recents_task_shadow" id="0x7f0200ed" />
     <public type="drawable" name="ic_notify_clear_normal" id="0x7f02014e" />
-    <public type="drawable" name="stat_sys_network_traffic_down" id="0x7f02014f" />
-    <public type="drawable" name="stat_sys_network_traffic_up" id="0x7f020150" />
-    <public type="drawable" name="stat_sys_network_traffic_updown" id="0x7f020151" />
+    <public type="drawable" name="ic_qs_apn1" id="0x7f02014f" />
+    <public type="drawable" name="ic_qs_apn2" id="0x7f020150" />
+    <public type="drawable" name="stat_sys_network_traffic_down" id="0x7f02017a" />
+    <public type="drawable" name="stat_sys_network_traffic_up" id="0x7f02017b" />
+    <public type="drawable" name="stat_sys_network_traffic_updown" id="0x7f02017c" />
     <public type="drawable" name="APKTOOL_DUMMY_002d" id="0x7f02002d" />
     <public type="mipmap" name="ic_daydreams" id="0x7f030000" />
     <public type="mipmap" name="ic_launcher_dreams" id="0x7f030001" />
@@ -458,6 +501,8 @@
     <public type="layout" name="zen_toast" id="0x7f04004f" />
     <public type="layout" name="keyguard_eca" id="0x7f040050" />
     <public type="layout" name="floating_action_button" id="0x7f040051" />
+    <public type="layout" name="qs_detail_items_list" id="0x7f040052" />
+    <public type="layout" name="location" id="0x7f040053" />
     <public type="layout" name="keyguard_host_view" id="0x7f04000d" />
     <public type="layout" name="keyguard_widget_pager" id="0x7f040021" />
     <public type="anim" name="heads_up_enter" id="0x7f050000" />
@@ -505,11 +550,16 @@
     <public type="anim" name="wallpaper_recents_launch_from_launcher_exit" id="0x7f05002a" />
     <public type="anim" name="zen_toast_enter" id="0x7f05002b" />
     <public type="anim" name="zen_toast_exit" id="0x7f05002c" />
+    <public type="anim" name="ic_qs_perf_profile_tobalanced" id="0x7f05002d" />
+    <public type="anim" name="ic_qs_perf_profile_toperf" id="0x7f05002e" />
+    <public type="anim" name="ic_qs_perf_profile_topwrsv" id="0x7f05002f" />
     <public type="array" name="batterymeter_color_levels" id="0x7f060000" />
     <public type="array" name="batterymeter_color_values" id="0x7f060001" />
     <public type="array" name="batterymeter_bolt_points" id="0x7f060002" />
     <public type="array" name="lockscreen_num_pad_klondike" id="0x7f060003" />
     <public type="array" name="batterymeter_inverted_bolt_points" id="0x7f060004" />
+    <public type="array" name="perf_profile_drawables" id="0x7f060005" />
+    <public type="array" name="cardinal_directions" id="0x7f060006" />
     <public type="color" name="system_bar_background_opaque" id="0x7f070000" />
     <public type="color" name="system_bar_background_semi_transparent" id="0x7f070001" />
     <public type="color" name="system_bar_background_transparent" id="0x7f070002" />
@@ -1210,6 +1260,41 @@
     <public type="string" name="keyguard_carrier_default" id="0x7f0b01e6" />
     <public type="string" name="left_shortcut_hint" id="0x7f0b01e9" />
     <public type="string" name="right_shortcut_hint" id="0x7f0b01ea" />
+    <public type="string" name="accessibility_quick_settings_data_off" id="0x7f0b01eb" />
+    <public type="string" name="accessibility_quick_settings_data_on" id="0x7f0b01ec" />
+    <public type="string" name="accessibility_quick_settings_roaming_off" id="0x7f0b01ed" />
+    <public type="string" name="accessibility_quick_settings_roaming_on" id="0x7f0b01ee" />
+    <public type="string" name="accessibility_quick_settings_location_battery_saving" id="0x7f0b01ef" />
+    <public type="string" name="accessibility_quick_settings_location_gps_only" id="0x7f0b01f0" />
+    <public type="string" name="accessibility_quick_settings_location_high_accuracy" id="0x7f0b01f1" />
+    <public type="string" name="accessibility_su_active" id="0x7f0b01f2" />
+    <public type="string" name="quick_settings_mobile_data_label" id="0x7f0b01f3" />
+    <public type="string" name="quick_settings_roaming_label" id="0x7f0b01f4" />
+    <public type="string" name="quick_settings_apn_switch_label" id="0x7f0b01f5" />
+    <public type="string" name="quick_settings_dds_sub" id="0x7f0b01f6" />
+    <public type="string" name="quick_settings_data_off" id="0x7f0b01f7" />
+    <public type="string" name="quick_settings_location_battery_saving_label" id="0x7f0b01f8" />
+    <public type="string" name="quick_settings_location_gps_only_label" id="0x7f0b01f9" />
+    <public type="string" name="quick_settings_location_high_accuracy_label" id="0x7f0b01fa" />
+    <public type="string" name="quick_settings_location_detail_title" id="0x7f0b01fb" />
+    <public type="string" name="quick_settings_location_detail_menu_title" id="0x7f0b01fc" />
+    <public type="string" name="quick_settings_location_detail_mode_high_accuracy_title" id="0x7f0b01fd" />
+    <public type="string" name="quick_settings_location_detail_mode_battery_saving_title" id="0x7f0b01fe" />
+    <public type="string" name="quick_settings_location_detail_mode_sensors_only_title" id="0x7f0b01ff" />
+    <public type="string" name="quick_settings_location_detail_mode_high_accuracy_description" id="0x7f0b0200" />
+    <public type="string" name="quick_settings_location_detail_mode_battery_saving_description" id="0x7f0b0201" />
+    <public type="string" name="quick_settings_location_detail_mode_sensors_only_description" id="0x7f0b0202" />
+    <public type="string" name="quick_settings_nfc" id="0x7f0b0203" />
+    <public type="string" name="quick_settings_nfc_off" id="0x7f0b0204" />
+    <public type="string" name="quick_settings_profile_detail_menu_title" id="0x7f0b0205" />
+    <public type="string" name="quick_settings_profiles_title" id="0x7f0b0206" />
+    <public type="string" name="quick_settings_profiles_disabled" id="0x7f0b0207" />
+    <public type="string" name="quick_settings_compass_value" id="0x7f0b0208" />
+    <public type="string" name="quick_settings_compass_off" id="0x7f0b0209" />
+    <public type="string" name="quick_settings_compass_init" id="0x7f0b020a" />
+    <public type="string" name="quick_settings_lockscreen" id="0x7f0b020b" />
+    <public type="string" name="quick_settings_network_adb_enabled_label" id="0x7f0b020c" />
+    <public type="string" name="quick_settings_network_adb_disabled_label" id="0x7f0b020d" />
     <public type="string" name="status_bar_date_formatter" id="0x7f0b0006" />
     <public type="string" name="toast_rotation_locked" id="0x7f0b0158" />
     <public type="string" name="APKTOOL_DUMMY_0159" id="0x7f0b0159" />
@@ -1500,8 +1585,10 @@
     <public type="dimen" name="floating_action_button_translation_z" id="0x7f0c0119" />
     <public type="dimen" name="floating_action_button_margin_side" id="0x7f0c011a" />
     <public type="dimen" name="floating_action_button_margin_bottom" id="0x7f0c011b" />
-    <public type="dimen" name="net_traffic_single_text_size" id="0x7f0c011c" />
-    <public type="dimen" name="net_traffic_multi_text_size" id="0x7f0c011d" />
+    <public type="dimen" name="detail_radio_group_padding_left" id="0x7f0c011c" />
+    <public type="dimen" name="detail_radio_group_padding" id="0x7f0c011d" />
+    <public type="dimen" name="net_traffic_single_text_size" id="0x7f0c011e" />
+    <public type="dimen" name="net_traffic_multi_text_size" id="0x7f0c011f" />
     <public type="dimen" name="peek_height" id="0x7f0c00b9" />
     <public type="dimen" name="keyguard_pattern_unlock_status_line_font_size" id="0x7f0c0116" />
     <public type="dimen" name="notification_panel_min_height" id="0x7f0c00ba" />
@@ -1821,7 +1908,11 @@
     <public type="id" name="center_clock" id="0x7f0e012c" />
     <public type="id" name="left_clock" id="0x7f0e012d" />
     <public type="id" name="center_clock_layout" id="0x7f0e012e" />
-    <public type="id" name="networkTraffic" id="0x7f0e012f" />
+    <public type="id" name="radiogroup_location" id="0x7f0e012f" />
+    <public type="id" name="radio_high_accuracy" id="0x7f0e0130" />
+    <public type="id" name="radio_battery_saving" id="0x7f0e0131" />
+    <public type="id" name="radio_sensors_only" id="0x7f0e0132" />
+    <public type="id" name="networkTraffic" id="0x7f0e0133" />
     <public type="plurals" name="status_bar_accessibility_recent_apps" id="0x7f0f0000" />
     <public type="plurals" name="kg_password_wrong_pin_code" id="0x7f0f0001" />
     <public type="plurals" name="kg_password_wrong_puk_code" id="0x7f0f0002" />
