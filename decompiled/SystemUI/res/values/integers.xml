@@ -54,4 +54,7 @@
     <item type="integer" name="config_activityDefaultDur">@android:integer/config_activityDefaultDur</item>
     <integer name="kg_carousel_angle">75</integer>
     <integer name="kg_glowpad_rotation_offset">0</integer>
+    <integer name="visualizer_divisions">4</integer>
+    <integer name="visualizer_db_fuzz_factor">2</integer>
+    <integer name="visualizer_db_fuzz">-10</integer>
 </resources>

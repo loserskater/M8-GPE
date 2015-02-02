@@ -170,16 +170,11 @@
     :goto_2
     iput v0, p1, Lcom/android/systemui/qs/QSTile$BooleanState;->iconId:I
 
-    iget-object v1, p0, Lcom/android/systemui/qs/tiles/NfcTile;->mContext:Landroid/content/Context;
+    iget-object v0, p0, Lcom/android/systemui/qs/tiles/NfcTile;->mContext:Landroid/content/Context;
 
-    iget-boolean v0, p1, Lcom/android/systemui/qs/QSTile$BooleanState;->value:Z
+    const v1, 0x7f0b01fb
 
-    if-eqz v0, :cond_4
-
-    const v0, 0x7f0b0203
-
-    :goto_3
-    invoke-virtual {v1, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
@@ -201,11 +196,6 @@
     const v0, 0x7f02015e
 
     goto :goto_2
-
-    :cond_4
-    const v0, 0x7f0b0204
-
-    goto :goto_3
 .end method
 
 .method protected bridge synthetic handleUpdateState(Lcom/android/systemui/qs/QSTile$State;Ljava/lang/Object;)V

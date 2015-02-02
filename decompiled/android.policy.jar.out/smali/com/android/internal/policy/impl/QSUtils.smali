@@ -315,7 +315,7 @@
     goto :goto_1
 
     :sswitch_6
-    const-string v6, "screen_timeout"
+    const-string v6, "profiles"
 
     invoke-virtual {v2, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -328,19 +328,6 @@
     goto :goto_1
 
     :sswitch_7
-    const-string v6, "profiles"
-
-    invoke-virtual {v2, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_1
-
-    const/4 v5, 0x7
-
-    goto :goto_1
-
-    :sswitch_8
     const-string v6, "performance"
 
     invoke-virtual {v2, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -349,7 +336,7 @@
 
     if-eqz v6, :cond_1
 
-    const/16 v5, 0x8
+    const/4 v5, 0x7
 
     goto :goto_1
 
@@ -397,7 +384,7 @@
     move v1, v3
 
     :goto_5
-    goto/16 :goto_2
+    goto :goto_2
 
     :cond_4
     move v1, v4
@@ -414,7 +401,7 @@
     move v1, v3
 
     :goto_6
-    goto/16 :goto_2
+    goto :goto_2
 
     :cond_5
     move v1, v4
@@ -449,18 +436,15 @@
     :cond_8
     return-void
 
-    nop
-
     :sswitch_data_0
     .sparse-switch
-        -0x583cefd0 -> :sswitch_8
+        -0x583cefd0 -> :sswitch_7
         -0x468444da -> :sswitch_0
-        -0x3bbd5416 -> :sswitch_7
+        -0x3bbd5416 -> :sswitch_6
         -0x130a8722 -> :sswitch_4
         0xc52 -> :sswitch_1
         0x1a3dd -> :sswitch_5
         0x1a9ab -> :sswitch_2
-        0x3343888e -> :sswitch_6
         0x38a73d12 -> :sswitch_3
     .end sparse-switch
 
@@ -471,7 +455,6 @@
         :pswitch_2
         :pswitch_3
         :pswitch_4
-        :pswitch_5
         :pswitch_5
         :pswitch_5
         :pswitch_5

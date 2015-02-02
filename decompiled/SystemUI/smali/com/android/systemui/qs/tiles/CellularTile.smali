@@ -299,10 +299,6 @@
 
     if-lez v4, :cond_7
 
-    iget-boolean v4, v0, Lcom/android/systemui/qs/tiles/CellularTile$CallbackInfo;->wifiConnected:Z
-
-    if-nez v4, :cond_7
-
     iget v4, v0, Lcom/android/systemui/qs/tiles/CellularTile$CallbackInfo;->dataTypeIconId:I
 
     :goto_3
@@ -404,7 +400,7 @@
 
     iput-object v4, p1, Lcom/android/systemui/qs/QSTile$SignalState;->contentDescription:Ljava/lang/String;
 
-    goto/16 :goto_0
+    goto :goto_0
 
     :cond_2
     iget-boolean v4, v0, Lcom/android/systemui/qs/tiles/CellularTile$CallbackInfo;->enabled:Z
@@ -437,7 +433,7 @@
     :cond_6
     move v4, v7
 
-    goto/16 :goto_2
+    goto :goto_2
 
     :cond_7
     move v4, v7

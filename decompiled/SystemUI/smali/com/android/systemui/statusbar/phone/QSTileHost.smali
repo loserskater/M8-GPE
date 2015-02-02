@@ -605,6 +605,45 @@
 
     goto/16 :goto_1
 
+    :sswitch_15
+    const-string v1, "lte"
+
+    invoke-virtual {p1, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_2
+
+    const/16 v0, 0x15
+
+    goto/16 :goto_1
+
+    :sswitch_16
+    const-string v1, "visualizer"
+
+    invoke-virtual {p1, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_2
+
+    const/16 v0, 0x16
+
+    goto/16 :goto_1
+
+    :sswitch_17
+    const-string v1, "screen_timeout"
+
+    invoke-virtual {p1, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_2
+
+    const/16 v0, 0x17
+
+    goto/16 :goto_1
+
     :pswitch_0
     new-instance v0, Lcom/android/systemui/qs/tiles/WifiTile;
 
@@ -752,7 +791,26 @@
 
     goto/16 :goto_0
 
-    nop
+    :pswitch_15
+    new-instance v0, Lcom/android/systemui/qs/tiles/LteTile;
+
+    invoke-direct {v0, p0}, Lcom/android/systemui/qs/tiles/LteTile;-><init>(Lcom/android/systemui/qs/QSTile$Host;)V
+
+    goto/16 :goto_0
+
+    :pswitch_16
+    new-instance v0, Lcom/android/systemui/qs/tiles/VisualizerTile;
+
+    invoke-direct {v0, p0}, Lcom/android/systemui/qs/tiles/VisualizerTile;-><init>(Lcom/android/systemui/qs/QSTile$Host;)V
+
+    goto/16 :goto_0
+
+    :pswitch_17
+    new-instance v0, Lcom/android/systemui/qs/tiles/ScreenTimeoutTile;
+
+    invoke-direct {v0, p0}, Lcom/android/systemui/qs/tiles/ScreenTimeoutTile;-><init>(Lcom/android/systemui/qs/QSTile$Host;)V
+
+    goto/16 :goto_0
 
     :sswitch_data_0
     .sparse-switch
@@ -762,15 +820,18 @@
         -0x468444da -> :sswitch_6
         -0x3bbd5416 -> :sswitch_10
         -0x285a60ae -> :sswitch_4
+        -0x130a8722 -> :sswitch_16
         -0x266f082 -> :sswitch_5
         0xc52 -> :sswitch_1
         0x17a1f -> :sswitch_f
         0x183f3 -> :sswitch_d
+        0x1a3dd -> :sswitch_15
         0x1a9ab -> :sswitch_13
         0x2e7b3f -> :sswitch_8
         0x2e8962 -> :sswitch_3
         0x2eefaa -> :sswitch_b
         0x37af15 -> :sswitch_0
+        0x3343888e -> :sswitch_17
         0x38a73d12 -> :sswitch_e
         0x418a9ecf -> :sswitch_9
         0x4bd694e8 -> :sswitch_a
@@ -802,6 +863,9 @@
         :pswitch_12
         :pswitch_13
         :pswitch_14
+        :pswitch_15
+        :pswitch_16
+        :pswitch_17
     .end packed-switch
 .end method
 

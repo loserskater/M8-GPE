@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animated-vector android:drawable="@drawable/ic_qs_screen_timeout_vector"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <target android:name="time2" android:animation="@anim/ic_qs_screen_timeout_medtoshort_reverse" />
+    <target android:name="time3" android:animation="@anim/ic_qs_screen_timeout_medtoshort_reverse" />
+</animated-vector>

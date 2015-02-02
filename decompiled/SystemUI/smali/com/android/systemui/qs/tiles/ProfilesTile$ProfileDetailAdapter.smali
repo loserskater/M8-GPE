@@ -211,10 +211,6 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ListView;->setChoiceMode(I)V
 
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Landroid/widget/ListView;->setDivider(Landroid/graphics/drawable/Drawable;)V
-
     invoke-virtual {v0, p0}, Landroid/widget/ListView;->setOnItemClickListener(Landroid/widget/AdapterView$OnItemClickListener;)V
 
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/ProfilesTile$ProfileDetailAdapter;->this$0:Lcom/android/systemui/qs/tiles/ProfilesTile;

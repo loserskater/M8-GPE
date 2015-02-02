@@ -49,47 +49,18 @@
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/LocationTile$Callback;->this$0:Lcom/android/systemui/qs/tiles/LocationTile;
 
     # invokes: Lcom/android/systemui/qs/tiles/LocationTile;->refreshState()V
-    invoke-static {v0}, Lcom/android/systemui/qs/tiles/LocationTile;->access$500(Lcom/android/systemui/qs/tiles/LocationTile;)V
+    invoke-static {v0}, Lcom/android/systemui/qs/tiles/LocationTile;->access$300(Lcom/android/systemui/qs/tiles/LocationTile;)V
 
     return-void
 .end method
 
 .method public onLocationSettingsChanged(Z)V
-    .locals 2
-
-    iget-object v0, p0, Lcom/android/systemui/qs/tiles/LocationTile$Callback;->this$0:Lcom/android/systemui/qs/tiles/LocationTile;
-
-    # getter for: Lcom/android/systemui/qs/tiles/LocationTile;->mDetailAdapter:Lcom/android/systemui/qs/tiles/LocationTile$LocationDetailAdapter;
-    invoke-static {v0}, Lcom/android/systemui/qs/tiles/LocationTile;->access$200(Lcom/android/systemui/qs/tiles/LocationTile;)Lcom/android/systemui/qs/tiles/LocationTile$LocationDetailAdapter;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p1}, Lcom/android/systemui/qs/tiles/LocationTile$LocationDetailAdapter;->setLocationEnabled(Z)V
-
-    iget-object v0, p0, Lcom/android/systemui/qs/tiles/LocationTile$Callback;->this$0:Lcom/android/systemui/qs/tiles/LocationTile;
-
-    # getter for: Lcom/android/systemui/qs/tiles/LocationTile;->mDetailAdapter:Lcom/android/systemui/qs/tiles/LocationTile$LocationDetailAdapter;
-    invoke-static {v0}, Lcom/android/systemui/qs/tiles/LocationTile;->access$200(Lcom/android/systemui/qs/tiles/LocationTile;)Lcom/android/systemui/qs/tiles/LocationTile$LocationDetailAdapter;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lcom/android/systemui/qs/tiles/LocationTile$Callback;->this$0:Lcom/android/systemui/qs/tiles/LocationTile;
-
-    # getter for: Lcom/android/systemui/qs/tiles/LocationTile;->mController:Lcom/android/systemui/statusbar/policy/LocationController;
-    invoke-static {v1}, Lcom/android/systemui/qs/tiles/LocationTile;->access$300(Lcom/android/systemui/qs/tiles/LocationTile;)Lcom/android/systemui/statusbar/policy/LocationController;
-
-    move-result-object v1
-
-    invoke-interface {v1}, Lcom/android/systemui/statusbar/policy/LocationController;->getLocationCurrentState()I
-
-    move-result v1
-
-    invoke-virtual {v0, v1}, Lcom/android/systemui/qs/tiles/LocationTile$LocationDetailAdapter;->setLocationMode(I)V
+    .locals 1
 
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/LocationTile$Callback;->this$0:Lcom/android/systemui/qs/tiles/LocationTile;
 
     # invokes: Lcom/android/systemui/qs/tiles/LocationTile;->refreshState()V
-    invoke-static {v0}, Lcom/android/systemui/qs/tiles/LocationTile;->access$400(Lcom/android/systemui/qs/tiles/LocationTile;)V
+    invoke-static {v0}, Lcom/android/systemui/qs/tiles/LocationTile;->access$200(Lcom/android/systemui/qs/tiles/LocationTile;)V
 
     return-void
 .end method

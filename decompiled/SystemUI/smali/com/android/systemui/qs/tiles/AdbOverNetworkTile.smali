@@ -178,7 +178,9 @@
 .end method
 
 .method protected handleUpdateState(Lcom/android/systemui/qs/QSTile$BooleanState;Ljava/lang/Object;)V
-    .locals 5
+    .locals 6
+
+    const v5, 0x7f0b0202
 
     invoke-direct {p0}, Lcom/android/systemui/qs/tiles/AdbOverNetworkTile;->isAdbEnabled()Z
 
@@ -199,10 +201,6 @@
     move-result v3
 
     iput-boolean v3, p1, Lcom/android/systemui/qs/QSTile$BooleanState;->value:Z
-
-    const v3, 0x7f02006e
-
-    iput v3, p1, Lcom/android/systemui/qs/QSTile$BooleanState;->iconId:I
 
     iget-boolean v3, p1, Lcom/android/systemui/qs/QSTile$BooleanState;->value:Z
 
@@ -248,9 +246,7 @@
     :cond_1
     iget-object v3, p0, Lcom/android/systemui/qs/tiles/AdbOverNetworkTile;->mContext:Landroid/content/Context;
 
-    const v4, 0x7f0b020c
-
-    invoke-virtual {v3, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    invoke-virtual {v3, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
     move-result-object v3
 
@@ -261,9 +257,7 @@
     :cond_2
     iget-object v3, p0, Lcom/android/systemui/qs/tiles/AdbOverNetworkTile;->mContext:Landroid/content/Context;
 
-    const v4, 0x7f0b020d
-
-    invoke-virtual {v3, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    invoke-virtual {v3, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
     move-result-object v3
 

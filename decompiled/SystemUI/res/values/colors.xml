@@ -68,4 +68,5 @@
     <color name="clock_gray">#80ffffff</color>
     <color name="fab_color">#ffdc4c3c</color>
     <color name="floating_action_button_icon_color">#ffffffff</color>
+    <color name="visualizer_fill_color">#96ffffff</color>
 </resources>

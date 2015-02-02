@@ -8,6 +8,7 @@
     value = {
         Lcom/android/systemui/qs/tiles/LocationTile$1;,
         Lcom/android/systemui/qs/tiles/LocationTile$LocationDetailAdapter;,
+        Lcom/android/systemui/qs/tiles/LocationTile$AdvancedLocationAdapter;,
         Lcom/android/systemui/qs/tiles/LocationTile$Callback;
     }
 .end annotation
@@ -23,7 +24,9 @@
 
 
 # static fields
-.field private static final LOCATION_SETTINGS:Landroid/content/Intent;
+.field public static final LOCATION_SETTINGS:[Ljava/lang/Integer;
+
+.field private static final LOCATION_SETTINGS_INTENT:Landroid/content/Intent;
 
 
 # instance fields
@@ -35,10 +38,27 @@
 
 .field private final mKeyguard:Lcom/android/systemui/statusbar/policy/KeyguardMonitor;
 
+.field private final mLocationList:Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/List",
+            "<",
+            "Ljava/lang/Integer;",
+            ">;"
+        }
+    .end annotation
+.end field
+
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 2
+    .locals 6
+
+    const/4 v5, 0x3
+
+    const/4 v4, 0x2
+
+    const/4 v3, 0x1
 
     new-instance v0, Landroid/content/Intent;
 
@@ -46,7 +66,31 @@
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    sput-object v0, Lcom/android/systemui/qs/tiles/LocationTile;->LOCATION_SETTINGS:Landroid/content/Intent;
+    sput-object v0, Lcom/android/systemui/qs/tiles/LocationTile;->LOCATION_SETTINGS_INTENT:Landroid/content/Intent;
+
+    new-array v0, v5, [Ljava/lang/Integer;
+
+    const/4 v1, 0x0
+
+    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    aput-object v2, v0, v1
+
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    aput-object v1, v0, v3
+
+    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    aput-object v1, v0, v4
+
+    sput-object v0, Lcom/android/systemui/qs/tiles/LocationTile;->LOCATION_SETTINGS:[Ljava/lang/Integer;
 
     return-void
 .end method
@@ -57,6 +101,12 @@
     const/4 v1, 0x0
 
     invoke-direct {p0, p1}, Lcom/android/systemui/qs/QSTile;-><init>(Lcom/android/systemui/qs/QSTile$Host;)V
+
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mLocationList:Ljava/util/List;
 
     new-instance v0, Lcom/android/systemui/qs/tiles/LocationTile$Callback;
 
@@ -85,15 +135,49 @@
     return-void
 .end method
 
-.method static synthetic access$200(Lcom/android/systemui/qs/tiles/LocationTile;)Lcom/android/systemui/qs/tiles/LocationTile$LocationDetailAdapter;
+.method static synthetic access$200(Lcom/android/systemui/qs/tiles/LocationTile;)V
+    .locals 0
+
+    invoke-virtual {p0}, Lcom/android/systemui/qs/tiles/LocationTile;->refreshState()V
+
+    return-void
+.end method
+
+.method static synthetic access$300(Lcom/android/systemui/qs/tiles/LocationTile;)V
+    .locals 0
+
+    invoke-virtual {p0}, Lcom/android/systemui/qs/tiles/LocationTile;->refreshState()V
+
+    return-void
+.end method
+
+.method static synthetic access$400(Lcom/android/systemui/qs/tiles/LocationTile;)Ljava/util/List;
     .locals 1
 
-    iget-object v0, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mDetailAdapter:Lcom/android/systemui/qs/tiles/LocationTile$LocationDetailAdapter;
+    iget-object v0, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mLocationList:Ljava/util/List;
 
     return-object v0
 .end method
 
-.method static synthetic access$300(Lcom/android/systemui/qs/tiles/LocationTile;)Lcom/android/systemui/statusbar/policy/LocationController;
+.method static synthetic access$500(Lcom/android/systemui/qs/tiles/LocationTile;)Landroid/content/Context;
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mContext:Landroid/content/Context;
+
+    return-object v0
+.end method
+
+.method static synthetic access$600(Lcom/android/systemui/qs/tiles/LocationTile;I)I
+    .locals 1
+
+    invoke-direct {p0, p1}, Lcom/android/systemui/qs/tiles/LocationTile;->getStateLabelRes(I)I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method static synthetic access$700(Lcom/android/systemui/qs/tiles/LocationTile;)Lcom/android/systemui/statusbar/policy/LocationController;
     .locals 1
 
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mController:Lcom/android/systemui/statusbar/policy/LocationController;
@@ -101,36 +185,53 @@
     return-object v0
 .end method
 
-.method static synthetic access$400(Lcom/android/systemui/qs/tiles/LocationTile;)V
-    .locals 0
-
-    invoke-virtual {p0}, Lcom/android/systemui/qs/tiles/LocationTile;->refreshState()V
-
-    return-void
-.end method
-
-.method static synthetic access$500(Lcom/android/systemui/qs/tiles/LocationTile;)V
-    .locals 0
-
-    invoke-virtual {p0}, Lcom/android/systemui/qs/tiles/LocationTile;->refreshState()V
-
-    return-void
-.end method
-
-.method static synthetic access$600()Landroid/content/Intent;
+.method static synthetic access$800()Landroid/content/Intent;
     .locals 1
 
-    sget-object v0, Lcom/android/systemui/qs/tiles/LocationTile;->LOCATION_SETTINGS:Landroid/content/Intent;
+    sget-object v0, Lcom/android/systemui/qs/tiles/LocationTile;->LOCATION_SETTINGS_INTENT:Landroid/content/Intent;
 
     return-object v0
 .end method
 
-.method static synthetic access$700(Lcom/android/systemui/qs/tiles/LocationTile;)Landroid/content/Context;
+.method private getStateLabelRes(I)I
     .locals 1
 
-    iget-object v0, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mContext:Landroid/content/Context;
+    packed-switch p1, :pswitch_data_0
 
-    return-object v0
+    const v0, 0x7f0b00de
+
+    :goto_0
+    return v0
+
+    :pswitch_0
+    const v0, 0x7f0b00df
+
+    goto :goto_0
+
+    :pswitch_1
+    const v0, 0x7f0b01f8
+
+    goto :goto_0
+
+    :pswitch_2
+    const v0, 0x7f0b01f9
+
+    goto :goto_0
+
+    :pswitch_3
+    const v0, 0x7f0b01fa
+
+    goto :goto_0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+        :pswitch_2
+        :pswitch_1
+        :pswitch_3
+    .end packed-switch
 .end method
 
 
@@ -222,7 +323,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mHost:Lcom/android/systemui/qs/QSTile$Host;
 
-    sget-object v1, Lcom/android/systemui/qs/tiles/LocationTile;->LOCATION_SETTINGS:Landroid/content/Intent;
+    sget-object v1, Lcom/android/systemui/qs/tiles/LocationTile;->LOCATION_SETTINGS_INTENT:Landroid/content/Intent;
 
     invoke-interface {v0, v1}, Lcom/android/systemui/qs/QSTile$Host;->startSettingsActivity(Landroid/content/Intent;)V
 
@@ -262,17 +363,19 @@
 
     iput-boolean v1, p1, Lcom/android/systemui/qs/QSTile$BooleanState;->value:Z
 
-    packed-switch v0, :pswitch_data_0
-
     iget-object v2, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mContext:Landroid/content/Context;
 
-    const v3, 0x7f0b00de
+    invoke-direct {p0, v0}, Lcom/android/systemui/qs/tiles/LocationTile;->getStateLabelRes(I)I
+
+    move-result v3
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
     move-result-object v2
 
     iput-object v2, p1, Lcom/android/systemui/qs/QSTile$BooleanState;->label:Ljava/lang/String;
+
+    packed-switch v0, :pswitch_data_0
 
     iget-object v2, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mContext:Landroid/content/Context;
 
@@ -300,16 +403,6 @@
     :pswitch_0
     iget-object v2, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mContext:Landroid/content/Context;
 
-    const v3, 0x7f0b00df
-
-    invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    iput-object v2, p1, Lcom/android/systemui/qs/QSTile$BooleanState;->label:Ljava/lang/String;
-
-    iget-object v2, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mContext:Landroid/content/Context;
-
     const v3, 0x7f0b00a8
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
@@ -325,16 +418,6 @@
     goto :goto_2
 
     :pswitch_1
-    iget-object v2, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mContext:Landroid/content/Context;
-
-    const v3, 0x7f0b01f8
-
-    invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    iput-object v2, p1, Lcom/android/systemui/qs/QSTile$BooleanState;->label:Ljava/lang/String;
-
     iget-object v2, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mContext:Landroid/content/Context;
 
     const v3, 0x7f0b01ef
@@ -354,16 +437,6 @@
     :pswitch_2
     iget-object v2, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mContext:Landroid/content/Context;
 
-    const v3, 0x7f0b01f9
-
-    invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    iput-object v2, p1, Lcom/android/systemui/qs/QSTile$BooleanState;->label:Ljava/lang/String;
-
-    iget-object v2, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mContext:Landroid/content/Context;
-
     const v3, 0x7f0b01f0
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
@@ -379,16 +452,6 @@
     :pswitch_3
     iget-object v2, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mContext:Landroid/content/Context;
 
-    const v3, 0x7f0b01fa
-
-    invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    iput-object v2, p1, Lcom/android/systemui/qs/QSTile$BooleanState;->label:Ljava/lang/String;
-
-    iget-object v2, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mContext:Landroid/content/Context;
-
     const v3, 0x7f0b01f1
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
@@ -400,6 +463,8 @@
     iput v5, p1, Lcom/android/systemui/qs/QSTile$BooleanState;->iconId:I
 
     goto :goto_2
+
+    nop
 
     :pswitch_data_0
     .packed-switch 0x0
