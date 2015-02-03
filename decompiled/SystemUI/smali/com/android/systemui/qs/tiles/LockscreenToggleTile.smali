@@ -311,7 +311,7 @@
 
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/LockscreenToggleTile;->mContext:Landroid/content/Context;
 
-    const v2, 0x7f0b020b
+    const v2, 0x7f0b0201
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

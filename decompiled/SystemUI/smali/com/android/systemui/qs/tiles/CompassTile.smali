@@ -124,7 +124,7 @@
 
     iget-object v2, p0, Lcom/android/systemui/qs/tiles/CompassTile;->mContext:Landroid/content/Context;
 
-    const v3, 0x7f0b0208
+    const v3, 0x7f0b01ff
 
     const/4 v4, 0x2
 
@@ -358,7 +358,7 @@
     :cond_2
     iget-object v3, p0, Lcom/android/systemui/qs/tiles/CompassTile;->mContext:Landroid/content/Context;
 
-    const v5, 0x7f0b020a
+    const v5, 0x7f0b0200
 
     invoke-virtual {v3, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -379,7 +379,7 @@
 
     iget-object v3, p0, Lcom/android/systemui/qs/tiles/CompassTile;->mContext:Landroid/content/Context;
 
-    const v5, 0x7f0b0209
+    const v5, 0x7f0b01fe
 
     invoke-virtual {v3, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

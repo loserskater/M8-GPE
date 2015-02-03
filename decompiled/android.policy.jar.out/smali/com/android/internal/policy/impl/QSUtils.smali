@@ -189,7 +189,7 @@
 
     sget-boolean v5, Lcom/android/internal/policy/impl/QSUtils;->sAvailableTilesFiltered:Z
 
-    if-nez v5, :cond_8
+    if-nez v5, :cond_7
 
     sget-object v5, Lcom/android/internal/policy/impl/QSConstants;->TILES_AVAILABLE:Ljava/util/ArrayList;
 
@@ -203,7 +203,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_7
+    if-eqz v5, :cond_6
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -340,6 +340,19 @@
 
     goto :goto_1
 
+    :sswitch_8
+    const-string v6, "lockscreen"
+
+    invoke-virtual {v2, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v6
+
+    if-eqz v6, :cond_1
+
+    const/16 v5, 0x8
+
+    goto :goto_1
+
     :pswitch_0
     invoke-static {p0}, Lcom/android/internal/policy/impl/QSUtils;->deviceSupportsFlashLight(Landroid/content/Context;)Z
 
@@ -384,7 +397,7 @@
     move v1, v3
 
     :goto_5
-    goto :goto_2
+    goto/16 :goto_2
 
     :cond_4
     move v1, v4
@@ -401,7 +414,7 @@
     move v1, v3
 
     :goto_6
-    goto :goto_2
+    goto/16 :goto_2
 
     :cond_5
     move v1, v4
@@ -409,31 +422,14 @@
     goto :goto_6
 
     :pswitch_4
-    invoke-static {p0}, Lcom/android/internal/policy/impl/QSUtils;->isAudioFXInstalled(Landroid/content/Context;)Z
-
-    move-result v5
-
-    if-nez v5, :cond_6
-
-    move v1, v3
-
-    :goto_7
-    goto/16 :goto_2
-
-    :cond_6
-    move v1, v4
-
-    goto :goto_7
-
-    :pswitch_5
     const/4 v1, 0x1
 
     goto/16 :goto_2
 
-    :cond_7
+    :cond_6
     sput-boolean v3, Lcom/android/internal/policy/impl/QSUtils;->sAvailableTilesFiltered:Z
 
-    :cond_8
+    :cond_7
     return-void
 
     :sswitch_data_0
@@ -446,6 +442,7 @@
         0x1a3dd -> :sswitch_5
         0x1a9ab -> :sswitch_2
         0x38a73d12 -> :sswitch_3
+        0x6adcb957 -> :sswitch_8
     .end sparse-switch
 
     :pswitch_data_0
@@ -455,9 +452,10 @@
         :pswitch_2
         :pswitch_3
         :pswitch_4
-        :pswitch_5
-        :pswitch_5
-        :pswitch_5
+        :pswitch_4
+        :pswitch_4
+        :pswitch_4
+        :pswitch_4
     .end packed-switch
 .end method
 
@@ -520,34 +518,4 @@
     move-result-object v1
 
     return-object v1
-.end method
-
-.method private static isAudioFXInstalled(Landroid/content/Context;)Z
-    .locals 5
-    .param p0    # Landroid/content/Context;
-
-    const/4 v2, 0x1
-
-    invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
-
-    move-result-object v1
-
-    :try_start_0
-    const-string v3, "org.cyanogenmod.audiofx"
-
-    const/4 v4, 0x1
-
-    invoke-virtual {v1, v3, v4}, Landroid/content/pm/PackageManager;->getPackageInfo(Ljava/lang/String;I)Landroid/content/pm/PackageInfo;
-    :try_end_0
-    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
-
-    :goto_0
-    return v2
-
-    :catch_0
-    move-exception v0
-
-    const/4 v2, 0x0
-
-    goto :goto_0
 .end method
