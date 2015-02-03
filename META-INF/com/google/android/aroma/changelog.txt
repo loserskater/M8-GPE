@@ -1,11 +1,9 @@
 <b>*New Additions</b>
-Multi-Carrier support (beta) needs testing.
-Network traffic meter
-Nav bar height (*requires a reboot)
-Sense camera and gallery
-ElementalX kernel
-Recents clear all FAB moved to center, added fade in animation.
-.75 to animations
+Customizable quick settings
+Disable signature verification
+CodeCraft and Elite kernels for verizon/sprint
+Sense video player
+Started cleanup of extra settings
 <b>*Fixes</b>
-Battery mod
-HTC keyboard
+Multi-carrier support
+FCs in apps like PowerAmp
