@@ -69,6 +69,7 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "4" then
 	  package_extract_dir("aroma/kernels/codecraft/system", "/system");
       symlink("/system/lib/modules/pronto/pronto_wlan.ko", "/system/lib/modules/wlan.ko");
       package_extract_file("aroma/kernels/codecraft/boot.img", "/dev/block/platform/msm_sdcc.1/by-name/boot");
+    endif;
   endif;
   if file_getprop("/tmp/aroma/kernel.prop","selected.1") == "4" then
       ui_print("@Installing Elite by buckmarble");
