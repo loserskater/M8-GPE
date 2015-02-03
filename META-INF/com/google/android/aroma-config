@@ -546,10 +546,9 @@ if prop("type.prop","selected")=="2"||prop("type.prop","selected")=="4" then
         "kernel.prop",
   
       "Kernel Options", "",                        2,
-      "Default",    "Stock kernel",                1,     #-- selected.1 = 1
-      "Quantum",    "Kernel by PwnCakes193",       0,     #-- selected.1 = 2
-      "CodeCraft",  "Kernel by Evolutionmods",     0,     #-- selected.1 = 3
-      "Elite",      "Kernel by buckmarble",        0      #-- selected.1 = 4
+      "Quantum",    "Kernel by PwnCakes193",       0,     #-- selected.1 = 1
+      "CodeCraft",  "Kernel by Evolutionmods",     1,     #-- selected.1 = 2
+      "Elite",      "Kernel by buckmarble",        0      #-- selected.1 = 3
     );
     write(
       #-- Absolute path into the file
