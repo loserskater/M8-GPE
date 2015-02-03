@@ -1308,6 +1308,7 @@
     <public type="string" name="quick_settings_lte_label" id="0x7f0b0203" />
     <public type="string" name="quick_settings_visualizer_label" id="0x7f0b0204" />
     <public type="string" name="quick_settings_screen_timeout_detail_title" id="0x7f0b0205" />
+    <public type="string" name="status_bar_expanded_header_weather_format" id="0x7f0b0206" />
     <public type="string" name="status_bar_date_formatter" id="0x7f0b0006" />
     <public type="string" name="toast_rotation_locked" id="0x7f0b0158" />
     <public type="string" name="APKTOOL_DUMMY_0159" id="0x7f0b0159" />
@@ -1606,6 +1607,7 @@
     <public type="dimen" name="visualizer_path_effect_1" id="0x7f0c0121" />
     <public type="dimen" name="visualizer_path_effect_2" id="0x7f0c0122" />
     <public type="dimen" name="visualizer_path_stroke_width" id="0x7f0c0123" />
+    <public type="dimen" name="weather_text_size" id="0x7f0c0124" />
     <public type="dimen" name="peek_height" id="0x7f0c00b9" />
     <public type="dimen" name="keyguard_pattern_unlock_status_line_font_size" id="0x7f0c0116" />
     <public type="dimen" name="notification_panel_min_height" id="0x7f0c00ba" />
@@ -1930,6 +1932,9 @@
     <public type="id" name="radio_battery_saving" id="0x7f0e0131" />
     <public type="id" name="radio_sensors_only" id="0x7f0e0132" />
     <public type="id" name="networkTraffic" id="0x7f0e0133" />
+    <public type="id" name="weather_container" id="0x7f0e0134" />
+    <public type="id" name="weather_line_1" id="0x7f0e0135" />
+    <public type="id" name="weather_line_2" id="0x7f0e0136" />
     <public type="plurals" name="status_bar_accessibility_recent_apps" id="0x7f0f0000" />
     <public type="plurals" name="kg_password_wrong_pin_code" id="0x7f0f0001" />
     <public type="plurals" name="kg_password_wrong_puk_code" id="0x7f0f0002" />

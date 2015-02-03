@@ -281,4 +281,5 @@
     <dimen name="visualizer_path_effect_1">6.0dip</dimen>
     <dimen name="visualizer_path_effect_2">1.0dip</dimen>
     <dimen name="visualizer_path_stroke_width">6.0dip</dimen>
+    <dimen name="weather_text_size">12.0sp</dimen>
 </resources>

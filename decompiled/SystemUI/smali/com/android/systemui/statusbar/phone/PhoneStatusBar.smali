@@ -344,6 +344,8 @@
 
 .field private mWaitingForKeyguardExit:Z
 
+.field mWeatherController:Lcom/android/systemui/statusbar/policy/WeatherControllerImpl;
+
 .field mZenModeController:Lcom/android/systemui/statusbar/policy/ZenModeController;
 
 
@@ -9809,6 +9811,18 @@
 
     iput-object v3, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mUserSwitcherController:Lcom/android/systemui/statusbar/policy/UserSwitcherController;
 
+    new-instance v3, Lcom/android/systemui/statusbar/policy/WeatherControllerImpl;
+
+    move-object/from16 v0, p0
+
+    iget-object v4, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mContext:Landroid/content/Context;
+
+    invoke-direct {v3, v4}, Lcom/android/systemui/statusbar/policy/WeatherControllerImpl;-><init>(Landroid/content/Context;)V
+
+    move-object/from16 v0, p0
+
+    iput-object v3, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mWeatherController:Lcom/android/systemui/statusbar/policy/WeatherControllerImpl;
+
     new-instance v2, Lcom/android/systemui/statusbar/policy/KeyguardUserSwitcher;
 
     move-object/from16 v0, p0
@@ -10075,6 +10089,16 @@
     iget-object v4, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mNextAlarmController:Lcom/android/systemui/statusbar/policy/NextAlarmController;
 
     invoke-virtual {v3, v4}, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->setNextAlarmController(Lcom/android/systemui/statusbar/policy/NextAlarmController;)V
+
+    move-object/from16 v0, p0
+
+    iget-object v3, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mHeader:Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;
+
+    move-object/from16 v0, p0
+
+    iget-object v4, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mWeatherController:Lcom/android/systemui/statusbar/policy/WeatherControllerImpl;
+
+    invoke-virtual {v3, v4}, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->setWeatherController(Lcom/android/systemui/statusbar/policy/WeatherController;)V
 
     move-object/from16 v0, p0
 

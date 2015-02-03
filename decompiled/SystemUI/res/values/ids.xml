@@ -281,4 +281,7 @@
     <item type="id" name="radio_battery_saving">false</item>
     <item type="id" name="radio_sensors_only">false</item>
     <item type="id" name="networkTraffic">false</item>
+    <item type="id" name="weather_container">false</item>
+    <item type="id" name="weather_line_1">false</item>
+    <item type="id" name="weather_line_2">false</item>
 </resources>

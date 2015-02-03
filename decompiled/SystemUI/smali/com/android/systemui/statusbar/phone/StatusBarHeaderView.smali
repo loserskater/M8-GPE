@@ -6,6 +6,7 @@
 .implements Landroid/view/View$OnClickListener;
 .implements Lcom/android/systemui/statusbar/policy/BatteryController$BatteryStateChangeCallback;
 .implements Lcom/android/systemui/statusbar/policy/NextAlarmController$NextAlarmChangeCallback;
+.implements Lcom/android/systemui/statusbar/policy/WeatherController$Callback;
 
 
 # annotations
@@ -108,6 +109,8 @@
 
 .field private mShowEmergencyCallsOnly:Z
 
+.field private mShowWeather:Z
+
 .field private mShowingDetail:Z
 
 .field private mSignalCluster:Landroid/view/View;
@@ -121,6 +124,14 @@
 .field private mSystemIconsSuperContainer:Landroid/view/View;
 
 .field private mTime:Landroid/widget/TextView;
+
+.field private mWeatherContainer:Landroid/view/ViewGroup;
+
+.field private mWeatherController:Lcom/android/systemui/statusbar/policy/WeatherController;
+
+.field private mWeatherLine1:Landroid/widget/TextView;
+
+.field private mWeatherLine2:Landroid/widget/TextView;
 
 
 # direct methods
@@ -199,12 +210,36 @@
 .method static synthetic access$1300(Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;)Z
     .locals 1
 
+    iget-boolean v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->mShowWeather:Z
+
+    return v0
+.end method
+
+.method static synthetic access$1302(Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;Z)Z
+    .locals 0
+
+    iput-boolean p1, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->mShowWeather:Z
+
+    return p1
+.end method
+
+.method static synthetic access$1400(Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;)Landroid/view/ViewGroup;
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->mWeatherContainer:Landroid/view/ViewGroup;
+
+    return-object v0
+.end method
+
+.method static synthetic access$1500(Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;)Z
+    .locals 1
+
     iget-boolean v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->mAlarmShowing:Z
 
     return v0
 .end method
 
-.method static synthetic access$1400(Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;)Landroid/widget/TextView;
+.method static synthetic access$1600(Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;)Landroid/widget/TextView;
     .locals 1
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->mAlarmStatus:Landroid/widget/TextView;
@@ -212,7 +247,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$1500(Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;)Landroid/view/View;
+.method static synthetic access$1700(Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;)Landroid/view/View;
     .locals 1
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->mQsDetailHeader:Landroid/view/View;
@@ -220,7 +255,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$1602(Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;Z)Z
+.method static synthetic access$1802(Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;Z)Z
     .locals 0
 
     iput-boolean p1, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->mShowingDetail:Z
@@ -228,7 +263,7 @@
     return p1
 .end method
 
-.method static synthetic access$1700(Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;)Landroid/widget/TextView;
+.method static synthetic access$1900(Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;)Landroid/widget/TextView;
     .locals 1
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->mQsDetailHeaderTitle:Landroid/widget/TextView;
@@ -404,6 +439,12 @@
     iget v1, p1, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$LayoutValues;->dateY:F
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setY(F)V
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->mWeatherContainer:Landroid/view/ViewGroup;
+
+    iget v1, p1, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$LayoutValues;->weatherY:F
+
+    invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setY(F)V
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->mAlarmStatus:Landroid/widget/TextView;
 
@@ -638,6 +679,18 @@
 
     invoke-direct {p0, v0, v1}, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->applyAlpha(Landroid/view/View;F)V
 
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->mWeatherLine1:Landroid/widget/TextView;
+
+    iget v1, p1, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$LayoutValues;->settingsAlpha:F
+
+    invoke-direct {p0, v0, v1}, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->applyAlpha(Landroid/view/View;F)V
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->mWeatherLine2:Landroid/widget/TextView;
+
+    iget v1, p1, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$LayoutValues;->settingsAlpha:F
+
+    invoke-direct {p0, v0, v1}, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->applyAlpha(Landroid/view/View;F)V
+
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->mSignalCluster:Landroid/view/View;
 
     iget v1, p1, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$LayoutValues;->signalClusterAlpha:F
@@ -830,6 +883,24 @@
     int-to-float v0, v0
 
     iput v0, p1, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$LayoutValues;->avatarY:F
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->mClock:Landroid/view/View;
+
+    invoke-virtual {v0}, Landroid/view/View;->getBottom()I
+
+    move-result v0
+
+    iget-object v3, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->mWeatherLine1:Landroid/widget/TextView;
+
+    invoke-virtual {v3}, Landroid/widget/TextView;->getHeight()I
+
+    move-result v3
+
+    sub-int/2addr v0, v3
+
+    int-to-float v0, v0
+
+    iput v0, p1, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$LayoutValues;->weatherY:F
 
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->getLayoutDirection()I
 
@@ -1228,6 +1299,32 @@
     return-void
 .end method
 
+.method private startForecastActivity()V
+    .locals 3
+
+    new-instance v0, Landroid/content/Intent;
+
+    const-string v1, "android.intent.action.MAIN"
+
+    invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+
+    const/high16 v1, 0x10000000
+
+    invoke-virtual {v0, v1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
+
+    sget-object v1, Lcom/android/systemui/statusbar/policy/WeatherControllerImpl;->COMPONENT_WEATHER_FORECAST:Landroid/content/ComponentName;
+
+    invoke-virtual {v0, v1}, Landroid/content/Intent;->setComponent(Landroid/content/ComponentName;)Landroid/content/Intent;
+
+    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->mActivityStarter:Lcom/android/systemui/statusbar/phone/ActivityStarter;
+
+    const/4 v2, 0x1
+
+    invoke-interface {v1, v0, v2}, Lcom/android/systemui/statusbar/phone/ActivityStarter;->startActivity(Landroid/content/Intent;Z)V
+
+    return-void
+.end method
+
 .method private startSettingsActivity()V
     .locals 3
 
@@ -1611,6 +1708,10 @@
 
     invoke-virtual {v0, p0}, Lcom/android/systemui/statusbar/policy/NextAlarmController;->addStateChangedCallback(Lcom/android/systemui/statusbar/policy/NextAlarmController$NextAlarmChangeCallback;)V
 
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->mWeatherController:Lcom/android/systemui/statusbar/policy/WeatherController;
+
+    invoke-interface {v0, p0}, Lcom/android/systemui/statusbar/policy/WeatherController;->addCallback(Lcom/android/systemui/statusbar/policy/WeatherController$Callback;)V
+
     :goto_0
     return-void
 
@@ -1622,6 +1723,10 @@
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->mNextAlarmController:Lcom/android/systemui/statusbar/policy/NextAlarmController;
 
     invoke-virtual {v0, p0}, Lcom/android/systemui/statusbar/policy/NextAlarmController;->removeStateChangedCallback(Lcom/android/systemui/statusbar/policy/NextAlarmController$NextAlarmChangeCallback;)V
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->mWeatherController:Lcom/android/systemui/statusbar/policy/WeatherController;
+
+    invoke-interface {v0, p0}, Lcom/android/systemui/statusbar/policy/WeatherController;->removeCallback(Lcom/android/systemui/statusbar/policy/WeatherController$Callback;)V
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->mSettingsObserver:Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$SettingsObserver;
 
@@ -1827,6 +1932,21 @@
     :goto_3
     invoke-virtual {v4, v0}, Landroid/view/View;->setVisibility(I)V
 
+    iget-object v4, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->mWeatherContainer:Landroid/view/ViewGroup;
+
+    iget-boolean v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->mExpanded:Z
+
+    if-eqz v0, :cond_8
+
+    iget-boolean v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->mShowWeather:Z
+
+    if-eqz v0, :cond_8
+
+    move v0, v1
+
+    :goto_4
+    invoke-virtual {v4, v0}, Landroid/view/ViewGroup;->setVisibility(I)V
+
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->mQsDetailHeader:Landroid/view/View;
 
     iget-boolean v4, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->mExpanded:Z
@@ -1861,7 +1981,7 @@
 
     move v0, v1
 
-    :goto_4
+    :goto_5
     invoke-virtual {v2, v0}, Landroid/widget/TextView;->setVisibility(I)V
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->mBatteryLevel:Lcom/android/systemui/BatteryLevelTextView;
@@ -1876,7 +1996,7 @@
 
     const/4 v1, 0x1
 
-    :goto_5
+    :goto_6
     invoke-virtual {v0, v1}, Lcom/android/systemui/BatteryLevelTextView;->setForceShown(Z)V
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->mBatteryLevel:Lcom/android/systemui/BatteryLevelTextView;
@@ -1908,12 +2028,17 @@
     :cond_6
     move v0, v3
 
-    goto :goto_4
+    goto :goto_5
 
     :cond_7
     move v1, v3
 
-    goto :goto_5
+    goto :goto_6
+
+    :cond_8
+    move v0, v3
+
+    goto :goto_4
 .end method
 
 
@@ -1971,11 +2096,11 @@
     :cond_2
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->mAlarmStatus:Landroid/widget/TextView;
 
-    if-ne p1, v1, :cond_0
+    if-ne p1, v1, :cond_3
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->mNextAlarm:Landroid/app/AlarmManager$AlarmClockInfo;
 
-    if-eqz v1, :cond_0
+    if-eqz v1, :cond_3
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->mNextAlarm:Landroid/app/AlarmManager$AlarmClockInfo;
 
@@ -2000,6 +2125,15 @@
     const/4 v3, 0x1
 
     invoke-interface {v1, v2, v3}, Lcom/android/systemui/statusbar/phone/ActivityStarter;->startActivity(Landroid/content/Intent;Z)V
+
+    goto :goto_0
+
+    :cond_3
+    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->mWeatherContainer:Landroid/view/ViewGroup;
+
+    if-ne p1, v1, :cond_0
+
+    invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->startForecastActivity()V
 
     goto :goto_0
 .end method
@@ -2311,6 +2445,40 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->mSystemIcons:Landroid/widget/LinearLayout;
 
+    const v0, 0x7f0e0134
+
+    invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/LinearLayout;
+
+    iput-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->mWeatherContainer:Landroid/view/ViewGroup;
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->mWeatherContainer:Landroid/view/ViewGroup;
+
+    invoke-virtual {v0, p0}, Landroid/view/ViewGroup;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    const v0, 0x7f0e0135
+
+    invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/TextView;
+
+    iput-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->mWeatherLine1:Landroid/widget/TextView;
+
+    const v0, 0x7f0e0136
+
+    invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/TextView;
+
+    iput-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->mWeatherLine2:Landroid/widget/TextView;
+
     new-instance v0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$SettingsObserver;
 
     new-instance v1, Landroid/os/Handler;
@@ -2446,6 +2614,65 @@
     .locals 0
 
     return-void
+.end method
+
+.method public onWeatherChanged(Lcom/android/systemui/statusbar/policy/WeatherController$WeatherInfo;)V
+    .locals 6
+
+    iget-object v0, p1, Lcom/android/systemui/statusbar/policy/WeatherController$WeatherInfo;->temp:Ljava/lang/String;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p1, Lcom/android/systemui/statusbar/policy/WeatherController$WeatherInfo;->condition:Ljava/lang/String;
+
+    if-nez v0, :cond_1
+
+    :cond_0
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->mWeatherLine1:Landroid/widget/TextView;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    :goto_0
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->mWeatherLine2:Landroid/widget/TextView;
+
+    iget-object v1, p1, Lcom/android/systemui/statusbar/policy/WeatherController$WeatherInfo;->city:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    return-void
+
+    :cond_1
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->mWeatherLine1:Landroid/widget/TextView;
+
+    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->mContext:Landroid/content/Context;
+
+    const v2, 0x7f0b0206
+
+    const/4 v3, 0x2
+
+    new-array v3, v3, [Ljava/lang/Object;
+
+    const/4 v4, 0x0
+
+    iget-object v5, p1, Lcom/android/systemui/statusbar/policy/WeatherController$WeatherInfo;->temp:Ljava/lang/String;
+
+    aput-object v5, v3, v4
+
+    const/4 v4, 0x1
+
+    iget-object v5, p1, Lcom/android/systemui/statusbar/policy/WeatherController$WeatherInfo;->condition:Ljava/lang/String;
+
+    aput-object v5, v3, v4
+
+    invoke-virtual {v1, v2, v3}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    goto :goto_0
 .end method
 
 .method public setActivityStarter(Lcom/android/systemui/statusbar/phone/ActivityStarter;)V
@@ -2652,6 +2879,14 @@
     invoke-direct {v0, p0}, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$3;-><init>(Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;)V
 
     invoke-virtual {p1, v0}, Lcom/android/systemui/statusbar/policy/UserInfoController;->addListener(Lcom/android/systemui/statusbar/policy/UserInfoController$OnUserInfoChangedListener;)V
+
+    return-void
+.end method
+
+.method public setWeatherController(Lcom/android/systemui/statusbar/policy/WeatherController;)V
+    .locals 0
+
+    iput-object p1, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->mWeatherController:Lcom/android/systemui/statusbar/policy/WeatherController;
 
     return-void
 .end method

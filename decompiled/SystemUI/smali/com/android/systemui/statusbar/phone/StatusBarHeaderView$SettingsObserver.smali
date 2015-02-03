@@ -47,6 +47,14 @@
 
     move-result-object v0
 
+    const-string v1, "status_bar_show_weather"
+
+    invoke-static {v1}, Landroid/provider/Settings$System;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1, v2, p0}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
+
     const-string v1, "status_bar_battery_style"
 
     invoke-static {v1}, Landroid/provider/Settings$System;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
@@ -151,6 +159,20 @@
     # setter for: Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->mShowBatteryTextExpanded:Z
     invoke-static {v6, v3}, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->access$2302(Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;Z)Z
 
+    iget-object v6, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$SettingsObserver;->this$0:Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;
+
+    const-string v7, "status_bar_show_weather"
+
+    invoke-static {v2, v7, v4}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+
+    move-result v7
+
+    if-ne v7, v4, :cond_1
+
+    :goto_2
+    # setter for: Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->mShowWeather:Z
+    invoke-static {v6, v4}, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->access$1302(Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;Z)Z
+
     iget-object v4, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$SettingsObserver;->this$0:Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;
 
     # invokes: Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->updateVisibilities()V
@@ -172,6 +194,13 @@
     const/4 v3, 0x0
 
     goto :goto_1
+
+    :cond_1
+    move v4, v5
+
+    goto :goto_2
+
+    nop
 
     :pswitch_data_0
     .packed-switch 0x4
