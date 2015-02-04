@@ -69,4 +69,7 @@
     <color name="fab_color">#ffdc4c3c</color>
     <color name="floating_action_button_icon_color">#ffffffff</color>
     <color name="visualizer_fill_color">#96ffffff</color>
+    <color name="navigation_bar_background_opaque">@color/system_bar_background_opaque</color>
+    <color name="navigation_bar_background_semi_transparent">@color/system_bar_background_semi_transparent</color>
+    <color name="navigation_bar_background_transparent">@color/system_bar_background_transparent</color>
 </resources>

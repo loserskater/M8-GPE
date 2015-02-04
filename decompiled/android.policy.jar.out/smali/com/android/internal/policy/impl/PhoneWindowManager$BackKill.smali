@@ -54,7 +54,7 @@
 
     move-result v1
 
-    invoke-static {v0, v1}, Lcom/android/internal/policy/impl/BackKill;->killForegroundApp(Landroid/content/Context;I)Z
+    invoke-static {v0, v1}, Lcom/android/internal/policy/impl/ActionUtils;->killForegroundApp(Landroid/content/Context;I)Z
 
     move-result v0
 

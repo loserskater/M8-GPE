@@ -284,4 +284,16 @@
     <item type="id" name="weather_container">false</item>
     <item type="id" name="weather_line_1">false</item>
     <item type="id" name="weather_line_2">false</item>
+    <item type="id" name="one">false</item>
+    <item type="id" name="dpad_left">false</item>
+    <item type="id" name="mid_nav_buttons">false</item>
+    <item type="id" name="two">false</item>
+    <item type="id" name="three">false</item>
+    <item type="id" name="four">false</item>
+    <item type="id" name="five">false</item>
+    <item type="id" name="dpad_right">false</item>
+    <item type="id" name="six">false</item>
+    <item type="id" name="container">false</item>
+    <item type="id" name="key_icon">false</item>
+    <item type="id" name="key_text">false</item>
 </resources>

@@ -421,6 +421,11 @@
     <public type="drawable" name="ic_qs_data_on_2" id="0x7f020158" />
     <public type="drawable" name="ic_qs_roaming_off" id="0x7f020164" />
     <public type="drawable" name="ic_qs_roaming_on" id="0x7f020165" />
+    <public type="drawable" name="ic_sysbar_add_side" id="0x7f020189" />
+    <public type="drawable" name="ic_sysbar_back_ime_land" id="0x7f02018a" />
+    <public type="drawable" name="ic_sysbar_back_side" id="0x7f02018b" />
+    <public type="drawable" name="ic_sysbar_recent_side" id="0x7f020190" />
+    <public type="drawable" name="ic_sysbar_search_side" id="0x7f020193" />
     <public type="drawable" name="recents_task_shadow" id="0x7f0200ed" />
     <public type="drawable" name="ic_notify_clear_normal" id="0x7f02014e" />
     <public type="drawable" name="ic_qs_apn1" id="0x7f02014f" />
@@ -428,6 +433,14 @@
     <public type="drawable" name="stat_sys_network_traffic_down" id="0x7f02017a" />
     <public type="drawable" name="stat_sys_network_traffic_up" id="0x7f02017b" />
     <public type="drawable" name="stat_sys_network_traffic_updown" id="0x7f02017c" />
+    <public type="drawable" name="ic_sysbar_add" id="0x7f020187" />
+    <public type="drawable" name="ic_sysbar_add_land" id="0x7f020188" />
+    <public type="drawable" name="ic_sysbar_ime_left" id="0x7f02018c" />
+    <public type="drawable" name="ic_sysbar_ime_right" id="0x7f02018d" />
+    <public type="drawable" name="ic_sysbar_menu_big" id="0x7f02018e" />
+    <public type="drawable" name="ic_sysbar_menu_big_land" id="0x7f02018f" />
+    <public type="drawable" name="ic_sysbar_search" id="0x7f020191" />
+    <public type="drawable" name="ic_sysbar_search_land" id="0x7f020192" />
     <public type="drawable" name="APKTOOL_DUMMY_002d" id="0x7f02002d" />
     <public type="mipmap" name="ic_daydreams" id="0x7f030000" />
     <public type="mipmap" name="ic_launcher_dreams" id="0x7f030001" />
@@ -512,6 +525,9 @@
     <public type="layout" name="keyguard_eca" id="0x7f040050" />
     <public type="layout" name="floating_action_button" id="0x7f040051" />
     <public type="layout" name="qs_detail_items_list" id="0x7f040052" />
+    <public type="layout" name="mid_navigation_bar_land" id="0x7f040053" />
+    <public type="layout" name="mid_navigation_bar_port" id="0x7f040054" />
+    <public type="layout" name="navigation_bar_edit_menu_item" id="0x7f040055" />
     <public type="layout" name="keyguard_host_view" id="0x7f04000d" />
     <public type="layout" name="keyguard_widget_pager" id="0x7f040021" />
     <public type="anim" name="heads_up_enter" id="0x7f050000" />
@@ -648,6 +664,9 @@
     <public type="color" name="fab_color" id="0x7f070044" />
     <public type="color" name="floating_action_button_icon_color" id="0x7f070045" />
     <public type="color" name="visualizer_fill_color" id="0x7f070046" />
+    <public type="color" name="navigation_bar_background_opaque" id="0x7f070047" />
+    <public type="color" name="navigation_bar_background_semi_transparent" id="0x7f070048" />
+    <public type="color" name="navigation_bar_background_transparent" id="0x7f070049" />
     <public type="bool" name="config_recents_interface_for_tablets" id="0x7f080000" />
     <public type="bool" name="config_recents_thumbnail_image_fits_to_xy" id="0x7f080001" />
     <public type="bool" name="config_recents_use_hardware_layers" id="0x7f080002" />
@@ -1309,6 +1328,17 @@
     <public type="string" name="quick_settings_visualizer_label" id="0x7f0b0204" />
     <public type="string" name="quick_settings_screen_timeout_detail_title" id="0x7f0b0205" />
     <public type="string" name="status_bar_expanded_header_weather_format" id="0x7f0b0206" />
+    <public type="string" name="navbar_dialog_title" id="0x7f0b0207" />
+    <public type="string" name="navbar_home_button" id="0x7f0b0208" />
+    <public type="string" name="navbar_recent_button" id="0x7f0b0209" />
+    <public type="string" name="navbar_search_button" id="0x7f0b020a" />
+    <public type="string" name="navbar_back_button" id="0x7f0b020b" />
+    <public type="string" name="navbar_empty_button" id="0x7f0b020c" />
+    <public type="string" name="navbar_menu_conditional_button" id="0x7f0b020d" />
+    <public type="string" name="navbar_menu_always_button" id="0x7f0b020e" />
+    <public type="string" name="navbar_menu_big_button" id="0x7f0b020f" />
+    <public type="string" name="accessibility_dpad_left" id="0x7f0b0210" />
+    <public type="string" name="accessibility_dpad_right" id="0x7f0b0211" />
     <public type="string" name="status_bar_date_formatter" id="0x7f0b0006" />
     <public type="string" name="toast_rotation_locked" id="0x7f0b0158" />
     <public type="string" name="APKTOOL_DUMMY_0159" id="0x7f0b0159" />
@@ -1935,6 +1965,18 @@
     <public type="id" name="weather_container" id="0x7f0e0134" />
     <public type="id" name="weather_line_1" id="0x7f0e0135" />
     <public type="id" name="weather_line_2" id="0x7f0e0136" />
+    <public type="id" name="one" id="0x7f0e0137" />
+    <public type="id" name="dpad_left" id="0x7f0e0138" />
+    <public type="id" name="mid_nav_buttons" id="0x7f0e0139" />
+    <public type="id" name="two" id="0x7f0e013a" />
+    <public type="id" name="three" id="0x7f0e013b" />
+    <public type="id" name="four" id="0x7f0e013c" />
+    <public type="id" name="five" id="0x7f0e013d" />
+    <public type="id" name="dpad_right" id="0x7f0e013e" />
+    <public type="id" name="six" id="0x7f0e013f" />
+    <public type="id" name="container" id="0x7f0e0140" />
+    <public type="id" name="key_icon" id="0x7f0e0141" />
+    <public type="id" name="key_text" id="0x7f0e0142" />
     <public type="plurals" name="status_bar_accessibility_recent_apps" id="0x7f0f0000" />
     <public type="plurals" name="kg_password_wrong_pin_code" id="0x7f0f0001" />
     <public type="plurals" name="kg_password_wrong_puk_code" id="0x7f0f0002" />

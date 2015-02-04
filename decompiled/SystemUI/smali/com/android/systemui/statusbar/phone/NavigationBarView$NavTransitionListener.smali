@@ -57,13 +57,17 @@
 
     const/4 v2, 0x0
 
-    invoke-virtual {p3}, Landroid/view/View;->getId()I
+    sget-object v0, Lcom/android/systemui/statusbar/phone/NavbarEditor;->NAVBAR_BACK:Lcom/android/systemui/statusbar/phone/NavbarEditor$ButtonInfo;
+
+    invoke-virtual {p3}, Landroid/view/View;->getTag()Ljava/lang/Object;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    const v1, 0x7f0e009f
-
-    if-ne v0, v1, :cond_1
+    if-eqz v0, :cond_1
 
     iput-boolean v2, p0, Lcom/android/systemui/statusbar/phone/NavigationBarView$NavTransitionListener;->mBackTransitioning:Z
 
@@ -72,13 +76,17 @@
     return-void
 
     :cond_1
-    invoke-virtual {p3}, Landroid/view/View;->getId()I
+    sget-object v0, Lcom/android/systemui/statusbar/phone/NavbarEditor;->NAVBAR_HOME:Lcom/android/systemui/statusbar/phone/NavbarEditor$ButtonInfo;
+
+    invoke-virtual {p3}, Landroid/view/View;->getTag()Ljava/lang/Object;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    const v1, 0x7f0e00a0
-
-    if-ne v0, v1, :cond_0
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x2
 
@@ -185,13 +193,17 @@
 
     const/4 v2, 0x1
 
-    invoke-virtual {p3}, Landroid/view/View;->getId()I
+    sget-object v0, Lcom/android/systemui/statusbar/phone/NavbarEditor;->NAVBAR_BACK:Lcom/android/systemui/statusbar/phone/NavbarEditor$ButtonInfo;
+
+    invoke-virtual {p3}, Landroid/view/View;->getTag()Ljava/lang/Object;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    const v1, 0x7f0e009f
-
-    if-ne v0, v1, :cond_1
+    if-eqz v0, :cond_1
 
     iput-boolean v2, p0, Lcom/android/systemui/statusbar/phone/NavigationBarView$NavTransitionListener;->mBackTransitioning:Z
 
@@ -200,13 +212,17 @@
     return-void
 
     :cond_1
-    invoke-virtual {p3}, Landroid/view/View;->getId()I
+    sget-object v0, Lcom/android/systemui/statusbar/phone/NavbarEditor;->NAVBAR_HOME:Lcom/android/systemui/statusbar/phone/NavbarEditor$ButtonInfo;
+
+    invoke-virtual {p3}, Landroid/view/View;->getTag()Ljava/lang/Object;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    const v1, 0x7f0e00a0
-
-    if-ne v0, v1, :cond_0
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x2
 
