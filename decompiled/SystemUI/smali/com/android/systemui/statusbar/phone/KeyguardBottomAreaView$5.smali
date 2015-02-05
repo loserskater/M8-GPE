@@ -15,7 +15,7 @@
 
 
 # static fields
-.field static final synthetic $SwitchMap$com$android$internal$util$cm$LockscreenShortcutsHelper$Shortcuts:[I
+.field static final synthetic $SwitchMap$com$android$internal$policy$impl$LockscreenShortcutsHelper$Shortcuts:[I
 
 
 # direct methods
@@ -30,10 +30,10 @@
 
     new-array v0, v0, [I
 
-    sput-object v0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$5;->$SwitchMap$com$android$internal$util$cm$LockscreenShortcutsHelper$Shortcuts:[I
+    sput-object v0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$5;->$SwitchMap$com$android$internal$policy$impl$LockscreenShortcutsHelper$Shortcuts:[I
 
     :try_start_0
-    sget-object v0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$5;->$SwitchMap$com$android$internal$util$cm$LockscreenShortcutsHelper$Shortcuts:[I
+    sget-object v0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$5;->$SwitchMap$com$android$internal$policy$impl$LockscreenShortcutsHelper$Shortcuts:[I
 
     sget-object v1, Lcom/android/internal/policy/impl/LockscreenShortcutsHelper$Shortcuts;->LEFT_SHORTCUT:Lcom/android/internal/policy/impl/LockscreenShortcutsHelper$Shortcuts;
 
@@ -49,7 +49,7 @@
 
     :goto_0
     :try_start_1
-    sget-object v0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$5;->$SwitchMap$com$android$internal$util$cm$LockscreenShortcutsHelper$Shortcuts:[I
+    sget-object v0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$5;->$SwitchMap$com$android$internal$policy$impl$LockscreenShortcutsHelper$Shortcuts:[I
 
     sget-object v1, Lcom/android/internal/policy/impl/LockscreenShortcutsHelper$Shortcuts;->RIGHT_SHORTCUT:Lcom/android/internal/policy/impl/LockscreenShortcutsHelper$Shortcuts;
 

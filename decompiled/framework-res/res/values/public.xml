@@ -5303,6 +5303,8 @@
     <public type="string" name="apm_bootloader_summary" id="0x010406cc" />
     <public type="string" name="apm_safemode" id="0x010406cd" />
     <public type="string" name="apm_safemode_summary" id="0x010406ce" />
+    <public type="string" name="permlab_accessTorchService" id="0x010406cf" />
+    <public type="string" name="permdesc_accessTorchService" id="0x010406d0" />
     <public type="string" name="APKTOOL_DUMMY_0681" id="0x01040681" />
     <public type="string" name="APKTOOL_DUMMY_0682" id="0x01040682" />
     <public type="string" name="APKTOOL_DUMMY_0683" id="0x01040683" />

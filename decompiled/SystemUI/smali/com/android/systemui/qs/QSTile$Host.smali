@@ -30,9 +30,6 @@
 .method public abstract getContext()Landroid/content/Context;
 .end method
 
-.method public abstract getFlashlightController()Lcom/android/systemui/statusbar/policy/FlashlightController;
-.end method
-
 .method public abstract getHotspotController()Lcom/android/systemui/statusbar/policy/HotspotController;
 .end method
 

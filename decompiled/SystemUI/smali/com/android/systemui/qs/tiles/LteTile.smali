@@ -100,7 +100,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/LteTile;->mContext:Landroid/content/Context;
 
-    invoke-static {v0}, Lcom/android/internal/util/cm/QSUtils;->deviceSupportsLte(Landroid/content/Context;)Z
+    invoke-static {v0}, Lcom/android/internal/policy/impl/QSUtils;->deviceSupportsLte(Landroid/content/Context;)Z
 
     move-result v0
 
@@ -108,7 +108,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/LteTile;->mContext:Landroid/content/Context;
 
-    invoke-static {v0}, Lcom/android/internal/util/cm/QSUtils;->deviceSupportsDdsSupported(Landroid/content/Context;)Z
+    invoke-static {v0}, Lcom/android/internal/policy/impl/QSUtils;->deviceSupportsDdsSupported(Landroid/content/Context;)Z
 
     move-result v0
 

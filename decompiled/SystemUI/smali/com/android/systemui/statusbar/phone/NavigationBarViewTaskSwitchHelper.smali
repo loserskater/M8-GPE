@@ -187,9 +187,9 @@
 .method public onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 9
 
-    const/4 v1, 0x0
+    const/4 v1, 0x1
 
-    const/4 v7, 0x1
+    const/4 v7, 0x0
 
     iget-object v8, p0, Lcom/android/systemui/statusbar/phone/NavigationBarViewTaskSwitchHelper;->mTaskSwitcherDetector:Landroid/view/GestureDetector;
 
@@ -205,7 +205,6 @@
 
     packed-switch v8, :pswitch_data_0
 
-    :cond_0
     :goto_0
     :pswitch_0
     return v2
@@ -268,23 +267,23 @@
 
     if-le v4, v6, :cond_1
 
-    move v1, v7
+    :cond_0
+    :goto_1
+    goto :goto_0
 
     :cond_1
-    :goto_1
-    if-eqz v1, :cond_0
+    move v1, v7
 
-    move v2, v7
-
-    goto :goto_0
+    goto :goto_1
 
     :cond_2
     iget v8, p0, Lcom/android/systemui/statusbar/phone/NavigationBarViewTaskSwitchHelper;->mScrollTouchSlop:I
 
-    if-le v6, v8, :cond_1
+    if-le v6, v8, :cond_3
 
-    if-le v6, v4, :cond_1
+    if-gt v6, v4, :cond_0
 
+    :cond_3
     move v1, v7
 
     goto :goto_1

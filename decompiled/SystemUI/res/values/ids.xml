@@ -296,4 +296,9 @@
     <item type="id" name="container">false</item>
     <item type="id" name="key_icon">false</item>
     <item type="id" name="key_text">false</item>
+    <item type="id" name="nav_ring_edit">false</item>
+    <item type="id" name="one_parent">false</item>
+    <item type="id" name="search_logo1">false</item>
+    <item type="id" name="two_parent">false</item>
+    <item type="id" name="search_logo2">false</item>
 </resources>

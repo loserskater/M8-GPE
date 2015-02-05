@@ -1,11 +1,11 @@
 .class Lcom/android/systemui/SearchPanelCircleView$4;
-.super Landroid/view/ViewOutlineProvider;
+.super Landroid/animation/AnimatorListenerAdapter;
 .source "SearchPanelCircleView.java"
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/systemui/SearchPanelCircleView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;II)V
+    value = Lcom/android/systemui/SearchPanelCircleView;->setCircleSize(FZLjava/lang/Runnable;ILandroid/view/animation/Interpolator;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -17,59 +17,35 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/systemui/SearchPanelCircleView;
 
+.field final synthetic val$endRunnable:Ljava/lang/Runnable;
+
 
 # direct methods
-.method constructor <init>(Lcom/android/systemui/SearchPanelCircleView;)V
+.method constructor <init>(Lcom/android/systemui/SearchPanelCircleView;Ljava/lang/Runnable;)V
     .locals 0
 
     iput-object p1, p0, Lcom/android/systemui/SearchPanelCircleView$4;->this$0:Lcom/android/systemui/SearchPanelCircleView;
 
-    invoke-direct {p0}, Landroid/view/ViewOutlineProvider;-><init>()V
+    iput-object p2, p0, Lcom/android/systemui/SearchPanelCircleView$4;->val$endRunnable:Ljava/lang/Runnable;
+
+    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public getOutline(Landroid/view/View;Landroid/graphics/Outline;)V
-    .locals 2
+.method public onAnimationEnd(Landroid/animation/Animator;)V
+    .locals 1
 
-    iget-object v0, p0, Lcom/android/systemui/SearchPanelCircleView$4;->this$0:Lcom/android/systemui/SearchPanelCircleView;
+    iget-object v0, p0, Lcom/android/systemui/SearchPanelCircleView$4;->val$endRunnable:Ljava/lang/Runnable;
 
-    # getter for: Lcom/android/systemui/SearchPanelCircleView;->mCircleSize:F
-    invoke-static {v0}, Lcom/android/systemui/SearchPanelCircleView;->access$300(Lcom/android/systemui/SearchPanelCircleView;)F
+    if-eqz v0, :cond_0
 
-    move-result v0
+    iget-object v0, p0, Lcom/android/systemui/SearchPanelCircleView$4;->val$endRunnable:Ljava/lang/Runnable;
 
-    const/4 v1, 0x0
-
-    cmpl-float v0, v0, v1
-
-    if-lez v0, :cond_0
-
-    iget-object v0, p0, Lcom/android/systemui/SearchPanelCircleView$4;->this$0:Lcom/android/systemui/SearchPanelCircleView;
-
-    # getter for: Lcom/android/systemui/SearchPanelCircleView;->mCircleRect:Landroid/graphics/Rect;
-    invoke-static {v0}, Lcom/android/systemui/SearchPanelCircleView;->access$400(Lcom/android/systemui/SearchPanelCircleView;)Landroid/graphics/Rect;
-
-    move-result-object v0
-
-    invoke-virtual {p2, v0}, Landroid/graphics/Outline;->setOval(Landroid/graphics/Rect;)V
-
-    :goto_0
-    iget-object v0, p0, Lcom/android/systemui/SearchPanelCircleView$4;->this$0:Lcom/android/systemui/SearchPanelCircleView;
-
-    # getter for: Lcom/android/systemui/SearchPanelCircleView;->mOutlineAlpha:F
-    invoke-static {v0}, Lcom/android/systemui/SearchPanelCircleView;->access$500(Lcom/android/systemui/SearchPanelCircleView;)F
-
-    move-result v0
-
-    invoke-virtual {p2, v0}, Landroid/graphics/Outline;->setAlpha(F)V
-
-    return-void
+    invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
     :cond_0
-    invoke-virtual {p2}, Landroid/graphics/Outline;->setEmpty()V
-
-    goto :goto_0
+    return-void
 .end method

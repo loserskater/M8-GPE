@@ -316,6 +316,20 @@
     <public type="drawable" name="ic_qs_screen_timeout_short_reverse_avd" id="0x7f020184" />
     <public type="drawable" name="ic_qs_screen_timeout_vector" id="0x7f020185" />
     <public type="drawable" name="ic_qs_visualizer_static" id="0x7f020186" />
+    <public type="drawable" name="ic_navigation_ring_empty" id="0x7f020194" />
+    <public type="drawable" name="ic_navigation_ring_ime_switcher" id="0x7f020195" />
+    <public type="drawable" name="ic_navigation_ring_killtask" id="0x7f020196" />
+    <public type="drawable" name="ic_navigation_ring_screenshot" id="0x7f020197" />
+    <public type="drawable" name="ic_navigation_ring_search" id="0x7f020198" />
+    <public type="drawable" name="ic_navigation_ring_silent" id="0x7f020199" />
+    <public type="drawable" name="ic_navigation_ring_sound_on" id="0x7f02019a" />
+    <public type="drawable" name="ic_navigation_ring_standby" id="0x7f02019b" />
+    <public type="drawable" name="ic_navigation_ring_torch_off" id="0x7f02019c" />
+    <public type="drawable" name="ic_navigation_ring_torch_on" id="0x7f02019d" />
+    <public type="drawable" name="ic_navigation_ring_vibrate" id="0x7f02019e" />
+    <public type="drawable" name="nav_ring_edit_check" id="0x7f02019f" />
+    <public type="drawable" name="nav_ring_edit_fab" id="0x7f0201a0" />
+    <public type="drawable" name="navring_edit_circle" id="0x7f0201a1" />
     <public type="drawable" name="bg_protect" id="0x7f020001" />
     <public type="drawable" name="bottom_divider_glow" id="0x7f020002" />
     <public type="drawable" name="btn_fab_recents" id="0x7f020005" />
@@ -528,6 +542,7 @@
     <public type="layout" name="mid_navigation_bar_land" id="0x7f040053" />
     <public type="layout" name="mid_navigation_bar_port" id="0x7f040054" />
     <public type="layout" name="navigation_bar_edit_menu_item" id="0x7f040055" />
+    <public type="layout" name="pick_item" id="0x7f040056" />
     <public type="layout" name="keyguard_host_view" id="0x7f04000d" />
     <public type="layout" name="keyguard_widget_pager" id="0x7f040021" />
     <public type="anim" name="heads_up_enter" id="0x7f050000" />
@@ -667,6 +682,9 @@
     <public type="color" name="navigation_bar_background_opaque" id="0x7f070047" />
     <public type="color" name="navigation_bar_background_semi_transparent" id="0x7f070048" />
     <public type="color" name="navigation_bar_background_transparent" id="0x7f070049" />
+    <public type="color" name="navring_check_tint" id="0x7f07004a" />
+    <public type="color" name="navring_edit_fill" id="0x7f07004b" />
+    <public type="color" name="navring_edit_tint" id="0x7f07004c" />
     <public type="bool" name="config_recents_interface_for_tablets" id="0x7f080000" />
     <public type="bool" name="config_recents_thumbnail_image_fits_to_xy" id="0x7f080001" />
     <public type="bool" name="config_recents_use_hardware_layers" id="0x7f080002" />
@@ -1339,6 +1357,22 @@
     <public type="string" name="navbar_menu_big_button" id="0x7f0b020f" />
     <public type="string" name="accessibility_dpad_left" id="0x7f0b0210" />
     <public type="string" name="accessibility_dpad_right" id="0x7f0b0211" />
+    <public type="string" name="navigation_ring_title" id="0x7f0b0212" />
+    <public type="string" name="navring_target_reset_message" id="0x7f0b0213" />
+    <public type="string" name="navring_target_reset" id="0x7f0b0214" />
+    <public type="string" name="navring_action_open_ime_switcher" id="0x7f0b0215" />
+    <public type="string" name="navring_action_kill_app" id="0x7f0b0216" />
+    <public type="string" name="navring_action_none" id="0x7f0b0217" />
+    <public type="string" name="navring_action_take_screenshot" id="0x7f0b0218" />
+    <public type="string" name="navring_action_ring_vibrate" id="0x7f0b0219" />
+    <public type="string" name="navring_action_ring_silent" id="0x7f0b021a" />
+    <public type="string" name="navring_action_ring_vibrate_silent" id="0x7f0b021b" />
+    <public type="string" name="navring_action_screen_off" id="0x7f0b021c" />
+    <public type="string" name="navring_action_torch" id="0x7f0b021d" />
+    <public type="string" name="navring_action_google_now" id="0x7f0b021e" />
+    <public type="string" name="navring_choose_action_title" id="0x7f0b021f" />
+    <public type="string" name="select_application" id="0x7f0b0220" />
+    <public type="string" name="lockscreen_target_empty" id="0x7f0b0221" />
     <public type="string" name="status_bar_date_formatter" id="0x7f0b0006" />
     <public type="string" name="toast_rotation_locked" id="0x7f0b0158" />
     <public type="string" name="APKTOOL_DUMMY_0159" id="0x7f0b0159" />
@@ -1977,6 +2011,11 @@
     <public type="id" name="container" id="0x7f0e0140" />
     <public type="id" name="key_icon" id="0x7f0e0141" />
     <public type="id" name="key_text" id="0x7f0e0142" />
+    <public type="id" name="nav_ring_edit" id="0x7f0e0143" />
+    <public type="id" name="one_parent" id="0x7f0e0144" />
+    <public type="id" name="search_logo1" id="0x7f0e0145" />
+    <public type="id" name="two_parent" id="0x7f0e0146" />
+    <public type="id" name="search_logo2" id="0x7f0e0147" />
     <public type="plurals" name="status_bar_accessibility_recent_apps" id="0x7f0f0000" />
     <public type="plurals" name="kg_password_wrong_pin_code" id="0x7f0f0001" />
     <public type="plurals" name="kg_password_wrong_puk_code" id="0x7f0f0002" />

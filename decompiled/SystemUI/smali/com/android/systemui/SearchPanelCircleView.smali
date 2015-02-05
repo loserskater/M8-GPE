@@ -6,6 +6,7 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Lcom/android/systemui/SearchPanelCircleView$RectDrawable;,
         Lcom/android/systemui/SearchPanelCircleView$Ripple;
     }
 .end annotation
@@ -30,6 +31,10 @@
 
 .field private final mCircleRect:Landroid/graphics/Rect;
 
+.field private final mCircleRectLeft:Landroid/graphics/Rect;
+
+.field private final mCircleRectRight:Landroid/graphics/Rect;
+
 .field private mCircleSize:F
 
 .field private mCircleUpdateListener:Landroid/animation/ValueAnimator$AnimatorUpdateListener;
@@ -48,6 +53,14 @@
 
 .field private mHorizontal:Z
 
+.field public mIntersectIndex:I
+
+.field private mLeftCircleSize:F
+
+.field private mLeftLogo:Landroid/view/View;
+
+.field private mLeftParent:Landroid/view/View;
+
 .field private mLogo:Landroid/widget/ImageView;
 
 .field private final mMaxElevation:I
@@ -61,6 +74,12 @@
 .field private mOffsetUpdateListener:Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
 .field private mOutlineAlpha:F
+
+.field private mRightCircleSize:F
+
+.field private mRightLogo:Landroid/view/View;
+
+.field private mRightParent:Landroid/view/View;
 
 .field private final mRipplePaint:Landroid/graphics/Paint;
 
@@ -140,6 +159,18 @@
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
+    iput-object v0, p0, Lcom/android/systemui/SearchPanelCircleView;->mCircleRectLeft:Landroid/graphics/Rect;
+
+    new-instance v0, Landroid/graphics/Rect;
+
+    invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
+
+    iput-object v0, p0, Lcom/android/systemui/SearchPanelCircleView;->mCircleRectRight:Landroid/graphics/Rect;
+
+    new-instance v0, Landroid/graphics/Rect;
+
+    invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
+
     iput-object v0, p0, Lcom/android/systemui/SearchPanelCircleView;->mStaticRect:Landroid/graphics/Rect;
 
     new-instance v0, Ljava/util/ArrayList;
@@ -147,6 +178,10 @@
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/android/systemui/SearchPanelCircleView;->mRipples:Ljava/util/ArrayList;
+
+    const/4 v0, -0x1
+
+    iput v0, p0, Lcom/android/systemui/SearchPanelCircleView;->mIntersectIndex:I
 
     new-instance v0, Lcom/android/systemui/SearchPanelCircleView$1;
 
@@ -166,11 +201,13 @@
 
     iput-object v0, p0, Lcom/android/systemui/SearchPanelCircleView;->mOffsetUpdateListener:Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
-    new-instance v0, Lcom/android/systemui/SearchPanelCircleView$4;
+    new-instance v0, Lcom/android/systemui/SearchPanelCircleView$RectDrawable;
 
-    invoke-direct {v0, p0}, Lcom/android/systemui/SearchPanelCircleView$4;-><init>(Lcom/android/systemui/SearchPanelCircleView;)V
+    iget-object v1, p0, Lcom/android/systemui/SearchPanelCircleView;->mCircleRect:Landroid/graphics/Rect;
 
-    invoke-virtual {p0, v0}, Lcom/android/systemui/SearchPanelCircleView;->setOutlineProvider(Landroid/view/ViewOutlineProvider;)V
+    invoke-direct {v0, p0, v1}, Lcom/android/systemui/SearchPanelCircleView$RectDrawable;-><init>(Lcom/android/systemui/SearchPanelCircleView;Landroid/graphics/Rect;)V
+
+    invoke-virtual {p0, v0}, Lcom/android/systemui/SearchPanelCircleView;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
     const/4 v0, 0x0
 
@@ -309,10 +346,10 @@
     return-void
 .end method
 
-.method static synthetic access$1000(Lcom/android/systemui/SearchPanelCircleView;)V
+.method static synthetic access$1000(Lcom/android/systemui/SearchPanelCircleView;I)V
     .locals 0
 
-    invoke-direct {p0}, Lcom/android/systemui/SearchPanelCircleView;->addRipple()V
+    invoke-direct {p0, p1}, Lcom/android/systemui/SearchPanelCircleView;->addRipple(I)V
 
     return-void
 .end method
@@ -357,6 +394,14 @@
     return-object v0
 .end method
 
+.method static synthetic access$1600(Lcom/android/systemui/SearchPanelCircleView;Landroid/graphics/Canvas;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lcom/android/systemui/SearchPanelCircleView;->drawRipples(Landroid/graphics/Canvas;)V
+
+    return-void
+.end method
+
 .method static synthetic access$202(Lcom/android/systemui/SearchPanelCircleView;Landroid/animation/ValueAnimator;)Landroid/animation/ValueAnimator;
     .locals 0
 
@@ -365,18 +410,18 @@
     return-object p1
 .end method
 
-.method static synthetic access$300(Lcom/android/systemui/SearchPanelCircleView;)F
-    .locals 1
+.method static synthetic access$302(Lcom/android/systemui/SearchPanelCircleView;Landroid/animation/ValueAnimator;)Landroid/animation/ValueAnimator;
+    .locals 0
 
-    iget v0, p0, Lcom/android/systemui/SearchPanelCircleView;->mCircleSize:F
+    iput-object p1, p0, Lcom/android/systemui/SearchPanelCircleView;->mOffsetAnimator:Landroid/animation/ValueAnimator;
 
-    return v0
+    return-object p1
 .end method
 
-.method static synthetic access$400(Lcom/android/systemui/SearchPanelCircleView;)Landroid/graphics/Rect;
+.method static synthetic access$400(Lcom/android/systemui/SearchPanelCircleView;)Landroid/graphics/Paint;
     .locals 1
 
-    iget-object v0, p0, Lcom/android/systemui/SearchPanelCircleView;->mCircleRect:Landroid/graphics/Rect;
+    iget-object v0, p0, Lcom/android/systemui/SearchPanelCircleView;->mBackgroundPaint:Landroid/graphics/Paint;
 
     return-object v0
 .end method
@@ -397,26 +442,26 @@
     return p1
 .end method
 
-.method static synthetic access$602(Lcom/android/systemui/SearchPanelCircleView;Landroid/animation/ValueAnimator;)Landroid/animation/ValueAnimator;
-    .locals 0
-
-    iput-object p1, p0, Lcom/android/systemui/SearchPanelCircleView;->mOffsetAnimator:Landroid/animation/ValueAnimator;
-
-    return-object p1
-.end method
-
-.method static synthetic access$700(Lcom/android/systemui/SearchPanelCircleView;)Landroid/graphics/Paint;
+.method static synthetic access$600(Lcom/android/systemui/SearchPanelCircleView;)Landroid/widget/ImageView;
     .locals 1
 
-    iget-object v0, p0, Lcom/android/systemui/SearchPanelCircleView;->mBackgroundPaint:Landroid/graphics/Paint;
+    iget-object v0, p0, Lcom/android/systemui/SearchPanelCircleView;->mLogo:Landroid/widget/ImageView;
 
     return-object v0
 .end method
 
-.method static synthetic access$800(Lcom/android/systemui/SearchPanelCircleView;)Landroid/widget/ImageView;
+.method static synthetic access$700(Lcom/android/systemui/SearchPanelCircleView;)Landroid/view/View;
     .locals 1
 
-    iget-object v0, p0, Lcom/android/systemui/SearchPanelCircleView;->mLogo:Landroid/widget/ImageView;
+    iget-object v0, p0, Lcom/android/systemui/SearchPanelCircleView;->mLeftLogo:Landroid/view/View;
+
+    return-object v0
+.end method
+
+.method static synthetic access$800(Lcom/android/systemui/SearchPanelCircleView;)Landroid/view/View;
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/systemui/SearchPanelCircleView;->mRightLogo:Landroid/view/View;
 
     return-object v0
 .end method
@@ -429,7 +474,7 @@
     return-object p1
 .end method
 
-.method private addRipple()V
+.method private addRipple(I)V
     .locals 9
 
     const/high16 v8, 0x3f800000
@@ -450,7 +495,7 @@
     :cond_0
     iget-boolean v6, p0, Lcom/android/systemui/SearchPanelCircleView;->mHorizontal:Z
 
-    if-eqz v6, :cond_1
+    if-eqz v6, :cond_2
 
     const/high16 v4, 0x3f400000
 
@@ -497,6 +542,26 @@
 
     add-float v1, v6, v7
 
+    if-nez p1, :cond_3
+
+    iget-object v6, p0, Lcom/android/systemui/SearchPanelCircleView;->mCircleRectLeft:Landroid/graphics/Rect;
+
+    invoke-virtual {v6}, Landroid/graphics/Rect;->centerX()I
+
+    move-result v6
+
+    int-to-float v0, v6
+
+    iget-object v6, p0, Lcom/android/systemui/SearchPanelCircleView;->mCircleRectLeft:Landroid/graphics/Rect;
+
+    invoke-virtual {v6}, Landroid/graphics/Rect;->centerY()I
+
+    move-result v6
+
+    int-to-float v1, v6
+
+    :cond_1
+    :goto_2
     iget v6, p0, Lcom/android/systemui/SearchPanelCircleView;->mCircleSize:F
 
     iget v7, p0, Lcom/android/systemui/SearchPanelCircleView;->mCircleMinSize:I
@@ -511,7 +576,7 @@
 
     move-result v6
 
-    const/high16 v7, 0x3f400000
+    const v7, 0x3f333333
 
     mul-float v2, v6, v7
 
@@ -523,54 +588,93 @@
 
     goto :goto_0
 
-    :cond_1
+    :cond_2
     const/high16 v4, 0x3f000000
 
     const/high16 v5, 0x3f400000
 
     goto :goto_1
+
+    :cond_3
+    const/4 v6, 0x2
+
+    if-ne p1, v6, :cond_1
+
+    iget-object v6, p0, Lcom/android/systemui/SearchPanelCircleView;->mCircleRectRight:Landroid/graphics/Rect;
+
+    invoke-virtual {v6}, Landroid/graphics/Rect;->centerX()I
+
+    move-result v6
+
+    int-to-float v0, v6
+
+    iget-object v6, p0, Lcom/android/systemui/SearchPanelCircleView;->mCircleRectRight:Landroid/graphics/Rect;
+
+    invoke-virtual {v6}, Landroid/graphics/Rect;->centerY()I
+
+    move-result v6
+
+    int-to-float v1, v6
+
+    goto :goto_2
 .end method
 
 .method private applyCircleSize(F)V
-    .locals 0
+    .locals 1
 
-    iput p1, p0, Lcom/android/systemui/SearchPanelCircleView;->mCircleSize:F
+    iget-object v0, p0, Lcom/android/systemui/SearchPanelCircleView;->mFadeOutAnimator:Landroid/animation/ValueAnimator;
 
-    invoke-direct {p0}, Lcom/android/systemui/SearchPanelCircleView;->updateLayout()V
+    if-eqz v0, :cond_0
 
-    return-void
-.end method
+    iget-object v0, p0, Lcom/android/systemui/SearchPanelCircleView;->mFadeOutAnimator:Landroid/animation/ValueAnimator;
 
-.method private drawBackground(Landroid/graphics/Canvas;)V
-    .locals 4
-
-    iget-object v0, p0, Lcom/android/systemui/SearchPanelCircleView;->mCircleRect:Landroid/graphics/Rect;
-
-    invoke-virtual {v0}, Landroid/graphics/Rect;->centerX()I
+    invoke-virtual {v0}, Landroid/animation/ValueAnimator;->isRunning()Z
 
     move-result v0
 
-    int-to-float v0, v0
+    if-eqz v0, :cond_0
 
-    iget-object v1, p0, Lcom/android/systemui/SearchPanelCircleView;->mCircleRect:Landroid/graphics/Rect;
+    iget v0, p0, Lcom/android/systemui/SearchPanelCircleView;->mIntersectIndex:I
 
-    invoke-virtual {v1}, Landroid/graphics/Rect;->centerY()I
+    packed-switch v0, :pswitch_data_0
 
-    move-result v1
-
-    int-to-float v1, v1
-
-    iget v2, p0, Lcom/android/systemui/SearchPanelCircleView;->mCircleSize:F
-
-    const/high16 v3, 0x40000000
-
-    div-float/2addr v2, v3
-
-    iget-object v3, p0, Lcom/android/systemui/SearchPanelCircleView;->mBackgroundPaint:Landroid/graphics/Paint;
-
-    invoke-virtual {p1, v0, v1, v2, v3}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
+    :goto_0
+    invoke-direct {p0}, Lcom/android/systemui/SearchPanelCircleView;->updateLayout()V
 
     return-void
+
+    :pswitch_0
+    iput p1, p0, Lcom/android/systemui/SearchPanelCircleView;->mLeftCircleSize:F
+
+    goto :goto_0
+
+    :pswitch_1
+    iput p1, p0, Lcom/android/systemui/SearchPanelCircleView;->mCircleSize:F
+
+    goto :goto_0
+
+    :pswitch_2
+    iput p1, p0, Lcom/android/systemui/SearchPanelCircleView;->mRightCircleSize:F
+
+    goto :goto_0
+
+    :cond_0
+    iput p1, p0, Lcom/android/systemui/SearchPanelCircleView;->mCircleSize:F
+
+    iput p1, p0, Lcom/android/systemui/SearchPanelCircleView;->mLeftCircleSize:F
+
+    iput p1, p0, Lcom/android/systemui/SearchPanelCircleView;->mRightCircleSize:F
+
+    goto :goto_0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+        :pswitch_1
+        :pswitch_2
+    .end packed-switch
 .end method
 
 .method private drawRipples(Landroid/graphics/Canvas;)V
@@ -602,6 +706,28 @@
     goto :goto_0
 
     :cond_0
+    return-void
+.end method
+
+.method private invalidateBackground()V
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/systemui/SearchPanelCircleView;->mLeftParent:Landroid/view/View;
+
+    invoke-virtual {v0}, Landroid/view/View;->invalidateOutline()V
+
+    iget-object v0, p0, Lcom/android/systemui/SearchPanelCircleView;->mLeftParent:Landroid/view/View;
+
+    invoke-virtual {v0}, Landroid/view/View;->invalidate()V
+
+    iget-object v0, p0, Lcom/android/systemui/SearchPanelCircleView;->mRightParent:Landroid/view/View;
+
+    invoke-virtual {v0}, Landroid/view/View;->invalidateOutline()V
+
+    iget-object v0, p0, Lcom/android/systemui/SearchPanelCircleView;->mRightParent:Landroid/view/View;
+
+    invoke-virtual {v0}, Landroid/view/View;->invalidate()V
+
     return-void
 .end method
 
@@ -650,17 +776,17 @@
 
     iget-object v0, p0, Lcom/android/systemui/SearchPanelCircleView;->mFadeOutAnimator:Landroid/animation/ValueAnimator;
 
-    new-instance v1, Lcom/android/systemui/SearchPanelCircleView$7;
+    new-instance v1, Lcom/android/systemui/SearchPanelCircleView$6;
 
-    invoke-direct {v1, p0}, Lcom/android/systemui/SearchPanelCircleView$7;-><init>(Lcom/android/systemui/SearchPanelCircleView;)V
+    invoke-direct {v1, p0}, Lcom/android/systemui/SearchPanelCircleView$6;-><init>(Lcom/android/systemui/SearchPanelCircleView;)V
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
     iget-object v0, p0, Lcom/android/systemui/SearchPanelCircleView;->mFadeOutAnimator:Landroid/animation/ValueAnimator;
 
-    new-instance v1, Lcom/android/systemui/SearchPanelCircleView$8;
+    new-instance v1, Lcom/android/systemui/SearchPanelCircleView$7;
 
-    invoke-direct {v1, p0, p3}, Lcom/android/systemui/SearchPanelCircleView$8;-><init>(Lcom/android/systemui/SearchPanelCircleView;Ljava/lang/Runnable;)V
+    invoke-direct {v1, p0, p3}, Lcom/android/systemui/SearchPanelCircleView$7;-><init>(Lcom/android/systemui/SearchPanelCircleView;Ljava/lang/Runnable;)V
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
@@ -764,9 +890,9 @@
 
     iget-object v3, p0, Lcom/android/systemui/SearchPanelCircleView;->mOffsetAnimator:Landroid/animation/ValueAnimator;
 
-    new-instance v4, Lcom/android/systemui/SearchPanelCircleView$6;
+    new-instance v4, Lcom/android/systemui/SearchPanelCircleView$5;
 
-    invoke-direct {v4, p0, p5}, Lcom/android/systemui/SearchPanelCircleView$6;-><init>(Lcom/android/systemui/SearchPanelCircleView;Ljava/lang/Runnable;)V
+    invoke-direct {v4, p0, p5}, Lcom/android/systemui/SearchPanelCircleView$5;-><init>(Lcom/android/systemui/SearchPanelCircleView;Ljava/lang/Runnable;)V
 
     invoke-virtual {v3, v4}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
@@ -827,13 +953,21 @@
 .method private updateCircleRect()V
     .locals 3
 
+    const/4 v2, 0x0
+
     iget-object v0, p0, Lcom/android/systemui/SearchPanelCircleView;->mCircleRect:Landroid/graphics/Rect;
 
     iget v1, p0, Lcom/android/systemui/SearchPanelCircleView;->mOffset:F
 
-    const/4 v2, 0x0
-
     invoke-direct {p0, v0, v1, v2}, Lcom/android/systemui/SearchPanelCircleView;->updateCircleRect(Landroid/graphics/Rect;FZ)V
+
+    iget v0, p0, Lcom/android/systemui/SearchPanelCircleView;->mOffset:F
+
+    invoke-direct {p0, v0, v2}, Lcom/android/systemui/SearchPanelCircleView;->updateCircleRectLeft(FZ)V
+
+    iget v0, p0, Lcom/android/systemui/SearchPanelCircleView;->mOffset:F
+
+    invoke-direct {p0, v0, v2}, Lcom/android/systemui/SearchPanelCircleView;->updateCircleRectRight(FZ)V
 
     return-void
 .end method
@@ -944,6 +1078,258 @@
     goto :goto_1
 .end method
 
+.method private updateCircleRectLeft(FZ)V
+    .locals 6
+
+    const/high16 v5, 0x40000000
+
+    if-eqz p2, :cond_0
+
+    iget v3, p0, Lcom/android/systemui/SearchPanelCircleView;->mCircleMinSize:I
+
+    int-to-float v0, v3
+
+    :goto_0
+    iget-boolean v3, p0, Lcom/android/systemui/SearchPanelCircleView;->mHorizontal:Z
+
+    if-eqz v3, :cond_1
+
+    invoke-virtual {p0}, Lcom/android/systemui/SearchPanelCircleView;->getWidth()I
+
+    move-result v3
+
+    int-to-float v3, v3
+
+    div-float v4, v0, v5
+
+    sub-float/2addr v3, v4
+
+    sub-float/2addr v3, p1
+
+    float-to-int v1, v3
+
+    invoke-virtual {p0}, Lcom/android/systemui/SearchPanelCircleView;->getHeight()I
+
+    move-result v3
+
+    div-int/lit8 v3, v3, 0x4
+
+    int-to-float v3, v3
+
+    const/high16 v4, 0x40400000
+
+    mul-float/2addr v4, v0
+
+    const/high16 v5, 0x40800000
+
+    div-float/2addr v4, v5
+
+    sub-float/2addr v3, v4
+
+    float-to-int v2, v3
+
+    invoke-virtual {p0}, Lcom/android/systemui/SearchPanelCircleView;->getHeight()I
+
+    move-result v3
+
+    sub-int/2addr v3, v2
+
+    int-to-float v3, v3
+
+    sub-float/2addr v3, v0
+
+    float-to-int v2, v3
+
+    :goto_1
+    iget-object v3, p0, Lcom/android/systemui/SearchPanelCircleView;->mCircleRectLeft:Landroid/graphics/Rect;
+
+    int-to-float v4, v1
+
+    add-float/2addr v4, v0
+
+    float-to-int v4, v4
+
+    int-to-float v5, v2
+
+    add-float/2addr v5, v0
+
+    float-to-int v5, v5
+
+    invoke-virtual {v3, v1, v2, v4, v5}, Landroid/graphics/Rect;->set(IIII)V
+
+    return-void
+
+    :cond_0
+    iget v0, p0, Lcom/android/systemui/SearchPanelCircleView;->mLeftCircleSize:F
+
+    goto :goto_0
+
+    :cond_1
+    invoke-virtual {p0}, Lcom/android/systemui/SearchPanelCircleView;->getWidth()I
+
+    move-result v3
+
+    int-to-float v3, v3
+
+    sub-float/2addr v3, v0
+
+    float-to-int v3, v3
+
+    div-int/lit8 v1, v3, 0x2
+
+    div-int/lit8 v3, v1, 0x2
+
+    int-to-float v3, v3
+
+    div-float v4, v0, v5
+
+    sub-float/2addr v3, v4
+
+    float-to-int v1, v3
+
+    invoke-virtual {p0}, Lcom/android/systemui/SearchPanelCircleView;->getHeight()I
+
+    move-result v3
+
+    int-to-float v3, v3
+
+    div-float v4, v0, v5
+
+    sub-float/2addr v3, v4
+
+    sub-float/2addr v3, p1
+
+    float-to-int v2, v3
+
+    goto :goto_1
+.end method
+
+.method private updateCircleRectRight(FZ)V
+    .locals 7
+
+    const/high16 v6, 0x40000000
+
+    if-eqz p2, :cond_0
+
+    iget v3, p0, Lcom/android/systemui/SearchPanelCircleView;->mCircleMinSize:I
+
+    int-to-float v0, v3
+
+    :goto_0
+    iget-boolean v3, p0, Lcom/android/systemui/SearchPanelCircleView;->mHorizontal:Z
+
+    if-eqz v3, :cond_1
+
+    invoke-virtual {p0}, Lcom/android/systemui/SearchPanelCircleView;->getWidth()I
+
+    move-result v3
+
+    int-to-float v3, v3
+
+    div-float v4, v0, v6
+
+    sub-float/2addr v3, v4
+
+    sub-float/2addr v3, p1
+
+    float-to-int v1, v3
+
+    invoke-virtual {p0}, Lcom/android/systemui/SearchPanelCircleView;->getHeight()I
+
+    move-result v3
+
+    int-to-float v3, v3
+
+    sub-float/2addr v3, v0
+
+    float-to-int v3, v3
+
+    div-int/lit8 v2, v3, 0x2
+
+    div-int/lit8 v3, v2, 0x2
+
+    int-to-float v3, v3
+
+    div-float v4, v0, v6
+
+    sub-float/2addr v3, v4
+
+    float-to-int v2, v3
+
+    :goto_1
+    iget-object v3, p0, Lcom/android/systemui/SearchPanelCircleView;->mCircleRectRight:Landroid/graphics/Rect;
+
+    int-to-float v4, v1
+
+    add-float/2addr v4, v0
+
+    float-to-int v4, v4
+
+    int-to-float v5, v2
+
+    add-float/2addr v5, v0
+
+    float-to-int v5, v5
+
+    invoke-virtual {v3, v1, v2, v4, v5}, Landroid/graphics/Rect;->set(IIII)V
+
+    return-void
+
+    :cond_0
+    iget v0, p0, Lcom/android/systemui/SearchPanelCircleView;->mRightCircleSize:F
+
+    goto :goto_0
+
+    :cond_1
+    invoke-virtual {p0}, Lcom/android/systemui/SearchPanelCircleView;->getWidth()I
+
+    move-result v3
+
+    div-int/lit8 v3, v3, 0x4
+
+    int-to-float v3, v3
+
+    const/high16 v4, 0x40400000
+
+    mul-float/2addr v4, v0
+
+    const/high16 v5, 0x40800000
+
+    div-float/2addr v4, v5
+
+    sub-float/2addr v3, v4
+
+    float-to-int v1, v3
+
+    invoke-virtual {p0}, Lcom/android/systemui/SearchPanelCircleView;->getWidth()I
+
+    move-result v3
+
+    sub-int/2addr v3, v1
+
+    int-to-float v3, v3
+
+    sub-float/2addr v3, v0
+
+    float-to-int v1, v3
+
+    invoke-virtual {p0}, Lcom/android/systemui/SearchPanelCircleView;->getHeight()I
+
+    move-result v3
+
+    int-to-float v3, v3
+
+    div-float v4, v0, v6
+
+    sub-float/2addr v3, v4
+
+    sub-float/2addr v3, p1
+
+    float-to-int v2, v3
+
+    goto :goto_1
+.end method
+
 .method private updateClipping()V
     .locals 3
 
@@ -974,6 +1360,14 @@
     if-eq v0, v1, :cond_1
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/SearchPanelCircleView;->setClipToOutline(Z)V
+
+    iget-object v1, p0, Lcom/android/systemui/SearchPanelCircleView;->mLeftParent:Landroid/view/View;
+
+    invoke-virtual {v1, v0}, Landroid/view/View;->setClipToOutline(Z)V
+
+    iget-object v1, p0, Lcom/android/systemui/SearchPanelCircleView;->mRightParent:Landroid/view/View;
+
+    invoke-virtual {v1, v0}, Landroid/view/View;->setClipToOutline(Z)V
 
     iput-boolean v0, p0, Lcom/android/systemui/SearchPanelCircleView;->mClipToOutline:Z
 
@@ -1021,15 +1415,49 @@
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/SearchPanelCircleView;->setElevation(F)V
 
+    iget-object v2, p0, Lcom/android/systemui/SearchPanelCircleView;->mLeftParent:Landroid/view/View;
+
+    invoke-virtual {v2, v0}, Landroid/view/View;->setElevation(F)V
+
+    iget-object v2, p0, Lcom/android/systemui/SearchPanelCircleView;->mRightParent:Landroid/view/View;
+
+    invoke-virtual {v2, v0}, Landroid/view/View;->setElevation(F)V
+
     return-void
 .end method
 
 .method private updateLayout()V
-    .locals 0
+    .locals 4
 
     invoke-direct {p0}, Lcom/android/systemui/SearchPanelCircleView;->updateCircleRect()V
 
-    invoke-direct {p0}, Lcom/android/systemui/SearchPanelCircleView;->updateLogo()V
+    iget-object v2, p0, Lcom/android/systemui/SearchPanelCircleView;->mFadeOutAnimator:Landroid/animation/ValueAnimator;
+
+    if-eqz v2, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    if-eqz v0, :cond_1
+
+    iget-object v1, p0, Lcom/android/systemui/SearchPanelCircleView;->mCircleRect:Landroid/graphics/Rect;
+
+    :goto_1
+    iget-object v2, p0, Lcom/android/systemui/SearchPanelCircleView;->mLogo:Landroid/widget/ImageView;
+
+    invoke-direct {p0, v1, v2, v0}, Lcom/android/systemui/SearchPanelCircleView;->updateLogo(Landroid/graphics/Rect;Landroid/view/View;Z)V
+
+    iget-object v2, p0, Lcom/android/systemui/SearchPanelCircleView;->mCircleRectLeft:Landroid/graphics/Rect;
+
+    iget-object v3, p0, Lcom/android/systemui/SearchPanelCircleView;->mLeftLogo:Landroid/view/View;
+
+    invoke-direct {p0, v2, v3, v0}, Lcom/android/systemui/SearchPanelCircleView;->updateLogo(Landroid/graphics/Rect;Landroid/view/View;Z)V
+
+    iget-object v2, p0, Lcom/android/systemui/SearchPanelCircleView;->mCircleRectRight:Landroid/graphics/Rect;
+
+    iget-object v3, p0, Lcom/android/systemui/SearchPanelCircleView;->mRightLogo:Landroid/view/View;
+
+    invoke-direct {p0, v2, v3, v0}, Lcom/android/systemui/SearchPanelCircleView;->updateLogo(Landroid/graphics/Rect;Landroid/view/View;Z)V
 
     invoke-virtual {p0}, Lcom/android/systemui/SearchPanelCircleView;->invalidateOutline()V
 
@@ -1038,170 +1466,148 @@
     invoke-direct {p0}, Lcom/android/systemui/SearchPanelCircleView;->updateClipping()V
 
     return-void
-.end method
-
-.method private updateLogo()V
-    .locals 10
-
-    const v9, 0x3e99999a
-
-    const/high16 v8, 0x40000000
-
-    iget-object v6, p0, Lcom/android/systemui/SearchPanelCircleView;->mFadeOutAnimator:Landroid/animation/ValueAnimator;
-
-    if-eqz v6, :cond_0
-
-    const/4 v1, 0x1
-
-    :goto_0
-    if-eqz v1, :cond_1
-
-    iget-object v2, p0, Lcom/android/systemui/SearchPanelCircleView;->mCircleRect:Landroid/graphics/Rect;
-
-    :goto_1
-    iget v6, v2, Landroid/graphics/Rect;->left:I
-
-    iget v7, v2, Landroid/graphics/Rect;->right:I
-
-    add-int/2addr v6, v7
-
-    int-to-float v6, v6
-
-    div-float/2addr v6, v8
-
-    iget-object v7, p0, Lcom/android/systemui/SearchPanelCircleView;->mLogo:Landroid/widget/ImageView;
-
-    invoke-virtual {v7}, Landroid/widget/ImageView;->getWidth()I
-
-    move-result v7
-
-    int-to-float v7, v7
-
-    div-float/2addr v7, v8
-
-    sub-float v4, v6, v7
-
-    iget v6, v2, Landroid/graphics/Rect;->top:I
-
-    iget v7, v2, Landroid/graphics/Rect;->bottom:I
-
-    add-int/2addr v6, v7
-
-    int-to-float v6, v6
-
-    div-float/2addr v6, v8
-
-    iget-object v7, p0, Lcom/android/systemui/SearchPanelCircleView;->mLogo:Landroid/widget/ImageView;
-
-    invoke-virtual {v7}, Landroid/widget/ImageView;->getHeight()I
-
-    move-result v7
-
-    int-to-float v7, v7
-
-    div-float/2addr v7, v8
-
-    sub-float v5, v6, v7
-
-    iget v6, p0, Lcom/android/systemui/SearchPanelCircleView;->mStaticOffset:I
-
-    int-to-float v6, v6
-
-    iget v7, p0, Lcom/android/systemui/SearchPanelCircleView;->mOffset:F
-
-    sub-float/2addr v6, v7
-
-    iget v7, p0, Lcom/android/systemui/SearchPanelCircleView;->mStaticOffset:I
-
-    int-to-float v7, v7
-
-    div-float v3, v6, v7
-
-    if-nez v1, :cond_3
-
-    iget-boolean v6, p0, Lcom/android/systemui/SearchPanelCircleView;->mHorizontal:Z
-
-    if-eqz v6, :cond_2
-
-    iget v6, p0, Lcom/android/systemui/SearchPanelCircleView;->mStaticOffset:I
-
-    int-to-float v6, v6
-
-    mul-float/2addr v6, v3
-
-    mul-float/2addr v6, v9
-
-    add-float/2addr v4, v6
-
-    :goto_2
-    const/high16 v6, 0x3f800000
-
-    sub-float v0, v6, v3
-
-    const/high16 v6, 0x3f000000
-
-    sub-float v6, v0, v6
-
-    mul-float/2addr v6, v8
-
-    const/4 v7, 0x0
-
-    invoke-static {v6, v7}, Ljava/lang/Math;->max(FF)F
-
-    move-result v0
-
-    iget-object v6, p0, Lcom/android/systemui/SearchPanelCircleView;->mLogo:Landroid/widget/ImageView;
-
-    invoke-virtual {v6, v0}, Landroid/widget/ImageView;->setAlpha(F)V
-
-    :goto_3
-    iget-object v6, p0, Lcom/android/systemui/SearchPanelCircleView;->mLogo:Landroid/widget/ImageView;
-
-    invoke-virtual {v6, v4}, Landroid/widget/ImageView;->setTranslationX(F)V
-
-    iget-object v6, p0, Lcom/android/systemui/SearchPanelCircleView;->mLogo:Landroid/widget/ImageView;
-
-    invoke-virtual {v6, v5}, Landroid/widget/ImageView;->setTranslationY(F)V
-
-    return-void
 
     :cond_0
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     goto :goto_0
 
     :cond_1
-    iget-object v2, p0, Lcom/android/systemui/SearchPanelCircleView;->mStaticRect:Landroid/graphics/Rect;
+    iget-object v1, p0, Lcom/android/systemui/SearchPanelCircleView;->mStaticRect:Landroid/graphics/Rect;
 
     goto :goto_1
+.end method
 
-    :cond_2
-    iget v6, p0, Lcom/android/systemui/SearchPanelCircleView;->mStaticOffset:I
+.method private updateLogo(Landroid/graphics/Rect;Landroid/view/View;Z)V
+    .locals 8
 
-    int-to-float v6, v6
+    const v7, 0x3e99999a
 
-    mul-float/2addr v6, v3
+    const/high16 v6, 0x40000000
 
-    mul-float/2addr v6, v9
+    iget v4, p1, Landroid/graphics/Rect;->left:I
 
-    add-float/2addr v5, v6
+    iget v5, p1, Landroid/graphics/Rect;->right:I
 
-    goto :goto_2
+    add-int/2addr v4, v5
 
-    :cond_3
-    iget v6, p0, Lcom/android/systemui/SearchPanelCircleView;->mOffset:F
+    int-to-float v4, v4
 
-    iget v7, p0, Lcom/android/systemui/SearchPanelCircleView;->mStaticOffset:I
+    div-float/2addr v4, v6
 
-    int-to-float v7, v7
+    invoke-virtual {p2}, Landroid/view/View;->getWidth()I
 
-    sub-float/2addr v6, v7
+    move-result v5
 
-    div-float/2addr v6, v8
+    int-to-float v5, v5
 
-    add-float/2addr v5, v6
+    div-float/2addr v5, v6
 
-    goto :goto_3
+    sub-float v2, v4, v5
+
+    iget v4, p1, Landroid/graphics/Rect;->top:I
+
+    iget v5, p1, Landroid/graphics/Rect;->bottom:I
+
+    add-int/2addr v4, v5
+
+    int-to-float v4, v4
+
+    div-float/2addr v4, v6
+
+    invoke-virtual {p2}, Landroid/view/View;->getHeight()I
+
+    move-result v5
+
+    int-to-float v5, v5
+
+    div-float/2addr v5, v6
+
+    sub-float v3, v4, v5
+
+    iget v4, p0, Lcom/android/systemui/SearchPanelCircleView;->mStaticOffset:I
+
+    int-to-float v4, v4
+
+    iget v5, p0, Lcom/android/systemui/SearchPanelCircleView;->mOffset:F
+
+    sub-float/2addr v4, v5
+
+    iget v5, p0, Lcom/android/systemui/SearchPanelCircleView;->mStaticOffset:I
+
+    int-to-float v5, v5
+
+    div-float v1, v4, v5
+
+    if-nez p3, :cond_1
+
+    iget-boolean v4, p0, Lcom/android/systemui/SearchPanelCircleView;->mHorizontal:Z
+
+    if-eqz v4, :cond_0
+
+    iget v4, p0, Lcom/android/systemui/SearchPanelCircleView;->mStaticOffset:I
+
+    int-to-float v4, v4
+
+    mul-float/2addr v4, v1
+
+    mul-float/2addr v4, v7
+
+    add-float/2addr v2, v4
+
+    :goto_0
+    const/high16 v4, 0x3f800000
+
+    sub-float v0, v4, v1
+
+    const/high16 v4, 0x3f000000
+
+    sub-float v4, v0, v4
+
+    mul-float/2addr v4, v6
+
+    const/4 v5, 0x0
+
+    invoke-static {v4, v5}, Ljava/lang/Math;->max(FF)F
+
+    move-result v0
+
+    invoke-virtual {p2, v0}, Landroid/view/View;->setAlpha(F)V
+
+    :goto_1
+    invoke-virtual {p2, v2}, Landroid/view/View;->setTranslationX(F)V
+
+    invoke-virtual {p2, v3}, Landroid/view/View;->setTranslationY(F)V
+
+    return-void
+
+    :cond_0
+    iget v4, p0, Lcom/android/systemui/SearchPanelCircleView;->mStaticOffset:I
+
+    int-to-float v4, v4
+
+    mul-float/2addr v4, v1
+
+    mul-float/2addr v4, v7
+
+    add-float/2addr v3, v4
+
+    goto :goto_0
+
+    :cond_1
+    iget v4, p0, Lcom/android/systemui/SearchPanelCircleView;->mOffset:F
+
+    iget v5, p0, Lcom/android/systemui/SearchPanelCircleView;->mStaticOffset:I
+
+    int-to-float v5, v5
+
+    sub-float/2addr v4, v5
+
+    div-float/2addr v4, v6
+
+    add-float/2addr v3, v4
+
+    goto :goto_1
 .end method
 
 
@@ -1212,6 +1618,68 @@
     const/4 v0, 0x0
 
     return v0
+.end method
+
+.method public initializeAdditionalTargets(Lcom/android/systemui/SearchPanelView;)V
+    .locals 3
+
+    const v0, 0x7f0e0144
+
+    invoke-virtual {p1, v0}, Lcom/android/systemui/SearchPanelView;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/android/systemui/SearchPanelCircleView;->mLeftParent:Landroid/view/View;
+
+    iget-object v0, p0, Lcom/android/systemui/SearchPanelCircleView;->mLeftParent:Landroid/view/View;
+
+    const v1, 0x7f0e0145
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/android/systemui/SearchPanelCircleView;->mLeftLogo:Landroid/view/View;
+
+    const v0, 0x7f0e0146
+
+    invoke-virtual {p1, v0}, Lcom/android/systemui/SearchPanelView;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/android/systemui/SearchPanelCircleView;->mRightParent:Landroid/view/View;
+
+    iget-object v0, p0, Lcom/android/systemui/SearchPanelCircleView;->mRightParent:Landroid/view/View;
+
+    const v1, 0x7f0e0147
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/android/systemui/SearchPanelCircleView;->mRightLogo:Landroid/view/View;
+
+    iget-object v0, p0, Lcom/android/systemui/SearchPanelCircleView;->mLeftParent:Landroid/view/View;
+
+    new-instance v1, Lcom/android/systemui/SearchPanelCircleView$RectDrawable;
+
+    iget-object v2, p0, Lcom/android/systemui/SearchPanelCircleView;->mCircleRectLeft:Landroid/graphics/Rect;
+
+    invoke-direct {v1, p0, v2}, Lcom/android/systemui/SearchPanelCircleView$RectDrawable;-><init>(Lcom/android/systemui/SearchPanelCircleView;Landroid/graphics/Rect;)V
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->setBackground(Landroid/graphics/drawable/Drawable;)V
+
+    iget-object v0, p0, Lcom/android/systemui/SearchPanelCircleView;->mRightParent:Landroid/view/View;
+
+    new-instance v1, Lcom/android/systemui/SearchPanelCircleView$RectDrawable;
+
+    iget-object v2, p0, Lcom/android/systemui/SearchPanelCircleView;->mCircleRectRight:Landroid/graphics/Rect;
+
+    invoke-direct {v1, p0, v2}, Lcom/android/systemui/SearchPanelCircleView$RectDrawable;-><init>(Lcom/android/systemui/SearchPanelCircleView;Landroid/graphics/Rect;)V
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->setBackground(Landroid/graphics/drawable/Drawable;)V
+
+    return-void
 .end method
 
 .method public isAnimatingOut()Z
@@ -1244,12 +1712,110 @@
     goto :goto_0
 .end method
 
+.method public isIntersecting(Landroid/view/MotionEvent;)I
+    .locals 7
+
+    const/4 v2, 0x2
+
+    const/4 v0, 0x1
+
+    const/4 v1, 0x0
+
+    const/4 v3, -0x1
+
+    iget-object v4, p0, Lcom/android/systemui/SearchPanelCircleView;->mCircleRect:Landroid/graphics/Rect;
+
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
+
+    move-result v5
+
+    float-to-int v5, v5
+
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
+
+    move-result v6
+
+    float-to-int v6, v6
+
+    invoke-virtual {v4, v5, v6}, Landroid/graphics/Rect;->contains(II)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_0
+
+    iput v0, p0, Lcom/android/systemui/SearchPanelCircleView;->mIntersectIndex:I
+
+    :goto_0
+    return v0
+
+    :cond_0
+    iget-object v0, p0, Lcom/android/systemui/SearchPanelCircleView;->mCircleRectLeft:Landroid/graphics/Rect;
+
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
+
+    move-result v4
+
+    float-to-int v4, v4
+
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
+
+    move-result v5
+
+    float-to-int v5, v5
+
+    invoke-virtual {v0, v4, v5}, Landroid/graphics/Rect;->contains(II)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    iput v1, p0, Lcom/android/systemui/SearchPanelCircleView;->mIntersectIndex:I
+
+    move v0, v1
+
+    goto :goto_0
+
+    :cond_1
+    iget-object v0, p0, Lcom/android/systemui/SearchPanelCircleView;->mCircleRectRight:Landroid/graphics/Rect;
+
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
+
+    move-result v1
+
+    float-to-int v1, v1
+
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
+
+    move-result v4
+
+    float-to-int v4, v4
+
+    invoke-virtual {v0, v1, v4}, Landroid/graphics/Rect;->contains(II)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    iput v2, p0, Lcom/android/systemui/SearchPanelCircleView;->mIntersectIndex:I
+
+    move v0, v2
+
+    goto :goto_0
+
+    :cond_2
+    iput v3, p0, Lcom/android/systemui/SearchPanelCircleView;->mIntersectIndex:I
+
+    move v0, v3
+
+    goto :goto_0
+.end method
+
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 0
 
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onDraw(Landroid/graphics/Canvas;)V
 
-    invoke-direct {p0, p1}, Lcom/android/systemui/SearchPanelCircleView;->drawBackground(Landroid/graphics/Canvas;)V
+    invoke-direct {p0}, Lcom/android/systemui/SearchPanelCircleView;->invalidateBackground()V
 
     invoke-direct {p0, p1}, Lcom/android/systemui/SearchPanelCircleView;->drawRipples(Landroid/graphics/Canvas;)V
 
@@ -1295,6 +1861,38 @@
 
     invoke-virtual {v0, v3, v3, v1, v2}, Landroid/widget/ImageView;->layout(IIII)V
 
+    iget-object v0, p0, Lcom/android/systemui/SearchPanelCircleView;->mLeftLogo:Landroid/view/View;
+
+    iget-object v1, p0, Lcom/android/systemui/SearchPanelCircleView;->mLeftLogo:Landroid/view/View;
+
+    invoke-virtual {v1}, Landroid/view/View;->getMeasuredWidth()I
+
+    move-result v1
+
+    iget-object v2, p0, Lcom/android/systemui/SearchPanelCircleView;->mLeftLogo:Landroid/view/View;
+
+    invoke-virtual {v2}, Landroid/view/View;->getMeasuredHeight()I
+
+    move-result v2
+
+    invoke-virtual {v0, v3, v3, v1, v2}, Landroid/view/View;->layout(IIII)V
+
+    iget-object v0, p0, Lcom/android/systemui/SearchPanelCircleView;->mRightLogo:Landroid/view/View;
+
+    iget-object v1, p0, Lcom/android/systemui/SearchPanelCircleView;->mRightLogo:Landroid/view/View;
+
+    invoke-virtual {v1}, Landroid/view/View;->getMeasuredWidth()I
+
+    move-result v1
+
+    iget-object v2, p0, Lcom/android/systemui/SearchPanelCircleView;->mRightLogo:Landroid/view/View;
+
+    invoke-virtual {v2}, Landroid/view/View;->getMeasuredHeight()I
+
+    move-result v2
+
+    invoke-virtual {v0, v3, v3, v1, v2}, Landroid/view/View;->layout(IIII)V
+
     if-eqz p1, :cond_0
 
     iget-object v0, p0, Lcom/android/systemui/SearchPanelCircleView;->mStaticRect:Landroid/graphics/Rect;
@@ -1320,9 +1918,9 @@
 
     iget-object v0, p0, Lcom/android/systemui/SearchPanelCircleView;->mOffsetAnimator:Landroid/animation/ValueAnimator;
 
-    new-instance v1, Lcom/android/systemui/SearchPanelCircleView$10;
+    new-instance v1, Lcom/android/systemui/SearchPanelCircleView$9;
 
-    invoke-direct {v1, p0, p1}, Lcom/android/systemui/SearchPanelCircleView$10;-><init>(Lcom/android/systemui/SearchPanelCircleView;Ljava/lang/Runnable;)V
+    invoke-direct {v1, p0, p1}, Lcom/android/systemui/SearchPanelCircleView$9;-><init>(Lcom/android/systemui/SearchPanelCircleView;Ljava/lang/Runnable;)V
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
@@ -1512,9 +2110,9 @@
 
     iget-object v6, p0, Lcom/android/systemui/SearchPanelCircleView;->mCircleAnimator:Landroid/animation/ValueAnimator;
 
-    new-instance v7, Lcom/android/systemui/SearchPanelCircleView$5;
+    new-instance v7, Lcom/android/systemui/SearchPanelCircleView$4;
 
-    invoke-direct {v7, p0, p3}, Lcom/android/systemui/SearchPanelCircleView$5;-><init>(Lcom/android/systemui/SearchPanelCircleView;Ljava/lang/Runnable;)V
+    invoke-direct {v7, p0, p3}, Lcom/android/systemui/SearchPanelCircleView$4;-><init>(Lcom/android/systemui/SearchPanelCircleView;Ljava/lang/Runnable;)V
 
     invoke-virtual {v6, v7}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
@@ -1648,7 +2246,7 @@
     return-void
 .end method
 
-.method public setDraggedFarEnough(Z)V
+.method public setDraggedFarEnough(ZI)V
     .locals 4
 
     iget-boolean v0, p0, Lcom/android/systemui/SearchPanelCircleView;->mDraggedFarEnough:Z
@@ -1668,7 +2266,7 @@
 
     if-nez v0, :cond_2
 
-    invoke-direct {p0}, Lcom/android/systemui/SearchPanelCircleView;->addRipple()V
+    invoke-direct {p0, p2}, Lcom/android/systemui/SearchPanelCircleView;->addRipple(I)V
 
     :goto_0
     iput-boolean p1, p0, Lcom/android/systemui/SearchPanelCircleView;->mDraggedFarEnough:Z
@@ -1677,9 +2275,9 @@
     return-void
 
     :cond_2
-    new-instance v0, Lcom/android/systemui/SearchPanelCircleView$9;
+    new-instance v0, Lcom/android/systemui/SearchPanelCircleView$8;
 
-    invoke-direct {v0, p0}, Lcom/android/systemui/SearchPanelCircleView$9;-><init>(Lcom/android/systemui/SearchPanelCircleView;)V
+    invoke-direct {v0, p0, p2}, Lcom/android/systemui/SearchPanelCircleView$8;-><init>(Lcom/android/systemui/SearchPanelCircleView;I)V
 
     const-wide/16 v2, 0x64
 

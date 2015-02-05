@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/systemui/SearchPanelCircleView;->setCircleSize(FZLjava/lang/Runnable;ILandroid/view/animation/Interpolator;)V
+    value = Lcom/android/systemui/SearchPanelCircleView;->setOffset(FZILandroid/view/animation/Interpolator;Ljava/lang/Runnable;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -36,7 +36,14 @@
 
 # virtual methods
 .method public onAnimationEnd(Landroid/animation/Animator;)V
-    .locals 1
+    .locals 2
+
+    iget-object v0, p0, Lcom/android/systemui/SearchPanelCircleView$5;->this$0:Lcom/android/systemui/SearchPanelCircleView;
+
+    const/4 v1, 0x0
+
+    # setter for: Lcom/android/systemui/SearchPanelCircleView;->mOffsetAnimator:Landroid/animation/ValueAnimator;
+    invoke-static {v0, v1}, Lcom/android/systemui/SearchPanelCircleView;->access$302(Lcom/android/systemui/SearchPanelCircleView;Landroid/animation/ValueAnimator;)Landroid/animation/ValueAnimator;
 
     iget-object v0, p0, Lcom/android/systemui/SearchPanelCircleView$5;->val$endRunnable:Ljava/lang/Runnable;
 

@@ -1715,4 +1715,6 @@ Battery saver turns off automatically when your device is charging."</string>
     <string name="apm_bootloader_summary">Reboot directly to bootloader</string>
     <string name="apm_safemode">Safe mode</string>
     <string name="apm_safemode_summary">Reboot and disable third party apps</string>
+    <string name="permlab_accessTorchService">access torch service</string>
+    <string name="permdesc_accessTorchService">Allows an app to access the torch service. Should never be needed for normal apps.</string>
 </resources>
