@@ -263,68 +263,100 @@
 .end method
 
 .method private getIndexHint(Lcom/android/internal/policy/impl/LockscreenShortcutsHelper$Shortcuts;)Ljava/lang/String;
-    .locals 5
+    .locals 9
 
-    iget-object v2, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mShortcutHelper:Lcom/android/internal/policy/impl/LockscreenShortcutsHelper;
+    const v5, 0x7f0b01ea
 
-    invoke-virtual {v2, p1}, Lcom/android/internal/policy/impl/LockscreenShortcutsHelper;->isTargetCustom(Lcom/android/internal/policy/impl/LockscreenShortcutsHelper$Shortcuts;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_0
-
-    iget-object v2, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mShortcutHelper:Lcom/android/internal/policy/impl/LockscreenShortcutsHelper;
-
-    invoke-virtual {v2, p1}, Lcom/android/internal/policy/impl/LockscreenShortcutsHelper;->getFriendlyNameForUri(Lcom/android/internal/policy/impl/LockscreenShortcutsHelper$Shortcuts;)Ljava/lang/String;
-
-    move-result-object v0
-
-    const/4 v1, 0x0
-
-    sget-object v2, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$5;->$SwitchMap$com$android$internal$policy$impl$LockscreenShortcutsHelper$Shortcuts:[I
-
-    invoke-virtual {p1}, Lcom/android/internal/policy/impl/LockscreenShortcutsHelper$Shortcuts;->ordinal()I
-
-    move-result v3
-
-    aget v2, v2, v3
-
-    packed-switch v2, :pswitch_data_0
-
-    :goto_0
-    iget-object v2, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mContext:Landroid/content/Context;
-
-    const/4 v3, 0x1
-
-    new-array v3, v3, [Ljava/lang/Object;
+    const v6, 0x7f0b01e9
 
     const/4 v4, 0x0
 
-    aput-object v0, v3, v4
+    const/4 v3, 0x1
 
-    invoke-virtual {v2, v1, v3}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
+    iget-object v7, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mShortcutHelper:Lcom/android/internal/policy/impl/LockscreenShortcutsHelper;
 
-    move-result-object v2
+    invoke-virtual {v7, p1}, Lcom/android/internal/policy/impl/LockscreenShortcutsHelper;->isTargetCustom(Lcom/android/internal/policy/impl/LockscreenShortcutsHelper$Shortcuts;)Z
 
-    :goto_1
-    return-object v2
+    move-result v7
 
-    :pswitch_0
-    const v1, 0x7f0b01e9
+    if-eqz v7, :cond_3
 
-    goto :goto_0
+    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->getLayoutDirection()I
 
-    :pswitch_1
-    const v1, 0x7f0b01ea
+    move-result v7
 
-    goto :goto_0
+    if-ne v7, v3, :cond_0
 
-    :cond_0
+    move v0, v3
+
+    :goto_0
+    iget-object v7, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mShortcutHelper:Lcom/android/internal/policy/impl/LockscreenShortcutsHelper;
+
+    invoke-virtual {v7, p1}, Lcom/android/internal/policy/impl/LockscreenShortcutsHelper;->getFriendlyNameForUri(Lcom/android/internal/policy/impl/LockscreenShortcutsHelper$Shortcuts;)Ljava/lang/String;
+
+    move-result-object v1
+
     const/4 v2, 0x0
 
+    sget-object v7, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$5;->$SwitchMap$com$android$internal$util$cm$LockscreenShortcutsHelper$Shortcuts:[I
+
+    invoke-virtual {p1}, Lcom/android/internal/policy/impl/LockscreenShortcutsHelper$Shortcuts;->ordinal()I
+
+    move-result v8
+
+    aget v7, v7, v8
+
+    packed-switch v7, :pswitch_data_0
+
+    :goto_1
+    iget-object v5, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mContext:Landroid/content/Context;
+
+    new-array v3, v3, [Ljava/lang/Object;
+
+    aput-object v1, v3, v4
+
+    invoke-virtual {v5, v2, v3}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    :goto_2
+    return-object v3
+
+    :cond_0
+    move v0, v4
+
+    goto :goto_0
+
+    :pswitch_0
+    if-eqz v0, :cond_1
+
+    move v2, v5
+
+    :goto_3
     goto :goto_1
 
-    nop
+    :cond_1
+    move v2, v6
+
+    goto :goto_3
+
+    :pswitch_1
+    if-eqz v0, :cond_2
+
+    move v2, v6
+
+    :goto_4
+    goto :goto_1
+
+    :cond_2
+    move v2, v5
+
+    goto :goto_4
+
+    :cond_3
+    const/4 v3, 0x0
+
+    goto :goto_2
 
     :pswitch_data_0
     .packed-switch 0x1
@@ -621,96 +653,79 @@
 .end method
 
 .method private updateCameraVisibility()V
-    .locals 8
-
-    const/4 v3, 0x1
+    .locals 7
 
     const/4 v2, 0x0
 
-    iget-object v4, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mContext:Landroid/content/Context;
+    iget-object v3, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mContext:Landroid/content/Context;
 
-    invoke-virtual {v4}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
+    invoke-virtual {v3}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
-    move-result-object v4
+    move-result-object v3
 
     invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->getCameraIntent()Landroid/content/Intent;
 
-    move-result-object v5
+    move-result-object v4
 
-    const/high16 v6, 0x10000
+    const/high16 v5, 0x10000
 
-    iget-object v7, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
+    iget-object v6, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
 
-    invoke-virtual {v7}, Lcom/android/internal/widget/LockPatternUtils;->getCurrentUser()I
+    invoke-virtual {v6}, Lcom/android/internal/widget/LockPatternUtils;->getCurrentUser()I
 
-    move-result v7
+    move-result v6
 
-    invoke-virtual {v4, v5, v6, v7}, Landroid/content/pm/PackageManager;->resolveActivityAsUser(Landroid/content/Intent;II)Landroid/content/pm/ResolveInfo;
+    invoke-virtual {v3, v4, v5, v6}, Landroid/content/pm/PackageManager;->resolveActivityAsUser(Landroid/content/Intent;II)Landroid/content/pm/ResolveInfo;
 
     move-result-object v0
 
     invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->isCameraDisabledByDpm()Z
 
-    move-result v4
+    move-result v3
 
-    if-nez v4, :cond_1
+    if-nez v3, :cond_0
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_0
 
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->getResources()Landroid/content/res/Resources;
 
-    move-result-object v4
+    move-result-object v3
 
-    const v5, 0x7f080009
+    const v4, 0x7f080009
 
-    invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getBoolean(I)Z
+    invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getBoolean(I)Z
 
-    move-result v4
+    move-result v3
 
-    if-eqz v4, :cond_1
+    if-eqz v3, :cond_0
 
-    move v1, v3
+    const/4 v1, 0x1
 
     :goto_0
-    if-nez v1, :cond_0
+    sget-object v3, Lcom/android/internal/policy/impl/LockscreenShortcutsHelper$Shortcuts;->RIGHT_SHORTCUT:Lcom/android/internal/policy/impl/LockscreenShortcutsHelper$Shortcuts;
 
-    iget-object v4, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mShortcutHelper:Lcom/android/internal/policy/impl/LockscreenShortcutsHelper;
+    invoke-direct {p0, v1, v3}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->updateVisibilityCheck(ZLcom/android/internal/policy/impl/LockscreenShortcutsHelper$Shortcuts;)Z
 
-    sget-object v5, Lcom/android/internal/policy/impl/LockscreenShortcutsHelper$Shortcuts;->RIGHT_SHORTCUT:Lcom/android/internal/policy/impl/LockscreenShortcutsHelper$Shortcuts;
+    move-result v1
 
-    invoke-virtual {v4, v5}, Lcom/android/internal/policy/impl/LockscreenShortcutsHelper;->isTargetCustom(Lcom/android/internal/policy/impl/LockscreenShortcutsHelper$Shortcuts;)Z
-
-    move-result v4
-
-    if-eqz v4, :cond_2
-
-    :cond_0
-    move v1, v3
-
-    :goto_1
     iget-object v3, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mCameraImageView:Lcom/android/systemui/statusbar/KeyguardAffordanceView;
 
-    if-eqz v1, :cond_3
+    if-eqz v1, :cond_1
 
-    :goto_2
+    :goto_1
     invoke-virtual {v3, v2}, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->setVisibility(I)V
 
     return-void
 
-    :cond_1
+    :cond_0
     move v1, v2
 
     goto :goto_0
 
-    :cond_2
-    move v1, v2
-
-    goto :goto_1
-
-    :cond_3
+    :cond_1
     const/16 v2, 0x8
 
-    goto :goto_2
+    goto :goto_1
 .end method
 
 .method private updateCustomShortcuts()V
@@ -1018,48 +1033,66 @@
 .end method
 
 .method private updatePhoneVisibility()V
-    .locals 4
-
-    const/4 v1, 0x0
+    .locals 3
 
     invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->isPhoneVisible()Z
 
     move-result v0
 
-    if-nez v0, :cond_0
+    sget-object v1, Lcom/android/internal/policy/impl/LockscreenShortcutsHelper$Shortcuts;->LEFT_SHORTCUT:Lcom/android/internal/policy/impl/LockscreenShortcutsHelper$Shortcuts;
 
-    iget-object v2, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mShortcutHelper:Lcom/android/internal/policy/impl/LockscreenShortcutsHelper;
+    invoke-direct {p0, v0, v1}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->updateVisibilityCheck(ZLcom/android/internal/policy/impl/LockscreenShortcutsHelper$Shortcuts;)Z
 
-    sget-object v3, Lcom/android/internal/policy/impl/LockscreenShortcutsHelper$Shortcuts;->LEFT_SHORTCUT:Lcom/android/internal/policy/impl/LockscreenShortcutsHelper$Shortcuts;
+    move-result v0
 
-    invoke-virtual {v2, v3}, Lcom/android/internal/policy/impl/LockscreenShortcutsHelper;->isTargetCustom(Lcom/android/internal/policy/impl/LockscreenShortcutsHelper$Shortcuts;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1
-
-    :cond_0
-    const/4 v0, 0x1
-
-    :goto_0
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mPhoneImageView:Lcom/android/systemui/statusbar/KeyguardAffordanceView;
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_0
 
-    :goto_1
+    const/4 v1, 0x0
+
+    :goto_0
     invoke-virtual {v2, v1}, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->setVisibility(I)V
 
     return-void
 
-    :cond_1
-    move v0, v1
-
-    goto :goto_0
-
-    :cond_2
+    :cond_0
     const/16 v1, 0x8
 
-    goto :goto_1
+    goto :goto_0
+.end method
+
+.method private updateVisibilityCheck(ZLcom/android/internal/policy/impl/LockscreenShortcutsHelper$Shortcuts;)Z
+    .locals 3
+
+    iget-object v2, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mShortcutHelper:Lcom/android/internal/policy/impl/LockscreenShortcutsHelper;
+
+    invoke-virtual {v2, p2}, Lcom/android/internal/policy/impl/LockscreenShortcutsHelper;->isTargetCustom(Lcom/android/internal/policy/impl/LockscreenShortcutsHelper$Shortcuts;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v2, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mShortcutHelper:Lcom/android/internal/policy/impl/LockscreenShortcutsHelper;
+
+    invoke-virtual {v2, p2}, Lcom/android/internal/policy/impl/LockscreenShortcutsHelper;->isTargetEmpty(Lcom/android/internal/policy/impl/LockscreenShortcutsHelper$Shortcuts;)Z
+
+    move-result v1
+
+    if-eqz p1, :cond_1
+
+    if-eqz v1, :cond_1
+
+    const/4 p1, 0x0
+
+    :cond_0
+    :goto_0
+    return p1
+
+    :cond_1
+    const/4 p1, 0x1
+
+    goto :goto_0
 .end method
 
 .method private watchForCameraPolicyChanges()V
@@ -1219,7 +1252,7 @@
 .method public launchCamera()V
     .locals 4
 
-    iget-object v2, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mShortcutHelper:Lcom/android/internal/util/cm/LockscreenShortcutsHelper;
+    iget-object v2, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mShortcutHelper:Lcom/android/internal/policy/impl/LockscreenShortcutsHelper;
 
     sget-object v3, Lcom/android/internal/policy/impl/LockscreenShortcutsHelper$Shortcuts;->RIGHT_SHORTCUT:Lcom/android/internal/policy/impl/LockscreenShortcutsHelper$Shortcuts;
 

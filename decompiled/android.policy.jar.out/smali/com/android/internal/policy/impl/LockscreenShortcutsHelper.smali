@@ -16,6 +16,8 @@
 # static fields
 .field private static final CAMERA_DEFAULT_ICON:Ljava/lang/String; = "ic_camera_alt_24dp"
 
+.field public static final DEFAULT:Ljava/lang/String; = "default"
+
 .field private static final DELIMITER:Ljava/lang/String; = "|"
 
 .field public static final NONE:Ljava/lang/String; = "none"
@@ -198,7 +200,7 @@
 
     iget-object v9, p0, Lcom/android/internal/policy/impl/LockscreenShortcutsHelper;->mTargetActivities:Ljava/util/List;
 
-    const-string v10, "none"
+    const-string v10, "default"
 
     invoke-interface {v9, v10}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
@@ -329,8 +331,6 @@
     .param p1    # Ljava/lang/String;
 
     const/4 v3, 0x0
-
-    const/4 v2, 0x0
 
     iget-object v4, p0, Lcom/android/internal/policy/impl/LockscreenShortcutsHelper;->mContext:Landroid/content/Context;
 
@@ -598,12 +598,6 @@
 
     const/4 v1, 0x0
 
-    invoke-virtual {p0, p1}, Lcom/android/internal/policy/impl/LockscreenShortcutsHelper;->isTargetCustom(Lcom/android/internal/policy/impl/LockscreenShortcutsHelper$Shortcuts;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_0
-
     :try_start_0
     iget-object v2, p0, Lcom/android/internal/policy/impl/LockscreenShortcutsHelper;->mTargetActivities:Ljava/util/List;
 
@@ -626,7 +620,6 @@
 
     move-result-object v1
 
-    :cond_0
     :goto_0
     return-object v1
 
@@ -639,6 +632,70 @@
 .end method
 
 .method public isTargetCustom(Lcom/android/internal/policy/impl/LockscreenShortcutsHelper$Shortcuts;)Z
+    .locals 4
+    .param p1    # Lcom/android/internal/policy/impl/LockscreenShortcutsHelper$Shortcuts;
+
+    const/4 v1, 0x0
+
+    iget-object v2, p0, Lcom/android/internal/policy/impl/LockscreenShortcutsHelper;->mTargetActivities:Ljava/util/List;
+
+    if-eqz v2, :cond_0
+
+    iget-object v2, p0, Lcom/android/internal/policy/impl/LockscreenShortcutsHelper;->mTargetActivities:Ljava/util/List;
+
+    invoke-interface {v2}, Ljava/util/List;->isEmpty()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1
+
+    :cond_0
+    :goto_0
+    return v1
+
+    :cond_1
+    iget-object v2, p0, Lcom/android/internal/policy/impl/LockscreenShortcutsHelper;->mTargetActivities:Ljava/util/List;
+
+    # getter for: Lcom/android/internal/policy/impl/LockscreenShortcutsHelper$Shortcuts;->index:I
+    invoke-static {p1}, Lcom/android/internal/policy/impl/LockscreenShortcutsHelper$Shortcuts;->access$200(Lcom/android/internal/policy/impl/LockscreenShortcutsHelper$Shortcuts;)I
+
+    move-result v3
+
+    invoke-interface {v2, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/String;
+
+    const-string v2, "default"
+
+    invoke-virtual {v2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_0
+
+    const-string v2, "none"
+
+    invoke-virtual {v2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_2
+
+    invoke-virtual {p0, p1}, Lcom/android/internal/policy/impl/LockscreenShortcutsHelper;->getIntent(Lcom/android/internal/policy/impl/LockscreenShortcutsHelper$Shortcuts;)Landroid/content/Intent;
+
+    move-result-object v2
+
+    if-eqz v2, :cond_0
+
+    :cond_2
+    const/4 v1, 0x1
+
+    goto :goto_0
+.end method
+
+.method public isTargetEmpty(Lcom/android/internal/policy/impl/LockscreenShortcutsHelper$Shortcuts;)Z
     .locals 2
     .param p1    # Lcom/android/internal/policy/impl/LockscreenShortcutsHelper$Shortcuts;
 
@@ -673,7 +730,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_0
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
