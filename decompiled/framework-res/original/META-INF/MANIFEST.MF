@@ -5356,7 +5356,7 @@ Name: res/drawable-xhdpi-v4/ic_media_next.png
 SHA1-Digest: NY9N1LntL0x2kyGCPEIQk/Rovd0=
 
 Name: resources.arsc
-SHA1-Digest: ygWEiyUx2WPGHnAPQtMO4tzBIFQ=
+SHA1-Digest: beFMiM8j6g2LJN/8WDTiSxbcR1c=
 
 Name: res/drawable-xhdpi-v4/checkbox_off_background.png
 SHA1-Digest: SCV46N789z6HznQPOnnal1CDKSk=
