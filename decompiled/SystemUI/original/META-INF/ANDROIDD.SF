@@ -1,6 +1,6 @@
 Signature-Version: 1.0
 SHA1-Digest-Manifest-Main-Attributes: oBlL/oG+4hznu9Y7MBMT57b385s=
-SHA1-Digest-Manifest: 0TzM408Izgg7XPcu7pY8sMRQ7Qo=
+SHA1-Digest-Manifest: Qf7QqpSviGYF9Myne9Rrs141RUQ=
 Created-By: 1.8.0_31 (Oracle Corporation)
 
 Name: res/drawable/ic_qs_signal_e.xml
@@ -691,7 +691,7 @@ Name: res/drawable/notification_material_bg_dim.xml
 SHA1-Digest: a7u/fZwIhUJctleoPPWgkvkxe/8=
 
 Name: AndroidManifest.xml
-SHA1-Digest: OfYC3tCoXMhqUcLAoP2oc26Sr3o=
+SHA1-Digest: /oM7j7uukU6+KgbJhRHk8tvz10w=
 
 Name: res/drawable-hdpi-v4/stat_sys_roaming_cdma_0.png
 SHA1-Digest: /LBnP74gUGoNHOksENmBo8EOweU=
@@ -1213,7 +1213,7 @@ Name: res/drawable/ic_settings.xml
 SHA1-Digest: i/fFnFI72yCUeIid+M3Cxu7GMiQ=
 
 Name: classes.dex
-SHA1-Digest: j29VJGvE+W7iNZHeIFy7l4IOHI0=
+SHA1-Digest: LRJQOwOBKmkGFNZfi0STFb0/WPQ=
 
 Name: res/drawable-hdpi-v4/ic_lockscreen_player_background.9.png
 SHA1-Digest: UhReoYPOLjGRfP/fYcPzlXZyx3A=

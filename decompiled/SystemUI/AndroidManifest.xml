@@ -70,6 +70,7 @@
     <uses-permission android:name="com.cyanogenmod.lockclock.permission.READ_WEATHER"/>
     <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
     <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.FORCE_STOP_PACKAGES"/>
     <application android:allowBackup="false" android:allowClearUserData="false" android:hardwareAccelerated="true" android:icon="@drawable/icon" android:label="@string/app_label" android:name=".SystemUIApplication" android:persistent="true" android:process="com.android.systemui" android:supportsRtl="true" android:theme="@style/systemui_theme">
         <service android:exported="true" android:name="SystemUIService"/>
         <service android:exported="false" android:name=".screenshot.TakeScreenshotService" android:process=":screenshot"/>

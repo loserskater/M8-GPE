@@ -689,7 +689,7 @@ Name: res/drawable/notification_material_bg_dim.xml
 SHA1-Digest: 2d08G/MJZFlFW6ScTCa8kW7SjlU=
 
 Name: AndroidManifest.xml
-SHA1-Digest: PkMf+wSj73yYbcazscF1bOId19U=
+SHA1-Digest: Ki7ShQ0JtzSAhLPSQY/J5QctcOc=
 
 Name: res/drawable-hdpi-v4/stat_sys_roaming_cdma_0.png
 SHA1-Digest: prIWHuSSj7ES7Sc4gwpflUughG0=
@@ -1211,7 +1211,7 @@ Name: res/drawable/ic_settings.xml
 SHA1-Digest: mkyJiwjejCPyaMNSvh1fcY4Vr70=
 
 Name: classes.dex
-SHA1-Digest: VUqKiySe9AYaqAErkMunfMDnjcw=
+SHA1-Digest: Iir80nQXGYwGJqGFy1wGSmT9qtU=
 
 Name: res/drawable-hdpi-v4/ic_lockscreen_player_background.9.png
 SHA1-Digest: HjCRnUe2JVCTW7qf+WlMUmFvT2M=
