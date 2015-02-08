@@ -1,5 +1,5 @@
-#!/tmp/bash
-##
+﻿#!/tmp/bash
+
 cd /data
 FILES=(*)
 

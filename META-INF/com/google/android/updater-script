@@ -1,6 +1,3 @@
-unmount("/data");
-unmount("/system");
-unmount("/cache");
 #
 #Kernel Only
 #
@@ -8,7 +5,7 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "4" then
   set_progress(0.1);
   mount("ext4", "EMMC", "/dev/block/platform/msm_sdcc.1/by-name/system", "/system");
   mount("ext4", "EMMC", "/dev/block/platform/msm_sdcc.1/by-name/cache", "/cache");
-  mount("ext4", "EMMC", "/dev/block/platform/msm_sdcc.1/by-name/data", "/data");
+  mount("ext4", "EMMC", "/dev/block/platform/msm_sdcc.1/by-name/userdata", "/data");
   ui_print("@Deleting Necessary Modules/Parts/Data");
   delete_recursive("/system/lib/modules");
   delete("/system/etc/init.d/97quantumsettings");
@@ -89,9 +86,6 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "4" then
       run_program("/system/bin/fstrim", "-v", "/system");
     endif;
   endif;
-  ui_print("@Formating Cache");
-  format("ext4", "EMMC", "/dev/block/platform/msm_sdcc.1/by-name/cache", "0", "/cache");
-  delete_recursive("/data/dalvik-cache");
   set_progress(1.0);
 endif;
 #
@@ -106,7 +100,7 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "3" then
   endif;
   mount("ext4", "EMMC", "/dev/block/platform/msm_sdcc.1/by-name/system", "/system");
   mount("ext4", "EMMC", "/dev/block/platform/msm_sdcc.1/by-name/cache", "/cache");
-  mount("ext4", "EMMC", "/dev/block/platform/msm_sdcc.1/by-name/data", "/data");
+  mount("ext4", "EMMC", "/dev/block/platform/msm_sdcc.1/by-name/userdata", "/data");
   if file_getprop("/tmp/aroma/wipe.prop","selected.0") != "1" then
     ui_print("@Formatting Dalvik");
     delete_recursive("/data/dalvik-cache");
@@ -126,7 +120,7 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "1" || file_getprop("/tmp/
   format("ext4", "EMMC", "/dev/block/platform/msm_sdcc.1/by-name/cache", "0", "/cache");
   mount("ext4", "EMMC", "/dev/block/platform/msm_sdcc.1/by-name/system", "/system");
   mount("ext4", "EMMC", "/dev/block/platform/msm_sdcc.1/by-name/cache", "/cache");
-  mount("ext4", "EMMC", "/dev/block/platform/msm_sdcc.1/by-name/data", "/data");
+  mount("ext4", "EMMC", "/dev/block/platform/msm_sdcc.1/by-name/userdata", "/data");
   ui_print("@Formatting Dalvik");
   delete_recursive("/data/dalvik-cache");
   delete_recursive("/data/local");
@@ -227,7 +221,7 @@ endif;
 #
 if file_getprop("/tmp/aroma/type.prop","selected") == "2" || file_getprop("/tmp/aroma/type.prop","selected") == "3" then
   ui_print("#Installing Mods#");
-  set_progress(0.62);	
+  set_progress(0.62);
   #
   #Mms
   #
@@ -363,7 +357,7 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "2" || file_getprop("/tmp/
 	"/system/lib/libhtccamera.so", "/system/lib/libimage_codec_engine.so", "/system/lib/libimage_feature.so", "/system/lib/libimindexer.so", "/system/lib/libimindexer_android.so",
     "/system/lib/libjocl.so", "/system/lib/libmorpho_edit_engine.so", "/system/lib/libmorpho_frame_overlay.so",
 	"/system/lib/libmorpho_image_converter.so", "/system/lib/libmorpho_image_stitcher3.so", "/system/lib/libmorpho_image_transform.so", "/system/lib/libmorpho_jpeg_io.so", "/system/lib/libmorpho_memory_allocator.so",
-	"/system/lib/libomron_common.so", "/system/lib/libopencv_porting.so", "/system/lib/libpanoglviewer_hdk_v14.so", "/system/lib/libpanoramaplus.so", "/system/lib/libpanostitcher.so", "/system/lib/libvima.so");	
+	"/system/lib/libomron_common.so", "/system/lib/libopencv_porting.so", "/system/lib/libpanoglviewer_hdk_v14.so", "/system/lib/libpanoramaplus.so", "/system/lib/libpanostitcher.so", "/system/lib/libvima.so");
     package_extract_file("system/framework/libalDE_SDE_TWO.so", "/system/framework/libalDE_SDE_TWO.so");
 	package_extract_file("system/framework/libalDynamicWarping_SDW_TWO.so", "/system/framework/libalDynamicWarping_SDW_TWO.so");
 	package_extract_file("system/framework/libHMSGallery_libBokehLibEngine.so", "/system/framework/libHMSGallery_libBokehLibEngine.so");

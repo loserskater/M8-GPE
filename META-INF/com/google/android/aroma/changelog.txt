@@ -1,9 +1,6 @@
 <b>*New Additions</b>
-Customizable quick settings
-Disable signature verification
-CodeCraft and Elite kernels for verizon/sprint
-Sense video player
-Started cleanup of extra settings
+Customizable NavButtons
+Customizable long press home quick bubbles
+Expandable volume panel
+Remove lockscreen shortcuts
 <b>*Fixes</b>
-Multi-carrier support
-FCs in apps like PowerAmp
