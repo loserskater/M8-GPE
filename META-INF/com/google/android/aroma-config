@@ -500,6 +500,79 @@ if prop("type.prop","selected")=="2"||prop("type.prop","selected")=="3" then
       #-- File Content to be writen into the file
       readtmpfile("live.prop");
     );
+	selectbox(
+      #-- Title
+        "System De-Bloat",
+      
+      #-- Sub Title
+        "",
+       
+      #-- Icon:
+        "@apps",
+      
+      #-- Will be saved in /tmp/aroma/email.prop
+        "debloat.prop",
+
+        "De-Bloat",              "",                                         2,  #-- Group 2. key = "selected.1"
+		  "Yes",            "De-Bloat safe to remove system apps",           0,      #-- selected.1 = 1
+          "No",             "",                                              1       #-- selected.1 = 2
+
+    );
+endif;
+if prop("debloat.prop","selected.1")=="1" then
+	setvar(
+      #-- Variable name
+        "debloat_prop",
+      #-- Value
+        read(
+          #-- Absolute Path
+            "/data/media/0/aroma/Debloat.prop"
+        )
+      );
+    if (getvar("debloat_prop")!="") then
+        writetmpfile("debloat.prop",getvar("debloat_prop"));
+    endif;
+    checkbox(
+      #-- Title
+        "System De-Bloat",
+      
+      #-- Sub Title
+        "Select the apps you would like removed.",
+      
+      #-- Icon:
+        "@apps",
+      
+      #-- Will be saved in /tmp/aroma/other
+        "debloat.prop",
+		"apps",  "", 2,								  
+	      "Drive",           "12.1Mb",                    0,      #-- item.1.1
+		  "EditorsDocs",     "20.7Mb",                    0,      #-- item.1.2
+	      "EditorsSheets",   "28.8Mb",                    0,      #-- item.1.3
+          "EditorsSlides",   "22.5Mb",                    0,      #-- item.1.4
+		  "GoogleHindiIME",  "8.37Mb foreign keyboard",   0,      #-- item.1.5
+		  "GooglePinyinIME", "7.67Mb foreign keyboard",   0,      #-- item.1.6
+		  "Hangouts",        "21.7Mb",                    0,      #-- item.1.7
+		  "HPPrintPlugin",   "3.23Mb",                    0,      #-- item.1.8
+		  "iWnnIME",         "14Mb foreign keyboard",     0,      #-- item.1.9
+		  "Keep",            "6.92Mb",                    0,      #-- item.1.10
+		  "KoreanIME",       "6.94Mb",                    0,      #-- item.1.11
+		  "Maps",            "12.4Mb",                    0,      #-- item.1.12
+		  "News & Weather",  "2.13Mb",                    0,      #-- item.1.13
+		  "PlayGames",       "6.20Mb",                    0,      #-- item.1.14
+		  "Street",          "258kb",                     0,      #-- item.1.15
+		  "YouTube",         "10.4Mb",                    0,      #-- item.1.16
+		
+		"priv-apps",  "", 2,
+		  "DotMatrix",       "6.42Mb",                    0,      #-- item.2.2
+		  "Wallet",          "7.84Mb May cause Wallet not to work if downloaded form the play store.", 0      #-- item.2.2
+	);
+    write(
+      #-- Absolute path into the file
+      "/data/media/0/aroma/Debloat.prop",
+        
+      #-- File Content to be writen into the file
+      readtmpfile("debloat.prop");
+    );
 endif;
 
 ##################################################################################################################
