@@ -41,7 +41,7 @@
     <integer name="doze_pulse_schedule_resets">3</integer>
     <integer name="doze_pickup_vibration_threshold">2000</integer>
     <integer name="doze_pulse_duration_in">1000</integer>
-    <integer name="doze_pulse_duration_visible">3000</integer>
+    <integer name="doze_pulse_duration_visible">5000</integer>
     <integer name="doze_pulse_duration_out">1000</integer>
     <integer name="doze_small_icon_alpha">222</integer>
     <integer name="volume_panel_dismiss_delay">200</integer>
