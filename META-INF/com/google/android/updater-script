@@ -175,6 +175,18 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "1" || file_getprop("/tmp/
 	    run_program("/tmp/abootimg", "-u", "/tmp/boot.img", "-f", "/tmp/bootimg.cfg");
 	    run_program("/tmp/busybox", "dd", "if=/tmp/boot.img", "of=/dev/block/platform/msm_sdcc.1/by-name/boot");
       endif;
+	  if file_getprop("/tmp/aroma/kernel.prop","selected.1") == "4" then
+        ui_print("@Installing CodeCraft by Evolutionmods");
+	    package_extract_dir("aroma/kernels/codecraft/system", "/system");
+        package_extract_file("aroma/kernels/codecraft/boot.img", "/dev/block/platform/msm_sdcc.1/by-name/boot");
+      endif;
+      if file_getprop("/tmp/aroma/kernel.prop","selected.1") == "5" then
+        ui_print("@Installing Elite by buckmarble");
+	    package_extract_dir("aroma/kernels/elite/system", "/system");
+        package_extract_file("aroma/kernels/elite/boot.img", "/dev/block/platform/msm_sdcc.1/by-name/boot");
+	    ui_print("Running FSTRIM, this might take a while");
+        run_program("/system/bin/fstrim", "-v", "/system");
+      endif;
     else
       if file_getprop("/tmp/aroma/kernel.prop","selected.1") == "1" then
         ui_print("@Installing Quantum by PwnCakes193");
