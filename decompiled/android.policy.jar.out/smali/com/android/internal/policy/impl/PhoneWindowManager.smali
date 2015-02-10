@@ -3896,6 +3896,47 @@
     goto :goto_0
 .end method
 
+.method resetScreenHelper()V
+    .locals 6
+
+    new-instance v1, Landroid/util/DisplayMetrics;
+
+    invoke-direct {v1}, Landroid/util/DisplayMetrics;-><init>()V
+
+    iget-object v3, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mContext:Landroid/content/Context;
+
+    const-string v4, "window"
+
+    invoke-virtual {v3, v4}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Landroid/view/WindowManager;
+
+    invoke-interface {v2}, Landroid/view/WindowManager;->getDefaultDisplay()Landroid/view/Display;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v1}, Landroid/view/Display;->getMetrics(Landroid/util/DisplayMetrics;)V
+
+    iget v0, v1, Landroid/util/DisplayMetrics;->densityDpi:I
+
+    iget-object v3, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mDisplay:Landroid/view/Display;
+
+    if-eqz v3, :cond_0
+
+    iget-object v3, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mDisplay:Landroid/view/Display;
+
+    iget v4, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mUnrestrictedScreenWidth:I
+
+    iget v5, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mUnrestrictedScreenHeight:I
+
+    invoke-virtual {p0, v3, v4, v5, v0}, Lcom/android/internal/policy/impl/PhoneWindowManager;->setInitialDisplaySize(Landroid/view/Display;III)V
+
+    :cond_0
+    return-void
+.end method
+
 .method private scheduleLongPressKeyEvent(Landroid/view/KeyEvent;I)V
     .locals 9
 
@@ -19341,7 +19382,7 @@
 .end method
 
 .method public setInitialDisplaySize(Landroid/view/Display;III)V
-    .locals 17
+    .locals 20
 
     move-object/from16 v0, p0
 
@@ -19429,22 +19470,6 @@
 
     move-object/from16 v0, p0
 
-    iget-object v8, v0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v8}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v8
-
-    const-string v9, "navbar_height"
-
-    const/16 v10, 0x90
-
-    invoke-static {v8, v9, v10}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
-
-    move-result v12
-
-    move-object/from16 v0, p0
-
     iget-object v8, v0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mNavigationBarHeightForRotation:[I
 
     move-object/from16 v0, p0
@@ -19458,6 +19483,34 @@
     move-object/from16 v0, p0
 
     iget v11, v0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mUpsideDownRotation:I
+
+    move-object/from16 v0, p0
+
+    iget-object v12, v0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v12}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v12
+
+    const-string v13, "navigation_bar_height"
+
+    move-object/from16 v0, p0
+
+    iget-object v14, v0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v14}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v14
+
+    const v15, 0x1050011
+
+    invoke-virtual {v14, v15}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+
+    move-result v14
+
+    invoke-static {v12, v13, v14}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+
+    move-result v12
 
     aput v12, v10, v11
 
@@ -19479,9 +19532,31 @@
 
     iget v11, v0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mSeascapeRotation:I
 
-    const v12, 0x1050012
+    move-object/from16 v0, p0
 
-    invoke-virtual {v5, v12}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+    iget-object v12, v0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v12}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v12
+
+    const-string v13, "navigation_bar_height_landscape"
+
+    move-object/from16 v0, p0
+
+    iget-object v14, v0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v14}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v14
+
+    const v15, 0x1050012
+
+    invoke-virtual {v14, v15}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+
+    move-result v14
+
+    invoke-static {v12, v13, v14}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
 
     move-result v12
 
@@ -20354,6 +20429,8 @@
     move-result v12
 
     iput v12, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mVolBtnVolDown:I
+
+    invoke-virtual {p0}, Lcom/android/internal/policy/impl/PhoneWindowManager;->resetScreenHelper()V
 
     const-string v12, "incall_power_button_behavior"
 
