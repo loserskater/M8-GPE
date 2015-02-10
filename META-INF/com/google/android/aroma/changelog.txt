@@ -1,6 +1,9 @@
 <b>*New Additions</b>
 Customizable NavButtons
-Customizable long press home quick bubbles
+Customizable NavRing
 Expandable volume panel
 Remove lockscreen shortcuts
+Weather in notifications
 <b>*Fixes</b>
+Updater script, should fix bootloops.
+Dark dialer theme changes and fixes
