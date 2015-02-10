@@ -34,6 +34,8 @@
 .method observe()V
     .locals 3
 
+    const/4 v2, 0x0
+
     iget-object v1, p0, Lcom/android/systemui/statusbar/policy/Clock$SettingsObserver;->this$0:Lcom/android/systemui/statusbar/policy/Clock;
 
     iget-object v1, v1, Lcom/android/systemui/statusbar/policy/Clock;->mContext:Landroid/content/Context;
@@ -48,7 +50,13 @@
 
     move-result-object v1
 
-    const/4 v2, 0x0
+    invoke-virtual {v0, v1, v2, p0}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
+
+    const-string v1, "status_bar_dow"
+
+    invoke-static {v1}, Landroid/provider/Settings$System;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object v1
 
     invoke-virtual {v0, v1, v2, p0}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 
