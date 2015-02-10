@@ -65,9 +65,9 @@
 
     const/4 v12, 0x2
 
-    const/4 v11, 0x1
-
     const/4 v2, 0x0
+
+    const/4 v11, 0x1
 
     new-instance v0, Lcom/android/systemui/volume/VolumePanel$StreamResources;
 
@@ -101,7 +101,7 @@
 
     move v6, v12
 
-    move v10, v2
+    move v10, v11
 
     invoke-direct/range {v3 .. v10}, Lcom/android/systemui/volume/VolumePanel$StreamResources;-><init>(Ljava/lang/String;IIIIIZ)V
 
@@ -121,7 +121,7 @@
 
     move v6, v2
 
-    move v10, v2
+    move v10, v11
 
     invoke-direct/range {v3 .. v10}, Lcom/android/systemui/volume/VolumePanel$StreamResources;-><init>(Ljava/lang/String;IIIIIZ)V
 
@@ -141,7 +141,7 @@
 
     move v6, v14
 
-    move v10, v2
+    move v10, v11
 
     invoke-direct/range {v3 .. v10}, Lcom/android/systemui/volume/VolumePanel$StreamResources;-><init>(Ljava/lang/String;IIIIIZ)V
 
@@ -177,9 +177,9 @@
 
     const v7, 0x104049e
 
-    const v8, 0x7f0200a5
+    const v8, 0x7f0201a3
 
-    const v9, 0x7f0200a7
+    const v9, 0x7f0201a3
 
     move v10, v11
 

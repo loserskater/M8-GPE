@@ -17,6 +17,8 @@
 # instance fields
 .field controller:Landroid/media/session/MediaController;
 
+.field expandPanel:Landroid/widget/ImageView;
+
 .field group:Landroid/view/ViewGroup;
 
 .field icon:Landroid/widget/ImageView;

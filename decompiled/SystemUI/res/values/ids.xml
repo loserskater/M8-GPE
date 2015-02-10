@@ -301,4 +301,5 @@
     <item type="id" name="search_logo1">false</item>
     <item type="id" name="two_parent">false</item>
     <item type="id" name="search_logo2">false</item>
+    <item type="id" name="further_options">false</item>
 </resources>
