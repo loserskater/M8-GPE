@@ -16,9 +16,13 @@
 
 
 # instance fields
-.field private mBackIcon:Lcom/android/systemui/statusbar/phone/BackButtonDrawable;
+.field private mBackAltIcon:Landroid/graphics/drawable/Drawable;
 
-.field private mBackLandIcon:Lcom/android/systemui/statusbar/phone/BackButtonDrawable;
+.field private mBackAltLandIcon:Landroid/graphics/drawable/Drawable;
+
+.field private mBackIcon:Landroid/graphics/drawable/Drawable;
+
+.field private mBackLandIcon:Landroid/graphics/drawable/Drawable;
 
 .field mBarSize:I
 
@@ -440,29 +444,35 @@
 .method private getIcons(Landroid/content/res/Resources;)V
     .locals 2
 
-    new-instance v0, Lcom/android/systemui/statusbar/phone/BackButtonDrawable;
+    const v1, 0x7f0200aa
 
-    const v1, 0x7f0200a9
+    const v0, 0x7f0200a9
+
+    invoke-virtual {p1, v0}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/android/systemui/statusbar/phone/NavigationBarView;->mBackIcon:Landroid/graphics/drawable/Drawable;
+
+    const v0, 0x7f0200ab
+
+    invoke-virtual {p1, v0}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/android/systemui/statusbar/phone/NavigationBarView;->mBackLandIcon:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {p1, v1}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-direct {v0, v1}, Lcom/android/systemui/statusbar/phone/BackButtonDrawable;-><init>(Landroid/graphics/drawable/Drawable;)V
-
-    iput-object v0, p0, Lcom/android/systemui/statusbar/phone/NavigationBarView;->mBackIcon:Lcom/android/systemui/statusbar/phone/BackButtonDrawable;
-
-    new-instance v0, Lcom/android/systemui/statusbar/phone/BackButtonDrawable;
-
-    const v1, 0x7f0200ab
+    iput-object v0, p0, Lcom/android/systemui/statusbar/phone/NavigationBarView;->mBackAltIcon:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {p1, v1}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-direct {v0, v1}, Lcom/android/systemui/statusbar/phone/BackButtonDrawable;-><init>(Landroid/graphics/drawable/Drawable;)V
-
-    iput-object v0, p0, Lcom/android/systemui/statusbar/phone/NavigationBarView;->mBackLandIcon:Lcom/android/systemui/statusbar/phone/BackButtonDrawable;
+    iput-object v0, p0, Lcom/android/systemui/statusbar/phone/NavigationBarView;->mBackAltLandIcon:Landroid/graphics/drawable/Drawable;
 
     const v0, 0x7f0200b2
 
@@ -2208,32 +2218,16 @@
 
     check-cast v5, Landroid/widget/ImageView;
 
-    const/4 v8, 0x0
-
-    invoke-virtual {v5, v8}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
-
-    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/NavigationBarView;->getBackButton()Landroid/view/View;
-
-    move-result-object v5
-
-    check-cast v5, Landroid/widget/ImageView;
+    if-eqz v0, :cond_5
 
     iget-boolean v8, p0, Lcom/android/systemui/statusbar/phone/NavigationBarView;->mVertical:Z
 
     if-eqz v8, :cond_4
 
-    iget-object v8, p0, Lcom/android/systemui/statusbar/phone/NavigationBarView;->mBackLandIcon:Lcom/android/systemui/statusbar/phone/BackButtonDrawable;
+    iget-object v8, p0, Lcom/android/systemui/statusbar/phone/NavigationBarView;->mBackAltLandIcon:Landroid/graphics/drawable/Drawable;
 
     :goto_2
     invoke-virtual {v5, v8}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
-
-    iget-object v5, p0, Lcom/android/systemui/statusbar/phone/NavigationBarView;->mBackLandIcon:Lcom/android/systemui/statusbar/phone/BackButtonDrawable;
-
-    invoke-virtual {v5, v0}, Lcom/android/systemui/statusbar/phone/BackButtonDrawable;->setImeVisible(Z)V
-
-    iget-object v5, p0, Lcom/android/systemui/statusbar/phone/NavigationBarView;->mBackIcon:Lcom/android/systemui/statusbar/phone/BackButtonDrawable;
-
-    invoke-virtual {v5, v0}, Lcom/android/systemui/statusbar/phone/BackButtonDrawable;->setImeVisible(Z)V
 
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/NavigationBarView;->getRecentsButton()Landroid/view/View;
 
@@ -2243,7 +2237,7 @@
 
     iget-boolean v8, p0, Lcom/android/systemui/statusbar/phone/NavigationBarView;->mVertical:Z
 
-    if-eqz v8, :cond_5
+    if-eqz v8, :cond_7
 
     iget-object v8, p0, Lcom/android/systemui/statusbar/phone/NavigationBarView;->mRecentLandIcon:Landroid/graphics/drawable/Drawable;
 
@@ -2258,7 +2252,7 @@
 
     iget-boolean v8, p0, Lcom/android/systemui/statusbar/phone/NavigationBarView;->mVertical:Z
 
-    if-eqz v8, :cond_6
+    if-eqz v8, :cond_8
 
     iget-object v8, p0, Lcom/android/systemui/statusbar/phone/NavigationBarView;->mHomeLandIcon:Landroid/graphics/drawable/Drawable;
 
@@ -2267,11 +2261,11 @@
 
     and-int/lit8 v5, p1, 0x2
 
-    if-eqz v5, :cond_7
+    if-eqz v5, :cond_9
 
     iget-boolean v5, p0, Lcom/android/systemui/statusbar/phone/NavigationBarView;->mShowDpadArrowKeys:Z
 
-    if-nez v5, :cond_7
+    if-nez v5, :cond_9
 
     move v2, v6
 
@@ -2280,7 +2274,7 @@
 
     move-result-object v8
 
-    if-eqz v2, :cond_8
+    if-eqz v2, :cond_a
 
     move v5, v7
 
@@ -2299,7 +2293,7 @@
 
     and-int/lit8 v5, v5, 0x1
 
-    if-eqz v5, :cond_9
+    if-eqz v5, :cond_b
 
     move v3, v6
 
@@ -2334,7 +2328,7 @@
 
     iget-boolean v5, p0, Lcom/android/systemui/statusbar/phone/NavigationBarView;->mVertical:Z
 
-    if-eqz v5, :cond_a
+    if-eqz v5, :cond_c
 
     move v5, v9
 
@@ -2349,14 +2343,14 @@
 
     iget-boolean v8, p0, Lcom/android/systemui/statusbar/phone/NavigationBarView;->mVertical:Z
 
-    if-eqz v8, :cond_b
+    if-eqz v8, :cond_d
 
     :goto_9
     invoke-virtual {v5, v10}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v4
 
-    if-eqz v3, :cond_c
+    if-eqz v3, :cond_e
 
     invoke-virtual {v1}, Landroid/view/View;->getVisibility()I
 
@@ -2388,49 +2382,63 @@
     goto/16 :goto_1
 
     :cond_4
-    iget-object v8, p0, Lcom/android/systemui/statusbar/phone/NavigationBarView;->mBackIcon:Lcom/android/systemui/statusbar/phone/BackButtonDrawable;
+    iget-object v8, p0, Lcom/android/systemui/statusbar/phone/NavigationBarView;->mBackAltIcon:Landroid/graphics/drawable/Drawable;
 
     goto/16 :goto_2
 
     :cond_5
+    iget-boolean v8, p0, Lcom/android/systemui/statusbar/phone/NavigationBarView;->mVertical:Z
+
+    if-eqz v8, :cond_6
+
+    iget-object v8, p0, Lcom/android/systemui/statusbar/phone/NavigationBarView;->mBackLandIcon:Landroid/graphics/drawable/Drawable;
+
+    goto/16 :goto_2
+
+    :cond_6
+    iget-object v8, p0, Lcom/android/systemui/statusbar/phone/NavigationBarView;->mBackIcon:Landroid/graphics/drawable/Drawable;
+
+    goto/16 :goto_2
+
+    :cond_7
     iget-object v8, p0, Lcom/android/systemui/statusbar/phone/NavigationBarView;->mRecentIcon:Landroid/graphics/drawable/Drawable;
 
     goto/16 :goto_3
 
-    :cond_6
+    :cond_8
     iget-object v8, p0, Lcom/android/systemui/statusbar/phone/NavigationBarView;->mHomeIcon:Landroid/graphics/drawable/Drawable;
 
     goto/16 :goto_4
 
-    :cond_7
+    :cond_9
     move v2, v7
 
-    goto :goto_5
+    goto/16 :goto_5
 
-    :cond_8
+    :cond_a
     const/4 v5, 0x4
 
-    goto :goto_6
+    goto/16 :goto_6
 
-    :cond_9
+    :cond_b
     move v3, v7
 
     goto :goto_7
 
-    :cond_a
+    :cond_c
     move v5, v10
 
     goto :goto_8
 
-    :cond_b
+    :cond_d
     move v10, v9
 
     goto :goto_9
 
-    :cond_c
+    :cond_e
     iget v5, p0, Lcom/android/systemui/statusbar/phone/NavigationBarView;->mSlotOneVisibility:I
 
-    if-eq v5, v11, :cond_d
+    if-eq v5, v11, :cond_f
 
     iget v5, p0, Lcom/android/systemui/statusbar/phone/NavigationBarView;->mSlotOneVisibility:I
 
@@ -2438,7 +2446,7 @@
 
     iput v11, p0, Lcom/android/systemui/statusbar/phone/NavigationBarView;->mSlotOneVisibility:I
 
-    :cond_d
+    :cond_f
     iget v5, p0, Lcom/android/systemui/statusbar/phone/NavigationBarView;->mSlotSixVisibility:I
 
     if-eq v5, v11, :cond_2
