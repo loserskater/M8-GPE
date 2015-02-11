@@ -3424,21 +3424,41 @@
 .end method
 
 .method protected onPlaySound(II)V
-    .locals 4
+    .locals 5
 
-    const/4 v2, 0x3
+    const/4 v4, 0x3
 
-    invoke-virtual {p0, v2}, Lcom/android/systemui/volume/VolumePanel;->hasMessages(I)Z
+    iget-object v1, p0, Lcom/android/systemui/volume/VolumePanel;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v1
+
+    const-string v2, "volume_adjust_sounds_enabled"
+
+    const/4 v3, 0x1
+
+    invoke-static {v1, v2, v3}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
 
     move-result v1
 
-    if-eqz v1, :cond_0
+    if-nez v1, :cond_0
 
-    invoke-virtual {p0, v2}, Lcom/android/systemui/volume/VolumePanel;->removeMessages(I)V
+    :goto_0
+    return-void
+
+    :cond_0
+    invoke-virtual {p0, v4}, Lcom/android/systemui/volume/VolumePanel;->hasMessages(I)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    invoke-virtual {p0, v4}, Lcom/android/systemui/volume/VolumePanel;->removeMessages(I)V
 
     invoke-virtual {p0}, Lcom/android/systemui/volume/VolumePanel;->onStopSounds()V
 
-    :cond_0
+    :cond_1
     monitor-enter p0
 
     :try_start_0
@@ -3446,7 +3466,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_2
 
     const/16 v1, 0x18
 
@@ -3462,10 +3482,10 @@
 
     invoke-virtual {p0, v1, v2, v3}, Lcom/android/systemui/volume/VolumePanel;->sendMessageDelayed(Landroid/os/Message;J)Z
 
-    :cond_1
+    :cond_2
     monitor-exit p0
 
-    return-void
+    goto :goto_0
 
     :catchall_0
     move-exception v1
