@@ -8,6 +8,8 @@
 
 .field private mContext:Landroid/content/Context;
 
+.field private mFlashlightController:Lcom/android/systemui/statusbar/policy/FlashlightController;
+
 .field private mHandler:Landroid/os/Handler;
 
 .field private mInjectKeyCode:I
@@ -98,6 +100,14 @@
     check-cast v0, Landroid/app/KeyguardManager;
 
     iput-object v0, p0, Lcom/android/systemui/cm/ActionTarget;->mKeyguardManager:Landroid/app/KeyguardManager;
+
+    new-instance v0, Lcom/android/systemui/statusbar/policy/FlashlightController;
+
+    iget-object v1, p0, Lcom/android/systemui/cm/ActionTarget;->mContext:Landroid/content/Context;
+
+    invoke-direct {v0, v1}, Lcom/android/systemui/statusbar/policy/FlashlightController;-><init>(Landroid/content/Context;)V
+
+    iput-object v0, p0, Lcom/android/systemui/cm/ActionTarget;->mFlashlightController:Lcom/android/systemui/statusbar/policy/FlashlightController;
 
     return-void
 .end method
@@ -348,6 +358,16 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v2
+.end method
+
+.method private toggleTorch()V
+    .locals 2
+
+    iget-object v0, p0, Lcom/android/systemui/cm/ActionTarget;->mFlashlightController:Lcom/android/systemui/statusbar/policy/FlashlightController;
+
+    invoke-virtual {v0}, Lcom/android/systemui/statusbar/policy/FlashlightController;->toggleFlashlight()V
+
+    return-void
 .end method
 
 
@@ -655,25 +675,7 @@
     goto/16 :goto_0
 
     :cond_12
-    const-string v6, "torch"
-
-    invoke-virtual {p1, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_13
-
-    iget-object v5, p0, Lcom/android/systemui/cm/ActionTarget;->mContext:Landroid/content/Context;
-
-    const-string v6, "torch"
-
-    invoke-virtual {v5, v6}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Landroid/hardware/TorchManager;
-
-    invoke-virtual {v3}, Landroid/hardware/TorchManager;->toggleTorch()V
+    invoke-direct {p0}, Lcom/android/systemui/cm/ActionTarget;->toggleTorch()V
 
     goto/16 :goto_0
 

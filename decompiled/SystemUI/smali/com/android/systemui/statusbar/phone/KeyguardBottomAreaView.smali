@@ -40,6 +40,8 @@
 
 .field private final mDevicePolicyReceiver:Landroid/content/BroadcastReceiver;
 
+.field private mFlashlightController:Lcom/android/systemui/statusbar/policy/FlashlightController;
+
 .field private mIndicationController:Lcom/android/systemui/statusbar/KeyguardIndicationController;
 
 .field private mIndicationText:Landroid/widget/TextView;
@@ -1252,6 +1254,10 @@
 .method public launchCamera()V
     .locals 4
 
+    iget-object v2, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mFlashlightController:Lcom/android/systemui/statusbar/policy/FlashlightController;
+
+    invoke-virtual {v2}, Lcom/android/systemui/statusbar/policy/FlashlightController;->killFlashlight()V
+
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mShortcutHelper:Lcom/android/internal/policy/impl/LockscreenShortcutsHelper;
 
     sget-object v3, Lcom/android/internal/policy/impl/LockscreenShortcutsHelper$Shortcuts;->RIGHT_SHORTCUT:Lcom/android/internal/policy/impl/LockscreenShortcutsHelper$Shortcuts;
@@ -1738,6 +1744,14 @@
     .locals 0
 
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mActivityStarter:Lcom/android/systemui/statusbar/phone/ActivityStarter;
+
+    return-void
+.end method
+
+.method public setFlashlightController(Lcom/android/systemui/statusbar/policy/FlashlightController;)V
+    .locals 0
+
+    iput-object p1, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mFlashlightController:Lcom/android/systemui/statusbar/policy/FlashlightController;
 
     return-void
 .end method
