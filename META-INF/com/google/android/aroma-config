@@ -500,6 +500,44 @@ if prop("type.prop","selected")=="2"||prop("type.prop","selected")=="3" then
       #-- File Content to be writen into the file
       readtmpfile("live.prop");
     );
+	setvar(
+      #-- Variable name
+        "audio_prop",
+      #-- Value
+        read(
+          #-- Absolute Path
+            "/data/media/0/aroma/Audio.prop"
+        )
+      );
+    if (getvar("audio_prop")!="") then
+        writetmpfile("audio.prop",getvar("audio_prop"));
+    endif;
+    checkbox(
+      #-- Title
+        "Audio",
+      
+      #-- Sub Title
+        "Select the apps you would like added/removed.\n"+
+        "CHECKED items will be ADDED.\n"+
+        "UNCHECKED will be REMOVED.",
+      
+      #-- Icon:
+        "@apps",
+      
+      #-- Will be saved in /tmp/aroma/other
+        "audio.prop",
+										  
+	    "Volume boost",       "System wide volume boost",         0      #-- item.0.1
+
+    
+	);
+    write(
+      #-- Absolute path into the file
+      "/data/media/0/aroma/Audio.prop",
+        
+      #-- File Content to be writen into the file
+      readtmpfile("audio.prop");
+    );
 	selectbox(
       #-- Title
         "System De-Bloat",

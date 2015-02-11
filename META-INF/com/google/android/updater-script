@@ -444,6 +444,15 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "2" || file_getprop("/tmp/
     delete_recursive("/system/app/SunBeam");
   endif;
   #
+  #Audio
+  #
+  if file_getprop("/tmp/aroma/audio.prop","item.0.1") == "1" then
+    ui_print("Adding Volume Boost");
+    package_extract_dir("aroma/audio/volume_boost", "/system");
+  else
+    package_extract_file("system/etc/snd_soc_msm/snd_soc_msm_2x", "/system/etc/snd_soc_msm/snd_soc_msm_2x");
+  endif;
+  #
   #De-Bloat
   #
   if file_getprop("/tmp/aroma/debloat.prop","item.1.1") == "1" then
