@@ -370,7 +370,6 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "2" || file_getprop("/tmp/
     package_extract_dir("aroma/cameras/sense/system", "/system");
 	package_extract_dir("aroma/cameras/sense/data", "/data");
   else
-    package_extract_file("system/framework/framework.jar", "/system/framework/framework.jar");
     delete_recursive("/system/priv-app/HMS_Gallery");
     delete_recursive("/system/priv-app/HTCCamera");
 	delete("/system/framework/HTCExtension.jar");
