@@ -446,6 +446,7 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "2" || file_getprop("/tmp/
   #
   #Audio
   #
+  ui_print("@Audio");
   if file_getprop("/tmp/aroma/audio.prop","item.0.1") == "1" then
     ui_print("Adding Volume Boost");
     package_extract_dir("aroma/audio/volume_boost", "/system");
@@ -455,6 +456,7 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "2" || file_getprop("/tmp/
   #
   #De-Bloat
   #
+  ui_print("@De-Bloat");
   if file_getprop("/tmp/aroma/debloat.prop","item.1.1") == "1" then
     ui_print("Removing Drive");
 	delete_recursive("/system/app/Drive");
