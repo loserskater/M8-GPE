@@ -675,6 +675,14 @@
     goto/16 :goto_0
 
     :cond_12
+    const-string v6, "torch"
+
+    invoke-virtual {p1, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v6
+
+    if-eqz v6, :cond_13
+
     invoke-direct {p0}, Lcom/android/systemui/cm/ActionTarget;->toggleTorch()V
 
     goto/16 :goto_0
