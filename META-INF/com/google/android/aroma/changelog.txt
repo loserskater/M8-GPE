@@ -6,9 +6,15 @@ Expandable volume panel
 Volume sounds on/off
 Ability to remove lock screen short cuts
 Weather in notification pull down
-CodeCraft and Elite kernels for gsm
 Date in clock mod
+Ambient display
+Change DPI (play store still thinks 480)
 <b>*Fixes</b>
 Updater script, should fix bootloops.
 Dark dialer theme changes and fixes
 Navbar back button
+Location quick setting
+<b>*Updates</b>
+Quantum kernel
+CodeCraft and Elite kernels for gsm
+Moved OTA from app drawer to settings>about
