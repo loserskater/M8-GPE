@@ -93,7 +93,7 @@
     iget-object v2, p0, Lcom/android/systemui/cm/ShortcutPickHelper$ActionHolder;->this$0:Lcom/android/systemui/cm/ShortcutPickHelper;
 
     # getter for: Lcom/android/systemui/cm/ShortcutPickHelper;->mContext:Landroid/content/Context;
-    invoke-static {v2}, Lcom/android/systemui/cm/ShortcutPickHelper;->access$200(Lcom/android/systemui/cm/ShortcutPickHelper;)Landroid/content/Context;
+    invoke-static {v2}, Lcom/android/systemui/cm/ShortcutPickHelper;->access$700(Lcom/android/systemui/cm/ShortcutPickHelper;)Landroid/content/Context;
 
     move-result-object v2
 
@@ -130,7 +130,7 @@
     iget-object v2, p0, Lcom/android/systemui/cm/ShortcutPickHelper$ActionHolder;->this$0:Lcom/android/systemui/cm/ShortcutPickHelper;
 
     # getter for: Lcom/android/systemui/cm/ShortcutPickHelper;->mContext:Landroid/content/Context;
-    invoke-static {v2}, Lcom/android/systemui/cm/ShortcutPickHelper;->access$200(Lcom/android/systemui/cm/ShortcutPickHelper;)Landroid/content/Context;
+    invoke-static {v2}, Lcom/android/systemui/cm/ShortcutPickHelper;->access$700(Lcom/android/systemui/cm/ShortcutPickHelper;)Landroid/content/Context;
 
     move-result-object v2
 

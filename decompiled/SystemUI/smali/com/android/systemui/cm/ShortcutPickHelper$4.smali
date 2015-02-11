@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/systemui/cm/ShortcutPickHelper;->pickShortcut(Z)V
+    value = Lcom/android/systemui/cm/ShortcutPickHelper;->pickApp()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -35,46 +35,52 @@
 
 # virtual methods
 .method public onClick(Landroid/content/DialogInterface;I)V
-    .locals 2
+    .locals 4
 
-    iget-object v1, p0, Lcom/android/systemui/cm/ShortcutPickHelper$4;->this$0:Lcom/android/systemui/cm/ShortcutPickHelper;
+    iget-object v2, p0, Lcom/android/systemui/cm/ShortcutPickHelper$4;->this$0:Lcom/android/systemui/cm/ShortcutPickHelper;
 
-    # getter for: Lcom/android/systemui/cm/ShortcutPickHelper;->mActions:Lcom/android/systemui/cm/ShortcutPickHelper$ActionHolder;
-    invoke-static {v1}, Lcom/android/systemui/cm/ShortcutPickHelper;->access$600(Lcom/android/systemui/cm/ShortcutPickHelper;)Lcom/android/systemui/cm/ShortcutPickHelper$ActionHolder;
+    # getter for: Lcom/android/systemui/cm/ShortcutPickHelper;->mAdapter:Lcom/android/systemui/cm/ShortcutPickHelper$AppPickAdapter;
+    invoke-static {v2}, Lcom/android/systemui/cm/ShortcutPickHelper;->access$300(Lcom/android/systemui/cm/ShortcutPickHelper;)Lcom/android/systemui/cm/ShortcutPickHelper$AppPickAdapter;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-virtual {v1, p2}, Lcom/android/systemui/cm/ShortcutPickHelper$ActionHolder;->getAction(I)Ljava/lang/String;
+    invoke-virtual {v2, p2}, Lcom/android/systemui/cm/ShortcutPickHelper$AppPickAdapter;->getItem(I)Ljava/lang/Object;
 
     move-result-object v0
 
-    const-string v1, "app"
+    check-cast v0, Lcom/android/systemui/cm/ShortcutPickHelper$ItemInfo;
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    new-instance v1, Landroid/content/Intent;
 
-    move-result v1
+    iget-object v2, p0, Lcom/android/systemui/cm/ShortcutPickHelper$4;->this$0:Lcom/android/systemui/cm/ShortcutPickHelper;
 
-    if-eqz v1, :cond_0
+    # getter for: Lcom/android/systemui/cm/ShortcutPickHelper;->mBaseIntent:Landroid/content/Intent;
+    invoke-static {v2}, Lcom/android/systemui/cm/ShortcutPickHelper;->access$400(Lcom/android/systemui/cm/ShortcutPickHelper;)Landroid/content/Intent;
 
-    iget-object v1, p0, Lcom/android/systemui/cm/ShortcutPickHelper$4;->this$0:Lcom/android/systemui/cm/ShortcutPickHelper;
+    move-result-object v2
 
-    # invokes: Lcom/android/systemui/cm/ShortcutPickHelper;->pickApp()V
-    invoke-static {v1}, Lcom/android/systemui/cm/ShortcutPickHelper;->access$700(Lcom/android/systemui/cm/ShortcutPickHelper;)V
+    invoke-direct {v1, v2}, Landroid/content/Intent;-><init>(Landroid/content/Intent;)V
+
+    iget-object v2, v0, Lcom/android/systemui/cm/ShortcutPickHelper$ItemInfo;->componentName:Landroid/content/ComponentName;
+
+    invoke-virtual {v1, v2}, Landroid/content/Intent;->setComponent(Landroid/content/ComponentName;)Landroid/content/Intent;
+
+    iget-object v2, p0, Lcom/android/systemui/cm/ShortcutPickHelper$4;->this$0:Lcom/android/systemui/cm/ShortcutPickHelper;
+
+    # getter for: Lcom/android/systemui/cm/ShortcutPickHelper;->mListener:Lcom/android/systemui/cm/ShortcutPickHelper$OnPickListener;
+    invoke-static {v2}, Lcom/android/systemui/cm/ShortcutPickHelper;->access$900(Lcom/android/systemui/cm/ShortcutPickHelper;)Lcom/android/systemui/cm/ShortcutPickHelper$OnPickListener;
+
+    move-result-object v2
+
+    const/4 v3, 0x0
+
+    invoke-virtual {v1, v3}, Landroid/content/Intent;->toUri(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-interface {v2, v3}, Lcom/android/systemui/cm/ShortcutPickHelper$OnPickListener;->shortcutPicked(Ljava/lang/String;)V
 
     invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
 
-    :goto_0
     return-void
-
-    :cond_0
-    iget-object v1, p0, Lcom/android/systemui/cm/ShortcutPickHelper$4;->this$0:Lcom/android/systemui/cm/ShortcutPickHelper;
-
-    # getter for: Lcom/android/systemui/cm/ShortcutPickHelper;->mListener:Lcom/android/systemui/cm/ShortcutPickHelper$OnPickListener;
-    invoke-static {v1}, Lcom/android/systemui/cm/ShortcutPickHelper;->access$400(Lcom/android/systemui/cm/ShortcutPickHelper;)Lcom/android/systemui/cm/ShortcutPickHelper$OnPickListener;
-
-    move-result-object v1
-
-    invoke-interface {v1, v0}, Lcom/android/systemui/cm/ShortcutPickHelper$OnPickListener;->shortcutPicked(Ljava/lang/String;)V
-
-    goto :goto_0
 .end method

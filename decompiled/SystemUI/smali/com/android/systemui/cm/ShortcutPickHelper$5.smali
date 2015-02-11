@@ -1,4 +1,4 @@
-.class Lcom/android/systemui/cm/ShortcutPickHelper$3;
+.class Lcom/android/systemui/cm/ShortcutPickHelper$5;
 .super Ljava/lang/Object;
 .source "ShortcutPickHelper.java"
 
@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/systemui/cm/ShortcutPickHelper;->pickApp()V
+    value = Lcom/android/systemui/cm/ShortcutPickHelper;->pickShortcut(Z)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/android/systemui/cm/ShortcutPickHelper;)V
     .locals 0
 
-    iput-object p1, p0, Lcom/android/systemui/cm/ShortcutPickHelper$3;->this$0:Lcom/android/systemui/cm/ShortcutPickHelper;
+    iput-object p1, p0, Lcom/android/systemui/cm/ShortcutPickHelper$5;->this$0:Lcom/android/systemui/cm/ShortcutPickHelper;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -37,7 +37,7 @@
 .method public onClick(Landroid/content/DialogInterface;I)V
     .locals 2
 
-    iget-object v0, p0, Lcom/android/systemui/cm/ShortcutPickHelper$3;->this$0:Lcom/android/systemui/cm/ShortcutPickHelper;
+    iget-object v0, p0, Lcom/android/systemui/cm/ShortcutPickHelper$5;->this$0:Lcom/android/systemui/cm/ShortcutPickHelper;
 
     # getter for: Lcom/android/systemui/cm/ShortcutPickHelper;->mListener:Lcom/android/systemui/cm/ShortcutPickHelper$OnPickListener;
     invoke-static {v0}, Lcom/android/systemui/cm/ShortcutPickHelper;->access$900(Lcom/android/systemui/cm/ShortcutPickHelper;)Lcom/android/systemui/cm/ShortcutPickHelper$OnPickListener;

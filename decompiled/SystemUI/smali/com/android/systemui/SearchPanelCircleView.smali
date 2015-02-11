@@ -731,6 +731,108 @@
     return-void
 .end method
 
+.method private isRectConsideredActive(Landroid/graphics/Rect;Landroid/view/MotionEvent;)Z
+    .locals 6
+
+    const/4 v3, 0x0
+
+    const/4 v2, 0x1
+
+    invoke-virtual {p2}, Landroid/view/MotionEvent;->getX()F
+
+    move-result v4
+
+    float-to-int v0, v4
+
+    invoke-virtual {p2}, Landroid/view/MotionEvent;->getY()F
+
+    move-result v4
+
+    float-to-int v1, v4
+
+    invoke-virtual {p1, v0, v1}, Landroid/graphics/Rect;->contains(II)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_1
+
+    :cond_0
+    :goto_0
+    return v2
+
+    :cond_1
+    iget-boolean v4, p0, Lcom/android/systemui/SearchPanelCircleView;->mHorizontal:Z
+
+    if-eqz v4, :cond_3
+
+    iget v4, p1, Landroid/graphics/Rect;->right:I
+
+    if-gt v0, v4, :cond_2
+
+    iget v4, p1, Landroid/graphics/Rect;->top:I
+
+    invoke-virtual {p1}, Landroid/graphics/Rect;->height()I
+
+    move-result v5
+
+    div-int/lit8 v5, v5, 0x2
+
+    sub-int/2addr v4, v5
+
+    if-lt v1, v4, :cond_2
+
+    iget v4, p1, Landroid/graphics/Rect;->bottom:I
+
+    invoke-virtual {p1}, Landroid/graphics/Rect;->height()I
+
+    move-result v5
+
+    div-int/lit8 v5, v5, 0x2
+
+    add-int/2addr v4, v5
+
+    if-le v1, v4, :cond_0
+
+    :cond_2
+    move v2, v3
+
+    goto :goto_0
+
+    :cond_3
+    iget v4, p1, Landroid/graphics/Rect;->bottom:I
+
+    if-gt v1, v4, :cond_4
+
+    iget v4, p1, Landroid/graphics/Rect;->right:I
+
+    invoke-virtual {p1}, Landroid/graphics/Rect;->width()I
+
+    move-result v5
+
+    div-int/lit8 v5, v5, 0x2
+
+    add-int/2addr v4, v5
+
+    if-gt v0, v4, :cond_4
+
+    iget v4, p1, Landroid/graphics/Rect;->left:I
+
+    invoke-virtual {p1}, Landroid/graphics/Rect;->width()I
+
+    move-result v5
+
+    div-int/lit8 v5, v5, 0x2
+
+    sub-int/2addr v4, v5
+
+    if-ge v0, v4, :cond_0
+
+    :cond_4
+    move v2, v3
+
+    goto :goto_0
+.end method
+
 .method private performExitFadeOutAnimation(IILjava/lang/Runnable;)V
     .locals 4
 
@@ -1713,7 +1815,7 @@
 .end method
 
 .method public isIntersecting(Landroid/view/MotionEvent;)I
-    .locals 7
+    .locals 5
 
     const/4 v2, 0x2
 
@@ -1725,19 +1827,7 @@
 
     iget-object v4, p0, Lcom/android/systemui/SearchPanelCircleView;->mCircleRect:Landroid/graphics/Rect;
 
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
-
-    move-result v5
-
-    float-to-int v5, v5
-
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
-
-    move-result v6
-
-    float-to-int v6, v6
-
-    invoke-virtual {v4, v5, v6}, Landroid/graphics/Rect;->contains(II)Z
+    invoke-direct {p0, v4, p1}, Lcom/android/systemui/SearchPanelCircleView;->isRectConsideredActive(Landroid/graphics/Rect;Landroid/view/MotionEvent;)Z
 
     move-result v4
 
@@ -1751,19 +1841,7 @@
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/SearchPanelCircleView;->mCircleRectLeft:Landroid/graphics/Rect;
 
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
-
-    move-result v4
-
-    float-to-int v4, v4
-
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
-
-    move-result v5
-
-    float-to-int v5, v5
-
-    invoke-virtual {v0, v4, v5}, Landroid/graphics/Rect;->contains(II)Z
+    invoke-direct {p0, v0, p1}, Lcom/android/systemui/SearchPanelCircleView;->isRectConsideredActive(Landroid/graphics/Rect;Landroid/view/MotionEvent;)Z
 
     move-result v0
 
@@ -1778,19 +1856,7 @@
     :cond_1
     iget-object v0, p0, Lcom/android/systemui/SearchPanelCircleView;->mCircleRectRight:Landroid/graphics/Rect;
 
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
-
-    move-result v1
-
-    float-to-int v1, v1
-
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
-
-    move-result v4
-
-    float-to-int v4, v4
-
-    invoke-virtual {v0, v1, v4}, Landroid/graphics/Rect;->contains(II)Z
+    invoke-direct {p0, v0, p1}, Lcom/android/systemui/SearchPanelCircleView;->isRectConsideredActive(Landroid/graphics/Rect;Landroid/view/MotionEvent;)Z
 
     move-result v0
 

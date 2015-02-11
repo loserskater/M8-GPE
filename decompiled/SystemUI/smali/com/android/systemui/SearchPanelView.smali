@@ -226,6 +226,14 @@
     return-void
 .end method
 
+.method static synthetic access$500(Lcom/android/systemui/SearchPanelView;)Z
+    .locals 1
+
+    iget-boolean v0, p0, Lcom/android/systemui/SearchPanelView;->mInEditMode:Z
+
+    return v0
+.end method
+
 .method static synthetic access$502(Lcom/android/systemui/SearchPanelView;Z)Z
     .locals 0
 
@@ -1066,6 +1074,10 @@
 
     invoke-direct {p0}, Lcom/android/systemui/SearchPanelView;->updateTargetVisibility()V
 
+    iget-object v0, p0, Lcom/android/systemui/SearchPanelView;->mPicker:Lcom/android/systemui/cm/ShortcutPickHelper;
+
+    invoke-virtual {v0}, Lcom/android/systemui/cm/ShortcutPickHelper;->cleanup()V
+
     :cond_0
     :goto_0
     return-void
@@ -1107,6 +1119,16 @@
     move v0, v2
 
     goto :goto_1
+.end method
+
+.method protected onDetachedFromWindow()V
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/systemui/SearchPanelView;->mPicker:Lcom/android/systemui/cm/ShortcutPickHelper;
+
+    invoke-virtual {v0}, Lcom/android/systemui/cm/ShortcutPickHelper;->cleanup()V
+
+    return-void
 .end method
 
 .method protected onFinishInflate()V
