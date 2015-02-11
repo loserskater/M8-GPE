@@ -3,12 +3,13 @@ Customizable NavButtons
 Customizable NavRing
 Navbar height on the fly... no more reboots
 Expandable volume panel
-Volume sounds on/off
+Volume marker sound on/off
 Ability to remove lock screen short cuts
 Weather in notification pull down
 Date in clock mod
-Ambient display
+Ambient display / notificaions only, pick up is disabled
 Change DPI (play store still thinks 480)
+Audio boost (testing)
 <b>*Fixes</b>
 Updater script, should fix bootloops.
 Dark dialer theme changes and fixes
