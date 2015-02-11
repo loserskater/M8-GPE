@@ -366,5 +366,5 @@ persist.sys.media.use-awesome=1
 
 # OTA Updates
 ro.ota.romname=M8-GPE
-ro.ota.version=2
+ro.ota.version=3
 ro.ota.manifest=https://romhut.com/roms/m8-gpe/ota.xml
