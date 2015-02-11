@@ -8,7 +8,8 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "4" then
   mount("ext4", "EMMC", "/dev/block/platform/msm_sdcc.1/by-name/userdata", "/data");
   ui_print("@Deleting Necessary Modules/Parts/Data");
   delete_recursive("/system/lib/modules");
-  delete("/system/etc/init.d/97quantumsettings");
+  delete("/system/etc/init.d/95fstrim");
+  delete("/system/etc/init.d/97QuantumSettings");
   delete("/system/etc/init.d/99elementalx");
   delete("/system/etc/init.d/99elementalx~");
   delete("/system/etc/init.d/01-cam");

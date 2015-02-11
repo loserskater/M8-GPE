@@ -31,12 +31,12 @@ echo 1 > /sys/android_touch/pocket_detect
 #echo 0 > /sys/module/sync/parameters/fsync_enabled;
 
 #Set Max screen off: enabled by default
-#echo 1 > /sys/devices/system/cpu/cpu0/cpufreq/screen_off_max
+echo 1 > /sys/devices/system/cpu/cpu0/cpufreq/screen_off_max
 
 #cover settings: 1 for disabled, 0 for enabled
-#echo 1 > /sys/module/hall_sensor/parameters/disable_cover;
+echo 1 > /sys/module/hall_sensor/parameters/disable_cover;
 
 #backlight dimmer settings: 1 for dimmer, 2 for dimmest, 0 for disabled
-#echo 1 > /sys/backlight_dimmer/backlight_dimmer;
+echo 1 > /sys/backlight_dimmer/backlight_dimmer;
 
 exit 0
