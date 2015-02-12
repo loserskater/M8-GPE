@@ -1,2 +1,2 @@
-﻿#!/sbin/sh
-/sbin/busybox find /data/* -maxdepth 0 -type d ! -name 'media' | xargs rm -rf
+#!/sbin/sh
+/sbin/busybox find /data -maxdepth 1 -type d ! -path "/data" ! -path "/data/media" | xargs rm -rf

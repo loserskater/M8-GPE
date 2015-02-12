@@ -139,9 +139,10 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "1" || file_getprop("/tmp/
   set_progress(0.15);
   if file_getprop("/tmp/aroma/wipe.prop","selected.0") == "1" then
     ui_print("@Formatting Data");
-	package_extract_file("aroma/scripts/wipe.sh", "/tmp/wipe.sh");
-	set_perm(0, 0, 0777, "/tmp/wipe.sh");
-	run_program("/tmp/wipe.sh");
+	assert(run_program("/sbin/mount", "/data") || ui_print("(data is mounted already)"));
+    package_extract_file("aroma/scripts/wipe.sh", "/tmp/wipe.sh");
+    set_perm(0, 0, 0777, "/tmp/wipe.sh");
+    run_program("/tmp/wipe.sh");
   endif;
   set_progress(0.20);
   ui_print("@Extracting System");
