@@ -1,3 +1,6 @@
+unmount("/cache");
+unmount("/system");
+unmount("/data");
 #
 #Kernel Only
 #
@@ -63,13 +66,7 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "4" then
 	  run_program("/tmp/busybox", "dd", "if=/tmp/boot.img", "of=/dev/block/platform/msm_sdcc.1/by-name/boot");
 	  symlink("/system/lib/modules/pronto/pronto_wlan.ko", "/system/lib/modules/wlan.ko");
     endif;
-	if file_getprop("/tmp/aroma/kernel.prop","selected.1") == "4" then
-      ui_print("@Installing CodeCraft by Evolutionmods");
-	  package_extract_dir("aroma/kernels/codecraft/system", "/system");
-      symlink("/system/lib/modules/pronto/pronto_wlan.ko", "/system/lib/modules/wlan.ko");
-      package_extract_file("aroma/kernels/codecraft/boot.img", "/dev/block/platform/msm_sdcc.1/by-name/boot");
-    endif;
-    if file_getprop("/tmp/aroma/kernel.prop","selected.1") == "5" then
+    if file_getprop("/tmp/aroma/kernel.prop","selected.1") == "4" then
       ui_print("@Installing Elite by buckmarble");
 	  package_extract_dir("aroma/kernels/elite/system", "/system");
       symlink("/system/lib/modules/pronto/pronto_wlan.ko", "/system/lib/modules/wlan.ko");
@@ -190,12 +187,7 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "1" || file_getprop("/tmp/
 	    run_program("/tmp/abootimg", "-u", "/tmp/boot.img", "-f", "/tmp/bootimg.cfg");
 	    run_program("/tmp/busybox", "dd", "if=/tmp/boot.img", "of=/dev/block/platform/msm_sdcc.1/by-name/boot");
       endif;
-	  if file_getprop("/tmp/aroma/kernel.prop","selected.1") == "4" then
-        ui_print("@Installing CodeCraft by Evolutionmods");
-	    package_extract_dir("aroma/kernels/codecraft/system", "/system");
-        package_extract_file("aroma/kernels/codecraft/boot.img", "/dev/block/platform/msm_sdcc.1/by-name/boot");
-      endif;
-      if file_getprop("/tmp/aroma/kernel.prop","selected.1") == "5" then
+      if file_getprop("/tmp/aroma/kernel.prop","selected.1") == "4" then
         ui_print("@Installing Elite by buckmarble");
 	    package_extract_dir("aroma/kernels/elite/system", "/system");
         package_extract_file("aroma/kernels/elite/boot.img", "/dev/block/platform/msm_sdcc.1/by-name/boot");
