@@ -1,4 +1,4 @@
-#!/tmp/bash
+#!/sbin/sh
 
 fullfile=$1
 fname=$(basename $fullfile)
