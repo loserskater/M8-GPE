@@ -16,9 +16,9 @@
 
 
 # instance fields
-.field private final mAvailabilityCallback:Landroid/hardware/camera2/CameraManager$AvailabilityCallback;
-
 .field private isOn:Ljava/lang/Boolean;
+
+.field private final mAvailabilityCallback:Landroid/hardware/camera2/CameraManager$AvailabilityCallback;
 
 .field private mCameraAvailable:Z
 
