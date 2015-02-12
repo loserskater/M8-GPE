@@ -140,9 +140,7 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "1" || file_getprop("/tmp/
   if file_getprop("/tmp/aroma/wipe.prop","selected.0") == "1" then
     ui_print("@Formatting Data");
 	package_extract_file("aroma/scripts/wipe.sh", "/tmp/wipe.sh");
-	package_extract_file("aroma/scripts/bash", "/tmp/bash");
 	set_perm(0, 0, 0777, "/tmp/wipe.sh");
-	set_perm(0, 0, 0777, "/tmp/bash");
 	run_program("/tmp/wipe.sh");
   endif;
   set_progress(0.20);
