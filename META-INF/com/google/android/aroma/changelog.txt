@@ -1,3 +1,10 @@
+<b>PUT RELEASE DATE HERE</b>
+<b>*New Additions</b>
+Added screenshot to APM
+<b>*Updates</b>
+APM icons
+
+<b>2-12-2015</b>
 <b>*New Additions</b>
 Customizable NavButtons
 Customizable NavRing
@@ -17,5 +24,48 @@ Navbar back button
 Location quick setting
 <b>*Updates</b>
 Quantum kernel
-CodeCraft and Elite kernels for gsm
+Elite kernel for gsm
 Moved OTA from app drawer to settings>about
+
+<b>2-03-2015</b>
+*New Additions
+Customizable quick settings
+Disable signature verification
+CodeCraft and Elite kernels for verizon/sprint
+Sense video player
+Started cleanup of extra settings
+<b>*Fixes</b>
+Multi-carrier support
+FCs in apps like PowerAmp
+
+<b>2-01-2015</b>
+<b>*New Additions
+Multi-Carrier support (beta) needs testing.
+Network traffic meter
+AM/PM in clock mod
+Nav bar height (*requires a reboot)
+Sense camera and gallery
+ElementalX kernel
+Recents clear all FAB moved to center, added fade in animation.
+.75 to animations
+<b>*Fixes</b>
+Battery mod
+HTC keyboard
+
+<b>1-26-2015</b>
+5.0.2 memory leak fix for Color Fade when screen is turned off.
+Battery mod
+Use volume keys to move cursor
+Lockscreen shortcuts
+Double tap status bar to sleep
+One finger quick settings
+OTA support
+HTC IME libs
+<b>*Updates</b>
+CM apps
+Busybox
+<b>*Fixes</b>
+Dark theme
+Extra settings defaults should match system on fresh boot
+
+<b>Initial release. 1-23-2015</b>
