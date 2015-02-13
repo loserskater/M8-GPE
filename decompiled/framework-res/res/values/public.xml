@@ -5306,6 +5306,7 @@
     <public type="string" name="permlab_accessTorchService" id="0x010406cf" />
     <public type="string" name="permdesc_accessTorchService" id="0x010406d0" />
     <public type="string" name="app_killed_message" id="0x010406d1" />
+	<public type="string" name="apm_screenshot" id="0x010406d2" />
     <public type="string" name="APKTOOL_DUMMY_0681" id="0x01040681" />
     <public type="string" name="APKTOOL_DUMMY_0682" id="0x01040682" />
     <public type="string" name="APKTOOL_DUMMY_0683" id="0x01040683" />
@@ -7880,6 +7881,8 @@
     <public type="drawable" name="apm_power_off" id="0x0108076a" />
     <public type="drawable" name="apm_settings" id="0x0108076b" />
     <public type="drawable" name="apm_power_key" id="0x0108076c" />
+	<public type="drawable" name="apm_screenshot" id="0x0108076d" />
+	<public type="drawable" name="tab_selected_holo2" id="0x0108076e" />
     <public type="drawable" name="APKTOOL_DUMMY_00bb" id="0x010800bb" />
     <public type="drawable" name="APKTOOL_DUMMY_00c4" id="0x010800c4" />
     <public type="drawable" name="APKTOOL_DUMMY_00f8" id="0x010800f8" />
