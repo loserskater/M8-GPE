@@ -1,9 +1,11 @@
 <b>PUT RELEASE DATE HERE</b>
 <b>*New Additions</b>
 Added screenshot to APM
+Added airplane mode to APM
 <b>*Updates</b>
 APM icons
 Elite kernel
+CM apps with bug fixes
 
 <b>2-12-2015</b>
 <b>*New Additions</b>
