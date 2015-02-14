@@ -538,6 +538,43 @@ if prop("type.prop","selected")=="2"||prop("type.prop","selected")=="3" then
       #-- File Content to be writen into the file
       readtmpfile("audio.prop");
     );
+	setvar(
+      #-- Variable name
+        "navbar_prop",
+      #-- Value
+        read(
+          #-- Absolute Path
+            "/data/media/0/aroma/NavBar.prop"
+        )
+      );
+    if (getvar("navbar_prop")!="") then
+        writetmpfile("navbar.prop",getvar("navbar_prop"));
+    endif;
+    checkbox(
+      #-- Title
+        "NavBar theme",
+      
+      #-- Sub Title
+        "CHECKED items will be ADDED.\n"+
+        "UNCHECKED will be REMOVED.",
+      
+      #-- Icon:
+        "@apps",
+      
+      #-- Will be saved in /tmp/aroma/other
+        "navbar.prop",
+										  
+	    "NavBar theme",       "NavBar will change colors in certain app just like the status bar.",         0      #-- item.0.1
+
+    
+	);
+    write(
+      #-- Absolute path into the file
+      "/data/media/0/aroma/NavBar.prop",
+        
+      #-- File Content to be writen into the file
+      readtmpfile("navbar.prop");
+    );
 	selectbox(
       #-- Title
         "System De-Bloat",
