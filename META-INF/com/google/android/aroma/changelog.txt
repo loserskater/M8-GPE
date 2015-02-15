@@ -2,10 +2,13 @@
 <b>*New Additions</b>
 Added screenshot to APM
 Added airplane mode to APM
+Viper4Android audio (AROMA)
+CM ringtones, notificaions, alarms. (AROMA)
+Colorful navigation bar background. Mimics the status bar. (AROMA)
 <b>*Updates</b>
 APM icons
 Elite kernel
-CM apps with bug fixes
+CM apps with bug fixes and material design updates.
 
 <b>2-12-2015</b>
 <b>*New Additions</b>
@@ -31,7 +34,7 @@ Elite kernel for gsm
 Moved OTA from app drawer to settings>about
 
 <b>2-03-2015</b>
-*New Additions
+<b>*New Additions</b>
 Customizable quick settings
 Disable signature verification
 CodeCraft and Elite kernels for verizon/sprint
@@ -42,7 +45,7 @@ Multi-carrier support
 FCs in apps like PowerAmp
 
 <b>2-01-2015</b>
-<b>*New Additions
+<b>*New Additions</b>
 Multi-Carrier support (beta) needs testing.
 Network traffic meter
 AM/PM in clock mod
@@ -56,7 +59,7 @@ Battery mod
 HTC keyboard
 
 <b>1-26-2015</b>
-5.0.2 memory leak fix for Color Fade when screen is turned off.
+<b>*New Additions</b>
 Battery mod
 Use volume keys to move cursor
 Lockscreen shortcuts
@@ -70,5 +73,7 @@ Busybox
 <b>*Fixes</b>
 Dark theme
 Extra settings defaults should match system on fresh boot
+5.0.2 memory leak fix for Color Fade when screen is turned off.
 
-<b>Initial release. 1-23-2015</b>
+<b>1-23-2015</b>
+Initial release
