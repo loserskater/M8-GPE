@@ -32,11 +32,13 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "4" then
   if file_getprop("/tmp/aroma/carrier.prop","selected.0") == "1" then
     if file_getprop("/tmp/aroma/kernel.prop","selected.1") == "1" then
       ui_print("@Installing Stock Kernel");
+	  package_extract_dir("system/lib/modules", "/system/lib/modules");
       package_extract_file("boot.img", "/dev/block/platform/msm_sdcc.1/by-name/boot");
 	  symlink("/system/lib/modules/pronto/pronto_wlan.ko", "/system/lib/modules/wlan.ko");
     endif;
     if file_getprop("/tmp/aroma/kernel.prop","selected.1") == "2" then
       ui_print("@Installing Quantum by PwnCakes193");
+	  package_extract_dir("system/lib/modules", "/system/lib/modules");
 	  package_extract_dir("aroma/kernels/quantum/system", "/system");
       symlink("/system/lib/modules/pronto/pronto_wlan.ko", "/system/lib/modules/wlan.ko");
       package_extract_file("aroma/kernels/quantum/boot.img", "/dev/block/platform/msm_sdcc.1/by-name/boot");
@@ -45,6 +47,7 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "4" then
     endif;
     if file_getprop("/tmp/aroma/kernel.prop","selected.1") == "3" then
       ui_print("@Installing Elemental X Kernel");
+	  package_extract_dir("system/lib/modules", "/system/lib/modules");
 	  package_extract_dir("aroma/kernels/elementalx/config", "/tmp");
       set_perm(0, 0, 0777, "/tmp/busybox");
 	  set_perm(0, 0, 0777, "/tmp/buildconfig.sh");
@@ -68,6 +71,7 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "4" then
     endif;
     if file_getprop("/tmp/aroma/kernel.prop","selected.1") == "4" then
       ui_print("@Installing Elite by buckmarble");
+	  package_extract_dir("system/lib/modules", "/system/lib/modules");
 	  package_extract_dir("aroma/kernels/elite/system", "/system");
       symlink("/system/lib/modules/pronto/pronto_wlan.ko", "/system/lib/modules/wlan.ko");
       package_extract_file("aroma/kernels/elite/boot.img", "/dev/block/platform/msm_sdcc.1/by-name/boot");
@@ -77,6 +81,7 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "4" then
   else
     if file_getprop("/tmp/aroma/kernel.prop","selected.1") == "1" then
       ui_print("@Installing Quantum by PwnCakes193");
+	  package_extract_dir("system/lib/modules", "/system/lib/modules");
 	  package_extract_dir("aroma/kernels/quantum/system", "/system");
       symlink("/system/lib/modules/pronto/pronto_wlan.ko", "/system/lib/modules/wlan.ko");
       package_extract_file("aroma/kernels/quantum/boot.img", "/dev/block/platform/msm_sdcc.1/by-name/boot");
@@ -85,12 +90,14 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "4" then
     endif;
     if file_getprop("/tmp/aroma/kernel.prop","selected.1") == "2" then
       ui_print("@Installing CodeCraft by Evolutionmods");
+	  package_extract_dir("system/lib/modules", "/system/lib/modules");
 	  package_extract_dir("aroma/kernels/codecraft/system", "/system");
       symlink("/system/lib/modules/pronto/pronto_wlan.ko", "/system/lib/modules/wlan.ko");
       package_extract_file("aroma/kernels/codecraft/boot.img", "/dev/block/platform/msm_sdcc.1/by-name/boot");
     endif;
     if file_getprop("/tmp/aroma/kernel.prop","selected.1") == "3" then
       ui_print("@Installing Elite by buckmarble");
+	  package_extract_dir("system/lib/modules", "/system/lib/modules");
 	  package_extract_dir("aroma/kernels/elite/system", "/system");
       symlink("/system/lib/modules/pronto/pronto_wlan.ko", "/system/lib/modules/wlan.ko");
       package_extract_file("aroma/kernels/elite/boot.img", "/dev/block/platform/msm_sdcc.1/by-name/boot");
