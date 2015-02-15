@@ -527,8 +527,9 @@ if prop("type.prop","selected")=="2"||prop("type.prop","selected")=="3" then
       #-- Will be saved in /tmp/aroma/other
         "audio.prop",
 										  
-	    "Volume boost",       "System wide volume boost",         0      #-- item.0.1
-
+	    "Volume Boost",           "System wide volume boost",                  0,      #-- item.0.1
+        "CyanogenMod Ringtones",  "15.7Mb ringtones, notifications, alarms",   0,      #-- item.0.2
+		"Viper4Android",          "Will remove MusicFX and AudioFX",           0       #-- item.0.3
     
 	);
     write(
@@ -565,8 +566,7 @@ if prop("type.prop","selected")=="2"||prop("type.prop","selected")=="3" then
         "navbar.prop",
 										  
 	    "NavBar theme",       "NavBar will change colors in certain app just like the status bar.",         0      #-- item.0.1
-
-    
+		
 	);
     write(
       #-- Absolute path into the file
@@ -591,7 +591,6 @@ if prop("type.prop","selected")=="2"||prop("type.prop","selected")=="3" then
         "De-Bloat",              "",                                         2,  #-- Group 2. key = "selected.1"
 		  "Yes",            "De-Bloat safe to remove system apps",           0,      #-- selected.1 = 1
           "No",             "",                                              1       #-- selected.1 = 2
-
     );
 endif;
 if prop("debloat.prop","selected.1")=="1" then

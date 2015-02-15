@@ -300,7 +300,9 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "2" || file_getprop("/tmp/
 	delete_recursive("/system/priv-app/MusicFX");
   else
     package_extract_dir("system/priv-app/MusicFX", "/system/priv-app/MusicFX");
+	delete_recursive("/system/lib/soundfx");
 	package_extract_dir("system/lib/soundfx", "/system/lib/soundfx");
+	package_extract_dir("system/vendor/lib/soundfx", "/system/vendor/lib/soundfx");
     delete_recursive("/system/priv-app/AudioFX");
   endif;
   if file_getprop("/tmp/aroma/cm.prop","item.0.2") == "1" then
@@ -444,15 +446,27 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "2" || file_getprop("/tmp/
   else
     package_extract_file("system/etc/snd_soc_msm/snd_soc_msm_2x", "/system/etc/snd_soc_msm/snd_soc_msm_2x");
   endif;
-  #
-  #NavBar theme
-  #
-  ui_print("@Audio");
-  if file_getprop("/tmp/aroma/navbar.prop","item.0.1") == "1" then
-    ui_print("Adding NavBar Theme");
-    package_extract_dir("aroma/navbar/", "/system");
+  if file_getprop("/tmp/aroma/audio.prop","item.0.2") == "1" then
+    ui_print("Adding CyanogenMod Ringtones");
+    package_extract_dir("aroma/audio/cmtones", "/system");
   else
-    package_extract_file("system/framework/framework-res.apk", "/system/framework/framework-res.apk");
+    delete_recursive("/system/media/audio");
+    package_extract_dir("system/media/audio", "/system/media/audio");
+  endif;
+  if file_getprop("/tmp/aroma/audio.prop","item.0.3") == "1" then
+    ui_print("Adding Viper4Android");
+    package_extract_dir("aroma/audio/viper", "/system");
+	delete_recursive("/system/priv-app/AudioFX");
+	delete_recursive("/system/priv-app/MusicFX");
+	run_program("/sbin/sh", "-c", "sed -i 's/lpa.decode=true/lpa.decode=false/' /system/build.prop");
+	run_program("/sbin/sh", "-c", "sed -i 's/lpa.use-stagefright=true/lpa.use-stagefright=false/' /system/build.prop");
+  else
+    delete_recursive("/system/priv-app/ViPER4Android_FX_A4.x");
+	delete("/system/lib/libV4AJniUtils.so");
+	delete("/system/lib/soundfx/libv4a_fx_ics.so");
+    package_extract_file("system/etc/audio_effects.conf", "/system/etc/audio_effects.conf");
+	run_program("/sbin/sh", "-c", "sed -i 's/lpa.decode=false/lpa.decode=true/' /system/build.prop");
+	run_program("/sbin/sh", "-c", "sed -i 's/lpa.use-stagefright=false/lpa.use-stagefright=true/' /system/build.prop");
   endif;
   #
   #De-Bloat
@@ -589,6 +603,15 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "2" || file_getprop("/tmp/
   if file_getprop("/tmp/aroma/themes.prop","selected.0") == "2" then
     ui_print("Dark Theme");
     package_extract_dir("aroma/theme/dark", "/system");
+  endif;
+  #
+  #NavBar theme
+  #
+  if file_getprop("/tmp/aroma/navbar.prop","item.0.1") == "1" then
+    ui_print("Adding NavBar Theme");
+    package_extract_dir("aroma/navbar/", "/system");
+  else
+    package_extract_file("system/framework/framework-res.apk", "/system/framework/framework-res.apk");
   endif;
 endif;
 ui_print("@Finishing up");
