@@ -904,6 +904,14 @@
     return p1
 .end method
 
+.method static synthetic access$334(Lcom/android/systemui/statusbar/phone/PhoneStatusBar;Z)Z
+    .locals 0
+
+    iput-boolean p1, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mTickerEnabled:Z
+
+    return p1
+.end method
+
 .method static synthetic access$3400(Lcom/android/systemui/statusbar/phone/PhoneStatusBar;)I
     .locals 1
 
@@ -9234,14 +9242,27 @@
 
     invoke-virtual {v3, v4}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->setKeyguardIndicationController(Lcom/android/systemui/statusbar/KeyguardIndicationController;)V
 
-    const v3, 0x7f080011
+    move-object/from16 v0, p0
 
-    move-object/from16 v0, v22
+    iget-object v3, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mContext:Landroid/content/Context;
 
-    invoke-virtual {v0, v3}, Landroid/content/res/Resources;->getBoolean(I)Z
+    invoke-virtual {v3}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v3
+
+    const-string v4, "enable_ticker"
+
+    const/4 v5, 0x0
+
+    invoke-static {v3, v4, v5}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
 
     move-result v3
 
+    const/4 v5, 0x1
+
+    if-ne v3, v5, :cond_next
+
+    :goto_next
     move-object/from16 v0, p0
 
     iput-boolean v3, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mTickerEnabled:Z
@@ -10245,6 +10266,11 @@
     move-exception v3
 
     goto/16 :goto_0
+
+    :cond_next
+    const/4 v5, 0x0
+
+    goto/16 :goto_next
 
     :cond_b
     const/4 v3, 0x0
