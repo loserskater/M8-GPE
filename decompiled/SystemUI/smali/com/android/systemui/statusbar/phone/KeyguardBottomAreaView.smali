@@ -300,7 +300,7 @@
 
     const/4 v2, 0x0
 
-    sget-object v7, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$5;->$SwitchMap$com$android$internal$util$cm$LockscreenShortcutsHelper$Shortcuts:[I
+    sget-object v7, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$5;->$SwitchMap$com$android$internal$policy$impl$LockscreenShortcutsHelper$Shortcuts:[I
 
     invoke-virtual {p1}, Lcom/android/internal/policy/impl/LockscreenShortcutsHelper$Shortcuts;->ordinal()I
 
