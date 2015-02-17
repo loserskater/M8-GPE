@@ -348,6 +348,12 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "2" || file_getprop("/tmp/
   else
     delete_recursive("/system/app/SoundRecorder");
   endif;
+  if file_getprop("/tmp/aroma/cm.prop","item.0.7") == "1" then
+    ui_print("Adding Trebuchet");
+    package_extract_dir("aroma/cm_apps/trebuchet", "/system");
+  else
+    delete_recursive("/system/app/Trebuchet");
+  endif;
   #
   #Camera/Gallery
   #

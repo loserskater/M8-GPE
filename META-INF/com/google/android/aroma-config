@@ -405,7 +405,8 @@ if prop("type.prop","selected")=="2"||prop("type.prop","selected")=="3" then
 		"Calendar",       "AOSP Calendar, will replace Google Calendar in /system",                      0,      #-- item.0.3
 	    "File Manager",   "Material design file explorer",                                               0,      #-- item.0.4
         "Music",          "Material design music player, will replace Google music in /system",          0,      #-- item.0.5
-		"Sound Recorder", "",                                                                            0       #-- item.0.6
+		"Sound Recorder", "",                                                                            0,      #-- item.0.6
+		"Trebuchet",      "Launcher",                                                                    0       #-- item.0.7
     
 	);
     write(
