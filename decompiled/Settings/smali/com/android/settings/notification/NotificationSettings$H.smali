@@ -105,7 +105,7 @@
 
     iget v1, p1, Landroid/os/Message;->arg1:I
 
-    # invokes: Lcom/android/settings/notification/NotificationSettings;->updateRingOrNotificationIcon(I)V
+    # invokes: Lcom/android/settings/notification/NotificationSettings;->updateRingIcon(I)V
     invoke-static {v0, v1}, Lcom/android/settings/notification/NotificationSettings;->access$1700(Lcom/android/settings/notification/NotificationSettings;I)V
 
     goto :goto_0

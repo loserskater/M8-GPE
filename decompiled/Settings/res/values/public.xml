@@ -99,6 +99,7 @@
     <public type="drawable" name="wifi_signal_open_light" id="0x7f0200e8" />
     <public type="drawable" name="wifi_signal_open_teal" id="0x7f0200e9" />
     <public type="drawable" name="wifi_signal_teal" id="0x7f0200ea" />
+    <public type="drawable" name="ic_audio_ring_24dp" id="0x7f0200ec" />
     <public type="drawable" name="appwidget_bg_holo" id="0x7f020000" />
     <public type="drawable" name="appwidget_inner_focused_c_holo" id="0x7f020004" />
     <public type="drawable" name="appwidget_inner_focused_l_holo" id="0x7f020005" />
@@ -3068,6 +3069,8 @@
     <public type="string" name="encrypt_talkback_dialog_message_pattern" id="0x7f080988" />
     <public type="string" name="encrypt_talkback_dialog_message_password" id="0x7f080989" />
     <public type="string" name="extra_settings" id="0x7f0809b0" />
+    <public type="string" name="app_ops_settings_summary" id="0x7f0809b1" />
+    <public type="string" name="link_volume_option_title" id="0x7f0809b2" />
     <public type="string" name="APKTOOL_DUMMY_098a" id="0x7f08098a" />
     <public type="string" name="APKTOOL_DUMMY_098b" id="0x7f08098b" />
     <public type="string" name="APKTOOL_DUMMY_098c" id="0x7f08098c" />

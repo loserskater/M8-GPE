@@ -23,6 +23,8 @@
 
 .field private final VIBRATE_WHEN_RINGING_URI:Landroid/net/Uri;
 
+.field private final VOLUME_LINK_NOTIFICATION_URI:Landroid/net/Uri;
+
 .field final synthetic this$0:Lcom/android/settings/notification/NotificationSettings;
 
 
@@ -70,6 +72,14 @@
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/settings/notification/NotificationSettings$SettingsObserver;->LOCK_SCREEN_SHOW_URI:Landroid/net/Uri;
+
+    const-string v0, "volume_link_notification"
+
+    invoke-static {v0}, Landroid/provider/Settings$System;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/android/settings/notification/NotificationSettings$SettingsObserver;->VOLUME_LINK_NOTIFICATION_URI:Landroid/net/Uri;
 
     return-void
 .end method
@@ -134,6 +144,20 @@
     invoke-static {v0}, Lcom/android/settings/notification/NotificationSettings;->access$1500(Lcom/android/settings/notification/NotificationSettings;)V
 
     :cond_3
+    iget-object v0, p0, Lcom/android/settings/notification/NotificationSettings$SettingsObserver;->VOLUME_LINK_NOTIFICATION_URI:Landroid/net/Uri;
+
+    invoke-virtual {v0, p2}, Landroid/net/Uri;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_4
+
+    iget-object v0, p0, Lcom/android/settings/notification/NotificationSettings$SettingsObserver;->this$0:Lcom/android/settings/notification/NotificationSettings;
+
+    # invokes: Lcom/android/settings/notification/NotificationSettings;->updateNotificationPreferenceState()V
+    invoke-static {v0}, Lcom/android/settings/notification/NotificationSettings;->access$1601(Lcom/android/settings/notification/NotificationSettings;)V
+
+    :cond_4
     return-void
 .end method
 
@@ -165,6 +189,10 @@
     invoke-virtual {v0, v1, v2, p0}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 
     iget-object v1, p0, Lcom/android/settings/notification/NotificationSettings$SettingsObserver;->LOCK_SCREEN_SHOW_URI:Landroid/net/Uri;
+
+    invoke-virtual {v0, v1, v2, p0}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
+
+    iget-object v1, p0, Lcom/android/settings/notification/NotificationSettings$SettingsObserver;->VOLUME_LINK_NOTIFICATION_URI:Landroid/net/Uri;
 
     invoke-virtual {v0, v1, v2, p0}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 
