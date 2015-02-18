@@ -351,8 +351,9 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "2" || file_getprop("/tmp/
   if file_getprop("/tmp/aroma/cm.prop","item.0.7") == "1" then
     ui_print("Adding Trebuchet");
     package_extract_dir("aroma/cm_apps/trebuchet", "/system");
+	delete_recursive("/system/app/GoogleHome");
   else
-    delete_recursive("/system/app/Trebuchet");
+    delete_recursive("/system/priv-app/Trebuchet");
   endif;
   #
   #Camera/Gallery
