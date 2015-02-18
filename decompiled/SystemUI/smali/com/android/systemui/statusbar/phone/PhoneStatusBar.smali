@@ -2272,6 +2272,22 @@
     invoke-virtual {v6, v10}, Lcom/android/systemui/statusbar/policy/KeyButtonView;->sendAccessibilityEvent(I)V
 
     :cond_2
+    iget-object v10, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v10}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v10
+
+    const-string v11, "long_press_recents"
+
+    const/4 v6, 0x1
+
+    invoke-static {v10, v11, v6}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+
+    move-result v10
+
+    if-eqz v10, :cond_3
+
     if-eqz v4, :cond_3
 
     iget-object v10, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mContext:Landroid/content/Context;
