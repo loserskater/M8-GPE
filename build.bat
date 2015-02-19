@@ -5,3 +5,6 @@ del M8-GPE-*.zip
 echo %VERSION% > META-INF\com\google\android\aroma\version.txt
 
 tools\7za.exe a -mx9 -xr@tools/exclusion.txt M8-GPE-%VERSION%.zip aroma META-INF supersu system boot.img
+tools\7za.exe u M8-GPE-%VERSION%.zip .\updated\*
+
+tools\7za.exe a -mx9 -xr@tools/exclusion.txt M8-GPE-%VERSION%-UPDATE.zip aroma -xr!kernels META-INF .\updated\*
