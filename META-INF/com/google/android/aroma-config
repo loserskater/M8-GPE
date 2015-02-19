@@ -157,7 +157,8 @@ if prop("type.prop","selected")=="1"||prop("type.prop","selected")=="2" then
       "wipe.prop",
 
       "Full Wipe",            "Data, System, Cache",               0,      #-- selected.0 = 1
-      "Upgrade",              "System, Cache... dirty flash",      1       #-- selected.0 = 2
+      "Upgrade",              "System, Cache",                     1,      #-- selected.0 = 2
+	  "Dirty"                 "Cache only",                        0       #-- selected.0 = 3
 
 );
 endif;
@@ -406,7 +407,7 @@ if prop("type.prop","selected")=="2"||prop("type.prop","selected")=="3" then
 	    "File Manager",   "Material design file explorer",                                               0,      #-- item.0.4
         "Music",          "Material design music player, will replace Google music in /system",          0,      #-- item.0.5
 		"Sound Recorder", "",                                                                            0,      #-- item.0.6
-		"Trebuchet",      "Launcher, will replace Google Home",                                                                    0       #-- item.0.7
+		"Trebuchet",      "Launcher, will replace Google Home",                                          0       #-- item.0.7
     
 	);
     write(

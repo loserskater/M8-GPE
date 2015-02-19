@@ -132,8 +132,10 @@ endif;
 if file_getprop("/tmp/aroma/type.prop","selected") == "1" || file_getprop("/tmp/aroma/type.prop","selected") == "2" then
   ui_print("@Installing Rom");
   set_progress(0.01);
-  ui_print("@Formatting System");
-  format("ext4", "EMMC", "/dev/block/platform/msm_sdcc.1/by-name/system", "0", "/system");
+  if file_getprop("/tmp/aroma/wipe.prop","selected.0") != "3" then
+    ui_print("@Formatting System");
+    format("ext4", "EMMC", "/dev/block/platform/msm_sdcc.1/by-name/system", "0", "/system");
+  endif;
   set_progress(0.10);
   ui_print("@Formatting Cache");
   format("ext4", "EMMC", "/dev/block/platform/msm_sdcc.1/by-name/cache", "0", "/cache");
