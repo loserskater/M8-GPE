@@ -1,4 +1,4 @@
-version: 2.0.0-RC3
+version: 2.0.0-RC4
 apkFileName: Settings.apk
 isFrameworkApk: false
 usesFramework:

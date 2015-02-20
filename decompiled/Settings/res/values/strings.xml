@@ -2543,5 +2543,16 @@ This helps protect data on lost or stolen devices."</string>
     <string name="encrypt_talkback_dialog_message_password">"When you enter your password to start this device, accessibility services like %1$s won't yet be available."</string>
     <string name="extra_settings">Extra settings</string>
     <string name="app_ops_settings_summary">Set permissions of individual apps</string>
+    <string name="lockpattern_reset_button">Reset pattern</string>
+    <string name="lockpattern_settings_reset_summary">Enter primary email account and associated password to reset pattern lock</string>
+    <string name="protected_apps">Protected apps</string>
+    <string name="menu_hidden_apps_delete">Reset</string>
+    <string name="menu_hidden_apps_reset_lock">Reset pattern lock</string>
+    <string name="saving_protected_components">Saving component state…</string>
+    <string name="pa_login_username_hint">Username (email)</string>
+    <string name="pa_login_password_hint">Password</string>
+    <string name="pa_login_submit_button">Sign in</string>
+    <string name="pa_login_checking_password">Checking account…</string>
+    <string name="pa_login_incorrect_login">Login was incorrect</string>
     <string name="link_volume_option_title">Link ringtone &amp; notification volumes</string>
 </resources>

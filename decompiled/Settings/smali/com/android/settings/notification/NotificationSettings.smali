@@ -1081,7 +1081,7 @@
 
     if-lez p1, :cond_0
 
-    const v0, 0x7f0200ec
+    const v0, 0x7f0200ee
 
     :goto_0
     invoke-virtual {v1, v0}, Lcom/android/settings/notification/VolumeSeekBarPreference;->showIcon(I)V
