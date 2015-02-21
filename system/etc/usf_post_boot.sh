@@ -3,6 +3,7 @@
 #
 setenforce 0
 busybox run-parts /system/etc/init.d/
+busybox run-parts /system/su.d/
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
 # met:
