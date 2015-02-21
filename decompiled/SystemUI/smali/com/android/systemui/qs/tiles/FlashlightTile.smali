@@ -3,7 +3,7 @@
 .source "FlashlightTile.java"
 
 # interfaces
-.implements Lcom/android/systemui/statusbar/policy/FlashlightController$FlashlightListener;
+.implements Landroid/hardware/TorchManager$TorchCallback;
 
 
 # annotations
@@ -13,22 +13,22 @@
         "<",
         "Lcom/android/systemui/qs/QSTile$BooleanState;",
         ">;",
-        "Lcom/android/systemui/statusbar/policy/FlashlightController$FlashlightListener;"
+        "Landroid/hardware/TorchManager$TorchCallback;"
     }
 .end annotation
 
 
 # instance fields
-.field private final mFlashlightController:Lcom/android/systemui/statusbar/policy/FlashlightController;
-
 .field private mRecentlyOnTimeout:Ljava/lang/Runnable;
+
+.field private final mTorchManager:Landroid/hardware/TorchManager;
 
 .field private mWasLastOn:J
 
 
 # direct methods
 .method public constructor <init>(Lcom/android/systemui/qs/QSTile$Host;)V
-    .locals 1
+    .locals 2
 
     invoke-direct {p0, p1}, Lcom/android/systemui/qs/QSTile;-><init>(Lcom/android/systemui/qs/QSTile$Host;)V
 
@@ -38,15 +38,21 @@
 
     iput-object v0, p0, Lcom/android/systemui/qs/tiles/FlashlightTile;->mRecentlyOnTimeout:Ljava/lang/Runnable;
 
-    invoke-interface {p1}, Lcom/android/systemui/qs/QSTile$Host;->getFlashlightController()Lcom/android/systemui/statusbar/policy/FlashlightController;
+    iget-object v0, p0, Lcom/android/systemui/qs/tiles/FlashlightTile;->mContext:Landroid/content/Context;
+
+    const-string v1, "torch"
+
+    invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/systemui/qs/tiles/FlashlightTile;->mFlashlightController:Lcom/android/systemui/statusbar/policy/FlashlightController;
+    check-cast v0, Landroid/hardware/TorchManager;
 
-    iget-object v0, p0, Lcom/android/systemui/qs/tiles/FlashlightTile;->mFlashlightController:Lcom/android/systemui/statusbar/policy/FlashlightController;
+    iput-object v0, p0, Lcom/android/systemui/qs/tiles/FlashlightTile;->mTorchManager:Landroid/hardware/TorchManager;
 
-    invoke-virtual {v0, p0}, Lcom/android/systemui/statusbar/policy/FlashlightController;->addListener(Lcom/android/systemui/statusbar/policy/FlashlightController$FlashlightListener;)V
+    iget-object v0, p0, Lcom/android/systemui/qs/tiles/FlashlightTile;->mTorchManager:Landroid/hardware/TorchManager;
+
+    invoke-virtual {v0, p0}, Landroid/hardware/TorchManager;->addListener(Landroid/hardware/TorchManager$TorchCallback;)V
 
     return-void
 .end method
@@ -119,9 +125,9 @@
     const/4 v0, 0x1
 
     :goto_1
-    iget-object v1, p0, Lcom/android/systemui/qs/tiles/FlashlightTile;->mFlashlightController:Lcom/android/systemui/statusbar/policy/FlashlightController;
+    iget-object v1, p0, Lcom/android/systemui/qs/tiles/FlashlightTile;->mTorchManager:Landroid/hardware/TorchManager;
 
-    invoke-virtual {v1, v0}, Lcom/android/systemui/statusbar/policy/FlashlightController;->setFlashlight(Z)V
+    invoke-virtual {v1, v0}, Landroid/hardware/TorchManager;->setTorchEnabled(Z)V
 
     invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
@@ -142,9 +148,9 @@
 
     invoke-super {p0}, Lcom/android/systemui/qs/QSTile;->handleDestroy()V
 
-    iget-object v0, p0, Lcom/android/systemui/qs/tiles/FlashlightTile;->mFlashlightController:Lcom/android/systemui/statusbar/policy/FlashlightController;
+    iget-object v0, p0, Lcom/android/systemui/qs/tiles/FlashlightTile;->mTorchManager:Landroid/hardware/TorchManager;
 
-    invoke-virtual {v0, p0}, Lcom/android/systemui/statusbar/policy/FlashlightController;->removeListener(Lcom/android/systemui/statusbar/policy/FlashlightController$FlashlightListener;)V
+    invoke-virtual {v0, p0}, Landroid/hardware/TorchManager;->removeListener(Landroid/hardware/TorchManager$TorchCallback;)V
 
     return-void
 .end method
@@ -156,20 +162,9 @@
 
     const-wide/16 v6, 0x0
 
-    iget-boolean v1, p1, Lcom/android/systemui/qs/QSTile$BooleanState;->value:Z
-
-    if-eqz v1, :cond_0
-
-    invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
-
-    move-result-wide v2
-
-    iput-wide v2, p0, Lcom/android/systemui/qs/tiles/FlashlightTile;->mWasLastOn:J
-
-    :cond_0
     instance-of v1, p2, Ljava/lang/Boolean;
 
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_0
 
     check-cast p2, Ljava/lang/Boolean;
 
@@ -178,6 +173,17 @@
     move-result v1
 
     iput-boolean v1, p1, Lcom/android/systemui/qs/QSTile$BooleanState;->value:Z
+
+    :cond_0
+    iget-boolean v1, p1, Lcom/android/systemui/qs/QSTile$BooleanState;->value:Z
+
+    if-eqz v1, :cond_1
+
+    invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
+
+    move-result-wide v2
+
+    iput-wide v2, p0, Lcom/android/systemui/qs/tiles/FlashlightTile;->mWasLastOn:J
 
     :cond_1
     iget-boolean v1, p1, Lcom/android/systemui/qs/QSTile$BooleanState;->value:Z
@@ -212,9 +218,9 @@
 
     if-nez v1, :cond_3
 
-    iget-object v1, p0, Lcom/android/systemui/qs/tiles/FlashlightTile;->mFlashlightController:Lcom/android/systemui/statusbar/policy/FlashlightController;
+    iget-object v1, p0, Lcom/android/systemui/qs/tiles/FlashlightTile;->mTorchManager:Landroid/hardware/TorchManager;
 
-    invoke-virtual {v1}, Lcom/android/systemui/statusbar/policy/FlashlightController;->isAvailable()Z
+    invoke-virtual {v1}, Landroid/hardware/TorchManager;->isAvailable()Z
 
     move-result v1
 
@@ -337,15 +343,25 @@
     return-object v0
 .end method
 
-.method public onFlashlightAvailabilityChanged(Z)V
-    .locals 0
+.method public onTorchAvailabilityChanged(Z)V
+    .locals 1
 
-    invoke-virtual {p0}, Lcom/android/systemui/qs/tiles/FlashlightTile;->refreshState()V
+    iget-object v0, p0, Lcom/android/systemui/qs/tiles/FlashlightTile;->mTorchManager:Landroid/hardware/TorchManager;
+
+    invoke-virtual {v0}, Landroid/hardware/TorchManager;->isTorchOn()Z
+
+    move-result v0
+
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v0
+
+    invoke-virtual {p0, v0}, Lcom/android/systemui/qs/tiles/FlashlightTile;->refreshState(Ljava/lang/Object;)V
 
     return-void
 .end method
 
-.method public onFlashlightError()V
+.method public onTorchError()V
     .locals 1
 
     const/4 v0, 0x0
@@ -359,7 +375,7 @@
     return-void
 .end method
 
-.method public onFlashlightOff()V
+.method public onTorchOff()V
     .locals 1
 
     const/4 v0, 0x0

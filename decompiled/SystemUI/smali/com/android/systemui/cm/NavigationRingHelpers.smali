@@ -375,11 +375,31 @@
 .end method
 
 .method private static getTorchDrawableResId(Landroid/content/Context;)I
-    .locals 1
+    .locals 3
 
-    const v0, 0x7f02019d
+    const-string v2, "torch"
 
-    return v0
+    invoke-virtual {p0, v2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/hardware/TorchManager;
+
+    invoke-virtual {v1}, Landroid/hardware/TorchManager;->isTorchOn()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const v2, 0x7f02019d
+
+    :goto_0
+    return v2
+
+    :cond_0
+    const v2, 0x7f02019c
+
+    goto :goto_0
 .end method
 
 .method private static getVibrateDrawableResId(Landroid/content/Context;)I
@@ -445,11 +465,21 @@
 .end method
 
 .method public static isTorchAvailable(Landroid/content/Context;)Z
-    .locals 1
+    .locals 2
 
-    const/4 v0, 0x1
+    const-string v1, "torch"
 
-    return v0
+    invoke-virtual {p0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/hardware/TorchManager;
+
+    invoke-virtual {v0}, Landroid/hardware/TorchManager;->isTorchSupported()Z
+
+    move-result v1
+
+    return v1
 .end method
 
 .method public static resetActionsToDefaults(Landroid/content/Context;)V
