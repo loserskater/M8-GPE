@@ -1,4 +1,4 @@
-unmount("/cache");
+﻿unmount("/cache");
 unmount("/system");
 unmount("/data");
 #
@@ -826,6 +826,7 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "1" || file_getprop("/tmp/
   set_metadata("/system/xbin/librank", "uid", 0, "gid", 0, "mode", 06755, "capabilities", 0x0, "selabel", "u:object_r:system_file:s0");
   set_metadata("/system/xbin/procmem", "uid", 0, "gid", 0, "mode", 06755, "capabilities", 0x0, "selabel", "u:object_r:system_file:s0");
   set_metadata("/system/xbin/procrank", "uid", 0, "gid", 0, "mode", 06755, "capabilities", 0x0, "selabel", "u:object_r:system_file:s0");
+  set_metadata("/system/su.d", "uid", 0, "gid", 0, "mode", 0755, "capabilities", 0x0, "selabel", "u:object_r:system_file:s0");
   set_progress(0.97);
   ui_print("@Installing SuperSu");
   package_extract_dir("supersu", "/tmp/supersu");
