@@ -491,8 +491,10 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "2" || file_getprop("/tmp/
   if file_getprop("/tmp/aroma/debloat.prop","item.1.1") == "1" then
     ui_print("Removing Drive");
 	delete_recursive("/system/app/Drive");
+	delete_recursive("/system/app/DriveActivator");
   else
     package_extract_dir("system/app/Drive", "/system/app/Drive");
+	package_extract_dir("system/app/Drive", "/system/app/DriveActivator");
   endif;
   if file_getprop("/tmp/aroma/debloat.prop","item.1.2") == "1" then
     ui_print("Removing EditorsDocs");

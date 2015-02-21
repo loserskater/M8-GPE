@@ -1,14 +1,25 @@
 <b>PUT RELEASE DATE HERE</b>
 <b>*New Additions</b>
+Disabled APM on lock screen for extra security (Power off is still available)
+Enable status bar ticker
 Added screenshot to APM
 Added airplane mode to APM
+Link/unlink notification volume to ring volume
+Enable/Disable long press recents
+CyanogenMod Trebuchet launcher, Fully working (AROMA)
 Viper4Android audio (AROMA)
-CM ringtones, notificaions, alarms. (AROMA)
-Colorful navigation bar background. Mimics the status bar. (AROMA)
+CM ringtones, notificaions, alarms (AROMA)
+Colorful navigation bar background, Mimics the status bar (AROMA)
+OTA app, added option to ignore release
 <b>*Updates</b>
+Fixed lock screen shorcut FC
+Extra Settings, reordered and added icons
+System wide torch, quick setting and nav ring work together
 APM icons
 Elite kernel
-CM apps with bug fixes and material design updates.
+Quantum kernel
+Elemental X kernel
+CM apps with bug fixes and material design updates
 
 <b>2-12-2015</b>
 <b>*New Additions</b>
