@@ -158,7 +158,7 @@ if prop("type.prop","selected")=="1"||prop("type.prop","selected")=="2" then
 
       "Full Wipe",            "Data, System, Cache",               0,      #-- selected.0 = 1
       "Upgrade",              "System, Cache",                     1,      #-- selected.0 = 2
-	  "Dirty"                 "Cache only",                        0       #-- selected.0 = 3
+	  "Dirty",                "Cache only",                        0       #-- selected.0 = 3
 
 );
 endif;
