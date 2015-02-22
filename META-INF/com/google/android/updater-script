@@ -242,20 +242,20 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "1" || file_getprop("/tmp/
   else
     ui_print("@Installing Kernel");
     package_extract_file("boot.img", "/dev/block/platform/msm_sdcc.1/by-name/boot");
-  endif;
-  if file_getprop("/tmp/aroma/carrier.prop","selected.0") != "1" then
-    package_extract_dir("aroma/carrier/tmp_files", "/tmp");
-	package_extract_file("aroma/scripts/bash", "/tmp/bash");
-	set_perm_recursive(0, 0, 0755, 0755, "/tmp");
-	if file_getprop("/tmp/aroma/carrier.prop","selected.0") == "3" then
-      package_extract_dir("aroma/carrier/sprint/system", "/system");
-      package_extract_dir("aroma/carrier/sprint/framework", "/tmp");
-	else
-      package_extract_dir("aroma/carrier/verizon/system", "/system");
-	  package_extract_dir("aroma/carrier/verizon/framework", "/tmp");
-	endif;
-    run_program("/tmp/patch_carrier.sh", "/system/framework/framework-res.apk");
-    set_perm(0, 0, 0644, "/system/framework/framework-res.apk");
+	if file_getprop("/tmp/aroma/carrier.prop","selected.0") != "1" then
+      package_extract_dir("aroma/carrier/tmp_files", "/tmp");
+	  package_extract_file("aroma/scripts/bash", "/tmp/bash");
+	  set_perm_recursive(0, 0, 0755, 0755, "/tmp");
+	  if file_getprop("/tmp/aroma/carrier.prop","selected.0") == "3" then
+        package_extract_dir("aroma/carrier/sprint/system", "/system");
+        package_extract_dir("aroma/carrier/sprint/framework", "/tmp");
+	  else
+        package_extract_dir("aroma/carrier/verizon/system", "/system");
+	    package_extract_dir("aroma/carrier/verizon/framework", "/tmp");
+	  endif;
+      run_program("/tmp/patch_carrier.sh", "/system/framework/framework-res.apk");
+      set_perm(0, 0, 0644, "/system/framework/framework-res.apk");
+    endif;
   endif;
   set_progress(0.60);
 endif;
@@ -646,6 +646,23 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "2" || file_getprop("/tmp/
     package_extract_dir("aroma/navbar/", "/system");
   else
     package_extract_file("system/framework/framework-res.apk", "/system/framework/framework-res.apk");
+  endif;
+  #
+  #Carrier patch
+  #
+  if file_getprop("/tmp/aroma/carrier.prop","selected.0") != "1" then
+    package_extract_dir("aroma/carrier/tmp_files", "/tmp");
+	package_extract_file("aroma/scripts/bash", "/tmp/bash");
+	set_perm_recursive(0, 0, 0755, 0755, "/tmp");
+	if file_getprop("/tmp/aroma/carrier.prop","selected.0") == "3" then
+      package_extract_dir("aroma/carrier/sprint/system", "/system");
+      package_extract_dir("aroma/carrier/sprint/framework", "/tmp");
+	else
+      package_extract_dir("aroma/carrier/verizon/system", "/system");
+	  package_extract_dir("aroma/carrier/verizon/framework", "/tmp");
+	endif;
+    run_program("/tmp/patch_carrier.sh", "/system/framework/framework-res.apk");
+    set_perm(0, 0, 0644, "/system/framework/framework-res.apk");
   endif;
 endif;
 ui_print("@Finishing up");
