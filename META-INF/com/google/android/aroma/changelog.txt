@@ -1,4 +1,10 @@
 <b>2-22-2015</b>
+<b>*Updates</b>
+Fixed network traffic
+Fixed Enable ticker
+Fixed Verizon/Sprint install
+
+<b>2-22-2015</b>
 <b>*New Additions</b>
 Disabled APM on lock screen for extra security (Power off is still available)
 Enable status bar ticker
