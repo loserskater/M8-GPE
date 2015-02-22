@@ -653,7 +653,7 @@ endif;
 
 ##################################################################################################################
 
-if prop("type.prop","selected")=="2"||prop("type.prop","selected")=="4" then
+if prop("type.prop","selected")=="1"||prop("type.prop","selected")=="2"||prop("type.prop","selected")=="4" then
   if prop("carrier.prop","selected.0")=="1" then
     selectbox(
       #-- Title
