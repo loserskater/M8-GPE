@@ -13,6 +13,8 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "4" then
   delete_recursive("/system/lib/modules");
   delete("/system/etc/init.d/95fstrim");
   delete("/system/etc/init.d/97QuantumSettings");
+  delete("/system/etc/init.d/93QuantumTweaks");
+  delete("/system/etc/init.d/98remount_fullext4");
   delete("/system/etc/init.d/99elementalx");
   delete("/system/etc/init.d/99elementalx~");
   delete("/system/etc/init.d/01-cam");
@@ -27,20 +29,27 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "4" then
   delete("/system/etc/init.d/92Elite");
   delete("/system/etc/elementalx.conf");
   delete("/system/etc/skydragon.conf");
+  delete("/system/su.d/elex_permissive.sh");
   set_progress(0.5);
   package_extract_dir("system/lib/modules", "/system/lib/modules");
+  package_extract_file("system/bin/mpdecision", "/system/bin/mpdecision");
+  package_extract_file("system/bin/pnpmgr", "/system/bin/pnpmgr");
+  package_extract_file("system/etc/thermal-engine.conf", "/system/etc/thermal-engine.conf");
   if file_getprop("/tmp/aroma/carrier.prop","selected.0") == "1" then
     if file_getprop("/tmp/aroma/kernel.prop","selected.1") == "1" then
       ui_print("@Installing Stock Kernel");
 	  package_extract_dir("system/lib/modules", "/system/lib/modules");
       package_extract_file("boot.img", "/dev/block/platform/msm_sdcc.1/by-name/boot");
-	  symlink("/system/lib/modules/pronto/pronto_wlan.ko", "/system/lib/modules/wlan.ko");
     endif;
     if file_getprop("/tmp/aroma/kernel.prop","selected.1") == "2" then
       ui_print("@Installing Quantum by PwnCakes193");
 	  package_extract_dir("system/lib/modules", "/system/lib/modules");
 	  package_extract_dir("aroma/kernels/quantum/system", "/system");
-      symlink("/system/lib/modules/pronto/pronto_wlan.ko", "/system/lib/modules/wlan.ko");
+	  package_extract_dir("aroma/kernels/quantum/system/lib/modules", "/system/lib/modules");
+	  set_perm_recursive(0, 2000, 0755, 0755, "/system/etc/init.d/93QuantumTweaks");
+      set_perm_recursive(0, 2000, 0755, 0755, "/system/etc/init.d/97QuantumSettings");
+      set_perm_recursive(0, 2000, 0755, 0755, "/system/etc/init.d/98remount_fullext4");
+      set_perm_recursive(0, 2000, 0755, 0755, "/system/bin/fstrim");
       package_extract_file("aroma/kernels/quantum/boot.img", "/dev/block/platform/msm_sdcc.1/by-name/boot");
 	  ui_print("Running FSTRIM, this might take a while");
       run_program("/system/bin/fstrim", "-v", "/system");
@@ -52,13 +61,17 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "4" then
       set_perm(0, 0, 0777, "/tmp/busybox");
 	  set_perm(0, 0, 0777, "/tmp/buildconfig.sh");
       package_extract_dir("aroma/kernels/elementalx/system", "/system");
-	  run_program("/tmp/systemcheck.sh");
 	  if file_getprop("/tmp/aroma/cpu.prop","selected.3") == "1" then
 	    package_extract_dir("aroma/kernels/elementalx/thermal/elexcool", "/system/etc");
 	  endif;
 	  if file_getprop("/tmp/aroma/cpu.prop","selected.3") == "2" then
 	    package_extract_dir("aroma/kernels/elementalx/thermal/stockcool", "/system/etc");
 	  endif;
+	  set_perm_recursive(0, 2000, 0755, 0755, "/system/su.d/elex_permissive.sh");
+	  set_perm_recursive(0, 2000, 0755, 0755, "/system/bin/fstrim");
+      set_perm_recursive(0, 0, 0644, 0644, "/system/etc/thermal-engine.conf");
+      set_perm_recursive(0, 2000, 0777, 0777, "/system/bin/mpdecision");
+      set_perm_recursive(0, 2000, 0777, 0777, "/system/bin/pnpmgr");
 	  run_program("/tmp/buildconfig.sh");
 	  run_program("/tmp/busybox", "cp", "/tmp/elementalx.conf", "/system/etc/elementalx.conf");
 	  package_extract_dir("aroma/kernels/elementalx/boot", "/tmp");
@@ -67,13 +80,12 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "4" then
 	  run_program("/tmp/cmdline.sh");
 	  run_program("/tmp/abootimg", "-u", "/tmp/boot.img", "-f", "/tmp/bootimg.cfg");
 	  run_program("/tmp/busybox", "dd", "if=/tmp/boot.img", "of=/dev/block/platform/msm_sdcc.1/by-name/boot");
-	  symlink("/system/lib/modules/pronto/pronto_wlan.ko", "/system/lib/modules/wlan.ko");
     endif;
     if file_getprop("/tmp/aroma/kernel.prop","selected.1") == "4" then
       ui_print("@Installing Elite by buckmarble");
 	  package_extract_dir("system/lib/modules", "/system/lib/modules");
 	  package_extract_dir("aroma/kernels/elite/system", "/system");
-      symlink("/system/lib/modules/pronto/pronto_wlan.ko", "/system/lib/modules/wlan.ko");
+	  set_perm_recursive(0, 2000, 0755, 0755, "/system/bin/fstrim");
       package_extract_file("aroma/kernels/elite/boot.img", "/dev/block/platform/msm_sdcc.1/by-name/boot");
 	  ui_print("Running FSTRIM, this might take a while");
       run_program("/system/bin/fstrim", "-v", "/system");
@@ -83,7 +95,11 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "4" then
       ui_print("@Installing Quantum by PwnCakes193");
 	  package_extract_dir("system/lib/modules", "/system/lib/modules");
 	  package_extract_dir("aroma/kernels/quantum/system", "/system");
-      symlink("/system/lib/modules/pronto/pronto_wlan.ko", "/system/lib/modules/wlan.ko");
+	  package_extract_dir("aroma/kernels/quantum/system/lib/modules", "/system/lib/modules");
+	  set_perm_recursive(0, 2000, 0755, 0755, "/system/etc/init.d/93QuantumTweaks");
+      set_perm_recursive(0, 2000, 0755, 0755, "/system/etc/init.d/97QuantumSettings");
+      set_perm_recursive(0, 2000, 0755, 0755, "/system/etc/init.d/98remount_fullext4");
+      set_perm_recursive(0, 2000, 0755, 0755, "/system/bin/fstrim");
       package_extract_file("aroma/kernels/quantum/boot.img", "/dev/block/platform/msm_sdcc.1/by-name/boot");
 	  ui_print("Running FSTRIM, this might take a while");
       run_program("/system/bin/fstrim", "-v", "/system");
@@ -92,19 +108,20 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "4" then
       ui_print("@Installing CodeCraft by Evolutionmods");
 	  package_extract_dir("system/lib/modules", "/system/lib/modules");
 	  package_extract_dir("aroma/kernels/codecraft/system", "/system");
-      symlink("/system/lib/modules/pronto/pronto_wlan.ko", "/system/lib/modules/wlan.ko");
       package_extract_file("aroma/kernels/codecraft/boot.img", "/dev/block/platform/msm_sdcc.1/by-name/boot");
     endif;
     if file_getprop("/tmp/aroma/kernel.prop","selected.1") == "3" then
       ui_print("@Installing Elite by buckmarble");
 	  package_extract_dir("system/lib/modules", "/system/lib/modules");
 	  package_extract_dir("aroma/kernels/elite/system", "/system");
-      symlink("/system/lib/modules/pronto/pronto_wlan.ko", "/system/lib/modules/wlan.ko");
+	  set_perm_recursive(0, 2000, 0755, 0755, "/system/bin/fstrim");
       package_extract_file("aroma/kernels/elite/boot.img", "/dev/block/platform/msm_sdcc.1/by-name/boot");
 	  ui_print("Running FSTRIM, this might take a while");
       run_program("/system/bin/fstrim", "-v", "/system");
     endif;
   endif;
+  set_perm_recursive(0, 0, 0755, 0644, "/system/lib/modules");
+  symlink("/system/lib/modules/pronto/pronto_wlan.ko", "/system/lib/modules/wlan.ko");
   set_progress(1.0);
 endif;
 #
@@ -179,7 +196,6 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "1" || file_getprop("/tmp/
         set_perm(0, 0, 0777, "/tmp/busybox");
 	    set_perm(0, 0, 0777, "/tmp/buildconfig.sh");
         package_extract_dir("aroma/kernels/elementalx/system", "/system");
-	    run_program("/tmp/systemcheck.sh");
 	    if file_getprop("/tmp/aroma/cpu.prop","selected.3") == "1" then
 	      package_extract_dir("aroma/kernels/elementalx/thermal/elexcool", "/system/etc");
 	    endif;
