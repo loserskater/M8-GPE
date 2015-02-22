@@ -1,4 +1,4 @@
-<b>PUT RELEASE DATE HERE</b>
+<b>2-22-2015</b>
 <b>*New Additions</b>
 Disabled APM on lock screen for extra security (Power off is still available)
 Enable status bar ticker
@@ -20,6 +20,7 @@ Elite kernel
 Quantum kernel
 Elemental X kernel
 CM apps with bug fixes and material design updates
+SuperSU 2.46
 
 <b>2-12-2015</b>
 <b>*New Additions</b>
