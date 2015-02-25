@@ -8,6 +8,8 @@
 
 .field static sPrevConfigurationHashCode:I
 
+.field public static searchBarSpaceHeightPx:I
+
 
 # instance fields
 .field public altTabKeyDelay:I
@@ -59,8 +61,6 @@
 .field public quintOutInterpolator:Landroid/view/animation/Interpolator;
 
 .field searchBarAppWidgetId:I
-
-.field public searchBarSpaceHeightPx:I
 
 .field public systemInsets:Landroid/graphics/Rect;
 
@@ -245,7 +245,7 @@
 
     const/4 v2, 0x0
 
-    iget v0, p0, Lcom/android/systemui/recents/RecentsConfiguration;->searchBarSpaceHeightPx:I
+    sget v0, Lcom/android/systemui/recents/RecentsConfiguration;->searchBarSpaceHeightPx:I
 
     invoke-virtual {p0}, Lcom/android/systemui/recents/RecentsConfiguration;->hasSearchBarAppWidget()Z
 
@@ -520,14 +520,6 @@
     move-result v7
 
     iput v7, p0, Lcom/android/systemui/recents/RecentsConfiguration;->maxNumTasksToLoad:I
-
-    const v7, 0x7f0c0060
-
-    invoke-virtual {v2, v7}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
-
-    move-result v7
-
-    iput v7, p0, Lcom/android/systemui/recents/RecentsConfiguration;->searchBarSpaceHeightPx:I
 
     sget-object v7, Lcom/android/systemui/recents/Constants$Values$App;->Key_SearchAppWidgetId:Ljava/lang/String;
 
