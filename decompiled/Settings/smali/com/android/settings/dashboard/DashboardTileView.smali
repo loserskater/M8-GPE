@@ -23,7 +23,6 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 1
-    .param p1    # Landroid/content/Context;
 
     const/4 v0, 0x0
 
@@ -34,8 +33,6 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 4
-    .param p1    # Landroid/content/Context;
-    .param p2    # Landroid/util/AttributeSet;
 
     const/4 v3, 0x1
 
@@ -138,7 +135,6 @@
 
 .method public onClick(Landroid/view/View;)V
     .locals 8
-    .param p1    # Landroid/view/View;
 
     iget-object v0, p0, Lcom/android/settings/dashboard/DashboardTileView;->mTile:Lcom/android/settings/dashboard/DashboardTile;
 
@@ -204,7 +200,6 @@
 
 .method public setDividerVisibility(Z)V
     .locals 2
-    .param p1    # Z
 
     iget-object v1, p0, Lcom/android/settings/dashboard/DashboardTileView;->mDivider:Landroid/view/View;
 
@@ -225,7 +220,6 @@
 
 .method public setTile(Lcom/android/settings/dashboard/DashboardTile;)V
     .locals 0
-    .param p1    # Lcom/android/settings/dashboard/DashboardTile;
 
     iput-object p1, p0, Lcom/android/settings/dashboard/DashboardTileView;->mTile:Lcom/android/settings/dashboard/DashboardTile;
 

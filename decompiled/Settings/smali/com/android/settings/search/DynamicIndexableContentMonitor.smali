@@ -102,8 +102,6 @@
 
 .method static synthetic access$000(Lcom/android/settings/search/DynamicIndexableContentMonitor;Ljava/lang/String;)V
     .locals 0
-    .param p0    # Lcom/android/settings/search/DynamicIndexableContentMonitor;
-    .param p1    # Ljava/lang/String;
 
     invoke-direct {p0, p1}, Lcom/android/settings/search/DynamicIndexableContentMonitor;->handlePackageAvailable(Ljava/lang/String;)V
 
@@ -112,8 +110,6 @@
 
 .method static synthetic access$100(Lcom/android/settings/search/DynamicIndexableContentMonitor;Ljava/lang/String;)V
     .locals 0
-    .param p0    # Lcom/android/settings/search/DynamicIndexableContentMonitor;
-    .param p1    # Ljava/lang/String;
 
     invoke-direct {p0, p1}, Lcom/android/settings/search/DynamicIndexableContentMonitor;->handlePackageUnavailable(Ljava/lang/String;)V
 
@@ -122,7 +118,6 @@
 
 .method static synthetic access$200(Lcom/android/settings/search/DynamicIndexableContentMonitor;)Landroid/content/Context;
     .locals 1
-    .param p0    # Lcom/android/settings/search/DynamicIndexableContentMonitor;
 
     iget-object v0, p0, Lcom/android/settings/search/DynamicIndexableContentMonitor;->mContext:Landroid/content/Context;
 
@@ -131,7 +126,6 @@
 
 .method private static getAccessibilityServiceIntent(Ljava/lang/String;)Landroid/content/Intent;
     .locals 2
-    .param p0    # Ljava/lang/String;
 
     new-instance v0, Landroid/content/Intent;
 
@@ -146,7 +140,6 @@
 
 .method private static getIMEServiceIntent(Ljava/lang/String;)Landroid/content/Intent;
     .locals 2
-    .param p0    # Ljava/lang/String;
 
     new-instance v0, Landroid/content/Intent;
 
@@ -161,7 +154,6 @@
 
 .method private static getPrintServiceIntent(Ljava/lang/String;)Landroid/content/Intent;
     .locals 2
-    .param p0    # Ljava/lang/String;
 
     new-instance v0, Landroid/content/Intent;
 
@@ -176,7 +168,6 @@
 
 .method private handlePackageAvailable(Ljava/lang/String;)V
     .locals 5
-    .param p1    # Ljava/lang/String;
 
     const/4 v4, 0x1
 
@@ -336,7 +327,6 @@
 
 .method private handlePackageUnavailable(Ljava/lang/String;)V
     .locals 6
-    .param p1    # Ljava/lang/String;
 
     const/4 v5, 0x1
 
@@ -434,8 +424,6 @@
 
 .method private postMessage(ILjava/lang/String;)V
     .locals 4
-    .param p1    # I
-    .param p2    # Ljava/lang/String;
 
     iget-object v1, p0, Lcom/android/settings/search/DynamicIndexableContentMonitor;->mHandler:Landroid/os/Handler;
 
@@ -456,7 +444,6 @@
 # virtual methods
 .method public onInputDeviceAdded(I)V
     .locals 4
-    .param p1    # I
 
     iget-object v0, p0, Lcom/android/settings/search/DynamicIndexableContentMonitor;->mContext:Landroid/content/Context;
 
@@ -481,7 +468,6 @@
 
 .method public onInputDeviceChanged(I)V
     .locals 3
-    .param p1    # I
 
     const/4 v2, 0x1
 
@@ -504,7 +490,6 @@
 
 .method public onInputDeviceRemoved(I)V
     .locals 0
-    .param p1    # I
 
     invoke-virtual {p0, p1}, Lcom/android/settings/search/DynamicIndexableContentMonitor;->onInputDeviceChanged(I)V
 
@@ -513,8 +498,6 @@
 
 .method public onPackageAppeared(Ljava/lang/String;I)V
     .locals 1
-    .param p1    # Ljava/lang/String;
-    .param p2    # I
 
     const/4 v0, 0x1
 
@@ -525,8 +508,6 @@
 
 .method public onPackageDisappeared(Ljava/lang/String;I)V
     .locals 1
-    .param p1    # Ljava/lang/String;
-    .param p2    # I
 
     const/4 v0, 0x2
 
@@ -537,7 +518,6 @@
 
 .method public onPackageModified(Ljava/lang/String;)V
     .locals 3
-    .param p1    # Ljava/lang/String;
 
     const/4 v2, 0x1
 
@@ -573,7 +553,6 @@
 
 .method public register(Landroid/content/Context;)V
     .locals 25
-    .param p1    # Landroid/content/Context;
 
     move-object/from16 v0, p1
 

@@ -36,7 +36,6 @@
 
 .method static synthetic access$000(Lcom/android/settings/print/PrintJobSettingsFragment;)V
     .locals 0
-    .param p0    # Lcom/android/settings/print/PrintJobSettingsFragment;
 
     invoke-direct {p0}, Lcom/android/settings/print/PrintJobSettingsFragment;->updateUi()V
 
@@ -427,7 +426,6 @@
 # virtual methods
 .method public onCreate(Landroid/os/Bundle;)V
     .locals 2
-    .param p1    # Landroid/os/Bundle;
 
     invoke-super {p0, p1}, Lcom/android/settings/SettingsPreferenceFragment;->onCreate(Landroid/os/Bundle;)V
 
@@ -496,8 +494,6 @@
 
 .method public onCreateOptionsMenu(Landroid/view/Menu;Landroid/view/MenuInflater;)V
     .locals 7
-    .param p1    # Landroid/view/Menu;
-    .param p2    # Landroid/view/MenuInflater;
 
     const/4 v6, 0x1
 
@@ -564,7 +560,6 @@
 
 .method public onOptionsItemSelected(Landroid/view/MenuItem;)Z
     .locals 2
-    .param p1    # Landroid/view/MenuItem;
 
     const/4 v0, 0x1
 
@@ -644,8 +639,6 @@
 
 .method public onViewCreated(Landroid/view/View;Landroid/os/Bundle;)V
     .locals 2
-    .param p1    # Landroid/view/View;
-    .param p2    # Landroid/os/Bundle;
 
     invoke-super {p0, p1, p2}, Lcom/android/settings/SettingsPreferenceFragment;->onViewCreated(Landroid/view/View;Landroid/os/Bundle;)V
 

@@ -37,8 +37,6 @@
 # virtual methods
 .method public onChange(ZLandroid/net/Uri;)V
     .locals 5
-    .param p1    # Z
-    .param p2    # Landroid/net/Uri;
 
     invoke-super {p0, p1, p2}, Landroid/database/ContentObserver;->onChange(ZLandroid/net/Uri;)V
 
@@ -86,7 +84,6 @@
 
 .method public register(Z)V
     .locals 7
-    .param p1    # Z
 
     iget-object v5, p0, Lcom/android/settings/notification/OtherSoundSettings$SettingsObserver;->this$0:Lcom/android/settings/notification/OtherSoundSettings;
 

@@ -25,9 +25,6 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/content/DialogInterface$OnClickListener;Landroid/net/wifi/WifiConfiguration;)V
     .locals 1
-    .param p1    # Landroid/content/Context;
-    .param p2    # Landroid/content/DialogInterface$OnClickListener;
-    .param p3    # Landroid/net/wifi/WifiConfiguration;
 
     invoke-direct {p0, p1}, Landroid/app/AlertDialog;-><init>(Landroid/content/Context;)V
 
@@ -53,7 +50,6 @@
 
 .method public static getSecurityTypeIndex(Landroid/net/wifi/WifiConfiguration;)I
     .locals 2
-    .param p0    # Landroid/net/wifi/WifiConfiguration;
 
     iget-object v0, p0, Landroid/net/wifi/WifiConfiguration;->allowedKeyManagement:Ljava/util/BitSet;
 
@@ -172,7 +168,6 @@
 # virtual methods
 .method public afterTextChanged(Landroid/text/Editable;)V
     .locals 0
-    .param p1    # Landroid/text/Editable;
 
     invoke-direct {p0}, Lcom/android/settings/wifi/WifiApDialog;->validate()V
 
@@ -181,10 +176,6 @@
 
 .method public beforeTextChanged(Ljava/lang/CharSequence;III)V
     .locals 0
-    .param p1    # Ljava/lang/CharSequence;
-    .param p2    # I
-    .param p3    # I
-    .param p4    # I
 
     return-void
 .end method
@@ -271,7 +262,6 @@
 
 .method public onClick(Landroid/view/View;)V
     .locals 2
-    .param p1    # Landroid/view/View;
 
     iget-object v1, p0, Lcom/android/settings/wifi/WifiApDialog;->mPassword:Landroid/widget/EditText;
 
@@ -300,7 +290,6 @@
 
 .method protected onCreate(Landroid/os/Bundle;)V
     .locals 6
-    .param p1    # Landroid/os/Bundle;
 
     const/4 v5, 0x1
 
@@ -464,9 +453,6 @@
 
 .method public onItemSelected(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
     .locals 0
-    .param p2    # Landroid/view/View;
-    .param p3    # I
-    .param p4    # J
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -501,10 +487,6 @@
 
 .method public onTextChanged(Ljava/lang/CharSequence;III)V
     .locals 0
-    .param p1    # Ljava/lang/CharSequence;
-    .param p2    # I
-    .param p3    # I
-    .param p4    # I
 
     return-void
 .end method

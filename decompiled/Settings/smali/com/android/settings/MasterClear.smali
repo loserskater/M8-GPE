@@ -32,8 +32,6 @@
 
 .method static synthetic access$000(Lcom/android/settings/MasterClear;I)Z
     .locals 1
-    .param p0    # Lcom/android/settings/MasterClear;
-    .param p1    # I
 
     invoke-direct {p0, p1}, Lcom/android/settings/MasterClear;->runKeyguardConfirmation(I)Z
 
@@ -44,7 +42,6 @@
 
 .method static synthetic access$100(Lcom/android/settings/MasterClear;)V
     .locals 0
-    .param p0    # Lcom/android/settings/MasterClear;
 
     invoke-direct {p0}, Lcom/android/settings/MasterClear;->showFinalConfirmation()V
 
@@ -53,7 +50,6 @@
 
 .method static synthetic access$200(Lcom/android/settings/MasterClear;)Landroid/widget/CheckBox;
     .locals 1
-    .param p0    # Lcom/android/settings/MasterClear;
 
     iget-object v0, p0, Lcom/android/settings/MasterClear;->mExternalStorage:Landroid/widget/CheckBox;
 
@@ -519,7 +515,6 @@
 
 .method private runKeyguardConfirmation(I)Z
     .locals 4
-    .param p1    # I
 
     invoke-virtual {p0}, Lcom/android/settings/MasterClear;->getActivity()Landroid/app/Activity;
 
@@ -610,9 +605,6 @@
 # virtual methods
 .method public onActivityResult(IILandroid/content/Intent;)V
     .locals 1
-    .param p1    # I
-    .param p2    # I
-    .param p3    # Landroid/content/Intent;
 
     invoke-super {p0, p1, p2, p3}, Landroid/app/Fragment;->onActivityResult(IILandroid/content/Intent;)V
 
@@ -640,9 +632,6 @@
 
 .method public onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
     .locals 3
-    .param p1    # Landroid/view/LayoutInflater;
-    .param p2    # Landroid/view/ViewGroup;
-    .param p3    # Landroid/os/Bundle;
 
     const/4 v2, 0x0
 

@@ -93,8 +93,6 @@
 
 .method constructor <init>(Landroid/content/Context;Landroid/net/wifi/ScanResult;)V
     .locals 2
-    .param p1    # Landroid/content/Context;
-    .param p2    # Landroid/net/wifi/ScanResult;
 
     invoke-direct {p0, p1}, Landroid/preference/Preference;-><init>(Landroid/content/Context;)V
 
@@ -131,8 +129,6 @@
 
 .method constructor <init>(Landroid/content/Context;Landroid/net/wifi/WifiConfiguration;)V
     .locals 2
-    .param p1    # Landroid/content/Context;
-    .param p2    # Landroid/net/wifi/WifiConfiguration;
 
     invoke-direct {p0, p1}, Landroid/preference/Preference;-><init>(Landroid/content/Context;)V
 
@@ -169,8 +165,6 @@
 
 .method constructor <init>(Landroid/content/Context;Landroid/os/Bundle;)V
     .locals 2
-    .param p1    # Landroid/content/Context;
-    .param p2    # Landroid/os/Bundle;
 
     invoke-direct {p0, p1}, Landroid/preference/Preference;-><init>(Landroid/content/Context;)V
 
@@ -278,7 +272,6 @@
 
 .method static convertToQuotedString(Ljava/lang/String;)Ljava/lang/String;
     .locals 2
-    .param p0    # Ljava/lang/String;
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -309,7 +302,6 @@
 
 .method private static getPskType(Landroid/net/wifi/ScanResult;)Lcom/android/settings/wifi/AccessPoint$PskType;
     .locals 5
-    .param p0    # Landroid/net/wifi/ScanResult;
 
     iget-object v2, p0, Landroid/net/wifi/ScanResult;->capabilities:Ljava/lang/String;
 
@@ -382,7 +374,6 @@
 
 .method private static getSecurity(Landroid/net/wifi/ScanResult;)I
     .locals 2
-    .param p0    # Landroid/net/wifi/ScanResult;
 
     iget-object v0, p0, Landroid/net/wifi/ScanResult;->capabilities:Ljava/lang/String;
 
@@ -437,7 +428,6 @@
 
 .method static getSecurity(Landroid/net/wifi/WifiConfiguration;)I
     .locals 5
-    .param p0    # Landroid/net/wifi/WifiConfiguration;
 
     const/4 v3, 0x3
 
@@ -1409,7 +1399,6 @@
 
 .method private loadConfig(Landroid/net/wifi/WifiConfiguration;)V
     .locals 1
-    .param p1    # Landroid/net/wifi/WifiConfiguration;
 
     iget-object v0, p1, Landroid/net/wifi/WifiConfiguration;->SSID:Ljava/lang/String;
 
@@ -1450,7 +1439,6 @@
 
 .method private loadResult(Landroid/net/wifi/ScanResult;)V
     .locals 4
-    .param p1    # Landroid/net/wifi/ScanResult;
 
     iget-object v0, p1, Landroid/net/wifi/ScanResult;->SSID:Ljava/lang/String;
 
@@ -2032,7 +2020,6 @@
 
 .method static removeDoubleQuotes(Ljava/lang/String;)Ljava/lang/String;
     .locals 4
-    .param p0    # Ljava/lang/String;
 
     const/16 v3, 0x22
 
@@ -2074,7 +2061,6 @@
 # virtual methods
 .method public compareTo(Landroid/preference/Preference;)I
     .locals 5
-    .param p1    # Landroid/preference/Preference;
 
     const/4 v0, 0x1
 
@@ -2193,7 +2179,6 @@
 
 .method public bridge synthetic compareTo(Ljava/lang/Object;)I
     .locals 1
-    .param p1    # Ljava/lang/Object;
 
     check-cast p1, Landroid/preference/Preference;
 
@@ -2206,7 +2191,6 @@
 
 .method public equals(Ljava/lang/Object;)Z
     .locals 2
-    .param p1    # Ljava/lang/Object;
 
     const/4 v0, 0x0
 
@@ -2325,7 +2309,6 @@
 
 .method public getSecurityString(Z)Ljava/lang/String;
     .locals 3
-    .param p1    # Z
 
     invoke-virtual {p0}, Lcom/android/settings/wifi/AccessPoint;->getContext()Landroid/content/Context;
 
@@ -2553,7 +2536,6 @@
 
 .method protected onBindView(Landroid/view/View;)V
     .locals 3
-    .param p1    # Landroid/view/View;
 
     invoke-super {p0, p1}, Landroid/preference/Preference;->onBindView(Landroid/view/View;)V
 
@@ -2596,7 +2578,6 @@
 
 .method public saveWifiState(Landroid/os/Bundle;)V
     .locals 2
-    .param p1    # Landroid/os/Bundle;
 
     const-string v0, "key_config"
 
@@ -2636,7 +2617,6 @@
 
 .method public setShowSummary(Z)V
     .locals 0
-    .param p1    # Z
 
     iput-boolean p1, p0, Lcom/android/settings/wifi/AccessPoint;->showSummary:Z
 
@@ -2645,8 +2625,6 @@
 
 .method update(Landroid/net/wifi/WifiInfo;Landroid/net/NetworkInfo$DetailedState;)V
     .locals 4
-    .param p1    # Landroid/net/wifi/WifiInfo;
-    .param p2    # Landroid/net/NetworkInfo$DetailedState;
 
     const/4 v3, 0x0
 
@@ -2719,7 +2697,6 @@
 
 .method update(Landroid/net/wifi/ScanResult;)Z
     .locals 6
-    .param p1    # Landroid/net/wifi/ScanResult;
 
     iget-wide v2, p1, Landroid/net/wifi/ScanResult;->seen:J
 
@@ -2833,8 +2810,6 @@
 
 .method protected updateIcon(ILandroid/content/Context;)V
     .locals 4
-    .param p1    # I
-    .param p2    # Landroid/content/Context;
 
     const/4 v2, -0x1
 

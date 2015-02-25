@@ -23,10 +23,6 @@
 
 .method public static createIntent(Landroid/content/Context;ZZZ)Landroid/content/Intent;
     .locals 3
-    .param p0    # Landroid/content/Context;
-    .param p1    # Z
-    .param p2    # Z
-    .param p3    # Z
 
     new-instance v0, Landroid/content/Intent;
 
@@ -83,7 +79,6 @@
 
 .method protected isValidFragment(Ljava/lang/String;)Z
     .locals 1
-    .param p1    # Ljava/lang/String;
 
     const-class v0, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment;
 
@@ -110,7 +105,6 @@
 
 .method public onCreate(Landroid/os/Bundle;)V
     .locals 2
-    .param p1    # Landroid/os/Bundle;
 
     invoke-super {p0, p1}, Lcom/android/settings/SettingsActivity;->onCreate(Landroid/os/Bundle;)V
 
@@ -127,8 +121,6 @@
 
 .method public onKeyDown(ILandroid/view/KeyEvent;)Z
     .locals 1
-    .param p1    # I
-    .param p2    # Landroid/view/KeyEvent;
 
     invoke-super {p0, p1, p2}, Lcom/android/settings/SettingsActivity;->onKeyDown(ILandroid/view/KeyEvent;)Z
 

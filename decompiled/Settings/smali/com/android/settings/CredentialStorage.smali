@@ -44,7 +44,6 @@
 
 .method static synthetic access$400(Lcom/android/settings/CredentialStorage;)Landroid/security/KeyStore;
     .locals 1
-    .param p0    # Lcom/android/settings/CredentialStorage;
 
     iget-object v0, p0, Lcom/android/settings/CredentialStorage;->mKeyStore:Landroid/security/KeyStore;
 
@@ -53,7 +52,6 @@
 
 .method static synthetic access$500(Lcom/android/settings/CredentialStorage;)I
     .locals 1
-    .param p0    # Lcom/android/settings/CredentialStorage;
 
     iget v0, p0, Lcom/android/settings/CredentialStorage;->mRetriesRemaining:I
 
@@ -62,8 +60,6 @@
 
 .method static synthetic access$502(Lcom/android/settings/CredentialStorage;I)I
     .locals 0
-    .param p0    # Lcom/android/settings/CredentialStorage;
-    .param p1    # I
 
     iput p1, p0, Lcom/android/settings/CredentialStorage;->mRetriesRemaining:I
 
@@ -72,7 +68,6 @@
 
 .method static synthetic access$600(Lcom/android/settings/CredentialStorage;)V
     .locals 0
-    .param p0    # Lcom/android/settings/CredentialStorage;
 
     invoke-direct {p0}, Lcom/android/settings/CredentialStorage;->ensureKeyGuard()V
 
@@ -81,7 +76,6 @@
 
 .method static synthetic access$700(Lcom/android/settings/CredentialStorage;)V
     .locals 0
-    .param p0    # Lcom/android/settings/CredentialStorage;
 
     invoke-direct {p0}, Lcom/android/settings/CredentialStorage;->handleUnlockOrInstall()V
 
@@ -510,7 +504,6 @@
 
 .method private isHardwareBackedKey([B)Z
     .locals 7
-    .param p1    # [B
 
     :try_start_0
     new-instance v2, Lcom/android/org/bouncycastle/asn1/ASN1InputStream;
@@ -572,9 +565,6 @@
 # virtual methods
 .method public onActivityResult(IILandroid/content/Intent;)V
     .locals 2
-    .param p1    # I
-    .param p2    # I
-    .param p3    # Landroid/content/Intent;
 
     invoke-super {p0, p1, p2, p3}, Landroid/app/Activity;->onActivityResult(IILandroid/content/Intent;)V
 

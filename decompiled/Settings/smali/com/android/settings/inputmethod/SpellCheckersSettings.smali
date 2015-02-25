@@ -55,7 +55,6 @@
 
 .method static synthetic access$000(Lcom/android/settings/inputmethod/SpellCheckersSettings;)Landroid/view/textservice/TextServicesManager;
     .locals 1
-    .param p0    # Lcom/android/settings/inputmethod/SpellCheckersSettings;
 
     iget-object v0, p0, Lcom/android/settings/inputmethod/SpellCheckersSettings;->mTsm:Landroid/view/textservice/TextServicesManager;
 
@@ -64,7 +63,6 @@
 
 .method static synthetic access$100(I)I
     .locals 1
-    .param p0    # I
 
     invoke-static {p0}, Lcom/android/settings/inputmethod/SpellCheckersSettings;->convertDialogItemIdToSubtypeIndex(I)I
 
@@ -75,7 +73,6 @@
 
 .method static synthetic access$200(Lcom/android/settings/inputmethod/SpellCheckersSettings;)V
     .locals 0
-    .param p0    # Lcom/android/settings/inputmethod/SpellCheckersSettings;
 
     invoke-direct {p0}, Lcom/android/settings/inputmethod/SpellCheckersSettings;->updatePreferenceScreen()V
 
@@ -84,8 +81,6 @@
 
 .method static synthetic access$300(Lcom/android/settings/inputmethod/SpellCheckersSettings;Landroid/view/textservice/SpellCheckerInfo;)V
     .locals 0
-    .param p0    # Lcom/android/settings/inputmethod/SpellCheckersSettings;
-    .param p1    # Landroid/view/textservice/SpellCheckerInfo;
 
     invoke-direct {p0, p1}, Lcom/android/settings/inputmethod/SpellCheckersSettings;->changeCurrentSpellChecker(Landroid/view/textservice/SpellCheckerInfo;)V
 
@@ -94,7 +89,6 @@
 
 .method private changeCurrentSpellChecker(Landroid/view/textservice/SpellCheckerInfo;)V
     .locals 1
-    .param p1    # Landroid/view/textservice/SpellCheckerInfo;
 
     iget-object v0, p0, Lcom/android/settings/inputmethod/SpellCheckersSettings;->mTsm:Landroid/view/textservice/TextServicesManager;
 
@@ -107,7 +101,6 @@
 
 .method private static convertDialogItemIdToSubtypeIndex(I)I
     .locals 1
-    .param p0    # I
 
     add-int/lit8 v0, p0, -0x1
 
@@ -116,7 +109,6 @@
 
 .method private static convertSubtypeIndexToDialogItemId(I)I
     .locals 1
-    .param p0    # I
 
     add-int/lit8 v0, p0, 0x1
 
@@ -125,8 +117,6 @@
 
 .method private getSpellCheckerSubtypeLabel(Landroid/view/textservice/SpellCheckerInfo;Landroid/view/textservice/SpellCheckerSubtype;)Ljava/lang/CharSequence;
     .locals 3
-    .param p1    # Landroid/view/textservice/SpellCheckerInfo;
-    .param p2    # Landroid/view/textservice/SpellCheckerSubtype;
 
     if-nez p1, :cond_0
 
@@ -336,7 +326,6 @@
 
 .method private showSecurityWarnDialog(Lcom/android/settings/inputmethod/SpellCheckerPreference;)V
     .locals 7
-    .param p1    # Lcom/android/settings/inputmethod/SpellCheckerPreference;
 
     const/4 v6, 0x1
 
@@ -535,7 +524,6 @@
 # virtual methods
 .method public onCreate(Landroid/os/Bundle;)V
     .locals 1
-    .param p1    # Landroid/os/Bundle;
 
     invoke-super {p0, p1}, Lcom/android/settings/SettingsPreferenceFragment;->onCreate(Landroid/os/Bundle;)V
 
@@ -600,7 +588,6 @@
 
 .method public onPreferenceClick(Landroid/preference/Preference;)Z
     .locals 1
-    .param p1    # Landroid/preference/Preference;
 
     iget-object v0, p0, Lcom/android/settings/inputmethod/SpellCheckersSettings;->mSpellCheckerLanaguagePref:Landroid/preference/Preference;
 
@@ -621,7 +608,6 @@
 
 .method public onRadioButtonClicked(Lcom/android/settings/inputmethod/SpellCheckerPreference;)V
     .locals 3
-    .param p1    # Lcom/android/settings/inputmethod/SpellCheckerPreference;
 
     invoke-virtual {p1}, Lcom/android/settings/inputmethod/SpellCheckerPreference;->getSpellCheckerInfo()Landroid/view/textservice/SpellCheckerInfo;
 
@@ -692,8 +678,6 @@
 
 .method public onSwitchChanged(Landroid/widget/Switch;Z)V
     .locals 1
-    .param p1    # Landroid/widget/Switch;
-    .param p2    # Z
 
     iget-object v0, p0, Lcom/android/settings/inputmethod/SpellCheckersSettings;->mTsm:Landroid/view/textservice/TextServicesManager;
 

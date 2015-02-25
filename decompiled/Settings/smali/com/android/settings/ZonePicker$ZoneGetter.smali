@@ -86,8 +86,6 @@
 
 .method static synthetic access$000(Lcom/android/settings/ZonePicker$ZoneGetter;Landroid/content/Context;)Ljava/util/List;
     .locals 1
-    .param p0    # Lcom/android/settings/ZonePicker$ZoneGetter;
-    .param p1    # Landroid/content/Context;
 
     invoke-direct {p0, p1}, Lcom/android/settings/ZonePicker$ZoneGetter;->getZones(Landroid/content/Context;)Ljava/util/List;
 
@@ -98,7 +96,6 @@
 
 .method private addTimeZone(Ljava/lang/String;)V
     .locals 8
-    .param p1    # Ljava/lang/String;
 
     invoke-static {p1}, Ljava/util/TimeZone;->getTimeZone(Ljava/lang/String;)Ljava/util/TimeZone;
 
@@ -189,7 +186,6 @@
 
 .method private getZones(Landroid/content/Context;)Ljava/util/List;
     .locals 11
-    .param p1    # Landroid/content/Context;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

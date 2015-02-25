@@ -25,9 +25,6 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/preference/SwitchPreference;Landroid/preference/PreferenceScreen;)V
     .locals 3
-    .param p1    # Landroid/content/Context;
-    .param p2    # Landroid/preference/SwitchPreference;
-    .param p3    # Landroid/preference/PreferenceScreen;
 
     const/4 v2, 0x0
 
@@ -111,8 +108,6 @@
 
 .method static synthetic access$000(Lcom/android/settings/nfc/NfcEnabler;I)V
     .locals 0
-    .param p0    # Lcom/android/settings/nfc/NfcEnabler;
-    .param p1    # I
 
     invoke-direct {p0, p1}, Lcom/android/settings/nfc/NfcEnabler;->handleNfcStateChanged(I)V
 
@@ -121,7 +116,6 @@
 
 .method private handleNfcStateChanged(I)V
     .locals 4
-    .param p1    # I
 
     const/4 v0, 0x1
 
@@ -250,8 +244,6 @@
 # virtual methods
 .method public onPreferenceChange(Landroid/preference/Preference;Ljava/lang/Object;)Z
     .locals 3
-    .param p1    # Landroid/preference/Preference;
-    .param p2    # Ljava/lang/Object;
 
     const/4 v2, 0x0
 

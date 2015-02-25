@@ -103,7 +103,6 @@
 
 .method public constructor <init>(Landroid/os/Parcel;)V
     .locals 6
-    .param p1    # Landroid/os/Parcel;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -226,11 +225,6 @@
 
 .method public constructor <init>(Lcom/android/internal/app/ProcessStats$ProcessState;Ljava/lang/String;Lcom/android/internal/app/ProcessStats$ProcessDataCollection;ZZ)V
     .locals 4
-    .param p1    # Lcom/android/internal/app/ProcessStats$ProcessState;
-    .param p2    # Ljava/lang/String;
-    .param p3    # Lcom/android/internal/app/ProcessStats$ProcessDataCollection;
-    .param p4    # Z
-    .param p5    # Z
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -388,7 +382,6 @@
 # virtual methods
 .method public addPackage(Ljava/lang/String;)V
     .locals 1
-    .param p1    # Ljava/lang/String;
 
     iget-object v0, p0, Lcom/android/settings/applications/ProcStatsEntry;->mPackages:Ljava/util/ArrayList;
 
@@ -399,7 +392,6 @@
 
 .method public addService(Lcom/android/internal/app/ProcessStats$ServiceState;)V
     .locals 3
-    .param p1    # Lcom/android/internal/app/ProcessStats$ServiceState;
 
     iget-object v1, p0, Lcom/android/settings/applications/ProcStatsEntry;->mServices:Landroid/util/ArrayMap;
 
@@ -443,11 +435,6 @@
 
 .method public evaluateTargetPackage(Landroid/content/pm/PackageManager;Lcom/android/internal/app/ProcessStats;Lcom/android/internal/app/ProcessStats$ProcessDataCollection;Ljava/util/Comparator;ZZ)V
     .locals 32
-    .param p1    # Landroid/content/pm/PackageManager;
-    .param p2    # Lcom/android/internal/app/ProcessStats;
-    .param p3    # Lcom/android/internal/app/ProcessStats$ProcessDataCollection;
-    .param p5    # Z
-    .param p6    # Z
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1671,7 +1658,6 @@
 
 .method public retrieveUiData(Landroid/content/pm/PackageManager;)V
     .locals 12
-    .param p1    # Landroid/content/pm/PackageManager;
 
     const/4 v9, 0x0
 
@@ -2023,8 +2009,6 @@
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 4
-    .param p1    # Landroid/os/Parcel;
-    .param p2    # I
 
     iget-object v2, p0, Lcom/android/settings/applications/ProcStatsEntry;->mPackage:Ljava/lang/String;
 

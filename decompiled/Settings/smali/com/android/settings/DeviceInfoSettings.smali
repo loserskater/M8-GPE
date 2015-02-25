@@ -47,7 +47,6 @@
 
 .method static synthetic access$000(Landroid/content/Context;)Ljava/lang/String;
     .locals 1
-    .param p0    # Landroid/content/Context;
 
     invoke-static {p0}, Lcom/android/settings/DeviceInfoSettings;->getFeedbackReporterPackage(Landroid/content/Context;)Ljava/lang/String;
 
@@ -58,7 +57,6 @@
 
 .method public static formatKernelVersion(Ljava/lang/String;)Ljava/lang/String;
     .locals 5
-    .param p0    # Ljava/lang/String;
 
     const/4 v4, 0x4
 
@@ -220,7 +218,6 @@
 
 .method private static getFeedbackReporterPackage(Landroid/content/Context;)Ljava/lang/String;
     .locals 9
-    .param p0    # Landroid/content/Context;
 
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -412,7 +409,6 @@
 
 .method private static readLine(Ljava/lang/String;)Ljava/lang/String;
     .locals 3
-    .param p0    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -450,8 +446,6 @@
 
 .method private removePreferenceIfBoolFalse(Ljava/lang/String;I)V
     .locals 2
-    .param p1    # Ljava/lang/String;
-    .param p2    # I
 
     invoke-virtual {p0}, Lcom/android/settings/DeviceInfoSettings;->getResources()Landroid/content/res/Resources;
 
@@ -481,9 +475,6 @@
 
 .method private removePreferenceIfPropertyMissing(Landroid/preference/PreferenceGroup;Ljava/lang/String;Ljava/lang/String;)V
     .locals 4
-    .param p1    # Landroid/preference/PreferenceGroup;
-    .param p2    # Ljava/lang/String;
-    .param p3    # Ljava/lang/String;
 
     invoke-static {p3}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
 
@@ -592,8 +583,6 @@
 
 .method private setStringSummary(Ljava/lang/String;Ljava/lang/String;)V
     .locals 4
-    .param p1    # Ljava/lang/String;
-    .param p2    # Ljava/lang/String;
 
     :try_start_0
     invoke-virtual {p0, p1}, Lcom/android/settings/DeviceInfoSettings;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
@@ -631,8 +620,6 @@
 
 .method private setValueSummary(Ljava/lang/String;Ljava/lang/String;)V
     .locals 3
-    .param p1    # Ljava/lang/String;
-    .param p2    # Ljava/lang/String;
 
     :try_start_0
     invoke-virtual {p0, p1}, Lcom/android/settings/DeviceInfoSettings;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
@@ -670,7 +657,6 @@
 # virtual methods
 .method public onCreate(Landroid/os/Bundle;)V
     .locals 9
-    .param p1    # Landroid/os/Bundle;
 
     const/4 v8, 0x1
 
@@ -983,8 +969,6 @@
 
 .method public onPreferenceTreeClick(Landroid/preference/PreferenceScreen;Landroid/preference/Preference;)Z
     .locals 10
-    .param p1    # Landroid/preference/PreferenceScreen;
-    .param p2    # Landroid/preference/Preference;
 
     const/4 v9, 0x0
 

@@ -36,8 +36,6 @@
 # virtual methods
 .method public onBeforeCheckedChanged(Lcom/android/settings/widget/ToggleSwitch;Z)Z
     .locals 4
-    .param p1    # Lcom/android/settings/widget/ToggleSwitch;
-    .param p2    # Z
 
     const/4 v1, 0x0
 

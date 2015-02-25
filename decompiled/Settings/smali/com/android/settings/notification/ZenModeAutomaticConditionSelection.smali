@@ -35,7 +35,6 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 3
-    .param p1    # Landroid/content/Context;
 
     invoke-direct {p0, p1}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
@@ -106,9 +105,6 @@
 
 .method static synthetic access$100(Lcom/android/settings/notification/ZenModeAutomaticConditionSelection;Landroid/net/Uri;Z)V
     .locals 0
-    .param p0    # Lcom/android/settings/notification/ZenModeAutomaticConditionSelection;
-    .param p1    # Landroid/net/Uri;
-    .param p2    # Z
 
     invoke-direct {p0, p1, p2}, Lcom/android/settings/notification/ZenModeAutomaticConditionSelection;->setSelectedCondition(Landroid/net/Uri;Z)V
 
@@ -117,7 +113,6 @@
 
 .method static synthetic access$200(Lcom/android/settings/notification/ZenModeAutomaticConditionSelection;)Lcom/android/settings/notification/ZenModeAutomaticConditionSelection$H;
     .locals 1
-    .param p0    # Lcom/android/settings/notification/ZenModeAutomaticConditionSelection;
 
     iget-object v0, p0, Lcom/android/settings/notification/ZenModeAutomaticConditionSelection;->mHandler:Lcom/android/settings/notification/ZenModeAutomaticConditionSelection$H;
 
@@ -126,7 +121,6 @@
 
 .method private newCheckBox(Ljava/lang/Object;)Landroid/widget/CheckBox;
     .locals 2
-    .param p1    # Ljava/lang/Object;
 
     new-instance v0, Landroid/widget/CheckBox;
 
@@ -201,8 +195,6 @@
 
 .method private setSelectedCondition(Landroid/net/Uri;Z)V
     .locals 6
-    .param p1    # Landroid/net/Uri;
-    .param p2    # Z
 
     const-string v3, "ZenModeAutomaticConditionSelection"
 
@@ -306,7 +298,6 @@
 # virtual methods
 .method protected handleConditions([Landroid/service/notification/Condition;)V
     .locals 8
-    .param p1    # [Landroid/service/notification/Condition;
 
     const/4 v7, 0x3
 
@@ -407,7 +398,6 @@
 
 .method protected requestZenModeConditions(I)V
     .locals 4
-    .param p1    # I
 
     const-string v1, "ZenModeAutomaticConditionSelection"
 

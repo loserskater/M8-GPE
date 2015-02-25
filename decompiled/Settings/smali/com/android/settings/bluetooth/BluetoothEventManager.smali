@@ -63,9 +63,6 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/bluetooth/LocalBluetoothAdapter;Lcom/android/settings/bluetooth/CachedBluetoothDeviceManager;Landroid/content/Context;)V
     .locals 4
-    .param p1    # Lcom/android/settings/bluetooth/LocalBluetoothAdapter;
-    .param p2    # Lcom/android/settings/bluetooth/CachedBluetoothDeviceManager;
-    .param p3    # Landroid/content/Context;
 
     const/4 v3, 0x0
 
@@ -212,7 +209,6 @@
 
 .method static synthetic access$1000(Lcom/android/settings/bluetooth/BluetoothEventManager;)Lcom/android/settings/bluetooth/LocalBluetoothAdapter;
     .locals 1
-    .param p0    # Lcom/android/settings/bluetooth/BluetoothEventManager;
 
     iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothEventManager;->mLocalAdapter:Lcom/android/settings/bluetooth/LocalBluetoothAdapter;
 
@@ -221,7 +217,6 @@
 
 .method static synthetic access$1100(Lcom/android/settings/bluetooth/BluetoothEventManager;)Ljava/util/Collection;
     .locals 1
-    .param p0    # Lcom/android/settings/bluetooth/BluetoothEventManager;
 
     iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothEventManager;->mCallbacks:Ljava/util/Collection;
 
@@ -230,7 +225,6 @@
 
 .method static synthetic access$1200(Lcom/android/settings/bluetooth/BluetoothEventManager;)Lcom/android/settings/bluetooth/CachedBluetoothDeviceManager;
     .locals 1
-    .param p0    # Lcom/android/settings/bluetooth/BluetoothEventManager;
 
     iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothEventManager;->mDeviceManager:Lcom/android/settings/bluetooth/CachedBluetoothDeviceManager;
 
@@ -239,7 +233,6 @@
 
 .method static synthetic access$1300(Lcom/android/settings/bluetooth/BluetoothEventManager;)Lcom/android/settings/bluetooth/LocalBluetoothProfileManager;
     .locals 1
-    .param p0    # Lcom/android/settings/bluetooth/BluetoothEventManager;
 
     iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothEventManager;->mProfileManager:Lcom/android/settings/bluetooth/LocalBluetoothProfileManager;
 
@@ -248,8 +241,6 @@
 
 .method static synthetic access$1400(Lcom/android/settings/bluetooth/BluetoothEventManager;Lcom/android/settings/bluetooth/CachedBluetoothDevice;)V
     .locals 0
-    .param p0    # Lcom/android/settings/bluetooth/BluetoothEventManager;
-    .param p1    # Lcom/android/settings/bluetooth/CachedBluetoothDevice;
 
     invoke-direct {p0, p1}, Lcom/android/settings/bluetooth/BluetoothEventManager;->dispatchDeviceAdded(Lcom/android/settings/bluetooth/CachedBluetoothDevice;)V
 
@@ -258,7 +249,6 @@
 
 .method static synthetic access$1500(Landroid/content/Context;)Ljava/lang/String;
     .locals 1
-    .param p0    # Landroid/content/Context;
 
     invoke-static {p0}, Lcom/android/settings/bluetooth/BluetoothEventManager;->getDockedDeviceAddress(Landroid/content/Context;)Ljava/lang/String;
 
@@ -269,7 +259,6 @@
 
 .method static synthetic access$900(Lcom/android/settings/bluetooth/BluetoothEventManager;)Ljava/util/Map;
     .locals 1
-    .param p0    # Lcom/android/settings/bluetooth/BluetoothEventManager;
 
     iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothEventManager;->mHandlerMap:Ljava/util/Map;
 
@@ -278,7 +267,6 @@
 
 .method private dispatchDeviceAdded(Lcom/android/settings/bluetooth/CachedBluetoothDevice;)V
     .locals 4
-    .param p1    # Lcom/android/settings/bluetooth/CachedBluetoothDevice;
 
     iget-object v3, p0, Lcom/android/settings/bluetooth/BluetoothEventManager;->mCallbacks:Ljava/util/Collection;
 
@@ -328,7 +316,6 @@
 
 .method private static getDockedDeviceAddress(Landroid/content/Context;)Ljava/lang/String;
     .locals 6
-    .param p0    # Landroid/content/Context;
 
     const/4 v3, 0x0
 
@@ -376,8 +363,6 @@
 # virtual methods
 .method addHandler(Ljava/lang/String;Lcom/android/settings/bluetooth/BluetoothEventManager$Handler;)V
     .locals 1
-    .param p1    # Ljava/lang/String;
-    .param p2    # Lcom/android/settings/bluetooth/BluetoothEventManager$Handler;
 
     iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothEventManager;->mHandlerMap:Ljava/util/Map;
 
@@ -392,8 +377,6 @@
 
 .method addProfileHandler(Ljava/lang/String;Lcom/android/settings/bluetooth/BluetoothEventManager$Handler;)V
     .locals 1
-    .param p1    # Ljava/lang/String;
-    .param p2    # Lcom/android/settings/bluetooth/BluetoothEventManager$Handler;
 
     iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothEventManager;->mHandlerMap:Ljava/util/Map;
 
@@ -470,7 +453,6 @@
 
 .method registerCallback(Lcom/android/settings/bluetooth/BluetoothCallback;)V
     .locals 2
-    .param p1    # Lcom/android/settings/bluetooth/BluetoothCallback;
 
     iget-object v1, p0, Lcom/android/settings/bluetooth/BluetoothEventManager;->mCallbacks:Ljava/util/Collection;
 
@@ -511,7 +493,6 @@
 
 .method setProfileManager(Lcom/android/settings/bluetooth/LocalBluetoothProfileManager;)V
     .locals 0
-    .param p1    # Lcom/android/settings/bluetooth/LocalBluetoothProfileManager;
 
     iput-object p1, p0, Lcom/android/settings/bluetooth/BluetoothEventManager;->mProfileManager:Lcom/android/settings/bluetooth/LocalBluetoothProfileManager;
 
@@ -520,7 +501,6 @@
 
 .method unregisterCallback(Lcom/android/settings/bluetooth/BluetoothCallback;)V
     .locals 2
-    .param p1    # Lcom/android/settings/bluetooth/BluetoothCallback;
 
     iget-object v1, p0, Lcom/android/settings/bluetooth/BluetoothEventManager;->mCallbacks:Ljava/util/Collection;
 

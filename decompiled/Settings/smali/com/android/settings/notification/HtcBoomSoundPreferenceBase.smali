@@ -44,8 +44,6 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 1
-    .param p1    # Landroid/content/Context;
-    .param p2    # Landroid/util/AttributeSet;
 
     invoke-direct {p0, p1, p2}, Landroid/preference/SwitchPreference;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
@@ -88,8 +86,6 @@
 
 .method static synthetic access$000(Lcom/android/settings/notification/HtcBoomSoundPreferenceBase;Z)Z
     .locals 1
-    .param p0    # Lcom/android/settings/notification/HtcBoomSoundPreferenceBase;
-    .param p1    # Z
 
     invoke-direct {p0, p1}, Lcom/android/settings/notification/HtcBoomSoundPreferenceBase;->toggle(Z)Z
 
@@ -100,7 +96,6 @@
 
 .method static synthetic access$100(Lcom/android/settings/notification/HtcBoomSoundPreferenceBase;)Landroid/os/Handler;
     .locals 1
-    .param p0    # Lcom/android/settings/notification/HtcBoomSoundPreferenceBase;
 
     iget-object v0, p0, Lcom/android/settings/notification/HtcBoomSoundPreferenceBase;->mNonUiHandler:Landroid/os/Handler;
 
@@ -151,7 +146,6 @@
 
 .method private final register(Landroid/app/Activity;)V
     .locals 5
-    .param p1    # Landroid/app/Activity;
 
     iget-object v1, p0, Lcom/android/settings/notification/HtcBoomSoundPreferenceBase;->mPermission:Ljava/lang/String;
 
@@ -183,7 +177,6 @@
 
 .method private toggle(Z)Z
     .locals 2
-    .param p1    # Z
 
     iget-object v0, p0, Lcom/android/settings/notification/HtcBoomSoundPreferenceBase;->mNonUiHandler:Landroid/os/Handler;
 
@@ -200,7 +193,6 @@
 
 .method private final unregister(Landroid/app/Activity;)V
     .locals 3
-    .param p1    # Landroid/app/Activity;
 
     :try_start_0
     iget-object v1, p0, Lcom/android/settings/notification/HtcBoomSoundPreferenceBase;->mBroadcastReceiver:Landroid/content/BroadcastReceiver;
@@ -236,7 +228,6 @@
 
 .method public init(Landroid/app/Activity;)V
     .locals 2
-    .param p1    # Landroid/app/Activity;
 
     iput-object p1, p0, Lcom/android/settings/notification/HtcBoomSoundPreferenceBase;->mActivity:Landroid/app/Activity;
 
@@ -295,7 +286,6 @@
 
 .method public onDestroyInBackground(Landroid/app/Activity;)V
     .locals 0
-    .param p1    # Landroid/app/Activity;
 
     return-void
 .end method
@@ -305,7 +295,6 @@
 
 .method protected onHandleStateChangedInBackground(Lcom/android/settings/notification/HtcBoomSoundState;)V
     .locals 0
-    .param p1    # Lcom/android/settings/notification/HtcBoomSoundState;
 
     return-void
 .end method
@@ -344,15 +333,12 @@
 
 .method public onPauseInBackground(Landroid/app/Activity;)V
     .locals 0
-    .param p1    # Landroid/app/Activity;
 
     return-void
 .end method
 
 .method protected onReceiveInBackground(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 0
-    .param p1    # Landroid/content/Context;
-    .param p2    # Landroid/content/Intent;
 
     return-void
 .end method
@@ -391,7 +377,6 @@
 
 .method public onResumeInBackground(Landroid/app/Activity;)V
     .locals 0
-    .param p1    # Landroid/app/Activity;
 
     return-void
 .end method
@@ -401,7 +386,6 @@
 
 .method public setChecked(Z)V
     .locals 0
-    .param p1    # Z
 
     invoke-super {p0, p1}, Landroid/preference/SwitchPreference;->setChecked(Z)V
 
@@ -410,14 +394,12 @@
 
 .method protected setIntentFilter(Landroid/content/IntentFilter;)V
     .locals 0
-    .param p1    # Landroid/content/IntentFilter;
 
     return-void
 .end method
 
 .method public final setWidgetEnabled(Z)V
     .locals 2
-    .param p1    # Z
 
     iget-object v0, p0, Lcom/android/settings/notification/HtcBoomSoundPreferenceBase;->mUiHandler:Landroid/os/Handler;
 
@@ -432,9 +414,6 @@
 
 .method protected setWidgetStatus(Ljava/lang/CharSequence;Ljava/lang/Boolean;Ljava/lang/Boolean;)V
     .locals 2
-    .param p1    # Ljava/lang/CharSequence;
-    .param p2    # Ljava/lang/Boolean;
-    .param p3    # Ljava/lang/Boolean;
 
     iget-object v0, p0, Lcom/android/settings/notification/HtcBoomSoundPreferenceBase;->mUiHandler:Landroid/os/Handler;
 

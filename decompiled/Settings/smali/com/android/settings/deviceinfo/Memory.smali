@@ -87,7 +87,6 @@
 
 .method static synthetic access$000(Lcom/android/settings/deviceinfo/Memory;)Ljava/util/ArrayList;
     .locals 1
-    .param p0    # Lcom/android/settings/deviceinfo/Memory;
 
     iget-object v0, p0, Lcom/android/settings/deviceinfo/Memory;->mCategories:Ljava/util/ArrayList;
 
@@ -96,7 +95,6 @@
 
 .method static synthetic access$100(Lcom/android/settings/deviceinfo/Memory;)Landroid/hardware/usb/UsbManager;
     .locals 1
-    .param p0    # Lcom/android/settings/deviceinfo/Memory;
 
     iget-object v0, p0, Lcom/android/settings/deviceinfo/Memory;->mUsbManager:Landroid/hardware/usb/UsbManager;
 
@@ -105,7 +103,6 @@
 
 .method static synthetic access$200(Lcom/android/settings/deviceinfo/Memory;)V
     .locals 0
-    .param p0    # Lcom/android/settings/deviceinfo/Memory;
 
     invoke-direct {p0}, Lcom/android/settings/deviceinfo/Memory;->doUnmount()V
 
@@ -114,7 +111,6 @@
 
 .method static synthetic access$300(Lcom/android/settings/deviceinfo/Memory;)V
     .locals 0
-    .param p0    # Lcom/android/settings/deviceinfo/Memory;
 
     invoke-direct {p0}, Lcom/android/settings/deviceinfo/Memory;->onCacheCleared()V
 
@@ -123,7 +119,6 @@
 
 .method private addCategory(Lcom/android/settings/deviceinfo/StorageVolumePreferenceCategory;)V
     .locals 1
-    .param p1    # Lcom/android/settings/deviceinfo/StorageVolumePreferenceCategory;
 
     iget-object v0, p0, Lcom/android/settings/deviceinfo/Memory;->mCategories:Ljava/util/ArrayList;
 
@@ -382,7 +377,6 @@
 
 .method public static isUsbStorage(Landroid/os/storage/StorageVolume;)Z
     .locals 1
-    .param p0    # Landroid/os/storage/StorageVolume;
 
     if-eqz p0, :cond_0
 
@@ -405,7 +399,6 @@
 
 .method public static isUsbStorage(Ljava/lang/String;)Z
     .locals 2
-    .param p0    # Ljava/lang/String;
 
     const/4 v0, 0x1
 
@@ -510,7 +503,6 @@
 
 .method private showDialogInner(I)V
     .locals 0
-    .param p1    # I
 
     invoke-virtual {p0, p1}, Lcom/android/settings/deviceinfo/Memory;->removeDialog(I)V
 
@@ -563,7 +555,6 @@
 # virtual methods
 .method public onCreate(Landroid/os/Bundle;)V
     .locals 8
-    .param p1    # Landroid/os/Bundle;
 
     invoke-super {p0, p1}, Lcom/android/settings/SettingsPreferenceFragment;->onCreate(Landroid/os/Bundle;)V
 
@@ -647,7 +638,6 @@
 
 .method public onCreateDialog(I)Landroid/app/Dialog;
     .locals 6
-    .param p1    # I
 
     const v5, 0x7f08011b
 
@@ -828,8 +818,6 @@
 
 .method public onCreateOptionsMenu(Landroid/view/Menu;Landroid/view/MenuInflater;)V
     .locals 1
-    .param p1    # Landroid/view/Menu;
-    .param p2    # Landroid/view/MenuInflater;
 
     const v0, 0x7f100005
 
@@ -863,7 +851,6 @@
 
 .method public onOptionsItemSelected(Landroid/view/MenuItem;)Z
     .locals 10
-    .param p1    # Landroid/view/MenuItem;
 
     const v3, 0x7f0803b7
 
@@ -987,8 +974,6 @@
 
 .method public onPreferenceTreeClick(Landroid/preference/PreferenceScreen;Landroid/preference/Preference;)Z
     .locals 10
-    .param p1    # Landroid/preference/PreferenceScreen;
-    .param p2    # Landroid/preference/Preference;
 
     const/4 v6, 0x1
 
@@ -1141,7 +1126,6 @@
 
 .method public onPrepareOptionsMenu(Landroid/view/Menu;)V
     .locals 5
-    .param p1    # Landroid/view/Menu;
 
     const v3, 0x7f0e026d
 

@@ -25,7 +25,6 @@
 
 .method public static show(Lcom/android/settings/DataUsageSummary;)V
     .locals 13
-    .param p0    # Lcom/android/settings/DataUsageSummary;
 
     invoke-virtual {p0}, Lcom/android/settings/DataUsageSummary;->isAdded()Z
 
@@ -62,7 +61,7 @@
 
     long-to-float v10, v10
 
-    const v11, 0x3f99999a
+    const v11, 0x3f99999a    # 1.2f
 
     mul-float/2addr v10, v11
 
@@ -202,7 +201,6 @@
 # virtual methods
 .method public onCreateDialog(Landroid/os/Bundle;)Landroid/app/Dialog;
     .locals 7
-    .param p1    # Landroid/os/Bundle;
 
     invoke-virtual {p0}, Lcom/android/settings/DataUsageSummary$ConfirmLimitFragment;->getActivity()Landroid/app/Activity;
 

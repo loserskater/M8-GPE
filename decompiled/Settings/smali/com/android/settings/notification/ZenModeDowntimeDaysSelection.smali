@@ -51,8 +51,6 @@
 
 .method public constructor <init>(Landroid/content/Context;Ljava/lang/String;)V
     .locals 11
-    .param p1    # Landroid/content/Context;
-    .param p2    # Ljava/lang/String;
 
     const/4 v10, 0x1
 
@@ -193,7 +191,6 @@
 
 .method static synthetic access$000(Lcom/android/settings/notification/ZenModeDowntimeDaysSelection;)Landroid/util/SparseBooleanArray;
     .locals 1
-    .param p0    # Lcom/android/settings/notification/ZenModeDowntimeDaysSelection;
 
     iget-object v0, p0, Lcom/android/settings/notification/ZenModeDowntimeDaysSelection;->mDays:Landroid/util/SparseBooleanArray;
 
@@ -202,7 +199,6 @@
 
 .method static synthetic access$100(Lcom/android/settings/notification/ZenModeDowntimeDaysSelection;)Ljava/lang/String;
     .locals 1
-    .param p0    # Lcom/android/settings/notification/ZenModeDowntimeDaysSelection;
 
     invoke-direct {p0}, Lcom/android/settings/notification/ZenModeDowntimeDaysSelection;->getMode()Ljava/lang/String;
 
@@ -289,7 +285,6 @@
 # virtual methods
 .method protected onChanged(Ljava/lang/String;)V
     .locals 0
-    .param p1    # Ljava/lang/String;
 
     return-void
 .end method

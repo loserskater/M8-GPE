@@ -21,10 +21,6 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/notification/VolumeSeekBarPreference;Landroid/content/Context;ILandroid/net/Uri;Landroid/preference/SeekBarVolumizer$Callback;)V
     .locals 0
-    .param p2    # Landroid/content/Context;
-    .param p3    # I
-    .param p4    # Landroid/net/Uri;
-    .param p5    # Landroid/preference/SeekBarVolumizer$Callback;
 
     iput-object p1, p0, Lcom/android/settings/notification/VolumeSeekBarPreference$2;->this$0:Lcom/android/settings/notification/VolumeSeekBarPreference;
 
@@ -37,9 +33,6 @@
 # virtual methods
 .method public onProgressChanged(Landroid/widget/SeekBar;IZ)V
     .locals 2
-    .param p1    # Landroid/widget/SeekBar;
-    .param p2    # I
-    .param p3    # Z
 
     invoke-super {p0, p1, p2, p3}, Landroid/preference/SeekBarVolumizer;->onProgressChanged(Landroid/widget/SeekBar;IZ)V
 

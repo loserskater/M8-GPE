@@ -77,10 +77,6 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroid/os/Handler;Landroid/os/UserManager;Lcom/android/internal/os/BatterySipper;)V
     .locals 6
-    .param p1    # Landroid/content/Context;
-    .param p2    # Landroid/os/Handler;
-    .param p3    # Landroid/os/UserManager;
-    .param p4    # Lcom/android/internal/os/BatterySipper;
 
     const/4 v1, 0x0
 
@@ -548,7 +544,6 @@
 
 .method getQuickNameIconForUid(Landroid/os/BatteryStats$Uid;)V
     .locals 7
-    .param p1    # Landroid/os/BatteryStats$Uid;
 
     invoke-virtual {p1}, Landroid/os/BatteryStats$Uid;->getUid()I
 

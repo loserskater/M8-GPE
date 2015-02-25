@@ -100,10 +100,6 @@
 # direct methods
 .method constructor <init>(Landroid/content/Context;Lcom/android/settings/bluetooth/LocalBluetoothAdapter;Lcom/android/settings/bluetooth/LocalBluetoothProfileManager;Landroid/bluetooth/BluetoothDevice;)V
     .locals 1
-    .param p1    # Landroid/content/Context;
-    .param p2    # Lcom/android/settings/bluetooth/LocalBluetoothAdapter;
-    .param p3    # Lcom/android/settings/bluetooth/LocalBluetoothProfileManager;
-    .param p4    # Landroid/bluetooth/BluetoothDevice;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -198,7 +194,6 @@
 
 .method private connectWithoutResettingTimer(Z)V
     .locals 5
-    .param p1    # Z
 
     iget-object v3, p0, Lcom/android/settings/bluetooth/CachedBluetoothDevice;->mProfiles:Ljava/util/List;
 
@@ -287,7 +282,6 @@
 
 .method private describe(Lcom/android/settings/bluetooth/LocalBluetoothProfile;)Ljava/lang/String;
     .locals 3
-    .param p1    # Lcom/android/settings/bluetooth/LocalBluetoothProfile;
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -857,7 +851,6 @@
 
 .method public compareTo(Lcom/android/settings/bluetooth/CachedBluetoothDevice;)I
     .locals 6
-    .param p1    # Lcom/android/settings/bluetooth/CachedBluetoothDevice;
 
     const/16 v5, 0xc
 
@@ -997,7 +990,6 @@
 
 .method public bridge synthetic compareTo(Ljava/lang/Object;)I
     .locals 1
-    .param p1    # Ljava/lang/Object;
 
     check-cast p1, Lcom/android/settings/bluetooth/CachedBluetoothDevice;
 
@@ -1010,7 +1002,6 @@
 
 .method connect(Z)V
     .locals 2
-    .param p1    # Z
 
     invoke-direct {p0}, Lcom/android/settings/bluetooth/CachedBluetoothDevice;->ensurePaired()Z
 
@@ -1035,7 +1026,6 @@
 
 .method declared-synchronized connectInt(Lcom/android/settings/bluetooth/LocalBluetoothProfile;)V
     .locals 3
-    .param p1    # Lcom/android/settings/bluetooth/LocalBluetoothProfile;
 
     monitor-enter p0
 
@@ -1147,7 +1137,6 @@
 
 .method connectProfile(Lcom/android/settings/bluetooth/LocalBluetoothProfile;)V
     .locals 2
-    .param p1    # Lcom/android/settings/bluetooth/LocalBluetoothProfile;
 
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
@@ -1219,7 +1208,6 @@
 
 .method disconnect(Lcom/android/settings/bluetooth/LocalBluetoothProfile;)V
     .locals 3
-    .param p1    # Lcom/android/settings/bluetooth/LocalBluetoothProfile;
 
     iget-object v0, p0, Lcom/android/settings/bluetooth/CachedBluetoothDevice;->mDevice:Landroid/bluetooth/BluetoothDevice;
 
@@ -1261,7 +1249,6 @@
 
 .method public equals(Ljava/lang/Object;)Z
     .locals 2
-    .param p1    # Ljava/lang/Object;
 
     if-eqz p1, :cond_0
 
@@ -1439,7 +1426,6 @@
 
 .method getProfileConnectionState(Lcom/android/settings/bluetooth/LocalBluetoothProfile;)I
     .locals 3
-    .param p1    # Lcom/android/settings/bluetooth/LocalBluetoothProfile;
 
     iget-object v1, p0, Lcom/android/settings/bluetooth/CachedBluetoothDevice;->mProfileConnectionState:Ljava/util/HashMap;
 
@@ -1643,7 +1629,6 @@
 
 .method onBondingStateChanged(I)V
     .locals 2
-    .param p1    # I
 
     const/4 v1, 0x0
 
@@ -1701,8 +1686,6 @@
 
 .method onProfileStateChanged(Lcom/android/settings/bluetooth/LocalBluetoothProfile;I)V
     .locals 5
-    .param p1    # Lcom/android/settings/bluetooth/LocalBluetoothProfile;
-    .param p2    # I
 
     const/4 v4, 0x1
 
@@ -1940,7 +1923,6 @@
 
 .method registerCallback(Lcom/android/settings/bluetooth/CachedBluetoothDevice$Callback;)V
     .locals 2
-    .param p1    # Lcom/android/settings/bluetooth/CachedBluetoothDevice$Callback;
 
     iget-object v1, p0, Lcom/android/settings/bluetooth/CachedBluetoothDevice;->mCallbacks:Ljava/util/Collection;
 
@@ -1967,7 +1949,6 @@
 
 .method setBtClass(Landroid/bluetooth/BluetoothClass;)V
     .locals 1
-    .param p1    # Landroid/bluetooth/BluetoothClass;
 
     if-eqz p1, :cond_0
 
@@ -1985,7 +1966,6 @@
 
 .method setMessagePermissionChoice(I)V
     .locals 2
-    .param p1    # I
 
     const/4 v0, 0x0
 
@@ -2015,7 +1995,6 @@
 
 .method setName(Ljava/lang/String;)V
     .locals 1
-    .param p1    # Ljava/lang/String;
 
     iget-object v0, p0, Lcom/android/settings/bluetooth/CachedBluetoothDevice;->mName:Ljava/lang/String;
 
@@ -2039,7 +2018,6 @@
 
 .method setNewName(Ljava/lang/String;)V
     .locals 1
-    .param p1    # Ljava/lang/String;
 
     iget-object v0, p0, Lcom/android/settings/bluetooth/CachedBluetoothDevice;->mName:Ljava/lang/String;
 
@@ -2077,7 +2055,6 @@
 
 .method setPhonebookPermissionChoice(I)V
     .locals 2
-    .param p1    # I
 
     const/4 v0, 0x0
 
@@ -2107,7 +2084,6 @@
 
 .method setRssi(S)V
     .locals 1
-    .param p1    # S
 
     iget-short v0, p0, Lcom/android/settings/bluetooth/CachedBluetoothDevice;->mRssi:S
 
@@ -2123,7 +2099,6 @@
 
 .method setVisible(Z)V
     .locals 1
-    .param p1    # Z
 
     iget-boolean v0, p0, Lcom/android/settings/bluetooth/CachedBluetoothDevice;->mVisible:Z
 
@@ -2250,7 +2225,6 @@
 
 .method unregisterCallback(Lcom/android/settings/bluetooth/CachedBluetoothDevice$Callback;)V
     .locals 2
-    .param p1    # Lcom/android/settings/bluetooth/CachedBluetoothDevice$Callback;
 
     iget-object v1, p0, Lcom/android/settings/bluetooth/CachedBluetoothDevice;->mCallbacks:Ljava/util/Collection;
 

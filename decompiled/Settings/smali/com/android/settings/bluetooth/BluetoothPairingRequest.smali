@@ -16,8 +16,6 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 21
-    .param p1    # Landroid/content/Context;
-    .param p2    # Landroid/content/Intent;
 
     invoke-virtual/range {p2 .. p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
@@ -222,7 +220,7 @@
 
     const/16 v17, 0x0
 
-    const/high16 v18, 0x40000000
+    const/high16 v18, 0x40000000    # 2.0f
 
     move-object/from16 v0, p1
 

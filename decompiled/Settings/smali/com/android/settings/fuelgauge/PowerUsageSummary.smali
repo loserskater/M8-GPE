@@ -50,8 +50,6 @@
 
 .method static synthetic access$000(Lcom/android/settings/fuelgauge/PowerUsageSummary;Landroid/content/Intent;)Z
     .locals 1
-    .param p0    # Lcom/android/settings/fuelgauge/PowerUsageSummary;
-    .param p1    # Landroid/content/Intent;
 
     invoke-direct {p0, p1}, Lcom/android/settings/fuelgauge/PowerUsageSummary;->updateBatteryStatus(Landroid/content/Intent;)Z
 
@@ -62,7 +60,6 @@
 
 .method static synthetic access$100(Lcom/android/settings/fuelgauge/PowerUsageSummary;)Landroid/os/UserManager;
     .locals 1
-    .param p0    # Lcom/android/settings/fuelgauge/PowerUsageSummary;
 
     iget-object v0, p0, Lcom/android/settings/fuelgauge/PowerUsageSummary;->mUm:Landroid/os/UserManager;
 
@@ -71,7 +68,6 @@
 
 .method static synthetic access$200(Lcom/android/settings/fuelgauge/PowerUsageSummary;)Lcom/android/internal/os/BatteryStatsHelper;
     .locals 1
-    .param p0    # Lcom/android/settings/fuelgauge/PowerUsageSummary;
 
     iget-object v0, p0, Lcom/android/settings/fuelgauge/PowerUsageSummary;->mStatsHelper:Lcom/android/internal/os/BatteryStatsHelper;
 
@@ -80,7 +76,6 @@
 
 .method static synthetic access$300(Lcom/android/settings/fuelgauge/PowerUsageSummary;)V
     .locals 0
-    .param p0    # Lcom/android/settings/fuelgauge/PowerUsageSummary;
 
     invoke-direct {p0}, Lcom/android/settings/fuelgauge/PowerUsageSummary;->refreshStats()V
 
@@ -224,7 +219,7 @@
 
     move-result-wide v6
 
-    const-wide/high16 v24, 0x4024000000000000L
+    const-wide/high16 v24, 0x4024000000000000L    # 10.0
 
     cmpl-double v24, v6, v24
 
@@ -306,11 +301,11 @@
 
     move-wide/from16 v24, v0
 
-    const-wide v26, 0x40ac200000000000L
+    const-wide v26, 0x40ac200000000000L    # 3600.0
 
     mul-double v24, v24, v26
 
-    const-wide/high16 v26, 0x4014000000000000L
+    const-wide/high16 v26, 0x4014000000000000L    # 5.0
 
     cmpg-double v24, v24, v26
 
@@ -351,7 +346,7 @@
 
     mul-double v16, v24, v26
 
-    const-wide/high16 v24, 0x3fe0000000000000L
+    const-wide/high16 v24, 0x3fe0000000000000L    # 0.5
 
     add-double v24, v24, v16
 
@@ -399,11 +394,11 @@
 
     move-result-wide v26
 
-    const-wide/high16 v28, 0x4000000000000000L
+    const-wide/high16 v28, 0x4000000000000000L    # 2.0
 
     mul-double v26, v26, v28
 
-    const-wide/high16 v28, 0x4008000000000000L
+    const-wide/high16 v28, 0x4008000000000000L    # 3.0
 
     div-double v26, v26, v28
 
@@ -411,7 +406,7 @@
 
     if-ltz v24, :cond_0
 
-    const-wide/high16 v24, 0x4024000000000000L
+    const-wide/high16 v24, 0x4024000000000000L    # 10.0
 
     cmpg-double v24, v16, v24
 
@@ -458,7 +453,7 @@
 
     move-result-wide v26
 
-    const-wide/high16 v28, 0x4000000000000000L
+    const-wide/high16 v28, 0x4000000000000000L    # 2.0
 
     div-double v26, v26, v28
 
@@ -466,7 +461,7 @@
 
     if-ltz v24, :cond_0
 
-    const-wide/high16 v24, 0x4014000000000000L
+    const-wide/high16 v24, 0x4014000000000000L    # 5.0
 
     cmpg-double v24, v16, v24
 
@@ -581,7 +576,7 @@
 
     move-wide/from16 v24, v0
 
-    const-wide/high16 v26, 0x4059000000000000L
+    const-wide/high16 v26, 0x4059000000000000L    # 100.0
 
     mul-double v24, v24, v26
 
@@ -701,7 +696,6 @@
 
 .method private updateBatteryStatus(Landroid/content/Intent;)Z
     .locals 3
-    .param p1    # Landroid/content/Intent;
 
     if-eqz p1, :cond_1
 
@@ -753,7 +747,6 @@
 # virtual methods
 .method public onAttach(Landroid/app/Activity;)V
     .locals 2
-    .param p1    # Landroid/app/Activity;
 
     invoke-super {p0, p1}, Landroid/preference/PreferenceFragment;->onAttach(Landroid/app/Activity;)V
 
@@ -780,7 +773,6 @@
 
 .method public onCreate(Landroid/os/Bundle;)V
     .locals 1
-    .param p1    # Landroid/os/Bundle;
 
     invoke-super {p0, p1}, Landroid/preference/PreferenceFragment;->onCreate(Landroid/os/Bundle;)V
 
@@ -811,8 +803,6 @@
 
 .method public onCreateOptionsMenu(Landroid/view/Menu;Landroid/view/MenuInflater;)V
     .locals 7
-    .param p1    # Landroid/view/Menu;
-    .param p2    # Landroid/view/MenuInflater;
 
     const/4 v6, 0x0
 
@@ -911,7 +901,6 @@
 
 .method public onOptionsItemSelected(Landroid/view/MenuItem;)Z
     .locals 8
-    .param p1    # Landroid/view/MenuItem;
 
     const/4 v2, 0x0
 
@@ -1027,8 +1016,6 @@
 
 .method public onPreferenceTreeClick(Landroid/preference/PreferenceScreen;Landroid/preference/Preference;)Z
     .locals 9
-    .param p1    # Landroid/preference/PreferenceScreen;
-    .param p2    # Landroid/preference/Preference;
 
     const/4 v4, 0x0
 

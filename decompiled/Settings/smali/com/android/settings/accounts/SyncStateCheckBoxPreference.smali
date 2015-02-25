@@ -20,9 +20,6 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/accounts/Account;Ljava/lang/String;)V
     .locals 2
-    .param p1    # Landroid/content/Context;
-    .param p2    # Landroid/accounts/Account;
-    .param p3    # Ljava/lang/String;
 
     const/4 v1, 0x0
 
@@ -77,7 +74,6 @@
 
 .method public onBindView(Landroid/view/View;)V
     .locals 11
-    .param p1    # Landroid/view/View;
 
     const/16 v8, 0x8
 
@@ -240,7 +236,6 @@
 
 .method public setActive(Z)V
     .locals 0
-    .param p1    # Z
 
     iput-boolean p1, p0, Lcom/android/settings/accounts/SyncStateCheckBoxPreference;->mIsActive:Z
 
@@ -251,7 +246,6 @@
 
 .method public setFailed(Z)V
     .locals 0
-    .param p1    # Z
 
     iput-boolean p1, p0, Lcom/android/settings/accounts/SyncStateCheckBoxPreference;->mFailed:Z
 
@@ -262,7 +256,6 @@
 
 .method public setOneTimeSyncMode(Z)V
     .locals 0
-    .param p1    # Z
 
     iput-boolean p1, p0, Lcom/android/settings/accounts/SyncStateCheckBoxPreference;->mOneTimeSyncMode:Z
 
@@ -273,7 +266,6 @@
 
 .method public setPending(Z)V
     .locals 0
-    .param p1    # Z
 
     iput-boolean p1, p0, Lcom/android/settings/accounts/SyncStateCheckBoxPreference;->mIsPending:Z
 

@@ -28,7 +28,6 @@
 
 .method public static newInstance(Ljava/lang/String;)Lcom/android/settings/UsageAccessSettings$WarningDialogFragment;
     .locals 3
-    .param p0    # Ljava/lang/String;
 
     new-instance v1, Lcom/android/settings/UsageAccessSettings$WarningDialogFragment;
 
@@ -51,8 +50,6 @@
 # virtual methods
 .method public onClick(Landroid/content/DialogInterface;I)V
     .locals 3
-    .param p1    # Landroid/content/DialogInterface;
-    .param p2    # I
 
     const/4 v0, -0x1
 
@@ -87,7 +84,6 @@
 
 .method public onCreateDialog(Landroid/os/Bundle;)Landroid/app/Dialog;
     .locals 2
-    .param p1    # Landroid/os/Bundle;
 
     new-instance v0, Landroid/app/AlertDialog$Builder;
 

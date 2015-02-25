@@ -118,9 +118,6 @@
 
 .method private constructor <init>(Ljava/lang/String;IIII)V
     .locals 0
-    .param p3    # I
-    .param p4    # I
-    .param p5    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(III)V"
@@ -140,7 +137,6 @@
 
 .method public static valueOf(Ljava/lang/String;)Lcom/android/settings/ChooseLockPassword$ChooseLockPasswordFragment$Stage;
     .locals 1
-    .param p0    # Ljava/lang/String;
 
     const-class v0, Lcom/android/settings/ChooseLockPassword$ChooseLockPasswordFragment$Stage;
 

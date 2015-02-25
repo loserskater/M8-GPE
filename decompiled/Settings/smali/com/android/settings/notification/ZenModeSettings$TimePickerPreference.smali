@@ -36,8 +36,6 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/app/FragmentManager;)V
     .locals 1
-    .param p1    # Landroid/content/Context;
-    .param p2    # Landroid/app/FragmentManager;
 
     invoke-direct {p0, p1}, Landroid/preference/Preference;-><init>(Landroid/content/Context;)V
 
@@ -58,7 +56,6 @@
 
 .method static synthetic access$1400(Lcom/android/settings/notification/ZenModeSettings$TimePickerPreference;)I
     .locals 1
-    .param p0    # Lcom/android/settings/notification/ZenModeSettings$TimePickerPreference;
 
     iget v0, p0, Lcom/android/settings/notification/ZenModeSettings$TimePickerPreference;->mHourOfDay:I
 
@@ -67,7 +64,6 @@
 
 .method static synthetic access$1500(Lcom/android/settings/notification/ZenModeSettings$TimePickerPreference;)I
     .locals 1
-    .param p0    # Lcom/android/settings/notification/ZenModeSettings$TimePickerPreference;
 
     iget v0, p0, Lcom/android/settings/notification/ZenModeSettings$TimePickerPreference;->mMinute:I
 
@@ -141,7 +137,6 @@
 # virtual methods
 .method public setCallback(Lcom/android/settings/notification/ZenModeSettings$TimePickerPreference$Callback;)V
     .locals 0
-    .param p1    # Lcom/android/settings/notification/ZenModeSettings$TimePickerPreference$Callback;
 
     iput-object p1, p0, Lcom/android/settings/notification/ZenModeSettings$TimePickerPreference;->mCallback:Lcom/android/settings/notification/ZenModeSettings$TimePickerPreference$Callback;
 
@@ -150,7 +145,6 @@
 
 .method public setSummaryFormat(I)V
     .locals 0
-    .param p1    # I
 
     iput p1, p0, Lcom/android/settings/notification/ZenModeSettings$TimePickerPreference;->mSummaryFormat:I
 
@@ -161,8 +155,6 @@
 
 .method public setTime(II)V
     .locals 1
-    .param p1    # I
-    .param p2    # I
 
     iget-object v0, p0, Lcom/android/settings/notification/ZenModeSettings$TimePickerPreference;->mCallback:Lcom/android/settings/notification/ZenModeSettings$TimePickerPreference$Callback;
 

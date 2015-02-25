@@ -39,7 +39,6 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 2
-    .param p1    # Landroid/content/Context;
 
     invoke-direct {p0}, Landroid/widget/BaseAdapter;-><init>()V
 
@@ -72,7 +71,6 @@
 
 .method static synthetic access$500(Lcom/android/settings/dashboard/SearchResultsSummary$SearchResultsAdapter;)Landroid/database/Cursor;
     .locals 1
-    .param p0    # Lcom/android/settings/dashboard/SearchResultsSummary$SearchResultsAdapter;
 
     iget-object v0, p0, Lcom/android/settings/dashboard/SearchResultsSummary$SearchResultsAdapter;->mCursor:Landroid/database/Cursor;
 
@@ -118,7 +116,6 @@
 
 .method public getItem(I)Ljava/lang/Object;
     .locals 14
-    .param p1    # I
 
     iget-boolean v0, p0, Lcom/android/settings/dashboard/SearchResultsSummary$SearchResultsAdapter;->mDataValid:Z
 
@@ -300,7 +297,6 @@
 
 .method public getItemId(I)J
     .locals 2
-    .param p1    # I
 
     const-wide/16 v0, 0x0
 
@@ -309,9 +305,6 @@
 
 .method public getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
     .locals 11
-    .param p1    # I
-    .param p2    # Landroid/view/View;
-    .param p3    # Landroid/view/ViewGroup;
 
     const v10, 0x7f020022
 
@@ -468,7 +461,6 @@
 
 .method public swapCursor(Landroid/database/Cursor;)Landroid/database/Cursor;
     .locals 2
-    .param p1    # Landroid/database/Cursor;
 
     iget-object v1, p0, Lcom/android/settings/dashboard/SearchResultsSummary$SearchResultsAdapter;->mCursor:Landroid/database/Cursor;
 

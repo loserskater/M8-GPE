@@ -26,7 +26,6 @@
 # direct methods
 .method public constructor <init>(Lcom/android/settings/location/RecentLocationApps;Ljava/lang/String;)V
     .locals 0
-    .param p2    # Ljava/lang/String;
 
     iput-object p1, p0, Lcom/android/settings/location/RecentLocationApps$PackageEntryClickedListener;->this$0:Lcom/android/settings/location/RecentLocationApps;
 
@@ -41,7 +40,6 @@
 # virtual methods
 .method public onPreferenceClick(Landroid/preference/Preference;)Z
     .locals 7
-    .param p1    # Landroid/preference/Preference;
 
     const/4 v4, 0x0
 

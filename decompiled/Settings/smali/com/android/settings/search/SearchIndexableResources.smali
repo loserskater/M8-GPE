@@ -1010,7 +1010,6 @@
 
 .method public static getResourceByName(Ljava/lang/String;)Landroid/provider/SearchIndexableResource;
     .locals 1
-    .param p0    # Ljava/lang/String;
 
     sget-object v0, Lcom/android/settings/search/SearchIndexableResources;->sResMap:Ljava/util/HashMap;
 

@@ -21,8 +21,6 @@
 # direct methods
 .method public constructor <init>(Landroid/content/pm/PackageManager;Landroid/service/voice/VoiceInteractionServiceInfo;)V
     .locals 2
-    .param p1    # Landroid/content/pm/PackageManager;
-    .param p2    # Landroid/service/voice/VoiceInteractionServiceInfo;
 
     invoke-virtual {p2}, Landroid/service/voice/VoiceInteractionServiceInfo;->getServiceInfo()Landroid/content/pm/ServiceInfo;
 

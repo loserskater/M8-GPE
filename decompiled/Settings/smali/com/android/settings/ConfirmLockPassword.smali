@@ -49,7 +49,6 @@
 
 .method protected isValidFragment(Ljava/lang/String;)Z
     .locals 1
-    .param p1    # Ljava/lang/String;
 
     const-class v0, Lcom/android/settings/ConfirmLockPassword$ConfirmLockPasswordFragment;
 
@@ -76,7 +75,6 @@
 
 .method public onCreate(Landroid/os/Bundle;)V
     .locals 2
-    .param p1    # Landroid/os/Bundle;
 
     invoke-super {p0, p1}, Lcom/android/settings/SettingsActivity;->onCreate(Landroid/os/Bundle;)V
 

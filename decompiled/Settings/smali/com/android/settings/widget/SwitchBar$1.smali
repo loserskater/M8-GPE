@@ -36,8 +36,6 @@
 # virtual methods
 .method public onSwitchChanged(Landroid/widget/Switch;Z)V
     .locals 1
-    .param p1    # Landroid/widget/Switch;
-    .param p2    # Z
 
     iget-object v0, p0, Lcom/android/settings/widget/SwitchBar$1;->this$0:Lcom/android/settings/widget/SwitchBar;
 

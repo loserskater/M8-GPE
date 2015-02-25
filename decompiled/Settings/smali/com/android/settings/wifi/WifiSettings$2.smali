@@ -36,7 +36,6 @@
 # virtual methods
 .method public onFailure(I)V
     .locals 3
-    .param p1    # I
 
     iget-object v1, p0, Lcom/android/settings/wifi/WifiSettings$2;->this$0:Lcom/android/settings/wifi/WifiSettings;
 

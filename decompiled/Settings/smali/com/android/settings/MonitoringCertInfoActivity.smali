@@ -27,8 +27,6 @@
 # virtual methods
 .method public onClick(Landroid/content/DialogInterface;I)V
     .locals 2
-    .param p1    # Landroid/content/DialogInterface;
-    .param p2    # I
 
     iget-boolean v1, p0, Lcom/android/settings/MonitoringCertInfoActivity;->hasDeviceOwner:Z
 
@@ -59,7 +57,6 @@
 
 .method protected onCreate(Landroid/os/Bundle;)V
     .locals 10
-    .param p1    # Landroid/os/Bundle;
 
     const/4 v7, 0x0
 

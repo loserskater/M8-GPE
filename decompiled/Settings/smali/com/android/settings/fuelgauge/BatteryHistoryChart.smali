@@ -215,8 +215,6 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 18
-    .param p1    # Landroid/content/Context;
-    .param p2    # Landroid/util/AttributeSet;
 
     invoke-direct/range {p0 .. p2}, Landroid/view/View;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
@@ -508,7 +506,7 @@
 
     const/4 v13, 0x1
 
-    const/high16 v14, 0x40000000
+    const/high16 v14, 0x40000000    # 2.0f
 
     invoke-virtual/range {p0 .. p0}, Lcom/android/settings/fuelgauge/BatteryHistoryChart;->getResources()Landroid/content/res/Resources;
 
@@ -1235,10 +1233,6 @@
 # virtual methods
 .method addDateLabel(Ljava/util/Calendar;IIZ)V
     .locals 14
-    .param p1    # Ljava/util/Calendar;
-    .param p2    # I
-    .param p3    # I
-    .param p4    # Z
 
     iget-wide v4, p0, Lcom/android/settings/fuelgauge/BatteryHistoryChart;->mStartWallTime:J
 
@@ -1281,10 +1275,6 @@
 
 .method addTimeLabel(Ljava/util/Calendar;IIZ)V
     .locals 14
-    .param p1    # Ljava/util/Calendar;
-    .param p2    # I
-    .param p3    # I
-    .param p4    # Z
 
     iget-wide v4, p0, Lcom/android/settings/fuelgauge/BatteryHistoryChart;->mStartWallTime:J
 
@@ -1327,9 +1317,6 @@
 
 .method drawChart(Landroid/graphics/Canvas;II)V
     .locals 29
-    .param p1    # Landroid/graphics/Canvas;
-    .param p2    # I
-    .param p3    # I
 
     invoke-virtual/range {p0 .. p0}, Lcom/android/settings/fuelgauge/BatteryHistoryChart;->isLayoutRtl()Z
 
@@ -2875,19 +2862,6 @@
 
 .method finishPaths(IIIIILandroid/graphics/Path;IZZZZZLandroid/graphics/Path;)V
     .locals 4
-    .param p1    # I
-    .param p2    # I
-    .param p3    # I
-    .param p4    # I
-    .param p5    # I
-    .param p6    # Landroid/graphics/Path;
-    .param p7    # I
-    .param p8    # Z
-    .param p9    # Z
-    .param p10    # Z
-    .param p11    # Z
-    .param p12    # Z
-    .param p13    # Landroid/graphics/Path;
 
     if-eqz p6, :cond_2
 
@@ -3025,7 +2999,6 @@
 
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 2
-    .param p1    # Landroid/graphics/Canvas;
 
     invoke-super {p0, p1}, Landroid/view/View;->onDraw(Landroid/graphics/Canvas;)V
 
@@ -3044,8 +3017,6 @@
 
 .method protected onMeasure(II)V
     .locals 4
-    .param p1    # I
-    .param p2    # I
 
     iget-object v1, p0, Lcom/android/settings/fuelgauge/BatteryHistoryChart;->mTextPaint:Landroid/text/TextPaint;
 
@@ -3186,10 +3157,6 @@
 
 .method protected onSizeChanged(IIII)V
     .locals 68
-    .param p1    # I
-    .param p2    # I
-    .param p3    # I
-    .param p4    # I
 
     invoke-super/range {p0 .. p4}, Landroid/view/View;->onSizeChanged(IIII)V
 
@@ -3456,7 +3423,7 @@
 
     iget-object v4, v0, Lcom/android/settings/fuelgauge/BatteryHistoryChart;->mDebugRectPaint:Landroid/graphics/Paint;
 
-    const/high16 v6, 0x3f800000
+    const/high16 v6, 0x3f800000    # 1.0f
 
     invoke-virtual {v4, v6}, Landroid/graphics/Paint;->setStrokeWidth(F)V
 
@@ -5651,8 +5618,6 @@
 
 .method setStats(Landroid/os/BatteryStats;Landroid/content/Intent;)V
     .locals 36
-    .param p1    # Landroid/os/BatteryStats;
-    .param p2    # Landroid/content/Intent;
 
     move-object/from16 v0, p1
 

@@ -33,8 +33,6 @@
 
 .method synthetic constructor <init>(Lcom/android/settings/accounts/AccountSettings;Lcom/android/settings/accounts/AccountSettings$1;)V
     .locals 0
-    .param p1    # Lcom/android/settings/accounts/AccountSettings;
-    .param p2    # Lcom/android/settings/accounts/AccountSettings$1;
 
     invoke-direct {p0, p1}, Lcom/android/settings/accounts/AccountSettings$ManagedProfileBroadcastReceiver;-><init>(Lcom/android/settings/accounts/AccountSettings;)V
 
@@ -45,8 +43,6 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 3
-    .param p1    # Landroid/content/Context;
-    .param p2    # Landroid/content/Intent;
 
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
@@ -161,7 +157,6 @@
 
 .method public register(Landroid/content/Context;)V
     .locals 2
-    .param p1    # Landroid/content/Context;
 
     iget-boolean v1, p0, Lcom/android/settings/accounts/AccountSettings$ManagedProfileBroadcastReceiver;->listeningToManagedProfileEvents:Z
 
@@ -191,7 +186,6 @@
 
 .method public unregister(Landroid/content/Context;)V
     .locals 1
-    .param p1    # Landroid/content/Context;
 
     iget-boolean v0, p0, Lcom/android/settings/accounts/AccountSettings$ManagedProfileBroadcastReceiver;->listeningToManagedProfileEvents:Z
 

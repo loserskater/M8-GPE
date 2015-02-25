@@ -39,7 +39,6 @@
 
 .method static synthetic access$000(Lcom/android/settings/UsageStatsActivity;)Landroid/app/usage/UsageStatsManager;
     .locals 1
-    .param p0    # Lcom/android/settings/UsageStatsActivity;
 
     iget-object v0, p0, Lcom/android/settings/UsageStatsActivity;->mUsageStatsManager:Landroid/app/usage/UsageStatsManager;
 
@@ -48,7 +47,6 @@
 
 .method static synthetic access$100(Lcom/android/settings/UsageStatsActivity;)Landroid/content/pm/PackageManager;
     .locals 1
-    .param p0    # Lcom/android/settings/UsageStatsActivity;
 
     iget-object v0, p0, Lcom/android/settings/UsageStatsActivity;->mPm:Landroid/content/pm/PackageManager;
 
@@ -57,7 +55,6 @@
 
 .method static synthetic access$200(Lcom/android/settings/UsageStatsActivity;)Landroid/view/LayoutInflater;
     .locals 1
-    .param p0    # Lcom/android/settings/UsageStatsActivity;
 
     iget-object v0, p0, Lcom/android/settings/UsageStatsActivity;->mInflater:Landroid/view/LayoutInflater;
 
@@ -68,7 +65,6 @@
 # virtual methods
 .method protected onCreate(Landroid/os/Bundle;)V
     .locals 3
-    .param p1    # Landroid/os/Bundle;
 
     invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
 
@@ -135,9 +131,6 @@
 
 .method public onItemSelected(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
     .locals 1
-    .param p2    # Landroid/view/View;
-    .param p3    # I
-    .param p4    # J
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

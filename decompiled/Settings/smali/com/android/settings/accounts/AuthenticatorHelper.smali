@@ -77,10 +77,6 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/os/UserHandle;Landroid/os/UserManager;Lcom/android/settings/accounts/AuthenticatorHelper$OnAccountsUpdateListener;)V
     .locals 1
-    .param p1    # Landroid/content/Context;
-    .param p2    # Landroid/os/UserHandle;
-    .param p3    # Landroid/os/UserManager;
-    .param p4    # Lcom/android/settings/accounts/AuthenticatorHelper$OnAccountsUpdateListener;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
@@ -235,7 +231,6 @@
 # virtual methods
 .method public containsAccountType(Ljava/lang/String;)Z
     .locals 1
-    .param p1    # Ljava/lang/String;
 
     iget-object v0, p0, Lcom/android/settings/accounts/AuthenticatorHelper;->mTypeToAuthDescription:Ljava/util/Map;
 
@@ -248,7 +243,6 @@
 
 .method public getAccountTypeDescription(Ljava/lang/String;)Landroid/accounts/AuthenticatorDescription;
     .locals 1
-    .param p1    # Ljava/lang/String;
 
     iget-object v0, p0, Lcom/android/settings/accounts/AuthenticatorHelper;->mTypeToAuthDescription:Ljava/util/Map;
 
@@ -263,7 +257,6 @@
 
 .method public getAuthoritiesForAccountType(Ljava/lang/String;)Ljava/util/ArrayList;
     .locals 1
-    .param p1    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -289,8 +282,6 @@
 
 .method public getDrawableForType(Landroid/content/Context;Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
     .locals 6
-    .param p1    # Landroid/content/Context;
-    .param p2    # Ljava/lang/String;
 
     const/4 v2, 0x0
 
@@ -466,8 +457,6 @@
 
 .method public getLabelForType(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/CharSequence;
     .locals 7
-    .param p1    # Landroid/content/Context;
-    .param p2    # Ljava/lang/String;
 
     const/4 v3, 0x0
 
@@ -572,7 +561,6 @@
 
 .method public hasAccountPreferences(Ljava/lang/String;)Z
     .locals 2
-    .param p1    # Ljava/lang/String;
 
     invoke-virtual {p0, p1}, Lcom/android/settings/accounts/AuthenticatorHelper;->containsAccountType(Ljava/lang/String;)Z
 
@@ -642,7 +630,6 @@
 
 .method onAccountsUpdated([Landroid/accounts/Account;)V
     .locals 4
-    .param p1    # [Landroid/accounts/Account;
 
     iget-object v2, p0, Lcom/android/settings/accounts/AuthenticatorHelper;->mContext:Landroid/content/Context;
 
@@ -724,8 +711,6 @@
 
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 3
-    .param p1    # Landroid/content/Context;
-    .param p2    # Landroid/content/Intent;
 
     iget-object v1, p0, Lcom/android/settings/accounts/AuthenticatorHelper;->mContext:Landroid/content/Context;
 
@@ -750,8 +735,6 @@
 
 .method public preloadDrawableForType(Landroid/content/Context;Ljava/lang/String;)V
     .locals 3
-    .param p1    # Landroid/content/Context;
-    .param p2    # Ljava/lang/String;
 
     new-instance v1, Lcom/android/settings/accounts/AuthenticatorHelper$1;
 
@@ -789,7 +772,6 @@
 
 .method public updateAuthDescriptions(Landroid/content/Context;)V
     .locals 4
-    .param p1    # Landroid/content/Context;
 
     invoke-static {p1}, Landroid/accounts/AccountManager;->get(Landroid/content/Context;)Landroid/accounts/AccountManager;
 

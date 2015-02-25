@@ -23,8 +23,6 @@
 
 .method private buildDialog(Landroid/content/ComponentName;Ljava/lang/String;)Z
     .locals 13
-    .param p1    # Landroid/content/ComponentName;
-    .param p2    # Ljava/lang/String;
 
     const/4 v10, 0x1
 
@@ -317,7 +315,6 @@
 
 .method private sanitizePaymentAppCaption(Ljava/lang/String;)Ljava/lang/String;
     .locals 5
-    .param p1    # Ljava/lang/String;
 
     const/16 v4, 0x28
 
@@ -359,8 +356,6 @@
 # virtual methods
 .method public onClick(Landroid/content/DialogInterface;I)V
     .locals 2
-    .param p1    # Landroid/content/DialogInterface;
-    .param p2    # I
 
     packed-switch p2, :pswitch_data_0
 
@@ -388,7 +383,6 @@
 
 .method protected onCreate(Landroid/os/Bundle;)V
     .locals 4
-    .param p1    # Landroid/os/Bundle;
 
     invoke-super {p0, p1}, Lcom/android/internal/app/AlertActivity;->onCreate(Landroid/os/Bundle;)V
 

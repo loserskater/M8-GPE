@@ -36,8 +36,6 @@
 # virtual methods
 .method public onBeforeCheckedChanged(Lcom/android/settings/widget/ToggleSwitch;Z)Z
     .locals 2
-    .param p1    # Lcom/android/settings/widget/ToggleSwitch;
-    .param p2    # Z
 
     iget-object v0, p0, Lcom/android/settings/accessibility/ToggleGlobalGesturePreferenceFragment$1;->this$0:Lcom/android/settings/accessibility/ToggleGlobalGesturePreferenceFragment;
 

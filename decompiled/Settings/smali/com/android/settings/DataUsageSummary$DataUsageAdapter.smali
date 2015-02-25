@@ -38,9 +38,6 @@
 # direct methods
 .method public constructor <init>(Landroid/os/UserManager;Lcom/android/settings/net/UidDetailProvider;I)V
     .locals 1
-    .param p1    # Landroid/os/UserManager;
-    .param p2    # Lcom/android/settings/net/UidDetailProvider;
-    .param p3    # I
 
     invoke-direct {p0}, Landroid/widget/BaseAdapter;-><init>()V
 
@@ -67,9 +64,6 @@
 
 .method private accumulate(ILandroid/util/SparseArray;Landroid/net/NetworkStats$Entry;I)V
     .locals 8
-    .param p1    # I
-    .param p3    # Landroid/net/NetworkStats$Entry;
-    .param p4    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -149,8 +143,6 @@
 
 .method public bindStats(Landroid/net/NetworkStats;[I)V
     .locals 20
-    .param p1    # Landroid/net/NetworkStats;
-    .param p2    # [I
 
     move-object/from16 v0, p0
 
@@ -455,7 +447,6 @@
 
 .method public getItem(I)Ljava/lang/Object;
     .locals 1
-    .param p1    # I
 
     iget-object v0, p0, Lcom/android/settings/DataUsageSummary$DataUsageAdapter;->mItems:Ljava/util/ArrayList;
 
@@ -468,7 +459,6 @@
 
 .method public getItemId(I)J
     .locals 2
-    .param p1    # I
 
     iget-object v0, p0, Lcom/android/settings/DataUsageSummary$DataUsageAdapter;->mItems:Ljava/util/ArrayList;
 
@@ -487,7 +477,6 @@
 
 .method public getItemViewType(I)I
     .locals 3
-    .param p1    # I
 
     const/4 v1, 0x1
 
@@ -514,9 +503,6 @@
 
 .method public getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
     .locals 10
-    .param p1    # I
-    .param p2    # Landroid/view/View;
-    .param p3    # Landroid/view/ViewGroup;
 
     const-wide/16 v8, 0x0
 
@@ -687,7 +673,6 @@
 
 .method public isEnabled(I)Z
     .locals 1
-    .param p1    # I
 
     iget-object v0, p0, Lcom/android/settings/DataUsageSummary$DataUsageAdapter;->mItems:Ljava/util/ArrayList;
 

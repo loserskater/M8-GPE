@@ -63,10 +63,6 @@
 # direct methods
 .method constructor <init>(Landroid/content/Context;Lcom/android/settings/bluetooth/LocalBluetoothAdapter;Lcom/android/settings/bluetooth/CachedBluetoothDeviceManager;Lcom/android/settings/bluetooth/BluetoothEventManager;)V
     .locals 5
-    .param p1    # Landroid/content/Context;
-    .param p2    # Lcom/android/settings/bluetooth/LocalBluetoothAdapter;
-    .param p3    # Lcom/android/settings/bluetooth/CachedBluetoothDeviceManager;
-    .param p4    # Lcom/android/settings/bluetooth/BluetoothEventManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -182,7 +178,6 @@
 
 .method static synthetic access$000(Lcom/android/settings/bluetooth/LocalBluetoothProfileManager;)Lcom/android/settings/bluetooth/CachedBluetoothDeviceManager;
     .locals 1
-    .param p0    # Lcom/android/settings/bluetooth/LocalBluetoothProfileManager;
 
     iget-object v0, p0, Lcom/android/settings/bluetooth/LocalBluetoothProfileManager;->mDeviceManager:Lcom/android/settings/bluetooth/CachedBluetoothDeviceManager;
 
@@ -191,7 +186,6 @@
 
 .method static synthetic access$100(Lcom/android/settings/bluetooth/LocalBluetoothProfileManager;)Lcom/android/settings/bluetooth/LocalBluetoothAdapter;
     .locals 1
-    .param p0    # Lcom/android/settings/bluetooth/LocalBluetoothProfileManager;
 
     iget-object v0, p0, Lcom/android/settings/bluetooth/LocalBluetoothProfileManager;->mLocalAdapter:Lcom/android/settings/bluetooth/LocalBluetoothAdapter;
 
@@ -200,9 +194,6 @@
 
 .method private addPanProfile(Lcom/android/settings/bluetooth/LocalBluetoothProfile;Ljava/lang/String;Ljava/lang/String;)V
     .locals 2
-    .param p1    # Lcom/android/settings/bluetooth/LocalBluetoothProfile;
-    .param p2    # Ljava/lang/String;
-    .param p3    # Ljava/lang/String;
 
     iget-object v0, p0, Lcom/android/settings/bluetooth/LocalBluetoothProfileManager;->mEventManager:Lcom/android/settings/bluetooth/BluetoothEventManager;
 
@@ -221,9 +212,6 @@
 
 .method private addProfile(Lcom/android/settings/bluetooth/LocalBluetoothProfile;Ljava/lang/String;Ljava/lang/String;)V
     .locals 2
-    .param p1    # Lcom/android/settings/bluetooth/LocalBluetoothProfile;
-    .param p2    # Ljava/lang/String;
-    .param p3    # Ljava/lang/String;
 
     iget-object v0, p0, Lcom/android/settings/bluetooth/LocalBluetoothProfileManager;->mEventManager:Lcom/android/settings/bluetooth/BluetoothEventManager;
 
@@ -244,7 +232,6 @@
 # virtual methods
 .method addServiceListener(Lcom/android/settings/bluetooth/LocalBluetoothProfileManager$ServiceListener;)V
     .locals 1
-    .param p1    # Lcom/android/settings/bluetooth/LocalBluetoothProfileManager$ServiceListener;
 
     iget-object v0, p0, Lcom/android/settings/bluetooth/LocalBluetoothProfileManager;->mServiceListeners:Ljava/util/Collection;
 
@@ -347,7 +334,6 @@
 
 .method getProfileByName(Ljava/lang/String;)Lcom/android/settings/bluetooth/LocalBluetoothProfile;
     .locals 1
-    .param p1    # Ljava/lang/String;
 
     iget-object v0, p0, Lcom/android/settings/bluetooth/LocalBluetoothProfileManager;->mProfileNameMap:Ljava/util/Map;
 
@@ -410,7 +396,6 @@
 
 .method removeServiceListener(Lcom/android/settings/bluetooth/LocalBluetoothProfileManager$ServiceListener;)V
     .locals 1
-    .param p1    # Lcom/android/settings/bluetooth/LocalBluetoothProfileManager$ServiceListener;
 
     iget-object v0, p0, Lcom/android/settings/bluetooth/LocalBluetoothProfileManager;->mServiceListeners:Ljava/util/Collection;
 
@@ -442,7 +427,6 @@
 
 .method updateLocalProfiles([Landroid/os/ParcelUuid;)V
     .locals 4
-    .param p1    # [Landroid/os/ParcelUuid;
 
     sget-object v0, Landroid/bluetooth/BluetoothUuid;->AudioSource:Landroid/os/ParcelUuid;
 
@@ -615,10 +599,6 @@
 
 .method declared-synchronized updateProfiles([Landroid/os/ParcelUuid;[Landroid/os/ParcelUuid;Ljava/util/Collection;Ljava/util/Collection;ZLandroid/bluetooth/BluetoothDevice;)V
     .locals 2
-    .param p1    # [Landroid/os/ParcelUuid;
-    .param p2    # [Landroid/os/ParcelUuid;
-    .param p5    # Z
-    .param p6    # Landroid/bluetooth/BluetoothDevice;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([",

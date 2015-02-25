@@ -44,7 +44,6 @@
 # virtual methods
 .method public getNonIndexableKeys(Landroid/content/Context;)Ljava/util/List;
     .locals 1
-    .param p1    # Landroid/content/Context;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -64,8 +63,6 @@
 
 .method public getRawDataToIndex(Landroid/content/Context;Z)Ljava/util/List;
     .locals 1
-    .param p1    # Landroid/content/Context;
-    .param p2    # Z
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -85,8 +82,6 @@
 
 .method public getXmlResourcesToIndex(Landroid/content/Context;Z)Ljava/util/List;
     .locals 1
-    .param p1    # Landroid/content/Context;
-    .param p2    # Z
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

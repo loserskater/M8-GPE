@@ -14,7 +14,6 @@
 
 .method public static show(Landroid/app/Activity;)V
     .locals 3
-    .param p0    # Landroid/app/Activity;
 
     new-instance v0, Lcom/android/settings/dashboard/NoHomeDialogFragment;
 
@@ -35,7 +34,6 @@
 # virtual methods
 .method public onCreateDialog(Landroid/os/Bundle;)Landroid/app/Dialog;
     .locals 3
-    .param p1    # Landroid/os/Bundle;
 
     new-instance v0, Landroid/app/AlertDialog$Builder;
 

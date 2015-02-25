@@ -87,7 +87,6 @@
 
 .method public constructor <init>(Lcom/android/settings/search/Index$UpdateData;)V
     .locals 2
-    .param p1    # Lcom/android/settings/search/Index$UpdateData;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 

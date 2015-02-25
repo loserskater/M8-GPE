@@ -46,8 +46,6 @@
 
 .method static synthetic access$000(Landroid/content/Context;Landroid/net/wifi/WifiManager;)Ljava/util/List;
     .locals 1
-    .param p0    # Landroid/content/Context;
-    .param p1    # Landroid/net/wifi/WifiManager;
 
     invoke-static {p0, p1}, Lcom/android/settings/wifi/SavedAccessPointsWifiSettings;->constructSavedAccessPoints(Landroid/content/Context;Landroid/net/wifi/WifiManager;)Ljava/util/List;
 
@@ -58,8 +56,6 @@
 
 .method private static constructSavedAccessPoints(Landroid/content/Context;Landroid/net/wifi/WifiManager;)Ljava/util/List;
     .locals 15
-    .param p0    # Landroid/content/Context;
-    .param p1    # Landroid/net/wifi/WifiManager;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -288,8 +284,6 @@
 
 .method private showDialog(Lcom/android/settings/wifi/AccessPoint;Z)V
     .locals 2
-    .param p1    # Lcom/android/settings/wifi/AccessPoint;
-    .param p2    # Z
 
     const/4 v1, 0x1
 
@@ -315,7 +309,6 @@
 # virtual methods
 .method public onActivityCreated(Landroid/os/Bundle;)V
     .locals 1
-    .param p1    # Landroid/os/Bundle;
 
     invoke-super {p0, p1}, Lcom/android/settings/SettingsPreferenceFragment;->onActivityCreated(Landroid/os/Bundle;)V
 
@@ -353,8 +346,6 @@
 
 .method public onClick(Landroid/content/DialogInterface;I)V
     .locals 3
-    .param p1    # Landroid/content/DialogInterface;
-    .param p2    # I
 
     const/4 v2, 0x0
 
@@ -390,7 +381,6 @@
 
 .method public onCreate(Landroid/os/Bundle;)V
     .locals 1
-    .param p1    # Landroid/os/Bundle;
 
     invoke-super {p0, p1}, Lcom/android/settings/SettingsPreferenceFragment;->onCreate(Landroid/os/Bundle;)V
 
@@ -403,7 +393,6 @@
 
 .method public onCreateDialog(I)Landroid/app/Dialog;
     .locals 6
-    .param p1    # I
 
     packed-switch p1, :pswitch_data_0
 
@@ -472,8 +461,6 @@
 
 .method public onPreferenceTreeClick(Landroid/preference/PreferenceScreen;Landroid/preference/Preference;)Z
     .locals 1
-    .param p1    # Landroid/preference/PreferenceScreen;
-    .param p2    # Landroid/preference/Preference;
 
     instance-of v0, p2, Lcom/android/settings/wifi/AccessPoint;
 
@@ -510,7 +497,6 @@
 
 .method public onSaveInstanceState(Landroid/os/Bundle;)V
     .locals 2
-    .param p1    # Landroid/os/Bundle;
 
     invoke-super {p0, p1}, Lcom/android/settings/SettingsPreferenceFragment;->onSaveInstanceState(Landroid/os/Bundle;)V
 

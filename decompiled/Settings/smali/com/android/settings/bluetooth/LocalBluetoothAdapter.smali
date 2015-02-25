@@ -20,7 +20,6 @@
 # direct methods
 .method private constructor <init>(Landroid/bluetooth/BluetoothAdapter;)V
     .locals 1
-    .param p1    # Landroid/bluetooth/BluetoothAdapter;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -169,9 +168,6 @@
 
 .method getProfileProxy(Landroid/content/Context;Landroid/bluetooth/BluetoothProfile$ServiceListener;I)V
     .locals 1
-    .param p1    # Landroid/content/Context;
-    .param p2    # Landroid/bluetooth/BluetoothProfile$ServiceListener;
-    .param p3    # I
 
     iget-object v0, p0, Lcom/android/settings/bluetooth/LocalBluetoothAdapter;->mAdapter:Landroid/bluetooth/BluetoothAdapter;
 
@@ -242,7 +238,6 @@
 
 .method public setBluetoothEnabled(Z)V
     .locals 2
-    .param p1    # Z
 
     if-eqz p1, :cond_0
 
@@ -287,7 +282,6 @@
 
 .method declared-synchronized setBluetoothStateInt(I)V
     .locals 1
-    .param p1    # I
 
     monitor-enter p0
 
@@ -323,7 +317,6 @@
 
 .method setName(Ljava/lang/String;)V
     .locals 1
-    .param p1    # Ljava/lang/String;
 
     iget-object v0, p0, Lcom/android/settings/bluetooth/LocalBluetoothAdapter;->mAdapter:Landroid/bluetooth/BluetoothAdapter;
 
@@ -334,7 +327,6 @@
 
 .method setProfileManager(Lcom/android/settings/bluetooth/LocalBluetoothProfileManager;)V
     .locals 0
-    .param p1    # Lcom/android/settings/bluetooth/LocalBluetoothProfileManager;
 
     iput-object p1, p0, Lcom/android/settings/bluetooth/LocalBluetoothAdapter;->mProfileManager:Lcom/android/settings/bluetooth/LocalBluetoothProfileManager;
 
@@ -343,7 +335,6 @@
 
 .method setScanMode(I)V
     .locals 1
-    .param p1    # I
 
     iget-object v0, p0, Lcom/android/settings/bluetooth/LocalBluetoothAdapter;->mAdapter:Landroid/bluetooth/BluetoothAdapter;
 
@@ -354,8 +345,6 @@
 
 .method setScanMode(II)Z
     .locals 1
-    .param p1    # I
-    .param p2    # I
 
     iget-object v0, p0, Lcom/android/settings/bluetooth/LocalBluetoothAdapter;->mAdapter:Landroid/bluetooth/BluetoothAdapter;
 
@@ -368,7 +357,6 @@
 
 .method startScanning(Z)V
     .locals 6
-    .param p1    # Z
 
     iget-object v1, p0, Lcom/android/settings/bluetooth/LocalBluetoothAdapter;->mAdapter:Landroid/bluetooth/BluetoothAdapter;
 

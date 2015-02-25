@@ -34,7 +34,6 @@
 
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 1
-    .param p1    # Landroid/content/Context;
 
     const/4 v0, 0x0
 
@@ -45,8 +44,6 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 1
-    .param p1    # Landroid/content/Context;
-    .param p2    # Landroid/util/AttributeSet;
 
     const v0, 0x7f01001b
 
@@ -57,9 +54,6 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
     .locals 1
-    .param p1    # Landroid/content/Context;
-    .param p2    # Landroid/util/AttributeSet;
-    .param p3    # I
 
     invoke-direct {p0, p1, p2, p3}, Landroid/preference/Preference;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
@@ -78,8 +72,6 @@
 # virtual methods
 .method public getView(Landroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
     .locals 8
-    .param p1    # Landroid/view/View;
-    .param p2    # Landroid/view/ViewGroup;
 
     const/4 v7, 0x0
 
@@ -169,8 +161,6 @@
 
 .method public onCheckedChanged(Landroid/widget/CompoundButton;Z)V
     .locals 4
-    .param p1    # Landroid/widget/CompoundButton;
-    .param p2    # Z
 
     const/4 v3, 0x0
 
@@ -255,7 +245,6 @@
 
 .method public onClick(Landroid/view/View;)V
     .locals 6
-    .param p1    # Landroid/view/View;
 
     if-eqz p1, :cond_0
 
@@ -315,7 +304,6 @@
 
 .method public setSelectable(Z)V
     .locals 0
-    .param p1    # Z
 
     iput-boolean p1, p0, Lcom/android/settings/ApnPreference;->mSelectable:Z
 

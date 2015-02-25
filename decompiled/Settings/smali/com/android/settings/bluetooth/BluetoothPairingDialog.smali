@@ -43,7 +43,6 @@
 
 .method static synthetic access$000(Lcom/android/settings/bluetooth/BluetoothPairingDialog;)Landroid/bluetooth/BluetoothDevice;
     .locals 1
-    .param p0    # Lcom/android/settings/bluetooth/BluetoothPairingDialog;
 
     iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothPairingDialog;->mDevice:Landroid/bluetooth/BluetoothDevice;
 
@@ -620,7 +619,6 @@
 
 .method private onPair(Ljava/lang/String;)V
     .locals 4
-    .param p1    # Ljava/lang/String;
 
     invoke-direct {p0}, Lcom/android/settings/bluetooth/BluetoothPairingDialog;->allowPhonebookAccess()V
 
@@ -697,7 +695,6 @@
 # virtual methods
 .method public afterTextChanged(Landroid/text/Editable;)V
     .locals 2
-    .param p1    # Landroid/text/Editable;
 
     iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothPairingDialog;->mOkButton:Landroid/widget/Button;
 
@@ -727,18 +724,12 @@
 
 .method public beforeTextChanged(Ljava/lang/CharSequence;III)V
     .locals 0
-    .param p1    # Ljava/lang/CharSequence;
-    .param p2    # I
-    .param p3    # I
-    .param p4    # I
 
     return-void
 .end method
 
 .method public onCheckedChanged(Landroid/widget/CompoundButton;Z)V
     .locals 2
-    .param p1    # Landroid/widget/CompoundButton;
-    .param p2    # Z
 
     if-eqz p2, :cond_0
 
@@ -763,8 +754,6 @@
 
 .method public onClick(Landroid/content/DialogInterface;I)V
     .locals 1
-    .param p1    # Landroid/content/DialogInterface;
-    .param p2    # I
 
     packed-switch p2, :pswitch_data_0
 
@@ -807,7 +796,6 @@
 
 .method protected onCreate(Landroid/os/Bundle;)V
     .locals 8
-    .param p1    # Landroid/os/Bundle;
 
     const/4 v6, 0x1
 
@@ -1067,8 +1055,6 @@
 
 .method public onKeyDown(ILandroid/view/KeyEvent;)Z
     .locals 1
-    .param p1    # I
-    .param p2    # Landroid/view/KeyEvent;
 
     const/4 v0, 0x4
 
@@ -1086,10 +1072,6 @@
 
 .method public onTextChanged(Ljava/lang/CharSequence;III)V
     .locals 0
-    .param p1    # Ljava/lang/CharSequence;
-    .param p2    # I
-    .param p3    # I
-    .param p4    # I
 
     return-void
 .end method

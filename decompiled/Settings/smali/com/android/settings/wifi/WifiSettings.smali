@@ -171,8 +171,6 @@
 
 .method static synthetic access$000(Lcom/android/settings/wifi/WifiSettings;Landroid/content/Intent;)V
     .locals 0
-    .param p0    # Lcom/android/settings/wifi/WifiSettings;
-    .param p1    # Landroid/content/Intent;
 
     invoke-direct {p0, p1}, Lcom/android/settings/wifi/WifiSettings;->handleEvent(Landroid/content/Intent;)V
 
@@ -181,7 +179,6 @@
 
 .method static synthetic access$100(Lcom/android/settings/wifi/WifiSettings;)Landroid/net/NetworkScorerAppManager$NetworkScorerAppData;
     .locals 1
-    .param p0    # Lcom/android/settings/wifi/WifiSettings;
 
     iget-object v0, p0, Lcom/android/settings/wifi/WifiSettings;->mWifiAssistantApp:Landroid/net/NetworkScorerAppManager$NetworkScorerAppData;
 
@@ -190,8 +187,6 @@
 
 .method static synthetic access$102(Lcom/android/settings/wifi/WifiSettings;Landroid/net/NetworkScorerAppManager$NetworkScorerAppData;)Landroid/net/NetworkScorerAppManager$NetworkScorerAppData;
     .locals 0
-    .param p0    # Lcom/android/settings/wifi/WifiSettings;
-    .param p1    # Landroid/net/NetworkScorerAppManager$NetworkScorerAppData;
 
     iput-object p1, p0, Lcom/android/settings/wifi/WifiSettings;->mWifiAssistantApp:Landroid/net/NetworkScorerAppManager$NetworkScorerAppData;
 
@@ -200,7 +195,6 @@
 
 .method static synthetic access$200(Lcom/android/settings/wifi/WifiSettings;)V
     .locals 0
-    .param p0    # Lcom/android/settings/wifi/WifiSettings;
 
     invoke-direct {p0}, Lcom/android/settings/wifi/WifiSettings;->disableWifiAssistantCardUntilPlatformUpgrade()V
 
@@ -209,7 +203,6 @@
 
 .method static synthetic access$300(Lcom/android/settings/wifi/WifiSettings;)Landroid/view/View;
     .locals 1
-    .param p0    # Lcom/android/settings/wifi/WifiSettings;
 
     iget-object v0, p0, Lcom/android/settings/wifi/WifiSettings;->mWifiAssistantCard:Landroid/view/View;
 
@@ -218,10 +211,6 @@
 
 .method static synthetic access$500(Landroid/content/Context;Landroid/net/wifi/WifiManager;Landroid/net/wifi/WifiInfo;Landroid/net/NetworkInfo$DetailedState;)Ljava/util/List;
     .locals 1
-    .param p0    # Landroid/content/Context;
-    .param p1    # Landroid/net/wifi/WifiManager;
-    .param p2    # Landroid/net/wifi/WifiInfo;
-    .param p3    # Landroid/net/NetworkInfo$DetailedState;
 
     invoke-static {p0, p1, p2, p3}, Lcom/android/settings/wifi/WifiSettings;->constructAccessPoints(Landroid/content/Context;Landroid/net/wifi/WifiManager;Landroid/net/wifi/WifiInfo;Landroid/net/NetworkInfo$DetailedState;)Ljava/util/List;
 
@@ -232,7 +221,6 @@
 
 .method private addMessagePreference(I)V
     .locals 1
-    .param p1    # I
 
     iget-object v0, p0, Lcom/android/settings/wifi/WifiSettings;->mEmptyView:Landroid/widget/TextView;
 
@@ -254,7 +242,6 @@
 
 .method private changeNextButtonState(Z)V
     .locals 1
-    .param p1    # Z
 
     iget-boolean v0, p0, Lcom/android/settings/wifi/WifiSettings;->mEnableNextOnConnection:Z
 
@@ -278,10 +265,6 @@
 
 .method private static constructAccessPoints(Landroid/content/Context;Landroid/net/wifi/WifiManager;Landroid/net/wifi/WifiInfo;Landroid/net/NetworkInfo$DetailedState;)Ljava/util/List;
     .locals 12
-    .param p0    # Landroid/content/Context;
-    .param p1    # Landroid/net/wifi/WifiManager;
-    .param p2    # Landroid/net/wifi/WifiInfo;
-    .param p3    # Landroid/net/NetworkInfo$DetailedState;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -534,7 +517,6 @@
 
 .method public static getWifiAssistantApp(Landroid/content/Context;)Landroid/net/NetworkScorerAppManager$NetworkScorerAppData;
     .locals 2
-    .param p0    # Landroid/content/Context;
 
     invoke-static {p0}, Landroid/net/NetworkScorerAppManager;->getAllValidScorers(Landroid/content/Context;)Ljava/util/Collection;
 
@@ -567,7 +549,6 @@
 
 .method private handleEvent(Landroid/content/Intent;)V
     .locals 4
-    .param p1    # Landroid/content/Intent;
 
     invoke-virtual {p1}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
@@ -932,8 +913,6 @@
 
 .method private showDialog(Lcom/android/settings/wifi/AccessPoint;Z)V
     .locals 2
-    .param p1    # Lcom/android/settings/wifi/AccessPoint;
-    .param p2    # Z
 
     const/4 v1, 0x1
 
@@ -1123,7 +1102,6 @@
 
 .method private updateConnectionState(Landroid/net/NetworkInfo$DetailedState;)V
     .locals 5
-    .param p1    # Landroid/net/NetworkInfo$DetailedState;
 
     iget-object v3, p0, Lcom/android/settings/wifi/WifiSettings;->mWifiManager:Landroid/net/wifi/WifiManager;
 
@@ -1213,7 +1191,6 @@
 
 .method private updateWifiState(I)V
     .locals 3
-    .param p1    # I
 
     const/4 v2, 0x0
 
@@ -1271,7 +1248,6 @@
 # virtual methods
 .method addOptionsMenuItems(Landroid/view/Menu;)V
     .locals 5
-    .param p1    # Landroid/view/Menu;
 
     const/4 v4, 0x0
 
@@ -1387,7 +1363,6 @@
 
 .method protected connect(I)V
     .locals 2
-    .param p1    # I
 
     iget-object v0, p0, Lcom/android/settings/wifi/WifiSettings;->mWifiManager:Landroid/net/wifi/WifiManager;
 
@@ -1400,7 +1375,6 @@
 
 .method protected connect(Landroid/net/wifi/WifiConfiguration;)V
     .locals 2
-    .param p1    # Landroid/net/wifi/WifiConfiguration;
 
     iget-object v0, p0, Lcom/android/settings/wifi/WifiSettings;->mWifiManager:Landroid/net/wifi/WifiManager;
 
@@ -1540,7 +1514,6 @@
 
 .method public onActivityCreated(Landroid/os/Bundle;)V
     .locals 6
-    .param p1    # Landroid/os/Bundle;
 
     const/4 v5, 0x1
 
@@ -1679,9 +1652,6 @@
 
 .method public onActivityResult(IILandroid/content/Intent;)V
     .locals 2
-    .param p1    # I
-    .param p2    # I
-    .param p3    # Landroid/content/Intent;
 
     const/4 v0, 0x1
 
@@ -1731,8 +1701,6 @@
 
 .method public onClick(Landroid/content/DialogInterface;I)V
     .locals 1
-    .param p1    # Landroid/content/DialogInterface;
-    .param p2    # I
 
     const/4 v0, -0x3
 
@@ -1770,7 +1738,6 @@
 
 .method public onContextItemSelected(Landroid/view/MenuItem;)Z
     .locals 4
-    .param p1    # Landroid/view/MenuItem;
 
     const/4 v0, 0x1
 
@@ -1883,9 +1850,6 @@
 
 .method public onCreateContextMenu(Landroid/view/ContextMenu;Landroid/view/View;Landroid/view/ContextMenu$ContextMenuInfo;)V
     .locals 5
-    .param p1    # Landroid/view/ContextMenu;
-    .param p2    # Landroid/view/View;
-    .param p3    # Landroid/view/ContextMenu$ContextMenuInfo;
 
     const/4 v4, -0x1
 
@@ -1989,7 +1953,6 @@
 
 .method public onCreateDialog(I)Landroid/app/Dialog;
     .locals 5
-    .param p1    # I
 
     packed-switch p1, :pswitch_data_0
 
@@ -2108,8 +2071,6 @@
 
 .method public onCreateOptionsMenu(Landroid/view/Menu;Landroid/view/MenuInflater;)V
     .locals 1
-    .param p1    # Landroid/view/Menu;
-    .param p2    # Landroid/view/MenuInflater;
 
     invoke-virtual {p0}, Lcom/android/settings/wifi/WifiSettings;->isUiRestricted()Z
 
@@ -2147,7 +2108,6 @@
 
 .method public onOptionsItemSelected(Landroid/view/MenuItem;)Z
     .locals 11
-    .param p1    # Landroid/view/MenuItem;
 
     const v3, 0x7f0802b8
 
@@ -2381,8 +2341,6 @@
 
 .method public onPreferenceTreeClick(Landroid/preference/PreferenceScreen;Landroid/preference/Preference;)Z
     .locals 3
-    .param p1    # Landroid/preference/PreferenceScreen;
-    .param p2    # Landroid/preference/Preference;
 
     const/4 v0, 0x1
 
@@ -2484,7 +2442,6 @@
 
 .method public onSaveInstanceState(Landroid/os/Bundle;)V
     .locals 2
-    .param p1    # Landroid/os/Bundle;
 
     invoke-super {p0, p1}, Lcom/android/settings/RestrictedSettingsFragment;->onSaveInstanceState(Landroid/os/Bundle;)V
 
@@ -2592,7 +2549,6 @@
 
 .method submit(Lcom/android/settings/wifi/WifiConfigController;)V
     .locals 3
-    .param p1    # Lcom/android/settings/wifi/WifiConfigController;
 
     const/4 v2, -0x1
 

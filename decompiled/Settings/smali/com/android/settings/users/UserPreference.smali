@@ -16,11 +16,6 @@
 # direct methods
 .method constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;ILandroid/view/View$OnClickListener;Landroid/view/View$OnClickListener;)V
     .locals 1
-    .param p1    # Landroid/content/Context;
-    .param p2    # Landroid/util/AttributeSet;
-    .param p3    # I
-    .param p4    # Landroid/view/View$OnClickListener;
-    .param p5    # Landroid/view/View$OnClickListener;
 
     invoke-direct {p0, p1, p2}, Landroid/preference/Preference;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
@@ -132,7 +127,6 @@
 # virtual methods
 .method public compareTo(Landroid/preference/Preference;)I
     .locals 3
-    .param p1    # Landroid/preference/Preference;
 
     const/4 v0, 0x1
 
@@ -164,7 +158,6 @@
 
 .method public bridge synthetic compareTo(Ljava/lang/Object;)I
     .locals 1
-    .param p1    # Ljava/lang/Object;
 
     check-cast p1, Landroid/preference/Preference;
 
@@ -185,7 +178,6 @@
 
 .method protected onBindView(Landroid/view/View;)V
     .locals 8
-    .param p1    # Landroid/view/View;
 
     const/16 v7, 0x8
 

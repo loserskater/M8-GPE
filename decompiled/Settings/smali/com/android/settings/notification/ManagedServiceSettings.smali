@@ -78,7 +78,6 @@
 
 .method static synthetic access$000(Lcom/android/settings/notification/ManagedServiceSettings;)V
     .locals 0
-    .param p0    # Lcom/android/settings/notification/ManagedServiceSettings;
 
     invoke-direct {p0}, Lcom/android/settings/notification/ManagedServiceSettings;->updateList()V
 
@@ -87,7 +86,6 @@
 
 .method static synthetic access$100(Lcom/android/settings/notification/ManagedServiceSettings;)Lcom/android/settings/notification/ManagedServiceSettings$Config;
     .locals 1
-    .param p0    # Lcom/android/settings/notification/ManagedServiceSettings;
 
     iget-object v0, p0, Lcom/android/settings/notification/ManagedServiceSettings;->mConfig:Lcom/android/settings/notification/ManagedServiceSettings$Config;
 
@@ -96,7 +94,6 @@
 
 .method static synthetic access$200(Lcom/android/settings/notification/ManagedServiceSettings;)Ljava/util/HashSet;
     .locals 1
-    .param p0    # Lcom/android/settings/notification/ManagedServiceSettings;
 
     iget-object v0, p0, Lcom/android/settings/notification/ManagedServiceSettings;->mEnabledServices:Ljava/util/HashSet;
 
@@ -105,7 +102,6 @@
 
 .method static synthetic access$300(Lcom/android/settings/notification/ManagedServiceSettings;)V
     .locals 0
-    .param p0    # Lcom/android/settings/notification/ManagedServiceSettings;
 
     invoke-direct {p0}, Lcom/android/settings/notification/ManagedServiceSettings;->saveEnabledServices()V
 
@@ -114,7 +110,6 @@
 
 .method static synthetic access$500(Lcom/android/settings/notification/ManagedServiceSettings;)Landroid/content/pm/PackageManager;
     .locals 1
-    .param p0    # Lcom/android/settings/notification/ManagedServiceSettings;
 
     iget-object v0, p0, Lcom/android/settings/notification/ManagedServiceSettings;->mPM:Landroid/content/pm/PackageManager;
 
@@ -123,8 +118,6 @@
 
 .method static synthetic access$600(Lcom/android/settings/notification/ManagedServiceSettings;Landroid/content/pm/ServiceInfo;)Z
     .locals 1
-    .param p0    # Lcom/android/settings/notification/ManagedServiceSettings;
-    .param p1    # Landroid/content/pm/ServiceInfo;
 
     invoke-direct {p0, p1}, Lcom/android/settings/notification/ManagedServiceSettings;->isServiceEnabled(Landroid/content/pm/ServiceInfo;)Z
 
@@ -135,8 +128,6 @@
 
 .method protected static getEnabledServicesCount(Lcom/android/settings/notification/ManagedServiceSettings$Config;Landroid/content/Context;)I
     .locals 4
-    .param p0    # Lcom/android/settings/notification/ManagedServiceSettings$Config;
-    .param p1    # Landroid/content/Context;
 
     invoke-virtual {p1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -178,8 +169,6 @@
 
 .method private static getServices(Lcom/android/settings/notification/ManagedServiceSettings$Config;Landroid/widget/ArrayAdapter;Landroid/content/pm/PackageManager;)I
     .locals 10
-    .param p0    # Lcom/android/settings/notification/ManagedServiceSettings$Config;
-    .param p2    # Landroid/content/pm/PackageManager;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -324,8 +313,6 @@
 
 .method protected static getServicesCount(Lcom/android/settings/notification/ManagedServiceSettings$Config;Landroid/content/pm/PackageManager;)I
     .locals 1
-    .param p0    # Lcom/android/settings/notification/ManagedServiceSettings$Config;
-    .param p1    # Landroid/content/pm/PackageManager;
 
     const/4 v0, 0x0
 
@@ -338,7 +325,6 @@
 
 .method private isServiceEnabled(Landroid/content/pm/ServiceInfo;)Z
     .locals 3
-    .param p1    # Landroid/content/pm/ServiceInfo;
 
     new-instance v0, Landroid/content/ComponentName;
 
@@ -529,7 +515,6 @@
 
 .method public onCreate(Landroid/os/Bundle;)V
     .locals 2
-    .param p1    # Landroid/os/Bundle;
 
     invoke-super {p0, p1}, Landroid/app/ListFragment;->onCreate(Landroid/os/Bundle;)V
 
@@ -568,9 +553,6 @@
 
 .method public onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
     .locals 4
-    .param p1    # Landroid/view/LayoutInflater;
-    .param p2    # Landroid/view/ViewGroup;
-    .param p3    # Landroid/os/Bundle;
 
     const v2, 0x7f04005b
 
@@ -599,10 +581,6 @@
 
 .method public onListItemClick(Landroid/widget/ListView;Landroid/view/View;IJ)V
     .locals 5
-    .param p1    # Landroid/widget/ListView;
-    .param p2    # Landroid/view/View;
-    .param p3    # I
-    .param p4    # J
 
     iget-object v2, p0, Lcom/android/settings/notification/ManagedServiceSettings;->mListAdapter:Lcom/android/settings/notification/ManagedServiceSettings$ServiceListAdapter;
 

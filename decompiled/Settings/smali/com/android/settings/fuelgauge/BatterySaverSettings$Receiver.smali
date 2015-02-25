@@ -33,8 +33,6 @@
 
 .method synthetic constructor <init>(Lcom/android/settings/fuelgauge/BatterySaverSettings;Lcom/android/settings/fuelgauge/BatterySaverSettings$1;)V
     .locals 0
-    .param p1    # Lcom/android/settings/fuelgauge/BatterySaverSettings;
-    .param p2    # Lcom/android/settings/fuelgauge/BatterySaverSettings$1;
 
     invoke-direct {p0, p1}, Lcom/android/settings/fuelgauge/BatterySaverSettings$Receiver;-><init>(Lcom/android/settings/fuelgauge/BatterySaverSettings;)V
 
@@ -45,8 +43,6 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 3
-    .param p1    # Landroid/content/Context;
-    .param p2    # Landroid/content/Intent;
 
     # getter for: Lcom/android/settings/fuelgauge/BatterySaverSettings;->DEBUG:Z
     invoke-static {}, Lcom/android/settings/fuelgauge/BatterySaverSettings;->access$200()Z
@@ -103,7 +99,6 @@
 
 .method public setListening(Z)V
     .locals 3
-    .param p1    # Z
 
     if-eqz p1, :cond_1
 

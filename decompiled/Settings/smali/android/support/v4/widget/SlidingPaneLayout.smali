@@ -115,8 +115,6 @@
 
 .method static synthetic access$1000(Landroid/support/v4/widget/SlidingPaneLayout;Landroid/view/View;)V
     .locals 0
-    .param p0    # Landroid/support/v4/widget/SlidingPaneLayout;
-    .param p1    # Landroid/view/View;
 
     invoke-direct {p0, p1}, Landroid/support/v4/widget/SlidingPaneLayout;->invalidateChildRegion(Landroid/view/View;)V
 
@@ -125,7 +123,6 @@
 
 .method static synthetic access$1100(Landroid/support/v4/widget/SlidingPaneLayout;)Ljava/util/ArrayList;
     .locals 1
-    .param p0    # Landroid/support/v4/widget/SlidingPaneLayout;
 
     iget-object v0, p0, Landroid/support/v4/widget/SlidingPaneLayout;->mPostedRunnables:Ljava/util/ArrayList;
 
@@ -134,8 +131,6 @@
 
 .method private closePane(Landroid/view/View;I)Z
     .locals 2
-    .param p1    # Landroid/view/View;
-    .param p2    # I
 
     const/4 v0, 0x0
 
@@ -162,9 +157,6 @@
 
 .method private dimChildView(Landroid/view/View;FI)V
     .locals 9
-    .param p1    # Landroid/view/View;
-    .param p2    # F
-    .param p3    # I
 
     const/4 v8, 0x2
 
@@ -273,7 +265,6 @@
 
 .method private invalidateChildRegion(Landroid/view/View;)V
     .locals 1
-    .param p1    # Landroid/view/View;
 
     sget-object v0, Landroid/support/v4/widget/SlidingPaneLayout;->IMPL:Landroid/support/v4/widget/SlidingPaneLayout$SlidingPanelLayoutImpl;
 
@@ -304,8 +295,6 @@
 
 .method private openPane(Landroid/view/View;I)Z
     .locals 2
-    .param p1    # Landroid/view/View;
-    .param p2    # I
 
     const/4 v0, 0x1
 
@@ -313,7 +302,7 @@
 
     if-nez v1, :cond_0
 
-    const/high16 v1, 0x3f800000
+    const/high16 v1, 0x3f800000    # 1.0f
 
     invoke-virtual {p0, v1, p2}, Landroid/support/v4/widget/SlidingPaneLayout;->smoothSlideTo(FI)Z
 
@@ -335,9 +324,8 @@
 
 .method private parallaxOtherViews(F)V
     .locals 12
-    .param p1    # F
 
-    const/high16 v11, 0x3f800000
+    const/high16 v11, 0x3f800000    # 1.0f
 
     invoke-direct {p0}, Landroid/support/v4/widget/SlidingPaneLayout;->isLayoutRtlSupport()Z
 
@@ -460,7 +448,6 @@
 
 .method private static viewIsOpaque(Landroid/view/View;)Z
     .locals 5
-    .param p0    # Landroid/view/View;
 
     const/4 v1, 0x1
 
@@ -516,7 +503,6 @@
 # virtual methods
 .method protected checkLayoutParams(Landroid/view/ViewGroup$LayoutParams;)Z
     .locals 1
-    .param p1    # Landroid/view/ViewGroup$LayoutParams;
 
     instance-of v0, p1, Landroid/support/v4/widget/SlidingPaneLayout$LayoutParams;
 
@@ -586,7 +572,6 @@
 
 .method public draw(Landroid/graphics/Canvas;)V
     .locals 10
-    .param p1    # Landroid/graphics/Canvas;
 
     const/4 v9, 0x1
 
@@ -674,9 +659,6 @@
 
 .method protected drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
     .locals 7
-    .param p1    # Landroid/graphics/Canvas;
-    .param p2    # Landroid/view/View;
-    .param p3    # J
 
     invoke-virtual {p2}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
@@ -888,7 +870,6 @@
 
 .method public generateLayoutParams(Landroid/util/AttributeSet;)Landroid/view/ViewGroup$LayoutParams;
     .locals 2
-    .param p1    # Landroid/util/AttributeSet;
 
     new-instance v0, Landroid/support/v4/widget/SlidingPaneLayout$LayoutParams;
 
@@ -903,7 +884,6 @@
 
 .method protected generateLayoutParams(Landroid/view/ViewGroup$LayoutParams;)Landroid/view/ViewGroup$LayoutParams;
     .locals 1
-    .param p1    # Landroid/view/ViewGroup$LayoutParams;
 
     instance-of v0, p1, Landroid/view/ViewGroup$MarginLayoutParams;
 
@@ -928,7 +908,6 @@
 
 .method isDimmed(Landroid/view/View;)Z
     .locals 4
-    .param p1    # Landroid/view/View;
 
     const/4 v1, 0x0
 
@@ -975,7 +954,7 @@
 
     iget v0, p0, Landroid/support/v4/widget/SlidingPaneLayout;->mSlideOffset:F
 
-    const/high16 v1, 0x3f800000
+    const/high16 v1, 0x3f800000    # 1.0f
 
     cmpl-float v0, v0, v1
 
@@ -1057,7 +1036,6 @@
 
 .method public onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 13
-    .param p1    # Landroid/view/MotionEvent;
 
     invoke-static {p1}, Landroid/support/v4/view/MotionEventCompat;->getActionMasked(Landroid/view/MotionEvent;)I
 
@@ -1290,11 +1268,6 @@
 
 .method protected onLayout(ZIIII)V
     .locals 28
-    .param p1    # Z
-    .param p2    # I
-    .param p3    # I
-    .param p4    # I
-    .param p5    # I
 
     invoke-direct/range {p0 .. p0}, Landroid/support/v4/widget/SlidingPaneLayout;->isLayoutRtlSupport()Z
 
@@ -1365,7 +1338,7 @@
 
     if-eqz v25, :cond_4
 
-    const/high16 v25, 0x3f800000
+    const/high16 v25, 0x3f800000    # 1.0f
 
     :goto_3
     move/from16 v0, v25
@@ -1627,7 +1600,7 @@
 
     if-eqz v25, :cond_9
 
-    const/high16 v25, 0x3f800000
+    const/high16 v25, 0x3f800000    # 1.0f
 
     move-object/from16 v0, p0
 
@@ -1820,8 +1793,6 @@
 
 .method protected onMeasure(II)V
     .locals 31
-    .param p1    # I
-    .param p2    # I
 
     invoke-static/range {p1 .. p1}, Landroid/view/View$MeasureSpec;->getMode(I)I
 
@@ -1839,7 +1810,7 @@
 
     move-result v13
 
-    const/high16 v29, 0x40000000
+    const/high16 v29, 0x40000000    # 2.0f
 
     move/from16 v0, v25
 
@@ -1861,7 +1832,7 @@
 
     if-ne v0, v1, :cond_3
 
-    const/high16 v25, 0x40000000
+    const/high16 v25, 0x40000000    # 2.0f
 
     :cond_0
     :goto_0
@@ -1961,7 +1932,7 @@
     :cond_3
     if-nez v25, :cond_0
 
-    const/high16 v25, 0x40000000
+    const/high16 v25, 0x40000000    # 2.0f
 
     const/16 v27, 0x12c
 
@@ -2199,7 +2170,7 @@
 
     sub-int v29, v24, v14
 
-    const/high16 v30, 0x40000000
+    const/high16 v30, 0x40000000    # 2.0f
 
     invoke-static/range {v29 .. v30}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
@@ -2214,7 +2185,7 @@
 
     move/from16 v29, v0
 
-    const/high16 v30, 0x40000000
+    const/high16 v30, 0x40000000    # 2.0f
 
     invoke-static/range {v29 .. v30}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
@@ -2237,7 +2208,7 @@
 
     if-ne v0, v1, :cond_d
 
-    const/high16 v29, 0x40000000
+    const/high16 v29, 0x40000000    # 2.0f
 
     move/from16 v0, v18
 
@@ -2256,7 +2227,7 @@
 
     move/from16 v29, v0
 
-    const/high16 v30, 0x40000000
+    const/high16 v30, 0x40000000    # 2.0f
 
     invoke-static/range {v29 .. v30}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
@@ -2427,7 +2398,7 @@
     move-result v8
 
     :goto_b
-    const/high16 v29, 0x40000000
+    const/high16 v29, 0x40000000    # 2.0f
 
     move/from16 v0, v29
 
@@ -2466,7 +2437,7 @@
 
     if-ne v0, v1, :cond_17
 
-    const/high16 v29, 0x40000000
+    const/high16 v29, 0x40000000    # 2.0f
 
     move/from16 v0, v18
 
@@ -2485,7 +2456,7 @@
 
     move/from16 v29, v0
 
-    const/high16 v30, 0x40000000
+    const/high16 v30, 0x40000000    # 2.0f
 
     invoke-static/range {v29 .. v30}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
@@ -2498,7 +2469,7 @@
 
     move-result v29
 
-    const/high16 v30, 0x40000000
+    const/high16 v30, 0x40000000    # 2.0f
 
     invoke-static/range {v29 .. v30}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
@@ -2570,7 +2541,7 @@
 
     sub-int v21, v24, v14
 
-    const/high16 v29, 0x40000000
+    const/high16 v29, 0x40000000    # 2.0f
 
     move/from16 v0, v21
 
@@ -2605,7 +2576,7 @@
 
     if-ne v0, v1, :cond_1b
 
-    const/high16 v29, 0x40000000
+    const/high16 v29, 0x40000000    # 2.0f
 
     move/from16 v0, v18
 
@@ -2624,7 +2595,7 @@
 
     move/from16 v29, v0
 
-    const/high16 v30, 0x40000000
+    const/high16 v30, 0x40000000    # 2.0f
 
     invoke-static/range {v29 .. v30}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
@@ -2637,7 +2608,7 @@
 
     move-result v29
 
-    const/high16 v30, 0x40000000
+    const/high16 v30, 0x40000000    # 2.0f
 
     invoke-static/range {v29 .. v30}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
@@ -2678,7 +2649,7 @@
 
     add-int v29, v20, v3
 
-    const/high16 v30, 0x40000000
+    const/high16 v30, 0x40000000    # 2.0f
 
     invoke-static/range {v29 .. v30}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
@@ -2749,7 +2720,6 @@
 
 .method protected onRestoreInstanceState(Landroid/os/Parcelable;)V
     .locals 2
-    .param p1    # Landroid/os/Parcelable;
 
     move-object v0, p1
 
@@ -2814,10 +2784,6 @@
 
 .method protected onSizeChanged(IIII)V
     .locals 1
-    .param p1    # I
-    .param p2    # I
-    .param p3    # I
-    .param p4    # I
 
     invoke-super {p0, p1, p2, p3, p4}, Landroid/view/ViewGroup;->onSizeChanged(IIII)V
 
@@ -2833,7 +2799,6 @@
 
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 11
-    .param p1    # Landroid/view/MotionEvent;
 
     iget-boolean v7, p0, Landroid/support/v4/widget/SlidingPaneLayout;->mCanSlide:Z
 
@@ -2971,8 +2936,6 @@
 
 .method public requestChildFocus(Landroid/view/View;Landroid/view/View;)V
     .locals 1
-    .param p1    # Landroid/view/View;
-    .param p2    # Landroid/view/View;
 
     invoke-super {p0, p1, p2}, Landroid/view/ViewGroup;->requestChildFocus(Landroid/view/View;Landroid/view/View;)V
 
@@ -3043,8 +3006,6 @@
 
 .method smoothSlideTo(FI)Z
     .locals 9
-    .param p1    # F
-    .param p2    # I
 
     const/4 v5, 0x0
 
@@ -3160,7 +3121,6 @@
 
 .method updateObscuredViewsVisibility(Landroid/view/View;)V
     .locals 21
-    .param p1    # Landroid/view/View;
 
     invoke-direct/range {p0 .. p0}, Landroid/support/v4/widget/SlidingPaneLayout;->isLayoutRtlSupport()Z
 

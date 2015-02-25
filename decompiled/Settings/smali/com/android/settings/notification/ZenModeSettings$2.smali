@@ -36,7 +36,6 @@
 # virtual methods
 .method public onSettingSelected(I)V
     .locals 1
-    .param p1    # I
 
     if-eqz p1, :cond_0
 

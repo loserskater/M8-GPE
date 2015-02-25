@@ -46,7 +46,6 @@
 
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 3
-    .param p1    # Landroid/content/Context;
 
     const-string v0, "search_index.db"
 
@@ -61,7 +60,6 @@
 
 .method private bootstrapDB(Landroid/database/sqlite/SQLiteDatabase;)V
     .locals 2
-    .param p1    # Landroid/database/sqlite/SQLiteDatabase;
 
     const-string v0, "CREATE VIRTUAL TABLE prefs_index USING fts4(locale, data_rank, data_title, data_title_normalized, data_summary_on, data_summary_on_normalized, data_summary_off, data_summary_off_normalized, data_entries, data_keywords, screen_title, class_name, icon, intent_action, intent_target_package, intent_target_class, enabled, data_key_reference, user_id);"
 
@@ -90,7 +88,6 @@
 
 .method private dropTables(Landroid/database/sqlite/SQLiteDatabase;)V
     .locals 1
-    .param p1    # Landroid/database/sqlite/SQLiteDatabase;
 
     const-string v0, "DROP TABLE IF EXISTS meta_index"
 
@@ -109,7 +106,6 @@
 
 .method private getBuildVersion(Landroid/database/sqlite/SQLiteDatabase;)Ljava/lang/String;
     .locals 5
-    .param p1    # Landroid/database/sqlite/SQLiteDatabase;
 
     const/4 v2, 0x0
 
@@ -179,7 +175,6 @@
 
 .method public static declared-synchronized getInstance(Landroid/content/Context;)Lcom/android/settings/search/IndexDatabaseHelper;
     .locals 2
-    .param p0    # Landroid/content/Context;
 
     const-class v1, Lcom/android/settings/search/IndexDatabaseHelper;
 
@@ -215,7 +210,6 @@
 
 .method private reconstruct(Landroid/database/sqlite/SQLiteDatabase;)V
     .locals 0
-    .param p1    # Landroid/database/sqlite/SQLiteDatabase;
 
     invoke-direct {p0, p1}, Lcom/android/settings/search/IndexDatabaseHelper;->dropTables(Landroid/database/sqlite/SQLiteDatabase;)V
 
@@ -228,7 +222,6 @@
 # virtual methods
 .method public onCreate(Landroid/database/sqlite/SQLiteDatabase;)V
     .locals 0
-    .param p1    # Landroid/database/sqlite/SQLiteDatabase;
 
     invoke-direct {p0, p1}, Lcom/android/settings/search/IndexDatabaseHelper;->bootstrapDB(Landroid/database/sqlite/SQLiteDatabase;)V
 
@@ -237,9 +230,6 @@
 
 .method public onDowngrade(Landroid/database/sqlite/SQLiteDatabase;II)V
     .locals 3
-    .param p1    # Landroid/database/sqlite/SQLiteDatabase;
-    .param p2    # I
-    .param p3    # I
 
     const-string v0, "IndexDatabaseHelper"
 
@@ -292,7 +282,6 @@
 
 .method public onOpen(Landroid/database/sqlite/SQLiteDatabase;)V
     .locals 3
-    .param p1    # Landroid/database/sqlite/SQLiteDatabase;
 
     invoke-super {p0, p1}, Landroid/database/sqlite/SQLiteOpenHelper;->onOpen(Landroid/database/sqlite/SQLiteDatabase;)V
 
@@ -357,9 +346,6 @@
 
 .method public onUpgrade(Landroid/database/sqlite/SQLiteDatabase;II)V
     .locals 3
-    .param p1    # Landroid/database/sqlite/SQLiteDatabase;
-    .param p2    # I
-    .param p3    # I
 
     const/16 v0, 0x73
 

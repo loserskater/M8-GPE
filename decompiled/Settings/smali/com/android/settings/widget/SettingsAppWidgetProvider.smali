@@ -169,7 +169,6 @@
 
 .method static synthetic access$802(Lcom/android/settings/bluetooth/LocalBluetoothAdapter;)Lcom/android/settings/bluetooth/LocalBluetoothAdapter;
     .locals 0
-    .param p0    # Lcom/android/settings/bluetooth/LocalBluetoothAdapter;
 
     sput-object p0, Lcom/android/settings/widget/SettingsAppWidgetProvider;->sLocalBluetoothAdapter:Lcom/android/settings/bluetooth/LocalBluetoothAdapter;
 
@@ -178,7 +177,6 @@
 
 .method static buildUpdate(Landroid/content/Context;)Landroid/widget/RemoteViews;
     .locals 3
-    .param p0    # Landroid/content/Context;
 
     new-instance v0, Landroid/widget/RemoteViews;
 
@@ -247,7 +245,6 @@
 
 .method private static checkObserver(Landroid/content/Context;)V
     .locals 3
-    .param p0    # Landroid/content/Context;
 
     sget-object v0, Lcom/android/settings/widget/SettingsAppWidgetProvider;->sSettingsObserver:Lcom/android/settings/widget/SettingsAppWidgetProvider$SettingsObserver;
 
@@ -277,7 +274,6 @@
 
 .method private static getBrightness(Landroid/content/Context;)I
     .locals 3
-    .param p0    # Landroid/content/Context;
 
     :try_start_0
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -305,7 +301,6 @@
 
 .method private static getBrightnessMode(Landroid/content/Context;)Z
     .locals 6
-    .param p0    # Landroid/content/Context;
 
     const/4 v2, 0x1
 
@@ -366,8 +361,6 @@
 
 .method private static getLaunchPendingIntent(Landroid/content/Context;I)Landroid/app/PendingIntent;
     .locals 5
-    .param p0    # Landroid/content/Context;
-    .param p1    # I
 
     const/4 v4, 0x0
 
@@ -416,7 +409,6 @@
 
 .method private toggleBrightness(Landroid/content/Context;)V
     .locals 9
-    .param p1    # Landroid/content/Context;
 
     :try_start_0
     const-string v6, "power"
@@ -614,8 +606,6 @@
 
 .method private static updateButtons(Landroid/widget/RemoteViews;Landroid/content/Context;)V
     .locals 11
-    .param p0    # Landroid/widget/RemoteViews;
-    .param p1    # Landroid/content/Context;
 
     const v10, 0x7f0e01dc
 
@@ -697,7 +687,7 @@
 
     int-to-float v4, v4
 
-    const v5, 0x3f4ccccd
+    const v5, 0x3f4ccccd    # 0.8f
 
     mul-float/2addr v4, v5
 
@@ -709,7 +699,7 @@
 
     int-to-float v4, v4
 
-    const v5, 0x3e99999a
+    const v5, 0x3e99999a    # 0.3f
 
     mul-float/2addr v4, v5
 
@@ -808,7 +798,6 @@
 
 .method public static updateWidget(Landroid/content/Context;)V
     .locals 3
-    .param p0    # Landroid/content/Context;
 
     invoke-static {p0}, Lcom/android/settings/widget/SettingsAppWidgetProvider;->buildUpdate(Landroid/content/Context;)Landroid/widget/RemoteViews;
 
@@ -831,7 +820,6 @@
 # virtual methods
 .method public onDisabled(Landroid/content/Context;)V
     .locals 1
-    .param p1    # Landroid/content/Context;
 
     sget-object v0, Lcom/android/settings/widget/SettingsAppWidgetProvider;->sSettingsObserver:Lcom/android/settings/widget/SettingsAppWidgetProvider$SettingsObserver;
 
@@ -851,7 +839,6 @@
 
 .method public onEnabled(Landroid/content/Context;)V
     .locals 0
-    .param p1    # Landroid/content/Context;
 
     invoke-static {p1}, Lcom/android/settings/widget/SettingsAppWidgetProvider;->checkObserver(Landroid/content/Context;)V
 
@@ -860,8 +847,6 @@
 
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 4
-    .param p1    # Landroid/content/Context;
-    .param p2    # Landroid/content/Intent;
 
     invoke-super {p0, p1, p2}, Landroid/appwidget/AppWidgetProvider;->onReceive(Landroid/content/Context;Landroid/content/Intent;)V
 
@@ -1007,9 +992,6 @@
 
 .method public onUpdate(Landroid/content/Context;Landroid/appwidget/AppWidgetManager;[I)V
     .locals 3
-    .param p1    # Landroid/content/Context;
-    .param p2    # Landroid/appwidget/AppWidgetManager;
-    .param p3    # [I
 
     invoke-static {p1}, Lcom/android/settings/widget/SettingsAppWidgetProvider;->buildUpdate(Landroid/content/Context;)Landroid/widget/RemoteViews;
 

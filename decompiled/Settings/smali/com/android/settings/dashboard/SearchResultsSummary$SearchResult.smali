@@ -33,13 +33,6 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;)V
     .locals 0
-    .param p1    # Landroid/content/Context;
-    .param p2    # Ljava/lang/String;
-    .param p3    # Ljava/lang/String;
-    .param p4    # Ljava/lang/String;
-    .param p5    # Ljava/lang/String;
-    .param p6    # I
-    .param p7    # Ljava/lang/String;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 

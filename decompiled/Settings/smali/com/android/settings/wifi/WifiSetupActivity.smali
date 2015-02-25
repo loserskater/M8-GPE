@@ -60,7 +60,6 @@
 
 .method static synthetic access$000(Lcom/android/settings/wifi/WifiSetupActivity;)V
     .locals 0
-    .param p0    # Lcom/android/settings/wifi/WifiSetupActivity;
 
     invoke-direct {p0}, Lcom/android/settings/wifi/WifiSetupActivity;->refreshConnectionState()V
 
@@ -158,7 +157,6 @@
 
 .method private refreshConnectionState(Z)V
     .locals 2
-    .param p1    # Z
 
     iput-boolean p1, p0, Lcom/android/settings/wifi/WifiSetupActivity;->mWifiConnected:Z
 
@@ -245,7 +243,6 @@
 
 .method private sendResultsToSetupWizard(I)V
     .locals 4
-    .param p1    # I
 
     invoke-virtual {p0}, Lcom/android/settings/wifi/WifiSetupActivity;->getIntent()Landroid/content/Intent;
 
@@ -302,7 +299,6 @@
 # virtual methods
 .method public finishOrNext(I)V
     .locals 3
-    .param p1    # I
 
     const-string v0, "WifiSetupActivity"
 
@@ -378,7 +374,6 @@
 
 .method protected isValidFragment(Ljava/lang/String;)Z
     .locals 1
-    .param p1    # Ljava/lang/String;
 
     const-class v0, Lcom/android/settings/wifi/WifiSettingsForSetupWizard;
 
@@ -411,9 +406,6 @@
 
 .method protected onApplyThemeResource(Landroid/content/res/Resources$Theme;IZ)V
     .locals 3
-    .param p1    # Landroid/content/res/Resources$Theme;
-    .param p2    # I
-    .param p3    # Z
 
     invoke-virtual {p0}, Lcom/android/settings/wifi/WifiSetupActivity;->getIntent()Landroid/content/Intent;
 
@@ -475,7 +467,6 @@
 
 .method protected onCreate(Landroid/os/Bundle;)V
     .locals 4
-    .param p1    # Landroid/os/Bundle;
 
     const/4 v1, 0x1
 
@@ -576,7 +567,6 @@
 
 .method public onNavigationBarCreated(Lcom/android/setupwizard/navigationbar/SetupWizardNavBar;)V
     .locals 4
-    .param p1    # Lcom/android/setupwizard/navigationbar/SetupWizardNavBar;
 
     const/4 v3, 0x0
 
@@ -626,7 +616,6 @@
 
 .method protected onRestoreInstanceState(Landroid/os/Bundle;)V
     .locals 2
-    .param p1    # Landroid/os/Bundle;
 
     invoke-super {p0, p1}, Lcom/android/settings/wifi/WifiPickerActivity;->onRestoreInstanceState(Landroid/os/Bundle;)V
 
@@ -661,7 +650,6 @@
 
 .method protected onSaveInstanceState(Landroid/os/Bundle;)V
     .locals 2
-    .param p1    # Landroid/os/Bundle;
 
     invoke-super {p0, p1}, Lcom/android/settings/wifi/WifiPickerActivity;->onSaveInstanceState(Landroid/os/Bundle;)V
 

@@ -36,8 +36,6 @@
 
 .method synthetic constructor <init>(Lcom/android/settings/notification/NotificationSettings;Lcom/android/settings/notification/NotificationSettings$1;)V
     .locals 0
-    .param p1    # Lcom/android/settings/notification/NotificationSettings;
-    .param p2    # Lcom/android/settings/notification/NotificationSettings$1;
 
     invoke-direct {p0, p1}, Lcom/android/settings/notification/NotificationSettings$VolumePreferenceCallback;-><init>(Lcom/android/settings/notification/NotificationSettings;)V
 
@@ -48,7 +46,6 @@
 # virtual methods
 .method public onSampleStarting(Landroid/preference/SeekBarVolumizer;)V
     .locals 4
-    .param p1    # Landroid/preference/SeekBarVolumizer;
 
     const/4 v1, 0x3
 
@@ -97,8 +94,6 @@
 
 .method public onStreamValueChanged(II)V
     .locals 3
-    .param p1    # I
-    .param p2    # I
 
     const/4 v2, 0x4
 

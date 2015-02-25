@@ -26,7 +26,6 @@
 
 .method static synthetic access$000(Lcom/android/settings/LocalePicker;)Ljava/util/Locale;
     .locals 1
-    .param p0    # Lcom/android/settings/LocalePicker;
 
     iget-object v0, p0, Lcom/android/settings/LocalePicker;->mTargetLocale:Ljava/util/Locale;
 
@@ -37,7 +36,6 @@
 # virtual methods
 .method public onCreate(Landroid/os/Bundle;)V
     .locals 2
-    .param p1    # Landroid/os/Bundle;
 
     invoke-super {p0, p1}, Lcom/android/internal/app/LocalePicker;->onCreate(Landroid/os/Bundle;)V
 
@@ -69,7 +67,6 @@
 
 .method public onCreateDialog(I)Landroid/app/Dialog;
     .locals 3
-    .param p1    # I
 
     invoke-virtual {p0}, Lcom/android/settings/LocalePicker;->getActivity()Landroid/app/Activity;
 
@@ -90,9 +87,6 @@
 
 .method public onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
     .locals 3
-    .param p1    # Landroid/view/LayoutInflater;
-    .param p2    # Landroid/view/ViewGroup;
-    .param p3    # Landroid/os/Bundle;
 
     invoke-super {p0, p1, p2, p3}, Lcom/android/internal/app/LocalePicker;->onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
 
@@ -115,7 +109,6 @@
 
 .method public onLocaleSelected(Ljava/util/Locale;)V
     .locals 1
-    .param p1    # Ljava/util/Locale;
 
     invoke-virtual {p0}, Lcom/android/settings/LocalePicker;->getActivity()Landroid/app/Activity;
 
@@ -150,7 +143,6 @@
 
 .method public onSaveInstanceState(Landroid/os/Bundle;)V
     .locals 2
-    .param p1    # Landroid/os/Bundle;
 
     invoke-super {p0, p1}, Lcom/android/internal/app/LocalePicker;->onSaveInstanceState(Landroid/os/Bundle;)V
 
@@ -174,7 +166,6 @@
 
 .method protected removeDialog(I)V
     .locals 1
-    .param p1    # I
 
     iget-object v0, p0, Lcom/android/settings/LocalePicker;->mDialogFragment:Lcom/android/settings/SettingsPreferenceFragment$SettingsDialogFragment;
 
@@ -202,7 +193,6 @@
 
 .method protected showDialog(I)V
     .locals 3
-    .param p1    # I
 
     iget-object v0, p0, Lcom/android/settings/LocalePicker;->mDialogFragment:Lcom/android/settings/SettingsPreferenceFragment$SettingsDialogFragment;
 

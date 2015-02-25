@@ -47,8 +47,6 @@
 
 .method private bindView(Landroid/view/View;Landroid/app/admin/DeviceAdminInfo;)V
     .locals 8
-    .param p1    # Landroid/view/View;
-    .param p2    # Landroid/app/admin/DeviceAdminInfo;
 
     iget-object v5, p0, Lcom/android/settings/DeviceAdminSettings$PolicyListAdapter;->this$0:Lcom/android/settings/DeviceAdminSettings;
 
@@ -162,7 +160,6 @@
 
 .method private isEnabled(Ljava/lang/Object;)Z
     .locals 4
-    .param p1    # Ljava/lang/Object;
 
     const/4 v1, 0x0
 
@@ -227,7 +224,6 @@
 
 .method private newDeviceAdminView(Landroid/view/ViewGroup;)Landroid/view/View;
     .locals 5
-    .param p1    # Landroid/view/ViewGroup;
 
     iget-object v2, p0, Lcom/android/settings/DeviceAdminSettings$PolicyListAdapter;->mInflater:Landroid/view/LayoutInflater;
 
@@ -290,7 +286,6 @@
 
 .method private newTitleView(Landroid/view/ViewGroup;)Landroid/view/View;
     .locals 7
-    .param p1    # Landroid/view/ViewGroup;
 
     const/4 v6, 0x0
 
@@ -387,7 +382,6 @@
 
 .method public getItem(I)Ljava/lang/Object;
     .locals 7
-    .param p1    # I
 
     if-gez p1, :cond_0
 
@@ -526,7 +520,6 @@
 
 .method public getItemId(I)J
     .locals 2
-    .param p1    # I
 
     int-to-long v0, p1
 
@@ -535,7 +528,6 @@
 
 .method public getItemViewType(I)I
     .locals 2
-    .param p1    # I
 
     invoke-virtual {p0, p1}, Lcom/android/settings/DeviceAdminSettings$PolicyListAdapter;->getItem(I)Ljava/lang/Object;
 
@@ -558,9 +550,6 @@
 
 .method public getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
     .locals 3
-    .param p1    # I
-    .param p2    # Landroid/view/View;
-    .param p3    # Landroid/view/ViewGroup;
 
     invoke-virtual {p0, p1}, Lcom/android/settings/DeviceAdminSettings$PolicyListAdapter;->getItem(I)Ljava/lang/Object;
 
@@ -625,7 +614,6 @@
 
 .method public isEnabled(I)Z
     .locals 2
-    .param p1    # I
 
     invoke-virtual {p0, p1}, Lcom/android/settings/DeviceAdminSettings$PolicyListAdapter;->getItem(I)Ljava/lang/Object;
 

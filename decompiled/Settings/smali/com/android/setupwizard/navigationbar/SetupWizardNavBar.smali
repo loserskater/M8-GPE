@@ -138,7 +138,6 @@
 
 .method public onAttach(Landroid/app/Activity;)V
     .locals 0
-    .param p1    # Landroid/app/Activity;
 
     invoke-super {p0, p1}, Landroid/app/Fragment;->onAttach(Landroid/app/Activity;)V
 
@@ -151,7 +150,6 @@
 
 .method public onClick(Landroid/view/View;)V
     .locals 1
-    .param p1    # Landroid/view/View;
 
     iget-object v0, p0, Lcom/android/setupwizard/navigationbar/SetupWizardNavBar;->mBackButton:Landroid/widget/Button;
 
@@ -179,9 +177,6 @@
 
 .method public onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
     .locals 3
-    .param p1    # Landroid/view/LayoutInflater;
-    .param p2    # Landroid/view/ViewGroup;
-    .param p3    # Landroid/os/Bundle;
 
     new-instance v0, Landroid/view/ContextThemeWrapper;
 
@@ -264,8 +259,6 @@
 
 .method public onViewCreated(Landroid/view/View;Landroid/os/Bundle;)V
     .locals 3
-    .param p1    # Landroid/view/View;
-    .param p2    # Landroid/os/Bundle;
 
     invoke-super {p0, p1, p2}, Landroid/app/Fragment;->onViewCreated(Landroid/view/View;Landroid/os/Bundle;)V
 
@@ -292,7 +285,6 @@
 
 .method public setUseImmersiveMode(Z)V
     .locals 0
-    .param p1    # Z
 
     invoke-virtual {p0, p1, p1}, Lcom/android/setupwizard/navigationbar/SetupWizardNavBar;->setUseImmersiveMode(ZZ)V
 
@@ -301,8 +293,6 @@
 
 .method public setUseImmersiveMode(ZZ)V
     .locals 2
-    .param p1    # Z
-    .param p2    # Z
 
     if-eqz p1, :cond_1
 

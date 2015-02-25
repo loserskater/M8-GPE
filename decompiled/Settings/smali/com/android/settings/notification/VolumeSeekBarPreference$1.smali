@@ -36,7 +36,6 @@
 # virtual methods
 .method public onSampleStarting(Landroid/preference/SeekBarVolumizer;)V
     .locals 1
-    .param p1    # Landroid/preference/SeekBarVolumizer;
 
     iget-object v0, p0, Lcom/android/settings/notification/VolumeSeekBarPreference$1;->this$0:Lcom/android/settings/notification/VolumeSeekBarPreference;
 

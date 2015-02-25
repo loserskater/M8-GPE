@@ -26,8 +26,6 @@
 # direct methods
 .method public constructor <init>(Lcom/android/settings/wfd/WifiDisplaySettings;Landroid/content/Context;Landroid/hardware/display/WifiDisplay;)V
     .locals 1
-    .param p2    # Landroid/content/Context;
-    .param p3    # Landroid/hardware/display/WifiDisplay;
 
     iput-object p1, p0, Lcom/android/settings/wfd/WifiDisplaySettings$UnpairedWifiDisplayPreference;->this$0:Lcom/android/settings/wfd/WifiDisplaySettings;
 
@@ -82,7 +80,6 @@
 # virtual methods
 .method public onPreferenceClick(Landroid/preference/Preference;)Z
     .locals 2
-    .param p1    # Landroid/preference/Preference;
 
     iget-object v0, p0, Lcom/android/settings/wfd/WifiDisplaySettings$UnpairedWifiDisplayPreference;->this$0:Lcom/android/settings/wfd/WifiDisplaySettings;
 

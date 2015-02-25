@@ -14,7 +14,6 @@
 # direct methods
 .method public constructor <init>(Landroid/app/Activity;)V
     .locals 1
-    .param p1    # Landroid/app/Activity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -31,8 +30,6 @@
 
 .method public constructor <init>(Landroid/app/Activity;Landroid/app/Fragment;)V
     .locals 0
-    .param p1    # Landroid/app/Activity;
-    .param p2    # Landroid/app/Fragment;
 
     invoke-direct {p0, p1}, Lcom/android/settings/ChooseLockSettingsHelper;-><init>(Landroid/app/Activity;)V
 
@@ -43,9 +40,6 @@
 
 .method private confirmPassword(ILjava/lang/CharSequence;Z)Z
     .locals 3
-    .param p1    # I
-    .param p2    # Ljava/lang/CharSequence;
-    .param p3    # Z
 
     iget-object v1, p0, Lcom/android/settings/ChooseLockSettingsHelper;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
 
@@ -114,10 +108,6 @@
 
 .method private confirmPattern(ILjava/lang/CharSequence;Ljava/lang/CharSequence;Z)Z
     .locals 3
-    .param p1    # I
-    .param p2    # Ljava/lang/CharSequence;
-    .param p3    # Ljava/lang/CharSequence;
-    .param p4    # Z
 
     iget-object v1, p0, Lcom/android/settings/ChooseLockSettingsHelper;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
 
@@ -201,9 +191,6 @@
 # virtual methods
 .method launchConfirmationActivity(ILjava/lang/CharSequence;Ljava/lang/CharSequence;)Z
     .locals 1
-    .param p1    # I
-    .param p2    # Ljava/lang/CharSequence;
-    .param p3    # Ljava/lang/CharSequence;
 
     const/4 v0, 0x0
 
@@ -216,10 +203,6 @@
 
 .method launchConfirmationActivity(ILjava/lang/CharSequence;Ljava/lang/CharSequence;Z)Z
     .locals 2
-    .param p1    # I
-    .param p2    # Ljava/lang/CharSequence;
-    .param p3    # Ljava/lang/CharSequence;
-    .param p4    # Z
 
     const/4 v0, 0x0
 

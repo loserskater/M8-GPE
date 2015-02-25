@@ -41,7 +41,6 @@
 
 .method static synthetic access$000(Lcom/android/settings/wifi/AdvancedWifiSettings;)V
     .locals 0
-    .param p0    # Lcom/android/settings/wifi/AdvancedWifiSettings;
 
     invoke-direct {p0}, Lcom/android/settings/wifi/AdvancedWifiSettings;->refreshWifiInfo()V
 
@@ -560,8 +559,6 @@
 
 .method private updateFrequencyBandSummary(Landroid/preference/Preference;I)V
     .locals 3
-    .param p1    # Landroid/preference/Preference;
-    .param p2    # I
 
     invoke-virtual {p0}, Lcom/android/settings/wifi/AdvancedWifiSettings;->getResources()Landroid/content/res/Resources;
 
@@ -582,8 +579,6 @@
 
 .method private updateSleepPolicySummary(Landroid/preference/Preference;Ljava/lang/String;)V
     .locals 7
-    .param p1    # Landroid/preference/Preference;
-    .param p2    # Ljava/lang/String;
 
     if-eqz p2, :cond_2
 
@@ -688,7 +683,6 @@
 # virtual methods
 .method public onActivityCreated(Landroid/os/Bundle;)V
     .locals 2
-    .param p1    # Landroid/os/Bundle;
 
     invoke-super {p0, p1}, Lcom/android/settings/SettingsPreferenceFragment;->onActivityCreated(Landroid/os/Bundle;)V
 
@@ -735,7 +729,6 @@
 
 .method public onCreate(Landroid/os/Bundle;)V
     .locals 1
-    .param p1    # Landroid/os/Bundle;
 
     invoke-super {p0, p1}, Lcom/android/settings/SettingsPreferenceFragment;->onCreate(Landroid/os/Bundle;)V
 
@@ -764,8 +757,6 @@
 
 .method public onPreferenceChange(Landroid/preference/Preference;Ljava/lang/Object;)Z
     .locals 13
-    .param p1    # Landroid/preference/Preference;
-    .param p2    # Ljava/lang/Object;
 
     const/4 v10, 0x1
 
@@ -946,8 +937,6 @@
 
 .method public onPreferenceTreeClick(Landroid/preference/PreferenceScreen;Landroid/preference/Preference;)Z
     .locals 6
-    .param p1    # Landroid/preference/PreferenceScreen;
-    .param p2    # Landroid/preference/Preference;
 
     const/4 v1, 0x0
 

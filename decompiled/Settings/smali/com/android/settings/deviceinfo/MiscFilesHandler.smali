@@ -33,7 +33,6 @@
 
 .method static synthetic access$000(Lcom/android/settings/deviceinfo/MiscFilesHandler;)Lcom/android/settings/deviceinfo/MiscFilesHandler$MemoryMearurementAdapter;
     .locals 1
-    .param p0    # Lcom/android/settings/deviceinfo/MiscFilesHandler;
 
     iget-object v0, p0, Lcom/android/settings/deviceinfo/MiscFilesHandler;->mAdapter:Lcom/android/settings/deviceinfo/MiscFilesHandler$MemoryMearurementAdapter;
 
@@ -42,7 +41,6 @@
 
 .method static synthetic access$100(Lcom/android/settings/deviceinfo/MiscFilesHandler;)Ljava/lang/String;
     .locals 1
-    .param p0    # Lcom/android/settings/deviceinfo/MiscFilesHandler;
 
     iget-object v0, p0, Lcom/android/settings/deviceinfo/MiscFilesHandler;->mNumSelectedFormat:Ljava/lang/String;
 
@@ -51,7 +49,6 @@
 
 .method static synthetic access$200(Lcom/android/settings/deviceinfo/MiscFilesHandler;)Ljava/lang/String;
     .locals 1
-    .param p0    # Lcom/android/settings/deviceinfo/MiscFilesHandler;
 
     iget-object v0, p0, Lcom/android/settings/deviceinfo/MiscFilesHandler;->mNumBytesSelectedFormat:Ljava/lang/String;
 
@@ -60,7 +57,6 @@
 
 .method static synthetic access$300(Lcom/android/settings/deviceinfo/MiscFilesHandler;)Landroid/view/LayoutInflater;
     .locals 1
-    .param p0    # Lcom/android/settings/deviceinfo/MiscFilesHandler;
 
     iget-object v0, p0, Lcom/android/settings/deviceinfo/MiscFilesHandler;->mInflater:Landroid/view/LayoutInflater;
 
@@ -71,7 +67,6 @@
 # virtual methods
 .method public onCreate(Landroid/os/Bundle;)V
     .locals 3
-    .param p1    # Landroid/os/Bundle;
 
     const/4 v2, 0x1
 

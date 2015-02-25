@@ -23,8 +23,6 @@
 # direct methods
 .method public constructor <init>(Lcom/android/settings/ApnSettings;Landroid/os/Looper;Landroid/os/Handler;)V
     .locals 0
-    .param p2    # Landroid/os/Looper;
-    .param p3    # Landroid/os/Handler;
 
     iput-object p1, p0, Lcom/android/settings/ApnSettings$RestoreApnProcessHandler;->this$0:Lcom/android/settings/ApnSettings;
 
@@ -39,7 +37,6 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 3
-    .param p1    # Landroid/os/Message;
 
     const/4 v2, 0x0
 

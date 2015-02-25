@@ -34,8 +34,6 @@
 
 .method public static constructTimezoneAdapter(Landroid/content/Context;Z)Landroid/widget/SimpleAdapter;
     .locals 1
-    .param p0    # Landroid/content/Context;
-    .param p1    # Z
 
     const v0, 0x7f04003e
 
@@ -48,9 +46,6 @@
 
 .method public static constructTimezoneAdapter(Landroid/content/Context;ZI)Landroid/widget/SimpleAdapter;
     .locals 10
-    .param p0    # Landroid/content/Context;
-    .param p1    # Z
-    .param p2    # I
 
     const/4 v9, 0x2
 
@@ -116,8 +111,6 @@
 
 .method public static getTimeZoneIndex(Landroid/widget/SimpleAdapter;Ljava/util/TimeZone;)I
     .locals 6
-    .param p0    # Landroid/widget/SimpleAdapter;
-    .param p1    # Ljava/util/TimeZone;
 
     invoke-virtual {p1}, Ljava/util/TimeZone;->getID()Ljava/lang/String;
 
@@ -168,7 +161,6 @@
 
 .method public static obtainTimeZoneFromItem(Ljava/lang/Object;)Ljava/util/TimeZone;
     .locals 1
-    .param p0    # Ljava/lang/Object;
 
     check-cast p0, Ljava/util/Map;
 
@@ -189,7 +181,6 @@
 
 .method private setSorting(Z)V
     .locals 3
-    .param p1    # Z
 
     if-eqz p1, :cond_1
 
@@ -225,7 +216,6 @@
 # virtual methods
 .method public onActivityCreated(Landroid/os/Bundle;)V
     .locals 3
-    .param p1    # Landroid/os/Bundle;
 
     const/4 v2, 0x1
 
@@ -258,8 +248,6 @@
 
 .method public onCreateOptionsMenu(Landroid/view/Menu;Landroid/view/MenuInflater;)V
     .locals 3
-    .param p1    # Landroid/view/Menu;
-    .param p2    # Landroid/view/MenuInflater;
 
     const/4 v2, 0x0
 
@@ -294,9 +282,6 @@
 
 .method public onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
     .locals 3
-    .param p1    # Landroid/view/LayoutInflater;
-    .param p2    # Landroid/view/ViewGroup;
-    .param p3    # Landroid/os/Bundle;
 
     invoke-super {p0, p1, p2, p3}, Landroid/app/ListFragment;->onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
 
@@ -319,10 +304,6 @@
 
 .method public onListItemClick(Landroid/widget/ListView;Landroid/view/View;IJ)V
     .locals 6
-    .param p1    # Landroid/widget/ListView;
-    .param p2    # Landroid/view/View;
-    .param p3    # I
-    .param p4    # J
 
     invoke-virtual {p0}, Lcom/android/settings/ZonePicker;->isResumed()Z
 
@@ -388,7 +369,6 @@
 
 .method public onOptionsItemSelected(Landroid/view/MenuItem;)Z
     .locals 3
-    .param p1    # Landroid/view/MenuItem;
 
     const/4 v1, 0x0
 
@@ -426,7 +406,6 @@
 
 .method public onPrepareOptionsMenu(Landroid/view/Menu;)V
     .locals 4
-    .param p1    # Landroid/view/Menu;
 
     const/4 v3, 0x2
 

@@ -40,7 +40,6 @@
 
 .method public static getEnabledListenersCount(Landroid/content/Context;)I
     .locals 1
-    .param p0    # Landroid/content/Context;
 
     sget-object v0, Lcom/android/settings/notification/NotificationAccessSettings;->CONFIG:Lcom/android/settings/notification/ManagedServiceSettings$Config;
 
@@ -53,7 +52,6 @@
 
 .method public static getListenersCount(Landroid/content/pm/PackageManager;)I
     .locals 1
-    .param p0    # Landroid/content/pm/PackageManager;
 
     sget-object v0, Lcom/android/settings/notification/NotificationAccessSettings;->CONFIG:Lcom/android/settings/notification/ManagedServiceSettings$Config;
 

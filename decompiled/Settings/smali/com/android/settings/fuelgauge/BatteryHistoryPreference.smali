@@ -18,9 +18,6 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/os/BatteryStats;Landroid/content/Intent;)V
     .locals 1
-    .param p1    # Landroid/content/Context;
-    .param p2    # Landroid/os/BatteryStats;
-    .param p3    # Landroid/content/Intent;
 
     invoke-direct {p0, p1}, Landroid/preference/Preference;-><init>(Landroid/content/Context;)V
 
@@ -39,7 +36,6 @@
 # virtual methods
 .method protected onBindView(Landroid/view/View;)V
     .locals 5
-    .param p1    # Landroid/view/View;
 
     invoke-super {p0, p1}, Landroid/preference/Preference;->onBindView(Landroid/view/View;)V
 
@@ -133,7 +129,6 @@
 
 .method public setHideLabels(Z)V
     .locals 2
-    .param p1    # Z
 
     iget-boolean v0, p0, Lcom/android/settings/fuelgauge/BatteryHistoryPreference;->mHideLabels:Z
 

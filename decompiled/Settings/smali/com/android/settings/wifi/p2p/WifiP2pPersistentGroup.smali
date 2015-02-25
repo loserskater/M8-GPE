@@ -10,8 +10,6 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/net/wifi/p2p/WifiP2pGroup;)V
     .locals 0
-    .param p1    # Landroid/content/Context;
-    .param p2    # Landroid/net/wifi/p2p/WifiP2pGroup;
 
     invoke-direct {p0, p1}, Landroid/preference/Preference;-><init>(Landroid/content/Context;)V
 
@@ -48,7 +46,6 @@
 
 .method protected onBindView(Landroid/view/View;)V
     .locals 1
-    .param p1    # Landroid/view/View;
 
     iget-object v0, p0, Lcom/android/settings/wifi/p2p/WifiP2pPersistentGroup;->mGroup:Landroid/net/wifi/p2p/WifiP2pGroup;
 

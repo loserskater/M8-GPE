@@ -103,7 +103,6 @@
 
 .method static synthetic access$000(Lcom/android/settings/TetherSettings;)Ljava/util/concurrent/atomic/AtomicReference;
     .locals 1
-    .param p0    # Lcom/android/settings/TetherSettings;
 
     iget-object v0, p0, Lcom/android/settings/TetherSettings;->mBluetoothPan:Ljava/util/concurrent/atomic/AtomicReference;
 
@@ -112,10 +111,6 @@
 
 .method static synthetic access$100(Lcom/android/settings/TetherSettings;[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;)V
     .locals 0
-    .param p0    # Lcom/android/settings/TetherSettings;
-    .param p1    # [Ljava/lang/String;
-    .param p2    # [Ljava/lang/String;
-    .param p3    # [Ljava/lang/String;
 
     invoke-direct {p0, p1, p2, p3}, Lcom/android/settings/TetherSettings;->updateState([Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;)V
 
@@ -124,8 +119,6 @@
 
 .method static synthetic access$202(Lcom/android/settings/TetherSettings;Z)Z
     .locals 0
-    .param p0    # Lcom/android/settings/TetherSettings;
-    .param p1    # Z
 
     iput-boolean p1, p0, Lcom/android/settings/TetherSettings;->mMassStorageActive:Z
 
@@ -134,7 +127,6 @@
 
 .method static synthetic access$300(Lcom/android/settings/TetherSettings;)V
     .locals 0
-    .param p0    # Lcom/android/settings/TetherSettings;
 
     invoke-direct {p0}, Lcom/android/settings/TetherSettings;->updateState()V
 
@@ -143,8 +135,6 @@
 
 .method static synthetic access$402(Lcom/android/settings/TetherSettings;Z)Z
     .locals 0
-    .param p0    # Lcom/android/settings/TetherSettings;
-    .param p1    # Z
 
     iput-boolean p1, p0, Lcom/android/settings/TetherSettings;->mUsbConnected:Z
 
@@ -153,7 +143,6 @@
 
 .method static synthetic access$500(Lcom/android/settings/TetherSettings;)Z
     .locals 1
-    .param p0    # Lcom/android/settings/TetherSettings;
 
     iget-boolean v0, p0, Lcom/android/settings/TetherSettings;->mBluetoothEnableForTether:Z
 
@@ -162,8 +151,6 @@
 
 .method static synthetic access$502(Lcom/android/settings/TetherSettings;Z)Z
     .locals 0
-    .param p0    # Lcom/android/settings/TetherSettings;
-    .param p1    # Z
 
     iput-boolean p1, p0, Lcom/android/settings/TetherSettings;->mBluetoothEnableForTether:Z
 
@@ -172,8 +159,6 @@
 
 .method private static findIface([Ljava/lang/String;[Ljava/lang/String;)Ljava/lang/String;
     .locals 9
-    .param p0    # [Ljava/lang/String;
-    .param p1    # [Ljava/lang/String;
 
     move-object v0, p0
 
@@ -352,8 +337,6 @@
 
 .method private static isIntentAvailable(Landroid/content/Context;[Ljava/lang/String;)Z
     .locals 6
-    .param p0    # Landroid/content/Context;
-    .param p1    # [Ljava/lang/String;
 
     const/4 v2, 0x1
 
@@ -413,7 +396,6 @@
 
 .method private static isProvisioningNeeded([Ljava/lang/String;)Z
     .locals 3
-    .param p0    # [Ljava/lang/String;
 
     const/4 v0, 0x0
 
@@ -445,7 +427,6 @@
 
 .method public static isProvisioningNeededButUnavailable(Landroid/content/Context;)Z
     .locals 3
-    .param p0    # Landroid/content/Context;
 
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -482,7 +463,6 @@
 
 .method private setUsbTethering(Z)V
     .locals 3
-    .param p1    # Z
 
     const-string v1, "connectivity"
 
@@ -525,7 +505,6 @@
 
 .method public static showInShortcuts(Landroid/content/Context;)Z
     .locals 5
-    .param p0    # Landroid/content/Context;
 
     const/4 v2, 0x1
 
@@ -572,7 +551,6 @@
 
 .method private startProvisioningIfNecessary(I)V
     .locals 5
-    .param p1    # I
 
     const/4 v4, 0x0
 
@@ -710,9 +688,6 @@
 
 .method private updateBluetoothState([Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;)V
     .locals 21
-    .param p1    # [Ljava/lang/String;
-    .param p2    # [Ljava/lang/String;
-    .param p3    # [Ljava/lang/String;
 
     const/4 v6, 0x0
 
@@ -1048,9 +1023,6 @@
 
 .method private updateState([Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;)V
     .locals 0
-    .param p1    # [Ljava/lang/String;
-    .param p2    # [Ljava/lang/String;
-    .param p3    # [Ljava/lang/String;
 
     invoke-direct {p0, p1, p2, p3}, Lcom/android/settings/TetherSettings;->updateUsbState([Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;)V
 
@@ -1061,9 +1033,6 @@
 
 .method private updateUsbState([Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;)V
     .locals 15
-    .param p1    # [Ljava/lang/String;
-    .param p2    # [Ljava/lang/String;
-    .param p3    # [Ljava/lang/String;
 
     const-string v13, "connectivity"
 
@@ -1374,9 +1343,6 @@
 
 .method public onActivityResult(IILandroid/content/Intent;)V
     .locals 3
-    .param p1    # I
-    .param p2    # I
-    .param p3    # Landroid/content/Intent;
 
     const/4 v2, 0x0
 
@@ -1429,8 +1395,6 @@
 
 .method public onClick(Landroid/content/DialogInterface;I)V
     .locals 7
-    .param p1    # Landroid/content/DialogInterface;
-    .param p2    # I
 
     const/4 v6, 0x1
 
@@ -1530,7 +1494,6 @@
 
 .method public onCreate(Landroid/os/Bundle;)V
     .locals 13
-    .param p1    # Landroid/os/Bundle;
 
     const/4 v10, 0x0
 
@@ -1834,7 +1797,6 @@
 
 .method public onCreateDialog(I)Landroid/app/Dialog;
     .locals 3
-    .param p1    # I
 
     const/4 v1, 0x1
 
@@ -1865,8 +1827,6 @@
 
 .method public onPreferenceChange(Landroid/preference/Preference;Ljava/lang/Object;)Z
     .locals 3
-    .param p1    # Landroid/preference/Preference;
-    .param p2    # Ljava/lang/Object;
 
     const/4 v2, 0x0
 
@@ -1893,8 +1853,6 @@
 
 .method public onPreferenceTreeClick(Landroid/preference/PreferenceScreen;Landroid/preference/Preference;)Z
     .locals 9
-    .param p1    # Landroid/preference/PreferenceScreen;
-    .param p2    # Landroid/preference/Preference;
 
     const/4 v8, 0x1
 
@@ -2022,7 +1980,6 @@
 
 .method public onSaveInstanceState(Landroid/os/Bundle;)V
     .locals 2
-    .param p1    # Landroid/os/Bundle;
 
     const-string v0, "TETHER_TYPE"
 

@@ -25,10 +25,6 @@
 # direct methods
 .method constructor <init>(Landroid/text/TextPaint;ILjava/util/Calendar;Z)V
     .locals 3
-    .param p1    # Landroid/text/TextPaint;
-    .param p2    # I
-    .param p3    # Ljava/util/Calendar;
-    .param p4    # Z
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 

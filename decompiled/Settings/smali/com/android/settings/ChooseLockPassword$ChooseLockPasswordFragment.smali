@@ -298,8 +298,6 @@
 
 .method private showError(Ljava/lang/String;Lcom/android/settings/ChooseLockPassword$ChooseLockPasswordFragment$Stage;)V
     .locals 4
-    .param p1    # Ljava/lang/String;
-    .param p2    # Lcom/android/settings/ChooseLockPassword$ChooseLockPasswordFragment$Stage;
 
     const/4 v3, 0x1
 
@@ -484,7 +482,6 @@
 
 .method private validatePassword(Ljava/lang/String;)Ljava/lang/String;
     .locals 16
-    .param p1    # Ljava/lang/String;
 
     invoke-virtual/range {p1 .. p1}, Ljava/lang/String;->length()I
 
@@ -1124,7 +1121,6 @@
 # virtual methods
 .method public afterTextChanged(Landroid/text/Editable;)V
     .locals 2
-    .param p1    # Landroid/text/Editable;
 
     iget-object v0, p0, Lcom/android/settings/ChooseLockPassword$ChooseLockPasswordFragment;->mUiStage:Lcom/android/settings/ChooseLockPassword$ChooseLockPasswordFragment$Stage;
 
@@ -1144,19 +1140,12 @@
 
 .method public beforeTextChanged(Ljava/lang/CharSequence;III)V
     .locals 0
-    .param p1    # Ljava/lang/CharSequence;
-    .param p2    # I
-    .param p3    # I
-    .param p4    # I
 
     return-void
 .end method
 
 .method public onActivityResult(IILandroid/content/Intent;)V
     .locals 2
-    .param p1    # I
-    .param p2    # I
-    .param p3    # Landroid/content/Intent;
 
     invoke-super {p0, p1, p2, p3}, Landroid/app/Fragment;->onActivityResult(IILandroid/content/Intent;)V
 
@@ -1195,7 +1184,6 @@
 
 .method public onClick(Landroid/view/View;)V
     .locals 1
-    .param p1    # Landroid/view/View;
 
     invoke-virtual {p1}, Landroid/view/View;->getId()I
 
@@ -1229,7 +1217,6 @@
 
 .method public onCreate(Landroid/os/Bundle;)V
     .locals 3
-    .param p1    # Landroid/os/Bundle;
 
     invoke-super {p0, p1}, Landroid/app/Fragment;->onCreate(Landroid/os/Bundle;)V
 
@@ -1453,9 +1440,6 @@
 
 .method public onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
     .locals 14
-    .param p1    # Landroid/view/LayoutInflater;
-    .param p2    # Landroid/view/ViewGroup;
-    .param p3    # Landroid/os/Bundle;
 
     const v10, 0x7f04001b
 
@@ -1719,9 +1703,6 @@
 
 .method public onEditorAction(Landroid/widget/TextView;ILandroid/view/KeyEvent;)Z
     .locals 1
-    .param p1    # Landroid/widget/TextView;
-    .param p2    # I
-    .param p3    # Landroid/view/KeyEvent;
 
     if-eqz p2, :cond_0
 
@@ -1779,7 +1760,6 @@
 
 .method public onSaveInstanceState(Landroid/os/Bundle;)V
     .locals 2
-    .param p1    # Landroid/os/Bundle;
 
     invoke-super {p0, p1}, Landroid/app/Fragment;->onSaveInstanceState(Landroid/os/Bundle;)V
 
@@ -1804,17 +1784,12 @@
 
 .method public onTextChanged(Ljava/lang/CharSequence;III)V
     .locals 0
-    .param p1    # Ljava/lang/CharSequence;
-    .param p2    # I
-    .param p3    # I
-    .param p4    # I
 
     return-void
 .end method
 
 .method protected updateStage(Lcom/android/settings/ChooseLockPassword$ChooseLockPasswordFragment$Stage;)V
     .locals 3
-    .param p1    # Lcom/android/settings/ChooseLockPassword$ChooseLockPasswordFragment$Stage;
 
     iget-object v0, p0, Lcom/android/settings/ChooseLockPassword$ChooseLockPasswordFragment;->mUiStage:Lcom/android/settings/ChooseLockPassword$ChooseLockPasswordFragment$Stage;
 

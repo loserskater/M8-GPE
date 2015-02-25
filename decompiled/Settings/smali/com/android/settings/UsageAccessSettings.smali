@@ -109,8 +109,6 @@
 
 .method static synthetic access$202(Lcom/android/settings/UsageAccessSettings;Lcom/android/settings/UsageAccessSettings$AppsRequestingAccessFetcher;)Lcom/android/settings/UsageAccessSettings$AppsRequestingAccessFetcher;
     .locals 0
-    .param p0    # Lcom/android/settings/UsageAccessSettings;
-    .param p1    # Lcom/android/settings/UsageAccessSettings$AppsRequestingAccessFetcher;
 
     iput-object p1, p0, Lcom/android/settings/UsageAccessSettings;->mLastFetcherTask:Lcom/android/settings/UsageAccessSettings$AppsRequestingAccessFetcher;
 
@@ -119,7 +117,6 @@
 
 .method static synthetic access$300(Lcom/android/settings/UsageAccessSettings;)V
     .locals 0
-    .param p0    # Lcom/android/settings/UsageAccessSettings;
 
     invoke-direct {p0}, Lcom/android/settings/UsageAccessSettings;->updateInterestedApps()V
 
@@ -128,7 +125,6 @@
 
 .method static shouldIgnorePackage(Ljava/lang/String;)Z
     .locals 1
-    .param p0    # Ljava/lang/String;
 
     const-string v0, "android"
 
@@ -197,7 +193,6 @@
 # virtual methods
 .method allowAccess(Ljava/lang/String;)V
     .locals 4
-    .param p1    # Ljava/lang/String;
 
     iget-object v1, p0, Lcom/android/settings/UsageAccessSettings;->mPackageEntryMap:Landroid/util/ArrayMap;
 
@@ -256,7 +251,6 @@
 
 .method public onCreate(Landroid/os/Bundle;)V
     .locals 2
-    .param p1    # Landroid/os/Bundle;
 
     invoke-super {p0, p1}, Lcom/android/settings/SettingsPreferenceFragment;->onCreate(Landroid/os/Bundle;)V
 
@@ -318,8 +312,6 @@
 
 .method public onPreferenceChange(Landroid/preference/Preference;Ljava/lang/Object;)Z
     .locals 9
-    .param p1    # Landroid/preference/Preference;
-    .param p2    # Ljava/lang/Object;
 
     const/4 v6, 0x1
 
@@ -514,8 +506,6 @@
 
 .method setNewMode(Lcom/android/settings/UsageAccessSettings$PackageEntry;I)V
     .locals 4
-    .param p1    # Lcom/android/settings/UsageAccessSettings$PackageEntry;
-    .param p2    # I
 
     iget-object v0, p0, Lcom/android/settings/UsageAccessSettings;->mAppOpsManager:Landroid/app/AppOpsManager;
 

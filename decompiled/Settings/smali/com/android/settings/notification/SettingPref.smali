@@ -24,11 +24,6 @@
 # direct methods
 .method public varargs constructor <init>(ILjava/lang/String;Ljava/lang/String;I[I)V
     .locals 2
-    .param p1    # I
-    .param p2    # Ljava/lang/String;
-    .param p3    # Ljava/lang/String;
-    .param p4    # I
-    .param p5    # [I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -57,10 +52,6 @@
 
 .method protected static getInt(ILandroid/content/ContentResolver;Ljava/lang/String;I)I
     .locals 1
-    .param p0    # I
-    .param p1    # Landroid/content/ContentResolver;
-    .param p2    # Ljava/lang/String;
-    .param p3    # I
 
     packed-switch p0, :pswitch_data_0
 
@@ -96,8 +87,6 @@
 
 .method private static getUriFor(ILjava/lang/String;)Landroid/net/Uri;
     .locals 1
-    .param p0    # I
-    .param p1    # Ljava/lang/String;
 
     packed-switch p0, :pswitch_data_0
 
@@ -133,10 +122,6 @@
 
 .method protected static putInt(ILandroid/content/ContentResolver;Ljava/lang/String;I)Z
     .locals 1
-    .param p0    # I
-    .param p1    # Landroid/content/ContentResolver;
-    .param p2    # Ljava/lang/String;
-    .param p3    # I
 
     packed-switch p0, :pswitch_data_0
 
@@ -174,8 +159,6 @@
 # virtual methods
 .method protected getCaption(Landroid/content/res/Resources;I)Ljava/lang/String;
     .locals 1
-    .param p1    # Landroid/content/res/Resources;
-    .param p2    # I
 
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
@@ -202,7 +185,6 @@
 
 .method public init(Lcom/android/settings/SettingsPreferenceFragment;)Landroid/preference/Preference;
     .locals 9
-    .param p1    # Lcom/android/settings/SettingsPreferenceFragment;
 
     invoke-virtual {p1}, Lcom/android/settings/SettingsPreferenceFragment;->getActivity()Landroid/app/Activity;
 
@@ -330,7 +312,6 @@
 
 .method public isApplicable(Landroid/content/Context;)Z
     .locals 1
-    .param p1    # Landroid/content/Context;
 
     const/4 v0, 0x1
 
@@ -339,8 +320,6 @@
 
 .method protected setSetting(Landroid/content/Context;I)Z
     .locals 3
-    .param p1    # Landroid/content/Context;
-    .param p2    # I
 
     iget v0, p0, Lcom/android/settings/notification/SettingPref;->mType:I
 
@@ -359,7 +338,6 @@
 
 .method public update(Landroid/content/Context;)V
     .locals 5
-    .param p1    # Landroid/content/Context;
 
     iget v1, p0, Lcom/android/settings/notification/SettingPref;->mType:I
 

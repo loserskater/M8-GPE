@@ -71,7 +71,6 @@
 
 .method static synthetic access$100(Lcom/android/settings/accounts/AccountSettings;)Landroid/os/UserManager;
     .locals 1
-    .param p0    # Lcom/android/settings/accounts/AccountSettings;
 
     iget-object v0, p0, Lcom/android/settings/accounts/AccountSettings;->mUm:Landroid/os/UserManager;
 
@@ -80,7 +79,6 @@
 
 .method static synthetic access$400(Lcom/android/settings/accounts/AccountSettings;)V
     .locals 0
-    .param p0    # Lcom/android/settings/accounts/AccountSettings;
 
     invoke-direct {p0}, Lcom/android/settings/accounts/AccountSettings;->stopListeningToAccountUpdates()V
 
@@ -89,7 +87,6 @@
 
 .method static synthetic access$500(Lcom/android/settings/accounts/AccountSettings;)V
     .locals 0
-    .param p0    # Lcom/android/settings/accounts/AccountSettings;
 
     invoke-direct {p0}, Lcom/android/settings/accounts/AccountSettings;->cleanUpPreferences()V
 
@@ -98,7 +95,6 @@
 
 .method static synthetic access$600(Lcom/android/settings/accounts/AccountSettings;)V
     .locals 0
-    .param p0    # Lcom/android/settings/accounts/AccountSettings;
 
     invoke-direct {p0}, Lcom/android/settings/accounts/AccountSettings;->listenToAccountUpdates()V
 
@@ -107,8 +103,6 @@
 
 .method private accountTypeHasAnyRequestedAuthorities(Lcom/android/settings/accounts/AuthenticatorHelper;Ljava/lang/String;)Z
     .locals 6
-    .param p1    # Lcom/android/settings/accounts/AuthenticatorHelper;
-    .param p2    # Ljava/lang/String;
 
     const/4 v2, 0x1
 
@@ -204,8 +198,6 @@
 
 .method private getAccountTypePreferences(Lcom/android/settings/accounts/AuthenticatorHelper;Landroid/os/UserHandle;)Ljava/util/ArrayList;
     .locals 13
-    .param p1    # Lcom/android/settings/accounts/AuthenticatorHelper;
-    .param p2    # Landroid/os/UserHandle;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -444,7 +436,6 @@
 
 .method private newAddAccountPreference(Landroid/content/Context;)Landroid/preference/Preference;
     .locals 2
-    .param p1    # Landroid/content/Context;
 
     new-instance v0, Landroid/preference/Preference;
 
@@ -469,7 +460,6 @@
 
 .method private newRemoveWorkProfilePreference(Landroid/content/Context;)Landroid/preference/Preference;
     .locals 2
-    .param p1    # Landroid/content/Context;
 
     new-instance v0, Landroid/preference/Preference;
 
@@ -531,7 +521,6 @@
 
 .method private updateAccountTypes(Lcom/android/settings/accounts/AccountSettings$ProfileData;)V
     .locals 5
-    .param p1    # Lcom/android/settings/accounts/AccountSettings$ProfileData;
 
     iget-object v3, p1, Lcom/android/settings/accounts/AccountSettings$ProfileData;->preferenceGroup:Landroid/preference/PreferenceGroup;
 
@@ -642,9 +631,6 @@
 
 .method private updateProfileUi(Landroid/content/pm/UserInfo;ZLandroid/preference/PreferenceScreen;)V
     .locals 5
-    .param p1    # Landroid/content/pm/UserInfo;
-    .param p2    # Z
-    .param p3    # Landroid/preference/PreferenceScreen;
 
     invoke-virtual {p0}, Lcom/android/settings/accounts/AccountSettings;->getActivity()Landroid/app/Activity;
 
@@ -759,7 +745,6 @@
 # virtual methods
 .method public onAccountsUpdate(Landroid/os/UserHandle;)V
     .locals 4
-    .param p1    # Landroid/os/UserHandle;
 
     iget-object v1, p0, Lcom/android/settings/accounts/AccountSettings;->mProfiles:Landroid/util/SparseArray;
 
@@ -812,7 +797,6 @@
 
 .method public onCreate(Landroid/os/Bundle;)V
     .locals 2
-    .param p1    # Landroid/os/Bundle;
 
     invoke-super {p0, p1}, Lcom/android/settings/SettingsPreferenceFragment;->onCreate(Landroid/os/Bundle;)V
 
@@ -872,8 +856,6 @@
 
 .method public onCreateOptionsMenu(Landroid/view/Menu;Landroid/view/MenuInflater;)V
     .locals 1
-    .param p1    # Landroid/view/Menu;
-    .param p2    # Landroid/view/MenuInflater;
 
     const/high16 v0, 0x7f100000
 
@@ -906,7 +888,6 @@
 
 .method public onPreferenceClick(Landroid/preference/Preference;)Z
     .locals 8
-    .param p1    # Landroid/preference/Preference;
 
     const/4 v5, 0x1
 
@@ -998,7 +979,6 @@
 
 .method public onPrepareOptionsMenu(Landroid/view/Menu;)V
     .locals 9
-    .param p1    # Landroid/view/Menu;
 
     const v8, 0x7f0e025f
 

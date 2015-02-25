@@ -126,7 +126,6 @@
 
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 1
-    .param p1    # Landroid/content/Context;
 
     const/4 v0, 0x0
 
@@ -137,8 +136,6 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 11
-    .param p1    # Landroid/content/Context;
-    .param p2    # Landroid/util/AttributeSet;
 
     const/4 v10, 0x2
 
@@ -150,7 +147,7 @@
 
     iput v7, p0, Landroid/support/v4/view/PagerTitleStrip;->mLastKnownCurrentPage:I
 
-    const/high16 v7, -0x40800000
+    const/high16 v7, -0x40800000    # -1.0f
 
     iput v7, p0, Landroid/support/v4/view/PagerTitleStrip;->mLastKnownPositionOffset:F
 
@@ -271,7 +268,7 @@
 
     iput v7, p0, Landroid/support/v4/view/PagerTitleStrip;->mTextColor:I
 
-    const v7, 0x3f19999a
+    const v7, 0x3f19999a    # 0.6f
 
     invoke-virtual {p0, v7}, Landroid/support/v4/view/PagerTitleStrip;->setNonPrimaryAlpha(F)V
 
@@ -335,7 +332,7 @@
 
     iget v2, v7, Landroid/util/DisplayMetrics;->density:F
 
-    const/high16 v7, 0x41800000
+    const/high16 v7, 0x41800000    # 16.0f
 
     mul-float/2addr v7, v2
 
@@ -363,7 +360,6 @@
 
 .method static synthetic access$100(Landroid/support/v4/view/PagerTitleStrip;)F
     .locals 1
-    .param p0    # Landroid/support/v4/view/PagerTitleStrip;
 
     iget v0, p0, Landroid/support/v4/view/PagerTitleStrip;->mLastKnownPositionOffset:F
 
@@ -372,7 +368,6 @@
 
 .method private static setSingleLineAllCaps(Landroid/widget/TextView;)V
     .locals 1
-    .param p0    # Landroid/widget/TextView;
 
     sget-object v0, Landroid/support/v4/view/PagerTitleStrip;->IMPL:Landroid/support/v4/view/PagerTitleStrip$PagerTitleStripImpl;
 
@@ -508,11 +503,6 @@
 
 .method protected onLayout(ZIIII)V
     .locals 3
-    .param p1    # Z
-    .param p2    # I
-    .param p3    # I
-    .param p4    # I
-    .param p5    # I
 
     const/4 v0, 0x0
 
@@ -541,8 +531,6 @@
 
 .method protected onMeasure(II)V
     .locals 12
-    .param p1    # I
-    .param p2    # I
 
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getMode(I)I
 
@@ -560,7 +548,7 @@
 
     move-result v4
 
-    const/high16 v10, 0x40000000
+    const/high16 v10, 0x40000000    # 2.0f
 
     if-eq v8, v10, :cond_0
 
@@ -595,7 +583,7 @@
 
     int-to-float v10, v9
 
-    const v11, 0x3f4ccccd
+    const v11, 0x3f4ccccd    # 0.8f
 
     mul-float/2addr v10, v11
 
@@ -625,7 +613,7 @@
 
     invoke-virtual {v10, v2, v1}, Landroid/widget/TextView;->measure(II)V
 
-    const/high16 v10, 0x40000000
+    const/high16 v10, 0x40000000    # 2.0f
 
     if-ne v3, v10, :cond_1
 
@@ -667,9 +655,8 @@
 
 .method public setNonPrimaryAlpha(F)V
     .locals 4
-    .param p1    # F
 
-    const/high16 v1, 0x437f0000
+    const/high16 v1, 0x437f0000    # 255.0f
 
     mul-float/2addr v1, p1
 
@@ -704,8 +691,6 @@
 
 .method public setTextSize(IF)V
     .locals 1
-    .param p1    # I
-    .param p2    # F
 
     iget-object v0, p0, Landroid/support/v4/view/PagerTitleStrip;->mPrevText:Landroid/widget/TextView;
 
@@ -724,7 +709,6 @@
 
 .method public setTextSpacing(I)V
     .locals 0
-    .param p1    # I
 
     iput p1, p0, Landroid/support/v4/view/PagerTitleStrip;->mScaledTextSpacing:I
 
@@ -735,8 +719,6 @@
 
 .method updateAdapter(Landroid/support/v4/view/PagerAdapter;Landroid/support/v4/view/PagerAdapter;)V
     .locals 1
-    .param p1    # Landroid/support/v4/view/PagerAdapter;
-    .param p2    # Landroid/support/v4/view/PagerAdapter;
 
     if-eqz p1, :cond_0
 
@@ -770,7 +752,7 @@
 
     iput v0, p0, Landroid/support/v4/view/PagerTitleStrip;->mLastKnownCurrentPage:I
 
-    const/high16 v0, -0x40800000
+    const/high16 v0, -0x40800000    # -1.0f
 
     iput v0, p0, Landroid/support/v4/view/PagerTitleStrip;->mLastKnownPositionOffset:F
 
@@ -790,8 +772,6 @@
 
 .method updateText(ILandroid/support/v4/view/PagerAdapter;)V
     .locals 10
-    .param p1    # I
-    .param p2    # Landroid/support/v4/view/PagerAdapter;
 
     const/4 v7, 0x1
 
@@ -891,7 +871,7 @@
 
     int-to-float v7, v5
 
-    const v8, 0x3f4ccccd
+    const v8, 0x3f4ccccd    # 0.8f
 
     mul-float/2addr v7, v8
 
@@ -945,9 +925,6 @@
 
 .method updateTextPositions(IFZ)V
     .locals 45
-    .param p1    # I
-    .param p2    # F
-    .param p3    # Z
 
     move-object/from16 v0, p0
 
@@ -1052,17 +1029,17 @@
 
     sub-int v10, v42, v40
 
-    const/high16 v42, 0x3f000000
+    const/high16 v42, 0x3f000000    # 0.5f
 
     add-float v14, p2, v42
 
-    const/high16 v42, 0x3f800000
+    const/high16 v42, 0x3f800000    # 1.0f
 
     cmpl-float v42, v14, v42
 
     if-lez v42, :cond_1
 
-    const/high16 v42, 0x3f800000
+    const/high16 v42, 0x3f800000    # 1.0f
 
     sub-float v14, v14, v42
 

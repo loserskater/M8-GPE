@@ -82,7 +82,6 @@
 
 .method public static getEnabledProviderCount(Landroid/content/Context;)I
     .locals 1
-    .param p0    # Landroid/content/Context;
 
     sget-object v0, Lcom/android/settings/notification/ConditionProviderSettings;->CONFIG:Lcom/android/settings/notification/ManagedServiceSettings$Config;
 
@@ -95,7 +94,6 @@
 
 .method public static getProviderCount(Landroid/content/pm/PackageManager;)I
     .locals 1
-    .param p0    # Landroid/content/pm/PackageManager;
 
     sget-object v0, Lcom/android/settings/notification/ConditionProviderSettings;->CONFIG:Lcom/android/settings/notification/ManagedServiceSettings$Config;
 

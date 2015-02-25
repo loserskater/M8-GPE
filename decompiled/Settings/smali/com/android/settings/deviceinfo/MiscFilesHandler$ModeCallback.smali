@@ -28,7 +28,6 @@
 # direct methods
 .method public constructor <init>(Lcom/android/settings/deviceinfo/MiscFilesHandler;Landroid/content/Context;)V
     .locals 1
-    .param p2    # Landroid/content/Context;
 
     iput-object p1, p0, Lcom/android/settings/deviceinfo/MiscFilesHandler$ModeCallback;->this$0:Lcom/android/settings/deviceinfo/MiscFilesHandler;
 
@@ -52,7 +51,6 @@
 
 .method private deleteDir(Ljava/io/File;)Z
     .locals 5
-    .param p1    # Ljava/io/File;
 
     invoke-virtual {p1}, Ljava/io/File;->list()[Ljava/lang/String;
 
@@ -101,8 +99,6 @@
 # virtual methods
 .method public onActionItemClicked(Landroid/view/ActionMode;Landroid/view/MenuItem;)Z
     .locals 12
-    .param p1    # Landroid/view/ActionMode;
-    .param p2    # Landroid/view/MenuItem;
 
     const/4 v3, 0x1
 
@@ -363,8 +359,6 @@
 
 .method public onCreateActionMode(Landroid/view/ActionMode;Landroid/view/Menu;)Z
     .locals 2
-    .param p1    # Landroid/view/ActionMode;
-    .param p2    # Landroid/view/Menu;
 
     iget-object v1, p0, Lcom/android/settings/deviceinfo/MiscFilesHandler$ModeCallback;->this$0:Lcom/android/settings/deviceinfo/MiscFilesHandler;
 
@@ -383,17 +377,12 @@
 
 .method public onDestroyActionMode(Landroid/view/ActionMode;)V
     .locals 0
-    .param p1    # Landroid/view/ActionMode;
 
     return-void
 .end method
 
 .method public onItemCheckedStateChanged(Landroid/view/ActionMode;IJZ)V
     .locals 12
-    .param p1    # Landroid/view/ActionMode;
-    .param p2    # I
-    .param p3    # J
-    .param p5    # Z
 
     iget-object v6, p0, Lcom/android/settings/deviceinfo/MiscFilesHandler$ModeCallback;->this$0:Lcom/android/settings/deviceinfo/MiscFilesHandler;
 
@@ -544,8 +533,6 @@
 
 .method public onPrepareActionMode(Landroid/view/ActionMode;Landroid/view/Menu;)Z
     .locals 1
-    .param p1    # Landroid/view/ActionMode;
-    .param p2    # Landroid/view/Menu;
 
     const/4 v0, 0x1
 

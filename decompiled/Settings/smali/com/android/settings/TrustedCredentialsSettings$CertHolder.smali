@@ -52,12 +52,6 @@
 # direct methods
 .method private constructor <init>(Landroid/security/IKeyChainService;Lcom/android/settings/TrustedCredentialsSettings$TrustedCertificateAdapterCommons;Lcom/android/settings/TrustedCredentialsSettings$Tab;Ljava/lang/String;Ljava/security/cert/X509Certificate;I)V
     .locals 7
-    .param p1    # Landroid/security/IKeyChainService;
-    .param p2    # Lcom/android/settings/TrustedCredentialsSettings$TrustedCertificateAdapterCommons;
-    .param p3    # Lcom/android/settings/TrustedCredentialsSettings$Tab;
-    .param p4    # Ljava/lang/String;
-    .param p5    # Ljava/security/cert/X509Certificate;
-    .param p6    # I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -228,13 +222,6 @@
 
 .method synthetic constructor <init>(Landroid/security/IKeyChainService;Lcom/android/settings/TrustedCredentialsSettings$TrustedCertificateAdapterCommons;Lcom/android/settings/TrustedCredentialsSettings$Tab;Ljava/lang/String;Ljava/security/cert/X509Certificate;ILcom/android/settings/TrustedCredentialsSettings$1;)V
     .locals 0
-    .param p1    # Landroid/security/IKeyChainService;
-    .param p2    # Lcom/android/settings/TrustedCredentialsSettings$TrustedCertificateAdapterCommons;
-    .param p3    # Lcom/android/settings/TrustedCredentialsSettings$Tab;
-    .param p4    # Ljava/lang/String;
-    .param p5    # Ljava/security/cert/X509Certificate;
-    .param p6    # I
-    .param p7    # Lcom/android/settings/TrustedCredentialsSettings$1;
 
     invoke-direct/range {p0 .. p6}, Lcom/android/settings/TrustedCredentialsSettings$CertHolder;-><init>(Landroid/security/IKeyChainService;Lcom/android/settings/TrustedCredentialsSettings$TrustedCertificateAdapterCommons;Lcom/android/settings/TrustedCredentialsSettings$Tab;Ljava/lang/String;Ljava/security/cert/X509Certificate;I)V
 
@@ -243,7 +230,6 @@
 
 .method static synthetic access$000(Lcom/android/settings/TrustedCredentialsSettings$CertHolder;)Z
     .locals 1
-    .param p0    # Lcom/android/settings/TrustedCredentialsSettings$CertHolder;
 
     iget-boolean v0, p0, Lcom/android/settings/TrustedCredentialsSettings$CertHolder;->mDeleted:Z
 
@@ -252,8 +238,6 @@
 
 .method static synthetic access$002(Lcom/android/settings/TrustedCredentialsSettings$CertHolder;Z)Z
     .locals 0
-    .param p0    # Lcom/android/settings/TrustedCredentialsSettings$CertHolder;
-    .param p1    # Z
 
     iput-boolean p1, p0, Lcom/android/settings/TrustedCredentialsSettings$CertHolder;->mDeleted:Z
 
@@ -262,7 +246,6 @@
 
 .method static synthetic access$100(Lcom/android/settings/TrustedCredentialsSettings$CertHolder;)Lcom/android/settings/TrustedCredentialsSettings$Tab;
     .locals 1
-    .param p0    # Lcom/android/settings/TrustedCredentialsSettings$CertHolder;
 
     iget-object v0, p0, Lcom/android/settings/TrustedCredentialsSettings$CertHolder;->mTab:Lcom/android/settings/TrustedCredentialsSettings$Tab;
 
@@ -271,7 +254,6 @@
 
 .method static synthetic access$200(Lcom/android/settings/TrustedCredentialsSettings$CertHolder;)Lcom/android/settings/TrustedCredentialsSettings$TrustedCertificateAdapterCommons;
     .locals 1
-    .param p0    # Lcom/android/settings/TrustedCredentialsSettings$CertHolder;
 
     iget-object v0, p0, Lcom/android/settings/TrustedCredentialsSettings$CertHolder;->mAdapter:Lcom/android/settings/TrustedCredentialsSettings$TrustedCertificateAdapterCommons;
 
@@ -280,7 +262,6 @@
 
 .method static synthetic access$2800(Lcom/android/settings/TrustedCredentialsSettings$CertHolder;)Ljava/lang/String;
     .locals 1
-    .param p0    # Lcom/android/settings/TrustedCredentialsSettings$CertHolder;
 
     iget-object v0, p0, Lcom/android/settings/TrustedCredentialsSettings$CertHolder;->mSubjectPrimary:Ljava/lang/String;
 
@@ -289,7 +270,6 @@
 
 .method static synthetic access$2900(Lcom/android/settings/TrustedCredentialsSettings$CertHolder;)Ljava/lang/String;
     .locals 1
-    .param p0    # Lcom/android/settings/TrustedCredentialsSettings$CertHolder;
 
     iget-object v0, p0, Lcom/android/settings/TrustedCredentialsSettings$CertHolder;->mSubjectSecondary:Ljava/lang/String;
 
@@ -298,7 +278,6 @@
 
 .method static synthetic access$3400(Lcom/android/settings/TrustedCredentialsSettings$CertHolder;)Ljava/lang/String;
     .locals 1
-    .param p0    # Lcom/android/settings/TrustedCredentialsSettings$CertHolder;
 
     iget-object v0, p0, Lcom/android/settings/TrustedCredentialsSettings$CertHolder;->mAlias:Ljava/lang/String;
 
@@ -307,7 +286,6 @@
 
 .method static synthetic access$3500(Lcom/android/settings/TrustedCredentialsSettings$CertHolder;)Ljava/security/cert/X509Certificate;
     .locals 1
-    .param p0    # Lcom/android/settings/TrustedCredentialsSettings$CertHolder;
 
     iget-object v0, p0, Lcom/android/settings/TrustedCredentialsSettings$CertHolder;->mX509Cert:Ljava/security/cert/X509Certificate;
 
@@ -318,7 +296,6 @@
 # virtual methods
 .method public compareTo(Lcom/android/settings/TrustedCredentialsSettings$CertHolder;)I
     .locals 3
-    .param p1    # Lcom/android/settings/TrustedCredentialsSettings$CertHolder;
 
     iget-object v1, p0, Lcom/android/settings/TrustedCredentialsSettings$CertHolder;->mSubjectPrimary:Ljava/lang/String;
 
@@ -347,7 +324,6 @@
 
 .method public bridge synthetic compareTo(Ljava/lang/Object;)I
     .locals 1
-    .param p1    # Ljava/lang/Object;
 
     check-cast p1, Lcom/android/settings/TrustedCredentialsSettings$CertHolder;
 
@@ -360,7 +336,6 @@
 
 .method public equals(Ljava/lang/Object;)Z
     .locals 3
-    .param p1    # Ljava/lang/Object;
 
     instance-of v1, p1, Lcom/android/settings/TrustedCredentialsSettings$CertHolder;
 

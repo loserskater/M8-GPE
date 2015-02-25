@@ -36,7 +36,6 @@
 # virtual methods
 .method public onTagDiscovered(Landroid/nfc/Tag;)V
     .locals 1
-    .param p1    # Landroid/nfc/Tag;
 
     iget-object v0, p0, Lcom/android/settings/wifi/WriteWifiConfigToNfcDialog$1;->this$0:Lcom/android/settings/wifi/WriteWifiConfigToNfcDialog;
 

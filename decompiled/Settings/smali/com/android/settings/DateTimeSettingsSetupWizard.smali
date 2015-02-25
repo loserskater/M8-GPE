@@ -66,7 +66,6 @@
 
 .method static synthetic access$000(Lcom/android/settings/DateTimeSettingsSetupWizard;)V
     .locals 0
-    .param p0    # Lcom/android/settings/DateTimeSettingsSetupWizard;
 
     invoke-direct {p0}, Lcom/android/settings/DateTimeSettingsSetupWizard;->updateTimeAndDateDisplay()V
 
@@ -109,7 +108,6 @@
 
 .method private showTimezonePicker(I)V
     .locals 4
-    .param p1    # I
 
     invoke-virtual {p0, p1}, Lcom/android/settings/DateTimeSettingsSetupWizard;->findViewById(I)Landroid/view/View;
 
@@ -439,8 +437,6 @@
 
 .method public onCheckedChanged(Landroid/widget/CompoundButton;Z)V
     .locals 7
-    .param p1    # Landroid/widget/CompoundButton;
-    .param p2    # Z
 
     const/4 v3, 0x1
 
@@ -521,7 +517,6 @@
 
 .method public onClick(Landroid/view/View;)V
     .locals 5
-    .param p1    # Landroid/view/View;
 
     invoke-virtual {p1}, Landroid/view/View;->getId()I
 
@@ -677,7 +672,6 @@
 
 .method protected onCreate(Landroid/os/Bundle;)V
     .locals 4
-    .param p1    # Landroid/os/Bundle;
 
     const/4 v1, 0x1
 
@@ -753,9 +747,6 @@
 
 .method public onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
     .locals 8
-    .param p2    # Landroid/view/View;
-    .param p3    # I
-    .param p4    # J
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -900,8 +891,6 @@
 
 .method public onPreferenceStartFragment(Landroid/preference/PreferenceFragment;Landroid/preference/Preference;)Z
     .locals 1
-    .param p1    # Landroid/preference/PreferenceFragment;
-    .param p2    # Landroid/preference/Preference;
 
     const v0, 0x7f0e0077
 

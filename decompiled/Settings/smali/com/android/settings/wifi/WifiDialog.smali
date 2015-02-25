@@ -23,10 +23,6 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/content/DialogInterface$OnClickListener;Lcom/android/settings/wifi/AccessPoint;Z)V
     .locals 1
-    .param p1    # Landroid/content/Context;
-    .param p2    # Landroid/content/DialogInterface$OnClickListener;
-    .param p3    # Lcom/android/settings/wifi/AccessPoint;
-    .param p4    # Z
 
     invoke-direct {p0, p1}, Landroid/app/AlertDialog;-><init>(Landroid/content/Context;)V
 
@@ -45,11 +41,6 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroid/content/DialogInterface$OnClickListener;Lcom/android/settings/wifi/AccessPoint;ZZ)V
     .locals 0
-    .param p1    # Landroid/content/Context;
-    .param p2    # Landroid/content/DialogInterface$OnClickListener;
-    .param p3    # Lcom/android/settings/wifi/AccessPoint;
-    .param p4    # Z
-    .param p5    # Z
 
     invoke-direct {p0, p1, p2, p3, p4}, Lcom/android/settings/wifi/WifiDialog;-><init>(Landroid/content/Context;Landroid/content/DialogInterface$OnClickListener;Lcom/android/settings/wifi/AccessPoint;Z)V
 
@@ -82,7 +73,6 @@
 
 .method protected onCreate(Landroid/os/Bundle;)V
     .locals 4
-    .param p1    # Landroid/os/Bundle;
 
     invoke-virtual {p0}, Lcom/android/settings/wifi/WifiDialog;->getLayoutInflater()Landroid/view/LayoutInflater;
 
@@ -141,7 +131,6 @@
 
 .method public setCancelButton(Ljava/lang/CharSequence;)V
     .locals 2
-    .param p1    # Ljava/lang/CharSequence;
 
     const/4 v0, -0x2
 
@@ -154,7 +143,6 @@
 
 .method public setForgetButton(Ljava/lang/CharSequence;)V
     .locals 2
-    .param p1    # Ljava/lang/CharSequence;
 
     const/4 v0, -0x3
 
@@ -167,7 +155,6 @@
 
 .method public setSubmitButton(Ljava/lang/CharSequence;)V
     .locals 2
-    .param p1    # Ljava/lang/CharSequence;
 
     const/4 v0, -0x1
 

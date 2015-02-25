@@ -66,7 +66,6 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/applications/ApplicationsState;Lcom/android/settings/applications/ApplicationsState$Callbacks;)V
     .locals 1
-    .param p2    # Lcom/android/settings/applications/ApplicationsState$Callbacks;
 
     iput-object p1, p0, Lcom/android/settings/applications/ApplicationsState$Session;->this$0:Lcom/android/settings/applications/ApplicationsState;
 
@@ -370,7 +369,6 @@
 
 .method rebuild(Lcom/android/settings/applications/ApplicationsState$AppFilter;Ljava/util/Comparator;)Ljava/util/ArrayList;
     .locals 12
-    .param p1    # Lcom/android/settings/applications/ApplicationsState$AppFilter;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

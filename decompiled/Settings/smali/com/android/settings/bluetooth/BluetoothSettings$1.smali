@@ -31,7 +31,6 @@
 
 .method private updateDeviceName(Landroid/content/Context;)V
     .locals 6
-    .param p1    # Landroid/content/Context;
 
     iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothSettings$1;->this$0:Lcom/android/settings/bluetooth/BluetoothSettings;
 
@@ -89,8 +88,6 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 4
-    .param p1    # Landroid/content/Context;
-    .param p2    # Landroid/content/Intent;
 
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 

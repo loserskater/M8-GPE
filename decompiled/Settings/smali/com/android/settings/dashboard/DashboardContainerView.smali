@@ -16,8 +16,6 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 2
-    .param p1    # Landroid/content/Context;
-    .param p2    # Landroid/util/AttributeSet;
 
     invoke-direct {p0, p1, p2}, Landroid/view/ViewGroup;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
@@ -56,11 +54,6 @@
 # virtual methods
 .method protected onLayout(ZIIII)V
     .locals 23
-    .param p1    # Z
-    .param p2    # I
-    .param p3    # I
-    .param p4    # I
-    .param p5    # I
 
     invoke-virtual/range {p0 .. p0}, Lcom/android/settings/dashboard/DashboardContainerView;->getChildCount()I
 
@@ -318,8 +311,6 @@
 
 .method protected onMeasure(II)V
     .locals 18
-    .param p1    # I
-    .param p2    # I
 
     invoke-static/range {p1 .. p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 

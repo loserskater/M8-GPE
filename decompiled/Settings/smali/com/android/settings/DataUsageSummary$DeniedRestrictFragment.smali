@@ -27,7 +27,6 @@
 # virtual methods
 .method public onCreateDialog(Landroid/os/Bundle;)Landroid/app/Dialog;
     .locals 4
-    .param p1    # Landroid/os/Bundle;
 
     invoke-virtual {p0}, Lcom/android/settings/DataUsageSummary$DeniedRestrictFragment;->getActivity()Landroid/app/Activity;
 

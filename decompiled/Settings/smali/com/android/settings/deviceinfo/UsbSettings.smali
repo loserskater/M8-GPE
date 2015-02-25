@@ -32,7 +32,6 @@
 
 .method static synthetic access$000(Lcom/android/settings/deviceinfo/UsbSettings;)Z
     .locals 1
-    .param p0    # Lcom/android/settings/deviceinfo/UsbSettings;
 
     iget-boolean v0, p0, Lcom/android/settings/deviceinfo/UsbSettings;->mUsbAccessoryMode:Z
 
@@ -41,8 +40,6 @@
 
 .method static synthetic access$002(Lcom/android/settings/deviceinfo/UsbSettings;Z)Z
     .locals 0
-    .param p0    # Lcom/android/settings/deviceinfo/UsbSettings;
-    .param p1    # Z
 
     iput-boolean p1, p0, Lcom/android/settings/deviceinfo/UsbSettings;->mUsbAccessoryMode:Z
 
@@ -51,7 +48,6 @@
 
 .method static synthetic access$100(Lcom/android/settings/deviceinfo/UsbSettings;)Landroid/hardware/usb/UsbManager;
     .locals 1
-    .param p0    # Lcom/android/settings/deviceinfo/UsbSettings;
 
     iget-object v0, p0, Lcom/android/settings/deviceinfo/UsbSettings;->mUsbManager:Landroid/hardware/usb/UsbManager;
 
@@ -60,8 +56,6 @@
 
 .method static synthetic access$200(Lcom/android/settings/deviceinfo/UsbSettings;Ljava/lang/String;)V
     .locals 0
-    .param p0    # Lcom/android/settings/deviceinfo/UsbSettings;
-    .param p1    # Ljava/lang/String;
 
     invoke-direct {p0, p1}, Lcom/android/settings/deviceinfo/UsbSettings;->updateToggles(Ljava/lang/String;)V
 
@@ -144,7 +138,6 @@
 
 .method private updateToggles(Ljava/lang/String;)V
     .locals 5
-    .param p1    # Ljava/lang/String;
 
     const/4 v4, 0x1
 
@@ -277,7 +270,6 @@
 # virtual methods
 .method public onCreate(Landroid/os/Bundle;)V
     .locals 1
-    .param p1    # Landroid/os/Bundle;
 
     invoke-super {p0, p1}, Lcom/android/settings/SettingsPreferenceFragment;->onCreate(Landroid/os/Bundle;)V
 
@@ -312,8 +304,6 @@
 
 .method public onPreferenceTreeClick(Landroid/preference/PreferenceScreen;Landroid/preference/Preference;)Z
     .locals 5
-    .param p1    # Landroid/preference/PreferenceScreen;
-    .param p2    # Landroid/preference/Preference;
 
     const/4 v4, 0x1
 

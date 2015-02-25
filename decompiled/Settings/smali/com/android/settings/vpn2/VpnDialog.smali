@@ -55,10 +55,6 @@
 # direct methods
 .method constructor <init>(Landroid/content/Context;Landroid/content/DialogInterface$OnClickListener;Lcom/android/internal/net/VpnProfile;Z)V
     .locals 1
-    .param p1    # Landroid/content/Context;
-    .param p2    # Landroid/content/DialogInterface$OnClickListener;
-    .param p3    # Lcom/android/internal/net/VpnProfile;
-    .param p4    # Z
 
     invoke-direct {p0, p1}, Landroid/app/AlertDialog;-><init>(Landroid/content/Context;)V
 
@@ -79,7 +75,6 @@
 
 .method private changeType(I)V
     .locals 7
-    .param p1    # I
 
     const v6, 0x7f0e01c0
 
@@ -205,10 +200,6 @@
 
 .method private loadCertificates(Landroid/widget/Spinner;Ljava/lang/String;ILjava/lang/String;)V
     .locals 9
-    .param p1    # Landroid/widget/Spinner;
-    .param p2    # Ljava/lang/String;
-    .param p3    # I
-    .param p4    # Ljava/lang/String;
 
     const/4 v8, 0x1
 
@@ -305,7 +296,6 @@
 
 .method private validate(Z)Z
     .locals 3
-    .param p1    # Z
 
     const/4 v0, 0x1
 
@@ -465,8 +455,6 @@
 
 .method private validateAddresses(Ljava/lang/String;Z)Z
     .locals 11
-    .param p1    # Ljava/lang/String;
-    .param p2    # Z
 
     :try_start_0
     const-string v9, " "
@@ -610,7 +598,6 @@
 # virtual methods
 .method public afterTextChanged(Landroid/text/Editable;)V
     .locals 2
-    .param p1    # Landroid/text/Editable;
 
     const/4 v0, -0x1
 
@@ -631,10 +618,6 @@
 
 .method public beforeTextChanged(Ljava/lang/CharSequence;III)V
     .locals 0
-    .param p1    # Ljava/lang/CharSequence;
-    .param p2    # I
-    .param p3    # I
-    .param p4    # I
 
     return-void
 .end method
@@ -919,7 +902,6 @@
 
 .method public onClick(Landroid/view/View;)V
     .locals 2
-    .param p1    # Landroid/view/View;
 
     const/16 v0, 0x8
 
@@ -942,7 +924,6 @@
 
 .method protected onCreate(Landroid/os/Bundle;)V
     .locals 11
-    .param p1    # Landroid/os/Bundle;
 
     const/4 v10, 0x0
 
@@ -1533,9 +1514,6 @@
 
 .method public onItemSelected(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
     .locals 2
-    .param p2    # Landroid/view/View;
-    .param p3    # I
-    .param p4    # J
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1585,10 +1563,6 @@
 
 .method public onTextChanged(Ljava/lang/CharSequence;III)V
     .locals 0
-    .param p1    # Ljava/lang/CharSequence;
-    .param p2    # I
-    .param p3    # I
-    .param p4    # I
 
     return-void
 .end method

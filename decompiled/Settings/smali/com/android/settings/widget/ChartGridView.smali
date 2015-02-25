@@ -28,7 +28,6 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 2
-    .param p1    # Landroid/content/Context;
 
     const/4 v0, 0x0
 
@@ -41,8 +40,6 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 1
-    .param p1    # Landroid/content/Context;
-    .param p2    # Landroid/util/AttributeSet;
 
     const/4 v0, 0x0
 
@@ -53,9 +50,6 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
     .locals 6
-    .param p1    # Landroid/content/Context;
-    .param p2    # Landroid/util/AttributeSet;
-    .param p3    # I
 
     const/4 v5, 0x0
 
@@ -132,7 +126,6 @@
 
 .method private makeLabel(Ljava/lang/CharSequence;)Landroid/text/Layout;
     .locals 9
-    .param p1    # Ljava/lang/CharSequence;
 
     const/4 v7, 0x1
 
@@ -186,7 +179,7 @@
 
     sget-object v4, Landroid/text/Layout$Alignment;->ALIGN_NORMAL:Landroid/text/Layout$Alignment;
 
-    const/high16 v5, 0x3f800000
+    const/high16 v5, 0x3f800000    # 1.0f
 
     const/4 v6, 0x0
 
@@ -201,8 +194,6 @@
 # virtual methods
 .method init(Lcom/android/settings/widget/ChartAxis;Lcom/android/settings/widget/ChartAxis;)V
     .locals 1
-    .param p1    # Lcom/android/settings/widget/ChartAxis;
-    .param p2    # Lcom/android/settings/widget/ChartAxis;
 
     const-string v0, "missing horiz"
 
@@ -229,7 +220,6 @@
 
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 28
-    .param p1    # Landroid/graphics/Canvas;
 
     invoke-virtual/range {p0 .. p0}, Lcom/android/settings/widget/ChartGridView;->getWidth()I
 
@@ -615,8 +605,6 @@
 
 .method setBounds(JJ)V
     .locals 9
-    .param p1    # J
-    .param p3    # J
 
     invoke-virtual {p0}, Lcom/android/settings/widget/ChartGridView;->getContext()Landroid/content/Context;
 

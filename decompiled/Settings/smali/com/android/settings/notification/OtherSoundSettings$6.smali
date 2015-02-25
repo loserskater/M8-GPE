@@ -17,11 +17,6 @@
 # direct methods
 .method varargs constructor <init>(ILjava/lang/String;Ljava/lang/String;I[I)V
     .locals 0
-    .param p1    # I
-    .param p2    # Ljava/lang/String;
-    .param p3    # Ljava/lang/String;
-    .param p4    # I
-    .param p5    # [I
 
     invoke-direct/range {p0 .. p5}, Lcom/android/settings/notification/SettingPref;-><init>(ILjava/lang/String;Ljava/lang/String;I[I)V
 
@@ -32,8 +27,6 @@
 # virtual methods
 .method protected getCaption(Landroid/content/res/Resources;I)Ljava/lang/String;
     .locals 1
-    .param p1    # Landroid/content/res/Resources;
-    .param p2    # I
 
     packed-switch p2, :pswitch_data_0
 
@@ -83,7 +76,6 @@
 
 .method public isApplicable(Landroid/content/Context;)Z
     .locals 2
-    .param p1    # Landroid/content/Context;
 
     invoke-static {}, Landroid/telephony/TelephonyManager;->getDefault()Landroid/telephony/TelephonyManager;
 

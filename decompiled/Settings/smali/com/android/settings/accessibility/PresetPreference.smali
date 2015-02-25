@@ -10,8 +10,6 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 1
-    .param p1    # Landroid/content/Context;
-    .param p2    # Landroid/util/AttributeSet;
 
     invoke-direct {p0, p1, p2}, Lcom/android/settings/accessibility/ListDialogPreference;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
@@ -40,8 +38,6 @@
 # virtual methods
 .method protected onBindListItem(Landroid/view/View;I)V
     .locals 7
-    .param p1    # Landroid/view/View;
-    .param p2    # I
 
     const v6, 0x7f0e0036
 
@@ -79,7 +75,7 @@
 
     iget v0, v6, Landroid/util/DisplayMetrics;->density:F
 
-    const/high16 v6, 0x42000000
+    const/high16 v6, 0x42000000    # 32.0f
 
     mul-float/2addr v6, v0
 

@@ -27,10 +27,6 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/accounts/Account;Landroid/graphics/drawable/Drawable;Ljava/util/ArrayList;Z)V
     .locals 3
-    .param p1    # Landroid/content/Context;
-    .param p2    # Landroid/accounts/Account;
-    .param p3    # Landroid/graphics/drawable/Drawable;
-    .param p5    # Z
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -89,7 +85,6 @@
 
 .method private getSyncContentDescription(I)Ljava/lang/String;
     .locals 4
-    .param p1    # I
 
     const v3, 0x7f080749
 
@@ -189,7 +184,6 @@
 
 .method private getSyncStatusIcon(I)I
     .locals 4
-    .param p1    # I
 
     packed-switch p1, :pswitch_data_0
 
@@ -253,7 +247,6 @@
 
 .method private getSyncStatusMessage(I)I
     .locals 4
-    .param p1    # I
 
     packed-switch p1, :pswitch_data_0
 
@@ -344,7 +337,6 @@
 
 .method protected onBindView(Landroid/view/View;)V
     .locals 2
-    .param p1    # Landroid/view/View;
 
     invoke-super {p0, p1}, Landroid/preference/Preference;->onBindView(Landroid/view/View;)V
 
@@ -388,8 +380,6 @@
 
 .method public setSyncStatus(IZ)V
     .locals 2
-    .param p1    # I
-    .param p2    # Z
 
     iput p1, p0, Lcom/android/settings/AccountPreference;->mStatus:I
 

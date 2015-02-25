@@ -67,8 +67,6 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 2
-    .param p1    # Landroid/content/Context;
-    .param p2    # Landroid/util/AttributeSet;
 
     const/4 v1, 0x0
 
@@ -89,8 +87,6 @@
 
 .method static synthetic access$002(Lcom/android/settings/notification/HtcBoomSoundPreference;Landroid/bluetooth/BluetoothA2dp;)Landroid/bluetooth/BluetoothA2dp;
     .locals 0
-    .param p0    # Lcom/android/settings/notification/HtcBoomSoundPreference;
-    .param p1    # Landroid/bluetooth/BluetoothA2dp;
 
     iput-object p1, p0, Lcom/android/settings/notification/HtcBoomSoundPreference;->mA2dp:Landroid/bluetooth/BluetoothA2dp;
 
@@ -99,8 +95,6 @@
 
 .method static synthetic access$102(Lcom/android/settings/notification/HtcBoomSoundPreference;Z)Z
     .locals 0
-    .param p0    # Lcom/android/settings/notification/HtcBoomSoundPreference;
-    .param p1    # Z
 
     iput-boolean p1, p0, Lcom/android/settings/notification/HtcBoomSoundPreference;->mIsA2dpServiceConnected:Z
 
@@ -453,7 +447,6 @@
 
 .method private log(Ljava/lang/String;)V
     .locals 1
-    .param p1    # Ljava/lang/String;
 
     sget-object v0, Lcom/android/settings/notification/HtcBoomSoundPreference;->TAG:Ljava/lang/String;
 
@@ -671,7 +664,7 @@
     iput-boolean v8, p0, Lcom/android/settings/notification/HtcBoomSoundPreference;->mBluetoothStream:Z
 
     :cond_b
-    const/high16 v5, 0x40000000
+    const/high16 v5, 0x40000000    # 2.0f
 
     and-int/2addr v5, v4
 
@@ -782,7 +775,6 @@
 
 .method public onDestroyInBackground(Landroid/app/Activity;)V
     .locals 5
-    .param p1    # Landroid/app/Activity;
 
     const/4 v4, 0x0
 
@@ -846,7 +838,6 @@
 
 .method protected onHandleStateChangedInBackground(Lcom/android/settings/notification/HtcBoomSoundState;)V
     .locals 5
-    .param p1    # Lcom/android/settings/notification/HtcBoomSoundState;
 
     const/4 v4, 0x0
 
@@ -1037,15 +1028,12 @@
 
 .method public onPauseInBackground(Landroid/app/Activity;)V
     .locals 0
-    .param p1    # Landroid/app/Activity;
 
     return-void
 .end method
 
 .method protected onReceiveInBackground(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 6
-    .param p1    # Landroid/content/Context;
-    .param p2    # Landroid/content/Intent;
 
     const/4 v5, 0x1
 
@@ -1137,7 +1125,6 @@
 
 .method public onResumeInBackground(Landroid/app/Activity;)V
     .locals 1
-    .param p1    # Landroid/app/Activity;
 
     sget-object v0, Lcom/android/settings/notification/HtcBoomSoundState;->STATE_SYNC:Lcom/android/settings/notification/HtcBoomSoundState;
 
@@ -1148,7 +1135,6 @@
 
 .method public onToggleChangeInBackground(Z)V
     .locals 3
-    .param p1    # Z
 
     if-eqz p1, :cond_0
 
@@ -1185,7 +1171,6 @@
 
 .method protected setIntentFilter(Landroid/content/IntentFilter;)V
     .locals 1
-    .param p1    # Landroid/content/IntentFilter;
 
     const-string v0, "android.intent.action.HEADSET_PLUG"
 

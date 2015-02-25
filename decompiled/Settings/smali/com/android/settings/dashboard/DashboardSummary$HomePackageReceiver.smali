@@ -31,8 +31,6 @@
 
 .method synthetic constructor <init>(Lcom/android/settings/dashboard/DashboardSummary;Lcom/android/settings/dashboard/DashboardSummary$1;)V
     .locals 0
-    .param p1    # Lcom/android/settings/dashboard/DashboardSummary;
-    .param p2    # Lcom/android/settings/dashboard/DashboardSummary$1;
 
     invoke-direct {p0, p1}, Lcom/android/settings/dashboard/DashboardSummary$HomePackageReceiver;-><init>(Lcom/android/settings/dashboard/DashboardSummary;)V
 
@@ -43,8 +41,6 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 1
-    .param p1    # Landroid/content/Context;
-    .param p2    # Landroid/content/Intent;
 
     iget-object v0, p0, Lcom/android/settings/dashboard/DashboardSummary$HomePackageReceiver;->this$0:Lcom/android/settings/dashboard/DashboardSummary;
 

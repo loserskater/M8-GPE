@@ -31,7 +31,6 @@
 
 .method static synthetic access$700(Lcom/android/settings/accounts/AccountSettings$ConfirmAutoSyncChangeFragment;)Z
     .locals 1
-    .param p0    # Lcom/android/settings/accounts/AccountSettings$ConfirmAutoSyncChangeFragment;
 
     iget-boolean v0, p0, Lcom/android/settings/accounts/AccountSettings$ConfirmAutoSyncChangeFragment;->mEnabling:Z
 
@@ -40,7 +39,6 @@
 
 .method static synthetic access$800(Lcom/android/settings/accounts/AccountSettings$ConfirmAutoSyncChangeFragment;)Landroid/os/UserHandle;
     .locals 1
-    .param p0    # Lcom/android/settings/accounts/AccountSettings$ConfirmAutoSyncChangeFragment;
 
     iget-object v0, p0, Lcom/android/settings/accounts/AccountSettings$ConfirmAutoSyncChangeFragment;->mUserHandle:Landroid/os/UserHandle;
 
@@ -49,9 +47,6 @@
 
 .method public static show(Lcom/android/settings/accounts/AccountSettings;ZLandroid/os/UserHandle;)V
     .locals 3
-    .param p0    # Lcom/android/settings/accounts/AccountSettings;
-    .param p1    # Z
-    .param p2    # Landroid/os/UserHandle;
 
     invoke-virtual {p0}, Lcom/android/settings/accounts/AccountSettings;->isAdded()Z
 
@@ -90,7 +85,6 @@
 # virtual methods
 .method public onCreateDialog(Landroid/os/Bundle;)Landroid/app/Dialog;
     .locals 4
-    .param p1    # Landroid/os/Bundle;
 
     invoke-virtual {p0}, Lcom/android/settings/accounts/AccountSettings$ConfirmAutoSyncChangeFragment;->getActivity()Landroid/app/Activity;
 
@@ -158,7 +152,6 @@
 
 .method public onSaveInstanceState(Landroid/os/Bundle;)V
     .locals 2
-    .param p1    # Landroid/os/Bundle;
 
     invoke-super {p0, p1}, Landroid/app/DialogFragment;->onSaveInstanceState(Landroid/os/Bundle;)V
 

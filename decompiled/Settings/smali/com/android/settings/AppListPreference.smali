@@ -18,8 +18,6 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 0
-    .param p1    # Landroid/content/Context;
-    .param p2    # Landroid/util/AttributeSet;
 
     invoke-direct {p0, p1, p2}, Landroid/preference/ListPreference;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
@@ -30,7 +28,6 @@
 # virtual methods
 .method protected onPrepareDialogBuilder(Landroid/app/AlertDialog$Builder;)V
     .locals 7
-    .param p1    # Landroid/app/AlertDialog$Builder;
 
     invoke-virtual {p0}, Lcom/android/settings/AppListPreference;->getValue()Ljava/lang/String;
 
@@ -67,8 +64,6 @@
 
 .method public setPackageNames([Ljava/lang/String;Ljava/lang/String;)V
     .locals 13
-    .param p1    # [Ljava/lang/String;
-    .param p2    # Ljava/lang/String;
 
     const/4 v4, 0x0
 

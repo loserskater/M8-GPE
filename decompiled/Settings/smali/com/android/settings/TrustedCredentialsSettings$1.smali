@@ -40,11 +40,6 @@
 # virtual methods
 .method public onChildClick(Landroid/widget/ExpandableListView;Landroid/view/View;IIJ)Z
     .locals 2
-    .param p1    # Landroid/widget/ExpandableListView;
-    .param p2    # Landroid/view/View;
-    .param p3    # I
-    .param p4    # I
-    .param p5    # J
 
     iget-object v0, p0, Lcom/android/settings/TrustedCredentialsSettings$1;->this$0:Lcom/android/settings/TrustedCredentialsSettings;
 

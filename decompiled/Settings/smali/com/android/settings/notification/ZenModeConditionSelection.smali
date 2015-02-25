@@ -37,7 +37,6 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 6
-    .param p1    # Landroid/content/Context;
 
     const/4 v5, 0x0
 
@@ -144,7 +143,6 @@
 
 .method static synthetic access$100(Lcom/android/settings/notification/ZenModeConditionSelection;)Lcom/android/settings/notification/ZenModeConditionSelection$H;
     .locals 1
-    .param p0    # Lcom/android/settings/notification/ZenModeConditionSelection;
 
     iget-object v0, p0, Lcom/android/settings/notification/ZenModeConditionSelection;->mHandler:Lcom/android/settings/notification/ZenModeConditionSelection$H;
 
@@ -153,7 +151,6 @@
 
 .method private newRadioButton(Landroid/service/notification/Condition;)Landroid/widget/RadioButton;
     .locals 2
-    .param p1    # Landroid/service/notification/Condition;
 
     new-instance v0, Landroid/widget/RadioButton;
 
@@ -223,7 +220,6 @@
 
 .method protected handleCondition(Landroid/service/notification/Condition;)V
     .locals 4
-    .param p1    # Landroid/service/notification/Condition;
 
     const/4 v1, 0x1
 
@@ -293,7 +289,6 @@
 
 .method protected handleConditions([Landroid/service/notification/Condition;)V
     .locals 4
-    .param p1    # [Landroid/service/notification/Condition;
 
     move-object v0, p1
 
@@ -342,7 +337,6 @@
 
 .method protected requestZenModeConditions(I)V
     .locals 3
-    .param p1    # I
 
     const-string v0, "ZenModeConditionSelection"
 
@@ -390,7 +384,6 @@
 
 .method protected setCondition(Landroid/service/notification/Condition;)V
     .locals 3
-    .param p1    # Landroid/service/notification/Condition;
 
     const-string v0, "ZenModeConditionSelection"
 

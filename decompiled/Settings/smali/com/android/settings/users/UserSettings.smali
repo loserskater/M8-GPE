@@ -126,7 +126,6 @@
 
 .method static synthetic access$000(Lcom/android/settings/users/UserSettings;)V
     .locals 0
-    .param p0    # Lcom/android/settings/users/UserSettings;
 
     invoke-direct {p0}, Lcom/android/settings/users/UserSettings;->updateUserList()V
 
@@ -135,8 +134,6 @@
 
 .method static synthetic access$100(Lcom/android/settings/users/UserSettings;I)V
     .locals 0
-    .param p0    # Lcom/android/settings/users/UserSettings;
-    .param p1    # I
 
     invoke-direct {p0, p1}, Lcom/android/settings/users/UserSettings;->onUserCreated(I)V
 
@@ -145,8 +142,6 @@
 
 .method static synthetic access$1000(Lcom/android/settings/users/UserSettings;I)V
     .locals 0
-    .param p0    # Lcom/android/settings/users/UserSettings;
-    .param p1    # I
 
     invoke-direct {p0, p1}, Lcom/android/settings/users/UserSettings;->addUserNow(I)V
 
@@ -155,7 +150,6 @@
 
 .method static synthetic access$1100(Lcom/android/settings/users/UserSettings;)I
     .locals 1
-    .param p0    # Lcom/android/settings/users/UserSettings;
 
     iget v0, p0, Lcom/android/settings/users/UserSettings;->mAddedUserId:I
 
@@ -164,8 +158,6 @@
 
 .method static synthetic access$1200(Lcom/android/settings/users/UserSettings;I)V
     .locals 0
-    .param p0    # Lcom/android/settings/users/UserSettings;
-    .param p1    # I
 
     invoke-direct {p0, p1}, Lcom/android/settings/users/UserSettings;->switchUserNow(I)V
 
@@ -174,8 +166,6 @@
 
 .method static synthetic access$1300(Lcom/android/settings/users/UserSettings;I)V
     .locals 0
-    .param p0    # Lcom/android/settings/users/UserSettings;
-    .param p1    # I
 
     invoke-direct {p0, p1}, Lcom/android/settings/users/UserSettings;->onAddUserClicked(I)V
 
@@ -184,7 +174,6 @@
 
 .method static synthetic access$1400(Lcom/android/settings/users/UserSettings;)V
     .locals 0
-    .param p0    # Lcom/android/settings/users/UserSettings;
 
     invoke-direct {p0}, Lcom/android/settings/users/UserSettings;->launchChooseLockscreen()V
 
@@ -193,7 +182,6 @@
 
 .method static synthetic access$1500(Lcom/android/settings/users/UserSettings;)V
     .locals 0
-    .param p0    # Lcom/android/settings/users/UserSettings;
 
     invoke-direct {p0}, Lcom/android/settings/users/UserSettings;->exitGuest()V
 
@@ -202,7 +190,6 @@
 
 .method static synthetic access$1600(Lcom/android/settings/users/UserSettings;)Ljava/lang/Object;
     .locals 1
-    .param p0    # Lcom/android/settings/users/UserSettings;
 
     iget-object v0, p0, Lcom/android/settings/users/UserSettings;->mUserLock:Ljava/lang/Object;
 
@@ -211,7 +198,6 @@
 
 .method static synthetic access$1700(Lcom/android/settings/users/UserSettings;)Landroid/content/pm/UserInfo;
     .locals 1
-    .param p0    # Lcom/android/settings/users/UserSettings;
 
     invoke-direct {p0}, Lcom/android/settings/users/UserSettings;->createTrustedUser()Landroid/content/pm/UserInfo;
 
@@ -222,7 +208,6 @@
 
 .method static synthetic access$1800(Lcom/android/settings/users/UserSettings;)Landroid/content/pm/UserInfo;
     .locals 1
-    .param p0    # Lcom/android/settings/users/UserSettings;
 
     invoke-direct {p0}, Lcom/android/settings/users/UserSettings;->createLimitedUser()Landroid/content/pm/UserInfo;
 
@@ -233,8 +218,6 @@
 
 .method static synthetic access$1902(Lcom/android/settings/users/UserSettings;Z)Z
     .locals 0
-    .param p0    # Lcom/android/settings/users/UserSettings;
-    .param p1    # Z
 
     iput-boolean p1, p0, Lcom/android/settings/users/UserSettings;->mAddingUser:Z
 
@@ -243,9 +226,6 @@
 
 .method static synthetic access$200(Lcom/android/settings/users/UserSettings;IZ)V
     .locals 0
-    .param p0    # Lcom/android/settings/users/UserSettings;
-    .param p1    # I
-    .param p2    # Z
 
     invoke-direct {p0, p1, p2}, Lcom/android/settings/users/UserSettings;->onManageUserClicked(IZ)V
 
@@ -254,7 +234,6 @@
 
 .method static synthetic access$300(Lcom/android/settings/users/UserSettings;)I
     .locals 1
-    .param p0    # Lcom/android/settings/users/UserSettings;
 
     iget v0, p0, Lcom/android/settings/users/UserSettings;->mRemovingUserId:I
 
@@ -263,8 +242,6 @@
 
 .method static synthetic access$302(Lcom/android/settings/users/UserSettings;I)I
     .locals 0
-    .param p0    # Lcom/android/settings/users/UserSettings;
-    .param p1    # I
 
     iput p1, p0, Lcom/android/settings/users/UserSettings;->mRemovingUserId:I
 
@@ -273,7 +250,6 @@
 
 .method static synthetic access$400(Lcom/android/settings/users/UserSettings;)Landroid/util/SparseArray;
     .locals 1
-    .param p0    # Lcom/android/settings/users/UserSettings;
 
     iget-object v0, p0, Lcom/android/settings/users/UserSettings;->mUserIcons:Landroid/util/SparseArray;
 
@@ -282,7 +258,6 @@
 
 .method static synthetic access$500(Lcom/android/settings/users/UserSettings;)Landroid/os/Handler;
     .locals 1
-    .param p0    # Lcom/android/settings/users/UserSettings;
 
     iget-object v0, p0, Lcom/android/settings/users/UserSettings;->mHandler:Landroid/os/Handler;
 
@@ -291,8 +266,6 @@
 
 .method static synthetic access$600(Lcom/android/settings/users/UserSettings;Ljava/lang/String;)V
     .locals 0
-    .param p0    # Lcom/android/settings/users/UserSettings;
-    .param p1    # Ljava/lang/String;
 
     invoke-direct {p0, p1}, Lcom/android/settings/users/UserSettings;->finishLoadProfile(Ljava/lang/String;)V
 
@@ -301,7 +274,6 @@
 
 .method static synthetic access$700(Lcom/android/settings/users/UserSettings;)Landroid/os/UserManager;
     .locals 1
-    .param p0    # Lcom/android/settings/users/UserSettings;
 
     iget-object v0, p0, Lcom/android/settings/users/UserSettings;->mUserManager:Landroid/os/UserManager;
 
@@ -310,8 +282,6 @@
 
 .method static synthetic access$800(Lcom/android/settings/users/UserSettings;Landroid/content/pm/UserInfo;)V
     .locals 0
-    .param p0    # Lcom/android/settings/users/UserSettings;
-    .param p1    # Landroid/content/pm/UserInfo;
 
     invoke-direct {p0, p1}, Lcom/android/settings/users/UserSettings;->assignProfilePhoto(Landroid/content/pm/UserInfo;)V
 
@@ -320,7 +290,6 @@
 
 .method static synthetic access$900(Lcom/android/settings/users/UserSettings;)V
     .locals 0
-    .param p0    # Lcom/android/settings/users/UserSettings;
 
     invoke-direct {p0}, Lcom/android/settings/users/UserSettings;->removeUserNow()V
 
@@ -329,7 +298,6 @@
 
 .method private addUserNow(I)V
     .locals 2
-    .param p1    # I
 
     iget-object v1, p0, Lcom/android/settings/users/UserSettings;->mUserLock:Ljava/lang/Object;
 
@@ -362,7 +330,6 @@
 
 .method private assignDefaultPhoto(Landroid/content/pm/UserInfo;)V
     .locals 3
-    .param p1    # Landroid/content/pm/UserInfo;
 
     iget v1, p1, Landroid/content/pm/UserInfo;->id:I
 
@@ -387,7 +354,6 @@
 
 .method private assignProfilePhoto(Landroid/content/pm/UserInfo;)V
     .locals 1
-    .param p1    # Landroid/content/pm/UserInfo;
 
     invoke-virtual {p0}, Lcom/android/settings/users/UserSettings;->getActivity()Landroid/app/Activity;
 
@@ -634,7 +600,6 @@
 
 .method private encircle(Landroid/graphics/Bitmap;)Landroid/graphics/drawable/Drawable;
     .locals 2
-    .param p1    # Landroid/graphics/Bitmap;
 
     invoke-virtual {p0}, Lcom/android/settings/users/UserSettings;->getActivity()Landroid/app/Activity;
 
@@ -665,7 +630,6 @@
 
 .method private finishLoadProfile(Ljava/lang/String;)V
     .locals 6
-    .param p1    # Ljava/lang/String;
 
     invoke-virtual {p0}, Lcom/android/settings/users/UserSettings;->getActivity()Landroid/app/Activity;
 
@@ -791,7 +755,6 @@
 
 .method private isInitialized(Landroid/content/pm/UserInfo;)Z
     .locals 1
-    .param p1    # Landroid/content/pm/UserInfo;
 
     iget v0, p1, Landroid/content/pm/UserInfo;->flags:I
 
@@ -905,7 +868,6 @@
 
 .method private onAddUserClicked(I)V
     .locals 3
-    .param p1    # I
 
     iget-object v1, p0, Lcom/android/settings/users/UserSettings;->mUserLock:Ljava/lang/Object;
 
@@ -980,8 +942,6 @@
 
 .method private onManageUserClicked(IZ)V
     .locals 12
-    .param p1    # I
-    .param p2    # Z
 
     const/16 v0, -0xb
 
@@ -1189,7 +1149,6 @@
 
 .method private onRemoveUserClicked(I)V
     .locals 3
-    .param p1    # I
 
     iget-object v1, p0, Lcom/android/settings/users/UserSettings;->mUserLock:Ljava/lang/Object;
 
@@ -1229,7 +1188,6 @@
 
 .method private onUserCreated(I)V
     .locals 1
-    .param p1    # I
 
     iput p1, p0, Lcom/android/settings/users/UserSettings;->mAddedUserId:I
 
@@ -1335,8 +1293,6 @@
 
 .method private setPhotoId(Landroid/preference/Preference;Landroid/content/pm/UserInfo;)V
     .locals 3
-    .param p1    # Landroid/preference/Preference;
-    .param p2    # Landroid/content/pm/UserInfo;
 
     iget-object v1, p0, Lcom/android/settings/users/UserSettings;->mUserIcons:Landroid/util/SparseArray;
 
@@ -1362,7 +1318,6 @@
 
 .method private setUserName(Ljava/lang/String;)V
     .locals 2
-    .param p1    # Ljava/lang/String;
 
     iget-object v0, p0, Lcom/android/settings/users/UserSettings;->mUserManager:Landroid/os/UserManager;
 
@@ -1387,7 +1342,6 @@
 
 .method private switchUserNow(I)V
     .locals 1
-    .param p1    # I
 
     :try_start_0
     invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
@@ -1927,9 +1881,6 @@
 
 .method public onActivityResult(IILandroid/content/Intent;)V
     .locals 1
-    .param p1    # I
-    .param p2    # I
-    .param p3    # Landroid/content/Intent;
 
     invoke-super {p0, p1, p2, p3}, Lcom/android/settings/SettingsPreferenceFragment;->onActivityResult(IILandroid/content/Intent;)V
 
@@ -1963,7 +1914,6 @@
 
 .method public onClick(Landroid/view/View;)V
     .locals 2
-    .param p1    # Landroid/view/View;
 
     invoke-virtual {p1}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
@@ -2018,7 +1968,6 @@
 
 .method public onCreate(Landroid/os/Bundle;)V
     .locals 12
-    .param p1    # Landroid/os/Bundle;
 
     const/4 v6, 0x1
 
@@ -2292,7 +2241,6 @@
 
 .method public onCreateDialog(I)Landroid/app/Dialog;
     .locals 21
-    .param p1    # I
 
     invoke-virtual/range {p0 .. p0}, Lcom/android/settings/users/UserSettings;->getActivity()Landroid/app/Activity;
 
@@ -2791,8 +2739,6 @@
 
 .method public onCreateOptionsMenu(Landroid/view/Menu;Landroid/view/MenuInflater;)V
     .locals 11
-    .param p1    # Landroid/view/Menu;
-    .param p2    # Landroid/view/MenuInflater;
 
     const/4 v6, 0x1
 
@@ -2943,7 +2889,6 @@
 
 .method public onDismiss(Landroid/content/DialogInterface;)V
     .locals 2
-    .param p1    # Landroid/content/DialogInterface;
 
     iget-object v1, p0, Lcom/android/settings/users/UserSettings;->mUserLock:Ljava/lang/Object;
 
@@ -2976,7 +2921,6 @@
 
 .method public onLabelChanged(Ljava/lang/CharSequence;)V
     .locals 1
-    .param p1    # Ljava/lang/CharSequence;
 
     iget-object v0, p0, Lcom/android/settings/users/UserSettings;->mMePreference:Landroid/preference/Preference;
 
@@ -2987,7 +2931,6 @@
 
 .method public onOptionsItemSelected(Landroid/view/MenuItem;)Z
     .locals 7
-    .param p1    # Landroid/view/MenuItem;
 
     const/4 v3, 0x0
 
@@ -3054,7 +2997,6 @@
 
 .method public onPhotoChanged(Landroid/graphics/drawable/Drawable;)V
     .locals 1
-    .param p1    # Landroid/graphics/drawable/Drawable;
 
     iget-object v0, p0, Lcom/android/settings/users/UserSettings;->mMePreference:Landroid/preference/Preference;
 
@@ -3065,8 +3007,6 @@
 
 .method public onPreferenceChange(Landroid/preference/Preference;Ljava/lang/Object;)Z
     .locals 2
-    .param p1    # Landroid/preference/Preference;
-    .param p2    # Ljava/lang/Object;
 
     iget-object v1, p0, Lcom/android/settings/users/UserSettings;->mNicknamePreference:Lcom/android/settings/SelectableEditTextPreference;
 
@@ -3104,7 +3044,6 @@
 
 .method public onPreferenceClick(Landroid/preference/Preference;)Z
     .locals 8
-    .param p1    # Landroid/preference/Preference;
 
     const/4 v2, 0x1
 
@@ -3251,7 +3190,6 @@
 
 .method public onSaveInstanceState(Landroid/os/Bundle;)V
     .locals 2
-    .param p1    # Landroid/os/Bundle;
 
     invoke-super {p0, p1}, Lcom/android/settings/SettingsPreferenceFragment;->onSaveInstanceState(Landroid/os/Bundle;)V
 
@@ -3276,8 +3214,6 @@
 
 .method public startActivityForResult(Landroid/content/Intent;I)V
     .locals 1
-    .param p1    # Landroid/content/Intent;
-    .param p2    # I
 
     iget-object v0, p0, Lcom/android/settings/users/UserSettings;->mEditUserInfoController:Lcom/android/settings/users/EditUserInfoController;
 

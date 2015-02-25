@@ -56,7 +56,6 @@
 
 .method static synthetic access$000(Lcom/android/settings/notification/AppNotificationSettings;)Lcom/android/settings/notification/NotificationAppList$AppRow;
     .locals 1
-    .param p0    # Lcom/android/settings/notification/AppNotificationSettings;
 
     iget-object v0, p0, Lcom/android/settings/notification/AppNotificationSettings;->mAppRow:Lcom/android/settings/notification/NotificationAppList$AppRow;
 
@@ -65,7 +64,6 @@
 
 .method static synthetic access$100(Lcom/android/settings/notification/AppNotificationSettings;)Landroid/content/Context;
     .locals 1
-    .param p0    # Lcom/android/settings/notification/AppNotificationSettings;
 
     iget-object v0, p0, Lcom/android/settings/notification/AppNotificationSettings;->mContext:Landroid/content/Context;
 
@@ -74,7 +72,6 @@
 
 .method static synthetic access$200(Lcom/android/settings/notification/AppNotificationSettings;)Lcom/android/settings/notification/NotificationAppList$Backend;
     .locals 1
-    .param p0    # Lcom/android/settings/notification/AppNotificationSettings;
 
     iget-object v0, p0, Lcom/android/settings/notification/AppNotificationSettings;->mBackend:Lcom/android/settings/notification/NotificationAppList$Backend;
 
@@ -83,9 +80,6 @@
 
 .method private static findPackageInfo(Landroid/content/pm/PackageManager;Ljava/lang/String;I)Landroid/content/pm/PackageInfo;
     .locals 8
-    .param p0    # Landroid/content/pm/PackageManager;
-    .param p1    # Ljava/lang/String;
-    .param p2    # I
 
     invoke-virtual {p0, p2}, Landroid/content/pm/PackageManager;->getPackagesForUid(I)[Ljava/lang/String;
 
@@ -232,7 +226,6 @@
 # virtual methods
 .method public onActivityCreated(Landroid/os/Bundle;)V
     .locals 11
-    .param p1    # Landroid/os/Bundle;
 
     const/4 v10, 0x1
 
@@ -383,7 +376,6 @@
 
 .method public onCreate(Landroid/os/Bundle;)V
     .locals 13
-    .param p1    # Landroid/os/Bundle;
 
     const/4 v12, -0x1
 

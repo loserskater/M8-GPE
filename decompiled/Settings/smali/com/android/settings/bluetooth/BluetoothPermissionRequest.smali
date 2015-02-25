@@ -207,7 +207,6 @@
 
 .method private getNotificationTag(I)Ljava/lang/String;
     .locals 2
-    .param p1    # I
 
     const/4 v0, 0x2
 
@@ -237,7 +236,6 @@
 
 .method private sendReplyIntentToReceiver(Z)V
     .locals 3
-    .param p1    # Z
 
     new-instance v0, Landroid/content/Intent;
 
@@ -299,8 +297,6 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 15
-    .param p1    # Landroid/content/Context;
-    .param p2    # Landroid/content/Intent;
 
     move-object/from16 v0, p1
 

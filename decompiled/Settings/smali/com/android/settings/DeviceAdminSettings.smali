@@ -67,7 +67,6 @@
 
 .method static synthetic access$000(Lcom/android/settings/DeviceAdminSettings;)Landroid/util/SparseArray;
     .locals 1
-    .param p0    # Lcom/android/settings/DeviceAdminSettings;
 
     iget-object v0, p0, Lcom/android/settings/DeviceAdminSettings;->mAdminsByProfile:Landroid/util/SparseArray;
 
@@ -76,8 +75,6 @@
 
 .method static synthetic access$100(Lcom/android/settings/DeviceAdminSettings;Landroid/app/admin/DeviceAdminInfo;)Z
     .locals 1
-    .param p0    # Lcom/android/settings/DeviceAdminSettings;
-    .param p1    # Landroid/app/admin/DeviceAdminInfo;
 
     invoke-direct {p0, p1}, Lcom/android/settings/DeviceAdminSettings;->isActiveAdmin(Landroid/app/admin/DeviceAdminInfo;)Z
 
@@ -88,8 +85,6 @@
 
 .method static synthetic access$200(Lcom/android/settings/DeviceAdminSettings;Landroid/app/admin/DeviceAdminInfo;)I
     .locals 1
-    .param p0    # Lcom/android/settings/DeviceAdminSettings;
-    .param p1    # Landroid/app/admin/DeviceAdminInfo;
 
     invoke-direct {p0, p1}, Lcom/android/settings/DeviceAdminSettings;->getUserId(Landroid/app/admin/DeviceAdminInfo;)I
 
@@ -100,8 +95,6 @@
 
 .method static synthetic access$300(Lcom/android/settings/DeviceAdminSettings;Landroid/app/admin/DeviceAdminInfo;)Z
     .locals 1
-    .param p0    # Lcom/android/settings/DeviceAdminSettings;
-    .param p1    # Landroid/app/admin/DeviceAdminInfo;
 
     invoke-direct {p0, p1}, Lcom/android/settings/DeviceAdminSettings;->isDeviceOwner(Landroid/app/admin/DeviceAdminInfo;)Z
 
@@ -112,8 +105,6 @@
 
 .method static synthetic access$400(Lcom/android/settings/DeviceAdminSettings;Landroid/app/admin/DeviceAdminInfo;)Z
     .locals 1
-    .param p0    # Lcom/android/settings/DeviceAdminSettings;
-    .param p1    # Landroid/app/admin/DeviceAdminInfo;
 
     invoke-direct {p0, p1}, Lcom/android/settings/DeviceAdminSettings;->isProfileOwner(Landroid/app/admin/DeviceAdminInfo;)Z
 
@@ -124,7 +115,6 @@
 
 .method private addActiveAdminsForProfile(Ljava/util/List;I)V
     .locals 11
-    .param p2    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -230,7 +220,6 @@
 
 .method private addDeviceAdminBroadcastReceiversForProfile(Ljava/util/Collection;I)V
     .locals 10
-    .param p2    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -355,7 +344,6 @@
 
 .method private createDeviceAdminInfo(Landroid/content/pm/ResolveInfo;)Landroid/app/admin/DeviceAdminInfo;
     .locals 4
-    .param p1    # Landroid/content/pm/ResolveInfo;
 
     :try_start_0
     new-instance v1, Landroid/app/admin/DeviceAdminInfo;
@@ -436,7 +424,6 @@
 
 .method private getUserId(Landroid/app/admin/DeviceAdminInfo;)I
     .locals 1
-    .param p1    # Landroid/app/admin/DeviceAdminInfo;
 
     invoke-virtual {p1}, Landroid/app/admin/DeviceAdminInfo;->getActivityInfo()Landroid/content/pm/ActivityInfo;
 
@@ -455,7 +442,6 @@
 
 .method private isActiveAdmin(Landroid/app/admin/DeviceAdminInfo;)Z
     .locals 3
-    .param p1    # Landroid/app/admin/DeviceAdminInfo;
 
     iget-object v0, p0, Lcom/android/settings/DeviceAdminSettings;->mDPM:Landroid/app/admin/DevicePolicyManager;
 
@@ -476,7 +462,6 @@
 
 .method private isDeviceOwner(Landroid/app/admin/DeviceAdminInfo;)Z
     .locals 2
-    .param p1    # Landroid/app/admin/DeviceAdminInfo;
 
     invoke-direct {p0, p1}, Lcom/android/settings/DeviceAdminSettings;->getUserId(Landroid/app/admin/DeviceAdminInfo;)I
 
@@ -513,7 +498,6 @@
 
 .method private isProfileOwner(Landroid/app/admin/DeviceAdminInfo;)Z
     .locals 3
-    .param p1    # Landroid/app/admin/DeviceAdminInfo;
 
     iget-object v1, p0, Lcom/android/settings/DeviceAdminSettings;->mProfileOwnerComponents:Landroid/util/SparseArray;
 
@@ -540,7 +524,6 @@
 
 .method private updateAvailableAdminsForProfile(I)V
     .locals 2
-    .param p1    # I
 
     iget-object v1, p0, Lcom/android/settings/DeviceAdminSettings;->mDPM:Landroid/app/admin/DevicePolicyManager;
 
@@ -559,7 +542,6 @@
 # virtual methods
 .method public onActivityCreated(Landroid/os/Bundle;)V
     .locals 2
-    .param p1    # Landroid/os/Bundle;
 
     invoke-super {p0, p1}, Landroid/app/ListFragment;->onActivityCreated(Landroid/os/Bundle;)V
 
@@ -576,7 +558,6 @@
 
 .method public onCreate(Landroid/os/Bundle;)V
     .locals 0
-    .param p1    # Landroid/os/Bundle;
 
     invoke-super {p0, p1}, Landroid/app/ListFragment;->onCreate(Landroid/os/Bundle;)V
 
@@ -585,9 +566,6 @@
 
 .method public onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
     .locals 2
-    .param p1    # Landroid/view/LayoutInflater;
-    .param p2    # Landroid/view/ViewGroup;
-    .param p3    # Landroid/os/Bundle;
 
     invoke-virtual {p0}, Lcom/android/settings/DeviceAdminSettings;->getActivity()Landroid/app/Activity;
 
@@ -630,10 +608,6 @@
 
 .method public onListItemClick(Landroid/widget/ListView;Landroid/view/View;IJ)V
     .locals 10
-    .param p1    # Landroid/widget/ListView;
-    .param p2    # Landroid/view/View;
-    .param p3    # I
-    .param p4    # J
 
     invoke-virtual {p1}, Landroid/widget/ListView;->getAdapter()Landroid/widget/ListAdapter;
 

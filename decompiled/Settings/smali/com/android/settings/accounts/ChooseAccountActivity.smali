@@ -98,7 +98,6 @@
 
 .method private finishWithAccountType(Ljava/lang/String;)V
     .locals 3
-    .param p1    # Ljava/lang/String;
 
     new-instance v0, Landroid/content/Intent;
 
@@ -632,7 +631,6 @@
 # virtual methods
 .method public getAuthoritiesForAccountType(Ljava/lang/String;)Ljava/util/ArrayList;
     .locals 8
-    .param p1    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -766,7 +764,6 @@
 
 .method protected getDrawableForType(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
     .locals 7
-    .param p1    # Ljava/lang/String;
 
     const/4 v3, 0x0
 
@@ -881,7 +878,6 @@
 
 .method protected getLabelForType(Ljava/lang/String;)Ljava/lang/CharSequence;
     .locals 7
-    .param p1    # Ljava/lang/String;
 
     const/4 v3, 0x0
 
@@ -986,7 +982,6 @@
 
 .method protected onCreate(Landroid/os/Bundle;)V
     .locals 9
-    .param p1    # Landroid/os/Bundle;
 
     invoke-super {p0, p1}, Landroid/preference/PreferenceActivity;->onCreate(Landroid/os/Bundle;)V
 
@@ -1089,8 +1084,6 @@
 
 .method public onPreferenceTreeClick(Landroid/preference/PreferenceScreen;Landroid/preference/Preference;)Z
     .locals 4
-    .param p1    # Landroid/preference/PreferenceScreen;
-    .param p2    # Landroid/preference/Preference;
 
     instance-of v1, p2, Lcom/android/settings/accounts/ProviderPreference;
 

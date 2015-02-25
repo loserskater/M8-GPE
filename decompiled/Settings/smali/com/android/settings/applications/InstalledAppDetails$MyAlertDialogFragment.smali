@@ -25,8 +25,6 @@
 
 .method public static newInstance(II)Lcom/android/settings/applications/InstalledAppDetails$MyAlertDialogFragment;
     .locals 3
-    .param p0    # I
-    .param p1    # I
 
     new-instance v1, Lcom/android/settings/applications/InstalledAppDetails$MyAlertDialogFragment;
 
@@ -65,7 +63,6 @@
 
 .method public onCreateDialog(Landroid/os/Bundle;)Landroid/app/Dialog;
     .locals 10
-    .param p1    # Landroid/os/Bundle;
 
     const v5, 0x7f0804c8
 

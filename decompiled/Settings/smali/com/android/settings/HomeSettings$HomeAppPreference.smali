@@ -35,15 +35,6 @@
 # direct methods
 .method public constructor <init>(Lcom/android/settings/HomeSettings;Landroid/content/Context;Landroid/content/ComponentName;ILandroid/graphics/drawable/Drawable;Ljava/lang/CharSequence;Lcom/android/settings/HomeSettings;Landroid/content/pm/ActivityInfo;ZLjava/lang/CharSequence;)V
     .locals 4
-    .param p2    # Landroid/content/Context;
-    .param p3    # Landroid/content/ComponentName;
-    .param p4    # I
-    .param p5    # Landroid/graphics/drawable/Drawable;
-    .param p6    # Ljava/lang/CharSequence;
-    .param p7    # Lcom/android/settings/HomeSettings;
-    .param p8    # Landroid/content/pm/ActivityInfo;
-    .param p9    # Z
-    .param p10    # Ljava/lang/CharSequence;
 
     iput-object p1, p0, Lcom/android/settings/HomeSettings$HomeAppPreference;->this$0:Lcom/android/settings/HomeSettings;
 
@@ -81,7 +72,7 @@
 
     const/16 v2, 0x12
 
-    const/high16 v3, 0x3f000000
+    const/high16 v3, 0x3f000000    # 0.5f
 
     aput v3, v1, v2
 
@@ -98,7 +89,6 @@
 
 .method private determineTargets(Landroid/content/pm/ActivityInfo;)V
     .locals 10
-    .param p1    # Landroid/content/pm/ActivityInfo;
 
     const/4 v6, 0x1
 
@@ -209,7 +199,6 @@
 # virtual methods
 .method protected onBindView(Landroid/view/View;)V
     .locals 5
-    .param p1    # Landroid/view/View;
 
     invoke-super {p0, p1}, Landroid/preference/Preference;->onBindView(Landroid/view/View;)V
 
@@ -286,7 +275,6 @@
 
 .method setChecked(Z)V
     .locals 1
-    .param p1    # Z
 
     iget-boolean v0, p0, Lcom/android/settings/HomeSettings$HomeAppPreference;->isChecked:Z
 

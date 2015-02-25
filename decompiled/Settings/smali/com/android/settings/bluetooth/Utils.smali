@@ -14,7 +14,6 @@
 
 .method public static getConnectionStateSummary(I)I
     .locals 1
-    .param p0    # I
 
     packed-switch p0, :pswitch_data_0
 
@@ -56,11 +55,6 @@
 
 .method static showDisconnectDialog(Landroid/content/Context;Landroid/app/AlertDialog;Landroid/content/DialogInterface$OnClickListener;Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Landroid/app/AlertDialog;
     .locals 4
-    .param p0    # Landroid/content/Context;
-    .param p1    # Landroid/app/AlertDialog;
-    .param p2    # Landroid/content/DialogInterface$OnClickListener;
-    .param p3    # Ljava/lang/CharSequence;
-    .param p4    # Ljava/lang/CharSequence;
 
     const v2, 0x104000a
 
@@ -118,9 +112,6 @@
 
 .method static showError(Landroid/content/Context;Ljava/lang/String;I)V
     .locals 6
-    .param p0    # Landroid/content/Context;
-    .param p1    # Ljava/lang/String;
-    .param p2    # I
 
     const/4 v4, 0x0
 
@@ -187,12 +178,6 @@
 
 .method public static updateSearchIndex(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;IZ)V
     .locals 2
-    .param p0    # Landroid/content/Context;
-    .param p1    # Ljava/lang/String;
-    .param p2    # Ljava/lang/String;
-    .param p3    # Ljava/lang/String;
-    .param p4    # I
-    .param p5    # Z
 
     new-instance v0, Lcom/android/settings/search/SearchIndexableRaw;
 

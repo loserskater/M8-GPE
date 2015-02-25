@@ -42,7 +42,6 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 2
-    .param p1    # Landroid/content/Context;
 
     const/4 v0, 0x0
 
@@ -55,8 +54,6 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 1
-    .param p1    # Landroid/content/Context;
-    .param p2    # Landroid/util/AttributeSet;
 
     const/4 v0, 0x0
 
@@ -67,9 +64,6 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
     .locals 3
-    .param p1    # Landroid/content/Context;
-    .param p2    # Landroid/util/AttributeSet;
-    .param p3    # I
 
     invoke-direct {p0, p1, p2, p3}, Lcom/android/settings/widget/ChartView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
@@ -104,8 +98,6 @@
 
 .method static synthetic access$000(Lcom/android/settings/widget/ChartDataUsageView;Lcom/android/settings/widget/ChartSweepView;)V
     .locals 0
-    .param p0    # Lcom/android/settings/widget/ChartDataUsageView;
-    .param p1    # Lcom/android/settings/widget/ChartSweepView;
 
     invoke-direct {p0, p1}, Lcom/android/settings/widget/ChartDataUsageView;->updateVertAxisBounds(Lcom/android/settings/widget/ChartSweepView;)V
 
@@ -114,7 +106,6 @@
 
 .method static synthetic access$100(Lcom/android/settings/widget/ChartDataUsageView;)V
     .locals 0
-    .param p0    # Lcom/android/settings/widget/ChartDataUsageView;
 
     invoke-direct {p0}, Lcom/android/settings/widget/ChartDataUsageView;->updateEstimateVisible()V
 
@@ -123,9 +114,6 @@
 
 .method static synthetic access$200(Lcom/android/settings/widget/ChartDataUsageView;Lcom/android/settings/widget/ChartSweepView;Z)V
     .locals 0
-    .param p0    # Lcom/android/settings/widget/ChartDataUsageView;
-    .param p1    # Lcom/android/settings/widget/ChartSweepView;
-    .param p2    # Z
 
     invoke-direct {p0, p1, p2}, Lcom/android/settings/widget/ChartDataUsageView;->sendUpdateAxisDelayed(Lcom/android/settings/widget/ChartSweepView;Z)V
 
@@ -134,8 +122,6 @@
 
 .method static synthetic access$300(Lcom/android/settings/widget/ChartDataUsageView;Lcom/android/settings/widget/ChartSweepView;)V
     .locals 0
-    .param p0    # Lcom/android/settings/widget/ChartDataUsageView;
-    .param p1    # Lcom/android/settings/widget/ChartSweepView;
 
     invoke-direct {p0, p1}, Lcom/android/settings/widget/ChartDataUsageView;->clearUpdateAxisDelayed(Lcom/android/settings/widget/ChartSweepView;)V
 
@@ -144,7 +130,6 @@
 
 .method static synthetic access$400(Lcom/android/settings/widget/ChartDataUsageView;)Lcom/android/settings/widget/ChartSweepView;
     .locals 1
-    .param p0    # Lcom/android/settings/widget/ChartDataUsageView;
 
     iget-object v0, p0, Lcom/android/settings/widget/ChartDataUsageView;->mSweepWarning:Lcom/android/settings/widget/ChartSweepView;
 
@@ -153,7 +138,6 @@
 
 .method static synthetic access$500(Lcom/android/settings/widget/ChartDataUsageView;)Lcom/android/settings/widget/ChartDataUsageView$DataUsageChartListener;
     .locals 1
-    .param p0    # Lcom/android/settings/widget/ChartDataUsageView;
 
     iget-object v0, p0, Lcom/android/settings/widget/ChartDataUsageView;->mListener:Lcom/android/settings/widget/ChartDataUsageView$DataUsageChartListener;
 
@@ -162,7 +146,6 @@
 
 .method static synthetic access$600(Lcom/android/settings/widget/ChartDataUsageView;)Lcom/android/settings/widget/ChartSweepView;
     .locals 1
-    .param p0    # Lcom/android/settings/widget/ChartDataUsageView;
 
     iget-object v0, p0, Lcom/android/settings/widget/ChartDataUsageView;->mSweepLimit:Lcom/android/settings/widget/ChartSweepView;
 
@@ -171,10 +154,6 @@
 
 .method static synthetic access$700(Landroid/text/SpannableStringBuilder;Ljava/lang/Object;Ljava/lang/CharSequence;Ljava/lang/String;)V
     .locals 0
-    .param p0    # Landroid/text/SpannableStringBuilder;
-    .param p1    # Ljava/lang/Object;
-    .param p2    # Ljava/lang/CharSequence;
-    .param p3    # Ljava/lang/String;
 
     invoke-static {p0, p1, p2, p3}, Lcom/android/settings/widget/ChartDataUsageView;->setText(Landroid/text/SpannableStringBuilder;Ljava/lang/Object;Ljava/lang/CharSequence;Ljava/lang/String;)V
 
@@ -183,7 +162,6 @@
 
 .method static synthetic access$800(J)J
     .locals 2
-    .param p0    # J
 
     invoke-static {p0, p1}, Lcom/android/settings/widget/ChartDataUsageView;->roundUpToPowerOfTwo(J)J
 
@@ -194,7 +172,6 @@
 
 .method private clearUpdateAxisDelayed(Lcom/android/settings/widget/ChartSweepView;)V
     .locals 2
-    .param p1    # Lcom/android/settings/widget/ChartSweepView;
 
     iget-object v0, p0, Lcom/android/settings/widget/ChartDataUsageView;->mHandler:Landroid/os/Handler;
 
@@ -207,7 +184,6 @@
 
 .method private static roundUpToPowerOfTwo(J)J
     .locals 4
-    .param p0    # J
 
     const-wide/16 v2, 0x1
 
@@ -268,8 +244,6 @@
 
 .method private sendUpdateAxisDelayed(Lcom/android/settings/widget/ChartSweepView;Z)V
     .locals 4
-    .param p1    # Lcom/android/settings/widget/ChartSweepView;
-    .param p2    # Z
 
     const/16 v2, 0x64
 
@@ -302,10 +276,6 @@
 
 .method private static setText(Landroid/text/SpannableStringBuilder;Ljava/lang/Object;Ljava/lang/CharSequence;Ljava/lang/String;)V
     .locals 3
-    .param p0    # Landroid/text/SpannableStringBuilder;
-    .param p1    # Ljava/lang/Object;
-    .param p2    # Ljava/lang/CharSequence;
-    .param p3    # Ljava/lang/String;
 
     invoke-virtual {p0, p1}, Landroid/text/SpannableStringBuilder;->getSpanStart(Ljava/lang/Object;)I
 
@@ -451,7 +421,6 @@
 
 .method private updateVertAxisBounds(Lcom/android/settings/widget/ChartSweepView;)V
     .locals 24
-    .param p1    # Lcom/android/settings/widget/ChartSweepView;
 
     move-object/from16 v0, p0
 
@@ -726,7 +695,6 @@
 # virtual methods
 .method public bindDetailNetworkStats(Landroid/net/NetworkStatsHistory;)V
     .locals 4
-    .param p1    # Landroid/net/NetworkStatsHistory;
 
     iget-object v0, p0, Lcom/android/settings/widget/ChartDataUsageView;->mDetailSeries:Lcom/android/settings/widget/ChartNetworkSeriesView;
 
@@ -776,7 +744,6 @@
 
 .method public bindNetworkPolicy(Landroid/net/NetworkPolicy;)V
     .locals 8
-    .param p1    # Landroid/net/NetworkPolicy;
 
     const/4 v7, 0x0
 
@@ -885,7 +852,6 @@
 
 .method public bindNetworkStats(Landroid/net/NetworkStatsHistory;)V
     .locals 1
-    .param p1    # Landroid/net/NetworkStatsHistory;
 
     iget-object v0, p0, Lcom/android/settings/widget/ChartDataUsageView;->mSeries:Lcom/android/settings/widget/ChartNetworkSeriesView;
 
@@ -1110,7 +1076,6 @@
 
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 3
-    .param p1    # Landroid/view/MotionEvent;
 
     const/4 v0, 0x0
 
@@ -1155,7 +1120,6 @@
 
 .method public setListener(Lcom/android/settings/widget/ChartDataUsageView$DataUsageChartListener;)V
     .locals 0
-    .param p1    # Lcom/android/settings/widget/ChartDataUsageView$DataUsageChartListener;
 
     iput-object p1, p0, Lcom/android/settings/widget/ChartDataUsageView;->mListener:Lcom/android/settings/widget/ChartDataUsageView$DataUsageChartListener;
 
@@ -1164,8 +1128,6 @@
 
 .method public setVisibleRange(JJ)V
     .locals 3
-    .param p1    # J
-    .param p3    # J
 
     iget-object v1, p0, Lcom/android/settings/widget/ChartDataUsageView;->mHoriz:Lcom/android/settings/widget/ChartAxis;
 

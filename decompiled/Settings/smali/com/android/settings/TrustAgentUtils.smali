@@ -14,8 +14,6 @@
 # direct methods
 .method public static checkProvidePermission(Landroid/content/pm/ResolveInfo;Landroid/content/pm/PackageManager;)Z
     .locals 4
-    .param p0    # Landroid/content/pm/ResolveInfo;
-    .param p1    # Landroid/content/pm/PackageManager;
 
     iget-object v1, p0, Landroid/content/pm/ResolveInfo;->serviceInfo:Landroid/content/pm/ServiceInfo;
 
@@ -82,7 +80,6 @@
 
 .method public static getComponentName(Landroid/content/pm/ResolveInfo;)Landroid/content/ComponentName;
     .locals 3
-    .param p0    # Landroid/content/pm/ResolveInfo;
 
     if-eqz p0, :cond_0
 
@@ -114,8 +111,6 @@
 
 .method public static getSettingsComponent(Landroid/content/pm/PackageManager;Landroid/content/pm/ResolveInfo;)Lcom/android/settings/TrustAgentUtils$TrustAgentComponentInfo;
     .locals 13
-    .param p0    # Landroid/content/pm/PackageManager;
-    .param p1    # Landroid/content/pm/ResolveInfo;
 
     if-eqz p1, :cond_0
 

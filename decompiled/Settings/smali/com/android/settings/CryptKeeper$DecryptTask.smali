@@ -42,8 +42,6 @@
 
 .method synthetic constructor <init>(Lcom/android/settings/CryptKeeper;Lcom/android/settings/CryptKeeper$1;)V
     .locals 0
-    .param p1    # Lcom/android/settings/CryptKeeper;
-    .param p2    # Lcom/android/settings/CryptKeeper$1;
 
     invoke-direct {p0, p1}, Lcom/android/settings/CryptKeeper$DecryptTask;-><init>(Lcom/android/settings/CryptKeeper;)V
 
@@ -52,7 +50,6 @@
 
 .method private hide(I)V
     .locals 2
-    .param p1    # I
 
     iget-object v1, p0, Lcom/android/settings/CryptKeeper$DecryptTask;->this$0:Lcom/android/settings/CryptKeeper;
 
@@ -74,7 +71,6 @@
 # virtual methods
 .method protected varargs doInBackground([Ljava/lang/String;)Ljava/lang/Integer;
     .locals 4
-    .param p1    # [Ljava/lang/String;
 
     iget-object v2, p0, Lcom/android/settings/CryptKeeper$DecryptTask;->this$0:Lcom/android/settings/CryptKeeper;
 
@@ -121,7 +117,6 @@
 
 .method protected bridge synthetic doInBackground([Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
-    .param p1    # [Ljava/lang/Object;
 
     check-cast p1, [Ljava/lang/String;
 
@@ -134,7 +129,6 @@
 
 .method protected onPostExecute(Ljava/lang/Integer;)V
     .locals 6
-    .param p1    # Ljava/lang/Integer;
 
     invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
 
@@ -279,7 +273,6 @@
 
 .method protected bridge synthetic onPostExecute(Ljava/lang/Object;)V
     .locals 0
-    .param p1    # Ljava/lang/Object;
 
     check-cast p1, Ljava/lang/Integer;
 

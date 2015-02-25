@@ -17,11 +17,6 @@
 # direct methods
 .method varargs constructor <init>(ILjava/lang/String;Ljava/lang/String;I[I)V
     .locals 0
-    .param p1    # I
-    .param p2    # Ljava/lang/String;
-    .param p3    # Ljava/lang/String;
-    .param p4    # I
-    .param p5    # [I
 
     invoke-direct/range {p0 .. p5}, Lcom/android/settings/notification/SettingPref;-><init>(ILjava/lang/String;Ljava/lang/String;I[I)V
 
@@ -32,7 +27,6 @@
 # virtual methods
 .method public isApplicable(Landroid/content/Context;)Z
     .locals 1
-    .param p1    # Landroid/content/Context;
 
     # invokes: Lcom/android/settings/notification/OtherSoundSettings;->hasDockSettings(Landroid/content/Context;)Z
     invoke-static {p1}, Lcom/android/settings/notification/OtherSoundSettings;->access$000(Landroid/content/Context;)Z

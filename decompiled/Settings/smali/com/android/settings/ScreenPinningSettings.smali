@@ -70,7 +70,6 @@
 
 .method private setLockToAppEnabled(Z)V
     .locals 3
-    .param p1    # Z
 
     invoke-virtual {p0}, Lcom/android/settings/ScreenPinningSettings;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -97,7 +96,6 @@
 # virtual methods
 .method public onActivityCreated(Landroid/os/Bundle;)V
     .locals 3
-    .param p1    # Landroid/os/Bundle;
 
     invoke-super {p0, p1}, Lcom/android/settings/SettingsPreferenceFragment;->onActivityCreated(Landroid/os/Bundle;)V
 
@@ -134,9 +132,6 @@
 
 .method public onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
     .locals 2
-    .param p1    # Landroid/view/LayoutInflater;
-    .param p2    # Landroid/view/ViewGroup;
-    .param p3    # Landroid/os/Bundle;
 
     const v0, 0x7f04009f
 
@@ -167,8 +162,6 @@
 
 .method public onSwitchChanged(Landroid/widget/Switch;Z)V
     .locals 0
-    .param p1    # Landroid/widget/Switch;
-    .param p2    # Z
 
     invoke-direct {p0, p2}, Lcom/android/settings/ScreenPinningSettings;->setLockToAppEnabled(Z)V
 

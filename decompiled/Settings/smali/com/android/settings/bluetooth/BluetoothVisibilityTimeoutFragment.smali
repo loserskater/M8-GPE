@@ -37,8 +37,6 @@
 # virtual methods
 .method public onClick(Landroid/content/DialogInterface;I)V
     .locals 1
-    .param p1    # Landroid/content/DialogInterface;
-    .param p2    # I
 
     iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothVisibilityTimeoutFragment;->mDiscoverableEnabler:Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;
 
@@ -51,7 +49,6 @@
 
 .method public onCreateDialog(Landroid/os/Bundle;)Landroid/app/Dialog;
     .locals 3
-    .param p1    # Landroid/os/Bundle;
 
     new-instance v0, Landroid/app/AlertDialog$Builder;
 

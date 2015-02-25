@@ -35,8 +35,6 @@
 
 .method public constructor <init>(Lcom/android/settings/DialogCreatable;I)V
     .locals 3
-    .param p1    # Lcom/android/settings/DialogCreatable;
-    .param p2    # I
 
     invoke-direct {p0}, Landroid/app/DialogFragment;-><init>()V
 
@@ -86,8 +84,6 @@
 
 .method static synthetic access$102(Lcom/android/settings/SettingsPreferenceFragment$SettingsDialogFragment;Landroid/content/DialogInterface$OnDismissListener;)Landroid/content/DialogInterface$OnDismissListener;
     .locals 0
-    .param p0    # Lcom/android/settings/SettingsPreferenceFragment$SettingsDialogFragment;
-    .param p1    # Landroid/content/DialogInterface$OnDismissListener;
 
     iput-object p1, p0, Lcom/android/settings/SettingsPreferenceFragment$SettingsDialogFragment;->mOnDismissListener:Landroid/content/DialogInterface$OnDismissListener;
 
@@ -106,7 +102,6 @@
 
 .method public onCancel(Landroid/content/DialogInterface;)V
     .locals 1
-    .param p1    # Landroid/content/DialogInterface;
 
     invoke-super {p0, p1}, Landroid/app/DialogFragment;->onCancel(Landroid/content/DialogInterface;)V
 
@@ -124,7 +119,6 @@
 
 .method public onCreateDialog(Landroid/os/Bundle;)Landroid/app/Dialog;
     .locals 4
-    .param p1    # Landroid/os/Bundle;
 
     if-eqz p1, :cond_3
 
@@ -294,7 +288,6 @@
 
 .method public onDismiss(Landroid/content/DialogInterface;)V
     .locals 1
-    .param p1    # Landroid/content/DialogInterface;
 
     invoke-super {p0, p1}, Landroid/app/DialogFragment;->onDismiss(Landroid/content/DialogInterface;)V
 
@@ -312,7 +305,6 @@
 
 .method public onSaveInstanceState(Landroid/os/Bundle;)V
     .locals 2
-    .param p1    # Landroid/os/Bundle;
 
     invoke-super {p0, p1}, Landroid/app/DialogFragment;->onSaveInstanceState(Landroid/os/Bundle;)V
 

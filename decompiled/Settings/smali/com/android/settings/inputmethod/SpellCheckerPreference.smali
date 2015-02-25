@@ -31,9 +31,6 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/view/textservice/SpellCheckerInfo;Lcom/android/settings/inputmethod/SpellCheckerPreference$OnRadioButtonPreferenceListener;)V
     .locals 4
-    .param p1    # Landroid/content/Context;
-    .param p2    # Landroid/view/textservice/SpellCheckerInfo;
-    .param p3    # Lcom/android/settings/inputmethod/SpellCheckerPreference$OnRadioButtonPreferenceListener;
 
     const/4 v3, 0x0
 
@@ -110,7 +107,6 @@
 
 .method private enableSettingsButton(Z)V
     .locals 2
-    .param p1    # Z
 
     iget-object v0, p0, Lcom/android/settings/inputmethod/SpellCheckerPreference;->mSettingsButton:Landroid/view/View;
 
@@ -152,7 +148,7 @@
 
     iget-object v0, p0, Lcom/android/settings/inputmethod/SpellCheckerPreference;->mSettingsButton:Landroid/view/View;
 
-    const v1, 0x3ecccccd
+    const v1, 0x3ecccccd    # 0.4f
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setAlpha(F)V
 
@@ -219,7 +215,6 @@
 
 .method private updateSelectedState(Z)V
     .locals 1
-    .param p1    # Z
 
     iget-object v0, p0, Lcom/android/settings/inputmethod/SpellCheckerPreference;->mRadioButton:Landroid/widget/RadioButton;
 
@@ -263,7 +258,6 @@
 
 .method protected onBindView(Landroid/view/View;)V
     .locals 1
-    .param p1    # Landroid/view/View;
 
     invoke-super {p0, p1}, Landroid/preference/Preference;->onBindView(Landroid/view/View;)V
 
@@ -310,7 +304,6 @@
 
 .method public onClick(Landroid/view/View;)V
     .locals 1
-    .param p1    # Landroid/view/View;
 
     iget-object v0, p0, Lcom/android/settings/inputmethod/SpellCheckerPreference;->mPrefLeftButton:Landroid/view/View;
 
@@ -336,7 +329,6 @@
 
 .method public setSelected(Z)V
     .locals 0
-    .param p1    # Z
 
     iput-boolean p1, p0, Lcom/android/settings/inputmethod/SpellCheckerPreference;->mSelected:Z
 

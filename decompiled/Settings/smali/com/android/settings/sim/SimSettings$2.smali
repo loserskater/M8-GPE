@@ -27,8 +27,6 @@
 # virtual methods
 .method public getXmlResourcesToIndex(Landroid/content/Context;Z)Ljava/util/List;
     .locals 3
-    .param p1    # Landroid/content/Context;
-    .param p2    # Z
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

@@ -116,7 +116,6 @@
 
 .method static synthetic access$000(Lcom/android/settings/fuelgauge/PowerUsageDetail;)Landroid/widget/Button;
     .locals 1
-    .param p0    # Lcom/android/settings/fuelgauge/PowerUsageDetail;
 
     iget-object v0, p0, Lcom/android/settings/fuelgauge/PowerUsageDetail;->mForceStopButton:Landroid/widget/Button;
 
@@ -125,9 +124,6 @@
 
 .method private addControl(III)V
     .locals 7
-    .param p1    # I
-    .param p2    # I
-    .param p3    # I
 
     invoke-virtual {p0}, Lcom/android/settings/fuelgauge/PowerUsageDetail;->getResources()Landroid/content/res/Resources;
 
@@ -196,7 +192,6 @@
 
 .method private addMessage(I)V
     .locals 6
-    .param p1    # I
 
     invoke-virtual {p0}, Lcom/android/settings/fuelgauge/PowerUsageDetail;->getResources()Landroid/content/res/Resources;
 
@@ -1053,7 +1048,6 @@
 
 .method private doAction(I)V
     .locals 7
-    .param p1    # I
 
     const/4 v6, 0x0
 
@@ -1187,7 +1181,6 @@
 
 .method private fillControlsSection(I)V
     .locals 10
-    .param p1    # I
 
     const/4 v5, 0x0
 
@@ -1344,7 +1337,7 @@
     :pswitch_5
     iget-wide v6, p0, Lcom/android/settings/fuelgauge/PowerUsageDetail;->mNoCoverage:D
 
-    const-wide/high16 v8, 0x4024000000000000L
+    const-wide/high16 v8, 0x4024000000000000L    # 10.0
 
     cmpl-double v5, v6, v8
 
@@ -1618,7 +1611,6 @@
 
 .method private fillMessagesSection(I)V
     .locals 3
-    .param p1    # I
 
     const/4 v0, 0x1
 
@@ -1663,7 +1655,6 @@
 
 .method private fillPackagesSection(I)V
     .locals 10
-    .param p1    # I
 
     const/4 v8, 0x1
 
@@ -2083,11 +2074,6 @@
 
 .method public static startBatteryDetailPage(Lcom/android/settings/SettingsActivity;Lcom/android/internal/os/BatteryStatsHelper;ILcom/android/settings/fuelgauge/BatteryEntry;Z)V
     .locals 19
-    .param p0    # Lcom/android/settings/SettingsActivity;
-    .param p1    # Lcom/android/internal/os/BatteryStatsHelper;
-    .param p2    # I
-    .param p3    # Lcom/android/settings/fuelgauge/BatteryEntry;
-    .param p4    # Z
 
     invoke-virtual/range {p1 .. p1}, Lcom/android/internal/os/BatteryStatsHelper;->getStats()Landroid/os/BatteryStats;
 
@@ -2131,7 +2117,7 @@
 
     div-double/2addr v6, v8
 
-    const-wide/high16 v8, 0x3fe0000000000000L
+    const-wide/high16 v8, 0x3fe0000000000000L    # 0.5
 
     add-double/2addr v6, v8
 
@@ -2147,7 +2133,7 @@
 
     iget-wide v6, v3, Lcom/android/internal/os/BatterySipper;->value:D
 
-    const-wide/high16 v8, 0x4059000000000000L
+    const-wide/high16 v8, 0x4059000000000000L    # 100.0
 
     mul-double/2addr v6, v8
 
@@ -3039,7 +3025,6 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 1
-    .param p1    # Landroid/view/View;
 
     invoke-virtual {p1}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
@@ -3058,7 +3043,6 @@
 
 .method public onCreate(Landroid/os/Bundle;)V
     .locals 2
-    .param p1    # Landroid/os/Bundle;
 
     invoke-super {p0, p1}, Landroid/app/Fragment;->onCreate(Landroid/os/Bundle;)V
 
@@ -3091,9 +3075,6 @@
 
 .method public onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
     .locals 3
-    .param p1    # Landroid/view/LayoutInflater;
-    .param p2    # Landroid/view/ViewGroup;
-    .param p3    # Landroid/os/Bundle;
 
     const/4 v2, 0x0
 

@@ -21,8 +21,6 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/preference/SwitchPreference;)V
     .locals 3
-    .param p1    # Landroid/content/Context;
-    .param p2    # Landroid/preference/SwitchPreference;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -71,7 +69,6 @@
 
 .method static synthetic access$000(Lcom/android/settings/AirplaneModeEnabler;)V
     .locals 0
-    .param p0    # Lcom/android/settings/AirplaneModeEnabler;
 
     invoke-direct {p0}, Lcom/android/settings/AirplaneModeEnabler;->onAirplaneModeChanged()V
 
@@ -80,7 +77,6 @@
 
 .method public static isAirplaneModeOn(Landroid/content/Context;)Z
     .locals 3
-    .param p0    # Landroid/content/Context;
 
     const/4 v0, 0x0
 
@@ -120,7 +116,6 @@
 
 .method private setAirplaneModeOn(Z)V
     .locals 4
-    .param p1    # Z
 
     iget-object v1, p0, Lcom/android/settings/AirplaneModeEnabler;->mContext:Landroid/content/Context;
 
@@ -169,8 +164,6 @@
 # virtual methods
 .method public onPreferenceChange(Landroid/preference/Preference;Ljava/lang/Object;)Z
     .locals 1
-    .param p1    # Landroid/preference/Preference;
-    .param p2    # Ljava/lang/Object;
 
     const-string v0, "ril.cdma.inecmmode"
 
@@ -271,8 +264,6 @@
 
 .method public setAirplaneModeInECM(ZZ)V
     .locals 0
-    .param p1    # Z
-    .param p2    # Z
 
     if-eqz p1, :cond_0
 

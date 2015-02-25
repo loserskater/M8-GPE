@@ -33,7 +33,6 @@
 # virtual methods
 .method public onFailed(I)V
     .locals 3
-    .param p1    # I
 
     packed-switch p1, :pswitch_data_0
 
@@ -137,7 +136,6 @@
 
 .method public onStarted(Ljava/lang/String;)V
     .locals 5
-    .param p1    # Ljava/lang/String;
 
     if-eqz p1, :cond_0
 

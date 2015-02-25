@@ -36,13 +36,6 @@
 # direct methods
 .method public constructor <init>(Landroid/graphics/Bitmap;IIFIFI)V
     .locals 13
-    .param p1    # Landroid/graphics/Bitmap;
-    .param p2    # I
-    .param p3    # I
-    .param p4    # F
-    .param p5    # I
-    .param p6    # F
-    .param p7    # I
 
     invoke-direct {p0}, Landroid/graphics/drawable/Drawable;-><init>()V
 
@@ -128,13 +121,13 @@
 
     iget v8, p0, Lcom/android/settings/drawable/CircleFramedDrawable;->mStrokeWidth:F
 
-    const/high16 v9, 0x40000000
+    const/high16 v9, 0x40000000    # 2.0f
 
     div-float/2addr v8, v9
 
     iget v9, p0, Lcom/android/settings/drawable/CircleFramedDrawable;->mStrokeWidth:F
 
-    const/high16 v10, 0x40000000
+    const/high16 v10, 0x40000000    # 2.0f
 
     div-float/2addr v9, v10
 
@@ -152,7 +145,7 @@
 
     const/4 v8, 0x0
 
-    const/high16 v9, 0x43b40000
+    const/high16 v9, 0x43b40000    # 360.0f
 
     invoke-virtual {v4, v2, v8, v9}, Landroid/graphics/Path;->addArc(Landroid/graphics/RectF;FF)V
 
@@ -210,7 +203,7 @@
 
     invoke-virtual {v8, v9}, Landroid/graphics/Paint;->setXfermode(Landroid/graphics/Xfermode;)Landroid/graphics/Xfermode;
 
-    const/high16 v8, 0x3f800000
+    const/high16 v8, 0x3f800000    # 1.0f
 
     iput v8, p0, Lcom/android/settings/drawable/CircleFramedDrawable;->mScale:F
 
@@ -265,8 +258,6 @@
 
 .method public static getInstance(Landroid/content/Context;Landroid/graphics/Bitmap;)Lcom/android/settings/drawable/CircleFramedDrawable;
     .locals 10
-    .param p0    # Landroid/content/Context;
-    .param p1    # Landroid/graphics/Bitmap;
 
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -323,9 +314,8 @@
 # virtual methods
 .method public draw(Landroid/graphics/Canvas;)V
     .locals 8
-    .param p1    # Landroid/graphics/Canvas;
 
-    const/high16 v6, 0x40000000
+    const/high16 v6, 0x40000000    # 2.0f
 
     const/4 v7, 0x0
 
@@ -405,7 +395,7 @@
 
     iget-object v3, p0, Lcom/android/settings/drawable/CircleFramedDrawable;->mFrameRect:Landroid/graphics/RectF;
 
-    const/high16 v4, 0x43b40000
+    const/high16 v4, 0x43b40000    # 360.0f
 
     invoke-virtual {v2, v3, v7, v4}, Landroid/graphics/Path;->addArc(Landroid/graphics/RectF;FF)V
 
@@ -525,14 +515,12 @@
 
 .method public setAlpha(I)V
     .locals 0
-    .param p1    # I
 
     return-void
 .end method
 
 .method public setColorFilter(Landroid/graphics/ColorFilter;)V
     .locals 0
-    .param p1    # Landroid/graphics/ColorFilter;
 
     return-void
 .end method

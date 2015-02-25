@@ -33,7 +33,6 @@
 # virtual methods
 .method public onNotificationPosted(Landroid/service/notification/StatusBarNotification;)V
     .locals 4
-    .param p1    # Landroid/service/notification/StatusBarNotification;
 
     const-string v1, "onNotificationPosted: %s"
 
@@ -83,7 +82,6 @@
 
 .method public onNotificationRemoved(Landroid/service/notification/StatusBarNotification;)V
     .locals 4
-    .param p1    # Landroid/service/notification/StatusBarNotification;
 
     iget-object v1, p0, Lcom/android/settings/notification/NotificationStation$2;->this$0:Lcom/android/settings/notification/NotificationStation;
 

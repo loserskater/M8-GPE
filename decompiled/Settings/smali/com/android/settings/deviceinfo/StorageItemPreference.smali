@@ -12,9 +12,6 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;II)V
     .locals 2
-    .param p1    # Landroid/content/Context;
-    .param p2    # I
-    .param p3    # I
 
     invoke-virtual {p1, p2}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -29,10 +26,6 @@
 
 .method public constructor <init>(Landroid/content/Context;Ljava/lang/CharSequence;II)V
     .locals 4
-    .param p1    # Landroid/content/Context;
-    .param p2    # Ljava/lang/CharSequence;
-    .param p3    # I
-    .param p4    # I
 
     invoke-direct {p0, p1}, Landroid/preference/Preference;-><init>(Landroid/content/Context;)V
 
@@ -93,9 +86,6 @@
 
 .method private static createRectShape(III)Landroid/graphics/drawable/ShapeDrawable;
     .locals 2
-    .param p0    # I
-    .param p1    # I
-    .param p2    # I
 
     new-instance v0, Landroid/graphics/drawable/ShapeDrawable;
 

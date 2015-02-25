@@ -111,8 +111,6 @@
 
 .method static synthetic access$000(Lcom/android/settings/inputmethod/InputMethodAndLanguageSettings;Landroid/hardware/input/InputDeviceIdentifier;)V
     .locals 0
-    .param p0    # Lcom/android/settings/inputmethod/InputMethodAndLanguageSettings;
-    .param p1    # Landroid/hardware/input/InputDeviceIdentifier;
 
     invoke-direct {p0, p1}, Lcom/android/settings/inputmethod/InputMethodAndLanguageSettings;->showKeyboardLayoutDialog(Landroid/hardware/input/InputDeviceIdentifier;)V
 
@@ -121,7 +119,6 @@
 
 .method static synthetic access$100(Lcom/android/settings/inputmethod/InputMethodAndLanguageSettings;)V
     .locals 0
-    .param p0    # Lcom/android/settings/inputmethod/InputMethodAndLanguageSettings;
 
     invoke-direct {p0}, Lcom/android/settings/inputmethod/InputMethodAndLanguageSettings;->updateCurrentImeName()V
 
@@ -130,7 +127,6 @@
 
 .method static synthetic access$200(Landroid/content/Context;)Ljava/lang/String;
     .locals 1
-    .param p0    # Landroid/content/Context;
 
     invoke-static {p0}, Lcom/android/settings/inputmethod/InputMethodAndLanguageSettings;->getLocaleName(Landroid/content/Context;)Ljava/lang/String;
 
@@ -151,7 +147,6 @@
 
 .method private static getLocaleName(Landroid/content/Context;)Ljava/lang/String;
     .locals 5
-    .param p0    # Landroid/content/Context;
 
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -305,7 +300,6 @@
 
 .method private restorePreviouslyEnabledSubtypesOf(Landroid/view/inputmethod/InputMethodInfo;)V
     .locals 4
-    .param p1    # Landroid/view/inputmethod/InputMethodInfo;
 
     invoke-direct {p0}, Lcom/android/settings/inputmethod/InputMethodAndLanguageSettings;->loadPreviouslyEnabledSubtypeIdsMap()Ljava/util/HashMap;
 
@@ -340,7 +334,6 @@
 
 .method private saveEnabledSubtypesOf(Landroid/view/inputmethod/InputMethodInfo;)V
     .locals 9
-    .param p1    # Landroid/view/inputmethod/InputMethodInfo;
 
     new-instance v0, Ljava/util/HashSet;
 
@@ -443,7 +436,6 @@
 
 .method private showKeyboardLayoutDialog(Landroid/hardware/input/InputDeviceIdentifier;)V
     .locals 3
-    .param p1    # Landroid/hardware/input/InputDeviceIdentifier;
 
     new-instance v0, Lcom/android/settings/inputmethod/KeyboardLayoutDialogFragment;
 
@@ -1019,7 +1011,6 @@
 
 .method private updateUserDictionaryPreference(Landroid/preference/Preference;)V
     .locals 3
-    .param p1    # Landroid/preference/Preference;
 
     invoke-virtual {p0}, Lcom/android/settings/inputmethod/InputMethodAndLanguageSettings;->getActivity()Landroid/app/Activity;
 
@@ -1054,9 +1045,6 @@
 # virtual methods
 .method public onActivityResult(IILandroid/content/Intent;)V
     .locals 3
-    .param p1    # I
-    .param p2    # I
-    .param p3    # Landroid/content/Intent;
 
     invoke-super {p0, p1, p2, p3}, Lcom/android/settings/SettingsPreferenceFragment;->onActivityResult(IILandroid/content/Intent;)V
 
@@ -1086,7 +1074,6 @@
 
 .method public onCreate(Landroid/os/Bundle;)V
     .locals 7
-    .param p1    # Landroid/os/Bundle;
 
     invoke-super {p0, p1}, Lcom/android/settings/SettingsPreferenceFragment;->onCreate(Landroid/os/Bundle;)V
 
@@ -1363,7 +1350,6 @@
 
 .method public onInputDeviceAdded(I)V
     .locals 0
-    .param p1    # I
 
     invoke-direct {p0}, Lcom/android/settings/inputmethod/InputMethodAndLanguageSettings;->updateInputDevices()V
 
@@ -1372,7 +1358,6 @@
 
 .method public onInputDeviceChanged(I)V
     .locals 0
-    .param p1    # I
 
     invoke-direct {p0}, Lcom/android/settings/inputmethod/InputMethodAndLanguageSettings;->updateInputDevices()V
 
@@ -1381,7 +1366,6 @@
 
 .method public onInputDeviceRemoved(I)V
     .locals 0
-    .param p1    # I
 
     invoke-direct {p0}, Lcom/android/settings/inputmethod/InputMethodAndLanguageSettings;->updateInputDevices()V
 
@@ -1434,8 +1418,6 @@
 
 .method public onPreferenceChange(Landroid/preference/Preference;Ljava/lang/Object;)Z
     .locals 1
-    .param p1    # Landroid/preference/Preference;
-    .param p2    # Ljava/lang/Object;
 
     const/4 v0, 0x0
 
@@ -1444,8 +1426,6 @@
 
 .method public onPreferenceTreeClick(Landroid/preference/PreferenceScreen;Landroid/preference/Preference;)Z
     .locals 7
-    .param p1    # Landroid/preference/PreferenceScreen;
-    .param p2    # Landroid/preference/Preference;
 
     const/4 v3, 0x1
 
@@ -1648,7 +1628,6 @@
 
 .method public onSaveInputMethodPreference(Lcom/android/settings/inputmethod/InputMethodPreference;)V
     .locals 6
-    .param p1    # Lcom/android/settings/inputmethod/InputMethodPreference;
 
     invoke-virtual {p1}, Lcom/android/settings/inputmethod/InputMethodPreference;->getInputMethodInfo()Landroid/view/inputmethod/InputMethodInfo;
 
@@ -1739,7 +1718,6 @@
 
 .method public onSetupKeyboardLayouts(Landroid/hardware/input/InputDeviceIdentifier;)V
     .locals 3
-    .param p1    # Landroid/hardware/input/InputDeviceIdentifier;
 
     new-instance v0, Landroid/content/Intent;
 

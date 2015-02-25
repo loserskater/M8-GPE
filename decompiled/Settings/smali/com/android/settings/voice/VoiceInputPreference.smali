@@ -34,11 +34,6 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Lcom/android/settings/voice/VoiceInputHelper$BaseInfo;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Lcom/android/settings/voice/VoiceInputPreference$RadioButtonGroupState;)V
     .locals 1
-    .param p1    # Landroid/content/Context;
-    .param p2    # Lcom/android/settings/voice/VoiceInputHelper$BaseInfo;
-    .param p3    # Ljava/lang/CharSequence;
-    .param p4    # Ljava/lang/CharSequence;
-    .param p5    # Lcom/android/settings/voice/VoiceInputPreference$RadioButtonGroupState;
 
     invoke-direct {p0, p1}, Landroid/preference/Preference;-><init>(Landroid/content/Context;)V
 
@@ -87,7 +82,6 @@
 
 .method static synthetic access$000(Lcom/android/settings/voice/VoiceInputPreference;)Landroid/content/ComponentName;
     .locals 1
-    .param p0    # Lcom/android/settings/voice/VoiceInputPreference;
 
     iget-object v0, p0, Lcom/android/settings/voice/VoiceInputPreference;->mSettingsComponent:Landroid/content/ComponentName;
 
@@ -96,8 +90,6 @@
 
 .method private displayAlert(Landroid/content/DialogInterface$OnClickListener;Landroid/content/DialogInterface$OnClickListener;)V
     .locals 9
-    .param p1    # Landroid/content/DialogInterface$OnClickListener;
-    .param p2    # Landroid/content/DialogInterface$OnClickListener;
 
     const/4 v8, 0x1
 
@@ -240,8 +232,6 @@
 
 .method public getView(Landroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
     .locals 6
-    .param p1    # Landroid/view/View;
-    .param p2    # Landroid/view/ViewGroup;
 
     iget-object v4, p0, Lcom/android/settings/voice/VoiceInputPreference;->mSharedState:Lcom/android/settings/voice/VoiceInputPreference$RadioButtonGroupState;
 
@@ -340,7 +330,6 @@
 
 .method makeCurrentChecked(Landroid/widget/Checkable;)V
     .locals 2
-    .param p1    # Landroid/widget/Checkable;
 
     iget-object v0, p0, Lcom/android/settings/voice/VoiceInputPreference;->mSharedState:Lcom/android/settings/voice/VoiceInputPreference$RadioButtonGroupState;
 
@@ -390,8 +379,6 @@
 
 .method onRadioButtonClicked(Landroid/widget/CompoundButton;Z)V
     .locals 2
-    .param p1    # Landroid/widget/CompoundButton;
-    .param p2    # Z
 
     iget-boolean v0, p0, Lcom/android/settings/voice/VoiceInputPreference;->mPreventRadioButtonCallbacks:Z
 
@@ -447,7 +434,6 @@
 
 .method updateCheckedState(Z)V
     .locals 2
-    .param p1    # Z
 
     const/4 v1, 0x0
 
@@ -469,7 +455,7 @@
 
     iget-object v0, p0, Lcom/android/settings/voice/VoiceInputPreference;->mSettingsIcon:Landroid/view/View;
 
-    const/high16 v1, 0x3f800000
+    const/high16 v1, 0x3f800000    # 1.0f
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setAlpha(F)V
 
@@ -483,7 +469,7 @@
 
     iget-object v0, p0, Lcom/android/settings/voice/VoiceInputPreference;->mSettingsIcon:Landroid/view/View;
 
-    const v1, 0x3ecccccd
+    const v1, 0x3ecccccd    # 0.4f
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setAlpha(F)V
 

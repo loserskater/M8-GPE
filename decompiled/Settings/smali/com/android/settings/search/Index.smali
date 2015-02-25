@@ -208,8 +208,6 @@
 
 .method public constructor <init>(Landroid/content/Context;Ljava/lang/String;)V
     .locals 2
-    .param p1    # Landroid/content/Context;
-    .param p2    # Ljava/lang/String;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -236,7 +234,6 @@
 
 .method static synthetic access$200(Lcom/android/settings/search/Index;)Ljava/util/concurrent/atomic/AtomicBoolean;
     .locals 1
-    .param p0    # Lcom/android/settings/search/Index;
 
     iget-object v0, p0, Lcom/android/settings/search/Index;->mIsAvailable:Ljava/util/concurrent/atomic/AtomicBoolean;
 
@@ -245,7 +242,6 @@
 
 .method static synthetic access$300(Lcom/android/settings/search/Index;)Landroid/database/sqlite/SQLiteDatabase;
     .locals 1
-    .param p0    # Lcom/android/settings/search/Index;
 
     invoke-direct {p0}, Lcom/android/settings/search/Index;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
 
@@ -256,11 +252,6 @@
 
 .method static synthetic access$400(Lcom/android/settings/search/Index;Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;Landroid/provider/SearchIndexableData;Ljava/util/Map;)V
     .locals 0
-    .param p0    # Lcom/android/settings/search/Index;
-    .param p1    # Landroid/database/sqlite/SQLiteDatabase;
-    .param p2    # Ljava/lang/String;
-    .param p3    # Landroid/provider/SearchIndexableData;
-    .param p4    # Ljava/util/Map;
 
     invoke-direct {p0, p1, p2, p3, p4}, Lcom/android/settings/search/Index;->indexOneSearchIndexableData(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;Landroid/provider/SearchIndexableData;Ljava/util/Map;)V
 
@@ -277,11 +268,6 @@
 
 .method private addIndexablesForRawDataUri(Landroid/content/Context;Ljava/lang/String;Landroid/net/Uri;[Ljava/lang/String;I)V
     .locals 25
-    .param p1    # Landroid/content/Context;
-    .param p2    # Ljava/lang/String;
-    .param p3    # Landroid/net/Uri;
-    .param p4    # [Ljava/lang/String;
-    .param p5    # I
 
     invoke-virtual/range {p1 .. p1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -518,11 +504,6 @@
 
 .method private addIndexablesForXmlResourceUri(Landroid/content/Context;Ljava/lang/String;Landroid/net/Uri;[Ljava/lang/String;I)V
     .locals 18
-    .param p1    # Landroid/content/Context;
-    .param p2    # Ljava/lang/String;
-    .param p3    # Landroid/net/Uri;
-    .param p4    # [Ljava/lang/String;
-    .param p5    # I
 
     invoke-virtual/range {p1 .. p1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -691,8 +672,6 @@
 
 .method private addIndexablesFromRemoteProvider(Ljava/lang/String;Ljava/lang/String;)Z
     .locals 13
-    .param p1    # Ljava/lang/String;
-    .param p2    # Ljava/lang/String;
 
     :try_start_0
     invoke-static {p2}, Lcom/android/settings/search/Ranking;->getBaseRankForAuthority(Ljava/lang/String;)I
@@ -802,8 +781,6 @@
 
 .method private addNonIndexablesKeysFromRemoteProvider(Ljava/lang/String;Ljava/lang/String;)V
     .locals 1
-    .param p1    # Ljava/lang/String;
-    .param p2    # Ljava/lang/String;
 
     invoke-direct {p0, p1, p2}, Lcom/android/settings/search/Index;->getNonIndexablesKeysFromRemoteProvider(Ljava/lang/String;Ljava/lang/String;)Ljava/util/List;
 
@@ -816,8 +793,6 @@
 
 .method private buildSearchMatchStringForColumns(Ljava/lang/String;[Ljava/lang/String;)Ljava/lang/String;
     .locals 6
-    .param p1    # Ljava/lang/String;
-    .param p2    # [Ljava/lang/String;
 
     new-instance v4, Ljava/lang/StringBuilder;
 
@@ -881,9 +856,6 @@
 
 .method private buildSearchSQL(Ljava/lang/String;[Ljava/lang/String;Z)Ljava/lang/String;
     .locals 2
-    .param p1    # Ljava/lang/String;
-    .param p2    # [Ljava/lang/String;
-    .param p3    # Z
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -915,8 +887,6 @@
 
 .method private buildSearchSQLForColumn(Ljava/lang/String;[Ljava/lang/String;)Ljava/lang/String;
     .locals 3
-    .param p1    # Ljava/lang/String;
-    .param p2    # [Ljava/lang/String;
 
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -986,8 +956,6 @@
 
 .method private buildSearchWhereStringForColumns(Ljava/lang/String;[Ljava/lang/String;)Ljava/lang/String;
     .locals 2
-    .param p1    # Ljava/lang/String;
-    .param p2    # [Ljava/lang/String;
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -1048,7 +1016,6 @@
 
 .method private buildSuggestionsSQL(Ljava/lang/String;)Ljava/lang/String;
     .locals 2
-    .param p1    # Ljava/lang/String;
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -1127,7 +1094,6 @@
 
 .method private static buildUriForNonIndexableKeys(Ljava/lang/String;)Landroid/net/Uri;
     .locals 2
-    .param p0    # Ljava/lang/String;
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -1168,7 +1134,6 @@
 
 .method private static buildUriForRawData(Ljava/lang/String;)Landroid/net/Uri;
     .locals 2
-    .param p0    # Ljava/lang/String;
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -1209,7 +1174,6 @@
 
 .method private static buildUriForXmlResources(Ljava/lang/String;)Landroid/net/Uri;
     .locals 2
-    .param p0    # Ljava/lang/String;
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -1250,10 +1214,6 @@
 
 .method private getData(Landroid/content/Context;Landroid/util/AttributeSet;[II)Ljava/lang/String;
     .locals 5
-    .param p1    # Landroid/content/Context;
-    .param p2    # Landroid/util/AttributeSet;
-    .param p3    # [I
-    .param p4    # I
 
     invoke-virtual {p1, p2, p3}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
 
@@ -1307,8 +1267,6 @@
 
 .method private getDataEntries(Landroid/content/Context;Landroid/util/AttributeSet;)Ljava/lang/String;
     .locals 2
-    .param p1    # Landroid/content/Context;
-    .param p2    # Landroid/util/AttributeSet;
 
     sget-object v0, Lcom/android/internal/R$styleable;->ListPreference:[I
 
@@ -1323,10 +1281,6 @@
 
 .method private getDataEntries(Landroid/content/Context;Landroid/util/AttributeSet;[II)Ljava/lang/String;
     .locals 8
-    .param p1    # Landroid/content/Context;
-    .param p2    # Landroid/util/AttributeSet;
-    .param p3    # [I
-    .param p4    # I
 
     invoke-virtual {p1, p2, p3}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
 
@@ -1410,8 +1364,6 @@
 
 .method private getDataKey(Landroid/content/Context;Landroid/util/AttributeSet;)Ljava/lang/String;
     .locals 2
-    .param p1    # Landroid/content/Context;
-    .param p2    # Landroid/util/AttributeSet;
 
     sget-object v0, Lcom/android/internal/R$styleable;->Preference:[I
 
@@ -1426,8 +1378,6 @@
 
 .method private getDataKeywords(Landroid/content/Context;Landroid/util/AttributeSet;)Ljava/lang/String;
     .locals 2
-    .param p1    # Landroid/content/Context;
-    .param p2    # Landroid/util/AttributeSet;
 
     sget-object v0, Lcom/android/settings/R$styleable;->Preference:[I
 
@@ -1442,8 +1392,6 @@
 
 .method private getDataSummary(Landroid/content/Context;Landroid/util/AttributeSet;)Ljava/lang/String;
     .locals 2
-    .param p1    # Landroid/content/Context;
-    .param p2    # Landroid/util/AttributeSet;
 
     sget-object v0, Lcom/android/internal/R$styleable;->Preference:[I
 
@@ -1458,8 +1406,6 @@
 
 .method private getDataSummaryOff(Landroid/content/Context;Landroid/util/AttributeSet;)Ljava/lang/String;
     .locals 2
-    .param p1    # Landroid/content/Context;
-    .param p2    # Landroid/util/AttributeSet;
 
     sget-object v0, Lcom/android/internal/R$styleable;->CheckBoxPreference:[I
 
@@ -1474,8 +1420,6 @@
 
 .method private getDataSummaryOn(Landroid/content/Context;Landroid/util/AttributeSet;)Ljava/lang/String;
     .locals 2
-    .param p1    # Landroid/content/Context;
-    .param p2    # Landroid/util/AttributeSet;
 
     sget-object v0, Lcom/android/internal/R$styleable;->CheckBoxPreference:[I
 
@@ -1490,8 +1434,6 @@
 
 .method private getDataTitle(Landroid/content/Context;Landroid/util/AttributeSet;)Ljava/lang/String;
     .locals 2
-    .param p1    # Landroid/content/Context;
-    .param p2    # Landroid/util/AttributeSet;
 
     sget-object v0, Lcom/android/internal/R$styleable;->Preference:[I
 
@@ -1506,7 +1448,6 @@
 
 .method private static getIndexableClass(Ljava/lang/String;)Ljava/lang/Class;
     .locals 6
-    .param p0    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1572,7 +1513,6 @@
 
 .method public static getInstance(Landroid/content/Context;)Lcom/android/settings/search/Index;
     .locals 2
-    .param p0    # Landroid/content/Context;
 
     sget-object v0, Lcom/android/settings/search/Index;->sInstance:Lcom/android/settings/search/Index;
 
@@ -1601,9 +1541,6 @@
 
 .method private getNonIndexablesKeys(Landroid/content/Context;Landroid/net/Uri;[Ljava/lang/String;)Ljava/util/List;
     .locals 10
-    .param p1    # Landroid/content/Context;
-    .param p2    # Landroid/net/Uri;
-    .param p3    # [Ljava/lang/String;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1716,8 +1653,6 @@
 
 .method private getNonIndexablesKeysFromRemoteProvider(Ljava/lang/String;Ljava/lang/String;)Ljava/util/List;
     .locals 6
-    .param p1    # Ljava/lang/String;
-    .param p2    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1917,14 +1852,6 @@
 
 .method private indexFromProvider(Landroid/content/Context;Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;Lcom/android/settings/search/Indexable$SearchIndexProvider;Ljava/lang/String;IIZLjava/util/List;)V
     .locals 28
-    .param p1    # Landroid/content/Context;
-    .param p2    # Landroid/database/sqlite/SQLiteDatabase;
-    .param p3    # Ljava/lang/String;
-    .param p4    # Lcom/android/settings/search/Indexable$SearchIndexProvider;
-    .param p5    # Ljava/lang/String;
-    .param p6    # I
-    .param p7    # I
-    .param p8    # Z
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -2258,16 +2185,6 @@
 
 .method private indexFromResource(Landroid/content/Context;Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;ILjava/lang/String;IILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;)V
     .locals 44
-    .param p1    # Landroid/content/Context;
-    .param p2    # Landroid/database/sqlite/SQLiteDatabase;
-    .param p3    # Ljava/lang/String;
-    .param p4    # I
-    .param p5    # Ljava/lang/String;
-    .param p6    # I
-    .param p7    # I
-    .param p8    # Ljava/lang/String;
-    .param p9    # Ljava/lang/String;
-    .param p10    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -2770,9 +2687,6 @@
 
 .method private indexOneRaw(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;Lcom/android/settings/search/SearchIndexableRaw;)V
     .locals 19
-    .param p1    # Landroid/database/sqlite/SQLiteDatabase;
-    .param p2    # Ljava/lang/String;
-    .param p3    # Lcom/android/settings/search/SearchIndexableRaw;
 
     move-object/from16 v0, p3
 
@@ -2873,9 +2787,6 @@
 
 .method private indexOneResource(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;Landroid/provider/SearchIndexableResource;Ljava/util/Map;)V
     .locals 16
-    .param p1    # Landroid/database/sqlite/SQLiteDatabase;
-    .param p2    # Ljava/lang/String;
-    .param p3    # Landroid/provider/SearchIndexableResource;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -3123,9 +3034,6 @@
 
 .method private indexOneSearchIndexableData(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;Landroid/provider/SearchIndexableData;Ljava/util/Map;)V
     .locals 1
-    .param p1    # Landroid/database/sqlite/SQLiteDatabase;
-    .param p2    # Ljava/lang/String;
-    .param p3    # Landroid/provider/SearchIndexableData;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -3199,7 +3107,6 @@
 
 .method private isPrivilegedPackage(Ljava/lang/String;)Z
     .locals 6
-    .param p1    # Ljava/lang/String;
 
     const/4 v3, 0x0
 
@@ -3222,7 +3129,7 @@
     :try_end_0
     .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
-    const/high16 v5, 0x40000000
+    const/high16 v5, 0x40000000    # 2.0f
 
     and-int/2addr v4, v5
 
@@ -3242,7 +3149,6 @@
 
 .method private isWellKnownProvider(Landroid/content/pm/ResolveInfo;)Z
     .locals 6
-    .param p1    # Landroid/content/pm/ResolveInfo;
 
     const/4 v4, 0x0
 
@@ -3318,7 +3224,6 @@
 
 .method private static normalizeHyphen(Ljava/lang/String;)Ljava/lang/String;
     .locals 2
-    .param p0    # Ljava/lang/String;
 
     if-eqz p0, :cond_0
 
@@ -3341,7 +3246,6 @@
 
 .method private static normalizeString(Ljava/lang/String;)Ljava/lang/String;
     .locals 4
-    .param p0    # Ljava/lang/String;
 
     if-eqz p0, :cond_0
 
@@ -3434,26 +3338,6 @@
 
 .method private updateOneRow(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZLjava/lang/String;I)V
     .locals 6
-    .param p1    # Landroid/database/sqlite/SQLiteDatabase;
-    .param p2    # Ljava/lang/String;
-    .param p3    # Ljava/lang/String;
-    .param p4    # Ljava/lang/String;
-    .param p5    # Ljava/lang/String;
-    .param p6    # Ljava/lang/String;
-    .param p7    # Ljava/lang/String;
-    .param p8    # Ljava/lang/String;
-    .param p9    # Ljava/lang/String;
-    .param p10    # Ljava/lang/String;
-    .param p11    # Ljava/lang/String;
-    .param p12    # I
-    .param p13    # I
-    .param p14    # Ljava/lang/String;
-    .param p15    # Ljava/lang/String;
-    .param p16    # Ljava/lang/String;
-    .param p17    # Ljava/lang/String;
-    .param p18    # Z
-    .param p19    # Ljava/lang/String;
-    .param p20    # I
 
     invoke-static {p3}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -3610,23 +3494,6 @@
 
 .method private updateOneRowWithFilteredData(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZLjava/lang/String;I)V
     .locals 21
-    .param p1    # Landroid/database/sqlite/SQLiteDatabase;
-    .param p2    # Ljava/lang/String;
-    .param p3    # Ljava/lang/String;
-    .param p4    # Ljava/lang/String;
-    .param p5    # Ljava/lang/String;
-    .param p6    # Ljava/lang/String;
-    .param p7    # Ljava/lang/String;
-    .param p8    # Ljava/lang/String;
-    .param p9    # I
-    .param p10    # I
-    .param p11    # Ljava/lang/String;
-    .param p12    # Ljava/lang/String;
-    .param p13    # Ljava/lang/String;
-    .param p14    # Ljava/lang/String;
-    .param p15    # Z
-    .param p16    # Ljava/lang/String;
-    .param p17    # I
 
     invoke-static/range {p3 .. p3}, Lcom/android/settings/search/Index;->normalizeHyphen(Ljava/lang/String;)Ljava/lang/String;
 
@@ -3691,7 +3558,6 @@
 # virtual methods
 .method public addIndexableData(Landroid/provider/SearchIndexableData;)V
     .locals 2
-    .param p1    # Landroid/provider/SearchIndexableData;
 
     iget-object v1, p0, Lcom/android/settings/search/Index;->mDataToProcess:Lcom/android/settings/search/Index$UpdateData;
 
@@ -3720,7 +3586,6 @@
 
 .method public addNonIndexableKeys(Ljava/lang/String;Ljava/util/List;)V
     .locals 2
-    .param p1    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -3759,7 +3624,6 @@
 
 .method public addSavedQuery(Ljava/lang/String;)J
     .locals 7
-    .param p1    # Ljava/lang/String;
 
     const-wide/16 v4, -0x1
 
@@ -3857,7 +3721,6 @@
 
 .method public deleteIndexableData(Landroid/provider/SearchIndexableData;)V
     .locals 2
-    .param p1    # Landroid/provider/SearchIndexableData;
 
     iget-object v1, p0, Lcom/android/settings/search/Index;->mDataToProcess:Lcom/android/settings/search/Index$UpdateData;
 
@@ -3886,7 +3749,6 @@
 
 .method public getSuggestions(Ljava/lang/String;)Landroid/database/Cursor;
     .locals 4
-    .param p1    # Ljava/lang/String;
 
     invoke-direct {p0, p1}, Lcom/android/settings/search/Index;->buildSuggestionsSQL(Ljava/lang/String;)Ljava/lang/String;
 
@@ -3929,7 +3791,6 @@
 
 .method public search(Ljava/lang/String;)Landroid/database/Cursor;
     .locals 11
-    .param p1    # Ljava/lang/String;
 
     const/4 v10, 0x0
 
@@ -4036,7 +3897,6 @@
 
 .method public setContext(Landroid/content/Context;)V
     .locals 0
-    .param p1    # Landroid/content/Context;
 
     iput-object p1, p0, Lcom/android/settings/search/Index;->mContext:Landroid/content/Context;
 
@@ -4113,9 +3973,6 @@
 
 .method public updateFromClassNameResource(Ljava/lang/String;ZZ)V
     .locals 4
-    .param p1    # Ljava/lang/String;
-    .param p2    # Z
-    .param p3    # Z
 
     if-nez p1, :cond_0
 
@@ -4190,7 +4047,6 @@
 
 .method public updateFromSearchIndexableData(Landroid/provider/SearchIndexableData;)V
     .locals 2
-    .param p1    # Landroid/provider/SearchIndexableData;
 
     invoke-virtual {p0, p1}, Lcom/android/settings/search/Index;->addIndexableData(Landroid/provider/SearchIndexableData;)V
 

@@ -228,7 +228,6 @@
 
 .method public onCreate(Landroid/os/Bundle;)V
     .locals 2
-    .param p1    # Landroid/os/Bundle;
 
     invoke-super {p0, p1}, Lcom/android/settings/SettingsPreferenceFragment;->onCreate(Landroid/os/Bundle;)V
 
@@ -287,7 +286,6 @@
 
 .method public onPreferenceClick(Landroid/preference/Preference;)Z
     .locals 1
-    .param p1    # Landroid/preference/Preference;
 
     instance-of v0, p1, Lcom/android/settings/voice/VoiceInputPreference;
 
@@ -315,7 +313,6 @@
 
 .method public setCurrentChecked(Landroid/widget/Checkable;)V
     .locals 0
-    .param p1    # Landroid/widget/Checkable;
 
     iput-object p1, p0, Lcom/android/settings/voice/VoiceInputSettings;->mCurrentChecked:Landroid/widget/Checkable;
 
@@ -324,7 +321,6 @@
 
 .method public setCurrentKey(Ljava/lang/String;)V
     .locals 5
-    .param p1    # Ljava/lang/String;
 
     iput-object p1, p0, Lcom/android/settings/voice/VoiceInputSettings;->mCurrentKey:Ljava/lang/String;
 

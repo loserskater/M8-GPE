@@ -26,8 +26,6 @@
 # direct methods
 .method public constructor <init>(Lcom/android/settings/wfd/WifiDisplaySettings;Landroid/content/Context;Landroid/media/MediaRouter$RouteInfo;)V
     .locals 2
-    .param p2    # Landroid/content/Context;
-    .param p3    # Landroid/media/MediaRouter$RouteInfo;
 
     iput-object p1, p0, Lcom/android/settings/wfd/WifiDisplaySettings$RoutePreference;->this$0:Lcom/android/settings/wfd/WifiDisplaySettings;
 
@@ -129,7 +127,6 @@
 # virtual methods
 .method public onPreferenceClick(Landroid/preference/Preference;)Z
     .locals 2
-    .param p1    # Landroid/preference/Preference;
 
     iget-object v0, p0, Lcom/android/settings/wfd/WifiDisplaySettings$RoutePreference;->this$0:Lcom/android/settings/wfd/WifiDisplaySettings;
 

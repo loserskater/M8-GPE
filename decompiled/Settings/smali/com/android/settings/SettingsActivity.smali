@@ -806,7 +806,6 @@
 
 .method static synthetic access$000(Lcom/android/settings/SettingsActivity;)Z
     .locals 1
-    .param p0    # Lcom/android/settings/SettingsActivity;
 
     iget-boolean v0, p0, Lcom/android/settings/SettingsActivity;->mBatteryPresent:Z
 
@@ -815,8 +814,6 @@
 
 .method static synthetic access$002(Lcom/android/settings/SettingsActivity;Z)Z
     .locals 0
-    .param p0    # Lcom/android/settings/SettingsActivity;
-    .param p1    # Z
 
     iput-boolean p1, p0, Lcom/android/settings/SettingsActivity;->mBatteryPresent:Z
 
@@ -825,8 +822,6 @@
 
 .method static synthetic access$100(Lcom/android/settings/SettingsActivity;Z)V
     .locals 0
-    .param p0    # Lcom/android/settings/SettingsActivity;
-    .param p1    # Z
 
     invoke-direct {p0, p1}, Lcom/android/settings/SettingsActivity;->invalidateCategories(Z)V
 
@@ -835,7 +830,6 @@
 
 .method static synthetic access$200(Lcom/android/settings/SettingsActivity;)Ljava/util/ArrayList;
     .locals 1
-    .param p0    # Lcom/android/settings/SettingsActivity;
 
     iget-object v0, p0, Lcom/android/settings/SettingsActivity;->mCategories:Ljava/util/ArrayList;
 
@@ -844,8 +838,6 @@
 
 .method static synthetic access$300(Lcom/android/settings/SettingsActivity;Ljava/util/List;)V
     .locals 0
-    .param p0    # Lcom/android/settings/SettingsActivity;
-    .param p1    # Ljava/util/List;
 
     invoke-direct {p0, p1}, Lcom/android/settings/SettingsActivity;->buildDashboardCategories(Ljava/util/List;)V
 
@@ -976,7 +968,6 @@
 
 .method private getStartingFragmentClass(Landroid/content/Intent;)Ljava/lang/String;
     .locals 2
-    .param p1    # Landroid/content/Intent;
 
     iget-object v1, p0, Lcom/android/settings/SettingsActivity;->mFragmentClass:Ljava/lang/String;
 
@@ -1052,7 +1043,6 @@
 
 .method private invalidateCategories(Z)V
     .locals 3
-    .param p1    # Z
 
     const/4 v2, 0x1
 
@@ -1084,7 +1074,6 @@
 
 .method private isEasyAccessPackageInstalled(Landroid/content/Context;)Z
     .locals 5
-    .param p1    # Landroid/content/Context;
 
     const/4 v2, 0x0
 
@@ -1119,7 +1108,6 @@
 
 .method private static isLikeShortCutIntent(Landroid/content/Intent;)Z
     .locals 4
-    .param p0    # Landroid/content/Intent;
 
     const/4 v2, 0x0
 
@@ -1197,7 +1185,6 @@
 
 .method private static isShortCutIntent(Landroid/content/Intent;)Z
     .locals 2
-    .param p0    # Landroid/content/Intent;
 
     invoke-virtual {p0}, Landroid/content/Intent;->getCategories()Ljava/util/Set;
 
@@ -1226,7 +1213,6 @@
 
 .method private loadCategoriesFromResource(ILjava/util/List;)V
     .locals 22
-    .param p1    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -2052,7 +2038,6 @@
 
 .method private setTitleFromBackStackEntry(Landroid/app/FragmentManager$BackStackEntry;)V
     .locals 2
-    .param p1    # Landroid/app/FragmentManager$BackStackEntry;
 
     invoke-interface {p1}, Landroid/app/FragmentManager$BackStackEntry;->getBreadCrumbTitleRes()I
 
@@ -2082,7 +2067,6 @@
 
 .method private setTitleFromIntent(Landroid/content/Intent;)V
     .locals 4
-    .param p1    # Landroid/content/Intent;
 
     const/4 v3, -0x1
 
@@ -2137,13 +2121,6 @@
 
 .method private switchToFragment(Ljava/lang/String;Landroid/os/Bundle;ZZILjava/lang/CharSequence;Z)Landroid/app/Fragment;
     .locals 5
-    .param p1    # Ljava/lang/String;
-    .param p2    # Landroid/os/Bundle;
-    .param p3    # Z
-    .param p4    # Z
-    .param p5    # I
-    .param p6    # Ljava/lang/CharSequence;
-    .param p7    # Z
 
     if-eqz p3, :cond_0
 
@@ -2308,7 +2285,6 @@
 
 .method private updateHomeSettingTiles(Lcom/android/settings/dashboard/DashboardTile;)Z
     .locals 6
-    .param p1    # Lcom/android/settings/dashboard/DashboardTile;
 
     const/4 v2, 0x1
 
@@ -2851,9 +2827,6 @@
 # virtual methods
 .method public finishPreferencePanel(Landroid/app/Fragment;ILandroid/content/Intent;)V
     .locals 0
-    .param p1    # Landroid/app/Fragment;
-    .param p2    # I
-    .param p3    # Landroid/content/Intent;
 
     invoke-virtual {p0, p2, p3}, Lcom/android/settings/SettingsActivity;->setResult(ILandroid/content/Intent;)V
 
@@ -2864,7 +2837,6 @@
 
 .method public getDashboardCategories(Z)Ljava/util/List;
     .locals 1
-    .param p1    # Z
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(Z)",
@@ -2998,7 +2970,6 @@
 
 .method protected isValidFragment(Ljava/lang/String;)Z
     .locals 2
-    .param p1    # Ljava/lang/String;
 
     const/4 v0, 0x0
 
@@ -3063,7 +3034,6 @@
 
 .method public onConfigurationChanged(Landroid/content/res/Configuration;)V
     .locals 1
-    .param p1    # Landroid/content/res/Configuration;
 
     invoke-super {p0, p1}, Landroid/app/Activity;->onConfigurationChanged(Landroid/content/res/Configuration;)V
 
@@ -3078,7 +3048,6 @@
 
 .method protected onCreate(Landroid/os/Bundle;)V
     .locals 23
-    .param p1    # Landroid/os/Bundle;
 
     invoke-super/range {p0 .. p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
 
@@ -3801,7 +3770,6 @@
 
 .method public onCreateOptionsMenu(Landroid/view/Menu;)Z
     .locals 5
-    .param p1    # Landroid/view/Menu;
 
     const/4 v4, 0x1
 
@@ -3920,7 +3888,6 @@
 
 .method public onMenuItemActionCollapse(Landroid/view/MenuItem;)Z
     .locals 2
-    .param p1    # Landroid/view/MenuItem;
 
     invoke-interface {p1}, Landroid/view/MenuItem;->getItemId()I
 
@@ -3948,7 +3915,6 @@
 
 .method public onMenuItemActionExpand(Landroid/view/MenuItem;)Z
     .locals 2
-    .param p1    # Landroid/view/MenuItem;
 
     invoke-interface {p1}, Landroid/view/MenuItem;->getItemId()I
 
@@ -3988,8 +3954,6 @@
 
 .method public onPreferenceStartFragment(Landroid/preference/PreferenceFragment;Landroid/preference/Preference;)Z
     .locals 7
-    .param p1    # Landroid/preference/PreferenceFragment;
-    .param p2    # Landroid/preference/Preference;
 
     invoke-virtual {p2}, Landroid/preference/Preference;->getTitleRes()I
 
@@ -4084,8 +4048,6 @@
 
 .method public onPreferenceTreeClick(Landroid/preference/PreferenceScreen;Landroid/preference/Preference;)Z
     .locals 1
-    .param p1    # Landroid/preference/PreferenceScreen;
-    .param p2    # Landroid/preference/Preference;
 
     const/4 v0, 0x0
 
@@ -4094,7 +4056,6 @@
 
 .method public onQueryTextChange(Ljava/lang/String;)Z
     .locals 1
-    .param p1    # Ljava/lang/String;
 
     iput-object p1, p0, Lcom/android/settings/SettingsActivity;->mSearchQuery:Ljava/lang/String;
 
@@ -4119,7 +4080,6 @@
 
 .method public onQueryTextSubmit(Ljava/lang/String;)Z
     .locals 1
-    .param p1    # Ljava/lang/String;
 
     invoke-direct {p0}, Lcom/android/settings/SettingsActivity;->switchToSearchResultsFragmentIfNeeded()V
 
@@ -4202,7 +4162,6 @@
 
 .method protected onSaveInstanceState(Landroid/os/Bundle;)V
     .locals 4
-    .param p1    # Landroid/os/Bundle;
 
     invoke-super {p0, p1}, Landroid/app/Activity;->onSaveInstanceState(Landroid/os/Bundle;)V
 
@@ -4312,7 +4271,6 @@
 
 .method public setResultIntentData(Landroid/content/Intent;)V
     .locals 0
-    .param p1    # Landroid/content/Intent;
 
     iput-object p1, p0, Lcom/android/settings/SettingsActivity;->mResultIntentData:Landroid/content/Intent;
 
@@ -4321,7 +4279,6 @@
 
 .method public shouldUpRecreateTask(Landroid/content/Intent;)Z
     .locals 2
-    .param p1    # Landroid/content/Intent;
 
     new-instance v0, Landroid/content/Intent;
 
@@ -4338,8 +4295,6 @@
 
 .method public startPreferenceFragment(Landroid/app/Fragment;Z)V
     .locals 2
-    .param p1    # Landroid/app/Fragment;
-    .param p2    # Z
 
     invoke-virtual {p0}, Lcom/android/settings/SettingsActivity;->getFragmentManager()Landroid/app/FragmentManager;
 
@@ -4378,12 +4333,6 @@
 
 .method public startPreferencePanel(Ljava/lang/String;Landroid/os/Bundle;ILjava/lang/CharSequence;Landroid/app/Fragment;I)V
     .locals 8
-    .param p1    # Ljava/lang/String;
-    .param p2    # Landroid/os/Bundle;
-    .param p3    # I
-    .param p4    # Ljava/lang/CharSequence;
-    .param p5    # Landroid/app/Fragment;
-    .param p6    # I
 
     const/4 v6, 0x0
 
@@ -4423,11 +4372,6 @@
 
 .method public startPreferencePanelAsUser(Ljava/lang/String;Landroid/os/Bundle;ILjava/lang/CharSequence;Landroid/os/UserHandle;)V
     .locals 7
-    .param p1    # Ljava/lang/String;
-    .param p2    # Landroid/os/Bundle;
-    .param p3    # I
-    .param p4    # Ljava/lang/CharSequence;
-    .param p5    # Landroid/os/UserHandle;
 
     const/4 v4, 0x0
 

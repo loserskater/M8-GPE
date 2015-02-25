@@ -42,8 +42,6 @@
 
 .method synthetic constructor <init>(Lcom/android/settings/search/Index;Lcom/android/settings/search/Index$1;)V
     .locals 0
-    .param p1    # Lcom/android/settings/search/Index;
-    .param p2    # Lcom/android/settings/search/Index$1;
 
     invoke-direct {p0, p1}, Lcom/android/settings/search/Index$UpdateIndexTask;-><init>(Lcom/android/settings/search/Index;)V
 
@@ -52,9 +50,6 @@
 
 .method private delete(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;Ljava/lang/String;)I
     .locals 4
-    .param p1    # Landroid/database/sqlite/SQLiteDatabase;
-    .param p2    # Ljava/lang/String;
-    .param p3    # Ljava/lang/String;
 
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -93,8 +88,6 @@
 
 .method private isLocaleAlreadyIndexed(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;)Z
     .locals 13
-    .param p1    # Landroid/database/sqlite/SQLiteDatabase;
-    .param p2    # Ljava/lang/String;
 
     const/4 v10, 0x0
 
@@ -175,8 +168,6 @@
 
 .method private processDataToDelete(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;Ljava/util/List;)Z
     .locals 16
-    .param p1    # Landroid/database/sqlite/SQLiteDatabase;
-    .param p2    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -322,9 +313,6 @@
 
 .method private processDataToUpdate(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;Ljava/util/List;Ljava/util/Map;Z)Z
     .locals 18
-    .param p1    # Landroid/database/sqlite/SQLiteDatabase;
-    .param p2    # Ljava/lang/String;
-    .param p5    # Z
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -529,7 +517,6 @@
 # virtual methods
 .method protected bridge synthetic doInBackground([Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
-    .param p1    # [Ljava/lang/Object;
 
     check-cast p1, [Lcom/android/settings/search/Index$UpdateData;
 
@@ -542,7 +529,6 @@
 
 .method protected varargs doInBackground([Lcom/android/settings/search/Index$UpdateData;)Ljava/lang/Void;
     .locals 8
-    .param p1    # [Lcom/android/settings/search/Index$UpdateData;
 
     const/4 v7, 0x0
 
@@ -620,7 +606,6 @@
 
 .method protected bridge synthetic onPostExecute(Ljava/lang/Object;)V
     .locals 0
-    .param p1    # Ljava/lang/Object;
 
     check-cast p1, Ljava/lang/Void;
 
@@ -631,7 +616,6 @@
 
 .method protected onPostExecute(Ljava/lang/Void;)V
     .locals 2
-    .param p1    # Ljava/lang/Void;
 
     invoke-super {p0, p1}, Landroid/os/AsyncTask;->onPostExecute(Ljava/lang/Object;)V
 

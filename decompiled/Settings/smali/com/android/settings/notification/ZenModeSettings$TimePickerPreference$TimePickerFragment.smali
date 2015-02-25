@@ -34,7 +34,6 @@
 # virtual methods
 .method public onCreateDialog(Landroid/os/Bundle;)Landroid/app/Dialog;
     .locals 8
-    .param p1    # Landroid/os/Bundle;
 
     iget-object v0, p0, Lcom/android/settings/notification/ZenModeSettings$TimePickerPreference$TimePickerFragment;->pref:Lcom/android/settings/notification/ZenModeSettings$TimePickerPreference;
 
@@ -131,9 +130,6 @@
 
 .method public onTimeSet(Landroid/widget/TimePicker;II)V
     .locals 1
-    .param p1    # Landroid/widget/TimePicker;
-    .param p2    # I
-    .param p3    # I
 
     iget-object v0, p0, Lcom/android/settings/notification/ZenModeSettings$TimePickerPreference$TimePickerFragment;->pref:Lcom/android/settings/notification/ZenModeSettings$TimePickerPreference;
 

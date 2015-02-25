@@ -81,7 +81,6 @@
 
 .method static synthetic access$000(Landroid/content/Intent;)Lcom/android/internal/telephony/PhoneConstants$DataState;
     .locals 1
-    .param p0    # Landroid/content/Intent;
 
     invoke-static {p0}, Lcom/android/settings/ApnSettings;->getMobileDataState(Landroid/content/Intent;)Lcom/android/internal/telephony/PhoneConstants$DataState;
 
@@ -100,7 +99,6 @@
 
 .method static synthetic access$102(Z)Z
     .locals 0
-    .param p0    # Z
 
     sput-boolean p0, Lcom/android/settings/ApnSettings;->mRestoreDefaultApnMode:Z
 
@@ -109,7 +107,6 @@
 
 .method static synthetic access$200(Lcom/android/settings/ApnSettings;)V
     .locals 0
-    .param p0    # Lcom/android/settings/ApnSettings;
 
     invoke-direct {p0}, Lcom/android/settings/ApnSettings;->fillList()V
 
@@ -386,7 +383,6 @@
 
 .method private static getMobileDataState(Landroid/content/Intent;)Lcom/android/internal/telephony/PhoneConstants$DataState;
     .locals 2
-    .param p0    # Landroid/content/Intent;
 
     const-string v1, "state"
 
@@ -531,7 +527,6 @@
 
 .method private setSelectedApnKey(Ljava/lang/String;)V
     .locals 5
-    .param p1    # Ljava/lang/String;
 
     const/4 v4, 0x0
 
@@ -562,7 +557,6 @@
 # virtual methods
 .method public onActivityCreated(Landroid/os/Bundle;)V
     .locals 4
-    .param p1    # Landroid/os/Bundle;
 
     const/4 v3, 0x1
 
@@ -636,7 +630,6 @@
 
 .method public onCreate(Landroid/os/Bundle;)V
     .locals 2
-    .param p1    # Landroid/os/Bundle;
 
     invoke-super {p0, p1}, Lcom/android/settings/SettingsPreferenceFragment;->onCreate(Landroid/os/Bundle;)V
 
@@ -678,7 +671,6 @@
 
 .method public onCreateDialog(I)Landroid/app/Dialog;
     .locals 3
-    .param p1    # I
 
     const/16 v1, 0x3e9
 
@@ -719,8 +711,6 @@
 
 .method public onCreateOptionsMenu(Landroid/view/Menu;Landroid/view/MenuInflater;)V
     .locals 4
-    .param p1    # Landroid/view/Menu;
-    .param p2    # Landroid/view/MenuInflater;
 
     const/4 v2, 0x1
 
@@ -797,7 +787,6 @@
 
 .method public onOptionsItemSelected(Landroid/view/MenuItem;)Z
     .locals 2
-    .param p1    # Landroid/view/MenuItem;
 
     const/4 v0, 0x1
 
@@ -859,8 +848,6 @@
 
 .method public onPreferenceChange(Landroid/preference/Preference;Ljava/lang/Object;)Z
     .locals 1
-    .param p1    # Landroid/preference/Preference;
-    .param p2    # Ljava/lang/Object;
 
     instance-of v0, p2, Ljava/lang/String;
 
@@ -878,8 +865,6 @@
 
 .method public onPreferenceTreeClick(Landroid/preference/PreferenceScreen;Landroid/preference/Preference;)Z
     .locals 6
-    .param p1    # Landroid/preference/PreferenceScreen;
-    .param p2    # Landroid/preference/Preference;
 
     invoke-virtual {p2}, Landroid/preference/Preference;->getKey()Ljava/lang/String;
 

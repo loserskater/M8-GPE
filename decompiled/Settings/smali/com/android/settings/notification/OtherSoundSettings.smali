@@ -224,7 +224,6 @@
 
 .method static synthetic access$000(Landroid/content/Context;)Z
     .locals 1
-    .param p0    # Landroid/content/Context;
 
     invoke-static {p0}, Lcom/android/settings/notification/OtherSoundSettings;->hasDockSettings(Landroid/content/Context;)Z
 
@@ -235,7 +234,6 @@
 
 .method static synthetic access$100(Landroid/content/Context;)Z
     .locals 1
-    .param p0    # Landroid/content/Context;
 
     invoke-static {p0}, Lcom/android/settings/notification/OtherSoundSettings;->hasHaptic(Landroid/content/Context;)Z
 
@@ -246,7 +244,6 @@
 
 .method static synthetic access$200(Lcom/android/settings/notification/OtherSoundSettings;)Landroid/content/ContentResolver;
     .locals 1
-    .param p0    # Lcom/android/settings/notification/OtherSoundSettings;
 
     invoke-virtual {p0}, Lcom/android/settings/notification/OtherSoundSettings;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -265,7 +262,6 @@
 
 .method static synthetic access$400(Lcom/android/settings/notification/OtherSoundSettings;)Landroid/content/Context;
     .locals 1
-    .param p0    # Lcom/android/settings/notification/OtherSoundSettings;
 
     iget-object v0, p0, Lcom/android/settings/notification/OtherSoundSettings;->mContext:Landroid/content/Context;
 
@@ -274,7 +270,6 @@
 
 .method private static hasDockSettings(Landroid/content/Context;)Z
     .locals 2
-    .param p0    # Landroid/content/Context;
 
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -291,7 +286,6 @@
 
 .method private static hasHaptic(Landroid/content/Context;)Z
     .locals 2
-    .param p0    # Landroid/content/Context;
 
     const-string v1, "vibrator"
 
@@ -324,7 +318,6 @@
 # virtual methods
 .method public onCreate(Landroid/os/Bundle;)V
     .locals 5
-    .param p1    # Landroid/os/Bundle;
 
     invoke-super {p0, p1}, Lcom/android/settings/SettingsPreferenceFragment;->onCreate(Landroid/os/Bundle;)V
 

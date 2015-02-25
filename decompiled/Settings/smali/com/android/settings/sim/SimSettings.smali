@@ -87,7 +87,6 @@
 
 .method static synthetic access$100(Lcom/android/settings/sim/SimSettings;)V
     .locals 0
-    .param p0    # Lcom/android/settings/sim/SimSettings;
 
     invoke-direct {p0}, Lcom/android/settings/sim/SimSettings;->updateAllOptions()V
 
@@ -179,7 +178,6 @@
 
 .method private findRecordBySlotId(I)Landroid/telephony/SubInfoRecord;
     .locals 4
-    .param p1    # I
 
     iget-object v3, p0, Lcom/android/settings/sim/SimSettings;->mSubInfoList:Ljava/util/List;
 
@@ -224,7 +222,6 @@
 
 .method private findRecordBySubId(J)Landroid/telephony/SubInfoRecord;
     .locals 7
-    .param p1    # J
 
     iget-object v3, p0, Lcom/android/settings/sim/SimSettings;->mAvailableSubInfos:Ljava/util/List;
 
@@ -503,7 +500,6 @@
 # virtual methods
 .method public createDropDown(Lcom/android/settings/notification/DropDownPreference;)V
     .locals 8
-    .param p1    # Lcom/android/settings/notification/DropDownPreference;
 
     move-object v3, p1
 
@@ -597,7 +593,6 @@
 
 .method public onCreate(Landroid/os/Bundle;)V
     .locals 1
-    .param p1    # Landroid/os/Bundle;
 
     invoke-super {p0, p1}, Lcom/android/settings/RestrictedSettingsFragment;->onCreate(Landroid/os/Bundle;)V
 
@@ -621,8 +616,6 @@
 
 .method public onPreferenceTreeClick(Landroid/preference/PreferenceScreen;Landroid/preference/Preference;)Z
     .locals 1
-    .param p1    # Landroid/preference/PreferenceScreen;
-    .param p2    # Landroid/preference/Preference;
 
     instance-of v0, p2, Lcom/android/settings/sim/SimSettings$SimPreference;
 

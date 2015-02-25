@@ -106,7 +106,6 @@
 
 .method static synthetic access$100(Lcom/android/settings/fuelgauge/BatterySaverSettings;)V
     .locals 0
-    .param p0    # Lcom/android/settings/fuelgauge/BatterySaverSettings;
 
     invoke-direct {p0}, Lcom/android/settings/fuelgauge/BatterySaverSettings;->updateSwitch()V
 
@@ -123,8 +122,6 @@
 
 .method static synthetic access$300(Lcom/android/settings/fuelgauge/BatterySaverSettings;Z)V
     .locals 0
-    .param p0    # Lcom/android/settings/fuelgauge/BatterySaverSettings;
-    .param p1    # Z
 
     invoke-direct {p0, p1}, Lcom/android/settings/fuelgauge/BatterySaverSettings;->trySetPowerSaveMode(Z)V
 
@@ -133,7 +130,6 @@
 
 .method static synthetic access$400(Lcom/android/settings/fuelgauge/BatterySaverSettings;)Ljava/lang/Runnable;
     .locals 1
-    .param p0    # Lcom/android/settings/fuelgauge/BatterySaverSettings;
 
     iget-object v0, p0, Lcom/android/settings/fuelgauge/BatterySaverSettings;->mUpdateSwitch:Ljava/lang/Runnable;
 
@@ -142,7 +138,6 @@
 
 .method static synthetic access$500(Lcom/android/settings/fuelgauge/BatterySaverSettings;)Landroid/os/Handler;
     .locals 1
-    .param p0    # Lcom/android/settings/fuelgauge/BatterySaverSettings;
 
     iget-object v0, p0, Lcom/android/settings/fuelgauge/BatterySaverSettings;->mHandler:Landroid/os/Handler;
 
@@ -151,7 +146,6 @@
 
 .method static synthetic access$600(Lcom/android/settings/fuelgauge/BatterySaverSettings;)Landroid/content/Context;
     .locals 1
-    .param p0    # Lcom/android/settings/fuelgauge/BatterySaverSettings;
 
     iget-object v0, p0, Lcom/android/settings/fuelgauge/BatterySaverSettings;->mContext:Landroid/content/Context;
 
@@ -160,7 +154,6 @@
 
 .method static synthetic access$700(Lcom/android/settings/fuelgauge/BatterySaverSettings;)Lcom/android/settings/notification/SettingPref;
     .locals 1
-    .param p0    # Lcom/android/settings/fuelgauge/BatterySaverSettings;
 
     iget-object v0, p0, Lcom/android/settings/fuelgauge/BatterySaverSettings;->mTriggerPref:Lcom/android/settings/notification/SettingPref;
 
@@ -169,7 +162,6 @@
 
 .method static synthetic access$800(Lcom/android/settings/fuelgauge/BatterySaverSettings;)Landroid/content/ContentResolver;
     .locals 1
-    .param p0    # Lcom/android/settings/fuelgauge/BatterySaverSettings;
 
     invoke-virtual {p0}, Lcom/android/settings/fuelgauge/BatterySaverSettings;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -180,7 +172,6 @@
 
 .method private trySetPowerSaveMode(Z)V
     .locals 2
-    .param p1    # Z
 
     iget-object v0, p0, Lcom/android/settings/fuelgauge/BatterySaverSettings;->mPowerManager:Landroid/os/PowerManager;
 
@@ -304,7 +295,6 @@
 # virtual methods
 .method public onActivityCreated(Landroid/os/Bundle;)V
     .locals 7
-    .param p1    # Landroid/os/Bundle;
 
     const/4 v2, 0x1
 
@@ -469,8 +459,6 @@
 
 .method public onSwitchChanged(Landroid/widget/Switch;Z)V
     .locals 4
-    .param p1    # Landroid/widget/Switch;
-    .param p2    # Z
 
     iget-object v0, p0, Lcom/android/settings/fuelgauge/BatterySaverSettings;->mHandler:Landroid/os/Handler;
 

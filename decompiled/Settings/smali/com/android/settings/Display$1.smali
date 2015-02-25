@@ -36,10 +36,6 @@
 # virtual methods
 .method public onItemSelected(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
     .locals 2
-    .param p1    # Landroid/widget/AdapterView;
-    .param p2    # Landroid/view/View;
-    .param p3    # I
-    .param p4    # J
 
     if-nez p3, :cond_0
 
@@ -50,7 +46,7 @@
 
     move-result-object v0
 
-    const/high16 v1, 0x3f400000
+    const/high16 v1, 0x3f400000    # 0.75f
 
     iput v1, v0, Landroid/content/res/Configuration;->fontScale:F
 
@@ -74,7 +70,7 @@
 
     move-result-object v0
 
-    const/high16 v1, 0x3fa00000
+    const/high16 v1, 0x3fa00000    # 1.25f
 
     iput v1, v0, Landroid/content/res/Configuration;->fontScale:F
 
@@ -88,7 +84,7 @@
 
     move-result-object v0
 
-    const/high16 v1, 0x3f800000
+    const/high16 v1, 0x3f800000    # 1.0f
 
     iput v1, v0, Landroid/content/res/Configuration;->fontScale:F
 
@@ -97,7 +93,6 @@
 
 .method public onNothingSelected(Landroid/widget/AdapterView;)V
     .locals 0
-    .param p1    # Landroid/widget/AdapterView;
 
     return-void
 .end method

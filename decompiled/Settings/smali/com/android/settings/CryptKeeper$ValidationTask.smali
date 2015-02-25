@@ -44,8 +44,6 @@
 
 .method synthetic constructor <init>(Lcom/android/settings/CryptKeeper;Lcom/android/settings/CryptKeeper$1;)V
     .locals 0
-    .param p1    # Lcom/android/settings/CryptKeeper;
-    .param p2    # Lcom/android/settings/CryptKeeper$1;
 
     invoke-direct {p0, p1}, Lcom/android/settings/CryptKeeper$ValidationTask;-><init>(Lcom/android/settings/CryptKeeper;)V
 
@@ -56,7 +54,6 @@
 # virtual methods
 .method protected varargs doInBackground([Ljava/lang/Void;)Ljava/lang/Boolean;
     .locals 5
-    .param p1    # [Ljava/lang/Void;
 
     const/4 v3, 0x1
 
@@ -138,7 +135,6 @@
 
 .method protected bridge synthetic doInBackground([Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
-    .param p1    # [Ljava/lang/Object;
 
     check-cast p1, [Ljava/lang/Void;
 
@@ -151,7 +147,6 @@
 
 .method protected onPostExecute(Ljava/lang/Boolean;)V
     .locals 4
-    .param p1    # Ljava/lang/Boolean;
 
     const/4 v0, 0x1
 
@@ -216,7 +211,6 @@
 
 .method protected bridge synthetic onPostExecute(Ljava/lang/Object;)V
     .locals 0
-    .param p1    # Ljava/lang/Object;
 
     check-cast p1, Ljava/lang/Boolean;
 

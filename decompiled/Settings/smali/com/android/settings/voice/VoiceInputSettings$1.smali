@@ -25,9 +25,6 @@
 
 .method private getSearchIndexableRaw(Landroid/content/Context;Landroid/content/pm/ResolveInfo;Ljava/lang/String;)Lcom/android/settings/search/SearchIndexableRaw;
     .locals 5
-    .param p1    # Landroid/content/Context;
-    .param p2    # Landroid/content/pm/ResolveInfo;
-    .param p3    # Ljava/lang/String;
 
     iget-object v2, p2, Landroid/content/pm/ResolveInfo;->serviceInfo:Landroid/content/pm/ServiceInfo;
 
@@ -72,8 +69,6 @@
 # virtual methods
 .method public getRawDataToIndex(Landroid/content/Context;Z)Ljava/util/List;
     .locals 13
-    .param p1    # Landroid/content/Context;
-    .param p2    # Z
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

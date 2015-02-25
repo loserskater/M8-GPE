@@ -34,7 +34,6 @@
 # direct methods
 .method public constructor <init>(Lcom/android/settings/notification/NotificationAppList;Landroid/content/Context;)V
     .locals 1
-    .param p2    # Landroid/content/Context;
 
     const/4 v0, 0x0
 
@@ -47,8 +46,6 @@
 
 .method private enableLayoutTransitions(Landroid/view/ViewGroup;Z)V
     .locals 3
-    .param p1    # Landroid/view/ViewGroup;
-    .param p2    # Z
 
     const/4 v2, 0x3
 
@@ -89,7 +86,6 @@
 
 .method private getSubtitle(Lcom/android/settings/notification/NotificationAppList$AppRow;)Ljava/lang/String;
     .locals 5
-    .param p1    # Lcom/android/settings/notification/NotificationAppList$AppRow;
 
     iget-boolean v2, p1, Lcom/android/settings/notification/NotificationAppList$AppRow;->banned:Z
 
@@ -207,9 +203,6 @@
 # virtual methods
 .method public bindView(Landroid/view/View;Lcom/android/settings/notification/NotificationAppList$Row;Z)V
     .locals 8
-    .param p1    # Landroid/view/View;
-    .param p2    # Lcom/android/settings/notification/NotificationAppList$Row;
-    .param p3    # Z
 
     const/16 v5, 0x8
 
@@ -318,7 +311,6 @@
 
 .method public getItemId(I)J
     .locals 2
-    .param p1    # I
 
     int-to-long v0, p1
 
@@ -327,7 +319,6 @@
 
 .method public getItemViewType(I)I
     .locals 2
-    .param p1    # I
 
     invoke-virtual {p0, p1}, Lcom/android/settings/notification/NotificationAppList$NotificationAppAdapter;->getItem(I)Ljava/lang/Object;
 
@@ -352,7 +343,6 @@
 
 .method public getPositionForSection(I)I
     .locals 5
-    .param p1    # I
 
     iget-object v4, p0, Lcom/android/settings/notification/NotificationAppList$NotificationAppAdapter;->this$0:Lcom/android/settings/notification/NotificationAppList;
 
@@ -406,7 +396,6 @@
 
 .method public getSectionForPosition(I)I
     .locals 3
-    .param p1    # I
 
     invoke-virtual {p0, p1}, Lcom/android/settings/notification/NotificationAppList$NotificationAppAdapter;->getItem(I)Ljava/lang/Object;
 
@@ -462,9 +451,6 @@
 
 .method public getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
     .locals 3
-    .param p1    # I
-    .param p2    # Landroid/view/View;
-    .param p3    # Landroid/view/ViewGroup;
 
     invoke-virtual {p0, p1}, Lcom/android/settings/notification/NotificationAppList$NotificationAppAdapter;->getItem(I)Ljava/lang/Object;
 
@@ -509,8 +495,6 @@
 
 .method public newView(Landroid/view/ViewGroup;Lcom/android/settings/notification/NotificationAppList$Row;)Landroid/view/View;
     .locals 5
-    .param p1    # Landroid/view/ViewGroup;
-    .param p2    # Lcom/android/settings/notification/NotificationAppList$Row;
 
     const/4 v4, 0x0
 

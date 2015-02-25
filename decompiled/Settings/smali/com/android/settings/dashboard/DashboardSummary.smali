@@ -46,8 +46,6 @@
 
 .method static synthetic access$000(Lcom/android/settings/dashboard/DashboardSummary;Landroid/content/Context;)V
     .locals 0
-    .param p0    # Lcom/android/settings/dashboard/DashboardSummary;
-    .param p1    # Landroid/content/Context;
 
     invoke-direct {p0, p1}, Lcom/android/settings/dashboard/DashboardSummary;->rebuildUI(Landroid/content/Context;)V
 
@@ -56,7 +54,6 @@
 
 .method private rebuildUI(Landroid/content/Context;)V
     .locals 23
-    .param p1    # Landroid/content/Context;
 
     invoke-virtual/range {p0 .. p0}, Lcom/android/settings/dashboard/DashboardSummary;->isAdded()Z
 
@@ -282,12 +279,6 @@
 
 .method private updateTileView(Landroid/content/Context;Landroid/content/res/Resources;Lcom/android/settings/dashboard/DashboardTile;Landroid/widget/ImageView;Landroid/widget/TextView;Landroid/widget/TextView;)V
     .locals 3
-    .param p1    # Landroid/content/Context;
-    .param p2    # Landroid/content/res/Resources;
-    .param p3    # Lcom/android/settings/dashboard/DashboardTile;
-    .param p4    # Landroid/widget/ImageView;
-    .param p5    # Landroid/widget/TextView;
-    .param p6    # Landroid/widget/TextView;
 
     const/4 v2, 0x0
 
@@ -344,9 +335,6 @@
 # virtual methods
 .method public onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
     .locals 3
-    .param p1    # Landroid/view/LayoutInflater;
-    .param p2    # Landroid/view/ViewGroup;
-    .param p3    # Landroid/os/Bundle;
 
     iput-object p1, p0, Lcom/android/settings/dashboard/DashboardSummary;->mLayoutInflater:Landroid/view/LayoutInflater;
 

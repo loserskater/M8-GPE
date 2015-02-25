@@ -36,7 +36,6 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 16
-    .param p1    # Landroid/view/View;
 
     invoke-virtual/range {p1 .. p1}, Landroid/view/View;->getTag()Ljava/lang/Object;
 

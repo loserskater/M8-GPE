@@ -71,9 +71,6 @@
 
 .method constructor <init>(Landroid/content/Context;Lcom/android/settings/wifi/AccessPoint;Landroid/net/wifi/WifiManager;)V
     .locals 3
-    .param p1    # Landroid/content/Context;
-    .param p2    # Lcom/android/settings/wifi/AccessPoint;
-    .param p3    # Landroid/net/wifi/WifiManager;
 
     invoke-direct {p0, p1}, Landroid/app/AlertDialog;-><init>(Landroid/content/Context;)V
 
@@ -112,8 +109,6 @@
 
 .method static synthetic access$000(Lcom/android/settings/wifi/WriteWifiConfigToNfcDialog;Landroid/nfc/Tag;)V
     .locals 0
-    .param p0    # Lcom/android/settings/wifi/WriteWifiConfigToNfcDialog;
-    .param p1    # Landroid/nfc/Tag;
 
     invoke-direct {p0, p1}, Lcom/android/settings/wifi/WriteWifiConfigToNfcDialog;->handleWriteNfcEvent(Landroid/nfc/Tag;)V
 
@@ -122,7 +117,6 @@
 
 .method static synthetic access$100(Lcom/android/settings/wifi/WriteWifiConfigToNfcDialog;)Landroid/widget/ProgressBar;
     .locals 1
-    .param p0    # Lcom/android/settings/wifi/WriteWifiConfigToNfcDialog;
 
     iget-object v0, p0, Lcom/android/settings/wifi/WriteWifiConfigToNfcDialog;->mProgressBar:Landroid/widget/ProgressBar;
 
@@ -131,7 +125,6 @@
 
 .method static synthetic access$200(Lcom/android/settings/wifi/WriteWifiConfigToNfcDialog;)V
     .locals 0
-    .param p0    # Lcom/android/settings/wifi/WriteWifiConfigToNfcDialog;
 
     invoke-direct {p0}, Lcom/android/settings/wifi/WriteWifiConfigToNfcDialog;->enableSubmitIfAppropriate()V
 
@@ -140,7 +133,6 @@
 
 .method private static byteArrayToHexString([B)Ljava/lang/String;
     .locals 6
-    .param p0    # [B
 
     array-length v3, p0
 
@@ -273,7 +265,6 @@
 
 .method private handleWriteNfcEvent(Landroid/nfc/Tag;)V
     .locals 6
-    .param p1    # Landroid/nfc/Tag;
 
     const v4, 0x7f080918
 
@@ -403,7 +394,6 @@
 
 .method private static hexStringToByteArray(Ljava/lang/String;)[B
     .locals 7
-    .param p0    # Ljava/lang/String;
 
     const/16 v6, 0x10
 
@@ -458,8 +448,6 @@
 
 .method private setViewText(Landroid/widget/TextView;I)V
     .locals 2
-    .param p1    # Landroid/widget/TextView;
-    .param p2    # I
 
     invoke-virtual {p0}, Lcom/android/settings/wifi/WriteWifiConfigToNfcDialog;->getOwnerActivity()Landroid/app/Activity;
 
@@ -478,17 +466,12 @@
 # virtual methods
 .method public afterTextChanged(Landroid/text/Editable;)V
     .locals 0
-    .param p1    # Landroid/text/Editable;
 
     return-void
 .end method
 
 .method public beforeTextChanged(Ljava/lang/CharSequence;III)V
     .locals 0
-    .param p1    # Ljava/lang/CharSequence;
-    .param p2    # I
-    .param p3    # I
-    .param p4    # I
 
     return-void
 .end method
@@ -516,8 +499,6 @@
 
 .method public onCheckedChanged(Landroid/widget/CompoundButton;Z)V
     .locals 2
-    .param p1    # Landroid/widget/CompoundButton;
-    .param p2    # Z
 
     iget-object v1, p0, Lcom/android/settings/wifi/WriteWifiConfigToNfcDialog;->mPasswordView:Landroid/widget/TextView;
 
@@ -540,7 +521,6 @@
 
 .method public onClick(Landroid/view/View;)V
     .locals 12
-    .param p1    # Landroid/view/View;
 
     const/16 v9, 0x10
 
@@ -739,7 +719,6 @@
 
 .method public onCreate(Landroid/os/Bundle;)V
     .locals 6
-    .param p1    # Landroid/os/Bundle;
 
     const/4 v5, 0x1
 
@@ -892,10 +871,6 @@
 
 .method public onTextChanged(Ljava/lang/CharSequence;III)V
     .locals 2
-    .param p1    # Ljava/lang/CharSequence;
-    .param p2    # I
-    .param p3    # I
-    .param p4    # I
 
     iget-object v0, p0, Lcom/android/settings/wifi/WriteWifiConfigToNfcDialog;->mOnTextChangedHandler:Landroid/os/Handler;
 

@@ -138,8 +138,6 @@
 
 .method private constructor <init>(Ljava/lang/String;IIZ)V
     .locals 0
-    .param p3    # I
-    .param p4    # Z
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(IZ)V"
@@ -157,7 +155,6 @@
 
 .method public static valueOf(Ljava/lang/String;)Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment$LeftButtonMode;
     .locals 1
-    .param p0    # Ljava/lang/String;
 
     const-class v0, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment$LeftButtonMode;
 

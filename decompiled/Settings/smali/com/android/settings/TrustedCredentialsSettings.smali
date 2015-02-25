@@ -53,7 +53,6 @@
 
 .method static synthetic access$1300(Lcom/android/settings/TrustedCredentialsSettings;)Landroid/os/UserManager;
     .locals 1
-    .param p0    # Lcom/android/settings/TrustedCredentialsSettings;
 
     iget-object v0, p0, Lcom/android/settings/TrustedCredentialsSettings;->mUserManager:Landroid/os/UserManager;
 
@@ -62,11 +61,6 @@
 
 .method static synthetic access$1500(Lcom/android/settings/TrustedCredentialsSettings;Lcom/android/settings/TrustedCredentialsSettings$CertHolder;Lcom/android/settings/TrustedCredentialsSettings$Tab;Landroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
     .locals 1
-    .param p0    # Lcom/android/settings/TrustedCredentialsSettings;
-    .param p1    # Lcom/android/settings/TrustedCredentialsSettings$CertHolder;
-    .param p2    # Lcom/android/settings/TrustedCredentialsSettings$Tab;
-    .param p3    # Landroid/view/View;
-    .param p4    # Landroid/view/ViewGroup;
 
     invoke-direct {p0, p1, p2, p3, p4}, Lcom/android/settings/TrustedCredentialsSettings;->getViewForCertificate(Lcom/android/settings/TrustedCredentialsSettings$CertHolder;Lcom/android/settings/TrustedCredentialsSettings$Tab;Landroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
 
@@ -77,7 +71,6 @@
 
 .method static synthetic access$1700(Lcom/android/settings/TrustedCredentialsSettings;)Landroid/widget/TabHost;
     .locals 1
-    .param p0    # Lcom/android/settings/TrustedCredentialsSettings;
 
     iget-object v0, p0, Lcom/android/settings/TrustedCredentialsSettings;->mTabHost:Landroid/widget/TabHost;
 
@@ -86,7 +79,6 @@
 
 .method static synthetic access$2000(Lcom/android/settings/TrustedCredentialsSettings;)Landroid/util/SparseArray;
     .locals 1
-    .param p0    # Lcom/android/settings/TrustedCredentialsSettings;
 
     iget-object v0, p0, Lcom/android/settings/TrustedCredentialsSettings;->mKeyChainConnectionByProfileId:Landroid/util/SparseArray;
 
@@ -95,8 +87,6 @@
 
 .method static synthetic access$800(Lcom/android/settings/TrustedCredentialsSettings;Lcom/android/settings/TrustedCredentialsSettings$CertHolder;)V
     .locals 0
-    .param p0    # Lcom/android/settings/TrustedCredentialsSettings;
-    .param p1    # Lcom/android/settings/TrustedCredentialsSettings$CertHolder;
 
     invoke-direct {p0, p1}, Lcom/android/settings/TrustedCredentialsSettings;->showCertDialog(Lcom/android/settings/TrustedCredentialsSettings$CertHolder;)V
 
@@ -105,7 +95,6 @@
 
 .method private addCertChain(Lcom/android/settings/TrustedCredentialsSettings$CertHolder;Ljava/util/ArrayList;Ljava/util/ArrayList;)V
     .locals 17
-    .param p1    # Lcom/android/settings/TrustedCredentialsSettings$CertHolder;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -270,7 +259,6 @@
 
 .method private addCertDetails(Ljava/security/cert/X509Certificate;Ljava/util/ArrayList;Ljava/util/ArrayList;)V
     .locals 2
-    .param p1    # Ljava/security/cert/X509Certificate;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -315,7 +303,6 @@
 
 .method private addTab(Lcom/android/settings/TrustedCredentialsSettings$Tab;)V
     .locals 7
-    .param p1    # Lcom/android/settings/TrustedCredentialsSettings$Tab;
 
     const/4 v6, 0x0
 
@@ -469,10 +456,6 @@
 
 .method private getViewForCertificate(Lcom/android/settings/TrustedCredentialsSettings$CertHolder;Lcom/android/settings/TrustedCredentialsSettings$Tab;Landroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
     .locals 5
-    .param p1    # Lcom/android/settings/TrustedCredentialsSettings$CertHolder;
-    .param p2    # Lcom/android/settings/TrustedCredentialsSettings$Tab;
-    .param p3    # Landroid/view/View;
-    .param p4    # Landroid/view/ViewGroup;
 
     const/4 v3, 0x0
 
@@ -609,7 +592,6 @@
 
 .method private showCertDialog(Lcom/android/settings/TrustedCredentialsSettings$CertHolder;)V
     .locals 14
-    .param p1    # Lcom/android/settings/TrustedCredentialsSettings$CertHolder;
 
     new-instance v2, Landroid/app/AlertDialog$Builder;
 
@@ -786,7 +768,6 @@
 # virtual methods
 .method public onCreate(Landroid/os/Bundle;)V
     .locals 2
-    .param p1    # Landroid/os/Bundle;
 
     invoke-super {p0, p1}, Landroid/app/Fragment;->onCreate(Landroid/os/Bundle;)V
 
@@ -809,9 +790,6 @@
 
 .method public onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
     .locals 2
-    .param p1    # Landroid/view/LayoutInflater;
-    .param p2    # Landroid/view/ViewGroup;
-    .param p3    # Landroid/os/Bundle;
 
     const v0, 0x7f0400b8
 

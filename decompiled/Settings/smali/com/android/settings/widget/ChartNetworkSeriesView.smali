@@ -46,7 +46,6 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 2
-    .param p1    # Landroid/content/Context;
 
     const/4 v0, 0x0
 
@@ -59,8 +58,6 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 1
-    .param p1    # Landroid/content/Context;
-    .param p2    # Landroid/util/AttributeSet;
 
     const/4 v0, 0x0
 
@@ -71,9 +68,6 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
     .locals 10
-    .param p1    # Landroid/content/Context;
-    .param p2    # Landroid/util/AttributeSet;
-    .param p3    # I
 
     const/high16 v9, -0x10000
 
@@ -551,7 +545,6 @@
 # virtual methods
 .method public bindNetworkStats(Landroid/net/NetworkStatsHistory;)V
     .locals 0
-    .param p1    # Landroid/net/NetworkStatsHistory;
 
     iput-object p1, p0, Lcom/android/settings/widget/ChartNetworkSeriesView;->mStats:Landroid/net/NetworkStatsHistory;
 
@@ -619,8 +612,6 @@
 
 .method init(Lcom/android/settings/widget/ChartAxis;Lcom/android/settings/widget/ChartAxis;)V
     .locals 1
-    .param p1    # Lcom/android/settings/widget/ChartAxis;
-    .param p2    # Lcom/android/settings/widget/ChartAxis;
 
     const-string v0, "missing horiz"
 
@@ -663,7 +654,6 @@
 
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 7
-    .param p1    # Landroid/graphics/Canvas;
 
     const/4 v6, 0x0
 
@@ -744,8 +734,6 @@
 
 .method public setBounds(JJ)V
     .locals 1
-    .param p1    # J
-    .param p3    # J
 
     iput-wide p1, p0, Lcom/android/settings/widget/ChartNetworkSeriesView;->mStart:J
 
@@ -756,9 +744,6 @@
 
 .method public setChartColor(III)V
     .locals 4
-    .param p1    # I
-    .param p2    # I
-    .param p3    # I
 
     const/4 v3, 0x1
 
@@ -770,7 +755,7 @@
 
     iget-object v0, p0, Lcom/android/settings/widget/ChartNetworkSeriesView;->mPaintStroke:Landroid/graphics/Paint;
 
-    const/high16 v1, 0x40800000
+    const/high16 v1, 0x40800000    # 4.0f
 
     invoke-virtual {p0}, Lcom/android/settings/widget/ChartNetworkSeriesView;->getResources()Landroid/content/res/Resources;
 
@@ -848,7 +833,7 @@
 
     iget-object v0, p0, Lcom/android/settings/widget/ChartNetworkSeriesView;->mPaintEstimate:Landroid/graphics/Paint;
 
-    const/high16 v1, 0x40400000
+    const/high16 v1, 0x40400000    # 3.0f
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setStrokeWidth(F)V
 
@@ -876,7 +861,7 @@
 
     fill-array-data v2, :array_0
 
-    const/high16 v3, 0x3f800000
+    const/high16 v3, 0x3f800000    # 1.0f
 
     invoke-direct {v1, v2, v3}, Landroid/graphics/DashPathEffect;-><init>([FF)V
 
@@ -888,14 +873,13 @@
 
     :array_0
     .array-data 4
-        0x41200000
-        0x41200000
+        0x41200000    # 10.0f
+        0x41200000    # 10.0f
     .end array-data
 .end method
 
 .method public setEndTime(J)V
     .locals 1
-    .param p1    # J
 
     iput-wide p1, p0, Lcom/android/settings/widget/ChartNetworkSeriesView;->mEndTime:J
 
@@ -904,7 +888,6 @@
 
 .method public setEstimateVisible(Z)V
     .locals 1
-    .param p1    # Z
 
     const/4 v0, 0x0
 
@@ -917,7 +900,6 @@
 
 .method public setSafeRegion(I)V
     .locals 0
-    .param p1    # I
 
     iput p1, p0, Lcom/android/settings/widget/ChartNetworkSeriesView;->mSafeRegion:I
 
@@ -926,7 +908,6 @@
 
 .method public setSecondary(Z)V
     .locals 0
-    .param p1    # Z
 
     iput-boolean p1, p0, Lcom/android/settings/widget/ChartNetworkSeriesView;->mSecondary:Z
 

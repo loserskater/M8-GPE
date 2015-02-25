@@ -44,7 +44,6 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 4
-    .param p1    # Landroid/view/View;
 
     new-instance v1, Landroid/app/AlertDialog$Builder;
 

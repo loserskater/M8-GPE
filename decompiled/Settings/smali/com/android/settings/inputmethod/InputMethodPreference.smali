@@ -50,11 +50,6 @@
 
 .method constructor <init>(Landroid/content/Context;Landroid/view/inputmethod/InputMethodInfo;ZZLcom/android/settings/inputmethod/InputMethodPreference$OnSavePreferenceListener;)V
     .locals 5
-    .param p1    # Landroid/content/Context;
-    .param p2    # Landroid/view/inputmethod/InputMethodInfo;
-    .param p3    # Z
-    .param p4    # Z
-    .param p5    # Lcom/android/settings/inputmethod/InputMethodPreference$OnSavePreferenceListener;
 
     const/4 v4, 0x0
 
@@ -165,7 +160,6 @@
 
 .method static synthetic access$000(Lcom/android/settings/inputmethod/InputMethodPreference;)Lcom/android/settings/inputmethod/InputMethodPreference$OnSavePreferenceListener;
     .locals 1
-    .param p0    # Lcom/android/settings/inputmethod/InputMethodPreference;
 
     iget-object v0, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->mOnSaveListener:Lcom/android/settings/inputmethod/InputMethodPreference$OnSavePreferenceListener;
 
@@ -174,7 +168,6 @@
 
 .method static synthetic access$100(Lcom/android/settings/inputmethod/InputMethodPreference;)V
     .locals 0
-    .param p0    # Lcom/android/settings/inputmethod/InputMethodPreference;
 
     invoke-virtual {p0}, Lcom/android/settings/inputmethod/InputMethodPreference;->notifyChanged()V
 
@@ -183,7 +176,6 @@
 
 .method static synthetic access$200(Lcom/android/settings/inputmethod/InputMethodPreference;)V
     .locals 0
-    .param p0    # Lcom/android/settings/inputmethod/InputMethodPreference;
 
     invoke-virtual {p0}, Lcom/android/settings/inputmethod/InputMethodPreference;->notifyChanged()V
 
@@ -316,7 +308,6 @@
 
 .method private showSecurityWarnDialog(Landroid/view/inputmethod/InputMethodInfo;)V
     .locals 6
-    .param p1    # Landroid/view/inputmethod/InputMethodInfo;
 
     const/4 v5, 0x1
 
@@ -412,8 +403,6 @@
 # virtual methods
 .method compareTo(Lcom/android/settings/inputmethod/InputMethodPreference;Ljava/text/Collator;)I
     .locals 6
-    .param p1    # Lcom/android/settings/inputmethod/InputMethodPreference;
-    .param p2    # Ljava/text/Collator;
 
     const/4 v3, 0x1
 
@@ -493,8 +482,6 @@
 
 .method public onPreferenceChange(Landroid/preference/Preference;Ljava/lang/Object;)Z
     .locals 2
-    .param p1    # Landroid/preference/Preference;
-    .param p2    # Ljava/lang/Object;
 
     const/4 v1, 0x0
 
@@ -551,7 +538,6 @@
 
 .method public onPreferenceClick(Landroid/preference/Preference;)Z
     .locals 10
-    .param p1    # Landroid/preference/Preference;
 
     const/4 v9, 0x1
 

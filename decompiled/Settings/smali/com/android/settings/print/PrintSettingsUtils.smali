@@ -6,7 +6,6 @@
 # direct methods
 .method public static readEnabledPrintServices(Landroid/content/Context;)Ljava/util/List;
     .locals 7
-    .param p0    # Landroid/content/Context;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -69,7 +68,6 @@
 
 .method public static writeEnabledPrintServices(Landroid/content/Context;Ljava/util/List;)V
     .locals 7
-    .param p0    # Landroid/content/Context;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

@@ -62,10 +62,6 @@
 
 .method constructor <init>(Landroid/content/Context;Lcom/android/settings/bluetooth/LocalBluetoothAdapter;Lcom/android/settings/bluetooth/CachedBluetoothDeviceManager;Lcom/android/settings/bluetooth/LocalBluetoothProfileManager;)V
     .locals 3
-    .param p1    # Landroid/content/Context;
-    .param p2    # Lcom/android/settings/bluetooth/LocalBluetoothAdapter;
-    .param p3    # Lcom/android/settings/bluetooth/CachedBluetoothDeviceManager;
-    .param p4    # Lcom/android/settings/bluetooth/LocalBluetoothProfileManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -100,7 +96,6 @@
 
 .method static synthetic access$100(Lcom/android/settings/bluetooth/HeadsetProfile;)Landroid/bluetooth/BluetoothHeadset;
     .locals 1
-    .param p0    # Lcom/android/settings/bluetooth/HeadsetProfile;
 
     iget-object v0, p0, Lcom/android/settings/bluetooth/HeadsetProfile;->mService:Landroid/bluetooth/BluetoothHeadset;
 
@@ -109,8 +104,6 @@
 
 .method static synthetic access$102(Lcom/android/settings/bluetooth/HeadsetProfile;Landroid/bluetooth/BluetoothHeadset;)Landroid/bluetooth/BluetoothHeadset;
     .locals 0
-    .param p0    # Lcom/android/settings/bluetooth/HeadsetProfile;
-    .param p1    # Landroid/bluetooth/BluetoothHeadset;
 
     iput-object p1, p0, Lcom/android/settings/bluetooth/HeadsetProfile;->mService:Landroid/bluetooth/BluetoothHeadset;
 
@@ -119,7 +112,6 @@
 
 .method static synthetic access$200(Lcom/android/settings/bluetooth/HeadsetProfile;)Lcom/android/settings/bluetooth/CachedBluetoothDeviceManager;
     .locals 1
-    .param p0    # Lcom/android/settings/bluetooth/HeadsetProfile;
 
     iget-object v0, p0, Lcom/android/settings/bluetooth/HeadsetProfile;->mDeviceManager:Lcom/android/settings/bluetooth/CachedBluetoothDeviceManager;
 
@@ -128,7 +120,6 @@
 
 .method static synthetic access$300(Lcom/android/settings/bluetooth/HeadsetProfile;)Lcom/android/settings/bluetooth/LocalBluetoothAdapter;
     .locals 1
-    .param p0    # Lcom/android/settings/bluetooth/HeadsetProfile;
 
     iget-object v0, p0, Lcom/android/settings/bluetooth/HeadsetProfile;->mLocalAdapter:Lcom/android/settings/bluetooth/LocalBluetoothAdapter;
 
@@ -137,7 +128,6 @@
 
 .method static synthetic access$400(Lcom/android/settings/bluetooth/HeadsetProfile;)Lcom/android/settings/bluetooth/LocalBluetoothProfileManager;
     .locals 1
-    .param p0    # Lcom/android/settings/bluetooth/HeadsetProfile;
 
     iget-object v0, p0, Lcom/android/settings/bluetooth/HeadsetProfile;->mProfileManager:Lcom/android/settings/bluetooth/LocalBluetoothProfileManager;
 
@@ -146,8 +136,6 @@
 
 .method static synthetic access$502(Lcom/android/settings/bluetooth/HeadsetProfile;Z)Z
     .locals 0
-    .param p0    # Lcom/android/settings/bluetooth/HeadsetProfile;
-    .param p1    # Z
 
     iput-boolean p1, p0, Lcom/android/settings/bluetooth/HeadsetProfile;->mIsProfileReady:Z
 
@@ -158,7 +146,6 @@
 # virtual methods
 .method public connect(Landroid/bluetooth/BluetoothDevice;)Z
     .locals 6
-    .param p1    # Landroid/bluetooth/BluetoothDevice;
 
     iget-object v3, p0, Lcom/android/settings/bluetooth/HeadsetProfile;->mService:Landroid/bluetooth/BluetoothHeadset;
 
@@ -231,7 +218,6 @@
 
 .method public disconnect(Landroid/bluetooth/BluetoothDevice;)Z
     .locals 6
-    .param p1    # Landroid/bluetooth/BluetoothDevice;
 
     const/16 v5, 0x64
 
@@ -367,7 +353,6 @@
 
 .method public getConnectionStatus(Landroid/bluetooth/BluetoothDevice;)I
     .locals 5
-    .param p1    # Landroid/bluetooth/BluetoothDevice;
 
     const/4 v3, 0x0
 
@@ -426,7 +411,6 @@
 
 .method public getDrawableResource(Landroid/bluetooth/BluetoothClass;)I
     .locals 1
-    .param p1    # Landroid/bluetooth/BluetoothClass;
 
     const v0, 0x7f020038
 
@@ -435,7 +419,6 @@
 
 .method public getNameResource(Landroid/bluetooth/BluetoothDevice;)I
     .locals 1
-    .param p1    # Landroid/bluetooth/BluetoothDevice;
 
     const v0, 0x7f0801ec
 
@@ -452,7 +435,6 @@
 
 .method public getPreferred(Landroid/bluetooth/BluetoothDevice;)I
     .locals 1
-    .param p1    # Landroid/bluetooth/BluetoothDevice;
 
     iget-object v0, p0, Lcom/android/settings/bluetooth/HeadsetProfile;->mService:Landroid/bluetooth/BluetoothHeadset;
 
@@ -491,7 +473,6 @@
 
 .method public isPreferred(Landroid/bluetooth/BluetoothDevice;)Z
     .locals 2
-    .param p1    # Landroid/bluetooth/BluetoothDevice;
 
     const/4 v0, 0x0
 
@@ -527,8 +508,6 @@
 
 .method public setPreferred(Landroid/bluetooth/BluetoothDevice;Z)V
     .locals 2
-    .param p1    # Landroid/bluetooth/BluetoothDevice;
-    .param p2    # Z
 
     const/16 v1, 0x64
 

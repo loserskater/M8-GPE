@@ -21,7 +21,6 @@
 # direct methods
 .method constructor <init>(Landroid/content/Context;)V
     .locals 1
-    .param p1    # Landroid/content/Context;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -38,7 +37,6 @@
 
 .method public static onDeviceDisappeared(Lcom/android/settings/bluetooth/CachedBluetoothDevice;)Z
     .locals 3
-    .param p0    # Lcom/android/settings/bluetooth/CachedBluetoothDevice;
 
     const/4 v0, 0x0
 
@@ -62,9 +60,6 @@
 # virtual methods
 .method addDevice(Lcom/android/settings/bluetooth/LocalBluetoothAdapter;Lcom/android/settings/bluetooth/LocalBluetoothProfileManager;Landroid/bluetooth/BluetoothDevice;)Lcom/android/settings/bluetooth/CachedBluetoothDevice;
     .locals 3
-    .param p1    # Lcom/android/settings/bluetooth/LocalBluetoothAdapter;
-    .param p2    # Lcom/android/settings/bluetooth/LocalBluetoothProfileManager;
-    .param p3    # Landroid/bluetooth/BluetoothDevice;
 
     new-instance v0, Lcom/android/settings/bluetooth/CachedBluetoothDevice;
 
@@ -154,7 +149,6 @@
 
 .method findDevice(Landroid/bluetooth/BluetoothDevice;)Lcom/android/settings/bluetooth/CachedBluetoothDevice;
     .locals 3
-    .param p1    # Landroid/bluetooth/BluetoothDevice;
 
     iget-object v2, p0, Lcom/android/settings/bluetooth/CachedBluetoothDeviceManager;->mCachedDevices:Ljava/util/List;
 
@@ -231,7 +225,6 @@
 
 .method public getName(Landroid/bluetooth/BluetoothDevice;)Ljava/lang/String;
     .locals 2
-    .param p1    # Landroid/bluetooth/BluetoothDevice;
 
     invoke-virtual {p0, p1}, Lcom/android/settings/bluetooth/CachedBluetoothDeviceManager;->findDevice(Landroid/bluetooth/BluetoothDevice;)Lcom/android/settings/bluetooth/CachedBluetoothDevice;
 
@@ -263,7 +256,6 @@
 
 .method public declared-synchronized onBluetoothStateChanged(I)V
     .locals 4
-    .param p1    # I
 
     monitor-enter p0
 
@@ -334,7 +326,6 @@
 
 .method public declared-synchronized onBtClassChanged(Landroid/bluetooth/BluetoothDevice;)V
     .locals 2
-    .param p1    # Landroid/bluetooth/BluetoothDevice;
 
     monitor-enter p0
 
@@ -364,7 +355,6 @@
 
 .method public onDeviceNameUpdated(Landroid/bluetooth/BluetoothDevice;)V
     .locals 1
-    .param p1    # Landroid/bluetooth/BluetoothDevice;
 
     invoke-virtual {p0, p1}, Lcom/android/settings/bluetooth/CachedBluetoothDeviceManager;->findDevice(Landroid/bluetooth/BluetoothDevice;)Lcom/android/settings/bluetooth/CachedBluetoothDevice;
 
@@ -380,7 +370,6 @@
 
 .method public declared-synchronized onScanningStateChanged(Z)V
     .locals 3
-    .param p1    # Z
 
     monitor-enter p0
 
@@ -432,7 +421,6 @@
 
 .method public declared-synchronized onUuidChanged(Landroid/bluetooth/BluetoothDevice;)V
     .locals 2
-    .param p1    # Landroid/bluetooth/BluetoothDevice;
 
     monitor-enter p0
 

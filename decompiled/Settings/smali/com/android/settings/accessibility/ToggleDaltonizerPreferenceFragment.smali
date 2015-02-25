@@ -87,7 +87,6 @@
 # virtual methods
 .method public onCreate(Landroid/os/Bundle;)V
     .locals 1
-    .param p1    # Landroid/os/Bundle;
 
     invoke-super {p0, p1}, Lcom/android/settings/accessibility/ToggleFeaturePreferenceFragment;->onCreate(Landroid/os/Bundle;)V
 
@@ -150,8 +149,6 @@
 
 .method public onPreferenceChange(Landroid/preference/Preference;Ljava/lang/Object;)Z
     .locals 3
-    .param p1    # Landroid/preference/Preference;
-    .param p2    # Ljava/lang/Object;
 
     iget-object v0, p0, Lcom/android/settings/accessibility/ToggleDaltonizerPreferenceFragment;->mType:Landroid/preference/ListPreference;
 
@@ -183,8 +180,6 @@
 
 .method protected onPreferenceToggled(Ljava/lang/String;Z)V
     .locals 3
-    .param p1    # Ljava/lang/String;
-    .param p2    # Z
 
     invoke-virtual {p0}, Lcom/android/settings/accessibility/ToggleDaltonizerPreferenceFragment;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -221,8 +216,6 @@
 
 .method public onSwitchChanged(Landroid/widget/Switch;Z)V
     .locals 1
-    .param p1    # Landroid/widget/Switch;
-    .param p2    # Z
 
     iget-object v0, p0, Lcom/android/settings/accessibility/ToggleDaltonizerPreferenceFragment;->mPreferenceKey:Ljava/lang/String;
 
@@ -233,8 +226,6 @@
 
 .method public onViewCreated(Landroid/view/View;Landroid/os/Bundle;)V
     .locals 1
-    .param p1    # Landroid/view/View;
-    .param p2    # Landroid/os/Bundle;
 
     invoke-super {p0, p1, p2}, Lcom/android/settings/accessibility/ToggleFeaturePreferenceFragment;->onViewCreated(Landroid/view/View;Landroid/os/Bundle;)V
 

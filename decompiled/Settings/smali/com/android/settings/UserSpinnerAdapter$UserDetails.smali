@@ -25,9 +25,6 @@
 # direct methods
 .method public constructor <init>(Landroid/os/UserHandle;Landroid/os/UserManager;Landroid/content/Context;)V
     .locals 5
-    .param p1    # Landroid/os/UserHandle;
-    .param p2    # Landroid/os/UserManager;
-    .param p3    # Landroid/content/Context;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -115,7 +112,6 @@
 
 .method static synthetic access$000(Lcom/android/settings/UserSpinnerAdapter$UserDetails;)Landroid/os/UserHandle;
     .locals 1
-    .param p0    # Lcom/android/settings/UserSpinnerAdapter$UserDetails;
 
     iget-object v0, p0, Lcom/android/settings/UserSpinnerAdapter$UserDetails;->mUserHandle:Landroid/os/UserHandle;
 
@@ -124,7 +120,6 @@
 
 .method static synthetic access$100(Lcom/android/settings/UserSpinnerAdapter$UserDetails;)Landroid/graphics/drawable/Drawable;
     .locals 1
-    .param p0    # Lcom/android/settings/UserSpinnerAdapter$UserDetails;
 
     iget-object v0, p0, Lcom/android/settings/UserSpinnerAdapter$UserDetails;->icon:Landroid/graphics/drawable/Drawable;
 
@@ -133,7 +128,6 @@
 
 .method static synthetic access$200(Lcom/android/settings/UserSpinnerAdapter$UserDetails;)Ljava/lang/String;
     .locals 1
-    .param p0    # Lcom/android/settings/UserSpinnerAdapter$UserDetails;
 
     iget-object v0, p0, Lcom/android/settings/UserSpinnerAdapter$UserDetails;->name:Ljava/lang/String;
 

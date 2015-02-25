@@ -46,8 +46,6 @@
 # virtual methods
 .method public compare(Lcom/android/settings/accounts/AccountSettings$AccountPreference;Lcom/android/settings/accounts/AccountSettings$AccountPreference;)I
     .locals 2
-    .param p1    # Lcom/android/settings/accounts/AccountSettings$AccountPreference;
-    .param p2    # Lcom/android/settings/accounts/AccountSettings$AccountPreference;
 
     # getter for: Lcom/android/settings/accounts/AccountSettings$AccountPreference;->mTitle:Ljava/lang/CharSequence;
     invoke-static {p1}, Lcom/android/settings/accounts/AccountSettings$AccountPreference;->access$300(Lcom/android/settings/accounts/AccountSettings$AccountPreference;)Ljava/lang/CharSequence;
@@ -76,8 +74,6 @@
 
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 1
-    .param p1    # Ljava/lang/Object;
-    .param p2    # Ljava/lang/Object;
 
     check-cast p1, Lcom/android/settings/accounts/AccountSettings$AccountPreference;
 

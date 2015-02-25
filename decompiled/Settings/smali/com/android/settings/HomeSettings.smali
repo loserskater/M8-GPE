@@ -115,7 +115,6 @@
 
 .method static synthetic access$000(Lcom/android/settings/HomeSettings;)V
     .locals 0
-    .param p0    # Lcom/android/settings/HomeSettings;
 
     invoke-direct {p0}, Lcom/android/settings/HomeSettings;->buildHomeActivitiesList()V
 
@@ -124,7 +123,6 @@
 
 .method static synthetic access$200(Lcom/android/settings/HomeSettings;)Ljava/util/ArrayList;
     .locals 1
-    .param p0    # Lcom/android/settings/HomeSettings;
 
     iget-object v0, p0, Lcom/android/settings/HomeSettings;->mPrefs:Ljava/util/ArrayList;
 
@@ -133,7 +131,6 @@
 
 .method static synthetic access$300(Lcom/android/settings/HomeSettings;)Lcom/android/settings/HomeSettings$HomeAppPreference;
     .locals 1
-    .param p0    # Lcom/android/settings/HomeSettings;
 
     iget-object v0, p0, Lcom/android/settings/HomeSettings;->mCurrentHome:Lcom/android/settings/HomeSettings$HomeAppPreference;
 
@@ -142,7 +139,6 @@
 
 .method static synthetic access$400(Lcom/android/settings/HomeSettings;)Landroid/content/pm/PackageManager;
     .locals 1
-    .param p0    # Lcom/android/settings/HomeSettings;
 
     iget-object v0, p0, Lcom/android/settings/HomeSettings;->mPm:Landroid/content/pm/PackageManager;
 
@@ -489,7 +485,6 @@
 
 .method private launcherHasManagedProfilesFeature(Landroid/content/pm/ResolveInfo;)Z
     .locals 6
-    .param p1    # Landroid/content/pm/ResolveInfo;
 
     const/4 v2, 0x0
 
@@ -527,7 +522,6 @@
 
 .method private versionNumberAtLeastL(I)Z
     .locals 1
-    .param p1    # I
 
     const/16 v0, 0x15
 
@@ -548,7 +542,6 @@
 # virtual methods
 .method makeCurrentHome(Lcom/android/settings/HomeSettings$HomeAppPreference;)V
     .locals 5
-    .param p1    # Lcom/android/settings/HomeSettings$HomeAppPreference;
 
     iget-object v0, p0, Lcom/android/settings/HomeSettings;->mCurrentHome:Lcom/android/settings/HomeSettings$HomeAppPreference;
 
@@ -592,9 +585,6 @@
 
 .method public onActivityResult(IILandroid/content/Intent;)V
     .locals 4
-    .param p1    # I
-    .param p2    # I
-    .param p3    # Landroid/content/Intent;
 
     invoke-super {p0, p1, p2, p3}, Lcom/android/settings/SettingsPreferenceFragment;->onActivityResult(IILandroid/content/Intent;)V
 
@@ -668,7 +658,6 @@
 
 .method public onCreate(Landroid/os/Bundle;)V
     .locals 3
-    .param p1    # Landroid/os/Bundle;
 
     const/4 v2, 0x0
 
@@ -779,7 +768,6 @@
 
 .method uninstallApp(Lcom/android/settings/HomeSettings$HomeAppPreference;)V
     .locals 6
-    .param p1    # Lcom/android/settings/HomeSettings$HomeAppPreference;
 
     const/4 v3, 0x0
 

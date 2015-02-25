@@ -29,7 +29,6 @@
 
 .method public constructor <init>(I)V
     .locals 0
-    .param p1    # I
 
     invoke-direct {p0}, Landroid/app/DialogFragment;-><init>()V
 
@@ -42,7 +41,6 @@
 # virtual methods
 .method public onCreateDialog(Landroid/os/Bundle;)Landroid/app/Dialog;
     .locals 3
-    .param p1    # Landroid/os/Bundle;
 
     new-instance v0, Lcom/android/settings/wifi/WpsDialog;
 

@@ -24,7 +24,6 @@
 
 .method public queryNonIndexableKeys([Ljava/lang/String;)Landroid/database/Cursor;
     .locals 2
-    .param p1    # [Ljava/lang/String;
 
     new-instance v0, Landroid/database/MatrixCursor;
 
@@ -37,7 +36,6 @@
 
 .method public queryRawData([Ljava/lang/String;)Landroid/database/Cursor;
     .locals 2
-    .param p1    # [Ljava/lang/String;
 
     new-instance v0, Landroid/database/MatrixCursor;
 
@@ -50,7 +48,6 @@
 
 .method public queryXmlResources([Ljava/lang/String;)Landroid/database/Cursor;
     .locals 8
-    .param p1    # [Ljava/lang/String;
 
     const/4 v7, 0x0
 

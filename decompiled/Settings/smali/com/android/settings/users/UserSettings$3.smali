@@ -44,7 +44,6 @@
 # virtual methods
 .method protected bridge synthetic doInBackground([Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
-    .param p1    # [Ljava/lang/Object;
 
     check-cast p1, [Ljava/lang/Void;
 
@@ -57,7 +56,6 @@
 
 .method protected varargs doInBackground([Ljava/lang/Void;)Ljava/lang/String;
     .locals 3
-    .param p1    # [Ljava/lang/Void;
 
     iget-object v1, p0, Lcom/android/settings/users/UserSettings$3;->this$0:Lcom/android/settings/users/UserSettings;
 
@@ -102,7 +100,6 @@
 
 .method protected bridge synthetic onPostExecute(Ljava/lang/Object;)V
     .locals 0
-    .param p1    # Ljava/lang/Object;
 
     check-cast p1, Ljava/lang/String;
 
@@ -113,7 +110,6 @@
 
 .method protected onPostExecute(Ljava/lang/String;)V
     .locals 1
-    .param p1    # Ljava/lang/String;
 
     iget-object v0, p0, Lcom/android/settings/users/UserSettings$3;->this$0:Lcom/android/settings/users/UserSettings;
 

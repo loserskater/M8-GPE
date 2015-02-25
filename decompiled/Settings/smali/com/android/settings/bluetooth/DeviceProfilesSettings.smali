@@ -52,9 +52,6 @@
 
 .method static synthetic access$000(Lcom/android/settings/bluetooth/DeviceProfilesSettings;Landroid/preference/CheckBoxPreference;Lcom/android/settings/bluetooth/LocalBluetoothProfile;)V
     .locals 0
-    .param p0    # Lcom/android/settings/bluetooth/DeviceProfilesSettings;
-    .param p1    # Landroid/preference/CheckBoxPreference;
-    .param p2    # Lcom/android/settings/bluetooth/LocalBluetoothProfile;
 
     invoke-direct {p0, p1, p2}, Lcom/android/settings/bluetooth/DeviceProfilesSettings;->refreshProfilePreference(Landroid/preference/CheckBoxPreference;Lcom/android/settings/bluetooth/LocalBluetoothProfile;)V
 
@@ -163,8 +160,6 @@
 
 .method private askDisconnect(Landroid/content/Context;Lcom/android/settings/bluetooth/LocalBluetoothProfile;)V
     .locals 9
-    .param p1    # Landroid/content/Context;
-    .param p2    # Lcom/android/settings/bluetooth/LocalBluetoothProfile;
 
     iget-object v0, p0, Lcom/android/settings/bluetooth/DeviceProfilesSettings;->mCachedDevice:Lcom/android/settings/bluetooth/CachedBluetoothDevice;
 
@@ -242,7 +237,6 @@
 
 .method private createProfilePreference(Lcom/android/settings/bluetooth/LocalBluetoothProfile;)Landroid/preference/CheckBoxPreference;
     .locals 3
-    .param p1    # Lcom/android/settings/bluetooth/LocalBluetoothProfile;
 
     new-instance v1, Landroid/preference/CheckBoxPreference;
 
@@ -320,7 +314,6 @@
 
 .method private getProfileOf(Landroid/preference/Preference;)Lcom/android/settings/bluetooth/LocalBluetoothProfile;
     .locals 5
-    .param p1    # Landroid/preference/Preference;
 
     const/4 v2, 0x0
 
@@ -366,7 +359,6 @@
 
 .method private getProfilePreferenceIndex(I)I
     .locals 2
-    .param p1    # I
 
     iget-object v0, p0, Lcom/android/settings/bluetooth/DeviceProfilesSettings;->mProfileContainer:Landroid/preference/PreferenceGroup;
 
@@ -383,8 +375,6 @@
 
 .method private onProfileClicked(Lcom/android/settings/bluetooth/LocalBluetoothProfile;Landroid/preference/CheckBoxPreference;)V
     .locals 8
-    .param p1    # Lcom/android/settings/bluetooth/LocalBluetoothProfile;
-    .param p2    # Landroid/preference/CheckBoxPreference;
 
     const/4 v2, 0x2
 
@@ -539,8 +529,6 @@
 
 .method private refreshProfilePreference(Landroid/preference/CheckBoxPreference;Lcom/android/settings/bluetooth/LocalBluetoothProfile;)V
     .locals 4
-    .param p1    # Landroid/preference/CheckBoxPreference;
-    .param p2    # Lcom/android/settings/bluetooth/LocalBluetoothProfile;
 
     const/4 v3, 0x0
 
@@ -815,7 +803,6 @@
 # virtual methods
 .method public onCreate(Landroid/os/Bundle;)V
     .locals 3
-    .param p1    # Landroid/os/Bundle;
 
     invoke-super {p0, p1}, Lcom/android/settings/SettingsPreferenceFragment;->onCreate(Landroid/os/Bundle;)V
 
@@ -937,8 +924,6 @@
 
 .method public onPreferenceChange(Landroid/preference/Preference;Ljava/lang/Object;)Z
     .locals 3
-    .param p1    # Landroid/preference/Preference;
-    .param p2    # Ljava/lang/Object;
 
     const/4 v1, 0x0
 
@@ -1019,7 +1004,6 @@
 
 .method public onSaveInstanceState(Landroid/os/Bundle;)V
     .locals 0
-    .param p1    # Landroid/os/Bundle;
 
     invoke-super {p0, p1}, Lcom/android/settings/SettingsPreferenceFragment;->onSaveInstanceState(Landroid/os/Bundle;)V
 
@@ -1028,7 +1012,6 @@
 
 .method public setDevice(Lcom/android/settings/bluetooth/CachedBluetoothDevice;)V
     .locals 1
-    .param p1    # Lcom/android/settings/bluetooth/CachedBluetoothDevice;
 
     iput-object p1, p0, Lcom/android/settings/bluetooth/DeviceProfilesSettings;->mCachedDevice:Lcom/android/settings/bluetooth/CachedBluetoothDevice;
 

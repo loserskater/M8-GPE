@@ -36,8 +36,6 @@
 # virtual methods
 .method public onSharedPreferenceChanged(Landroid/content/SharedPreferences;Ljava/lang/String;)V
     .locals 2
-    .param p1    # Landroid/content/SharedPreferences;
-    .param p2    # Ljava/lang/String;
 
     iget-object v0, p0, Lcom/android/settings/SettingsActivity$6;->this$0:Lcom/android/settings/SettingsActivity;
 

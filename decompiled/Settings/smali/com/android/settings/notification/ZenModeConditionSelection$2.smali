@@ -33,7 +33,6 @@
 # virtual methods
 .method public onConditionsReceived([Landroid/service/notification/Condition;)V
     .locals 2
-    .param p1    # [Landroid/service/notification/Condition;
 
     if-eqz p1, :cond_0
 

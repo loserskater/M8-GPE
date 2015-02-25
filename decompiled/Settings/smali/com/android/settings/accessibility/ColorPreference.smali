@@ -12,8 +12,6 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 1
-    .param p1    # Landroid/content/Context;
-    .param p2    # Landroid/util/AttributeSet;
 
     invoke-direct {p0, p1, p2}, Lcom/android/settings/accessibility/ListDialogPreference;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
@@ -32,7 +30,6 @@
 # virtual methods
 .method protected getTitleAt(I)Ljava/lang/CharSequence;
     .locals 10
-    .param p1    # I
 
     invoke-super {p0, p1}, Lcom/android/settings/accessibility/ListDialogPreference;->getTitleAt(I)Ljava/lang/CharSequence;
 
@@ -103,8 +100,6 @@
 
 .method protected onBindListItem(Landroid/view/View;I)V
     .locals 7
-    .param p1    # Landroid/view/View;
-    .param p2    # I
 
     invoke-virtual {p0, p2}, Lcom/android/settings/accessibility/ColorPreference;->getValueAt(I)I
 
@@ -182,7 +177,6 @@
 
 .method protected onBindView(Landroid/view/View;)V
     .locals 6
-    .param p1    # Landroid/view/View;
 
     const/4 v5, 0x0
 
@@ -251,7 +245,7 @@
 
     if-eqz v3, :cond_4
 
-    const/high16 v3, 0x3f800000
+    const/high16 v3, 0x3f800000    # 1.0f
 
     :goto_3
     invoke-virtual {v1, v3}, Landroid/widget/ImageView;->setAlpha(F)V
@@ -277,7 +271,7 @@
     goto :goto_2
 
     :cond_4
-    const v3, 0x3e4ccccd
+    const v3, 0x3e4ccccd    # 0.2f
 
     goto :goto_3
 .end method

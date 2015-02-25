@@ -21,8 +21,6 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/notification/ZenModeSettings$7;Landroid/content/Context;Ljava/lang/String;)V
     .locals 0
-    .param p2    # Landroid/content/Context;
-    .param p3    # Ljava/lang/String;
 
     iput-object p1, p0, Lcom/android/settings/notification/ZenModeSettings$7$2;->this$1:Lcom/android/settings/notification/ZenModeSettings$7;
 
@@ -35,7 +33,6 @@
 # virtual methods
 .method protected onChanged(Ljava/lang/String;)V
     .locals 4
-    .param p1    # Ljava/lang/String;
 
     iget-object v1, p0, Lcom/android/settings/notification/ZenModeSettings$7$2;->this$1:Lcom/android/settings/notification/ZenModeSettings$7;
 

@@ -42,10 +42,6 @@
 
 .method private addDetailsItem(Landroid/view/ViewGroup;Ljava/lang/CharSequence;FLjava/lang/CharSequence;)V
     .locals 7
-    .param p1    # Landroid/view/ViewGroup;
-    .param p2    # Ljava/lang/CharSequence;
-    .param p3    # F
-    .param p4    # Ljava/lang/CharSequence;
 
     invoke-virtual {p0}, Lcom/android/settings/applications/ProcessStatsMemDetail;->getActivity()Landroid/app/Activity;
 
@@ -105,7 +101,7 @@
 
     check-cast v2, Landroid/widget/ProgressBar;
 
-    const/high16 v5, 0x42c80000
+    const/high16 v5, 0x42c80000    # 100.0f
 
     mul-float/2addr v5, p3
 
@@ -120,9 +116,6 @@
 
 .method private addMemUseDetailsItem(Landroid/view/ViewGroup;Ljava/lang/CharSequence;D)V
     .locals 9
-    .param p1    # Landroid/view/ViewGroup;
-    .param p2    # Ljava/lang/CharSequence;
-    .param p3    # D
 
     const-wide/16 v2, 0x0
 
@@ -140,7 +133,7 @@
 
     move-result-object v2
 
-    const-wide/high16 v4, 0x4090000000000000L
+    const-wide/high16 v4, 0x4090000000000000L    # 1024.0
 
     mul-double/2addr v4, p3
 
@@ -403,7 +396,6 @@
 # virtual methods
 .method public onCreate(Landroid/os/Bundle;)V
     .locals 4
-    .param p1    # Landroid/os/Bundle;
 
     invoke-super {p0, p1}, Landroid/app/Fragment;->onCreate(Landroid/os/Bundle;)V
 
@@ -496,9 +488,6 @@
 
 .method public onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
     .locals 3
-    .param p1    # Landroid/view/LayoutInflater;
-    .param p2    # Landroid/view/ViewGroup;
-    .param p3    # Landroid/os/Bundle;
 
     const/4 v2, 0x0
 

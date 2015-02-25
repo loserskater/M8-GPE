@@ -66,8 +66,6 @@
 # virtual methods
 .method public final compare(Landroid/app/usage/UsageStats;Landroid/app/usage/UsageStats;)I
     .locals 4
-    .param p1    # Landroid/app/usage/UsageStats;
-    .param p2    # Landroid/app/usage/UsageStats;
 
     iget-object v2, p0, Lcom/android/settings/UsageStatsActivity$AppNameComparator;->mAppLabelList:Ljava/util/Map;
 
@@ -102,8 +100,6 @@
 
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 1
-    .param p1    # Ljava/lang/Object;
-    .param p2    # Ljava/lang/Object;
 
     check-cast p1, Landroid/app/usage/UsageStats;
 

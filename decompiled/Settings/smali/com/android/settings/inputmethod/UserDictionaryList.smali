@@ -18,7 +18,6 @@
 
 .method public static getUserDictionaryLocalesSet(Landroid/content/Context;)Ljava/util/TreeSet;
     .locals 18
-    .param p0    # Landroid/content/Context;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -224,7 +223,6 @@
 # virtual methods
 .method protected createUserDictSettings(Landroid/preference/PreferenceGroup;)V
     .locals 6
-    .param p1    # Landroid/preference/PreferenceGroup;
 
     invoke-virtual {p0}, Lcom/android/settings/inputmethod/UserDictionaryList;->getActivity()Landroid/app/Activity;
 
@@ -304,8 +302,6 @@
 
 .method protected createUserDictionaryPreference(Ljava/lang/String;Landroid/app/Activity;)Landroid/preference/Preference;
     .locals 4
-    .param p1    # Ljava/lang/String;
-    .param p2    # Landroid/app/Activity;
 
     new-instance v1, Landroid/preference/Preference;
 
@@ -394,7 +390,6 @@
 
 .method public onActivityCreated(Landroid/os/Bundle;)V
     .locals 7
-    .param p1    # Landroid/os/Bundle;
 
     const/4 v5, 0x0
 
@@ -464,7 +459,6 @@
 
 .method public onCreate(Landroid/os/Bundle;)V
     .locals 2
-    .param p1    # Landroid/os/Bundle;
 
     invoke-super {p0, p1}, Lcom/android/settings/SettingsPreferenceFragment;->onCreate(Landroid/os/Bundle;)V
 

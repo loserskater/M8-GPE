@@ -40,7 +40,6 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 1
-    .param p1    # Landroid/content/Context;
 
     const/4 v0, 0x0
 
@@ -51,14 +50,12 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 7
-    .param p1    # Landroid/content/Context;
-    .param p2    # Landroid/util/AttributeSet;
 
     const/4 v6, 0x1
 
     const/4 v5, 0x0
 
-    const/high16 v3, 0x3f000000
+    const/high16 v3, 0x3f000000    # 0.5f
 
     invoke-direct {p0, p1, p2}, Landroid/support/v4/view/PagerTitleStrip;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
@@ -102,7 +99,7 @@
 
     iget v0, v1, Landroid/util/DisplayMetrics;->density:F
 
-    const/high16 v1, 0x40400000
+    const/high16 v1, 0x40400000    # 3.0f
 
     mul-float/2addr v1, v0
 
@@ -112,7 +109,7 @@
 
     iput v1, p0, Landroid/support/v4/view/PagerTabStrip;->mIndicatorHeight:I
 
-    const/high16 v1, 0x40c00000
+    const/high16 v1, 0x40c00000    # 6.0f
 
     mul-float/2addr v1, v0
 
@@ -122,7 +119,7 @@
 
     iput v1, p0, Landroid/support/v4/view/PagerTabStrip;->mMinPaddingBottom:I
 
-    const/high16 v1, 0x42800000
+    const/high16 v1, 0x42800000    # 64.0f
 
     mul-float/2addr v1, v0
 
@@ -130,7 +127,7 @@
 
     iput v1, p0, Landroid/support/v4/view/PagerTabStrip;->mMinTextSpacing:I
 
-    const/high16 v1, 0x41800000
+    const/high16 v1, 0x41800000    # 16.0f
 
     mul-float/2addr v1, v0
 
@@ -140,7 +137,7 @@
 
     iput v1, p0, Landroid/support/v4/view/PagerTabStrip;->mTabPadding:I
 
-    const/high16 v1, 0x3f800000
+    const/high16 v1, 0x3f800000    # 1.0f
 
     mul-float/2addr v1, v0
 
@@ -150,7 +147,7 @@
 
     iput v1, p0, Landroid/support/v4/view/PagerTabStrip;->mFullUnderlineHeight:I
 
-    const/high16 v1, 0x42000000
+    const/high16 v1, 0x42000000    # 32.0f
 
     mul-float/2addr v1, v0
 
@@ -252,7 +249,6 @@
 
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 12
-    .param p1    # Landroid/graphics/Canvas;
 
     const v11, 0xffffff
 
@@ -370,7 +366,6 @@
 
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 6
-    .param p1    # Landroid/view/MotionEvent;
 
     const/4 v4, 0x1
 
@@ -525,7 +520,6 @@
 
 .method public setBackgroundColor(I)V
     .locals 1
-    .param p1    # I
 
     invoke-super {p0, p1}, Landroid/support/v4/view/PagerTitleStrip;->setBackgroundColor(I)V
 
@@ -555,7 +549,6 @@
 
 .method public setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
     .locals 1
-    .param p1    # Landroid/graphics/drawable/Drawable;
 
     invoke-super {p0, p1}, Landroid/support/v4/view/PagerTitleStrip;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
@@ -581,7 +574,6 @@
 
 .method public setBackgroundResource(I)V
     .locals 1
-    .param p1    # I
 
     invoke-super {p0, p1}, Landroid/support/v4/view/PagerTitleStrip;->setBackgroundResource(I)V
 
@@ -607,10 +599,6 @@
 
 .method public setPadding(IIII)V
     .locals 1
-    .param p1    # I
-    .param p2    # I
-    .param p3    # I
-    .param p4    # I
 
     iget v0, p0, Landroid/support/v4/view/PagerTabStrip;->mMinPaddingBottom:I
 
@@ -626,7 +614,6 @@
 
 .method public setTabIndicatorColor(I)V
     .locals 2
-    .param p1    # I
 
     iput p1, p0, Landroid/support/v4/view/PagerTabStrip;->mIndicatorColor:I
 
@@ -643,7 +630,6 @@
 
 .method public setTabIndicatorColorResource(I)V
     .locals 1
-    .param p1    # I
 
     invoke-virtual {p0}, Landroid/support/v4/view/PagerTabStrip;->getContext()Landroid/content/Context;
 
@@ -664,7 +650,6 @@
 
 .method public setTextSpacing(I)V
     .locals 1
-    .param p1    # I
 
     iget v0, p0, Landroid/support/v4/view/PagerTabStrip;->mMinTextSpacing:I
 
@@ -680,9 +665,6 @@
 
 .method updateTextPositions(IFZ)V
     .locals 7
-    .param p1    # I
-    .param p2    # F
-    .param p3    # Z
 
     iget-object v2, p0, Landroid/support/v4/view/PagerTabStrip;->mTempRect:Landroid/graphics/Rect;
 
@@ -718,7 +700,7 @@
 
     invoke-super {p0, p1, p2, p3}, Landroid/support/v4/view/PagerTitleStrip;->updateTextPositions(IFZ)V
 
-    const/high16 v5, 0x3f000000
+    const/high16 v5, 0x3f000000    # 0.5f
 
     sub-float v5, p2, v5
 
@@ -726,11 +708,11 @@
 
     move-result v5
 
-    const/high16 v6, 0x40000000
+    const/high16 v6, 0x40000000    # 2.0f
 
     mul-float/2addr v5, v6
 
-    const/high16 v6, 0x437f0000
+    const/high16 v6, 0x437f0000    # 255.0f
 
     mul-float/2addr v5, v6
 

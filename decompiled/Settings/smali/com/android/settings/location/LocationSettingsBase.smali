@@ -52,7 +52,6 @@
 # virtual methods
 .method public onCreate(Landroid/os/Bundle;)V
     .locals 1
-    .param p1    # Landroid/os/Bundle;
 
     invoke-super {p0, p1}, Lcom/android/settings/SettingsPreferenceFragment;->onCreate(Landroid/os/Bundle;)V
 
@@ -175,7 +174,6 @@
 
 .method public setLocationMode(I)V
     .locals 4
-    .param p1    # I
 
     invoke-direct {p0}, Lcom/android/settings/location/LocationSettingsBase;->isRestricted()Z
 

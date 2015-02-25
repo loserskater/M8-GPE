@@ -41,7 +41,6 @@
 # direct methods
 .method public constructor <init>(Lcom/android/settings/UsageAccessSettings;Landroid/content/Context;)V
     .locals 1
-    .param p2    # Landroid/content/Context;
 
     iput-object p1, p0, Lcom/android/settings/UsageAccessSettings$AppsRequestingAccessFetcher;->this$0:Lcom/android/settings/UsageAccessSettings;
 
@@ -66,7 +65,6 @@
 
 .method private updatePreference(Lcom/android/settings/UsageAccessSettings$PackageEntry;)V
     .locals 4
-    .param p1    # Lcom/android/settings/UsageAccessSettings$PackageEntry;
 
     iget-object v1, p1, Lcom/android/settings/UsageAccessSettings$PackageEntry;->preference:Landroid/preference/SwitchPreference;
 
@@ -143,7 +141,6 @@
 # virtual methods
 .method protected varargs doInBackground([Ljava/lang/Void;)Landroid/util/ArrayMap;
     .locals 21
-    .param p1    # [Ljava/lang/Void;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([",
@@ -568,7 +565,6 @@
 
 .method protected bridge synthetic doInBackground([Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
-    .param p1    # [Ljava/lang/Object;
 
     check-cast p1, [Ljava/lang/Void;
 
@@ -752,7 +748,6 @@
 
 .method protected bridge synthetic onPostExecute(Ljava/lang/Object;)V
     .locals 0
-    .param p1    # Ljava/lang/Object;
 
     check-cast p1, Landroid/util/ArrayMap;
 

@@ -133,8 +133,6 @@
 
 .method static synthetic access$000(Landroid/content/Context;Lcom/android/internal/widget/LockPatternUtils;)I
     .locals 1
-    .param p0    # Landroid/content/Context;
-    .param p1    # Lcom/android/internal/widget/LockPatternUtils;
 
     invoke-static {p0, p1}, Lcom/android/settings/SecuritySettings;->getResIdForLockUnlockScreen(Landroid/content/Context;Lcom/android/internal/widget/LockPatternUtils;)I
 
@@ -145,8 +143,6 @@
 
 .method static synthetic access$100(Landroid/content/pm/PackageManager;Lcom/android/internal/widget/LockPatternUtils;)Ljava/util/ArrayList;
     .locals 1
-    .param p0    # Landroid/content/pm/PackageManager;
-    .param p1    # Lcom/android/internal/widget/LockPatternUtils;
 
     invoke-static {p0, p1}, Lcom/android/settings/SecuritySettings;->getActiveTrustAgents(Landroid/content/pm/PackageManager;Lcom/android/internal/widget/LockPatternUtils;)Ljava/util/ArrayList;
 
@@ -1132,7 +1128,6 @@
 
 .method private disableUnusableTimeouts(J)V
     .locals 11
-    .param p1    # J
 
     iget-object v8, p0, Lcom/android/settings/SecuritySettings;->mLockAfter:Landroid/preference/ListPreference;
 
@@ -1294,8 +1289,6 @@
 
 .method private static getActiveTrustAgents(Landroid/content/pm/PackageManager;Lcom/android/internal/widget/LockPatternUtils;)Ljava/util/ArrayList;
     .locals 8
-    .param p0    # Landroid/content/pm/PackageManager;
-    .param p1    # Lcom/android/internal/widget/LockPatternUtils;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1398,8 +1391,6 @@
 
 .method private static getResIdForLockUnlockScreen(Landroid/content/Context;Lcom/android/internal/widget/LockPatternUtils;)I
     .locals 5
-    .param p0    # Landroid/content/Context;
-    .param p1    # Lcom/android/internal/widget/LockPatternUtils;
 
     const/4 v2, 0x1
 
@@ -1530,7 +1521,6 @@
 
 .method private setNonMarketAppsAllowed(Z)V
     .locals 4
-    .param p1    # Z
 
     invoke-virtual {p0}, Lcom/android/settings/SecuritySettings;->getActivity()Landroid/app/Activity;
 
@@ -1875,9 +1865,6 @@
 
 .method public onActivityResult(IILandroid/content/Intent;)V
     .locals 3
-    .param p1    # I
-    .param p2    # I
-    .param p3    # Landroid/content/Intent;
 
     const/4 v2, -0x1
 
@@ -1943,8 +1930,6 @@
 
 .method public onClick(Landroid/content/DialogInterface;I)V
     .locals 2
-    .param p1    # Landroid/content/DialogInterface;
-    .param p2    # I
 
     iget-object v1, p0, Lcom/android/settings/SecuritySettings;->mWarnInstallApps:Landroid/content/DialogInterface;
 
@@ -1978,7 +1963,6 @@
 
 .method public onCreate(Landroid/os/Bundle;)V
     .locals 2
-    .param p1    # Landroid/os/Bundle;
 
     invoke-super {p0, p1}, Lcom/android/settings/SettingsPreferenceFragment;->onCreate(Landroid/os/Bundle;)V
 
@@ -2055,8 +2039,6 @@
 
 .method public onPreferenceChange(Landroid/preference/Preference;Ljava/lang/Object;)Z
     .locals 11
-    .param p1    # Landroid/preference/Preference;
-    .param p2    # Ljava/lang/Object;
 
     const/4 v9, 0x0
 
@@ -2296,8 +2278,6 @@
 
 .method public onPreferenceTreeClick(Landroid/preference/PreferenceScreen;Landroid/preference/Preference;)Z
     .locals 8
-    .param p1    # Landroid/preference/PreferenceScreen;
-    .param p2    # Landroid/preference/Preference;
 
     const/4 v5, 0x0
 
@@ -2525,7 +2505,6 @@
 
 .method public onSaveInstanceState(Landroid/os/Bundle;)V
     .locals 2
-    .param p1    # Landroid/os/Bundle;
 
     invoke-super {p0, p1}, Lcom/android/settings/SettingsPreferenceFragment;->onSaveInstanceState(Landroid/os/Bundle;)V
 

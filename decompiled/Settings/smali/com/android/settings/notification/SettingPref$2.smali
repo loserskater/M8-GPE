@@ -40,8 +40,6 @@
 # virtual methods
 .method public onItemSelected(ILjava/lang/Object;)Z
     .locals 3
-    .param p1    # I
-    .param p2    # Ljava/lang/Object;
 
     iget-object v0, p0, Lcom/android/settings/notification/SettingPref$2;->this$0:Lcom/android/settings/notification/SettingPref;
 

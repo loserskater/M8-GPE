@@ -60,7 +60,6 @@
 
 .method static synthetic access$000(Lcom/android/settings/accounts/AccountSyncSettings;)Landroid/accounts/Account;
     .locals 1
-    .param p0    # Lcom/android/settings/accounts/AccountSyncSettings;
 
     iget-object v0, p0, Lcom/android/settings/accounts/AccountSyncSettings;->mAccount:Landroid/accounts/Account;
 
@@ -69,8 +68,6 @@
 
 .method static synthetic access$100(Lcom/android/settings/accounts/AccountSyncSettings;I)V
     .locals 0
-    .param p0    # Lcom/android/settings/accounts/AccountSyncSettings;
-    .param p1    # I
 
     invoke-virtual {p0, p1}, Lcom/android/settings/accounts/AccountSyncSettings;->showDialog(I)V
 
@@ -79,7 +76,6 @@
 
 .method private accountExists(Landroid/accounts/Account;)Z
     .locals 7
-    .param p1    # Landroid/accounts/Account;
 
     const/4 v3, 0x0
 
@@ -133,8 +129,6 @@
 
 .method private addSyncStateCheckBox(Landroid/accounts/Account;Ljava/lang/String;)V
     .locals 7
-    .param p1    # Landroid/accounts/Account;
-    .param p2    # Ljava/lang/String;
 
     const/4 v6, 0x0
 
@@ -254,8 +248,6 @@
 
 .method private isSyncing(Ljava/util/List;Landroid/accounts/Account;Ljava/lang/String;)Z
     .locals 3
-    .param p2    # Landroid/accounts/Account;
-    .param p3    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -315,9 +307,6 @@
 
 .method private requestOrCancelSync(Landroid/accounts/Account;Ljava/lang/String;Z)V
     .locals 3
-    .param p1    # Landroid/accounts/Account;
-    .param p2    # Ljava/lang/String;
-    .param p3    # Z
 
     if-eqz p3, :cond_0
 
@@ -356,7 +345,6 @@
 
 .method private requestOrCancelSyncForEnabledProviders(Z)V
     .locals 8
-    .param p1    # Z
 
     invoke-virtual {p0}, Lcom/android/settings/accounts/AccountSyncSettings;->getPreferenceScreen()Landroid/preference/PreferenceScreen;
 
@@ -1244,8 +1232,6 @@
 # virtual methods
 .method public bridge synthetic addPreferencesForType(Ljava/lang/String;Landroid/preference/PreferenceScreen;)Landroid/preference/PreferenceScreen;
     .locals 1
-    .param p1    # Ljava/lang/String;
-    .param p2    # Landroid/preference/PreferenceScreen;
 
     invoke-super {p0, p1, p2}, Lcom/android/settings/accounts/AccountPreferenceBase;->addPreferencesForType(Ljava/lang/String;Landroid/preference/PreferenceScreen;)Landroid/preference/PreferenceScreen;
 
@@ -1256,7 +1242,6 @@
 
 .method public bridge synthetic getAuthoritiesForAccountType(Ljava/lang/String;)Ljava/util/ArrayList;
     .locals 1
-    .param p1    # Ljava/lang/String;
 
     invoke-super {p0, p1}, Lcom/android/settings/accounts/AccountPreferenceBase;->getAuthoritiesForAccountType(Ljava/lang/String;)Ljava/util/ArrayList;
 
@@ -1275,7 +1260,6 @@
 
 .method protected initializeUi(Landroid/view/View;)V
     .locals 2
-    .param p1    # Landroid/view/View;
 
     const v0, 0x7f050003
 
@@ -1332,7 +1316,6 @@
 
 .method public onAccountsUpdate(Landroid/os/UserHandle;)V
     .locals 1
-    .param p1    # Landroid/os/UserHandle;
 
     invoke-super {p0, p1}, Lcom/android/settings/accounts/AccountPreferenceBase;->onAccountsUpdate(Landroid/os/UserHandle;)V
 
@@ -1359,7 +1342,6 @@
 
 .method public onActivityCreated(Landroid/os/Bundle;)V
     .locals 4
-    .param p1    # Landroid/os/Bundle;
 
     invoke-super {p0, p1}, Lcom/android/settings/accounts/AccountPreferenceBase;->onActivityCreated(Landroid/os/Bundle;)V
 
@@ -1531,7 +1513,6 @@
 
 .method public onCreate(Landroid/os/Bundle;)V
     .locals 1
-    .param p1    # Landroid/os/Bundle;
 
     invoke-super {p0, p1}, Lcom/android/settings/accounts/AccountPreferenceBase;->onCreate(Landroid/os/Bundle;)V
 
@@ -1544,7 +1525,6 @@
 
 .method public onCreateDialog(I)Landroid/app/Dialog;
     .locals 6
-    .param p1    # I
 
     const v5, 0x7f08076b
 
@@ -1671,8 +1651,6 @@
 
 .method public onCreateOptionsMenu(Landroid/view/Menu;Landroid/view/MenuInflater;)V
     .locals 8
-    .param p1    # Landroid/view/Menu;
-    .param p2    # Landroid/view/MenuInflater;
 
     const/4 v7, 0x4
 
@@ -1764,9 +1742,6 @@
 
 .method public onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
     .locals 4
-    .param p1    # Landroid/view/LayoutInflater;
-    .param p2    # Landroid/view/ViewGroup;
-    .param p3    # Landroid/os/Bundle;
 
     const/4 v3, 0x0
 
@@ -1793,7 +1768,6 @@
 
 .method public onOptionsItemSelected(Landroid/view/MenuItem;)Z
     .locals 2
-    .param p1    # Landroid/view/MenuItem;
 
     const/4 v0, 0x1
 
@@ -1851,8 +1825,6 @@
 
 .method public onPreferenceTreeClick(Landroid/preference/PreferenceScreen;Landroid/preference/Preference;)Z
     .locals 9
-    .param p1    # Landroid/preference/PreferenceScreen;
-    .param p2    # Landroid/preference/Preference;
 
     const/4 v7, 0x1
 
@@ -1928,7 +1900,6 @@
 
 .method public onPrepareOptionsMenu(Landroid/view/Menu;)V
     .locals 3
-    .param p1    # Landroid/view/Menu;
 
     const/4 v1, 0x1
 

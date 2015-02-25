@@ -25,7 +25,6 @@
 
 .method public static show(Lcom/android/settings/DataUsageSummary;)V
     .locals 4
-    .param p0    # Lcom/android/settings/DataUsageSummary;
 
     invoke-virtual {p0}, Lcom/android/settings/DataUsageSummary;->isAdded()Z
 
@@ -75,7 +74,6 @@
 # virtual methods
 .method public onCreateDialog(Landroid/os/Bundle;)Landroid/app/Dialog;
     .locals 13
-    .param p1    # Landroid/os/Bundle;
 
     const/4 v12, 0x1
 

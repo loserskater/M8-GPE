@@ -39,9 +39,6 @@
 
 .method public static buildGlobalChangeWarningDialog(Landroid/content/Context;ILjava/lang/Runnable;)Landroid/app/Dialog;
     .locals 3
-    .param p0    # Landroid/content/Context;
-    .param p1    # I
-    .param p2    # Ljava/lang/Runnable;
 
     new-instance v0, Landroid/app/AlertDialog$Builder;
 
@@ -76,8 +73,6 @@
 
 .method public static copyMeProfilePhoto(Landroid/content/Context;Landroid/content/pm/UserInfo;)Z
     .locals 7
-    .param p0    # Landroid/content/Context;
-    .param p1    # Landroid/content/pm/UserInfo;
 
     const/4 v5, 0x1
 
@@ -140,7 +135,6 @@
 
 .method public static createLocaleFromString(Ljava/lang/String;)Ljava/util/Locale;
     .locals 6
-    .param p0    # Ljava/lang/String;
 
     const/4 v5, 0x2
 
@@ -209,9 +203,6 @@
 
 .method public static createRemoveConfirmationDialog(Landroid/content/Context;ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/Dialog;
     .locals 8
-    .param p0    # Landroid/content/Context;
-    .param p1    # I
-    .param p2    # Landroid/content/DialogInterface$OnClickListener;
 
     const-string v5, "user"
 
@@ -304,8 +295,6 @@
 
 .method public static createUserSpinnerAdapter(Landroid/os/UserManager;Landroid/content/Context;)Lcom/android/settings/UserSpinnerAdapter;
     .locals 7
-    .param p0    # Landroid/os/UserManager;
-    .param p1    # Landroid/content/Context;
 
     invoke-virtual {p0}, Landroid/os/UserManager;->getUserProfiles()Ljava/util/List;
 
@@ -382,8 +371,6 @@
 
 .method public static forceCustomPadding(Landroid/view/View;Z)V
     .locals 7
-    .param p0    # Landroid/view/View;
-    .param p1    # Z
 
     const/4 v6, 0x0
 
@@ -438,10 +425,6 @@
 
 .method public static forcePrepareCustomPreferencesList(Landroid/view/ViewGroup;Landroid/view/View;Landroid/widget/ListView;Z)V
     .locals 1
-    .param p0    # Landroid/view/ViewGroup;
-    .param p1    # Landroid/view/View;
-    .param p2    # Landroid/widget/ListView;
-    .param p3    # Z
 
     const/high16 v0, 0x2000000
 
@@ -458,9 +441,6 @@
 
 .method public static formatElapsedTime(Landroid/content/Context;DZ)Ljava/lang/String;
     .locals 13
-    .param p0    # Landroid/content/Context;
-    .param p1    # D
-    .param p3    # Z
 
     const v5, 0x15180
 
@@ -476,7 +456,7 @@
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-wide v6, 0x408f400000000000L
+    const-wide v6, 0x408f400000000000L    # 1000.0
 
     div-double v6, p1, v6
 
@@ -736,7 +716,6 @@
 
 .method private static formatIpAddresses(Landroid/net/LinkProperties;)Ljava/lang/String;
     .locals 4
-    .param p0    # Landroid/net/LinkProperties;
 
     const/4 v0, 0x0
 
@@ -825,7 +804,6 @@
 
 .method private static formatPercentage(D)Ljava/lang/String;
     .locals 2
-    .param p0    # D
 
     invoke-static {}, Landroid/text/BidiFormatter;->getInstance()Landroid/text/BidiFormatter;
 
@@ -848,11 +826,10 @@
 
 .method public static formatPercentage(I)Ljava/lang/String;
     .locals 4
-    .param p0    # I
 
     int-to-double v0, p0
 
-    const-wide/high16 v2, 0x4059000000000000L
+    const-wide/high16 v2, 0x4059000000000000L    # 100.0
 
     div-double/2addr v0, v2
 
@@ -865,8 +842,6 @@
 
 .method public static formatPercentage(JJ)Ljava/lang/String;
     .locals 4
-    .param p0    # J
-    .param p2    # J
 
     long-to-double v0, p0
 
@@ -883,7 +858,6 @@
 
 .method public static getBatteryLevel(Landroid/content/Intent;)I
     .locals 4
-    .param p0    # Landroid/content/Intent;
 
     const-string v2, "level"
 
@@ -910,7 +884,6 @@
 
 .method public static getBatteryPercentage(Landroid/content/Intent;)Ljava/lang/String;
     .locals 1
-    .param p0    # Landroid/content/Intent;
 
     invoke-static {p0}, Lcom/android/settings/Utils;->getBatteryLevel(Landroid/content/Intent;)I
 
@@ -925,8 +898,6 @@
 
 .method public static getBatteryStatus(Landroid/content/res/Resources;Landroid/content/Intent;)Ljava/lang/String;
     .locals 10
-    .param p0    # Landroid/content/res/Resources;
-    .param p1    # Landroid/content/Intent;
 
     const/4 v9, 0x4
 
@@ -1032,7 +1003,6 @@
 
 .method public static getDefaultIpAddresses(Landroid/net/ConnectivityManager;)Ljava/lang/String;
     .locals 2
-    .param p0    # Landroid/net/ConnectivityManager;
 
     invoke-virtual {p0}, Landroid/net/ConnectivityManager;->getActiveLinkProperties()Landroid/net/LinkProperties;
 
@@ -1047,7 +1017,6 @@
 
 .method private static getFirstSignature(Landroid/content/pm/PackageInfo;)Landroid/content/pm/Signature;
     .locals 2
-    .param p0    # Landroid/content/pm/PackageInfo;
 
     if-eqz p0, :cond_0
 
@@ -1078,7 +1047,6 @@
 
 .method private static getLocalProfileGivenName(Landroid/content/Context;)Ljava/lang/String;
     .locals 13
-    .param p0    # Landroid/content/Context;
 
     const/4 v12, 0x1
 
@@ -1251,8 +1219,6 @@
 
 .method public static getMeProfileName(Landroid/content/Context;Z)Ljava/lang/String;
     .locals 1
-    .param p0    # Landroid/content/Context;
-    .param p1    # Z
 
     if-eqz p1, :cond_0
 
@@ -1273,7 +1239,6 @@
 
 .method private static final getProfileDisplayName(Landroid/content/Context;)Ljava/lang/String;
     .locals 7
-    .param p0    # Landroid/content/Context;
 
     const/4 v5, 0x0
 
@@ -1344,10 +1309,6 @@
 
 .method public static getSecureTargetUser(Landroid/os/IBinder;Landroid/os/UserManager;Landroid/os/Bundle;Landroid/os/Bundle;)Landroid/os/UserHandle;
     .locals 10
-    .param p0    # Landroid/os/IBinder;
-    .param p1    # Landroid/os/UserManager;
-    .param p2    # Landroid/os/Bundle;
-    .param p3    # Landroid/os/Bundle;
 
     const/4 v1, 0x0
 
@@ -1495,7 +1456,6 @@
 
 .method private static getShorterNameIfPossible(Landroid/content/Context;)Ljava/lang/String;
     .locals 2
-    .param p0    # Landroid/content/Context;
 
     invoke-static {p0}, Lcom/android/settings/Utils;->getLocalProfileGivenName(Landroid/content/Context;)Ljava/lang/String;
 
@@ -1520,7 +1480,6 @@
 
 .method private static getSystemSignature(Landroid/content/pm/PackageManager;)Landroid/content/pm/Signature;
     .locals 3
-    .param p0    # Landroid/content/pm/PackageManager;
 
     :try_start_0
     const-string v1, "android"
@@ -1550,7 +1509,6 @@
 
 .method public static getTetheringLabel(Landroid/net/ConnectivityManager;)I
     .locals 10
-    .param p0    # Landroid/net/ConnectivityManager;
 
     const v8, 0x7f08040b
 
@@ -1666,9 +1624,6 @@
 
 .method public static getUserIcon(Landroid/content/Context;Landroid/os/UserManager;Landroid/content/pm/UserInfo;)Landroid/graphics/drawable/Drawable;
     .locals 3
-    .param p0    # Landroid/content/Context;
-    .param p1    # Landroid/os/UserManager;
-    .param p2    # Landroid/content/pm/UserInfo;
 
     iget-object v1, p2, Landroid/content/pm/UserInfo;->iconPath:Ljava/lang/String;
 
@@ -1703,7 +1658,6 @@
 
 .method public static getWifiIpAddresses(Landroid/content/Context;)Ljava/lang/String;
     .locals 3
-    .param p0    # Landroid/content/Context;
 
     const-string v2, "connectivity"
 
@@ -1728,7 +1682,6 @@
 
 .method public static hasMultipleUsers(Landroid/content/Context;)Z
     .locals 2
-    .param p0    # Landroid/content/Context;
 
     const/4 v1, 0x1
 
@@ -1763,7 +1716,6 @@
 
 .method public static isBatteryPresent(Landroid/content/Intent;)Z
     .locals 2
-    .param p0    # Landroid/content/Intent;
 
     const-string v0, "present"
 
@@ -1778,7 +1730,6 @@
 
 .method public static isManagedProfile(Landroid/os/UserManager;)Z
     .locals 2
-    .param p0    # Landroid/os/UserManager;
 
     invoke-virtual {p0}, Landroid/os/UserManager;->getUserHandle()I
 
@@ -1807,7 +1758,6 @@
 
 .method static isOemUnlockEnabled(Landroid/content/Context;)Z
     .locals 2
-    .param p0    # Landroid/content/Context;
 
     const-string v1, "persistent_data_block"
 
@@ -1826,8 +1776,6 @@
 
 .method private static isProfileOf(Landroid/os/UserManager;Landroid/os/UserHandle;)Z
     .locals 3
-    .param p0    # Landroid/os/UserManager;
-    .param p1    # Landroid/os/UserHandle;
 
     const/4 v0, 0x0
 
@@ -1868,8 +1816,6 @@
 
 .method public static isSystemPackage(Landroid/content/pm/PackageManager;Landroid/content/pm/PackageInfo;)Z
     .locals 4
-    .param p0    # Landroid/content/pm/PackageManager;
-    .param p1    # Landroid/content/pm/PackageInfo;
 
     const/4 v0, 0x1
 
@@ -1921,7 +1867,6 @@
 
 .method public static isVoiceCapable(Landroid/content/Context;)Z
     .locals 2
-    .param p0    # Landroid/content/Context;
 
     const-string v1, "phone"
 
@@ -1952,7 +1897,6 @@
 
 .method public static isWifiOnly(Landroid/content/Context;)Z
     .locals 3
-    .param p0    # Landroid/content/Context;
 
     const/4 v1, 0x0
 
@@ -1978,12 +1922,6 @@
 
 .method public static onBuildStartFragmentIntent(Landroid/content/Context;Ljava/lang/String;Landroid/os/Bundle;ILjava/lang/CharSequence;Z)Landroid/content/Intent;
     .locals 2
-    .param p0    # Landroid/content/Context;
-    .param p1    # Ljava/lang/String;
-    .param p2    # Landroid/os/Bundle;
-    .param p3    # I
-    .param p4    # Ljava/lang/CharSequence;
-    .param p5    # Z
 
     new-instance v0, Landroid/content/Intent;
 
@@ -2020,10 +1958,6 @@
 
 .method public static prepareCustomPreferencesList(Landroid/view/ViewGroup;Landroid/view/View;Landroid/view/View;Z)V
     .locals 9
-    .param p0    # Landroid/view/ViewGroup;
-    .param p1    # Landroid/view/View;
-    .param p2    # Landroid/view/View;
-    .param p3    # Z
 
     const/4 v7, 0x1
 
@@ -2099,8 +2033,6 @@
 
 .method static setOemUnlockEnabled(Landroid/content/Context;Z)V
     .locals 2
-    .param p0    # Landroid/content/Context;
-    .param p1    # Z
 
     const-string v1, "persistent_data_block"
 
@@ -2117,7 +2049,6 @@
 
 .method public static showSimCardTile(Landroid/content/Context;)Z
     .locals 2
-    .param p0    # Landroid/content/Context;
 
     const-string v1, "phone"
 
@@ -2134,13 +2065,6 @@
 
 .method public static startWithFragment(Landroid/content/Context;Ljava/lang/String;Landroid/os/Bundle;Landroid/app/Fragment;IILjava/lang/CharSequence;)V
     .locals 8
-    .param p0    # Landroid/content/Context;
-    .param p1    # Ljava/lang/String;
-    .param p2    # Landroid/os/Bundle;
-    .param p3    # Landroid/app/Fragment;
-    .param p4    # I
-    .param p5    # I
-    .param p6    # Ljava/lang/CharSequence;
 
     const/4 v7, 0x0
 
@@ -2165,14 +2089,6 @@
 
 .method public static startWithFragment(Landroid/content/Context;Ljava/lang/String;Landroid/os/Bundle;Landroid/app/Fragment;IILjava/lang/CharSequence;Z)V
     .locals 7
-    .param p0    # Landroid/content/Context;
-    .param p1    # Ljava/lang/String;
-    .param p2    # Landroid/os/Bundle;
-    .param p3    # Landroid/app/Fragment;
-    .param p4    # I
-    .param p5    # I
-    .param p6    # Ljava/lang/CharSequence;
-    .param p7    # Z
 
     move-object v0, p0
 
@@ -2205,13 +2121,6 @@
 
 .method public static startWithFragmentAsUser(Landroid/content/Context;Ljava/lang/String;Landroid/os/Bundle;ILjava/lang/CharSequence;ZLandroid/os/UserHandle;)V
     .locals 2
-    .param p0    # Landroid/content/Context;
-    .param p1    # Ljava/lang/String;
-    .param p2    # Landroid/os/Bundle;
-    .param p3    # I
-    .param p4    # Ljava/lang/CharSequence;
-    .param p5    # Z
-    .param p6    # Landroid/os/UserHandle;
 
     invoke-static/range {p0 .. p5}, Lcom/android/settings/Utils;->onBuildStartFragmentIntent(Landroid/content/Context;Ljava/lang/String;Landroid/os/Bundle;ILjava/lang/CharSequence;Z)Landroid/content/Intent;
 
@@ -2232,10 +2141,6 @@
 
 .method public static updatePreferenceToSpecificActivityOrRemove(Landroid/content/Context;Landroid/preference/PreferenceGroup;Ljava/lang/String;I)Z
     .locals 10
-    .param p0    # Landroid/content/Context;
-    .param p1    # Landroid/preference/PreferenceGroup;
-    .param p2    # Ljava/lang/String;
-    .param p3    # I
 
     const/4 v7, 0x0
 
@@ -2334,8 +2239,6 @@
 
 .method public static updateTileToSpecificActivityFromMetaDataOrRemove(Landroid/content/Context;Lcom/android/settings/dashboard/DashboardTile;)Z
     .locals 14
-    .param p0    # Landroid/content/Context;
-    .param p1    # Lcom/android/settings/dashboard/DashboardTile;
 
     iget-object v2, p1, Lcom/android/settings/dashboard/DashboardTile;->intent:Landroid/content/Intent;
 

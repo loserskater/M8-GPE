@@ -68,7 +68,6 @@
 
 .method constructor <init>(Landroid/os/Parcel;)V
     .locals 2
-    .param p1    # Landroid/os/Parcel;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -93,7 +92,6 @@
 
 .method public getSummary(Landroid/content/res/Resources;)Ljava/lang/CharSequence;
     .locals 1
-    .param p1    # Landroid/content/res/Resources;
 
     iget v0, p0, Lcom/android/settings/dashboard/DashboardTile;->summaryRes:I
 
@@ -116,7 +114,6 @@
 
 .method public getTitle(Landroid/content/res/Resources;)Ljava/lang/CharSequence;
     .locals 1
-    .param p1    # Landroid/content/res/Resources;
 
     iget v0, p0, Lcom/android/settings/dashboard/DashboardTile;->titleRes:I
 
@@ -139,7 +136,6 @@
 
 .method public readFromParcel(Landroid/os/Parcel;)V
     .locals 2
-    .param p1    # Landroid/os/Parcel;
 
     invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
 
@@ -225,8 +221,6 @@
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 2
-    .param p1    # Landroid/os/Parcel;
-    .param p2    # I
 
     iget-wide v0, p0, Lcom/android/settings/dashboard/DashboardTile;->id:J
 

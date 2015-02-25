@@ -29,7 +29,6 @@
 # direct methods
 .method static synthetic access$000(Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;)V
     .locals 0
-    .param p0    # Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;
 
     invoke-direct {p0}, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;->updateCountdownSummary()V
 
@@ -38,7 +37,6 @@
 
 .method private static formatTimeRemaining(I)Ljava/lang/String;
     .locals 5
-    .param p0    # I
 
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -161,7 +159,6 @@
 
 .method private setEnabled(Z)V
     .locals 10
-    .param p1    # Z
 
     if-eqz p1, :cond_1
 
@@ -362,7 +359,6 @@
 
 .method private updateTimerDisplay(I)V
     .locals 6
-    .param p1    # I
 
     invoke-direct {p0}, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;->getDiscoverableTimeout()I
 
@@ -450,7 +446,6 @@
 
 .method handleModeChanged(I)V
     .locals 3
-    .param p1    # I
 
     const-string v0, "BluetoothDiscoverableEnabler"
 
@@ -499,7 +494,6 @@
 
 .method public onPreferenceClick(Landroid/preference/Preference;)Z
     .locals 2
-    .param p1    # Landroid/preference/Preference;
 
     const/4 v1, 0x1
 
@@ -526,7 +520,6 @@
 
 .method setDiscoverableTimeout(I)V
     .locals 3
-    .param p1    # I
 
     packed-switch p1, :pswitch_data_0
 

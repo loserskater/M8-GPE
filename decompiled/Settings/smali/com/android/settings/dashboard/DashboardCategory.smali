@@ -71,7 +71,6 @@
 
 .method constructor <init>(Landroid/os/Parcel;)V
     .locals 2
-    .param p1    # Landroid/os/Parcel;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -94,7 +93,6 @@
 # virtual methods
 .method public addTile(Lcom/android/settings/dashboard/DashboardTile;)V
     .locals 1
-    .param p1    # Lcom/android/settings/dashboard/DashboardTile;
 
     iget-object v0, p0, Lcom/android/settings/dashboard/DashboardCategory;->tiles:Ljava/util/List;
 
@@ -113,7 +111,6 @@
 
 .method public getTile(I)Lcom/android/settings/dashboard/DashboardTile;
     .locals 1
-    .param p1    # I
 
     iget-object v0, p0, Lcom/android/settings/dashboard/DashboardCategory;->tiles:Ljava/util/List;
 
@@ -140,7 +137,6 @@
 
 .method public getTitle(Landroid/content/res/Resources;)Ljava/lang/CharSequence;
     .locals 1
-    .param p1    # Landroid/content/res/Resources;
 
     iget v0, p0, Lcom/android/settings/dashboard/DashboardCategory;->titleRes:I
 
@@ -163,7 +159,6 @@
 
 .method public readFromParcel(Landroid/os/Parcel;)V
     .locals 4
-    .param p1    # Landroid/os/Parcel;
 
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
@@ -212,7 +207,6 @@
 
 .method public removeTile(I)V
     .locals 1
-    .param p1    # I
 
     iget-object v0, p0, Lcom/android/settings/dashboard/DashboardCategory;->tiles:Ljava/util/List;
 
@@ -223,8 +217,6 @@
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 4
-    .param p1    # Landroid/os/Parcel;
-    .param p2    # I
 
     iget v3, p0, Lcom/android/settings/dashboard/DashboardCategory;->titleRes:I
 

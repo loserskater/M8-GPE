@@ -52,8 +52,6 @@
 
 .method static synthetic access$000(Lcom/android/settings/MediaFormat;I)Z
     .locals 1
-    .param p0    # Lcom/android/settings/MediaFormat;
-    .param p1    # I
 
     invoke-direct {p0, p1}, Lcom/android/settings/MediaFormat;->runKeyguardConfirmation(I)Z
 
@@ -64,7 +62,6 @@
 
 .method static synthetic access$100(Lcom/android/settings/MediaFormat;)V
     .locals 0
-    .param p0    # Lcom/android/settings/MediaFormat;
 
     invoke-direct {p0}, Lcom/android/settings/MediaFormat;->establishFinalConfirmationState()V
 
@@ -213,7 +210,6 @@
 
 .method private runKeyguardConfirmation(I)Z
     .locals 3
-    .param p1    # I
 
     new-instance v1, Lcom/android/settings/ChooseLockSettingsHelper;
 
@@ -252,9 +248,6 @@
 # virtual methods
 .method protected onActivityResult(IILandroid/content/Intent;)V
     .locals 1
-    .param p1    # I
-    .param p2    # I
-    .param p3    # Landroid/content/Intent;
 
     invoke-super {p0, p1, p2, p3}, Landroid/app/Activity;->onActivityResult(IILandroid/content/Intent;)V
 
@@ -289,7 +282,6 @@
 
 .method protected onCreate(Landroid/os/Bundle;)V
     .locals 3
-    .param p1    # Landroid/os/Bundle;
 
     const/4 v1, 0x0
 

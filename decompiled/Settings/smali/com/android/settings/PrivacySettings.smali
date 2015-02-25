@@ -65,7 +65,6 @@
 
 .method static synthetic access$000(Lcom/android/settings/PrivacySettings;)Landroid/preference/SwitchPreference;
     .locals 1
-    .param p0    # Lcom/android/settings/PrivacySettings;
 
     iget-object v0, p0, Lcom/android/settings/PrivacySettings;->mBackup:Landroid/preference/SwitchPreference;
 
@@ -74,7 +73,6 @@
 
 .method static synthetic access$100(Lcom/android/settings/PrivacySettings;)V
     .locals 0
-    .param p0    # Lcom/android/settings/PrivacySettings;
 
     invoke-direct {p0}, Lcom/android/settings/PrivacySettings;->showEraseBackupDialog()V
 
@@ -83,8 +81,6 @@
 
 .method static synthetic access$200(Lcom/android/settings/PrivacySettings;Z)V
     .locals 0
-    .param p0    # Lcom/android/settings/PrivacySettings;
-    .param p1    # Z
 
     invoke-direct {p0, p1}, Lcom/android/settings/PrivacySettings;->setBackupEnabled(Z)V
 
@@ -93,7 +89,6 @@
 
 .method static synthetic access$300(Lcom/android/settings/PrivacySettings;)Landroid/preference/SwitchPreference;
     .locals 1
-    .param p0    # Lcom/android/settings/PrivacySettings;
 
     iget-object v0, p0, Lcom/android/settings/PrivacySettings;->mAutoRestore:Landroid/preference/SwitchPreference;
 
@@ -102,7 +97,6 @@
 
 .method static synthetic access$400(Lcom/android/settings/PrivacySettings;)Landroid/app/backup/IBackupManager;
     .locals 1
-    .param p0    # Lcom/android/settings/PrivacySettings;
 
     iget-object v0, p0, Lcom/android/settings/PrivacySettings;->mBackupManager:Landroid/app/backup/IBackupManager;
 
@@ -111,7 +105,6 @@
 
 .method private setBackupEnabled(Z)V
     .locals 5
-    .param p1    # Z
 
     const/4 v2, 0x1
 
@@ -178,7 +171,6 @@
 
 .method private setConfigureSummary(Ljava/lang/String;)V
     .locals 2
-    .param p1    # Ljava/lang/String;
 
     if-eqz p1, :cond_0
 
@@ -403,8 +395,6 @@
 
 .method public onClick(Landroid/content/DialogInterface;I)V
     .locals 3
-    .param p1    # Landroid/content/DialogInterface;
-    .param p2    # I
 
     const/4 v2, 0x0
 
@@ -443,7 +433,6 @@
 
 .method public onCreate(Landroid/os/Bundle;)V
     .locals 4
-    .param p1    # Landroid/os/Bundle;
 
     invoke-super {p0, p1}, Lcom/android/settings/SettingsPreferenceFragment;->onCreate(Landroid/os/Bundle;)V
 

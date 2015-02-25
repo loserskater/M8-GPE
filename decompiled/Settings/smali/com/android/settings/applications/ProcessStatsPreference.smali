@@ -14,7 +14,6 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 1
-    .param p1    # Landroid/content/Context;
 
     const/4 v0, 0x0
 
@@ -25,8 +24,6 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 1
-    .param p1    # Landroid/content/Context;
-    .param p2    # Landroid/util/AttributeSet;
 
     const/4 v0, 0x0
 
@@ -37,9 +34,6 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
     .locals 1
-    .param p1    # Landroid/content/Context;
-    .param p2    # Landroid/util/AttributeSet;
-    .param p3    # I
 
     const/4 v0, 0x0
 
@@ -50,10 +44,6 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;II)V
     .locals 1
-    .param p1    # Landroid/content/Context;
-    .param p2    # Landroid/util/AttributeSet;
-    .param p3    # I
-    .param p4    # I
 
     invoke-direct {p0, p1, p2, p3, p4}, Landroid/preference/Preference;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;II)V
 
@@ -76,8 +66,6 @@
 
 .method public init(Landroid/graphics/drawable/Drawable;Lcom/android/settings/applications/ProcStatsEntry;)V
     .locals 1
-    .param p1    # Landroid/graphics/drawable/Drawable;
-    .param p2    # Lcom/android/settings/applications/ProcStatsEntry;
 
     iput-object p2, p0, Lcom/android/settings/applications/ProcessStatsPreference;->mEntry:Lcom/android/settings/applications/ProcStatsEntry;
 
@@ -100,7 +88,6 @@
 
 .method protected onBindView(Landroid/view/View;)V
     .locals 3
-    .param p1    # Landroid/view/View;
 
     invoke-super {p0, p1}, Landroid/preference/Preference;->onBindView(Landroid/view/View;)V
 
@@ -133,8 +120,6 @@
 
 .method public setPercent(DD)V
     .locals 3
-    .param p1    # D
-    .param p3    # D
 
     invoke-static {p1, p2}, Ljava/lang/Math;->ceil(D)D
 

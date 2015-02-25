@@ -22,7 +22,6 @@
 
 .method public static createStartIntent(Landroid/content/Context;)Landroid/content/Intent;
     .locals 3
-    .param p0    # Landroid/content/Context;
 
     new-instance v0, Landroid/content/Intent;
 
@@ -91,7 +90,6 @@
 
 .method protected isValidFragment(Ljava/lang/String;)Z
     .locals 1
-    .param p1    # Ljava/lang/String;
 
     const-class v0, Lcom/android/settings/notification/RedactionInterstitial$RedactionInterstitialFragment;
 

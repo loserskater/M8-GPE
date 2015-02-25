@@ -87,8 +87,6 @@
 
 .method static synthetic access$002(Lcom/android/settings/bluetooth/BluetoothSettings;Z)Z
     .locals 0
-    .param p0    # Lcom/android/settings/bluetooth/BluetoothSettings;
-    .param p1    # Z
 
     iput-boolean p1, p0, Lcom/android/settings/bluetooth/BluetoothSettings;->mInitiateDiscoverable:Z
 
@@ -105,7 +103,6 @@
 
 .method static synthetic access$102(Landroid/view/View;)Landroid/view/View;
     .locals 0
-    .param p0    # Landroid/view/View;
 
     sput-object p0, Lcom/android/settings/bluetooth/BluetoothSettings;->mSettingsDialogView:Landroid/view/View;
 
@@ -114,10 +111,6 @@
 
 .method private addDeviceCategory(Landroid/preference/PreferenceGroup;ILcom/android/settings/bluetooth/BluetoothDeviceFilter$Filter;Z)V
     .locals 1
-    .param p1    # Landroid/preference/PreferenceGroup;
-    .param p2    # I
-    .param p3    # Lcom/android/settings/bluetooth/BluetoothDeviceFilter$Filter;
-    .param p4    # Z
 
     invoke-virtual {p1, p2}, Landroid/preference/PreferenceGroup;->setTitle(I)V
 
@@ -207,7 +200,6 @@
 
 .method private updateContent(I)V
     .locals 10
-    .param p1    # I
 
     const/4 v8, 0x1
 
@@ -495,7 +487,6 @@
 
 .method initDevicePreference(Lcom/android/settings/bluetooth/BluetoothDevicePreference;)V
     .locals 3
-    .param p1    # Lcom/android/settings/bluetooth/BluetoothDevicePreference;
 
     invoke-virtual {p1}, Lcom/android/settings/bluetooth/BluetoothDevicePreference;->getCachedDevice()Lcom/android/settings/bluetooth/CachedBluetoothDevice;
 
@@ -519,7 +510,6 @@
 
 .method public onActivityCreated(Landroid/os/Bundle;)V
     .locals 3
-    .param p1    # Landroid/os/Bundle;
 
     const/4 v2, 0x1
 
@@ -590,7 +580,6 @@
 
 .method public onBluetoothStateChanged(I)V
     .locals 0
-    .param p1    # I
 
     invoke-super {p0, p1}, Lcom/android/settings/bluetooth/DeviceListPreferenceFragment;->onBluetoothStateChanged(I)V
 
@@ -601,8 +590,6 @@
 
 .method public onCreateOptionsMenu(Landroid/view/Menu;Landroid/view/MenuInflater;)V
     .locals 7
-    .param p1    # Landroid/view/Menu;
-    .param p2    # Landroid/view/MenuInflater;
 
     const/4 v3, 0x1
 
@@ -720,8 +707,6 @@
 
 .method public onDeviceBondStateChanged(Lcom/android/settings/bluetooth/CachedBluetoothDevice;I)V
     .locals 1
-    .param p1    # Lcom/android/settings/bluetooth/CachedBluetoothDevice;
-    .param p2    # I
 
     invoke-virtual {p0}, Lcom/android/settings/bluetooth/BluetoothSettings;->getPreferenceScreen()Landroid/preference/PreferenceScreen;
 
@@ -744,7 +729,6 @@
 
 .method onDevicePreferenceClick(Lcom/android/settings/bluetooth/BluetoothDevicePreference;)V
     .locals 1
-    .param p1    # Lcom/android/settings/bluetooth/BluetoothDevicePreference;
 
     iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothSettings;->mLocalAdapter:Lcom/android/settings/bluetooth/LocalBluetoothAdapter;
 
@@ -757,7 +741,6 @@
 
 .method public onOptionsItemSelected(Landroid/view/MenuItem;)Z
     .locals 5
-    .param p1    # Landroid/view/MenuItem;
 
     const/4 v1, 0x1
 
@@ -945,7 +928,6 @@
 
 .method public onScanningStateChanged(Z)V
     .locals 1
-    .param p1    # Z
 
     invoke-super {p0, p1}, Lcom/android/settings/bluetooth/DeviceListPreferenceFragment;->onScanningStateChanged(Z)V
 

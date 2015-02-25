@@ -23,7 +23,6 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/wifi/WifiSettings;)V
     .locals 1
-    .param p1    # Lcom/android/settings/wifi/WifiSettings;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
 
@@ -56,7 +55,6 @@
 
 .method public handleMessage(Landroid/os/Message;)V
     .locals 5
-    .param p1    # Landroid/os/Message;
 
     const/4 v4, 0x0
 

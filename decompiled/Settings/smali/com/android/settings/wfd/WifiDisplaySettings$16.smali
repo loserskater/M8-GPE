@@ -33,8 +33,6 @@
 # virtual methods
 .method public onRouteAdded(Landroid/media/MediaRouter;Landroid/media/MediaRouter$RouteInfo;)V
     .locals 2
-    .param p1    # Landroid/media/MediaRouter;
-    .param p2    # Landroid/media/MediaRouter$RouteInfo;
 
     iget-object v0, p0, Lcom/android/settings/wfd/WifiDisplaySettings$16;->this$0:Lcom/android/settings/wfd/WifiDisplaySettings;
 
@@ -48,8 +46,6 @@
 
 .method public onRouteChanged(Landroid/media/MediaRouter;Landroid/media/MediaRouter$RouteInfo;)V
     .locals 2
-    .param p1    # Landroid/media/MediaRouter;
-    .param p2    # Landroid/media/MediaRouter$RouteInfo;
 
     iget-object v0, p0, Lcom/android/settings/wfd/WifiDisplaySettings$16;->this$0:Lcom/android/settings/wfd/WifiDisplaySettings;
 
@@ -63,8 +59,6 @@
 
 .method public onRouteRemoved(Landroid/media/MediaRouter;Landroid/media/MediaRouter$RouteInfo;)V
     .locals 2
-    .param p1    # Landroid/media/MediaRouter;
-    .param p2    # Landroid/media/MediaRouter$RouteInfo;
 
     iget-object v0, p0, Lcom/android/settings/wfd/WifiDisplaySettings$16;->this$0:Lcom/android/settings/wfd/WifiDisplaySettings;
 
@@ -78,9 +72,6 @@
 
 .method public onRouteSelected(Landroid/media/MediaRouter;ILandroid/media/MediaRouter$RouteInfo;)V
     .locals 2
-    .param p1    # Landroid/media/MediaRouter;
-    .param p2    # I
-    .param p3    # Landroid/media/MediaRouter$RouteInfo;
 
     iget-object v0, p0, Lcom/android/settings/wfd/WifiDisplaySettings$16;->this$0:Lcom/android/settings/wfd/WifiDisplaySettings;
 
@@ -94,9 +85,6 @@
 
 .method public onRouteUnselected(Landroid/media/MediaRouter;ILandroid/media/MediaRouter$RouteInfo;)V
     .locals 2
-    .param p1    # Landroid/media/MediaRouter;
-    .param p2    # I
-    .param p3    # Landroid/media/MediaRouter$RouteInfo;
 
     iget-object v0, p0, Lcom/android/settings/wfd/WifiDisplaySettings$16;->this$0:Lcom/android/settings/wfd/WifiDisplaySettings;
 

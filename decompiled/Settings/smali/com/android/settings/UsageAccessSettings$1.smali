@@ -33,8 +33,6 @@
 # virtual methods
 .method public onPackageAdded(Ljava/lang/String;I)V
     .locals 1
-    .param p1    # Ljava/lang/String;
-    .param p2    # I
 
     iget-object v0, p0, Lcom/android/settings/UsageAccessSettings$1;->this$0:Lcom/android/settings/UsageAccessSettings;
 
@@ -46,8 +44,6 @@
 
 .method public onPackageRemoved(Ljava/lang/String;I)V
     .locals 1
-    .param p1    # Ljava/lang/String;
-    .param p2    # I
 
     iget-object v0, p0, Lcom/android/settings/UsageAccessSettings$1;->this$0:Lcom/android/settings/UsageAccessSettings;
 

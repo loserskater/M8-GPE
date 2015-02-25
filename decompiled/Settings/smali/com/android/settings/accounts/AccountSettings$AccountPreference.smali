@@ -30,11 +30,6 @@
 # direct methods
 .method public constructor <init>(Lcom/android/settings/accounts/AccountSettings;Landroid/content/Context;Ljava/lang/CharSequence;Ljava/lang/String;Landroid/os/Bundle;Landroid/graphics/drawable/Drawable;)V
     .locals 1
-    .param p2    # Landroid/content/Context;
-    .param p3    # Ljava/lang/CharSequence;
-    .param p4    # Ljava/lang/String;
-    .param p5    # Landroid/os/Bundle;
-    .param p6    # Landroid/graphics/drawable/Drawable;
 
     iput-object p1, p0, Lcom/android/settings/accounts/AccountSettings$AccountPreference;->this$0:Lcom/android/settings/accounts/AccountSettings;
 
@@ -61,7 +56,6 @@
 
 .method static synthetic access$300(Lcom/android/settings/accounts/AccountSettings$AccountPreference;)Ljava/lang/CharSequence;
     .locals 1
-    .param p0    # Lcom/android/settings/accounts/AccountSettings$AccountPreference;
 
     iget-object v0, p0, Lcom/android/settings/accounts/AccountSettings$AccountPreference;->mTitle:Ljava/lang/CharSequence;
 
@@ -72,7 +66,6 @@
 # virtual methods
 .method public onPreferenceClick(Landroid/preference/Preference;)Z
     .locals 7
-    .param p1    # Landroid/preference/Preference;
 
     const/4 v4, 0x0
 

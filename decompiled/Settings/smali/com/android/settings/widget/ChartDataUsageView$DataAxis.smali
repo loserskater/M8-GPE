@@ -62,9 +62,6 @@
 # virtual methods
 .method public buildLabel(Landroid/content/res/Resources;Landroid/text/SpannableStringBuilder;J)J
     .locals 15
-    .param p1    # Landroid/content/res/Resources;
-    .param p2    # Landroid/text/SpannableStringBuilder;
-    .param p3    # J
 
     const-wide/32 v10, 0x3e800000
 
@@ -91,7 +88,7 @@
 
     div-double v2, v10, v12
 
-    const-wide/high16 v10, 0x4024000000000000L
+    const-wide/high16 v10, 0x4024000000000000L    # 10.0
 
     cmpg-double v10, v2, v10
 
@@ -115,7 +112,7 @@
 
     move-result-object v6
 
-    const-wide/high16 v10, 0x4024000000000000L
+    const-wide/high16 v10, 0x4024000000000000L    # 10.0
 
     mul-double/2addr v10, v2
 
@@ -199,7 +196,6 @@
 
 .method public convertToPoint(J)F
     .locals 7
-    .param p1    # J
 
     iget v0, p0, Lcom/android/settings/widget/ChartDataUsageView$DataAxis;->mSize:F
 
@@ -226,7 +222,6 @@
 
 .method public convertToValue(F)J
     .locals 6
-    .param p1    # F
 
     iget-wide v0, p0, Lcom/android/settings/widget/ChartDataUsageView$DataAxis;->mMin:J
 
@@ -348,8 +343,6 @@
 
 .method public setBounds(JJ)Z
     .locals 3
-    .param p1    # J
-    .param p3    # J
 
     iget-wide v0, p0, Lcom/android/settings/widget/ChartDataUsageView$DataAxis;->mMin:J
 
@@ -381,7 +374,6 @@
 
 .method public setSize(F)Z
     .locals 1
-    .param p1    # F
 
     iget v0, p0, Lcom/android/settings/widget/ChartDataUsageView$DataAxis;->mSize:F
 
@@ -404,7 +396,6 @@
 
 .method public shouldAdjustAxis(J)I
     .locals 9
-    .param p1    # J
 
     invoke-virtual {p0, p1, p2}, Lcom/android/settings/widget/ChartDataUsageView$DataAxis;->convertToPoint(J)F
 
@@ -416,7 +407,7 @@
 
     float-to-double v4, v1
 
-    const-wide v6, 0x3fb999999999999aL
+    const-wide v6, 0x3fb999999999999aL    # 0.1
 
     mul-double/2addr v4, v6
 
@@ -436,7 +427,7 @@
 
     float-to-double v4, v1
 
-    const-wide v6, 0x3feb333333333333L
+    const-wide v6, 0x3feb333333333333L    # 0.85
 
     mul-double/2addr v4, v6
 

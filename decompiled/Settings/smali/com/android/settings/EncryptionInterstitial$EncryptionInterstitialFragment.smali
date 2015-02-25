@@ -39,7 +39,6 @@
 
 .method private setRequirePasswordState(Z)V
     .locals 4
-    .param p1    # Z
 
     iput-boolean p1, p0, Lcom/android/settings/EncryptionInterstitial$EncryptionInterstitialFragment;->mPasswordRequired:Z
 
@@ -93,8 +92,6 @@
 # virtual methods
 .method public onClick(Landroid/content/DialogInterface;I)V
     .locals 1
-    .param p1    # Landroid/content/DialogInterface;
-    .param p2    # I
 
     const/4 v0, -0x1
 
@@ -122,7 +119,6 @@
 
 .method public onClick(Landroid/view/View;)V
     .locals 4
-    .param p1    # Landroid/view/View;
 
     const/4 v3, 0x1
 
@@ -170,7 +166,6 @@
 
 .method public onCreateDialog(I)Landroid/app/Dialog;
     .locals 9
-    .param p1    # I
 
     const/4 v8, 0x1
 
@@ -323,9 +318,6 @@
 
 .method public onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
     .locals 9
-    .param p1    # Landroid/view/LayoutInflater;
-    .param p2    # Landroid/view/ViewGroup;
-    .param p3    # Landroid/os/Bundle;
 
     const/4 v8, 0x0
 

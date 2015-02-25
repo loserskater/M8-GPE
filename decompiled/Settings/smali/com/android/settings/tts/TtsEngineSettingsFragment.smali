@@ -56,7 +56,6 @@
 
 .method static synthetic access$000(Lcom/android/settings/tts/TtsEngineSettingsFragment;)Landroid/preference/ListPreference;
     .locals 1
-    .param p0    # Lcom/android/settings/tts/TtsEngineSettingsFragment;
 
     iget-object v0, p0, Lcom/android/settings/tts/TtsEngineSettingsFragment;->mLocalePreference:Landroid/preference/ListPreference;
 
@@ -65,7 +64,6 @@
 
 .method static synthetic access$100(Lcom/android/settings/tts/TtsEngineSettingsFragment;)V
     .locals 0
-    .param p0    # Lcom/android/settings/tts/TtsEngineSettingsFragment;
 
     invoke-direct {p0}, Lcom/android/settings/tts/TtsEngineSettingsFragment;->checkTtsData()V
 
@@ -263,7 +261,6 @@
 
 .method private setLocalePreference(I)V
     .locals 2
-    .param p1    # I
 
     if-gez p1, :cond_0
 
@@ -523,7 +520,6 @@
 
 .method private updateLanguageTo(Ljava/util/Locale;)V
     .locals 5
-    .param p1    # Ljava/util/Locale;
 
     const/4 v2, -0x1
 
@@ -650,7 +646,6 @@
 
 .method private updateVoiceDetails(Landroid/content/Intent;)V
     .locals 5
-    .param p1    # Landroid/content/Intent;
 
     const/4 v4, 0x0
 
@@ -752,9 +747,6 @@
 # virtual methods
 .method public onActivityResult(IILandroid/content/Intent;)V
     .locals 2
-    .param p1    # I
-    .param p2    # I
-    .param p3    # Landroid/content/Intent;
 
     const/16 v0, 0x7b9
 
@@ -780,7 +772,6 @@
 
 .method public onCreate(Landroid/os/Bundle;)V
     .locals 11
-    .param p1    # Landroid/os/Bundle;
 
     const/4 v5, 0x1
 
@@ -1058,8 +1049,6 @@
 
 .method public onPreferenceChange(Landroid/preference/Preference;Ljava/lang/Object;)Z
     .locals 2
-    .param p1    # Landroid/preference/Preference;
-    .param p2    # Ljava/lang/Object;
 
     iget-object v1, p0, Lcom/android/settings/tts/TtsEngineSettingsFragment;->mLocalePreference:Landroid/preference/ListPreference;
 
@@ -1102,7 +1091,6 @@
 
 .method public onPreferenceClick(Landroid/preference/Preference;)Z
     .locals 2
-    .param p1    # Landroid/preference/Preference;
 
     const/4 v0, 0x1
 
@@ -1134,7 +1122,6 @@
 
 .method public onSaveInstanceState(Landroid/os/Bundle;)V
     .locals 2
-    .param p1    # Landroid/os/Bundle;
 
     invoke-super {p0, p1}, Lcom/android/settings/SettingsPreferenceFragment;->onSaveInstanceState(Landroid/os/Bundle;)V
 

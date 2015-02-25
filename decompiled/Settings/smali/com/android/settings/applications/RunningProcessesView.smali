@@ -84,8 +84,6 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 4
-    .param p1    # Landroid/content/Context;
-    .param p2    # Landroid/util/AttributeSet;
 
     const-wide/16 v2, -0x1
 
@@ -134,7 +132,6 @@
 
 .method private startServiceDetailsActivity(Lcom/android/settings/applications/RunningState$MergedItem;)V
     .locals 7
-    .param p1    # Lcom/android/settings/applications/RunningState$MergedItem;
 
     const/4 v4, 0x0
 
@@ -211,7 +208,6 @@
 # virtual methods
 .method public doCreate(Landroid/os/Bundle;)V
     .locals 8
-    .param p1    # Landroid/os/Bundle;
 
     const/4 v7, 0x0
 
@@ -459,8 +455,6 @@
 
 .method public doResume(Landroid/app/Fragment;Ljava/lang/Runnable;)Z
     .locals 2
-    .param p1    # Landroid/app/Fragment;
-    .param p2    # Ljava/lang/Runnable;
 
     const/4 v0, 0x1
 
@@ -493,9 +487,6 @@
 
 .method public onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
     .locals 3
-    .param p2    # Landroid/view/View;
-    .param p3    # I
-    .param p4    # J
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -529,7 +520,6 @@
 
 .method public onMovedToScrapHeap(Landroid/view/View;)V
     .locals 1
-    .param p1    # Landroid/view/View;
 
     iget-object v0, p0, Lcom/android/settings/applications/RunningProcessesView;->mActiveItems:Ljava/util/HashMap;
 
@@ -540,7 +530,6 @@
 
 .method public onRefreshUi(I)V
     .locals 1
-    .param p1    # I
 
     packed-switch p1, :pswitch_data_0
 
@@ -580,7 +569,6 @@
 
 .method refreshUi(Z)V
     .locals 20
-    .param p1    # Z
 
     if-eqz p1, :cond_0
 

@@ -33,7 +33,6 @@
 # direct methods
 .method constructor <init>(Ljava/lang/String;)V
     .locals 1
-    .param p1    # Ljava/lang/String;
 
     invoke-direct {p0, p1}, Lcom/android/settings/RestrictedSettingsFragment;-><init>(Ljava/lang/String;)V
 
@@ -52,7 +51,6 @@
 
 .method private updateProgressUi(Z)V
     .locals 1
-    .param p1    # Z
 
     iget-object v0, p0, Lcom/android/settings/bluetooth/DeviceListPreferenceFragment;->mDeviceListGroup:Landroid/preference/PreferenceGroup;
 
@@ -115,7 +113,6 @@
 
 .method createDevicePreference(Lcom/android/settings/bluetooth/CachedBluetoothDevice;)V
     .locals 3
-    .param p1    # Lcom/android/settings/bluetooth/CachedBluetoothDevice;
 
     iget-object v1, p0, Lcom/android/settings/bluetooth/DeviceListPreferenceFragment;->mDeviceListGroup:Landroid/preference/PreferenceGroup;
 
@@ -154,14 +151,12 @@
 
 .method initDevicePreference(Lcom/android/settings/bluetooth/BluetoothDevicePreference;)V
     .locals 0
-    .param p1    # Lcom/android/settings/bluetooth/BluetoothDevicePreference;
 
     return-void
 .end method
 
 .method public onBluetoothStateChanged(I)V
     .locals 1
-    .param p1    # I
 
     const/16 v0, 0xa
 
@@ -177,7 +172,6 @@
 
 .method public onCreate(Landroid/os/Bundle;)V
     .locals 2
-    .param p1    # Landroid/os/Bundle;
 
     invoke-super {p0, p1}, Lcom/android/settings/RestrictedSettingsFragment;->onCreate(Landroid/os/Bundle;)V
 
@@ -230,7 +224,6 @@
 
 .method public onDeviceAdded(Lcom/android/settings/bluetooth/CachedBluetoothDevice;)V
     .locals 2
-    .param p1    # Lcom/android/settings/bluetooth/CachedBluetoothDevice;
 
     iget-object v0, p0, Lcom/android/settings/bluetooth/DeviceListPreferenceFragment;->mDevicePreferenceMap:Ljava/util/WeakHashMap;
 
@@ -274,7 +267,6 @@
 
 .method public onDeviceDeleted(Lcom/android/settings/bluetooth/CachedBluetoothDevice;)V
     .locals 2
-    .param p1    # Lcom/android/settings/bluetooth/CachedBluetoothDevice;
 
     iget-object v1, p0, Lcom/android/settings/bluetooth/DeviceListPreferenceFragment;->mDevicePreferenceMap:Ljava/util/WeakHashMap;
 
@@ -296,7 +288,6 @@
 
 .method onDevicePreferenceClick(Lcom/android/settings/bluetooth/BluetoothDevicePreference;)V
     .locals 0
-    .param p1    # Lcom/android/settings/bluetooth/BluetoothDevicePreference;
 
     invoke-virtual {p1}, Lcom/android/settings/bluetooth/BluetoothDevicePreference;->onClicked()V
 
@@ -344,8 +335,6 @@
 
 .method public onPreferenceTreeClick(Landroid/preference/PreferenceScreen;Landroid/preference/Preference;)Z
     .locals 5
-    .param p1    # Landroid/preference/PreferenceScreen;
-    .param p2    # Landroid/preference/Preference;
 
     const/4 v2, 0x1
 
@@ -448,7 +437,6 @@
 
 .method public onScanningStateChanged(Z)V
     .locals 0
-    .param p1    # Z
 
     invoke-direct {p0, p1}, Lcom/android/settings/bluetooth/DeviceListPreferenceFragment;->updateProgressUi(Z)V
 
@@ -475,7 +463,6 @@
 
 .method setDeviceListGroup(Landroid/preference/PreferenceGroup;)V
     .locals 0
-    .param p1    # Landroid/preference/PreferenceGroup;
 
     iput-object p1, p0, Lcom/android/settings/bluetooth/DeviceListPreferenceFragment;->mDeviceListGroup:Landroid/preference/PreferenceGroup;
 
@@ -484,7 +471,6 @@
 
 .method final setFilter(I)V
     .locals 1
-    .param p1    # I
 
     invoke-static {p1}, Lcom/android/settings/bluetooth/BluetoothDeviceFilter;->getFilter(I)Lcom/android/settings/bluetooth/BluetoothDeviceFilter$Filter;
 
@@ -497,7 +483,6 @@
 
 .method final setFilter(Lcom/android/settings/bluetooth/BluetoothDeviceFilter$Filter;)V
     .locals 0
-    .param p1    # Lcom/android/settings/bluetooth/BluetoothDeviceFilter$Filter;
 
     iput-object p1, p0, Lcom/android/settings/bluetooth/DeviceListPreferenceFragment;->mFilter:Lcom/android/settings/bluetooth/BluetoothDeviceFilter$Filter;
 

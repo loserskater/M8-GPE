@@ -49,8 +49,6 @@
 # virtual methods
 .method public getHighPriority(Ljava/lang/String;I)Z
     .locals 4
-    .param p1    # Ljava/lang/String;
-    .param p2    # I
 
     const/4 v1, 0x0
 
@@ -87,8 +85,6 @@
 
 .method public getNotificationsBanned(Ljava/lang/String;I)Z
     .locals 5
-    .param p1    # Ljava/lang/String;
-    .param p2    # I
 
     const/4 v2, 0x0
 
@@ -123,8 +119,6 @@
 
 .method public getSensitive(Ljava/lang/String;I)Z
     .locals 4
-    .param p1    # Ljava/lang/String;
-    .param p2    # I
 
     const/4 v1, 0x0
 
@@ -159,9 +153,6 @@
 
 .method public setHighPriority(Ljava/lang/String;IZ)Z
     .locals 4
-    .param p1    # Ljava/lang/String;
-    .param p2    # I
-    .param p3    # Z
 
     const/4 v1, 0x0
 
@@ -201,9 +192,6 @@
 
 .method public setNotificationsBanned(Ljava/lang/String;IZ)Z
     .locals 5
-    .param p1    # Ljava/lang/String;
-    .param p2    # I
-    .param p3    # Z
 
     const/4 v1, 0x1
 
@@ -245,9 +233,6 @@
 
 .method public setSensitive(Ljava/lang/String;IZ)Z
     .locals 4
-    .param p1    # Ljava/lang/String;
-    .param p2    # I
-    .param p3    # Z
 
     const/4 v1, 0x0
 

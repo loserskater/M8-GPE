@@ -32,8 +32,6 @@
 
 .method public constructor <init>(Landroid/content/Context;Lcom/android/settings/bluetooth/CachedBluetoothDevice;)V
     .locals 5
-    .param p1    # Landroid/content/Context;
-    .param p2    # Lcom/android/settings/bluetooth/CachedBluetoothDevice;
 
     invoke-direct {p0, p1}, Landroid/preference/Preference;-><init>(Landroid/content/Context;)V
 
@@ -61,7 +59,7 @@
 
     move-result v2
 
-    const/high16 v3, 0x437f0000
+    const/high16 v3, 0x437f0000    # 255.0f
 
     mul-float/2addr v2, v3
 
@@ -116,7 +114,6 @@
 
 .method static synthetic access$000(Lcom/android/settings/bluetooth/BluetoothDevicePreference;)Lcom/android/settings/bluetooth/CachedBluetoothDevice;
     .locals 1
-    .param p0    # Lcom/android/settings/bluetooth/BluetoothDevicePreference;
 
     iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothDevicePreference;->mCachedDevice:Lcom/android/settings/bluetooth/CachedBluetoothDevice;
 
@@ -539,7 +536,6 @@
 # virtual methods
 .method public compareTo(Landroid/preference/Preference;)I
     .locals 2
-    .param p1    # Landroid/preference/Preference;
 
     instance-of v0, p1, Lcom/android/settings/bluetooth/BluetoothDevicePreference;
 
@@ -568,7 +564,6 @@
 
 .method public bridge synthetic compareTo(Ljava/lang/Object;)I
     .locals 1
-    .param p1    # Ljava/lang/Object;
 
     check-cast p1, Landroid/preference/Preference;
 
@@ -581,7 +576,6 @@
 
 .method public equals(Ljava/lang/Object;)Z
     .locals 2
-    .param p1    # Ljava/lang/Object;
 
     if-eqz p1, :cond_0
 
@@ -631,7 +625,6 @@
 
 .method protected onBindView(Landroid/view/View;)V
     .locals 3
-    .param p1    # Landroid/view/View;
 
     const-string v1, "bt_checkbox"
 
@@ -680,7 +673,6 @@
 
 .method public onClick(Landroid/view/View;)V
     .locals 1
-    .param p1    # Landroid/view/View;
 
     iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothDevicePreference;->mOnSettingsClickListener:Landroid/view/View$OnClickListener;
 
@@ -826,7 +818,6 @@
 
 .method public setOnSettingsClickListener(Landroid/view/View$OnClickListener;)V
     .locals 0
-    .param p1    # Landroid/view/View$OnClickListener;
 
     iput-object p1, p0, Lcom/android/settings/bluetooth/BluetoothDevicePreference;->mOnSettingsClickListener:Landroid/view/View$OnClickListener;
 

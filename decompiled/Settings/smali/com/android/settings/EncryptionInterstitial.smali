@@ -22,9 +22,6 @@
 
 .method public static createStartIntent(Landroid/content/Context;IZ)Landroid/content/Intent;
     .locals 3
-    .param p0    # Landroid/content/Context;
-    .param p1    # I
-    .param p2    # Z
 
     new-instance v0, Landroid/content/Intent;
 
@@ -113,7 +110,6 @@
 
 .method protected isValidFragment(Ljava/lang/String;)Z
     .locals 1
-    .param p1    # Ljava/lang/String;
 
     const-class v0, Lcom/android/settings/EncryptionInterstitial$EncryptionInterstitialFragment;
 

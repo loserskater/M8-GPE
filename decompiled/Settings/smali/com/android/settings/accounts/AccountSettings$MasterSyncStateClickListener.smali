@@ -26,7 +26,6 @@
 # direct methods
 .method public constructor <init>(Lcom/android/settings/accounts/AccountSettings;Landroid/os/UserHandle;)V
     .locals 0
-    .param p2    # Landroid/os/UserHandle;
 
     iput-object p1, p0, Lcom/android/settings/accounts/AccountSettings$MasterSyncStateClickListener;->this$0:Lcom/android/settings/accounts/AccountSettings;
 
@@ -41,7 +40,6 @@
 # virtual methods
 .method public onMenuItemClick(Landroid/view/MenuItem;)Z
     .locals 4
-    .param p1    # Landroid/view/MenuItem;
 
     const/4 v1, 0x1
 

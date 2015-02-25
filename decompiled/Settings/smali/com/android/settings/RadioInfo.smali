@@ -380,7 +380,6 @@
 
 .method static synthetic access$000(Lcom/android/settings/RadioInfo;)V
     .locals 0
-    .param p0    # Lcom/android/settings/RadioInfo;
 
     invoke-direct {p0}, Lcom/android/settings/RadioInfo;->updateDataState()V
 
@@ -389,7 +388,6 @@
 
 .method static synthetic access$100(Lcom/android/settings/RadioInfo;)V
     .locals 0
-    .param p0    # Lcom/android/settings/RadioInfo;
 
     invoke-direct {p0}, Lcom/android/settings/RadioInfo;->updateDataStats()V
 
@@ -398,8 +396,6 @@
 
 .method static synthetic access$1000(Lcom/android/settings/RadioInfo;Ljava/lang/String;)V
     .locals 0
-    .param p0    # Lcom/android/settings/RadioInfo;
-    .param p1    # Ljava/lang/String;
 
     invoke-direct {p0, p1}, Lcom/android/settings/RadioInfo;->log(Ljava/lang/String;)V
 
@@ -408,8 +404,6 @@
 
 .method static synthetic access$1100(Lcom/android/settings/RadioInfo;Ljava/util/List;)V
     .locals 0
-    .param p0    # Lcom/android/settings/RadioInfo;
-    .param p1    # Ljava/util/List;
 
     invoke-direct {p0, p1}, Lcom/android/settings/RadioInfo;->updateCellInfoTv(Ljava/util/List;)V
 
@@ -418,8 +412,6 @@
 
 .method static synthetic access$1200(Lcom/android/settings/RadioInfo;Landroid/telephony/DataConnectionRealTimeInfo;)V
     .locals 0
-    .param p0    # Lcom/android/settings/RadioInfo;
-    .param p1    # Landroid/telephony/DataConnectionRealTimeInfo;
 
     invoke-direct {p0, p1}, Lcom/android/settings/RadioInfo;->updateDcRtInfoTv(Landroid/telephony/DataConnectionRealTimeInfo;)V
 
@@ -428,7 +420,6 @@
 
 .method static synthetic access$1300(Lcom/android/settings/RadioInfo;)V
     .locals 0
-    .param p0    # Lcom/android/settings/RadioInfo;
 
     invoke-direct {p0}, Lcom/android/settings/RadioInfo;->updatePhoneState()V
 
@@ -437,7 +428,6 @@
 
 .method static synthetic access$1400(Lcom/android/settings/RadioInfo;)V
     .locals 0
-    .param p0    # Lcom/android/settings/RadioInfo;
 
     invoke-direct {p0}, Lcom/android/settings/RadioInfo;->updateSignalStrength()V
 
@@ -446,7 +436,6 @@
 
 .method static synthetic access$1500(Lcom/android/settings/RadioInfo;)V
     .locals 0
-    .param p0    # Lcom/android/settings/RadioInfo;
 
     invoke-direct {p0}, Lcom/android/settings/RadioInfo;->updateServiceState()V
 
@@ -455,7 +444,6 @@
 
 .method static synthetic access$1600(Lcom/android/settings/RadioInfo;)V
     .locals 0
-    .param p0    # Lcom/android/settings/RadioInfo;
 
     invoke-direct {p0}, Lcom/android/settings/RadioInfo;->updatePowerState()V
 
@@ -464,7 +452,6 @@
 
 .method static synthetic access$1700(Lcom/android/settings/RadioInfo;)[Ljava/lang/String;
     .locals 1
-    .param p0    # Lcom/android/settings/RadioInfo;
 
     iget-object v0, p0, Lcom/android/settings/RadioInfo;->mPreferredNetworkLabels:[Ljava/lang/String;
 
@@ -473,7 +460,6 @@
 
 .method static synthetic access$1800(Lcom/android/settings/RadioInfo;)Landroid/widget/Spinner;
     .locals 1
-    .param p0    # Lcom/android/settings/RadioInfo;
 
     iget-object v0, p0, Lcom/android/settings/RadioInfo;->preferredNetworkType:Landroid/widget/Spinner;
 
@@ -482,7 +468,6 @@
 
 .method static synthetic access$1900(Lcom/android/settings/RadioInfo;)Lcom/android/internal/telephony/Phone;
     .locals 1
-    .param p0    # Lcom/android/settings/RadioInfo;
 
     iget-object v0, p0, Lcom/android/settings/RadioInfo;->phone:Lcom/android/internal/telephony/Phone;
 
@@ -491,7 +476,6 @@
 
 .method static synthetic access$200(Lcom/android/settings/RadioInfo;)V
     .locals 0
-    .param p0    # Lcom/android/settings/RadioInfo;
 
     invoke-direct {p0}, Lcom/android/settings/RadioInfo;->updatePdpList()V
 
@@ -500,8 +484,6 @@
 
 .method static synthetic access$2000(Lcom/android/settings/RadioInfo;Ljava/util/ArrayList;)V
     .locals 0
-    .param p0    # Lcom/android/settings/RadioInfo;
-    .param p1    # Ljava/util/ArrayList;
 
     invoke-direct {p0, p1}, Lcom/android/settings/RadioInfo;->updateNeighboringCids(Ljava/util/ArrayList;)V
 
@@ -510,7 +492,6 @@
 
 .method static synthetic access$2100(Lcom/android/settings/RadioInfo;)Landroid/widget/TextView;
     .locals 1
-    .param p0    # Lcom/android/settings/RadioInfo;
 
     iget-object v0, p0, Lcom/android/settings/RadioInfo;->mNeighboringCids:Landroid/widget/TextView;
 
@@ -519,7 +500,6 @@
 
 .method static synthetic access$2200(Lcom/android/settings/RadioInfo;)Landroid/widget/EditText;
     .locals 1
-    .param p0    # Lcom/android/settings/RadioInfo;
 
     iget-object v0, p0, Lcom/android/settings/RadioInfo;->smsc:Landroid/widget/EditText;
 
@@ -528,7 +508,6 @@
 
 .method static synthetic access$2300(Lcom/android/settings/RadioInfo;)Landroid/widget/Button;
     .locals 1
-    .param p0    # Lcom/android/settings/RadioInfo;
 
     iget-object v0, p0, Lcom/android/settings/RadioInfo;->updateSmscButton:Landroid/widget/Button;
 
@@ -537,7 +516,6 @@
 
 .method static synthetic access$2400(Lcom/android/settings/RadioInfo;)Ljava/lang/String;
     .locals 1
-    .param p0    # Lcom/android/settings/RadioInfo;
 
     iget-object v0, p0, Lcom/android/settings/RadioInfo;->mPingIpAddrResult:Ljava/lang/String;
 
@@ -546,7 +524,6 @@
 
 .method static synthetic access$2500(Lcom/android/settings/RadioInfo;)Landroid/widget/TextView;
     .locals 1
-    .param p0    # Lcom/android/settings/RadioInfo;
 
     iget-object v0, p0, Lcom/android/settings/RadioInfo;->mPingIpAddr:Landroid/widget/TextView;
 
@@ -555,7 +532,6 @@
 
 .method static synthetic access$2600(Lcom/android/settings/RadioInfo;)Ljava/lang/String;
     .locals 1
-    .param p0    # Lcom/android/settings/RadioInfo;
 
     iget-object v0, p0, Lcom/android/settings/RadioInfo;->mPingHostnameResult:Ljava/lang/String;
 
@@ -564,7 +540,6 @@
 
 .method static synthetic access$2700(Lcom/android/settings/RadioInfo;)Landroid/widget/TextView;
     .locals 1
-    .param p0    # Lcom/android/settings/RadioInfo;
 
     iget-object v0, p0, Lcom/android/settings/RadioInfo;->mPingHostname:Landroid/widget/TextView;
 
@@ -573,7 +548,6 @@
 
 .method static synthetic access$2800(Lcom/android/settings/RadioInfo;)Ljava/lang/String;
     .locals 1
-    .param p0    # Lcom/android/settings/RadioInfo;
 
     iget-object v0, p0, Lcom/android/settings/RadioInfo;->mHttpClientTestResult:Ljava/lang/String;
 
@@ -582,7 +556,6 @@
 
 .method static synthetic access$2900(Lcom/android/settings/RadioInfo;)Landroid/widget/TextView;
     .locals 1
-    .param p0    # Lcom/android/settings/RadioInfo;
 
     iget-object v0, p0, Lcom/android/settings/RadioInfo;->mHttpClientTest:Landroid/widget/TextView;
 
@@ -591,7 +564,6 @@
 
 .method static synthetic access$300(Lcom/android/settings/RadioInfo;)V
     .locals 0
-    .param p0    # Lcom/android/settings/RadioInfo;
 
     invoke-direct {p0}, Lcom/android/settings/RadioInfo;->updateNetworkType()V
 
@@ -600,7 +572,6 @@
 
 .method static synthetic access$3000(Lcom/android/settings/RadioInfo;)V
     .locals 0
-    .param p0    # Lcom/android/settings/RadioInfo;
 
     invoke-direct {p0}, Lcom/android/settings/RadioInfo;->pingIpAddr()V
 
@@ -609,7 +580,6 @@
 
 .method static synthetic access$3100(Lcom/android/settings/RadioInfo;)V
     .locals 0
-    .param p0    # Lcom/android/settings/RadioInfo;
 
     invoke-direct {p0}, Lcom/android/settings/RadioInfo;->pingHostname()V
 
@@ -618,7 +588,6 @@
 
 .method static synthetic access$3200(Lcom/android/settings/RadioInfo;)V
     .locals 0
-    .param p0    # Lcom/android/settings/RadioInfo;
 
     invoke-direct {p0}, Lcom/android/settings/RadioInfo;->httpClientTest()V
 
@@ -627,7 +596,6 @@
 
 .method static synthetic access$3300(Lcom/android/settings/RadioInfo;)Landroid/telephony/TelephonyManager;
     .locals 1
-    .param p0    # Lcom/android/settings/RadioInfo;
 
     iget-object v0, p0, Lcom/android/settings/RadioInfo;->mTelephonyManager:Landroid/telephony/TelephonyManager;
 
@@ -636,7 +604,6 @@
 
 .method static synthetic access$3400(Lcom/android/settings/RadioInfo;)Z
     .locals 1
-    .param p0    # Lcom/android/settings/RadioInfo;
 
     invoke-direct {p0}, Lcom/android/settings/RadioInfo;->isRadioOn()Z
 
@@ -647,7 +614,6 @@
 
 .method static synthetic access$3500(Lcom/android/settings/RadioInfo;)V
     .locals 0
-    .param p0    # Lcom/android/settings/RadioInfo;
 
     invoke-direct {p0}, Lcom/android/settings/RadioInfo;->updateCellInfoListRate()V
 
@@ -656,7 +622,6 @@
 
 .method static synthetic access$3600(Lcom/android/settings/RadioInfo;)Z
     .locals 1
-    .param p0    # Lcom/android/settings/RadioInfo;
 
     invoke-direct {p0}, Lcom/android/settings/RadioInfo;->isImsRegRequired()Z
 
@@ -667,7 +632,6 @@
 
 .method static synthetic access$3700(Lcom/android/settings/RadioInfo;)V
     .locals 0
-    .param p0    # Lcom/android/settings/RadioInfo;
 
     invoke-direct {p0}, Lcom/android/settings/RadioInfo;->updateImsRegRequiredState()V
 
@@ -676,7 +640,6 @@
 
 .method static synthetic access$3800(Lcom/android/settings/RadioInfo;)Z
     .locals 1
-    .param p0    # Lcom/android/settings/RadioInfo;
 
     invoke-direct {p0}, Lcom/android/settings/RadioInfo;->isSmsOverImsEnabled()Z
 
@@ -687,7 +650,6 @@
 
 .method static synthetic access$3900(Lcom/android/settings/RadioInfo;)V
     .locals 0
-    .param p0    # Lcom/android/settings/RadioInfo;
 
     invoke-direct {p0}, Lcom/android/settings/RadioInfo;->updateSmsOverImsState()V
 
@@ -696,7 +658,6 @@
 
 .method static synthetic access$400(Lcom/android/settings/RadioInfo;)V
     .locals 0
-    .param p0    # Lcom/android/settings/RadioInfo;
 
     invoke-direct {p0}, Lcom/android/settings/RadioInfo;->updateDataStats2()V
 
@@ -705,7 +666,6 @@
 
 .method static synthetic access$4000(Lcom/android/settings/RadioInfo;)Z
     .locals 1
-    .param p0    # Lcom/android/settings/RadioInfo;
 
     invoke-direct {p0}, Lcom/android/settings/RadioInfo;->isLteRamDumpEnabled()Z
 
@@ -716,7 +676,6 @@
 
 .method static synthetic access$4100(Lcom/android/settings/RadioInfo;)V
     .locals 0
-    .param p0    # Lcom/android/settings/RadioInfo;
 
     invoke-direct {p0}, Lcom/android/settings/RadioInfo;->updateLteRamDumpState()V
 
@@ -725,7 +684,6 @@
 
 .method static synthetic access$4200(Lcom/android/settings/RadioInfo;)V
     .locals 0
-    .param p0    # Lcom/android/settings/RadioInfo;
 
     invoke-direct {p0}, Lcom/android/settings/RadioInfo;->updateDnsCheckState()V
 
@@ -734,7 +692,6 @@
 
 .method static synthetic access$4300(Lcom/android/settings/RadioInfo;)V
     .locals 0
-    .param p0    # Lcom/android/settings/RadioInfo;
 
     invoke-direct {p0}, Lcom/android/settings/RadioInfo;->updatePingState()V
 
@@ -743,7 +700,6 @@
 
 .method static synthetic access$4400(Lcom/android/settings/RadioInfo;)Landroid/os/Handler;
     .locals 1
-    .param p0    # Lcom/android/settings/RadioInfo;
 
     iget-object v0, p0, Lcom/android/settings/RadioInfo;->mHandler:Landroid/os/Handler;
 
@@ -752,7 +708,6 @@
 
 .method static synthetic access$4500(Lcom/android/settings/RadioInfo;)V
     .locals 0
-    .param p0    # Lcom/android/settings/RadioInfo;
 
     invoke-direct {p0}, Lcom/android/settings/RadioInfo;->refreshSmsc()V
 
@@ -761,8 +716,6 @@
 
 .method static synthetic access$500(Lcom/android/settings/RadioInfo;Landroid/telephony/CellLocation;)V
     .locals 0
-    .param p0    # Lcom/android/settings/RadioInfo;
-    .param p1    # Landroid/telephony/CellLocation;
 
     invoke-direct {p0, p1}, Lcom/android/settings/RadioInfo;->updateLocation(Landroid/telephony/CellLocation;)V
 
@@ -771,8 +724,6 @@
 
 .method static synthetic access$602(Lcom/android/settings/RadioInfo;Z)Z
     .locals 0
-    .param p0    # Lcom/android/settings/RadioInfo;
-    .param p1    # Z
 
     iput-boolean p1, p0, Lcom/android/settings/RadioInfo;->mMwiValue:Z
 
@@ -781,7 +732,6 @@
 
 .method static synthetic access$700(Lcom/android/settings/RadioInfo;)V
     .locals 0
-    .param p0    # Lcom/android/settings/RadioInfo;
 
     invoke-direct {p0}, Lcom/android/settings/RadioInfo;->updateMessageWaiting()V
 
@@ -790,8 +740,6 @@
 
 .method static synthetic access$802(Lcom/android/settings/RadioInfo;Z)Z
     .locals 0
-    .param p0    # Lcom/android/settings/RadioInfo;
-    .param p1    # Z
 
     iput-boolean p1, p0, Lcom/android/settings/RadioInfo;->mCfiValue:Z
 
@@ -800,7 +748,6 @@
 
 .method static synthetic access$900(Lcom/android/settings/RadioInfo;)V
     .locals 0
-    .param p0    # Lcom/android/settings/RadioInfo;
 
     invoke-direct {p0}, Lcom/android/settings/RadioInfo;->updateCallRedirect()V
 
@@ -958,7 +905,6 @@
 
 .method private log(Ljava/lang/String;)V
     .locals 3
-    .param p1    # Ljava/lang/String;
 
     const-string v0, "phone"
 
@@ -1548,7 +1494,6 @@
 
 .method private final updateDcRtInfoTv(Landroid/telephony/DataConnectionRealTimeInfo;)V
     .locals 2
-    .param p1    # Landroid/telephony/DataConnectionRealTimeInfo;
 
     iget-object v0, p0, Lcom/android/settings/RadioInfo;->mDcRtInfoTv:Landroid/widget/TextView;
 
@@ -1645,7 +1590,6 @@
 
 .method private final updateLocation(Landroid/telephony/CellLocation;)V
     .locals 13
-    .param p1    # Landroid/telephony/CellLocation;
 
     const/4 v12, -0x1
 
@@ -2654,7 +2598,6 @@
 # virtual methods
 .method public onCreate(Landroid/os/Bundle;)V
     .locals 7
-    .param p1    # Landroid/os/Bundle;
 
     const/4 v6, 0x0
 
@@ -3254,7 +3197,6 @@
 
 .method public onCreateOptionsMenu(Landroid/view/Menu;)Z
     .locals 4
-    .param p1    # Landroid/view/Menu;
 
     const/4 v3, 0x1
 
@@ -3363,7 +3305,6 @@
 
 .method public onPrepareOptionsMenu(Landroid/view/Menu;)Z
     .locals 4
-    .param p1    # Landroid/view/Menu;
 
     const/4 v3, 0x5
 

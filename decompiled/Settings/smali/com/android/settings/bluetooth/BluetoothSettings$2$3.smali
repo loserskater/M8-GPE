@@ -44,7 +44,6 @@
 # virtual methods
 .method public onDismiss(Landroid/content/DialogInterface;)V
     .locals 2
-    .param p1    # Landroid/content/DialogInterface;
 
     iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothSettings$2$3;->val$activity:Landroid/app/Activity;
 

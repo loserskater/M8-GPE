@@ -12,9 +12,6 @@
 # direct methods
 .method constructor <init>(Landroid/content/Context;Landroid/view/inputmethod/InputMethodSubtype;Landroid/view/inputmethod/InputMethodInfo;)V
     .locals 6
-    .param p1    # Landroid/content/Context;
-    .param p2    # Landroid/view/inputmethod/InputMethodSubtype;
-    .param p3    # Landroid/view/inputmethod/InputMethodInfo;
 
     const/4 v3, 0x0
 
@@ -133,8 +130,6 @@
 # virtual methods
 .method compareTo(Landroid/preference/Preference;Ljava/text/Collator;)I
     .locals 7
-    .param p1    # Landroid/preference/Preference;
-    .param p2    # Ljava/text/Collator;
 
     const/4 v3, 0x0
 

@@ -62,7 +62,6 @@
 
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 1
-    .param p1    # Landroid/content/Context;
 
     const/4 v0, 0x0
 
@@ -73,8 +72,6 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 1
-    .param p1    # Landroid/content/Context;
-    .param p2    # Landroid/util/AttributeSet;
 
     const/4 v0, 0x0
 
@@ -85,9 +82,6 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
     .locals 1
-    .param p1    # Landroid/content/Context;
-    .param p2    # Landroid/util/AttributeSet;
-    .param p3    # I
 
     const/4 v0, 0x0
 
@@ -98,10 +92,6 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;II)V
     .locals 8
-    .param p1    # Landroid/content/Context;
-    .param p2    # Landroid/util/AttributeSet;
-    .param p3    # I
-    .param p4    # I
 
     const/4 v7, 0x0
 
@@ -214,7 +204,6 @@
 # virtual methods
 .method public addOnSwitchChangeListener(Lcom/android/settings/widget/SwitchBar$OnSwitchChangeListener;)V
     .locals 2
-    .param p1    # Lcom/android/settings/widget/SwitchBar$OnSwitchChangeListener;
 
     iget-object v0, p0, Lcom/android/settings/widget/SwitchBar;->mSwitchChangeListeners:Ljava/util/ArrayList;
 
@@ -305,8 +294,6 @@
 
 .method public onCheckedChanged(Landroid/widget/CompoundButton;Z)V
     .locals 0
-    .param p1    # Landroid/widget/CompoundButton;
-    .param p2    # Z
 
     invoke-virtual {p0, p2}, Lcom/android/settings/widget/SwitchBar;->propagateChecked(Z)V
 
@@ -315,7 +302,6 @@
 
 .method public onClick(Landroid/view/View;)V
     .locals 2
-    .param p1    # Landroid/view/View;
 
     iget-object v1, p0, Lcom/android/settings/widget/SwitchBar;->mSwitch:Lcom/android/settings/widget/ToggleSwitch;
 
@@ -340,7 +326,6 @@
 
 .method public onRestoreInstanceState(Landroid/os/Parcelable;)V
     .locals 3
-    .param p1    # Landroid/os/Parcelable;
 
     move-object v0, p1
 
@@ -427,7 +412,6 @@
 
 .method public propagateChecked(Z)V
     .locals 4
-    .param p1    # Z
 
     iget-object v2, p0, Lcom/android/settings/widget/SwitchBar;->mSwitchChangeListeners:Ljava/util/ArrayList;
 
@@ -462,7 +446,6 @@
 
 .method public removeOnSwitchChangeListener(Lcom/android/settings/widget/SwitchBar$OnSwitchChangeListener;)V
     .locals 2
-    .param p1    # Lcom/android/settings/widget/SwitchBar$OnSwitchChangeListener;
 
     iget-object v0, p0, Lcom/android/settings/widget/SwitchBar;->mSwitchChangeListeners:Ljava/util/ArrayList;
 
@@ -490,7 +473,6 @@
 
 .method public setChecked(Z)V
     .locals 1
-    .param p1    # Z
 
     invoke-virtual {p0, p1}, Lcom/android/settings/widget/SwitchBar;->setTextViewLabel(Z)V
 
@@ -503,7 +485,6 @@
 
 .method public setCheckedInternal(Z)V
     .locals 1
-    .param p1    # Z
 
     invoke-virtual {p0, p1}, Lcom/android/settings/widget/SwitchBar;->setTextViewLabel(Z)V
 
@@ -516,7 +497,6 @@
 
 .method public setEnabled(Z)V
     .locals 1
-    .param p1    # Z
 
     invoke-super {p0, p1}, Landroid/widget/LinearLayout;->setEnabled(Z)V
 
@@ -533,7 +513,6 @@
 
 .method public setTextViewLabel(Z)V
     .locals 2
-    .param p1    # Z
 
     iget-object v1, p0, Lcom/android/settings/widget/SwitchBar;->mTextView:Landroid/widget/TextView;
 

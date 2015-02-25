@@ -50,8 +50,6 @@
 # virtual methods
 .method public compare(Lcom/android/settings/inputmethod/InputMethodPreference;Lcom/android/settings/inputmethod/InputMethodPreference;)I
     .locals 1
-    .param p1    # Lcom/android/settings/inputmethod/InputMethodPreference;
-    .param p2    # Lcom/android/settings/inputmethod/InputMethodPreference;
 
     iget-object v0, p0, Lcom/android/settings/inputmethod/InputMethodAndLanguageSettings$2;->val$collator:Ljava/text/Collator;
 
@@ -64,8 +62,6 @@
 
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 1
-    .param p1    # Ljava/lang/Object;
-    .param p2    # Ljava/lang/Object;
 
     check-cast p1, Lcom/android/settings/inputmethod/InputMethodPreference;
 

@@ -93,7 +93,6 @@
 
 .method static synthetic access$000(Lcom/android/settings/quicklaunch/QuickLaunchSettings;)V
     .locals 0
-    .param p0    # Lcom/android/settings/quicklaunch/QuickLaunchSettings;
 
     invoke-direct {p0}, Lcom/android/settings/quicklaunch/QuickLaunchSettings;->refreshShortcuts()V
 
@@ -102,7 +101,6 @@
 
 .method private clearShortcut(C)V
     .locals 6
-    .param p1    # C
 
     invoke-virtual {p0}, Lcom/android/settings/quicklaunch/QuickLaunchSettings;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -131,7 +129,6 @@
 
 .method private createPreference(C)Lcom/android/settings/quicklaunch/ShortcutPreference;
     .locals 2
-    .param p1    # C
 
     new-instance v0, Lcom/android/settings/quicklaunch/ShortcutPreference;
 
@@ -154,7 +151,6 @@
 
 .method private getOrCreatePreference(C)Lcom/android/settings/quicklaunch/ShortcutPreference;
     .locals 4
-    .param p1    # C
 
     iget-object v1, p0, Lcom/android/settings/quicklaunch/QuickLaunchSettings;->mShortcutToPreference:Landroid/util/SparseArray;
 
@@ -505,7 +501,6 @@
 
 .method private showClearDialog(Lcom/android/settings/quicklaunch/ShortcutPreference;)V
     .locals 1
-    .param p1    # Lcom/android/settings/quicklaunch/ShortcutPreference;
 
     invoke-virtual {p1}, Lcom/android/settings/quicklaunch/ShortcutPreference;->hasBookmark()Z
 
@@ -538,8 +533,6 @@
 
 .method private updateShortcut(CLandroid/content/Intent;)V
     .locals 6
-    .param p1    # C
-    .param p2    # Landroid/content/Intent;
 
     invoke-virtual {p0}, Lcom/android/settings/quicklaunch/QuickLaunchSettings;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -564,7 +557,6 @@
 # virtual methods
 .method public onActivityCreated(Landroid/os/Bundle;)V
     .locals 2
-    .param p1    # Landroid/os/Bundle;
 
     invoke-super {p0, p1}, Lcom/android/settings/SettingsPreferenceFragment;->onActivityCreated(Landroid/os/Bundle;)V
 
@@ -602,9 +594,6 @@
 
 .method public onActivityResult(IILandroid/content/Intent;)V
     .locals 3
-    .param p1    # I
-    .param p2    # I
-    .param p3    # Landroid/content/Intent;
 
     const/4 v1, -0x1
 
@@ -649,8 +638,6 @@
 
 .method public onClick(Landroid/content/DialogInterface;I)V
     .locals 1
-    .param p1    # Landroid/content/DialogInterface;
-    .param p2    # I
 
     iget-char v0, p0, Lcom/android/settings/quicklaunch/QuickLaunchSettings;->mClearDialogShortcut:C
 
@@ -678,7 +665,6 @@
 
 .method public onCreate(Landroid/os/Bundle;)V
     .locals 6
-    .param p1    # Landroid/os/Bundle;
 
     const/4 v3, 0x0
 
@@ -741,7 +727,6 @@
 
 .method public onCreateDialog(I)Landroid/app/Dialog;
     .locals 5
-    .param p1    # I
 
     packed-switch p1, :pswitch_data_0
 
@@ -829,9 +814,6 @@
 
 .method public onItemLongClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)Z
     .locals 2
-    .param p2    # Landroid/view/View;
-    .param p3    # I
-    .param p4    # J
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -893,8 +875,6 @@
 
 .method public onPreferenceTreeClick(Landroid/preference/PreferenceScreen;Landroid/preference/Preference;)Z
     .locals 5
-    .param p1    # Landroid/preference/PreferenceScreen;
-    .param p2    # Landroid/preference/Preference;
 
     const/4 v2, 0x1
 
@@ -983,7 +963,6 @@
 
 .method public onSaveInstanceState(Landroid/os/Bundle;)V
     .locals 2
-    .param p1    # Landroid/os/Bundle;
 
     invoke-super {p0, p1}, Lcom/android/settings/SettingsPreferenceFragment;->onSaveInstanceState(Landroid/os/Bundle;)V
 

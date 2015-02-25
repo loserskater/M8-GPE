@@ -195,8 +195,6 @@
 
 .method static synthetic access$000(Lcom/android/settings/applications/InstalledAppDetails;Landroid/os/Message;)V
     .locals 0
-    .param p0    # Lcom/android/settings/applications/InstalledAppDetails;
-    .param p1    # Landroid/os/Message;
 
     invoke-direct {p0, p1}, Lcom/android/settings/applications/InstalledAppDetails;->processClearMsg(Landroid/os/Message;)V
 
@@ -205,7 +203,6 @@
 
 .method static synthetic access$100(Lcom/android/settings/applications/InstalledAppDetails;)Lcom/android/settings/applications/ApplicationsState$AppEntry;
     .locals 1
-    .param p0    # Lcom/android/settings/applications/InstalledAppDetails;
 
     iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->mAppEntry:Lcom/android/settings/applications/ApplicationsState$AppEntry;
 
@@ -214,8 +211,6 @@
 
 .method static synthetic access$1000(Lcom/android/settings/applications/InstalledAppDetails;I)Ljava/lang/CharSequence;
     .locals 1
-    .param p0    # Lcom/android/settings/applications/InstalledAppDetails;
-    .param p1    # I
 
     invoke-direct {p0, p1}, Lcom/android/settings/applications/InstalledAppDetails;->getMoveErrMsg(I)Ljava/lang/CharSequence;
 
@@ -226,7 +221,6 @@
 
 .method static synthetic access$1100(Lcom/android/settings/applications/InstalledAppDetails;)Landroid/widget/CompoundButton;
     .locals 1
-    .param p0    # Lcom/android/settings/applications/InstalledAppDetails;
 
     iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->mNotificationSwitch:Landroid/widget/CompoundButton;
 
@@ -235,8 +229,6 @@
 
 .method static synthetic access$1200(Lcom/android/settings/applications/InstalledAppDetails;Z)V
     .locals 0
-    .param p0    # Lcom/android/settings/applications/InstalledAppDetails;
-    .param p1    # Z
 
     invoke-direct {p0, p1}, Lcom/android/settings/applications/InstalledAppDetails;->setNotificationsEnabled(Z)V
 
@@ -245,8 +237,6 @@
 
 .method static synthetic access$1300(Lcom/android/settings/applications/InstalledAppDetails;Z)V
     .locals 0
-    .param p0    # Lcom/android/settings/applications/InstalledAppDetails;
-    .param p1    # Z
 
     invoke-direct {p0, p1}, Lcom/android/settings/applications/InstalledAppDetails;->updateForceStopButton(Z)V
 
@@ -255,7 +245,6 @@
 
 .method static synthetic access$1400(Lcom/android/settings/applications/InstalledAppDetails;)Landroid/content/pm/PackageManager;
     .locals 1
-    .param p0    # Lcom/android/settings/applications/InstalledAppDetails;
 
     iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->mPm:Landroid/content/pm/PackageManager;
 
@@ -264,7 +253,6 @@
 
 .method static synthetic access$200(Lcom/android/settings/applications/InstalledAppDetails;)Lcom/android/settings/applications/ApplicationsState;
     .locals 1
-    .param p0    # Lcom/android/settings/applications/InstalledAppDetails;
 
     iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->mState:Lcom/android/settings/applications/ApplicationsState;
 
@@ -273,8 +261,6 @@
 
 .method static synthetic access$300(Lcom/android/settings/applications/InstalledAppDetails;Landroid/os/Message;)V
     .locals 0
-    .param p0    # Lcom/android/settings/applications/InstalledAppDetails;
-    .param p1    # Landroid/os/Message;
 
     invoke-direct {p0, p1}, Lcom/android/settings/applications/InstalledAppDetails;->processMoveMsg(Landroid/os/Message;)V
 
@@ -283,7 +269,6 @@
 
 .method static synthetic access$400(Lcom/android/settings/applications/InstalledAppDetails;)Landroid/os/Handler;
     .locals 1
-    .param p0    # Lcom/android/settings/applications/InstalledAppDetails;
 
     iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->mHandler:Landroid/os/Handler;
 
@@ -292,7 +277,6 @@
 
 .method static synthetic access$500(Lcom/android/settings/applications/InstalledAppDetails;)V
     .locals 0
-    .param p0    # Lcom/android/settings/applications/InstalledAppDetails;
 
     invoke-direct {p0}, Lcom/android/settings/applications/InstalledAppDetails;->initiateClearUserData()V
 
@@ -301,10 +285,6 @@
 
 .method static synthetic access$600(Lcom/android/settings/applications/InstalledAppDetails;Ljava/lang/String;ZZ)V
     .locals 0
-    .param p0    # Lcom/android/settings/applications/InstalledAppDetails;
-    .param p1    # Ljava/lang/String;
-    .param p2    # Z
-    .param p3    # Z
 
     invoke-direct {p0, p1, p2, p3}, Lcom/android/settings/applications/InstalledAppDetails;->uninstallPkg(Ljava/lang/String;ZZ)V
 
@@ -313,9 +293,6 @@
 
 .method static synthetic access$700(Lcom/android/settings/applications/InstalledAppDetails;ZZ)V
     .locals 0
-    .param p0    # Lcom/android/settings/applications/InstalledAppDetails;
-    .param p1    # Z
-    .param p2    # Z
 
     invoke-direct {p0, p1, p2}, Lcom/android/settings/applications/InstalledAppDetails;->setIntentAndFinish(ZZ)V
 
@@ -324,7 +301,6 @@
 
 .method static synthetic access$800(Lcom/android/settings/applications/InstalledAppDetails;)Landroid/widget/Button;
     .locals 1
-    .param p0    # Lcom/android/settings/applications/InstalledAppDetails;
 
     iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->mClearDataButton:Landroid/widget/Button;
 
@@ -333,8 +309,6 @@
 
 .method static synthetic access$900(Lcom/android/settings/applications/InstalledAppDetails;Ljava/lang/String;)V
     .locals 0
-    .param p0    # Lcom/android/settings/applications/InstalledAppDetails;
-    .param p1    # Ljava/lang/String;
 
     invoke-direct {p0, p1}, Lcom/android/settings/applications/InstalledAppDetails;->forceStopPackage(Ljava/lang/String;)V
 
@@ -462,7 +436,6 @@
 
 .method private forceStopPackage(Ljava/lang/String;)V
     .locals 4
-    .param p1    # Ljava/lang/String;
 
     invoke-virtual {p0}, Lcom/android/settings/applications/InstalledAppDetails;->getActivity()Landroid/app/Activity;
 
@@ -500,7 +473,6 @@
 
 .method private getMoveErrMsg(I)Ljava/lang/CharSequence;
     .locals 2
-    .param p1    # I
 
     packed-switch p1, :pswitch_data_0
 
@@ -594,7 +566,6 @@
 
 .method private getPremiumSmsPermission(Ljava/lang/String;)I
     .locals 1
-    .param p1    # Ljava/lang/String;
 
     :try_start_0
     iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->mSmsManager:Lcom/android/internal/telephony/ISms;
@@ -623,7 +594,6 @@
 
 .method private getSizeStr(J)Ljava/lang/String;
     .locals 3
-    .param p1    # J
 
     const-wide/16 v0, -0x1
 
@@ -654,7 +624,6 @@
 
 .method private handleDisableable(Landroid/widget/Button;)Z
     .locals 4
-    .param p1    # Landroid/widget/Button;
 
     const v3, 0x7f0804a2
 
@@ -1393,7 +1362,6 @@
 
 .method private processClearMsg(Landroid/os/Message;)V
     .locals 5
-    .param p1    # Landroid/os/Message;
 
     const/4 v4, 0x1
 
@@ -1460,7 +1428,6 @@
 
 .method private processMoveMsg(Landroid/os/Message;)V
     .locals 5
-    .param p1    # Landroid/os/Message;
 
     iget v1, p1, Landroid/os/Message;->arg1:I
 
@@ -3331,8 +3298,6 @@
 
 .method private resetLaunchDefaultsUi(Landroid/widget/TextView;Landroid/widget/TextView;)V
     .locals 2
-    .param p1    # Landroid/widget/TextView;
-    .param p2    # Landroid/widget/TextView;
 
     const v0, 0x7f080491
 
@@ -3492,7 +3457,6 @@
 
 .method private setAppLabelAndIcon(Landroid/content/pm/PackageInfo;)V
     .locals 9
-    .param p1    # Landroid/content/pm/PackageInfo;
 
     const/4 v8, 0x0
 
@@ -3609,8 +3573,6 @@
 
 .method private setIntentAndFinish(ZZ)V
     .locals 3
-    .param p1    # Z
-    .param p2    # Z
 
     new-instance v0, Landroid/content/Intent;
 
@@ -3635,7 +3597,6 @@
 
 .method private setNotificationsEnabled(Z)V
     .locals 6
-    .param p1    # Z
 
     iget-object v4, p0, Lcom/android/settings/applications/InstalledAppDetails;->mAppEntry:Lcom/android/settings/applications/ApplicationsState$AppEntry;
 
@@ -3695,8 +3656,6 @@
 
 .method private showDialogInner(II)V
     .locals 4
-    .param p1    # I
-    .param p2    # I
 
     invoke-static {p1, p2}, Lcom/android/settings/applications/InstalledAppDetails$MyAlertDialogFragment;->newInstance(II)Lcom/android/settings/applications/InstalledAppDetails$MyAlertDialogFragment;
 
@@ -3735,8 +3694,6 @@
 
 .method private signaturesMatch(Ljava/lang/String;Ljava/lang/String;)Z
     .locals 2
-    .param p1    # Ljava/lang/String;
-    .param p2    # Ljava/lang/String;
 
     if-eqz p1, :cond_0
 
@@ -3769,9 +3726,6 @@
 
 .method private uninstallPkg(Ljava/lang/String;ZZ)V
     .locals 4
-    .param p1    # Ljava/lang/String;
-    .param p2    # Z
-    .param p3    # Z
 
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -3816,7 +3770,6 @@
 
 .method private updateForceStopButton(Z)V
     .locals 2
-    .param p1    # Z
 
     iget-boolean v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->mAppControlRestricted:Z
 
@@ -3847,9 +3800,6 @@
 # virtual methods
 .method public onActivityResult(IILandroid/content/Intent;)V
     .locals 6
-    .param p1    # I
-    .param p2    # I
-    .param p3    # Landroid/content/Intent;
 
     const/4 v2, 0x0
 
@@ -3945,8 +3895,6 @@
 
 .method public onCheckedChanged(Landroid/widget/CompoundButton;Z)V
     .locals 6
-    .param p1    # Landroid/widget/CompoundButton;
-    .param p2    # Z
 
     const/4 v2, 0x1
 
@@ -4018,7 +3966,6 @@
 
 .method public onClick(Landroid/view/View;)V
     .locals 10
-    .param p1    # Landroid/view/View;
 
     const/4 v4, 0x2
 
@@ -4320,7 +4267,6 @@
 
 .method public onCreate(Landroid/os/Bundle;)V
     .locals 3
-    .param p1    # Landroid/os/Bundle;
 
     invoke-super {p0, p1}, Landroid/app/Fragment;->onCreate(Landroid/os/Bundle;)V
 
@@ -4439,8 +4385,6 @@
 
 .method public onCreateOptionsMenu(Landroid/view/Menu;Landroid/view/MenuInflater;)V
     .locals 3
-    .param p1    # Landroid/view/Menu;
-    .param p2    # Landroid/view/MenuInflater;
 
     const/4 v2, 0x1
 
@@ -4459,9 +4403,6 @@
 
 .method public onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
     .locals 10
-    .param p1    # Landroid/view/LayoutInflater;
-    .param p2    # Landroid/view/ViewGroup;
-    .param p3    # Landroid/os/Bundle;
 
     const/4 v9, 0x0
 
@@ -4751,7 +4692,6 @@
 
 .method public onOptionsItemSelected(Landroid/view/MenuItem;)Z
     .locals 4
-    .param p1    # Landroid/view/MenuItem;
 
     const/4 v2, 0x0
 
@@ -4796,7 +4736,6 @@
 
 .method public onPackageSizeChanged(Ljava/lang/String;)V
     .locals 1
-    .param p1    # Ljava/lang/String;
 
     iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->mAppEntry:Lcom/android/settings/applications/ApplicationsState$AppEntry;
 
@@ -4830,7 +4769,6 @@
 
 .method public onPrepareOptionsMenu(Landroid/view/Menu;)V
     .locals 3
-    .param p1    # Landroid/view/Menu;
 
     const/4 v0, 0x1
 
@@ -4979,7 +4917,6 @@
 
 .method public onRunningStateChanged(Z)V
     .locals 0
-    .param p1    # Z
 
     return-void
 .end method

@@ -130,7 +130,6 @@
 
 .method static synthetic access$000(Lcom/android/settings/notification/ZenModeSettings;)Z
     .locals 1
-    .param p0    # Lcom/android/settings/notification/ZenModeSettings;
 
     iget-boolean v0, p0, Lcom/android/settings/notification/ZenModeSettings;->mDisableListeners:Z
 
@@ -139,7 +138,6 @@
 
 .method static synthetic access$100(Lcom/android/settings/notification/ZenModeSettings;)Landroid/service/notification/ZenModeConfig;
     .locals 1
-    .param p0    # Lcom/android/settings/notification/ZenModeSettings;
 
     iget-object v0, p0, Lcom/android/settings/notification/ZenModeSettings;->mConfig:Landroid/service/notification/ZenModeConfig;
 
@@ -148,7 +146,6 @@
 
 .method static synthetic access$1000(Lcom/android/settings/notification/ZenModeSettings;)Landroid/content/ContentResolver;
     .locals 1
-    .param p0    # Lcom/android/settings/notification/ZenModeSettings;
 
     invoke-virtual {p0}, Lcom/android/settings/notification/ZenModeSettings;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -159,7 +156,6 @@
 
 .method static synthetic access$1100(Lcom/android/settings/notification/ZenModeSettings;)Landroid/content/ContentResolver;
     .locals 1
-    .param p0    # Lcom/android/settings/notification/ZenModeSettings;
 
     invoke-virtual {p0}, Lcom/android/settings/notification/ZenModeSettings;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -178,7 +174,6 @@
 
 .method static synthetic access$1300(Lcom/android/settings/notification/ZenModeSettings;)V
     .locals 0
-    .param p0    # Lcom/android/settings/notification/ZenModeSettings;
 
     invoke-direct {p0}, Lcom/android/settings/notification/ZenModeSettings;->updateZenModeConfig()V
 
@@ -187,8 +182,6 @@
 
 .method static synthetic access$200(Lcom/android/settings/notification/ZenModeSettings;Landroid/service/notification/ZenModeConfig;)Z
     .locals 1
-    .param p0    # Lcom/android/settings/notification/ZenModeSettings;
-    .param p1    # Landroid/service/notification/ZenModeConfig;
 
     invoke-direct {p0, p1}, Lcom/android/settings/notification/ZenModeSettings;->setZenModeConfig(Landroid/service/notification/ZenModeConfig;)Z
 
@@ -199,7 +192,6 @@
 
 .method static synthetic access$300(Lcom/android/settings/notification/ZenModeSettings;)V
     .locals 0
-    .param p0    # Lcom/android/settings/notification/ZenModeSettings;
 
     invoke-direct {p0}, Lcom/android/settings/notification/ZenModeSettings;->updateDays()V
 
@@ -208,7 +200,6 @@
 
 .method static synthetic access$400(Lcom/android/settings/notification/ZenModeSettings;)Landroid/content/Context;
     .locals 1
-    .param p0    # Lcom/android/settings/notification/ZenModeSettings;
 
     iget-object v0, p0, Lcom/android/settings/notification/ZenModeSettings;->mContext:Landroid/content/Context;
 
@@ -217,7 +208,6 @@
 
 .method static synthetic access$500(Lcom/android/settings/notification/ZenModeSettings;)V
     .locals 0
-    .param p0    # Lcom/android/settings/notification/ZenModeSettings;
 
     invoke-direct {p0}, Lcom/android/settings/notification/ZenModeSettings;->refreshAutomationSection()V
 
@@ -226,8 +216,6 @@
 
 .method static synthetic access$602(Lcom/android/settings/notification/ZenModeSettings;Landroid/app/AlertDialog;)Landroid/app/AlertDialog;
     .locals 0
-    .param p0    # Lcom/android/settings/notification/ZenModeSettings;
-    .param p1    # Landroid/app/AlertDialog;
 
     iput-object p1, p0, Lcom/android/settings/notification/ZenModeSettings;->mDialog:Landroid/app/AlertDialog;
 
@@ -236,7 +224,6 @@
 
 .method static synthetic access$700(Landroid/content/Context;)Landroid/util/SparseArray;
     .locals 1
-    .param p0    # Landroid/content/Context;
 
     invoke-static {p0}, Lcom/android/settings/notification/ZenModeSettings;->allKeyTitles(Landroid/content/Context;)Landroid/util/SparseArray;
 
@@ -247,7 +234,6 @@
 
 .method static synthetic access$800(Lcom/android/settings/notification/ZenModeSettings;)Landroid/os/Handler;
     .locals 1
-    .param p0    # Lcom/android/settings/notification/ZenModeSettings;
 
     iget-object v0, p0, Lcom/android/settings/notification/ZenModeSettings;->mHandler:Landroid/os/Handler;
 
@@ -256,7 +242,6 @@
 
 .method static synthetic access$900(Lcom/android/settings/notification/ZenModeSettings;)Landroid/content/ContentResolver;
     .locals 1
-    .param p0    # Lcom/android/settings/notification/ZenModeSettings;
 
     invoke-virtual {p0}, Lcom/android/settings/notification/ZenModeSettings;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -267,7 +252,6 @@
 
 .method private static allKeyTitles(Landroid/content/Context;)Landroid/util/SparseArray;
     .locals 3
-    .param p0    # Landroid/content/Context;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -617,7 +601,6 @@
 
 .method private setZenModeConfig(Landroid/service/notification/ZenModeConfig;)Z
     .locals 6
-    .param p1    # Landroid/service/notification/ZenModeConfig;
 
     const-string v3, "notification"
 
@@ -1041,7 +1024,6 @@
 # virtual methods
 .method protected cancelDialog(I)V
     .locals 2
-    .param p1    # I
 
     sget-object v0, Lcom/android/settings/notification/ZenModeSettings;->PREF_ZEN_MODE:Lcom/android/settings/notification/ZenModeSettings$SettingPrefWithCallback;
 
@@ -1058,7 +1040,6 @@
 
 .method public onCreate(Landroid/os/Bundle;)V
     .locals 8
-    .param p1    # Landroid/os/Bundle;
 
     invoke-super {p0, p1}, Lcom/android/settings/SettingsPreferenceFragment;->onCreate(Landroid/os/Bundle;)V
 
@@ -1460,7 +1441,6 @@
 
 .method protected showConditionSelection(I)V
     .locals 7
-    .param p1    # I
 
     iget-object v4, p0, Lcom/android/settings/notification/ZenModeSettings;->mDialog:Landroid/app/AlertDialog;
 

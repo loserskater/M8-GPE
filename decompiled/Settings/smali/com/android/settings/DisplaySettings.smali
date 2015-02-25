@@ -57,7 +57,6 @@
 
 .method static synthetic access$000(Lcom/android/settings/DisplaySettings;)Lcom/android/settings/WarnedListPreference;
     .locals 1
-    .param p0    # Lcom/android/settings/DisplaySettings;
 
     iget-object v0, p0, Lcom/android/settings/DisplaySettings;->mFontSizePref:Lcom/android/settings/WarnedListPreference;
 
@@ -66,7 +65,6 @@
 
 .method static synthetic access$100(Landroid/content/res/Resources;)Z
     .locals 1
-    .param p0    # Landroid/content/res/Resources;
 
     invoke-static {p0}, Lcom/android/settings/DisplaySettings;->isAutomaticBrightnessAvailable(Landroid/content/res/Resources;)Z
 
@@ -77,7 +75,6 @@
 
 .method static synthetic access$200(Landroid/content/Context;)Z
     .locals 1
-    .param p0    # Landroid/content/Context;
 
     invoke-static {p0}, Lcom/android/settings/DisplaySettings;->isLiftToWakeAvailable(Landroid/content/Context;)Z
 
@@ -88,7 +85,6 @@
 
 .method static synthetic access$300(Landroid/content/Context;)Z
     .locals 1
-    .param p0    # Landroid/content/Context;
 
     invoke-static {p0}, Lcom/android/settings/DisplaySettings;->isDozeAvailable(Landroid/content/Context;)Z
 
@@ -99,7 +95,6 @@
 
 .method private static allowAllRotations(Landroid/content/Context;)Z
     .locals 2
-    .param p0    # Landroid/content/Context;
 
     invoke-static {}, Landroid/content/res/Resources;->getSystem()Landroid/content/res/Resources;
 
@@ -116,7 +111,6 @@
 
 .method private disableUnusableTimeouts(Landroid/preference/ListPreference;)V
     .locals 14
-    .param p1    # Landroid/preference/ListPreference;
 
     invoke-virtual {p0}, Lcom/android/settings/DisplaySettings;->getActivity()Landroid/app/Activity;
 
@@ -332,7 +326,6 @@
 
 .method private static isAutomaticBrightnessAvailable(Landroid/content/res/Resources;)Z
     .locals 1
-    .param p0    # Landroid/content/res/Resources;
 
     const v0, 0x112001f
 
@@ -345,7 +338,6 @@
 
 .method private static isDozeAvailable(Landroid/content/Context;)Z
     .locals 3
-    .param p0    # Landroid/content/Context;
 
     sget-boolean v1, Landroid/os/Build;->IS_DEBUGGABLE:Z
 
@@ -399,7 +391,6 @@
 
 .method private static isLiftToWakeAvailable(Landroid/content/Context;)Z
     .locals 2
-    .param p0    # Landroid/content/Context;
 
     const-string v1, "sensor"
 
@@ -556,7 +547,6 @@
 
 .method private updateTimeoutPreferenceDescription(J)V
     .locals 13
-    .param p1    # J
 
     iget-object v3, p0, Lcom/android/settings/DisplaySettings;->mScreenTimeoutPreference:Landroid/preference/ListPreference;
 
@@ -652,7 +642,6 @@
 # virtual methods
 .method floatToIndex(F)I
     .locals 6
-    .param p1    # F
 
     invoke-virtual {p0}, Lcom/android/settings/DisplaySettings;->getResources()Landroid/content/res/Resources;
 
@@ -687,7 +676,7 @@
 
     sub-float v4, v3, v2
 
-    const/high16 v5, 0x3f000000
+    const/high16 v5, 0x3f000000    # 0.5f
 
     mul-float/2addr v4, v5
 
@@ -719,7 +708,6 @@
 
 .method public onCreate(Landroid/os/Bundle;)V
     .locals 12
-    .param p1    # Landroid/os/Bundle;
 
     const/4 v8, 0x0
 
@@ -1010,7 +998,6 @@
 
 .method public onCreateDialog(I)Landroid/app/Dialog;
     .locals 3
-    .param p1    # I
 
     const/4 v0, 0x1
 
@@ -1041,8 +1028,6 @@
 
 .method public onPreferenceChange(Landroid/preference/Preference;Ljava/lang/Object;)Z
     .locals 12
-    .param p1    # Landroid/preference/Preference;
-    .param p2    # Ljava/lang/Object;
 
     const/4 v8, 0x0
 
@@ -1200,7 +1185,6 @@
 
 .method public onPreferenceClick(Landroid/preference/Preference;)Z
     .locals 2
-    .param p1    # Landroid/preference/Preference;
 
     const/4 v0, 0x1
 
@@ -1236,8 +1220,6 @@
 
 .method public onPreferenceTreeClick(Landroid/preference/PreferenceScreen;Landroid/preference/Preference;)Z
     .locals 1
-    .param p1    # Landroid/preference/PreferenceScreen;
-    .param p2    # Landroid/preference/Preference;
 
     invoke-super {p0, p1, p2}, Lcom/android/settings/SettingsPreferenceFragment;->onPreferenceTreeClick(Landroid/preference/PreferenceScreen;Landroid/preference/Preference;)Z
 
@@ -1258,7 +1240,6 @@
 
 .method public readFontSizePreference(Landroid/preference/ListPreference;)V
     .locals 8
-    .param p1    # Landroid/preference/ListPreference;
 
     :try_start_0
     iget-object v4, p0, Lcom/android/settings/DisplaySettings;->mCurConfig:Landroid/content/res/Configuration;
@@ -1334,7 +1315,6 @@
 
 .method public writeFontSizePreference(Ljava/lang/Object;)V
     .locals 3
-    .param p1    # Ljava/lang/Object;
 
     :try_start_0
     iget-object v1, p0, Lcom/android/settings/DisplaySettings;->mCurConfig:Landroid/content/res/Configuration;

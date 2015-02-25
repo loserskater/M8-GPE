@@ -16,10 +16,6 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/graphics/drawable/Drawable;Ljava/lang/CharSequence;Lcom/android/settings/fuelgauge/BatteryEntry;)V
     .locals 1
-    .param p1    # Landroid/content/Context;
-    .param p2    # Landroid/graphics/drawable/Drawable;
-    .param p3    # Ljava/lang/CharSequence;
-    .param p4    # Lcom/android/settings/fuelgauge/BatteryEntry;
 
     invoke-direct {p0, p1}, Landroid/preference/Preference;-><init>(Landroid/content/Context;)V
 
@@ -60,7 +56,6 @@
 
 .method protected onBindView(Landroid/view/View;)V
     .locals 4
-    .param p1    # Landroid/view/View;
 
     invoke-super {p0, p1}, Landroid/preference/Preference;->onBindView(Landroid/view/View;)V
 
@@ -110,8 +105,6 @@
 
 .method public setPercent(DD)V
     .locals 3
-    .param p1    # D
-    .param p3    # D
 
     invoke-static {p1, p2}, Ljava/lang/Math;->ceil(D)D
 
@@ -121,7 +114,7 @@
 
     iput v0, p0, Lcom/android/settings/fuelgauge/PowerGaugePreference;->mProgress:I
 
-    const-wide/high16 v0, 0x3fe0000000000000L
+    const-wide/high16 v0, 0x3fe0000000000000L    # 0.5
 
     add-double/2addr v0, p3
 

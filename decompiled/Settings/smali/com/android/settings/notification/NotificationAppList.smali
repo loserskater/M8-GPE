@@ -184,7 +184,6 @@
 
 .method static synthetic access$000(Lcom/android/settings/notification/NotificationAppList;)Landroid/view/LayoutInflater;
     .locals 1
-    .param p0    # Lcom/android/settings/notification/NotificationAppList;
 
     iget-object v0, p0, Lcom/android/settings/notification/NotificationAppList;->mInflater:Landroid/view/LayoutInflater;
 
@@ -193,7 +192,6 @@
 
 .method static synthetic access$1000(Lcom/android/settings/notification/NotificationAppList;)Lcom/android/settings/notification/NotificationAppList$Backend;
     .locals 1
-    .param p0    # Lcom/android/settings/notification/NotificationAppList;
 
     iget-object v0, p0, Lcom/android/settings/notification/NotificationAppList;->mBackend:Lcom/android/settings/notification/NotificationAppList$Backend;
 
@@ -210,8 +208,6 @@
 
 .method static synthetic access$1200(Lcom/android/settings/notification/NotificationAppList;Ljava/lang/CharSequence;)Ljava/lang/String;
     .locals 1
-    .param p0    # Lcom/android/settings/notification/NotificationAppList;
-    .param p1    # Ljava/lang/CharSequence;
 
     invoke-direct {p0, p1}, Lcom/android/settings/notification/NotificationAppList;->getSection(Ljava/lang/CharSequence;)Ljava/lang/String;
 
@@ -222,7 +218,6 @@
 
 .method static synthetic access$1300(Lcom/android/settings/notification/NotificationAppList;)Ljava/lang/Runnable;
     .locals 1
-    .param p0    # Lcom/android/settings/notification/NotificationAppList;
 
     iget-object v0, p0, Lcom/android/settings/notification/NotificationAppList;->mRefreshAppsListRunnable:Ljava/lang/Runnable;
 
@@ -231,7 +226,6 @@
 
 .method static synthetic access$1400(Lcom/android/settings/notification/NotificationAppList;)Landroid/os/Handler;
     .locals 1
-    .param p0    # Lcom/android/settings/notification/NotificationAppList;
 
     iget-object v0, p0, Lcom/android/settings/notification/NotificationAppList;->mHandler:Landroid/os/Handler;
 
@@ -240,7 +234,6 @@
 
 .method static synthetic access$1500(Lcom/android/settings/notification/NotificationAppList;)V
     .locals 0
-    .param p0    # Lcom/android/settings/notification/NotificationAppList;
 
     invoke-direct {p0}, Lcom/android/settings/notification/NotificationAppList;->refreshDisplayedItems()V
 
@@ -249,7 +242,6 @@
 
 .method static synthetic access$200(Lcom/android/settings/notification/NotificationAppList;)Landroid/content/Context;
     .locals 1
-    .param p0    # Lcom/android/settings/notification/NotificationAppList;
 
     iget-object v0, p0, Lcom/android/settings/notification/NotificationAppList;->mContext:Landroid/content/Context;
 
@@ -258,7 +250,6 @@
 
 .method static synthetic access$300(Lcom/android/settings/notification/NotificationAppList;)Ljava/util/ArrayList;
     .locals 1
-    .param p0    # Lcom/android/settings/notification/NotificationAppList;
 
     iget-object v0, p0, Lcom/android/settings/notification/NotificationAppList;->mSections:Ljava/util/ArrayList;
 
@@ -267,7 +258,6 @@
 
 .method static synthetic access$500(Lcom/android/settings/notification/NotificationAppList;)Landroid/util/ArrayMap;
     .locals 1
-    .param p0    # Lcom/android/settings/notification/NotificationAppList;
 
     iget-object v0, p0, Lcom/android/settings/notification/NotificationAppList;->mRows:Landroid/util/ArrayMap;
 
@@ -284,7 +274,6 @@
 
 .method static synthetic access$700(Lcom/android/settings/notification/NotificationAppList;)Ljava/util/ArrayList;
     .locals 1
-    .param p0    # Lcom/android/settings/notification/NotificationAppList;
 
     iget-object v0, p0, Lcom/android/settings/notification/NotificationAppList;->mSortedRows:Ljava/util/ArrayList;
 
@@ -293,7 +282,6 @@
 
 .method static synthetic access$800(Lcom/android/settings/notification/NotificationAppList;)Landroid/content/pm/LauncherApps;
     .locals 1
-    .param p0    # Lcom/android/settings/notification/NotificationAppList;
 
     iget-object v0, p0, Lcom/android/settings/notification/NotificationAppList;->mLauncherApps:Landroid/content/pm/LauncherApps;
 
@@ -302,7 +290,6 @@
 
 .method static synthetic access$900(Lcom/android/settings/notification/NotificationAppList;)Landroid/content/pm/PackageManager;
     .locals 1
-    .param p0    # Lcom/android/settings/notification/NotificationAppList;
 
     iget-object v0, p0, Lcom/android/settings/notification/NotificationAppList;->mPM:Landroid/content/pm/PackageManager;
 
@@ -311,7 +298,6 @@
 
 .method public static applyConfigActivities(Landroid/content/pm/PackageManager;Landroid/util/ArrayMap;Ljava/util/List;)V
     .locals 8
-    .param p0    # Landroid/content/pm/PackageManager;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -520,7 +506,6 @@
 
 .method public static collectConfigActivities(Landroid/content/pm/PackageManager;Landroid/util/ArrayMap;)V
     .locals 1
-    .param p0    # Landroid/content/pm/PackageManager;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -544,7 +529,6 @@
 
 .method private getSection(Ljava/lang/CharSequence;)Ljava/lang/String;
     .locals 2
-    .param p1    # Ljava/lang/CharSequence;
 
     if-eqz p1, :cond_0
 
@@ -598,9 +582,6 @@
 
 .method public static loadAppRow(Landroid/content/pm/PackageManager;Landroid/content/pm/ApplicationInfo;Lcom/android/settings/notification/NotificationAppList$Backend;)Lcom/android/settings/notification/NotificationAppList$AppRow;
     .locals 5
-    .param p0    # Landroid/content/pm/PackageManager;
-    .param p1    # Landroid/content/pm/ApplicationInfo;
-    .param p2    # Lcom/android/settings/notification/NotificationAppList$Backend;
 
     new-instance v0, Lcom/android/settings/notification/NotificationAppList$AppRow;
 
@@ -708,7 +689,6 @@
 
 .method public static queryNotificationConfigActivities(Landroid/content/pm/PackageManager;)Ljava/util/List;
     .locals 4
-    .param p0    # Landroid/content/pm/PackageManager;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1070,7 +1050,6 @@
 # virtual methods
 .method public onActivityCreated(Landroid/os/Bundle;)V
     .locals 2
-    .param p1    # Landroid/os/Bundle;
 
     invoke-super {p0, p1}, Lcom/android/settings/PinnedHeaderListFragment;->onActivityCreated(Landroid/os/Bundle;)V
 
@@ -1089,7 +1068,6 @@
 
 .method public onCreate(Landroid/os/Bundle;)V
     .locals 2
-    .param p1    # Landroid/os/Bundle;
 
     invoke-super {p0, p1}, Lcom/android/settings/PinnedHeaderListFragment;->onCreate(Landroid/os/Bundle;)V
 
@@ -1160,9 +1138,6 @@
 
 .method public onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
     .locals 2
-    .param p1    # Landroid/view/LayoutInflater;
-    .param p2    # Landroid/view/ViewGroup;
-    .param p3    # Landroid/os/Bundle;
 
     const v0, 0x7f040066
 
@@ -1189,9 +1164,6 @@
 
 .method public onItemSelected(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
     .locals 4
-    .param p2    # Landroid/view/View;
-    .param p3    # I
-    .param p4    # J
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1298,8 +1270,6 @@
 
 .method public onViewCreated(Landroid/view/View;Landroid/os/Bundle;)V
     .locals 4
-    .param p1    # Landroid/view/View;
-    .param p2    # Landroid/os/Bundle;
 
     invoke-super {p0, p1, p2}, Lcom/android/settings/PinnedHeaderListFragment;->onViewCreated(Landroid/view/View;Landroid/os/Bundle;)V
 

@@ -37,7 +37,6 @@
 
 .method synthetic constructor <init>(Lcom/android/settings/accounts/AccountSettings$1;)V
     .locals 0
-    .param p1    # Lcom/android/settings/accounts/AccountSettings$1;
 
     invoke-direct {p0}, Lcom/android/settings/accounts/AccountSettings$ProfileData;-><init>()V
 

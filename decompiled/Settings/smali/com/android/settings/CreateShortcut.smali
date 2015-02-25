@@ -46,10 +46,6 @@
 
 .method protected onListItemClick(Landroid/widget/ListView;Landroid/view/View;IJ)V
     .locals 4
-    .param p1    # Landroid/widget/ListView;
-    .param p2    # Landroid/view/View;
-    .param p3    # I
-    .param p4    # J
 
     invoke-virtual {p0, p3}, Lcom/android/settings/CreateShortcut;->intentForPosition(I)Landroid/content/Intent;
 
@@ -98,7 +94,6 @@
 
 .method protected onQueryPackageManager(Landroid/content/Intent;)Ljava/util/List;
     .locals 5
-    .param p1    # Landroid/content/Intent;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

@@ -30,7 +30,6 @@
 # virtual methods
 .method addOptionsMenuItems(Landroid/view/Menu;)V
     .locals 8
-    .param p1    # Landroid/view/Menu;
 
     const/4 v7, 0x2
 
@@ -103,7 +102,6 @@
 
 .method protected connect(I)V
     .locals 1
-    .param p1    # I
 
     invoke-virtual {p0}, Lcom/android/settings/wifi/WifiSettingsForSetupWizard;->getActivity()Landroid/app/Activity;
 
@@ -120,7 +118,6 @@
 
 .method protected connect(Landroid/net/wifi/WifiConfiguration;)V
     .locals 1
-    .param p1    # Landroid/net/wifi/WifiConfiguration;
 
     invoke-virtual {p0}, Lcom/android/settings/wifi/WifiSettingsForSetupWizard;->getActivity()Landroid/app/Activity;
 
@@ -187,7 +184,6 @@
 
 .method public onActivityCreated(Landroid/os/Bundle;)V
     .locals 2
-    .param p1    # Landroid/os/Bundle;
 
     invoke-super {p0, p1}, Lcom/android/settings/wifi/WifiSettings;->onActivityCreated(Landroid/os/Bundle;)V
 
@@ -237,9 +233,6 @@
 
 .method public onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
     .locals 9
-    .param p1    # Landroid/view/LayoutInflater;
-    .param p2    # Landroid/view/ViewGroup;
-    .param p3    # Landroid/os/Bundle;
 
     const/4 v8, 0x0
 
@@ -328,7 +321,6 @@
 
 .method public registerForContextMenu(Landroid/view/View;)V
     .locals 0
-    .param p1    # Landroid/view/View;
 
     return-void
 .end method

@@ -39,8 +39,6 @@
 # virtual methods
 .method addTick(II)V
     .locals 4
-    .param p1    # I
-    .param p2    # I
 
     iget v0, p0, Lcom/android/settings/fuelgauge/BatteryHistoryChart$ChartData;->mLastBin:I
 
@@ -82,9 +80,6 @@
 
 .method draw(Landroid/graphics/Canvas;II)V
     .locals 13
-    .param p1    # Landroid/graphics/Canvas;
-    .param p2    # I
-    .param p3    # I
 
     const/4 v9, 0x0
 
@@ -146,7 +141,6 @@
 
 .method finish(I)V
     .locals 1
-    .param p1    # I
 
     iget v0, p0, Lcom/android/settings/fuelgauge/BatteryHistoryChart$ChartData;->mLastBin:I
 
@@ -162,7 +156,6 @@
 
 .method init(I)V
     .locals 2
-    .param p1    # I
 
     const/4 v1, 0x0
 
@@ -191,7 +184,6 @@
 
 .method setColors([I)V
     .locals 3
-    .param p1    # [I
 
     iput-object p1, p0, Lcom/android/settings/fuelgauge/BatteryHistoryChart$ChartData;->mColors:[I
 

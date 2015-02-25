@@ -132,7 +132,6 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 7
-    .param p1    # Landroid/view/View;
 
     const/4 v2, 0x1
 
@@ -201,9 +200,6 @@
 
 .method public onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
     .locals 3
-    .param p1    # Landroid/view/LayoutInflater;
-    .param p2    # Landroid/view/ViewGroup;
-    .param p3    # Landroid/os/Bundle;
 
     const v1, 0x7f040096
 

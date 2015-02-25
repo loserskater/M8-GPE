@@ -24,8 +24,6 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/preference/SwitchPreference;)V
     .locals 2
-    .param p1    # Landroid/content/Context;
-    .param p2    # Landroid/preference/SwitchPreference;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -104,8 +102,6 @@
 
 .method static synthetic access$000(Lcom/android/settings/wifi/WifiApEnabler;I)V
     .locals 0
-    .param p0    # Lcom/android/settings/wifi/WifiApEnabler;
-    .param p1    # I
 
     invoke-direct {p0, p1}, Lcom/android/settings/wifi/WifiApEnabler;->handleWifiApStateChanged(I)V
 
@@ -114,10 +110,6 @@
 
 .method static synthetic access$100(Lcom/android/settings/wifi/WifiApEnabler;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;)V
     .locals 0
-    .param p0    # Lcom/android/settings/wifi/WifiApEnabler;
-    .param p1    # [Ljava/lang/Object;
-    .param p2    # [Ljava/lang/Object;
-    .param p3    # [Ljava/lang/Object;
 
     invoke-direct {p0, p1, p2, p3}, Lcom/android/settings/wifi/WifiApEnabler;->updateTetherState([Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;)V
 
@@ -126,7 +118,6 @@
 
 .method static synthetic access$200(Lcom/android/settings/wifi/WifiApEnabler;)V
     .locals 0
-    .param p0    # Lcom/android/settings/wifi/WifiApEnabler;
 
     invoke-direct {p0}, Lcom/android/settings/wifi/WifiApEnabler;->enableWifiSwitch()V
 
@@ -187,7 +178,6 @@
 
 .method private handleWifiApStateChanged(I)V
     .locals 3
-    .param p1    # I
 
     const/4 v1, 0x1
 
@@ -275,9 +265,6 @@
 
 .method private updateTetherState([Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;)V
     .locals 14
-    .param p1    # [Ljava/lang/Object;
-    .param p2    # [Ljava/lang/Object;
-    .param p3    # [Ljava/lang/Object;
 
     const/4 v11, 0x0
 
@@ -439,7 +426,6 @@
 
 .method public setSoftapEnabled(Z)V
     .locals 7
-    .param p1    # Z
 
     const/4 v6, 0x1
 
@@ -536,7 +522,6 @@
 
 .method public updateConfigSummary(Landroid/net/wifi/WifiConfiguration;)V
     .locals 5
-    .param p1    # Landroid/net/wifi/WifiConfiguration;
 
     iget-object v1, p0, Lcom/android/settings/wifi/WifiApEnabler;->mContext:Landroid/content/Context;
 

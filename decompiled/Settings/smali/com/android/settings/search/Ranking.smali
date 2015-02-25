@@ -532,7 +532,6 @@
 
 .method public static getBaseRankForAuthority(Ljava/lang/String;)I
     .locals 4
-    .param p0    # Ljava/lang/String;
 
     sget-object v2, Lcom/android/settings/search/Ranking;->sBaseRankMap:Ljava/util/HashMap;
 
@@ -593,7 +592,6 @@
 
 .method public static getRankForClassName(Ljava/lang/String;)I
     .locals 2
-    .param p0    # Ljava/lang/String;
 
     sget-object v1, Lcom/android/settings/search/Ranking;->sRankMap:Ljava/util/HashMap;
 

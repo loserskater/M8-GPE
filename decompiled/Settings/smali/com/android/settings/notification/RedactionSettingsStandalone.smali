@@ -70,7 +70,6 @@
 
 .method protected isValidFragment(Ljava/lang/String;)Z
     .locals 1
-    .param p1    # Ljava/lang/String;
 
     const-class v0, Lcom/android/settings/notification/RedactionInterstitial$RedactionInterstitialFragment;
 

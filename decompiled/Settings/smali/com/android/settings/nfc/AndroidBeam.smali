@@ -31,7 +31,6 @@
 # virtual methods
 .method public onActivityCreated(Landroid/os/Bundle;)V
     .locals 5
-    .param p1    # Landroid/os/Bundle;
 
     const/4 v2, 0x1
 
@@ -102,7 +101,6 @@
 
 .method public onCreate(Landroid/os/Bundle;)V
     .locals 3
-    .param p1    # Landroid/os/Bundle;
 
     invoke-super {p0, p1}, Landroid/app/Fragment;->onCreate(Landroid/os/Bundle;)V
 
@@ -159,9 +157,6 @@
 
 .method public onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
     .locals 2
-    .param p1    # Landroid/view/LayoutInflater;
-    .param p2    # Landroid/view/ViewGroup;
-    .param p3    # Landroid/os/Bundle;
 
     const v0, 0x7f040004
 
@@ -213,8 +208,6 @@
 
 .method public onSwitchChanged(Landroid/widget/Switch;Z)V
     .locals 3
-    .param p1    # Landroid/widget/Switch;
-    .param p2    # Z
 
     const/4 v0, 0x0
 

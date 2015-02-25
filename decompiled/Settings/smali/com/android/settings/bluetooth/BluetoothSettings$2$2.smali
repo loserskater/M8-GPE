@@ -48,8 +48,6 @@
 # virtual methods
 .method public onClick(Landroid/content/DialogInterface;I)V
     .locals 6
-    .param p1    # Landroid/content/DialogInterface;
-    .param p2    # I
 
     iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothSettings$2$2;->val$device:Lcom/android/settings/bluetooth/CachedBluetoothDevice;
 

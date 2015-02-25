@@ -24,7 +24,6 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 1
-    .param p1    # Landroid/content/Context;
 
     invoke-direct {p0, p1}, Landroid/preference/Preference;-><init>(Landroid/content/Context;)V
 
@@ -55,7 +54,6 @@
 # virtual methods
 .method protected onBindView(Landroid/view/View;)V
     .locals 4
-    .param p1    # Landroid/view/View;
 
     invoke-super {p0, p1}, Landroid/preference/Preference;->onBindView(Landroid/view/View;)V
 
@@ -100,7 +98,6 @@
 
 .method public setColoredRegions(I)V
     .locals 0
-    .param p1    # I
 
     iput p1, p0, Lcom/android/settings/applications/LinearColorPreference;->mColoredRegions:I
 
@@ -111,9 +108,6 @@
 
 .method public setColors(III)V
     .locals 0
-    .param p1    # I
-    .param p2    # I
-    .param p3    # I
 
     iput p1, p0, Lcom/android/settings/applications/LinearColorPreference;->mRedColor:I
 
@@ -128,9 +122,6 @@
 
 .method public setRatios(FFF)V
     .locals 0
-    .param p1    # F
-    .param p2    # F
-    .param p3    # F
 
     iput p1, p0, Lcom/android/settings/applications/LinearColorPreference;->mRedRatio:F
 

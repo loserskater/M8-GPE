@@ -17,9 +17,6 @@
 # direct methods
 .method public constructor <init>(Landroid/content/pm/PackageManager;Landroid/content/pm/ServiceInfo;Ljava/lang/String;)V
     .locals 0
-    .param p1    # Landroid/content/pm/PackageManager;
-    .param p2    # Landroid/content/pm/ServiceInfo;
-    .param p3    # Ljava/lang/String;
 
     invoke-direct {p0, p1, p2, p3}, Lcom/android/settings/voice/VoiceInputHelper$BaseInfo;-><init>(Landroid/content/pm/PackageManager;Landroid/content/pm/ServiceInfo;Ljava/lang/String;)V
 

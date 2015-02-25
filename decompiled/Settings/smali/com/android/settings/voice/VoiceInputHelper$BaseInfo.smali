@@ -36,9 +36,6 @@
 # direct methods
 .method public constructor <init>(Landroid/content/pm/PackageManager;Landroid/content/pm/ServiceInfo;Ljava/lang/String;)V
     .locals 3
-    .param p1    # Landroid/content/pm/PackageManager;
-    .param p2    # Landroid/content/pm/ServiceInfo;
-    .param p3    # Ljava/lang/String;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -107,7 +104,6 @@
 # virtual methods
 .method public compareTo(Ljava/lang/Object;)I
     .locals 2
-    .param p1    # Ljava/lang/Object;
 
     iget-object v0, p0, Lcom/android/settings/voice/VoiceInputHelper$BaseInfo;->labelStr:Ljava/lang/String;
 

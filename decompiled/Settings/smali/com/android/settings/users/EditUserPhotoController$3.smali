@@ -52,7 +52,6 @@
 # virtual methods
 .method protected varargs doInBackground([Ljava/lang/Void;)Landroid/graphics/Bitmap;
     .locals 17
-    .param p1    # [Ljava/lang/Void;
 
     move-object/from16 v0, p0
 
@@ -322,7 +321,6 @@
 
 .method protected bridge synthetic doInBackground([Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
-    .param p1    # [Ljava/lang/Object;
 
     check-cast p1, [Ljava/lang/Void;
 
@@ -335,7 +333,6 @@
 
 .method protected onPostExecute(Landroid/graphics/Bitmap;)V
     .locals 3
-    .param p1    # Landroid/graphics/Bitmap;
 
     if-eqz p1, :cond_0
 
@@ -431,7 +428,6 @@
 
 .method protected bridge synthetic onPostExecute(Ljava/lang/Object;)V
     .locals 0
-    .param p1    # Ljava/lang/Object;
 
     check-cast p1, Landroid/graphics/Bitmap;
 

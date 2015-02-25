@@ -65,8 +65,6 @@
 
 .method static synthetic access$000(Lcom/android/settings/dashboard/SearchResultsSummary;Landroid/database/Cursor;)V
     .locals 0
-    .param p0    # Lcom/android/settings/dashboard/SearchResultsSummary;
-    .param p1    # Landroid/database/Cursor;
 
     invoke-direct {p0, p1}, Lcom/android/settings/dashboard/SearchResultsSummary;->setResultsCursor(Landroid/database/Cursor;)V
 
@@ -75,8 +73,6 @@
 
 .method static synthetic access$100(Lcom/android/settings/dashboard/SearchResultsSummary;Z)V
     .locals 0
-    .param p0    # Lcom/android/settings/dashboard/SearchResultsSummary;
-    .param p1    # Z
 
     invoke-direct {p0, p1}, Lcom/android/settings/dashboard/SearchResultsSummary;->setResultsVisibility(Z)V
 
@@ -85,7 +81,6 @@
 
 .method static synthetic access$1000(Lcom/android/settings/dashboard/SearchResultsSummary;)Ljava/lang/String;
     .locals 1
-    .param p0    # Lcom/android/settings/dashboard/SearchResultsSummary;
 
     iget-object v0, p0, Lcom/android/settings/dashboard/SearchResultsSummary;->mQuery:Ljava/lang/String;
 
@@ -94,8 +89,6 @@
 
 .method static synthetic access$1002(Lcom/android/settings/dashboard/SearchResultsSummary;Ljava/lang/String;)Ljava/lang/String;
     .locals 0
-    .param p0    # Lcom/android/settings/dashboard/SearchResultsSummary;
-    .param p1    # Ljava/lang/String;
 
     iput-object p1, p0, Lcom/android/settings/dashboard/SearchResultsSummary;->mQuery:Ljava/lang/String;
 
@@ -104,7 +97,6 @@
 
 .method static synthetic access$1100(Lcom/android/settings/dashboard/SearchResultsSummary;)Landroid/widget/SearchView;
     .locals 1
-    .param p0    # Lcom/android/settings/dashboard/SearchResultsSummary;
 
     iget-object v0, p0, Lcom/android/settings/dashboard/SearchResultsSummary;->mSearchView:Landroid/widget/SearchView;
 
@@ -113,8 +105,6 @@
 
 .method static synthetic access$200(Lcom/android/settings/dashboard/SearchResultsSummary;Landroid/database/Cursor;)V
     .locals 0
-    .param p0    # Lcom/android/settings/dashboard/SearchResultsSummary;
-    .param p1    # Landroid/database/Cursor;
 
     invoke-direct {p0, p1}, Lcom/android/settings/dashboard/SearchResultsSummary;->setSuggestionsCursor(Landroid/database/Cursor;)V
 
@@ -123,8 +113,6 @@
 
 .method static synthetic access$300(Lcom/android/settings/dashboard/SearchResultsSummary;Z)V
     .locals 0
-    .param p0    # Lcom/android/settings/dashboard/SearchResultsSummary;
-    .param p1    # Z
 
     invoke-direct {p0, p1}, Lcom/android/settings/dashboard/SearchResultsSummary;->setSuggestionsVisibility(Z)V
 
@@ -133,7 +121,6 @@
 
 .method static synthetic access$400(Lcom/android/settings/dashboard/SearchResultsSummary;)Lcom/android/settings/dashboard/SearchResultsSummary$SearchResultsAdapter;
     .locals 1
-    .param p0    # Lcom/android/settings/dashboard/SearchResultsSummary;
 
     iget-object v0, p0, Lcom/android/settings/dashboard/SearchResultsSummary;->mResultsAdapter:Lcom/android/settings/dashboard/SearchResultsSummary$SearchResultsAdapter;
 
@@ -142,7 +129,6 @@
 
 .method static synthetic access$600(Lcom/android/settings/dashboard/SearchResultsSummary;)V
     .locals 0
-    .param p0    # Lcom/android/settings/dashboard/SearchResultsSummary;
 
     invoke-direct {p0}, Lcom/android/settings/dashboard/SearchResultsSummary;->saveQueryToDatabase()V
 
@@ -151,7 +137,6 @@
 
 .method static synthetic access$700(Lcom/android/settings/dashboard/SearchResultsSummary;)Lcom/android/settings/dashboard/SearchResultsSummary$SuggestionsAdapter;
     .locals 1
-    .param p0    # Lcom/android/settings/dashboard/SearchResultsSummary;
 
     iget-object v0, p0, Lcom/android/settings/dashboard/SearchResultsSummary;->mSuggestionsAdapter:Lcom/android/settings/dashboard/SearchResultsSummary$SuggestionsAdapter;
 
@@ -160,8 +145,6 @@
 
 .method static synthetic access$902(Lcom/android/settings/dashboard/SearchResultsSummary;Z)Z
     .locals 0
-    .param p0    # Lcom/android/settings/dashboard/SearchResultsSummary;
-    .param p1    # Z
 
     iput-boolean p1, p0, Lcom/android/settings/dashboard/SearchResultsSummary;->mShowResults:Z
 
@@ -248,7 +231,6 @@
 
 .method private getFilteredQueryString(Ljava/lang/CharSequence;)Ljava/lang/String;
     .locals 4
-    .param p1    # Ljava/lang/CharSequence;
 
     if-nez p1, :cond_0
 
@@ -325,7 +307,6 @@
 
 .method private setResultsCursor(Landroid/database/Cursor;)V
     .locals 2
-    .param p1    # Landroid/database/Cursor;
 
     iget-object v1, p0, Lcom/android/settings/dashboard/SearchResultsSummary;->mResultsAdapter:Lcom/android/settings/dashboard/SearchResultsSummary$SearchResultsAdapter;
 
@@ -351,7 +332,6 @@
 
 .method private setResultsVisibility(Z)V
     .locals 2
-    .param p1    # Z
 
     iget-object v0, p0, Lcom/android/settings/dashboard/SearchResultsSummary;->mLayoutResults:Landroid/view/ViewGroup;
 
@@ -377,7 +357,6 @@
 
 .method private setSuggestionsCursor(Landroid/database/Cursor;)V
     .locals 2
-    .param p1    # Landroid/database/Cursor;
 
     iget-object v1, p0, Lcom/android/settings/dashboard/SearchResultsSummary;->mSuggestionsAdapter:Lcom/android/settings/dashboard/SearchResultsSummary$SuggestionsAdapter;
 
@@ -403,7 +382,6 @@
 
 .method private setSuggestionsVisibility(Z)V
     .locals 2
-    .param p1    # Z
 
     iget-object v0, p0, Lcom/android/settings/dashboard/SearchResultsSummary;->mLayoutSuggestions:Landroid/view/ViewGroup;
 
@@ -517,7 +495,6 @@
 # virtual methods
 .method public onCreate(Landroid/os/Bundle;)V
     .locals 2
-    .param p1    # Landroid/os/Bundle;
 
     invoke-super {p0, p1}, Landroid/app/Fragment;->onCreate(Landroid/os/Bundle;)V
 
@@ -557,9 +534,6 @@
 
 .method public onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
     .locals 7
-    .param p1    # Landroid/view/LayoutInflater;
-    .param p2    # Landroid/view/ViewGroup;
-    .param p3    # Landroid/os/Bundle;
 
     const/4 v6, 0x0
 
@@ -708,7 +682,6 @@
 
 .method public onQueryTextChange(Ljava/lang/String;)Z
     .locals 4
-    .param p1    # Ljava/lang/String;
 
     const/4 v3, 0x1
 
@@ -749,7 +722,6 @@
 
 .method public onQueryTextSubmit(Ljava/lang/String;)Z
     .locals 2
-    .param p1    # Ljava/lang/String;
 
     const/4 v1, 0x1
 
@@ -789,7 +761,6 @@
 
 .method public onSaveInstanceState(Landroid/os/Bundle;)V
     .locals 2
-    .param p1    # Landroid/os/Bundle;
 
     invoke-super {p0, p1}, Landroid/app/Fragment;->onSaveInstanceState(Landroid/os/Bundle;)V
 
@@ -816,7 +787,6 @@
 
 .method public setSearchView(Landroid/widget/SearchView;)V
     .locals 0
-    .param p1    # Landroid/widget/SearchView;
 
     iput-object p1, p0, Lcom/android/settings/dashboard/SearchResultsSummary;->mSearchView:Landroid/widget/SearchView;
 

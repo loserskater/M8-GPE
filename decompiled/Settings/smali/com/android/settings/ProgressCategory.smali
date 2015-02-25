@@ -16,7 +16,6 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 1
-    .param p1    # Landroid/content/Context;
 
     const/4 v0, 0x0
 
@@ -27,8 +26,6 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 1
-    .param p1    # Landroid/content/Context;
-    .param p2    # Landroid/util/AttributeSet;
 
     const/4 v0, 0x0
 
@@ -41,9 +38,6 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
     .locals 1
-    .param p1    # Landroid/content/Context;
-    .param p2    # Landroid/util/AttributeSet;
-    .param p3    # I
 
     const/4 v0, 0x0
 
@@ -54,10 +48,6 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;II)V
     .locals 1
-    .param p1    # Landroid/content/Context;
-    .param p2    # Landroid/util/AttributeSet;
-    .param p3    # I
-    .param p4    # I
 
     invoke-direct {p0, p1, p2, p3, p4}, Lcom/android/settings/ProgressCategoryBase;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;II)V
 
@@ -76,7 +66,6 @@
 # virtual methods
 .method public onBindView(Landroid/view/View;)V
     .locals 6
-    .param p1    # Landroid/view/View;
 
     const/4 v3, 0x1
 
@@ -201,7 +190,6 @@
 
 .method public setEmptyTextRes(I)V
     .locals 0
-    .param p1    # I
 
     iput p1, p0, Lcom/android/settings/ProgressCategory;->mEmptyTextRes:I
 
@@ -210,7 +198,6 @@
 
 .method public setProgress(Z)V
     .locals 0
-    .param p1    # Z
 
     iput-boolean p1, p0, Lcom/android/settings/ProgressCategory;->mProgress:Z
 

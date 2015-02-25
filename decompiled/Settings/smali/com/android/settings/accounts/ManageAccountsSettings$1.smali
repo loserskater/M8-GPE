@@ -40,7 +40,6 @@
 # virtual methods
 .method public onPreferenceClick(Landroid/preference/Preference;)Z
     .locals 4
-    .param p1    # Landroid/preference/Preference;
 
     invoke-virtual {p1}, Landroid/preference/Preference;->getIntent()Landroid/content/Intent;
 

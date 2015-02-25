@@ -26,8 +26,6 @@
 
 .method private checkTag(Landroid/view/View;Ljava/lang/String;)Z
     .locals 4
-    .param p1    # Landroid/view/View;
-    .param p2    # Ljava/lang/String;
 
     const/4 v2, 0x0
 
@@ -71,8 +69,6 @@
 
 .method private findViewForKey(Landroid/view/View;Ljava/lang/String;)Landroid/view/View;
     .locals 6
-    .param p1    # Landroid/view/View;
-    .param p2    # Ljava/lang/String;
 
     invoke-direct {p0, p1, p2}, Lcom/android/settings/HighlightingFragment;->checkTag(Landroid/view/View;Ljava/lang/String;)Z
 
@@ -153,7 +149,6 @@
 
 .method private highlightView(Ljava/lang/String;)V
     .locals 6
-    .param p1    # Ljava/lang/String;
 
     invoke-direct {p0}, Lcom/android/settings/HighlightingFragment;->getHighlightDrawable()Landroid/graphics/drawable/Drawable;
 
@@ -218,7 +213,6 @@
 
 .method public onActivityCreated(Landroid/os/Bundle;)V
     .locals 2
-    .param p1    # Landroid/os/Bundle;
 
     invoke-super {p0, p1}, Landroid/app/Fragment;->onActivityCreated(Landroid/os/Bundle;)V
 
@@ -244,7 +238,6 @@
 
 .method public onCreate(Landroid/os/Bundle;)V
     .locals 1
-    .param p1    # Landroid/os/Bundle;
 
     invoke-super {p0, p1}, Landroid/app/Fragment;->onCreate(Landroid/os/Bundle;)V
 
@@ -264,7 +257,6 @@
 
 .method public onSaveInstanceState(Landroid/os/Bundle;)V
     .locals 2
-    .param p1    # Landroid/os/Bundle;
 
     invoke-super {p0, p1}, Landroid/app/Fragment;->onSaveInstanceState(Landroid/os/Bundle;)V
 

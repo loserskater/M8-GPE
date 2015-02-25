@@ -40,7 +40,6 @@
 # virtual methods
 .method public onCancel(Landroid/content/DialogInterface;)V
     .locals 2
-    .param p1    # Landroid/content/DialogInterface;
 
     iget-object v0, p0, Lcom/android/settings/voice/VoiceInputPreference$4;->val$negativeOnClickListener:Landroid/content/DialogInterface$OnClickListener;
 

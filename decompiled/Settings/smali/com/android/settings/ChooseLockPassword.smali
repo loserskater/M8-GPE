@@ -22,13 +22,6 @@
 
 .method public static createIntent(Landroid/content/Context;IZIIZZ)Landroid/content/Intent;
     .locals 3
-    .param p0    # Landroid/content/Context;
-    .param p1    # I
-    .param p2    # Z
-    .param p3    # I
-    .param p4    # I
-    .param p5    # Z
-    .param p6    # Z
 
     new-instance v1, Landroid/content/Intent;
 
@@ -95,7 +88,6 @@
 
 .method protected isValidFragment(Ljava/lang/String;)Z
     .locals 1
-    .param p1    # Ljava/lang/String;
 
     const-class v0, Lcom/android/settings/ChooseLockPassword$ChooseLockPasswordFragment;
 
@@ -122,7 +114,6 @@
 
 .method public onCreate(Landroid/os/Bundle;)V
     .locals 2
-    .param p1    # Landroid/os/Bundle;
 
     invoke-super {p0, p1}, Lcom/android/settings/SettingsActivity;->onCreate(Landroid/os/Bundle;)V
 

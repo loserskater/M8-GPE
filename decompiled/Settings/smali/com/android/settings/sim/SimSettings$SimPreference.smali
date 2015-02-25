@@ -25,9 +25,6 @@
 # direct methods
 .method public constructor <init>(Lcom/android/settings/sim/SimSettings;Landroid/content/Context;Landroid/telephony/SubInfoRecord;I)V
     .locals 2
-    .param p2    # Landroid/content/Context;
-    .param p3    # Landroid/telephony/SubInfoRecord;
-    .param p4    # I
 
     iput-object p1, p0, Lcom/android/settings/sim/SimSettings$SimPreference;->this$0:Lcom/android/settings/sim/SimSettings;
 
@@ -66,7 +63,6 @@
 
 .method static synthetic access$000(Lcom/android/settings/sim/SimSettings$SimPreference;)Landroid/telephony/SubInfoRecord;
     .locals 1
-    .param p0    # Lcom/android/settings/sim/SimSettings$SimPreference;
 
     iget-object v0, p0, Lcom/android/settings/sim/SimSettings$SimPreference;->mSubInfoRecord:Landroid/telephony/SubInfoRecord;
 
@@ -77,7 +73,6 @@
 # virtual methods
 .method public createEditDialog(Lcom/android/settings/sim/SimSettings$SimPreference;)V
     .locals 8
-    .param p1    # Lcom/android/settings/sim/SimSettings$SimPreference;
 
     new-instance v0, Landroid/app/AlertDialog$Builder;
 

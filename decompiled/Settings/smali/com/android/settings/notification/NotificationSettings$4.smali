@@ -36,8 +36,6 @@
 # virtual methods
 .method public onItemSelected(ILjava/lang/Object;)Z
     .locals 8
-    .param p1    # I
-    .param p2    # Ljava/lang/Object;
 
     const/4 v4, 0x0
 

@@ -121,7 +121,6 @@
 
 .method static synthetic access$1000(Lcom/android/settings/notification/NotificationSettings;)Landroid/content/ContentResolver;
     .locals 1
-    .param p0    # Lcom/android/settings/notification/NotificationSettings;
 
     invoke-virtual {p0}, Lcom/android/settings/notification/NotificationSettings;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -132,7 +131,6 @@
 
 .method static synthetic access$1100(Lcom/android/settings/notification/NotificationSettings;)Landroid/content/ContentResolver;
     .locals 1
-    .param p0    # Lcom/android/settings/notification/NotificationSettings;
 
     invoke-virtual {p0}, Lcom/android/settings/notification/NotificationSettings;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -143,7 +141,6 @@
 
 .method static synthetic access$1200(Lcom/android/settings/notification/NotificationSettings;)Landroid/content/ContentResolver;
     .locals 1
-    .param p0    # Lcom/android/settings/notification/NotificationSettings;
 
     invoke-virtual {p0}, Lcom/android/settings/notification/NotificationSettings;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -154,7 +151,6 @@
 
 .method static synthetic access$1300(Lcom/android/settings/notification/NotificationSettings;)V
     .locals 0
-    .param p0    # Lcom/android/settings/notification/NotificationSettings;
 
     invoke-direct {p0}, Lcom/android/settings/notification/NotificationSettings;->updateVibrateWhenRinging()V
 
@@ -163,7 +159,6 @@
 
 .method static synthetic access$1400(Lcom/android/settings/notification/NotificationSettings;)V
     .locals 0
-    .param p0    # Lcom/android/settings/notification/NotificationSettings;
 
     invoke-direct {p0}, Lcom/android/settings/notification/NotificationSettings;->updatePulse()V
 
@@ -172,7 +167,6 @@
 
 .method static synthetic access$1500(Lcom/android/settings/notification/NotificationSettings;)V
     .locals 0
-    .param p0    # Lcom/android/settings/notification/NotificationSettings;
 
     invoke-direct {p0}, Lcom/android/settings/notification/NotificationSettings;->updateLockscreenNotifications()V
 
@@ -181,7 +175,6 @@
 
 .method static synthetic access$1600(Lcom/android/settings/notification/NotificationSettings;)Lcom/android/settings/notification/NotificationSettings$VolumePreferenceCallback;
     .locals 1
-    .param p0    # Lcom/android/settings/notification/NotificationSettings;
 
     iget-object v0, p0, Lcom/android/settings/notification/NotificationSettings;->mVolumeCallback:Lcom/android/settings/notification/NotificationSettings$VolumePreferenceCallback;
 
@@ -198,8 +191,6 @@
 
 .method static synthetic access$1700(Lcom/android/settings/notification/NotificationSettings;I)V
     .locals 0
-    .param p0    # Lcom/android/settings/notification/NotificationSettings;
-    .param p1    # I
 
     invoke-direct {p0, p1}, Lcom/android/settings/notification/NotificationSettings;->updateRingIcon(I)V
 
@@ -208,7 +199,6 @@
 
 .method static synthetic access$1800(Lcom/android/settings/notification/NotificationSettings;)Landroid/media/AudioManager;
     .locals 1
-    .param p0    # Lcom/android/settings/notification/NotificationSettings;
 
     iget-object v0, p0, Lcom/android/settings/notification/NotificationSettings;->mAudioManager:Landroid/media/AudioManager;
 
@@ -217,7 +207,6 @@
 
 .method static synthetic access$1900(Lcom/android/settings/notification/NotificationSettings;)V
     .locals 0
-    .param p0    # Lcom/android/settings/notification/NotificationSettings;
 
     invoke-direct {p0}, Lcom/android/settings/notification/NotificationSettings;->refreshBeatsAudioUI()V
 
@@ -226,7 +215,6 @@
 
 .method static synthetic access$200(Lcom/android/settings/notification/NotificationSettings;)Lcom/android/settings/notification/NotificationSettings$H;
     .locals 1
-    .param p0    # Lcom/android/settings/notification/NotificationSettings;
 
     iget-object v0, p0, Lcom/android/settings/notification/NotificationSettings;->mHandler:Lcom/android/settings/notification/NotificationSettings$H;
 
@@ -235,7 +223,6 @@
 
 .method static synthetic access$300(Lcom/android/settings/notification/NotificationSettings;)Landroid/preference/Preference;
     .locals 1
-    .param p0    # Lcom/android/settings/notification/NotificationSettings;
 
     iget-object v0, p0, Lcom/android/settings/notification/NotificationSettings;->mPhoneRingtonePreference:Landroid/preference/Preference;
 
@@ -244,7 +231,6 @@
 
 .method static synthetic access$400(Lcom/android/settings/notification/NotificationSettings;)Landroid/content/Context;
     .locals 1
-    .param p0    # Lcom/android/settings/notification/NotificationSettings;
 
     iget-object v0, p0, Lcom/android/settings/notification/NotificationSettings;->mContext:Landroid/content/Context;
 
@@ -253,8 +239,6 @@
 
 .method static synthetic access$500(Landroid/content/Context;I)Ljava/lang/CharSequence;
     .locals 1
-    .param p0    # Landroid/content/Context;
-    .param p1    # I
 
     invoke-static {p0, p1}, Lcom/android/settings/notification/NotificationSettings;->updateRingtoneName(Landroid/content/Context;I)Ljava/lang/CharSequence;
 
@@ -265,7 +249,6 @@
 
 .method static synthetic access$600(Lcom/android/settings/notification/NotificationSettings;)Landroid/preference/Preference;
     .locals 1
-    .param p0    # Lcom/android/settings/notification/NotificationSettings;
 
     iget-object v0, p0, Lcom/android/settings/notification/NotificationSettings;->mNotificationRingtonePreference:Landroid/preference/Preference;
 
@@ -274,7 +257,6 @@
 
 .method static synthetic access$700(Lcom/android/settings/notification/NotificationSettings;)Landroid/content/ContentResolver;
     .locals 1
-    .param p0    # Lcom/android/settings/notification/NotificationSettings;
 
     invoke-virtual {p0}, Lcom/android/settings/notification/NotificationSettings;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -285,7 +267,6 @@
 
 .method static synthetic access$800(Lcom/android/settings/notification/NotificationSettings;)Landroid/content/ContentResolver;
     .locals 1
-    .param p0    # Lcom/android/settings/notification/NotificationSettings;
 
     invoke-virtual {p0}, Lcom/android/settings/notification/NotificationSettings;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -296,7 +277,6 @@
 
 .method static synthetic access$900(Lcom/android/settings/notification/NotificationSettings;)I
     .locals 1
-    .param p0    # Lcom/android/settings/notification/NotificationSettings;
 
     iget v0, p0, Lcom/android/settings/notification/NotificationSettings;->mLockscreenSelectedValue:I
 
@@ -305,8 +285,6 @@
 
 .method static synthetic access$902(Lcom/android/settings/notification/NotificationSettings;I)I
     .locals 0
-    .param p0    # Lcom/android/settings/notification/NotificationSettings;
-    .param p1    # I
 
     iput p1, p0, Lcom/android/settings/notification/NotificationSettings;->mLockscreenSelectedValue:I
 
@@ -361,7 +339,6 @@
 
 .method private initBeatsAudio(Landroid/preference/PreferenceCategory;)V
     .locals 2
-    .param p1    # Landroid/preference/PreferenceCategory;
 
     const-string v0, "beats_audio"
 
@@ -419,7 +396,6 @@
 
 .method private initBoomSound(Landroid/preference/PreferenceCategory;)V
     .locals 2
-    .param p1    # Landroid/preference/PreferenceCategory;
 
     const-string v0, "boom_sound"
 
@@ -475,7 +451,6 @@
 
 .method private initLockscreenNotifications(Landroid/preference/PreferenceCategory;)V
     .locals 5
-    .param p1    # Landroid/preference/PreferenceCategory;
 
     const v4, 0x7f08092d
 
@@ -551,7 +526,6 @@
 
 .method private initPulse(Landroid/preference/PreferenceCategory;)V
     .locals 2
-    .param p1    # Landroid/preference/PreferenceCategory;
 
     const-string v0, "notification_pulse"
 
@@ -611,7 +585,6 @@
 
 .method private initRingtones(Landroid/preference/PreferenceCategory;)V
     .locals 1
-    .param p1    # Landroid/preference/PreferenceCategory;
 
     const-string v0, "ringtone"
 
@@ -651,7 +624,6 @@
 
 .method private initVibrateWhenRinging(Landroid/preference/PreferenceCategory;)V
     .locals 2
-    .param p1    # Landroid/preference/PreferenceCategory;
 
     const-string v0, "vibrate_when_ringing"
 
@@ -713,8 +685,6 @@
 
 .method private initVolumePreference(Ljava/lang/String;I)Lcom/android/settings/notification/VolumeSeekBarPreference;
     .locals 2
-    .param p1    # Ljava/lang/String;
-    .param p2    # I
 
     invoke-virtual {p0, p1}, Lcom/android/settings/notification/NotificationSettings;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
 
@@ -1075,7 +1045,6 @@
 
 .method private updateRingIcon(I)V
     .locals 2
-    .param p1    # I
 
     iget-object v1, p0, Lcom/android/settings/notification/NotificationSettings;->mRingPreference:Lcom/android/settings/notification/VolumeSeekBarPreference;
 
@@ -1105,8 +1074,6 @@
 
 .method private static updateRingtoneName(Landroid/content/Context;I)Ljava/lang/CharSequence;
     .locals 8
-    .param p0    # Landroid/content/Context;
-    .param p1    # I
 
     const/4 v7, 0x0
 
@@ -1322,7 +1289,6 @@
 # virtual methods
 .method public onCreate(Landroid/os/Bundle;)V
     .locals 4
-    .param p1    # Landroid/os/Bundle;
 
     invoke-super {p0, p1}, Lcom/android/settings/SettingsPreferenceFragment;->onCreate(Landroid/os/Bundle;)V
 

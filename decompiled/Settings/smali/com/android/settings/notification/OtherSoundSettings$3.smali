@@ -17,11 +17,6 @@
 # direct methods
 .method varargs constructor <init>(ILjava/lang/String;Ljava/lang/String;I[I)V
     .locals 0
-    .param p1    # I
-    .param p2    # Ljava/lang/String;
-    .param p3    # Ljava/lang/String;
-    .param p4    # I
-    .param p5    # [I
 
     invoke-direct/range {p0 .. p5}, Lcom/android/settings/notification/SettingPref;-><init>(ILjava/lang/String;Ljava/lang/String;I[I)V
 
@@ -32,8 +27,6 @@
 # virtual methods
 .method protected setSetting(Landroid/content/Context;I)Z
     .locals 2
-    .param p1    # Landroid/content/Context;
-    .param p2    # I
 
     const-string v1, "audio"
 

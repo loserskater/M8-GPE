@@ -6,7 +6,6 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 0
-    .param p1    # Landroid/content/Context;
 
     invoke-direct {p0, p1}, Landroid/preference/Preference;-><init>(Landroid/content/Context;)V
 
@@ -15,7 +14,6 @@
 
 .method private dimIcon(Z)V
     .locals 3
-    .param p1    # Z
 
     invoke-virtual {p0}, Lcom/android/settings/location/DimmableIconPreference;->getIcon()Landroid/graphics/drawable/Drawable;
 
@@ -49,8 +47,6 @@
 # virtual methods
 .method public onParentChanged(Landroid/preference/Preference;Z)V
     .locals 0
-    .param p1    # Landroid/preference/Preference;
-    .param p2    # Z
 
     invoke-direct {p0, p2}, Lcom/android/settings/location/DimmableIconPreference;->dimIcon(Z)V
 
@@ -61,7 +57,6 @@
 
 .method public setEnabled(Z)V
     .locals 1
-    .param p1    # Z
 
     if-nez p1, :cond_0
 

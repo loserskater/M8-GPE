@@ -53,8 +53,6 @@
 
 .method static synthetic access$000(Lcom/android/settings/bluetooth/BluetoothNameDialogFragment;Ljava/lang/String;)V
     .locals 0
-    .param p0    # Lcom/android/settings/bluetooth/BluetoothNameDialogFragment;
-    .param p1    # Ljava/lang/String;
 
     invoke-direct {p0, p1}, Lcom/android/settings/bluetooth/BluetoothNameDialogFragment;->setDeviceName(Ljava/lang/String;)V
 
@@ -63,7 +61,6 @@
 
 .method static synthetic access$100(Lcom/android/settings/bluetooth/BluetoothNameDialogFragment;)Landroid/app/AlertDialog;
     .locals 1
-    .param p0    # Lcom/android/settings/bluetooth/BluetoothNameDialogFragment;
 
     iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothNameDialogFragment;->mAlertDialog:Landroid/app/AlertDialog;
 
@@ -72,7 +69,6 @@
 
 .method private createDialogView(Ljava/lang/String;)Landroid/view/View;
     .locals 7
-    .param p1    # Ljava/lang/String;
 
     invoke-virtual {p0}, Lcom/android/settings/bluetooth/BluetoothNameDialogFragment;->getActivity()Landroid/app/Activity;
 
@@ -143,7 +139,6 @@
 
 .method private setDeviceName(Ljava/lang/String;)V
     .locals 3
-    .param p1    # Ljava/lang/String;
 
     const-string v0, "BluetoothNameDialogFragment"
 
@@ -178,7 +173,6 @@
 # virtual methods
 .method public afterTextChanged(Landroid/text/Editable;)V
     .locals 4
-    .param p1    # Landroid/text/Editable;
 
     const/4 v0, 0x1
 
@@ -226,17 +220,12 @@
 
 .method public beforeTextChanged(Ljava/lang/CharSequence;III)V
     .locals 0
-    .param p1    # Ljava/lang/CharSequence;
-    .param p2    # I
-    .param p3    # I
-    .param p4    # I
 
     return-void
 .end method
 
 .method public onCreateDialog(Landroid/os/Bundle;)Landroid/app/Dialog;
     .locals 4
-    .param p1    # Landroid/os/Bundle;
 
     iget-object v1, p0, Lcom/android/settings/bluetooth/BluetoothNameDialogFragment;->mLocalAdapter:Lcom/android/settings/bluetooth/LocalBluetoothAdapter;
 
@@ -407,7 +396,6 @@
 
 .method public onSaveInstanceState(Landroid/os/Bundle;)V
     .locals 2
-    .param p1    # Landroid/os/Bundle;
 
     const-string v0, "device_name"
 
@@ -434,10 +422,6 @@
 
 .method public onTextChanged(Ljava/lang/CharSequence;III)V
     .locals 0
-    .param p1    # Ljava/lang/CharSequence;
-    .param p2    # I
-    .param p3    # I
-    .param p4    # I
 
     return-void
 .end method

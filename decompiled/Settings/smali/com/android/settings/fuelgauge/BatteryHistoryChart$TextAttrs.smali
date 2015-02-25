@@ -51,8 +51,6 @@
 # virtual methods
 .method apply(Landroid/content/Context;Landroid/text/TextPaint;)V
     .locals 2
-    .param p1    # Landroid/content/Context;
-    .param p2    # Landroid/text/TextPaint;
 
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -132,9 +130,6 @@
 
 .method retrieve(Landroid/content/Context;Landroid/content/res/TypedArray;I)V
     .locals 7
-    .param p1    # Landroid/content/Context;
-    .param p2    # Landroid/content/res/TypedArray;
-    .param p3    # I
 
     const/4 v6, -0x1
 
@@ -232,9 +227,6 @@
 
 .method public setTypeface(Landroid/text/TextPaint;Landroid/graphics/Typeface;I)V
     .locals 5
-    .param p1    # Landroid/text/TextPaint;
-    .param p2    # Landroid/graphics/Typeface;
-    .param p3    # I
 
     const/4 v3, 0x0
 
@@ -275,7 +267,7 @@
 
     if-eqz v2, :cond_3
 
-    const/high16 v2, -0x41800000
+    const/high16 v2, -0x41800000    # -0.25f
 
     :goto_2
     invoke-virtual {p1, v2}, Landroid/text/TextPaint;->setTextSkewX(F)V

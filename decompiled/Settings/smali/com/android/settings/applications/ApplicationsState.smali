@@ -244,7 +244,6 @@
 
 .method private constructor <init>(Landroid/app/Application;)V
     .locals 4
-    .param p1    # Landroid/app/Application;
 
     const-wide/16 v2, 0x1
 
@@ -394,8 +393,6 @@
 
 .method static synthetic access$100(Lcom/android/settings/applications/ApplicationsState;Landroid/content/pm/PackageStats;)J
     .locals 2
-    .param p0    # Lcom/android/settings/applications/ApplicationsState;
-    .param p1    # Landroid/content/pm/PackageStats;
 
     invoke-direct {p0, p1}, Lcom/android/settings/applications/ApplicationsState;->getTotalInternalSize(Landroid/content/pm/PackageStats;)J
 
@@ -406,8 +403,6 @@
 
 .method static synthetic access$200(Lcom/android/settings/applications/ApplicationsState;J)Ljava/lang/String;
     .locals 1
-    .param p0    # Lcom/android/settings/applications/ApplicationsState;
-    .param p1    # J
 
     invoke-direct {p0, p1, p2}, Lcom/android/settings/applications/ApplicationsState;->getSizeStr(J)Ljava/lang/String;
 
@@ -418,8 +413,6 @@
 
 .method static synthetic access$300(Lcom/android/settings/applications/ApplicationsState;Landroid/content/pm/PackageStats;)J
     .locals 2
-    .param p0    # Lcom/android/settings/applications/ApplicationsState;
-    .param p1    # Landroid/content/pm/PackageStats;
 
     invoke-direct {p0, p1}, Lcom/android/settings/applications/ApplicationsState;->getTotalExternalSize(Landroid/content/pm/PackageStats;)J
 
@@ -430,7 +423,6 @@
 
 .method static getInstance(Landroid/app/Application;)Lcom/android/settings/applications/ApplicationsState;
     .locals 2
-    .param p0    # Landroid/app/Application;
 
     sget-object v1, Lcom/android/settings/applications/ApplicationsState;->sLock:Ljava/lang/Object;
 
@@ -466,7 +458,6 @@
 
 .method private getSizeStr(J)Ljava/lang/String;
     .locals 3
-    .param p1    # J
 
     const-wide/16 v0, 0x0
 
@@ -491,7 +482,6 @@
 
 .method private getTotalExternalSize(Landroid/content/pm/PackageStats;)J
     .locals 4
-    .param p1    # Landroid/content/pm/PackageStats;
 
     if-eqz p1, :cond_0
 
@@ -524,7 +514,6 @@
 
 .method private getTotalInternalSize(Landroid/content/pm/PackageStats;)J
     .locals 4
-    .param p1    # Landroid/content/pm/PackageStats;
 
     if-eqz p1, :cond_0
 
@@ -545,7 +534,6 @@
 
 .method public static normalize(Ljava/lang/String;)Ljava/lang/String;
     .locals 3
-    .param p0    # Ljava/lang/String;
 
     sget-object v1, Ljava/text/Normalizer$Form;->NFD:Ljava/text/Normalizer$Form;
 
@@ -576,7 +564,6 @@
 # virtual methods
 .method addPackage(Ljava/lang/String;)V
     .locals 4
-    .param p1    # Ljava/lang/String;
 
     :try_start_0
     iget-object v2, p0, Lcom/android/settings/applications/ApplicationsState;->mEntriesMap:Ljava/util/HashMap;
@@ -947,7 +934,6 @@
 
 .method ensureIcon(Lcom/android/settings/applications/ApplicationsState$AppEntry;)V
     .locals 2
-    .param p1    # Lcom/android/settings/applications/ApplicationsState$AppEntry;
 
     iget-object v0, p1, Lcom/android/settings/applications/ApplicationsState$AppEntry;->icon:Landroid/graphics/drawable/Drawable;
 
@@ -982,7 +968,6 @@
 
 .method getEntry(Ljava/lang/String;)Lcom/android/settings/applications/ApplicationsState$AppEntry;
     .locals 5
-    .param p1    # Ljava/lang/String;
 
     iget-object v4, p0, Lcom/android/settings/applications/ApplicationsState;->mEntriesMap:Ljava/util/HashMap;
 
@@ -1052,7 +1037,6 @@
 
 .method getEntryLocked(Landroid/content/pm/ApplicationInfo;)Lcom/android/settings/applications/ApplicationsState$AppEntry;
     .locals 6
-    .param p1    # Landroid/content/pm/ApplicationInfo;
 
     iget-object v1, p0, Lcom/android/settings/applications/ApplicationsState;->mEntriesMap:Ljava/util/HashMap;
 
@@ -1114,7 +1098,6 @@
 
 .method indexOfApplicationInfoLocked(Ljava/lang/String;)I
     .locals 2
-    .param p1    # Ljava/lang/String;
 
     iget-object v1, p0, Lcom/android/settings/applications/ApplicationsState;->mApplications:Ljava/util/List;
 
@@ -1159,7 +1142,6 @@
 
 .method invalidatePackage(Ljava/lang/String;)V
     .locals 0
-    .param p1    # Ljava/lang/String;
 
     invoke-virtual {p0, p1}, Lcom/android/settings/applications/ApplicationsState;->removePackage(Ljava/lang/String;)V
 
@@ -1170,7 +1152,6 @@
 
 .method public newSession(Lcom/android/settings/applications/ApplicationsState$Callbacks;)Lcom/android/settings/applications/ApplicationsState$Session;
     .locals 3
-    .param p1    # Lcom/android/settings/applications/ApplicationsState$Callbacks;
 
     new-instance v0, Lcom/android/settings/applications/ApplicationsState$Session;
 
@@ -1270,7 +1251,6 @@
 
 .method removePackage(Ljava/lang/String;)V
     .locals 7
-    .param p1    # Ljava/lang/String;
 
     iget-object v5, p0, Lcom/android/settings/applications/ApplicationsState;->mEntriesMap:Ljava/util/HashMap;
 
@@ -1388,7 +1368,6 @@
 
 .method requestSize(Ljava/lang/String;)V
     .locals 4
-    .param p1    # Ljava/lang/String;
 
     iget-object v2, p0, Lcom/android/settings/applications/ApplicationsState;->mEntriesMap:Ljava/util/HashMap;
 

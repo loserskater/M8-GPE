@@ -74,7 +74,6 @@
 
 .method static synthetic access$000(Lcom/android/settings/inputmethod/InputMethodAndSubtypeEnabler;)Ljava/text/Collator;
     .locals 1
-    .param p0    # Lcom/android/settings/inputmethod/InputMethodAndSubtypeEnabler;
 
     iget-object v0, p0, Lcom/android/settings/inputmethod/InputMethodAndSubtypeEnabler;->mCollator:Ljava/text/Collator;
 
@@ -83,8 +82,6 @@
 
 .method private addInputMethodSubtypePreferences(Landroid/view/inputmethod/InputMethodInfo;Landroid/preference/PreferenceScreen;)V
     .locals 19
-    .param p1    # Landroid/view/inputmethod/InputMethodInfo;
-    .param p2    # Landroid/preference/PreferenceScreen;
 
     invoke-virtual/range {p0 .. p0}, Lcom/android/settings/inputmethod/InputMethodAndSubtypeEnabler;->getActivity()Landroid/app/Activity;
 
@@ -305,7 +302,6 @@
 
 .method private getStringExtraFromIntentOrArguments(Ljava/lang/String;)Ljava/lang/String;
     .locals 4
-    .param p1    # Ljava/lang/String;
 
     invoke-virtual {p0}, Lcom/android/settings/inputmethod/InputMethodAndSubtypeEnabler;->getActivity()Landroid/app/Activity;
 
@@ -348,7 +344,6 @@
 
 .method private isNoSubtypesExplicitlySelected(Ljava/lang/String;)Z
     .locals 4
-    .param p1    # Ljava/lang/String;
 
     iget-object v3, p0, Lcom/android/settings/inputmethod/InputMethodAndSubtypeEnabler;->mInputMethodAndSubtypePrefsMap:Ljava/util/HashMap;
 
@@ -400,8 +395,6 @@
 
 .method private setAutoSelectionSubtypesEnabled(Ljava/lang/String;Z)V
     .locals 8
-    .param p1    # Ljava/lang/String;
-    .param p2    # Z
 
     const/4 v5, 0x1
 
@@ -538,8 +531,6 @@
 
 .method private updateImplicitlyEnabledSubtypes(Ljava/lang/String;Z)V
     .locals 5
-    .param p1    # Ljava/lang/String;
-    .param p2    # Z
 
     iget-object v4, p0, Lcom/android/settings/inputmethod/InputMethodAndSubtypeEnabler;->mInputMethodInfoList:Ljava/util/List;
 
@@ -600,8 +591,6 @@
 
 .method private updateImplicitlyEnabledSubtypesOf(Landroid/view/inputmethod/InputMethodInfo;Z)V
     .locals 12
-    .param p1    # Landroid/view/inputmethod/InputMethodInfo;
-    .param p2    # Z
 
     const/4 v11, 0x1
 
@@ -719,7 +708,6 @@
 # virtual methods
 .method public onActivityCreated(Landroid/os/Bundle;)V
     .locals 2
-    .param p1    # Landroid/os/Bundle;
 
     invoke-super {p0, p1}, Lcom/android/settings/SettingsPreferenceFragment;->onActivityCreated(Landroid/os/Bundle;)V
 
@@ -747,7 +735,6 @@
 
 .method public onCreate(Landroid/os/Bundle;)V
     .locals 8
-    .param p1    # Landroid/os/Bundle;
 
     invoke-super {p0, p1}, Lcom/android/settings/SettingsPreferenceFragment;->onCreate(Landroid/os/Bundle;)V
 
@@ -892,8 +879,6 @@
 
 .method public onPreferenceChange(Landroid/preference/Preference;Ljava/lang/Object;)Z
     .locals 8
-    .param p1    # Landroid/preference/Preference;
-    .param p2    # Ljava/lang/Object;
 
     const/4 v5, 0x1
 

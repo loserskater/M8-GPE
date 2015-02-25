@@ -47,7 +47,6 @@
 
 .method static synthetic access$000(Lcom/android/settings/accounts/AccountPreferenceBase;)Landroid/os/Handler;
     .locals 1
-    .param p0    # Lcom/android/settings/accounts/AccountPreferenceBase;
 
     iget-object v0, p0, Lcom/android/settings/accounts/AccountPreferenceBase;->mHandler:Landroid/os/Handler;
 
@@ -58,8 +57,6 @@
 # virtual methods
 .method public addPreferencesForType(Ljava/lang/String;Landroid/preference/PreferenceScreen;)Landroid/preference/PreferenceScreen;
     .locals 10
-    .param p1    # Ljava/lang/String;
-    .param p2    # Landroid/preference/PreferenceScreen;
 
     const/4 v3, 0x0
 
@@ -204,7 +201,6 @@
 
 .method protected formatSyncDate(Ljava/util/Date;)Ljava/lang/String;
     .locals 2
-    .param p1    # Ljava/util/Date;
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -245,7 +241,6 @@
 
 .method public getAuthoritiesForAccountType(Ljava/lang/String;)Ljava/util/ArrayList;
     .locals 1
-    .param p1    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -269,7 +264,6 @@
 
 .method protected getDrawableForType(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
     .locals 2
-    .param p1    # Ljava/lang/String;
 
     iget-object v0, p0, Lcom/android/settings/accounts/AccountPreferenceBase;->mAuthenticatorHelper:Lcom/android/settings/accounts/AuthenticatorHelper;
 
@@ -286,7 +280,6 @@
 
 .method protected getLabelForType(Ljava/lang/String;)Ljava/lang/CharSequence;
     .locals 2
-    .param p1    # Ljava/lang/String;
 
     iget-object v0, p0, Lcom/android/settings/accounts/AccountPreferenceBase;->mAuthenticatorHelper:Lcom/android/settings/accounts/AuthenticatorHelper;
 
@@ -303,14 +296,12 @@
 
 .method public onAccountsUpdate(Landroid/os/UserHandle;)V
     .locals 0
-    .param p1    # Landroid/os/UserHandle;
 
     return-void
 .end method
 
 .method public onActivityCreated(Landroid/os/Bundle;)V
     .locals 2
-    .param p1    # Landroid/os/Bundle;
 
     invoke-super {p0, p1}, Lcom/android/settings/SettingsPreferenceFragment;->onActivityCreated(Landroid/os/Bundle;)V
 
@@ -341,7 +332,6 @@
 
 .method public onCreate(Landroid/os/Bundle;)V
     .locals 5
-    .param p1    # Landroid/os/Bundle;
 
     invoke-super {p0, p1}, Lcom/android/settings/SettingsPreferenceFragment;->onCreate(Landroid/os/Bundle;)V
 

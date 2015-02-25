@@ -56,7 +56,6 @@
 
 .method static synthetic access$000(Lcom/android/settings/bluetooth/BluetoothPermissionActivity;)I
     .locals 1
-    .param p0    # Lcom/android/settings/bluetooth/BluetoothPermissionActivity;
 
     iget v0, p0, Lcom/android/settings/bluetooth/BluetoothPermissionActivity;->mRequestType:I
 
@@ -65,7 +64,6 @@
 
 .method static synthetic access$100(Lcom/android/settings/bluetooth/BluetoothPermissionActivity;)Landroid/bluetooth/BluetoothDevice;
     .locals 1
-    .param p0    # Lcom/android/settings/bluetooth/BluetoothPermissionActivity;
 
     iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothPermissionActivity;->mDevice:Landroid/bluetooth/BluetoothDevice;
 
@@ -74,7 +72,6 @@
 
 .method static synthetic access$200(Lcom/android/settings/bluetooth/BluetoothPermissionActivity;)V
     .locals 0
-    .param p0    # Lcom/android/settings/bluetooth/BluetoothPermissionActivity;
 
     invoke-direct {p0}, Lcom/android/settings/bluetooth/BluetoothPermissionActivity;->dismissDialog()V
 
@@ -376,8 +373,6 @@
 
 .method private sendReplyIntentToReceiver(ZZ)V
     .locals 4
-    .param p1    # Z
-    .param p2    # Z
 
     new-instance v0, Landroid/content/Intent;
 
@@ -487,8 +482,6 @@
 
 .method private showDialog(Ljava/lang/String;I)V
     .locals 4
-    .param p1    # Ljava/lang/String;
-    .param p2    # I
 
     iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothPermissionActivity;->mAlertParams:Lcom/android/internal/app/AlertController$AlertParams;
 
@@ -618,8 +611,6 @@
 
 .method public onClick(Landroid/content/DialogInterface;I)V
     .locals 0
-    .param p1    # Landroid/content/DialogInterface;
-    .param p2    # I
 
     packed-switch p2, :pswitch_data_0
 
@@ -645,7 +636,6 @@
 
 .method protected onCreate(Landroid/os/Bundle;)V
     .locals 7
-    .param p1    # Landroid/os/Bundle;
 
     const/4 v6, 0x2
 
@@ -857,8 +847,6 @@
 
 .method public onPreferenceChange(Landroid/preference/Preference;Ljava/lang/Object;)Z
     .locals 1
-    .param p1    # Landroid/preference/Preference;
-    .param p2    # Ljava/lang/Object;
 
     const/4 v0, 0x1
 

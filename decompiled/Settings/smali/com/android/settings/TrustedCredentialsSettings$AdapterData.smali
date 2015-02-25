@@ -44,8 +44,6 @@
 # direct methods
 .method private constructor <init>(Lcom/android/settings/TrustedCredentialsSettings;Lcom/android/settings/TrustedCredentialsSettings$Tab;Lcom/android/settings/TrustedCredentialsSettings$TrustedCertificateAdapterCommons;)V
     .locals 1
-    .param p2    # Lcom/android/settings/TrustedCredentialsSettings$Tab;
-    .param p3    # Lcom/android/settings/TrustedCredentialsSettings$TrustedCertificateAdapterCommons;
 
     iput-object p1, p0, Lcom/android/settings/TrustedCredentialsSettings$AdapterData;->this$0:Lcom/android/settings/TrustedCredentialsSettings;
 
@@ -66,10 +64,6 @@
 
 .method synthetic constructor <init>(Lcom/android/settings/TrustedCredentialsSettings;Lcom/android/settings/TrustedCredentialsSettings$Tab;Lcom/android/settings/TrustedCredentialsSettings$TrustedCertificateAdapterCommons;Lcom/android/settings/TrustedCredentialsSettings$1;)V
     .locals 0
-    .param p1    # Lcom/android/settings/TrustedCredentialsSettings;
-    .param p2    # Lcom/android/settings/TrustedCredentialsSettings$Tab;
-    .param p3    # Lcom/android/settings/TrustedCredentialsSettings$TrustedCertificateAdapterCommons;
-    .param p4    # Lcom/android/settings/TrustedCredentialsSettings$1;
 
     invoke-direct {p0, p1, p2, p3}, Lcom/android/settings/TrustedCredentialsSettings$AdapterData;-><init>(Lcom/android/settings/TrustedCredentialsSettings;Lcom/android/settings/TrustedCredentialsSettings$Tab;Lcom/android/settings/TrustedCredentialsSettings$TrustedCertificateAdapterCommons;)V
 
@@ -78,7 +72,6 @@
 
 .method static synthetic access$1200(Lcom/android/settings/TrustedCredentialsSettings$AdapterData;)Landroid/util/SparseArray;
     .locals 1
-    .param p0    # Lcom/android/settings/TrustedCredentialsSettings$AdapterData;
 
     iget-object v0, p0, Lcom/android/settings/TrustedCredentialsSettings$AdapterData;->mCertHoldersByUserId:Landroid/util/SparseArray;
 
@@ -87,7 +80,6 @@
 
 .method static synthetic access$1400(Lcom/android/settings/TrustedCredentialsSettings$AdapterData;)Lcom/android/settings/TrustedCredentialsSettings$Tab;
     .locals 1
-    .param p0    # Lcom/android/settings/TrustedCredentialsSettings$AdapterData;
 
     iget-object v0, p0, Lcom/android/settings/TrustedCredentialsSettings$AdapterData;->mTab:Lcom/android/settings/TrustedCredentialsSettings$Tab;
 
@@ -96,7 +88,6 @@
 
 .method static synthetic access$1900(Lcom/android/settings/TrustedCredentialsSettings$AdapterData;)Lcom/android/settings/TrustedCredentialsSettings$TrustedCertificateAdapterCommons;
     .locals 1
-    .param p0    # Lcom/android/settings/TrustedCredentialsSettings$AdapterData;
 
     iget-object v0, p0, Lcom/android/settings/TrustedCredentialsSettings$AdapterData;->mAdapter:Lcom/android/settings/TrustedCredentialsSettings$TrustedCertificateAdapterCommons;
 
@@ -107,7 +98,6 @@
 # virtual methods
 .method public remove(Lcom/android/settings/TrustedCredentialsSettings$CertHolder;)V
     .locals 3
-    .param p1    # Lcom/android/settings/TrustedCredentialsSettings$CertHolder;
 
     iget-object v1, p0, Lcom/android/settings/TrustedCredentialsSettings$AdapterData;->mCertHoldersByUserId:Landroid/util/SparseArray;
 

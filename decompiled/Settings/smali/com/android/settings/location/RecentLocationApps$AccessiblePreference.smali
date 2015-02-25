@@ -21,8 +21,6 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Ljava/lang/CharSequence;)V
     .locals 0
-    .param p1    # Landroid/content/Context;
-    .param p2    # Ljava/lang/CharSequence;
 
     invoke-direct {p0, p1}, Lcom/android/settings/location/DimmableIconPreference;-><init>(Landroid/content/Context;)V
 
@@ -35,7 +33,6 @@
 # virtual methods
 .method protected onBindView(Landroid/view/View;)V
     .locals 2
-    .param p1    # Landroid/view/View;
 
     invoke-super {p0, p1}, Lcom/android/settings/location/DimmableIconPreference;->onBindView(Landroid/view/View;)V
 

@@ -68,7 +68,6 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 4
-    .param p1    # Landroid/content/Context;
 
     const/16 v3, 0x80
 

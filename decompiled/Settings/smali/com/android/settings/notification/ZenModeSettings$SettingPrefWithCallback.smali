@@ -29,11 +29,6 @@
 # direct methods
 .method public varargs constructor <init>(ILjava/lang/String;Ljava/lang/String;I[I)V
     .locals 0
-    .param p1    # I
-    .param p2    # Ljava/lang/String;
-    .param p3    # Ljava/lang/String;
-    .param p4    # I
-    .param p5    # [I
 
     invoke-direct/range {p0 .. p5}, Lcom/android/settings/notification/SettingPref;-><init>(ILjava/lang/String;Ljava/lang/String;I[I)V
 
@@ -44,7 +39,6 @@
 # virtual methods
 .method public getValue(Landroid/content/Context;)I
     .locals 4
-    .param p1    # Landroid/content/Context;
 
     iget v0, p0, Lcom/android/settings/notification/ZenModeSettings$SettingPrefWithCallback;->mType:I
 
@@ -65,7 +59,6 @@
 
 .method public init(Lcom/android/settings/SettingsPreferenceFragment;)Landroid/preference/Preference;
     .locals 2
-    .param p1    # Lcom/android/settings/SettingsPreferenceFragment;
 
     invoke-super {p0, p1}, Lcom/android/settings/notification/SettingPref;->init(Lcom/android/settings/SettingsPreferenceFragment;)Landroid/preference/Preference;
 
@@ -86,7 +79,6 @@
 
 .method public setCallback(Lcom/android/settings/notification/ZenModeSettings$SettingPrefWithCallback$Callback;)V
     .locals 0
-    .param p1    # Lcom/android/settings/notification/ZenModeSettings$SettingPrefWithCallback$Callback;
 
     iput-object p1, p0, Lcom/android/settings/notification/ZenModeSettings$SettingPrefWithCallback;->mCallback:Lcom/android/settings/notification/ZenModeSettings$SettingPrefWithCallback$Callback;
 
@@ -95,8 +87,6 @@
 
 .method protected setSetting(Landroid/content/Context;I)Z
     .locals 1
-    .param p1    # Landroid/content/Context;
-    .param p2    # I
 
     iget v0, p0, Lcom/android/settings/notification/ZenModeSettings$SettingPrefWithCallback;->mValue:I
 
@@ -128,8 +118,6 @@
 
 .method public setValueWithoutCallback(Landroid/content/Context;I)Z
     .locals 3
-    .param p1    # Landroid/content/Context;
-    .param p2    # I
 
     iput p2, p0, Lcom/android/settings/notification/ZenModeSettings$SettingPrefWithCallback;->mValue:I
 
@@ -150,7 +138,6 @@
 
 .method public update(Landroid/content/Context;)V
     .locals 1
-    .param p1    # Landroid/content/Context;
 
     invoke-virtual {p0, p1}, Lcom/android/settings/notification/ZenModeSettings$SettingPrefWithCallback;->getValue(Landroid/content/Context;)I
 

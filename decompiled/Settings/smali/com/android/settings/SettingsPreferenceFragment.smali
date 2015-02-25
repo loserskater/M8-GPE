@@ -59,7 +59,6 @@
 
 .method static synthetic access$200(Lcom/android/settings/SettingsPreferenceFragment;)Lcom/android/settings/SettingsPreferenceFragment$SettingsDialogFragment;
     .locals 1
-    .param p0    # Lcom/android/settings/SettingsPreferenceFragment;
 
     iget-object v0, p0, Lcom/android/settings/SettingsPreferenceFragment;->mDialogFragment:Lcom/android/settings/SettingsPreferenceFragment$SettingsDialogFragment;
 
@@ -68,8 +67,6 @@
 
 .method static synthetic access$202(Lcom/android/settings/SettingsPreferenceFragment;Lcom/android/settings/SettingsPreferenceFragment$SettingsDialogFragment;)Lcom/android/settings/SettingsPreferenceFragment$SettingsDialogFragment;
     .locals 0
-    .param p0    # Lcom/android/settings/SettingsPreferenceFragment;
-    .param p1    # Lcom/android/settings/SettingsPreferenceFragment$SettingsDialogFragment;
 
     iput-object p1, p0, Lcom/android/settings/SettingsPreferenceFragment;->mDialogFragment:Lcom/android/settings/SettingsPreferenceFragment$SettingsDialogFragment;
 
@@ -78,7 +75,6 @@
 
 .method private canUseListViewForHighLighting(Ljava/lang/String;)I
     .locals 4
-    .param p1    # Ljava/lang/String;
 
     const/4 v2, -0x1
 
@@ -116,8 +112,6 @@
 
 .method private findListPositionFromKey(Landroid/widget/ListAdapter;Ljava/lang/String;)I
     .locals 6
-    .param p1    # Landroid/widget/ListAdapter;
-    .param p2    # Ljava/lang/String;
 
     invoke-interface {p1}, Landroid/widget/ListAdapter;->getCount()I
 
@@ -193,7 +187,6 @@
 
 .method private highlightPreference(Ljava/lang/String;)V
     .locals 5
-    .param p1    # Ljava/lang/String;
 
     invoke-direct {p0}, Lcom/android/settings/SettingsPreferenceFragment;->getHighlightDrawable()Landroid/graphics/drawable/Drawable;
 
@@ -324,7 +317,6 @@
 
 .method protected getSystemService(Ljava/lang/String;)Ljava/lang/Object;
     .locals 1
-    .param p1    # Ljava/lang/String;
 
     invoke-virtual {p0}, Lcom/android/settings/SettingsPreferenceFragment;->getActivity()Landroid/app/Activity;
 
@@ -384,7 +376,6 @@
 
 .method public onActivityCreated(Landroid/os/Bundle;)V
     .locals 1
-    .param p1    # Landroid/os/Bundle;
 
     invoke-super {p0, p1}, Landroid/preference/PreferenceFragment;->onActivityCreated(Landroid/os/Bundle;)V
 
@@ -414,7 +405,6 @@
 
 .method public onCreate(Landroid/os/Bundle;)V
     .locals 2
-    .param p1    # Landroid/os/Bundle;
 
     invoke-super {p0, p1}, Landroid/preference/PreferenceFragment;->onCreate(Landroid/os/Bundle;)V
 
@@ -451,7 +441,6 @@
 
 .method public onCreateDialog(I)Landroid/app/Dialog;
     .locals 1
-    .param p1    # I
 
     const/4 v0, 0x0
 
@@ -460,8 +449,6 @@
 
 .method public onCreateOptionsMenu(Landroid/view/Menu;Landroid/view/MenuInflater;)V
     .locals 4
-    .param p1    # Landroid/view/Menu;
-    .param p2    # Landroid/view/MenuInflater;
 
     const/4 v3, 0x0
 
@@ -497,9 +484,6 @@
 
 .method public onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
     .locals 2
-    .param p1    # Landroid/view/LayoutInflater;
-    .param p2    # Landroid/view/ViewGroup;
-    .param p3    # Landroid/os/Bundle;
 
     invoke-super {p0, p1, p2, p3}, Landroid/preference/PreferenceFragment;->onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
 
@@ -578,7 +562,6 @@
 
 .method public onSaveInstanceState(Landroid/os/Bundle;)V
     .locals 2
-    .param p1    # Landroid/os/Bundle;
 
     invoke-super {p0, p1}, Landroid/preference/PreferenceFragment;->onSaveInstanceState(Landroid/os/Bundle;)V
 
@@ -653,7 +636,6 @@
 
 .method protected removeDialog(I)V
     .locals 1
-    .param p1    # I
 
     iget-object v0, p0, Lcom/android/settings/SettingsPreferenceFragment;->mDialogFragment:Lcom/android/settings/SettingsPreferenceFragment$SettingsDialogFragment;
 
@@ -681,7 +663,6 @@
 
 .method protected removePreference(Ljava/lang/String;)V
     .locals 2
-    .param p1    # Ljava/lang/String;
 
     invoke-virtual {p0, p1}, Lcom/android/settings/SettingsPreferenceFragment;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
 
@@ -701,7 +682,6 @@
 
 .method protected setOnDismissListener(Landroid/content/DialogInterface$OnDismissListener;)V
     .locals 1
-    .param p1    # Landroid/content/DialogInterface$OnDismissListener;
 
     iget-object v0, p0, Lcom/android/settings/SettingsPreferenceFragment;->mDialogFragment:Lcom/android/settings/SettingsPreferenceFragment$SettingsDialogFragment;
 
@@ -718,7 +698,6 @@
 
 .method public setPinnedHeaderView(Landroid/view/View;)V
     .locals 2
-    .param p1    # Landroid/view/View;
 
     iget-object v0, p0, Lcom/android/settings/SettingsPreferenceFragment;->mPinnedHeaderFrameLayout:Landroid/view/ViewGroup;
 
@@ -735,7 +714,6 @@
 
 .method protected showDialog(I)V
     .locals 3
-    .param p1    # I
 
     iget-object v0, p0, Lcom/android/settings/SettingsPreferenceFragment;->mDialogFragment:Lcom/android/settings/SettingsPreferenceFragment$SettingsDialogFragment;
 
@@ -771,11 +749,6 @@
 
 .method public startFragment(Landroid/app/Fragment;Ljava/lang/String;IILandroid/os/Bundle;)Z
     .locals 9
-    .param p1    # Landroid/app/Fragment;
-    .param p2    # Ljava/lang/String;
-    .param p3    # I
-    .param p4    # I
-    .param p5    # Landroid/os/Bundle;
 
     const/4 v4, 0x0
 

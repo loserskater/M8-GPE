@@ -59,9 +59,6 @@
 
 .method static synthetic access$000(Lcom/android/settings/IccLockSettings;ZI)V
     .locals 0
-    .param p0    # Lcom/android/settings/IccLockSettings;
-    .param p1    # Z
-    .param p2    # I
 
     invoke-direct {p0, p1, p2}, Lcom/android/settings/IccLockSettings;->iccLockChanged(ZI)V
 
@@ -70,9 +67,6 @@
 
 .method static synthetic access$100(Lcom/android/settings/IccLockSettings;ZI)V
     .locals 0
-    .param p0    # Lcom/android/settings/IccLockSettings;
-    .param p1    # Z
-    .param p2    # I
 
     invoke-direct {p0, p1, p2}, Lcom/android/settings/IccLockSettings;->iccPinChanged(ZI)V
 
@@ -81,7 +75,6 @@
 
 .method static synthetic access$200(Lcom/android/settings/IccLockSettings;)V
     .locals 0
-    .param p0    # Lcom/android/settings/IccLockSettings;
 
     invoke-direct {p0}, Lcom/android/settings/IccLockSettings;->updatePreferences()V
 
@@ -90,7 +83,6 @@
 
 .method static synthetic access$300(Lcom/android/settings/IccLockSettings;)Landroid/os/Handler;
     .locals 1
-    .param p0    # Lcom/android/settings/IccLockSettings;
 
     iget-object v0, p0, Lcom/android/settings/IccLockSettings;->mHandler:Landroid/os/Handler;
 
@@ -99,7 +91,6 @@
 
 .method private getPinPasswordErrorMessage(I)Ljava/lang/String;
     .locals 6
-    .param p1    # I
 
     if-nez p1, :cond_0
 
@@ -185,8 +176,6 @@
 
 .method private iccLockChanged(ZI)V
     .locals 3
-    .param p1    # Z
-    .param p2    # I
 
     const/4 v2, 0x1
 
@@ -223,8 +212,6 @@
 
 .method private iccPinChanged(ZI)V
     .locals 2
-    .param p1    # Z
-    .param p2    # I
 
     if-nez p1, :cond_0
 
@@ -267,7 +254,6 @@
 
 .method private reasonablePin(Ljava/lang/String;)Z
     .locals 2
-    .param p1    # Ljava/lang/String;
 
     if-eqz p1, :cond_0
 
@@ -595,7 +581,6 @@
 # virtual methods
 .method protected onCreate(Landroid/os/Bundle;)V
     .locals 2
-    .param p1    # Landroid/os/Bundle;
 
     invoke-super {p0, p1}, Landroid/preference/PreferenceActivity;->onCreate(Landroid/os/Bundle;)V
 
@@ -764,8 +749,6 @@
 
 .method public onPinEntered(Lcom/android/settings/EditPinPreference;Z)V
     .locals 4
-    .param p1    # Lcom/android/settings/EditPinPreference;
-    .param p2    # Z
 
     const/4 v3, 0x3
 
@@ -898,8 +881,6 @@
 
 .method public onPreferenceTreeClick(Landroid/preference/PreferenceScreen;Landroid/preference/Preference;)Z
     .locals 4
-    .param p1    # Landroid/preference/PreferenceScreen;
-    .param p2    # Landroid/preference/Preference;
 
     const/4 v0, 0x0
 
@@ -982,7 +963,6 @@
 
 .method protected onSaveInstanceState(Landroid/os/Bundle;)V
     .locals 2
-    .param p1    # Landroid/os/Bundle;
 
     iget-object v0, p0, Lcom/android/settings/IccLockSettings;->mPinDialog:Lcom/android/settings/EditPinPreference;
 

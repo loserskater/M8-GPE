@@ -27,8 +27,6 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Lcom/android/settings/widget/SwitchBar;)V
     .locals 3
-    .param p1    # Landroid/content/Context;
-    .param p2    # Lcom/android/settings/widget/SwitchBar;
 
     const/4 v2, 0x0
 
@@ -95,7 +93,6 @@
 
 .method static synthetic access$000(Lcom/android/settings/bluetooth/BluetoothEnabler;)Landroid/content/Context;
     .locals 1
-    .param p0    # Lcom/android/settings/bluetooth/BluetoothEnabler;
 
     iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothEnabler;->mContext:Landroid/content/Context;
 
@@ -104,7 +101,6 @@
 
 .method private setChecked(Z)V
     .locals 1
-    .param p1    # Z
 
     iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothEnabler;->mSwitch:Landroid/widget/Switch;
 
@@ -141,7 +137,6 @@
 
 .method private updateSearchIndex(Z)V
     .locals 3
-    .param p1    # Z
 
     const/4 v2, 0x0
 
@@ -174,7 +169,6 @@
 # virtual methods
 .method handleStateChanged(I)V
     .locals 3
-    .param p1    # I
 
     const/4 v2, 0x1
 
@@ -242,8 +236,6 @@
 
 .method public onSwitchChanged(Landroid/widget/Switch;Z)V
     .locals 3
-    .param p1    # Landroid/widget/Switch;
-    .param p2    # Z
 
     const/4 v2, 0x0
 
@@ -318,7 +310,6 @@
 
 .method public resume(Landroid/content/Context;)V
     .locals 3
-    .param p1    # Landroid/content/Context;
 
     iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothEnabler;->mLocalAdapter:Lcom/android/settings/bluetooth/LocalBluetoothAdapter;
 

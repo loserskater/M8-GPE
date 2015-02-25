@@ -63,7 +63,6 @@
 
 .method protected isValidFragment(Ljava/lang/String;)Z
     .locals 1
-    .param p1    # Ljava/lang/String;
 
     sget-object v0, Lcom/android/settings/inputmethod/InputMethodAndSubtypeEnablerActivity;->FRAGMENT_NAME:Ljava/lang/String;
 
@@ -76,7 +75,6 @@
 
 .method protected onCreate(Landroid/os/Bundle;)V
     .locals 2
-    .param p1    # Landroid/os/Bundle;
 
     const/4 v1, 0x1
 

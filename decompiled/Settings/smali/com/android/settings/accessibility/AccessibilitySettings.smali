@@ -164,7 +164,6 @@
 
 .method static synthetic access$000(Lcom/android/settings/accessibility/AccessibilitySettings;)V
     .locals 0
-    .param p0    # Lcom/android/settings/accessibility/AccessibilitySettings;
 
     invoke-direct {p0}, Lcom/android/settings/accessibility/AccessibilitySettings;->loadInstalledServices()V
 
@@ -173,7 +172,6 @@
 
 .method static synthetic access$100(Lcom/android/settings/accessibility/AccessibilitySettings;)V
     .locals 0
-    .param p0    # Lcom/android/settings/accessibility/AccessibilitySettings;
 
     invoke-direct {p0}, Lcom/android/settings/accessibility/AccessibilitySettings;->updateServicesPreferences()V
 
@@ -182,7 +180,6 @@
 
 .method static synthetic access$200(Lcom/android/settings/accessibility/AccessibilitySettings;)Ljava/lang/Runnable;
     .locals 1
-    .param p0    # Lcom/android/settings/accessibility/AccessibilitySettings;
 
     iget-object v0, p0, Lcom/android/settings/accessibility/AccessibilitySettings;->mUpdateRunnable:Ljava/lang/Runnable;
 
@@ -191,7 +188,6 @@
 
 .method static synthetic access$300(Lcom/android/settings/accessibility/AccessibilitySettings;)Landroid/os/Handler;
     .locals 1
-    .param p0    # Lcom/android/settings/accessibility/AccessibilitySettings;
 
     iget-object v0, p0, Lcom/android/settings/accessibility/AccessibilitySettings;->mHandler:Landroid/os/Handler;
 
@@ -200,7 +196,6 @@
 
 .method static synthetic access$400(Lcom/android/settings/accessibility/AccessibilitySettings;)V
     .locals 0
-    .param p0    # Lcom/android/settings/accessibility/AccessibilitySettings;
 
     invoke-direct {p0}, Lcom/android/settings/accessibility/AccessibilitySettings;->updateLockScreenRotationCheckbox()V
 
@@ -309,7 +304,6 @@
 
 .method private handleLongPressTimeoutPreferenceChange(Ljava/lang/String;)V
     .locals 3
-    .param p1    # Ljava/lang/String;
 
     invoke-virtual {p0}, Lcom/android/settings/accessibility/AccessibilitySettings;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -404,7 +398,6 @@
 
 .method private handleToggleInversionPreferenceChange(Z)V
     .locals 3
-    .param p1    # Z
 
     invoke-virtual {p0}, Lcom/android/settings/accessibility/AccessibilitySettings;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -441,7 +434,7 @@
 
     if-eqz v0, :cond_0
 
-    const v0, 0x3fa66666
+    const v0, 0x3fa66666    # 1.3f
 
     :goto_0
     iput v0, v1, Landroid/content/res/Configuration;->fontScale:F
@@ -460,7 +453,7 @@
     return-void
 
     :cond_0
-    const/high16 v0, 0x3f800000
+    const/high16 v0, 0x3f800000    # 1.0f
 
     goto :goto_0
 
@@ -914,8 +907,6 @@
 
 .method private updateFeatureSummary(Ljava/lang/String;Landroid/preference/Preference;)V
     .locals 3
-    .param p1    # Ljava/lang/String;
-    .param p2    # Landroid/preference/Preference;
 
     const/4 v0, 0x1
 
@@ -1544,7 +1535,7 @@
 
     iget v6, v6, Landroid/content/res/Configuration;->fontScale:F
 
-    const v10, 0x3fa66666
+    const v10, 0x3fa66666    # 1.3f
 
     cmpl-float v6, v6, v10
 
@@ -1779,7 +1770,6 @@
 # virtual methods
 .method public onCreate(Landroid/os/Bundle;)V
     .locals 2
-    .param p1    # Landroid/os/Bundle;
 
     invoke-super {p0, p1}, Lcom/android/settings/SettingsPreferenceFragment;->onCreate(Landroid/os/Bundle;)V
 
@@ -1849,8 +1839,6 @@
 
 .method public onPreferenceChange(Landroid/preference/Preference;Ljava/lang/Object;)Z
     .locals 2
-    .param p1    # Landroid/preference/Preference;
-    .param p2    # Ljava/lang/Object;
 
     const/4 v0, 0x1
 
@@ -1888,8 +1876,6 @@
 
 .method public onPreferenceTreeClick(Landroid/preference/PreferenceScreen;Landroid/preference/Preference;)Z
     .locals 2
-    .param p1    # Landroid/preference/PreferenceScreen;
-    .param p2    # Landroid/preference/Preference;
 
     const/4 v0, 0x1
 

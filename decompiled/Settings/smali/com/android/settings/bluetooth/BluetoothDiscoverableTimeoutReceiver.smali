@@ -14,7 +14,6 @@
 
 .method static cancelDiscoverableAlarm(Landroid/content/Context;)V
     .locals 5
-    .param p0    # Landroid/content/Context;
 
     const-string v3, "BluetoothDiscoverableTimeoutReceiver"
 
@@ -58,8 +57,6 @@
 
 .method static setDiscoverableAlarm(Landroid/content/Context;J)V
     .locals 7
-    .param p0    # Landroid/content/Context;
-    .param p1    # J
 
     const/4 v6, 0x0
 
@@ -131,8 +128,6 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 3
-    .param p1    # Landroid/content/Context;
-    .param p2    # Landroid/content/Intent;
 
     invoke-static {}, Lcom/android/settings/bluetooth/LocalBluetoothAdapter;->getInstance()Lcom/android/settings/bluetooth/LocalBluetoothAdapter;
 

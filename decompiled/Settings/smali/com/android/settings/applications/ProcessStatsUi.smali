@@ -1148,7 +1148,7 @@
 
     iput-wide v10, v0, Lcom/android/settings/applications/ProcessStatsUi;->mMemTotalWeight:D
 
-    const-wide/high16 v10, 0x4090000000000000L
+    const-wide/high16 v10, 0x4090000000000000L    # 1024.0
 
     mul-double v10, v10, v90
 
@@ -1160,7 +1160,7 @@
 
     div-double v86, v10, v16
 
-    const-wide/high16 v10, 0x4090000000000000L
+    const-wide/high16 v10, 0x4090000000000000L    # 1024.0
 
     mul-double v10, v10, v36
 
@@ -1239,7 +1239,7 @@
 
     const/4 v8, 0x0
 
-    const/high16 v10, 0x3f800000
+    const/high16 v10, 0x3f800000    # 1.0f
 
     sub-float v10, v10, v88
 
@@ -1943,7 +1943,7 @@
 
     div-double v10, v10, v16
 
-    const-wide/high16 v16, 0x4059000000000000L
+    const-wide/high16 v16, 0x4059000000000000L    # 100.0
 
     mul-double v60, v10, v16
 
@@ -1959,17 +1959,17 @@
 
     div-double v10, v10, v16
 
-    const-wide/high16 v16, 0x4059000000000000L
+    const-wide/high16 v16, 0x4059000000000000L    # 100.0
 
     mul-double v58, v10, v16
 
-    const-wide/high16 v10, 0x3ff0000000000000L
+    const-wide/high16 v10, 0x3ff0000000000000L    # 1.0
 
     cmpl-double v8, v60, v10
 
     if-gez v8, :cond_22
 
-    const-wide/high16 v10, 0x4039000000000000L
+    const-wide/high16 v10, 0x4039000000000000L    # 25.0
 
     cmpl-double v8, v58, v10
 
@@ -2013,7 +2013,7 @@
 
     div-double v10, v10, v16
 
-    const-wide/high16 v16, 0x4059000000000000L
+    const-wide/high16 v16, 0x4059000000000000L    # 100.0
 
     mul-double v60, v10, v16
 
@@ -2029,7 +2029,7 @@
 
     div-double v10, v10, v16
 
-    const-wide/high16 v16, 0x4059000000000000L
+    const-wide/high16 v16, 0x4059000000000000L    # 100.0
 
     mul-double v58, v10, v16
 
@@ -2196,7 +2196,6 @@
 # virtual methods
 .method public onCreate(Landroid/os/Bundle;)V
     .locals 8
-    .param p1    # Landroid/os/Bundle;
 
     const/16 v3, 0x8
 
@@ -2353,8 +2352,6 @@
 
 .method public onCreateOptionsMenu(Landroid/view/Menu;Landroid/view/MenuInflater;)V
     .locals 8
-    .param p1    # Landroid/view/Menu;
-    .param p2    # Landroid/view/MenuInflater;
 
     const/4 v7, 0x1
 
@@ -2548,7 +2545,6 @@
 
 .method public onOptionsItemSelected(Landroid/view/MenuItem;)Z
     .locals 4
-    .param p1    # Landroid/view/MenuItem;
 
     const/4 v1, 0x0
 
@@ -2660,8 +2656,6 @@
 
 .method public onPreferenceTreeClick(Landroid/preference/PreferenceScreen;Landroid/preference/Preference;)Z
     .locals 10
-    .param p1    # Landroid/preference/PreferenceScreen;
-    .param p2    # Landroid/preference/Preference;
 
     const/4 v6, 0x0
 
@@ -2825,7 +2819,6 @@
 
 .method public onRegionTapped(I)V
     .locals 1
-    .param p1    # I
 
     iget v0, p0, Lcom/android/settings/applications/ProcessStatsUi;->mMemRegion:I
 
@@ -2851,7 +2844,6 @@
 
 .method public onSaveInstanceState(Landroid/os/Bundle;)V
     .locals 4
-    .param p1    # Landroid/os/Bundle;
 
     invoke-super {p0, p1}, Landroid/preference/PreferenceFragment;->onSaveInstanceState(Landroid/os/Bundle;)V
 

@@ -42,8 +42,6 @@
 
 .method synthetic constructor <init>(Lcom/android/settings/dashboard/SearchResultsSummary;Lcom/android/settings/dashboard/SearchResultsSummary$1;)V
     .locals 0
-    .param p1    # Lcom/android/settings/dashboard/SearchResultsSummary;
-    .param p2    # Lcom/android/settings/dashboard/SearchResultsSummary$1;
 
     invoke-direct {p0, p1}, Lcom/android/settings/dashboard/SearchResultsSummary$UpdateSuggestionsTask;-><init>(Lcom/android/settings/dashboard/SearchResultsSummary;)V
 
@@ -54,7 +52,6 @@
 # virtual methods
 .method protected varargs doInBackground([Ljava/lang/String;)Landroid/database/Cursor;
     .locals 2
-    .param p1    # [Ljava/lang/String;
 
     iget-object v0, p0, Lcom/android/settings/dashboard/SearchResultsSummary$UpdateSuggestionsTask;->this$0:Lcom/android/settings/dashboard/SearchResultsSummary;
 
@@ -79,7 +76,6 @@
 
 .method protected bridge synthetic doInBackground([Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
-    .param p1    # [Ljava/lang/Object;
 
     check-cast p1, [Ljava/lang/String;
 
@@ -92,7 +88,6 @@
 
 .method protected onPostExecute(Landroid/database/Cursor;)V
     .locals 2
-    .param p1    # Landroid/database/Cursor;
 
     invoke-virtual {p0}, Lcom/android/settings/dashboard/SearchResultsSummary$UpdateSuggestionsTask;->isCancelled()Z
 
@@ -138,7 +133,6 @@
 
 .method protected bridge synthetic onPostExecute(Ljava/lang/Object;)V
     .locals 0
-    .param p1    # Ljava/lang/Object;
 
     check-cast p1, Landroid/database/Cursor;
 

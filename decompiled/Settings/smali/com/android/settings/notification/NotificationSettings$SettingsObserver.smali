@@ -88,8 +88,6 @@
 # virtual methods
 .method public onChange(ZLandroid/net/Uri;)V
     .locals 1
-    .param p1    # Z
-    .param p2    # Landroid/net/Uri;
 
     invoke-super {p0, p1, p2}, Landroid/database/ContentObserver;->onChange(ZLandroid/net/Uri;)V
 
@@ -163,7 +161,6 @@
 
 .method public register(Z)V
     .locals 3
-    .param p1    # Z
 
     const/4 v2, 0x0
 

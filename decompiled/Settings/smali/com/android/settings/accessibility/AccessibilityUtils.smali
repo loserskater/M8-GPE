@@ -6,7 +6,6 @@
 # direct methods
 .method static getEnabledServicesFromSettings(Landroid/content/Context;)Ljava/util/Set;
     .locals 7
-    .param p0    # Landroid/content/Context;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -72,9 +71,6 @@
 
 .method static getTextForLocale(Landroid/content/Context;Ljava/util/Locale;I)Ljava/lang/CharSequence;
     .locals 5
-    .param p0    # Landroid/content/Context;
-    .param p1    # Ljava/util/Locale;
-    .param p2    # I
 
     const/4 v4, 0x0
 

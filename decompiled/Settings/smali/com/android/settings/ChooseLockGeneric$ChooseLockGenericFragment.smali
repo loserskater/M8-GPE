@@ -55,7 +55,6 @@
 
 .method private allowedForFallback(Ljava/lang/String;)Z
     .locals 1
-    .param p1    # Ljava/lang/String;
 
     const-string v0, "unlock_backup_info"
 
@@ -95,8 +94,6 @@
 
 .method private disableUnusablePreferences(ILandroid/util/MutableBoolean;)V
     .locals 15
-    .param p1    # I
-    .param p2    # Landroid/util/MutableBoolean;
 
     invoke-virtual {p0}, Lcom/android/settings/ChooseLockGeneric$ChooseLockGenericFragment;->getPreferenceScreen()Landroid/preference/PreferenceScreen;
 
@@ -443,8 +440,6 @@
 
 .method private maybeEnableEncryption(IZ)V
     .locals 5
-    .param p1    # I
-    .param p2    # Z
 
     const/4 v3, 0x0
 
@@ -715,8 +710,6 @@
 
 .method private upgradeQuality(ILandroid/util/MutableBoolean;)I
     .locals 0
-    .param p1    # I
-    .param p2    # Landroid/util/MutableBoolean;
 
     invoke-direct {p0, p1}, Lcom/android/settings/ChooseLockGeneric$ChooseLockGenericFragment;->upgradeQualityForDPM(I)I
 
@@ -731,7 +724,6 @@
 
 .method private upgradeQualityForDPM(I)I
     .locals 3
-    .param p1    # I
 
     iget-object v1, p0, Lcom/android/settings/ChooseLockGeneric$ChooseLockGenericFragment;->mDPM:Landroid/app/admin/DevicePolicyManager;
 
@@ -751,7 +743,6 @@
 
 .method private upgradeQualityForKeyStore(I)I
     .locals 1
-    .param p1    # I
 
     iget-object v0, p0, Lcom/android/settings/ChooseLockGeneric$ChooseLockGenericFragment;->mKeyStore:Landroid/security/KeyStore;
 
@@ -783,9 +774,6 @@
 
 .method public onActivityResult(IILandroid/content/Intent;)V
     .locals 4
-    .param p1    # I
-    .param p2    # I
-    .param p3    # Landroid/content/Intent;
 
     const/4 v3, 0x1
 
@@ -870,7 +858,6 @@
 
 .method public onCreate(Landroid/os/Bundle;)V
     .locals 6
-    .param p1    # Landroid/os/Bundle;
 
     const/4 v5, 0x0
 
@@ -1037,9 +1024,6 @@
 
 .method public onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
     .locals 7
-    .param p1    # Landroid/view/LayoutInflater;
-    .param p2    # Landroid/view/ViewGroup;
-    .param p3    # Landroid/os/Bundle;
 
     const/4 v6, 0x0
 
@@ -1091,8 +1075,6 @@
 
 .method public onPreferenceTreeClick(Landroid/preference/PreferenceScreen;Landroid/preference/Preference;)Z
     .locals 4
-    .param p1    # Landroid/preference/PreferenceScreen;
-    .param p2    # Landroid/preference/Preference;
 
     const/4 v3, 0x0
 
@@ -1221,7 +1203,6 @@
 
 .method public onSaveInstanceState(Landroid/os/Bundle;)V
     .locals 2
-    .param p1    # Landroid/os/Bundle;
 
     invoke-super {p0, p1}, Lcom/android/settings/SettingsPreferenceFragment;->onSaveInstanceState(Landroid/os/Bundle;)V
 
@@ -1260,8 +1241,6 @@
 
 .method updateUnlockMethodAndFinish(IZ)V
     .locals 11
-    .param p1    # I
-    .param p2    # Z
 
     const/4 v5, 0x0
 

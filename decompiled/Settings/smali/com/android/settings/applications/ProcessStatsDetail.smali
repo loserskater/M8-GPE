@@ -97,7 +97,6 @@
 
 .method static synthetic access$000(Lcom/android/settings/applications/ProcessStatsDetail;)Landroid/widget/Button;
     .locals 1
-    .param p0    # Lcom/android/settings/applications/ProcessStatsDetail;
 
     iget-object v0, p0, Lcom/android/settings/applications/ProcessStatsDetail;->mForceStopButton:Landroid/widget/Button;
 
@@ -106,9 +105,6 @@
 
 .method private addDetailsItem(Landroid/view/ViewGroup;Ljava/lang/CharSequence;Ljava/lang/CharSequence;)V
     .locals 6
-    .param p1    # Landroid/view/ViewGroup;
-    .param p2    # Ljava/lang/CharSequence;
-    .param p3    # Ljava/lang/CharSequence;
 
     invoke-virtual {p0}, Lcom/android/settings/applications/ProcessStatsDetail;->getActivity()Landroid/app/Activity;
 
@@ -155,8 +151,6 @@
 
 .method private addPackageHeaderItem(Landroid/view/ViewGroup;Ljava/lang/String;)V
     .locals 8
-    .param p1    # Landroid/view/ViewGroup;
-    .param p2    # Ljava/lang/String;
 
     invoke-virtual {p0}, Lcom/android/settings/applications/ProcessStatsDetail;->getActivity()Landroid/app/Activity;
 
@@ -409,7 +403,7 @@
 
     div-double/2addr v8, v10
 
-    const-wide/high16 v10, 0x4059000000000000L
+    const-wide/high16 v10, 0x4059000000000000L    # 100.0
 
     mul-double v4, v8, v10
 
@@ -641,7 +635,6 @@
 
 .method private doAction(I)V
     .locals 0
-    .param p1    # I
 
     packed-switch p1, :pswitch_data_0
 
@@ -1005,7 +998,6 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 1
-    .param p1    # Landroid/view/View;
 
     invoke-virtual {p1}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
@@ -1024,7 +1016,6 @@
 
 .method public onCreate(Landroid/os/Bundle;)V
     .locals 4
-    .param p1    # Landroid/os/Bundle;
 
     invoke-super {p0, p1}, Landroid/app/Fragment;->onCreate(Landroid/os/Bundle;)V
 
@@ -1101,9 +1092,6 @@
 
 .method public onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
     .locals 3
-    .param p1    # Landroid/view/LayoutInflater;
-    .param p2    # Landroid/view/ViewGroup;
-    .param p3    # Landroid/os/Bundle;
 
     const/4 v2, 0x0
 

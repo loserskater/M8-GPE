@@ -22,7 +22,6 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 1
-    .param p1    # Landroid/content/Context;
 
     const/4 v0, 0x0
 
@@ -33,8 +32,6 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 1
-    .param p1    # Landroid/content/Context;
-    .param p2    # Landroid/util/AttributeSet;
 
     const/4 v0, 0x0
 
@@ -45,9 +42,6 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
     .locals 1
-    .param p1    # Landroid/content/Context;
-    .param p2    # Landroid/util/AttributeSet;
-    .param p3    # I
 
     const/4 v0, 0x0
 
@@ -58,10 +52,6 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;II)V
     .locals 4
-    .param p1    # Landroid/content/Context;
-    .param p2    # Landroid/util/AttributeSet;
-    .param p3    # I
-    .param p4    # I
 
     const/4 v2, 0x0
 
@@ -81,7 +71,7 @@
 
     iput-object v1, p0, Lcom/android/settings/widget/SetupWizardIllustration;->mForegroundBounds:Landroid/graphics/Rect;
 
-    const/high16 v1, 0x3f800000
+    const/high16 v1, 0x3f800000    # 1.0f
 
     iput v1, p0, Lcom/android/settings/widget/SetupWizardIllustration;->mScale:F
 
@@ -114,7 +104,7 @@
 
     iget v1, v1, Landroid/util/DisplayMetrics;->density:F
 
-    const/high16 v2, 0x41000000
+    const/high16 v2, 0x41000000    # 8.0f
 
     mul-float/2addr v1, v2
 
@@ -129,7 +119,6 @@
 # virtual methods
 .method public onDraw(Landroid/graphics/Canvas;)V
     .locals 3
-    .param p1    # Landroid/graphics/Canvas;
 
     const/4 v2, 0x0
 
@@ -182,11 +171,6 @@
 
 .method protected onLayout(ZIIII)V
     .locals 12
-    .param p1    # Z
-    .param p2    # I
-    .param p3    # I
-    .param p4    # I
-    .param p5    # I
 
     sub-int v7, p4, p2
 
@@ -318,8 +302,6 @@
 
 .method protected onMeasure(II)V
     .locals 6
-    .param p1    # I
-    .param p2    # I
 
     const/4 v5, 0x0
 
@@ -369,7 +351,6 @@
 
 .method public onResolveDrawables(I)V
     .locals 1
-    .param p1    # I
 
     iget-object v0, p0, Lcom/android/settings/widget/SetupWizardIllustration;->mBackground:Landroid/graphics/drawable/Drawable;
 
@@ -384,7 +365,6 @@
 
 .method public setBackground(Landroid/graphics/drawable/Drawable;)V
     .locals 0
-    .param p1    # Landroid/graphics/drawable/Drawable;
 
     iput-object p1, p0, Lcom/android/settings/widget/SetupWizardIllustration;->mBackground:Landroid/graphics/drawable/Drawable;
 
@@ -393,7 +373,6 @@
 
 .method public setForeground(Landroid/graphics/drawable/Drawable;)V
     .locals 0
-    .param p1    # Landroid/graphics/drawable/Drawable;
 
     iput-object p1, p0, Lcom/android/settings/widget/SetupWizardIllustration;->mForeground:Landroid/graphics/drawable/Drawable;
 

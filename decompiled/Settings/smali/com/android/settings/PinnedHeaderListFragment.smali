@@ -16,7 +16,6 @@
 # virtual methods
 .method public setPinnedHeaderView(Landroid/view/View;)V
     .locals 2
-    .param p1    # Landroid/view/View;
 
     invoke-virtual {p0}, Lcom/android/settings/PinnedHeaderListFragment;->getListView()Landroid/widget/ListView;
 

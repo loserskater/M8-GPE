@@ -26,7 +26,6 @@
 # direct methods
 .method private constructor <init>(Lcom/android/settings/TrustedCredentialsSettings;Lcom/android/settings/TrustedCredentialsSettings$Tab;)V
     .locals 2
-    .param p2    # Lcom/android/settings/TrustedCredentialsSettings$Tab;
 
     iput-object p1, p0, Lcom/android/settings/TrustedCredentialsSettings$TrustedCertificateExpandableAdapter;->this$0:Lcom/android/settings/TrustedCredentialsSettings;
 
@@ -47,9 +46,6 @@
 
 .method synthetic constructor <init>(Lcom/android/settings/TrustedCredentialsSettings;Lcom/android/settings/TrustedCredentialsSettings$Tab;Lcom/android/settings/TrustedCredentialsSettings$1;)V
     .locals 0
-    .param p1    # Lcom/android/settings/TrustedCredentialsSettings;
-    .param p2    # Lcom/android/settings/TrustedCredentialsSettings$Tab;
-    .param p3    # Lcom/android/settings/TrustedCredentialsSettings$1;
 
     invoke-direct {p0, p1, p2}, Lcom/android/settings/TrustedCredentialsSettings$TrustedCertificateExpandableAdapter;-><init>(Lcom/android/settings/TrustedCredentialsSettings;Lcom/android/settings/TrustedCredentialsSettings$Tab;)V
 
@@ -58,8 +54,6 @@
 
 .method private inflateCategoryHeader(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;)Landroid/view/View;
     .locals 7
-    .param p1    # Landroid/view/LayoutInflater;
-    .param p2    # Landroid/view/ViewGroup;
 
     const/4 v6, 0x0
 
@@ -94,8 +88,6 @@
 # virtual methods
 .method public getChild(II)Lcom/android/settings/TrustedCredentialsSettings$CertHolder;
     .locals 1
-    .param p1    # I
-    .param p2    # I
 
     iget-object v0, p0, Lcom/android/settings/TrustedCredentialsSettings$TrustedCertificateExpandableAdapter;->mData:Lcom/android/settings/TrustedCredentialsSettings$AdapterData;
 
@@ -121,8 +113,6 @@
 
 .method public bridge synthetic getChild(II)Ljava/lang/Object;
     .locals 1
-    .param p1    # I
-    .param p2    # I
 
     invoke-virtual {p0, p1, p2}, Lcom/android/settings/TrustedCredentialsSettings$TrustedCertificateExpandableAdapter;->getChild(II)Lcom/android/settings/TrustedCredentialsSettings$CertHolder;
 
@@ -133,8 +123,6 @@
 
 .method public getChildId(II)J
     .locals 2
-    .param p1    # I
-    .param p2    # I
 
     int-to-long v0, p2
 
@@ -143,11 +131,6 @@
 
 .method public getChildView(IIZLandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
     .locals 3
-    .param p1    # I
-    .param p2    # I
-    .param p3    # Z
-    .param p4    # Landroid/view/View;
-    .param p5    # Landroid/view/ViewGroup;
 
     iget-object v0, p0, Lcom/android/settings/TrustedCredentialsSettings$TrustedCertificateExpandableAdapter;->this$0:Lcom/android/settings/TrustedCredentialsSettings;
 
@@ -172,7 +155,6 @@
 
 .method public getChildrenCount(I)I
     .locals 2
-    .param p1    # I
 
     iget-object v1, p0, Lcom/android/settings/TrustedCredentialsSettings$TrustedCertificateExpandableAdapter;->mData:Lcom/android/settings/TrustedCredentialsSettings$AdapterData;
 
@@ -204,7 +186,6 @@
 
 .method public getGroup(I)Landroid/os/UserHandle;
     .locals 2
-    .param p1    # I
 
     new-instance v0, Landroid/os/UserHandle;
 
@@ -226,7 +207,6 @@
 
 .method public bridge synthetic getGroup(I)Ljava/lang/Object;
     .locals 1
-    .param p1    # I
 
     invoke-virtual {p0, p1}, Lcom/android/settings/TrustedCredentialsSettings$TrustedCertificateExpandableAdapter;->getGroup(I)Landroid/os/UserHandle;
 
@@ -254,7 +234,6 @@
 
 .method public getGroupId(I)J
     .locals 2
-    .param p1    # I
 
     iget-object v0, p0, Lcom/android/settings/TrustedCredentialsSettings$TrustedCertificateExpandableAdapter;->mData:Lcom/android/settings/TrustedCredentialsSettings$AdapterData;
 
@@ -274,10 +253,6 @@
 
 .method public getGroupView(IZLandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
     .locals 6
-    .param p1    # I
-    .param p2    # Z
-    .param p3    # Landroid/view/View;
-    .param p4    # Landroid/view/ViewGroup;
 
     if-nez p3, :cond_0
 
@@ -354,7 +329,6 @@
 
 .method public getListViewId(Lcom/android/settings/TrustedCredentialsSettings$Tab;)I
     .locals 1
-    .param p1    # Lcom/android/settings/TrustedCredentialsSettings$Tab;
 
     # getter for: Lcom/android/settings/TrustedCredentialsSettings$Tab;->mExpandableList:I
     invoke-static {p1}, Lcom/android/settings/TrustedCredentialsSettings$Tab;->access$600(Lcom/android/settings/TrustedCredentialsSettings$Tab;)I
@@ -374,8 +348,6 @@
 
 .method public isChildSelectable(II)Z
     .locals 1
-    .param p1    # I
-    .param p2    # I
 
     const/4 v0, 0x1
 
@@ -406,7 +378,6 @@
 
 .method public remove(Lcom/android/settings/TrustedCredentialsSettings$CertHolder;)V
     .locals 1
-    .param p1    # Lcom/android/settings/TrustedCredentialsSettings$CertHolder;
 
     iget-object v0, p0, Lcom/android/settings/TrustedCredentialsSettings$TrustedCertificateExpandableAdapter;->mData:Lcom/android/settings/TrustedCredentialsSettings$AdapterData;
 

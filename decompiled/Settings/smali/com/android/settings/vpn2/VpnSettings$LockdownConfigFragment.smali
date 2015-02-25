@@ -57,8 +57,6 @@
 
 .method static synthetic access$000(Landroid/security/KeyStore;Ljava/lang/String;)Ljava/lang/String;
     .locals 1
-    .param p0    # Landroid/security/KeyStore;
-    .param p1    # Ljava/lang/String;
 
     invoke-static {p0, p1}, Lcom/android/settings/vpn2/VpnSettings$LockdownConfigFragment;->getStringOrNull(Landroid/security/KeyStore;Ljava/lang/String;)Ljava/lang/String;
 
@@ -69,7 +67,6 @@
 
 .method static synthetic access$200(Lcom/android/settings/vpn2/VpnSettings$LockdownConfigFragment;)I
     .locals 1
-    .param p0    # Lcom/android/settings/vpn2/VpnSettings$LockdownConfigFragment;
 
     iget v0, p0, Lcom/android/settings/vpn2/VpnSettings$LockdownConfigFragment;->mCurrentIndex:I
 
@@ -78,7 +75,6 @@
 
 .method static synthetic access$300(Lcom/android/settings/vpn2/VpnSettings$LockdownConfigFragment;)Ljava/util/List;
     .locals 1
-    .param p0    # Lcom/android/settings/vpn2/VpnSettings$LockdownConfigFragment;
 
     iget-object v0, p0, Lcom/android/settings/vpn2/VpnSettings$LockdownConfigFragment;->mProfiles:Ljava/util/List;
 
@@ -87,8 +83,6 @@
 
 .method private static getStringOrNull(Landroid/security/KeyStore;Ljava/lang/String;)Ljava/lang/String;
     .locals 2
-    .param p0    # Landroid/security/KeyStore;
-    .param p1    # Ljava/lang/String;
 
     const-string v1, "LOCKDOWN_VPN"
 
@@ -113,8 +107,6 @@
 
 .method private initProfiles(Landroid/security/KeyStore;Landroid/content/res/Resources;)V
     .locals 6
-    .param p1    # Landroid/security/KeyStore;
-    .param p2    # Landroid/content/res/Resources;
 
     const/4 v5, 0x0
 
@@ -205,7 +197,6 @@
 
 .method public static show(Lcom/android/settings/vpn2/VpnSettings;)V
     .locals 3
-    .param p0    # Lcom/android/settings/vpn2/VpnSettings;
 
     invoke-virtual {p0}, Lcom/android/settings/vpn2/VpnSettings;->isAdded()Z
 
@@ -236,7 +227,6 @@
 # virtual methods
 .method public onCreateDialog(Landroid/os/Bundle;)Landroid/app/Dialog;
     .locals 10
-    .param p1    # Landroid/os/Bundle;
 
     const/4 v9, 0x1
 

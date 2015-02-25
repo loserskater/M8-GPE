@@ -37,7 +37,6 @@
 
 .method static synthetic access$000(Lcom/android/settings/location/LocationSettings;)Lcom/android/settings/location/SettingsInjector;
     .locals 1
-    .param p0    # Lcom/android/settings/location/LocationSettings;
 
     iget-object v0, p0, Lcom/android/settings/location/LocationSettings;->injector:Lcom/android/settings/location/SettingsInjector;
 
@@ -46,8 +45,6 @@
 
 .method private addLocationServices(Landroid/content/Context;Landroid/preference/PreferenceScreen;)V
     .locals 4
-    .param p1    # Landroid/content/Context;
-    .param p2    # Landroid/preference/PreferenceScreen;
 
     const-string v3, "location_services"
 
@@ -106,7 +103,6 @@
 
 .method private addPreferencesSorted(Ljava/util/List;Landroid/preference/PreferenceGroup;)V
     .locals 3
-    .param p2    # Landroid/preference/PreferenceGroup;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -263,7 +259,6 @@
 
 .method public onActivityCreated(Landroid/os/Bundle;)V
     .locals 2
-    .param p1    # Landroid/os/Bundle;
 
     invoke-super {p0, p1}, Lcom/android/settings/location/LocationSettingsBase;->onActivityCreated(Landroid/os/Bundle;)V
 
@@ -308,8 +303,6 @@
 
 .method public onModeChanged(IZ)V
     .locals 5
-    .param p1    # I
-    .param p2    # Z
 
     const/4 v1, 0x1
 
@@ -539,8 +532,6 @@
 
 .method public onSwitchChanged(Landroid/widget/Switch;Z)V
     .locals 1
-    .param p1    # Landroid/widget/Switch;
-    .param p2    # Z
 
     if-eqz p2, :cond_0
 

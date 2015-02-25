@@ -40,7 +40,6 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 4
-    .param p1    # Landroid/view/View;
 
     iget-object v0, p0, Lcom/android/settings/notification/NotificationAppList$NotificationAppAdapter$1;->this$1:Lcom/android/settings/notification/NotificationAppList$NotificationAppAdapter;
 

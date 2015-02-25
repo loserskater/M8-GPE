@@ -26,9 +26,6 @@
 # direct methods
 .method public constructor <init>(Lcom/android/settings/wfd/WifiDisplaySettings;Landroid/content/Context;Landroid/media/MediaRouter$RouteInfo;Landroid/hardware/display/WifiDisplay;)V
     .locals 1
-    .param p2    # Landroid/content/Context;
-    .param p3    # Landroid/media/MediaRouter$RouteInfo;
-    .param p4    # Landroid/hardware/display/WifiDisplay;
 
     iput-object p1, p0, Lcom/android/settings/wfd/WifiDisplaySettings$WifiDisplayRoutePreference;->this$0:Lcom/android/settings/wfd/WifiDisplaySettings;
 
@@ -47,7 +44,6 @@
 # virtual methods
 .method protected onBindView(Landroid/view/View;)V
     .locals 5
-    .param p1    # Landroid/view/View;
 
     const/4 v4, 0x1
 
@@ -91,7 +87,7 @@
 
     move-result v2
 
-    const/high16 v3, 0x437f0000
+    const/high16 v3, 0x437f0000    # 255.0f
 
     mul-float/2addr v2, v3
 
@@ -107,7 +103,6 @@
 
 .method public onClick(Landroid/view/View;)V
     .locals 2
-    .param p1    # Landroid/view/View;
 
     iget-object v0, p0, Lcom/android/settings/wfd/WifiDisplaySettings$WifiDisplayRoutePreference;->this$0:Lcom/android/settings/wfd/WifiDisplaySettings;
 

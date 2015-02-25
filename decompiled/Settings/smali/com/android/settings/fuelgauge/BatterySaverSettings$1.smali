@@ -21,11 +21,6 @@
 # direct methods
 .method varargs constructor <init>(Lcom/android/settings/fuelgauge/BatterySaverSettings;ILjava/lang/String;Ljava/lang/String;I[I)V
     .locals 6
-    .param p2    # I
-    .param p3    # Ljava/lang/String;
-    .param p4    # Ljava/lang/String;
-    .param p5    # I
-    .param p6    # [I
 
     iput-object p1, p0, Lcom/android/settings/fuelgauge/BatterySaverSettings$1;->this$0:Lcom/android/settings/fuelgauge/BatterySaverSettings;
 
@@ -50,8 +45,6 @@
 # virtual methods
 .method protected getCaption(Landroid/content/res/Resources;I)Ljava/lang/String;
     .locals 4
-    .param p1    # Landroid/content/res/Resources;
-    .param p2    # I
 
     if-lez p2, :cond_0
 

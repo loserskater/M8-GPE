@@ -114,10 +114,6 @@
 # direct methods
 .method public constructor <init>(Lcom/android/settings/wifi/WifiConfigUiBase;Landroid/view/View;Lcom/android/settings/wifi/AccessPoint;Z)V
     .locals 17
-    .param p1    # Lcom/android/settings/wifi/WifiConfigUiBase;
-    .param p2    # Landroid/view/View;
-    .param p3    # Lcom/android/settings/wifi/AccessPoint;
-    .param p4    # Z
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -1136,9 +1132,6 @@
 
 .method private addRow(Landroid/view/ViewGroup;ILjava/lang/String;)V
     .locals 4
-    .param p1    # Landroid/view/ViewGroup;
-    .param p2    # I
-    .param p3    # Ljava/lang/String;
 
     iget-object v1, p0, Lcom/android/settings/wifi/WifiConfigController;->mConfigUi:Lcom/android/settings/wifi/WifiConfigUiBase;
 
@@ -1181,7 +1174,6 @@
 
 .method private getIPv4Address(Ljava/lang/String;)Ljava/net/Inet4Address;
     .locals 2
-    .param p1    # Ljava/lang/String;
 
     :try_start_0
     invoke-static {p1}, Landroid/net/NetworkUtils;->numericToInetAddress(Ljava/lang/String;)Ljava/net/InetAddress;
@@ -1449,8 +1441,6 @@
 
 .method private loadCertificates(Landroid/widget/Spinner;Ljava/lang/String;)V
     .locals 8
-    .param p1    # Landroid/widget/Spinner;
-    .param p2    # Ljava/lang/String;
 
     const/4 v7, 0x1
 
@@ -1628,8 +1618,6 @@
 
 .method private setSelection(Landroid/widget/Spinner;Ljava/lang/String;)V
     .locals 3
-    .param p1    # Landroid/widget/Spinner;
-    .param p2    # Ljava/lang/String;
 
     if-eqz p2, :cond_0
 
@@ -1695,8 +1683,6 @@
 
 .method private setVisibility(II)V
     .locals 2
-    .param p1    # I
-    .param p2    # I
 
     iget-object v1, p0, Lcom/android/settings/wifi/WifiConfigController;->mView:Landroid/view/View;
 
@@ -1714,7 +1700,6 @@
 
 .method private showEapFieldsByMethod(I)V
     .locals 6
-    .param p1    # I
 
     const v5, 0x7f0e0210
 
@@ -2774,7 +2759,6 @@
 
 .method private validateIpConfigFields(Landroid/net/StaticIpConfiguration;)I
     .locals 13
-    .param p1    # Landroid/net/StaticIpConfiguration;
 
     iget-object v10, p0, Lcom/android/settings/wifi/WifiConfigController;->mIpAddressView:Landroid/widget/TextView;
 
@@ -3048,7 +3032,6 @@
 # virtual methods
 .method public afterTextChanged(Landroid/text/Editable;)V
     .locals 2
-    .param p1    # Landroid/text/Editable;
 
     iget-object v0, p0, Lcom/android/settings/wifi/WifiConfigController;->mTextViewChangedHandler:Landroid/os/Handler;
 
@@ -3063,10 +3046,6 @@
 
 .method public beforeTextChanged(Ljava/lang/CharSequence;III)V
     .locals 0
-    .param p1    # Ljava/lang/CharSequence;
-    .param p2    # I
-    .param p3    # I
-    .param p4    # I
 
     return-void
 .end method
@@ -3718,8 +3697,6 @@
 
 .method public onCheckedChanged(Landroid/widget/CompoundButton;Z)V
     .locals 4
-    .param p1    # Landroid/widget/CompoundButton;
-    .param p2    # Z
 
     const v3, 0x7f0e0214
 
@@ -3804,9 +3781,6 @@
 
 .method public onItemSelected(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
     .locals 1
-    .param p2    # Landroid/view/View;
-    .param p3    # I
-    .param p4    # J
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -3869,10 +3843,6 @@
 
 .method public onTextChanged(Ljava/lang/CharSequence;III)V
     .locals 0
-    .param p1    # Ljava/lang/CharSequence;
-    .param p2    # I
-    .param p3    # I
-    .param p4    # I
 
     return-void
 .end method

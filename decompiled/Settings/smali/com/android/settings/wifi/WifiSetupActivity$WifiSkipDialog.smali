@@ -25,7 +25,6 @@
 
 .method public static newInstance(I)Lcom/android/settings/wifi/WifiSetupActivity$WifiSkipDialog;
     .locals 3
-    .param p0    # I
 
     new-instance v0, Landroid/os/Bundle;
 
@@ -48,7 +47,6 @@
 # virtual methods
 .method public onCreateDialog(Landroid/os/Bundle;)Landroid/app/Dialog;
     .locals 4
-    .param p1    # Landroid/os/Bundle;
 
     invoke-virtual {p0}, Lcom/android/settings/wifi/WifiSetupActivity$WifiSkipDialog;->getArguments()Landroid/os/Bundle;
 

@@ -35,7 +35,6 @@
 
 .method static synthetic access$000(Lcom/android/settings/users/RestrictedProfileSettings;)V
     .locals 0
-    .param p0    # Lcom/android/settings/users/RestrictedProfileSettings;
 
     invoke-direct {p0}, Lcom/android/settings/users/RestrictedProfileSettings;->removeUser()V
 
@@ -44,7 +43,6 @@
 
 .method private getExistingUser(Landroid/os/UserHandle;)Landroid/content/pm/UserInfo;
     .locals 5
-    .param p1    # Landroid/os/UserHandle;
 
     iget-object v3, p0, Lcom/android/settings/users/RestrictedProfileSettings;->mUserManager:Landroid/os/UserManager;
 
@@ -108,7 +106,6 @@
 # virtual methods
 .method public onActivityCreated(Landroid/os/Bundle;)V
     .locals 3
-    .param p1    # Landroid/os/Bundle;
 
     iget-object v0, p0, Lcom/android/settings/users/RestrictedProfileSettings;->mHeaderView:Landroid/view/View;
 
@@ -196,9 +193,6 @@
 
 .method public onActivityResult(IILandroid/content/Intent;)V
     .locals 1
-    .param p1    # I
-    .param p2    # I
-    .param p3    # Landroid/content/Intent;
 
     invoke-super {p0, p1, p2, p3}, Lcom/android/settings/users/AppRestrictionsFragment;->onActivityResult(IILandroid/content/Intent;)V
 
@@ -211,7 +205,6 @@
 
 .method public onClick(Landroid/view/View;)V
     .locals 1
-    .param p1    # Landroid/view/View;
 
     iget-object v0, p0, Lcom/android/settings/users/RestrictedProfileSettings;->mHeaderView:Landroid/view/View;
 
@@ -243,7 +236,6 @@
 
 .method public onCreate(Landroid/os/Bundle;)V
     .locals 1
-    .param p1    # Landroid/os/Bundle;
 
     invoke-super {p0, p1}, Lcom/android/settings/users/AppRestrictionsFragment;->onCreate(Landroid/os/Bundle;)V
 
@@ -261,7 +253,6 @@
 
 .method public onCreateDialog(I)Landroid/app/Dialog;
     .locals 8
-    .param p1    # I
 
     const/4 v0, 0x1
 
@@ -329,7 +320,6 @@
 
 .method public onLabelChanged(Ljava/lang/CharSequence;)V
     .locals 1
-    .param p1    # Ljava/lang/CharSequence;
 
     iget-object v0, p0, Lcom/android/settings/users/RestrictedProfileSettings;->mUserNameView:Landroid/widget/TextView;
 
@@ -340,7 +330,6 @@
 
 .method public onPhotoChanged(Landroid/graphics/drawable/Drawable;)V
     .locals 1
-    .param p1    # Landroid/graphics/drawable/Drawable;
 
     iget-object v0, p0, Lcom/android/settings/users/RestrictedProfileSettings;->mUserIconView:Landroid/widget/ImageView;
 
@@ -403,7 +392,6 @@
 
 .method public onSaveInstanceState(Landroid/os/Bundle;)V
     .locals 1
-    .param p1    # Landroid/os/Bundle;
 
     invoke-super {p0, p1}, Lcom/android/settings/users/AppRestrictionsFragment;->onSaveInstanceState(Landroid/os/Bundle;)V
 
@@ -416,8 +404,6 @@
 
 .method public startActivityForResult(Landroid/content/Intent;I)V
     .locals 1
-    .param p1    # Landroid/content/Intent;
-    .param p2    # I
 
     iget-object v0, p0, Lcom/android/settings/users/RestrictedProfileSettings;->mEditUserInfoController:Lcom/android/settings/users/EditUserInfoController;
 

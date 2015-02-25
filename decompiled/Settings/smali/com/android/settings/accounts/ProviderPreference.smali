@@ -10,10 +10,6 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Ljava/lang/String;Landroid/graphics/drawable/Drawable;Ljava/lang/CharSequence;)V
     .locals 1
-    .param p1    # Landroid/content/Context;
-    .param p2    # Ljava/lang/String;
-    .param p3    # Landroid/graphics/drawable/Drawable;
-    .param p4    # Ljava/lang/CharSequence;
 
     invoke-direct {p0, p1}, Landroid/preference/Preference;-><init>(Landroid/content/Context;)V
 

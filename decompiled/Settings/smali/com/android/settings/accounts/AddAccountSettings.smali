@@ -43,7 +43,6 @@
 
 .method static synthetic access$000(Lcom/android/settings/accounts/AddAccountSettings;)Landroid/app/PendingIntent;
     .locals 1
-    .param p0    # Lcom/android/settings/accounts/AddAccountSettings;
 
     iget-object v0, p0, Lcom/android/settings/accounts/AddAccountSettings;->mPendingIntent:Landroid/app/PendingIntent;
 
@@ -52,8 +51,6 @@
 
 .method static synthetic access$002(Lcom/android/settings/accounts/AddAccountSettings;Landroid/app/PendingIntent;)Landroid/app/PendingIntent;
     .locals 0
-    .param p0    # Lcom/android/settings/accounts/AddAccountSettings;
-    .param p1    # Landroid/app/PendingIntent;
 
     iput-object p1, p0, Lcom/android/settings/accounts/AddAccountSettings;->mPendingIntent:Landroid/app/PendingIntent;
 
@@ -62,7 +59,6 @@
 
 .method static synthetic access$100(Lcom/android/settings/accounts/AddAccountSettings;)Landroid/os/UserHandle;
     .locals 1
-    .param p0    # Lcom/android/settings/accounts/AddAccountSettings;
 
     iget-object v0, p0, Lcom/android/settings/accounts/AddAccountSettings;->mUserHandle:Landroid/os/UserHandle;
 
@@ -71,7 +67,6 @@
 
 .method private addAccount(Ljava/lang/String;)V
     .locals 10
-    .param p1    # Ljava/lang/String;
 
     const/4 v5, 0x0
 
@@ -152,9 +147,6 @@
 # virtual methods
 .method public onActivityResult(IILandroid/content/Intent;)V
     .locals 1
-    .param p1    # I
-    .param p2    # I
-    .param p3    # Landroid/content/Intent;
 
     packed-switch p1, :pswitch_data_0
 
@@ -210,7 +202,6 @@
 
 .method public onCreate(Landroid/os/Bundle;)V
     .locals 8
-    .param p1    # Landroid/os/Bundle;
 
     const/4 v7, 0x1
 
@@ -357,7 +348,6 @@
 
 .method protected onSaveInstanceState(Landroid/os/Bundle;)V
     .locals 2
-    .param p1    # Landroid/os/Bundle;
 
     invoke-super {p0, p1}, Landroid/app/Activity;->onSaveInstanceState(Landroid/os/Bundle;)V
 

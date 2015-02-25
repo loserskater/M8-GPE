@@ -26,7 +26,6 @@
 # direct methods
 .method private constructor <init>(Lcom/android/settings/TrustedCredentialsSettings;Lcom/android/settings/TrustedCredentialsSettings$Tab;)V
     .locals 2
-    .param p2    # Lcom/android/settings/TrustedCredentialsSettings$Tab;
 
     iput-object p1, p0, Lcom/android/settings/TrustedCredentialsSettings$TrustedCertificateAdapter;->this$0:Lcom/android/settings/TrustedCredentialsSettings;
 
@@ -47,9 +46,6 @@
 
 .method synthetic constructor <init>(Lcom/android/settings/TrustedCredentialsSettings;Lcom/android/settings/TrustedCredentialsSettings$Tab;Lcom/android/settings/TrustedCredentialsSettings$1;)V
     .locals 0
-    .param p1    # Lcom/android/settings/TrustedCredentialsSettings;
-    .param p2    # Lcom/android/settings/TrustedCredentialsSettings$Tab;
-    .param p3    # Lcom/android/settings/TrustedCredentialsSettings$1;
 
     invoke-direct {p0, p1, p2}, Lcom/android/settings/TrustedCredentialsSettings$TrustedCertificateAdapter;-><init>(Lcom/android/settings/TrustedCredentialsSettings;Lcom/android/settings/TrustedCredentialsSettings$Tab;)V
 
@@ -88,7 +84,6 @@
 
 .method public getItem(I)Lcom/android/settings/TrustedCredentialsSettings$CertHolder;
     .locals 2
-    .param p1    # I
 
     iget-object v0, p0, Lcom/android/settings/TrustedCredentialsSettings$TrustedCertificateAdapter;->mData:Lcom/android/settings/TrustedCredentialsSettings$AdapterData;
 
@@ -116,7 +111,6 @@
 
 .method public bridge synthetic getItem(I)Ljava/lang/Object;
     .locals 1
-    .param p1    # I
 
     invoke-virtual {p0, p1}, Lcom/android/settings/TrustedCredentialsSettings$TrustedCertificateAdapter;->getItem(I)Lcom/android/settings/TrustedCredentialsSettings$CertHolder;
 
@@ -127,7 +121,6 @@
 
 .method public getItemId(I)J
     .locals 2
-    .param p1    # I
 
     int-to-long v0, p1
 
@@ -136,7 +129,6 @@
 
 .method public getListViewId(Lcom/android/settings/TrustedCredentialsSettings$Tab;)I
     .locals 1
-    .param p1    # Lcom/android/settings/TrustedCredentialsSettings$Tab;
 
     # getter for: Lcom/android/settings/TrustedCredentialsSettings$Tab;->mList:I
     invoke-static {p1}, Lcom/android/settings/TrustedCredentialsSettings$Tab;->access$900(Lcom/android/settings/TrustedCredentialsSettings$Tab;)I
@@ -148,9 +140,6 @@
 
 .method public getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
     .locals 3
-    .param p1    # I
-    .param p2    # Landroid/view/View;
-    .param p3    # Landroid/view/ViewGroup;
 
     iget-object v0, p0, Lcom/android/settings/TrustedCredentialsSettings$TrustedCertificateAdapter;->this$0:Lcom/android/settings/TrustedCredentialsSettings;
 
@@ -197,7 +186,6 @@
 
 .method public remove(Lcom/android/settings/TrustedCredentialsSettings$CertHolder;)V
     .locals 1
-    .param p1    # Lcom/android/settings/TrustedCredentialsSettings$CertHolder;
 
     iget-object v0, p0, Lcom/android/settings/TrustedCredentialsSettings$TrustedCertificateAdapter;->mData:Lcom/android/settings/TrustedCredentialsSettings$AdapterData;
 

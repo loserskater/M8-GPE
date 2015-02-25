@@ -42,8 +42,6 @@
 
 .method synthetic constructor <init>(Lcom/android/settings/search/Index;Lcom/android/settings/search/Index$1;)V
     .locals 0
-    .param p1    # Lcom/android/settings/search/Index;
-    .param p2    # Lcom/android/settings/search/Index$1;
 
     invoke-direct {p0, p1}, Lcom/android/settings/search/Index$SaveSearchQueryTask;-><init>(Lcom/android/settings/search/Index;)V
 
@@ -54,7 +52,6 @@
 # virtual methods
 .method protected varargs doInBackground([Ljava/lang/String;)Ljava/lang/Long;
     .locals 15
-    .param p1    # [Ljava/lang/String;
 
     new-instance v10, Ljava/util/Date;
 
@@ -205,7 +202,6 @@
 
 .method protected bridge synthetic doInBackground([Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
-    .param p1    # [Ljava/lang/Object;
 
     check-cast p1, [Ljava/lang/String;
 

@@ -40,7 +40,6 @@
 
 .method static synthetic access$000(Lcom/android/settings/users/EditUserInfoController;)Landroid/os/UserHandle;
     .locals 1
-    .param p0    # Lcom/android/settings/users/EditUserInfoController;
 
     iget-object v0, p0, Lcom/android/settings/users/EditUserInfoController;->mUser:Landroid/os/UserHandle;
 
@@ -49,7 +48,6 @@
 
 .method static synthetic access$100(Lcom/android/settings/users/EditUserInfoController;)Landroid/os/UserManager;
     .locals 1
-    .param p0    # Lcom/android/settings/users/EditUserInfoController;
 
     iget-object v0, p0, Lcom/android/settings/users/EditUserInfoController;->mUserManager:Landroid/os/UserManager;
 
@@ -58,7 +56,6 @@
 
 .method static synthetic access$200(Lcom/android/settings/users/EditUserInfoController;)Lcom/android/settings/users/EditUserPhotoController;
     .locals 1
-    .param p0    # Lcom/android/settings/users/EditUserInfoController;
 
     iget-object v0, p0, Lcom/android/settings/users/EditUserInfoController;->mEditUserPhotoController:Lcom/android/settings/users/EditUserPhotoController;
 
@@ -81,12 +78,6 @@
 
 .method public createDialog(Landroid/app/Fragment;Landroid/graphics/drawable/Drawable;Ljava/lang/CharSequence;ILcom/android/settings/users/EditUserInfoController$OnContentChangedCallback;Landroid/os/UserHandle;)Landroid/app/Dialog;
     .locals 18
-    .param p1    # Landroid/app/Fragment;
-    .param p2    # Landroid/graphics/drawable/Drawable;
-    .param p3    # Ljava/lang/CharSequence;
-    .param p4    # I
-    .param p5    # Lcom/android/settings/users/EditUserInfoController$OnContentChangedCallback;
-    .param p6    # Landroid/os/UserHandle;
 
     invoke-virtual/range {p1 .. p1}, Landroid/app/Fragment;->getActivity()Landroid/app/Activity;
 
@@ -297,7 +288,6 @@
 
 .method getCircularUserIcon(Landroid/app/Activity;)Landroid/graphics/drawable/Drawable;
     .locals 4
-    .param p1    # Landroid/app/Activity;
 
     iget-object v2, p0, Lcom/android/settings/users/EditUserInfoController;->mUserManager:Landroid/os/UserManager;
 
@@ -328,9 +318,6 @@
 
 .method public onActivityResult(IILandroid/content/Intent;)V
     .locals 1
-    .param p1    # I
-    .param p2    # I
-    .param p3    # Landroid/content/Intent;
 
     const/4 v0, 0x0
 
@@ -362,7 +349,6 @@
 
 .method public onRestoreInstanceState(Landroid/os/Bundle;)V
     .locals 2
-    .param p1    # Landroid/os/Bundle;
 
     const-string v0, "pending_photo"
 
@@ -389,7 +375,6 @@
 
 .method public onSaveInstanceState(Landroid/os/Bundle;)V
     .locals 2
-    .param p1    # Landroid/os/Bundle;
 
     iget-object v0, p0, Lcom/android/settings/users/EditUserInfoController;->mEditUserInfoDialog:Landroid/app/Dialog;
 

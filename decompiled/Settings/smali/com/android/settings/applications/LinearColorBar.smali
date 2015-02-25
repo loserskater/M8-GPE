@@ -60,8 +60,6 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 3
-    .param p1    # Landroid/content/Context;
-    .param p2    # Landroid/util/AttributeSet;
 
     const v0, -0xff6978
 
@@ -186,8 +184,6 @@
 
 .method private pickColor(II)I
     .locals 1
-    .param p1    # I
-    .param p2    # I
 
     invoke-virtual {p0}, Lcom/android/settings/applications/LinearColorBar;->isPressed()Z
 
@@ -346,7 +342,6 @@
 # virtual methods
 .method protected dispatchSetPressed(Z)V
     .locals 0
-    .param p1    # Z
 
     invoke-virtual {p0}, Lcom/android/settings/applications/LinearColorBar;->invalidate()V
 
@@ -355,7 +350,6 @@
 
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 19
-    .param p1    # Landroid/graphics/Canvas;
 
     invoke-super/range {p0 .. p1}, Landroid/widget/LinearLayout;->onDraw(Landroid/graphics/Canvas;)V
 
@@ -485,11 +479,11 @@
 
     const/4 v3, 0x0
 
-    const/high16 v4, -0x40000000
+    const/high16 v4, -0x40000000    # -2.0f
 
     int-to-float v5, v13
 
-    const/high16 v6, -0x40000000
+    const/high16 v6, -0x40000000    # -2.0f
 
     const/4 v7, 0x0
 
@@ -549,7 +543,7 @@
 
     int-to-float v1, v1
 
-    const/high16 v2, 0x3f000000
+    const/high16 v2, 0x3f000000    # 0.5f
 
     add-float v11, v1, v2
 
@@ -557,7 +551,7 @@
 
     iget-object v1, v0, Lcom/android/settings/applications/LinearColorBar;->mEdgePath:Landroid/graphics/Path;
 
-    const/high16 v2, -0x40000000
+    const/high16 v2, -0x40000000    # -2.0f
 
     add-float/2addr v2, v11
 
@@ -569,7 +563,7 @@
 
     iget-object v1, v0, Lcom/android/settings/applications/LinearColorBar;->mEdgePath:Landroid/graphics/Path;
 
-    const/high16 v2, -0x40000000
+    const/high16 v2, -0x40000000    # -2.0f
 
     add-float/2addr v2, v11
 
@@ -861,10 +855,6 @@
 
 .method protected onSizeChanged(IIII)V
     .locals 0
-    .param p1    # I
-    .param p2    # I
-    .param p3    # I
-    .param p4    # I
 
     invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/LinearLayout;->onSizeChanged(IIII)V
 
@@ -875,7 +865,6 @@
 
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 2
-    .param p1    # Landroid/view/MotionEvent;
 
     iget-object v1, p0, Lcom/android/settings/applications/LinearColorBar;->mOnRegionTappedListener:Lcom/android/settings/applications/LinearColorBar$OnRegionTappedListener;
 
@@ -970,7 +959,6 @@
 
 .method public setColoredRegions(I)V
     .locals 0
-    .param p1    # I
 
     iput p1, p0, Lcom/android/settings/applications/LinearColorBar;->mColoredRegions:I
 
@@ -981,9 +969,6 @@
 
 .method public setColors(III)V
     .locals 0
-    .param p1    # I
-    .param p2    # I
-    .param p3    # I
 
     iput p1, p0, Lcom/android/settings/applications/LinearColorBar;->mLeftColor:I
 
@@ -1000,7 +985,6 @@
 
 .method public setOnRegionTappedListener(Lcom/android/settings/applications/LinearColorBar$OnRegionTappedListener;)V
     .locals 1
-    .param p1    # Lcom/android/settings/applications/LinearColorBar$OnRegionTappedListener;
 
     iget-object v0, p0, Lcom/android/settings/applications/LinearColorBar;->mOnRegionTappedListener:Lcom/android/settings/applications/LinearColorBar$OnRegionTappedListener;
 
@@ -1026,9 +1010,6 @@
 
 .method public setRatios(FFF)V
     .locals 0
-    .param p1    # F
-    .param p2    # F
-    .param p3    # F
 
     iput p1, p0, Lcom/android/settings/applications/LinearColorBar;->mRedRatio:F
 
@@ -1043,7 +1024,6 @@
 
 .method public setShowIndicator(Z)V
     .locals 0
-    .param p1    # Z
 
     iput-boolean p1, p0, Lcom/android/settings/applications/LinearColorBar;->mShowIndicator:Z
 

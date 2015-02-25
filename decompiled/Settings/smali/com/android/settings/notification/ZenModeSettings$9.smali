@@ -36,8 +36,6 @@
 # virtual methods
 .method public onSetTime(II)Z
     .locals 4
-    .param p1    # I
-    .param p2    # I
 
     const/4 v1, 0x1
 

@@ -42,7 +42,6 @@
 
 .method static synthetic access$000(Lcom/android/settings/CryptKeeperSettings;)Landroid/widget/Button;
     .locals 1
-    .param p0    # Lcom/android/settings/CryptKeeperSettings;
 
     iget-object v0, p0, Lcom/android/settings/CryptKeeperSettings;->mInitiateButton:Landroid/widget/Button;
 
@@ -51,7 +50,6 @@
 
 .method static synthetic access$100(Lcom/android/settings/CryptKeeperSettings;)Landroid/view/View;
     .locals 1
-    .param p0    # Lcom/android/settings/CryptKeeperSettings;
 
     iget-object v0, p0, Lcom/android/settings/CryptKeeperSettings;->mPowerWarning:Landroid/view/View;
 
@@ -60,7 +58,6 @@
 
 .method static synthetic access$200(Lcom/android/settings/CryptKeeperSettings;)Landroid/view/View;
     .locals 1
-    .param p0    # Lcom/android/settings/CryptKeeperSettings;
 
     iget-object v0, p0, Lcom/android/settings/CryptKeeperSettings;->mBatteryWarning:Landroid/view/View;
 
@@ -69,8 +66,6 @@
 
 .method static synthetic access$300(Lcom/android/settings/CryptKeeperSettings;I)Z
     .locals 1
-    .param p0    # Lcom/android/settings/CryptKeeperSettings;
-    .param p1    # I
 
     invoke-direct {p0, p1}, Lcom/android/settings/CryptKeeperSettings;->runKeyguardConfirmation(I)Z
 
@@ -81,7 +76,6 @@
 
 .method private runKeyguardConfirmation(I)Z
     .locals 5
-    .param p1    # I
 
     const/4 v2, 0x1
 
@@ -140,8 +134,6 @@
 
 .method private showFinalConfirmation(ILjava/lang/String;)V
     .locals 3
-    .param p1    # I
-    .param p2    # Ljava/lang/String;
 
     new-instance v0, Landroid/preference/Preference;
 
@@ -196,7 +188,6 @@
 # virtual methods
 .method public onActivityCreated(Landroid/os/Bundle;)V
     .locals 6
-    .param p1    # Landroid/os/Bundle;
 
     invoke-super {p0, p1}, Landroid/app/Fragment;->onActivityCreated(Landroid/os/Bundle;)V
 
@@ -246,9 +237,6 @@
 
 .method public onActivityResult(IILandroid/content/Intent;)V
     .locals 4
-    .param p1    # I
-    .param p2    # I
-    .param p3    # Landroid/content/Intent;
 
     const/4 v3, -0x1
 
@@ -292,9 +280,6 @@
 
 .method public onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
     .locals 2
-    .param p1    # Landroid/view/LayoutInflater;
-    .param p2    # Landroid/view/ViewGroup;
-    .param p3    # Landroid/os/Bundle;
 
     const v0, 0x7f04002c
 
