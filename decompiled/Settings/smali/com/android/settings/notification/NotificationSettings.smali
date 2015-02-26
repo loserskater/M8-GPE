@@ -65,6 +65,7 @@
 
 .field private final mVolumeCallback:Lcom/android/settings/notification/NotificationSettings$VolumePreferenceCallback;
 
+.field private mVolumeLinkNotificationSwitch:Landroid/preference/SwitchPreference;
 
 # direct methods
 .method static constructor <clinit>()V
@@ -929,64 +930,71 @@
 .end method
 
 .method private updateNotificationPreferenceState()V
-    .locals 6
+    .locals 5
 
-    const/4 v3, 0x0
+    const/4 v2, 0x0
 
-    const/4 v2, 0x1
+    const/4 v1, 0x1
 
-    const-string v4, "notification_volume"
+    const-string v3, "notification_volume"
 
-    const/4 v5, 0x5
+    const/4 v4, 0x5
 
-    invoke-direct {p0, v4, v5}, Lcom/android/settings/notification/NotificationSettings;->initVolumePreference(Ljava/lang/String;I)Lcom/android/settings/notification/VolumeSeekBarPreference;
+    invoke-direct {p0, v3, v4}, Lcom/android/settings/notification/NotificationSettings;->initVolumePreference(Ljava/lang/String;I)Lcom/android/settings/notification/VolumeSeekBarPreference;
 
-    move-result-object v4
+    move-result-object v3
 
-    iput-object v4, p0, Lcom/android/settings/notification/NotificationSettings;->mNotificationPreference:Lcom/android/settings/notification/VolumeSeekBarPreference;
+    iput-object v3, p0, Lcom/android/settings/notification/NotificationSettings;->mNotificationPreference:Lcom/android/settings/notification/VolumeSeekBarPreference;
 
-    iget-boolean v4, p0, Lcom/android/settings/notification/NotificationSettings;->mVoiceCapable:Z
+    iget-boolean v3, p0, Lcom/android/settings/notification/NotificationSettings;->mVoiceCapable:Z
 
-    if-eqz v4, :cond_0
+    if-eqz v3, :cond_1
 
     invoke-virtual {p0}, Lcom/android/settings/notification/NotificationSettings;->getContentResolver()Landroid/content/ContentResolver;
 
-    move-result-object v4
+    move-result-object v3
 
-    const-string v5, "volume_link_notification"
+    const-string v4, "volume_link_notification"
 
-    invoke-static {v4, v5, v2}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+    invoke-static {v3, v4, v1}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
 
-    move-result v4
+    move-result v3
 
-    if-ne v4, v2, :cond_1
+    if-ne v3, v1, :cond_2
 
-    move v0, v2
+    move v0, v1
 
     :goto_0
-    iget-object v4, p0, Lcom/android/settings/notification/NotificationSettings;->mNotificationPreference:Lcom/android/settings/notification/VolumeSeekBarPreference;
+    iget-object v3, p0, Lcom/android/settings/notification/NotificationSettings;->mNotificationPreference:Lcom/android/settings/notification/VolumeSeekBarPreference;
 
-    if-eqz v4, :cond_0
+    if-eqz v3, :cond_0
 
-    if-nez v0, :cond_2
+    iget-object v3, p0, Lcom/android/settings/notification/NotificationSettings;->mNotificationPreference:Lcom/android/settings/notification/VolumeSeekBarPreference;
 
-    move v1, v2
+    if-nez v0, :cond_3
 
     :goto_1
-    iget-object v2, p0, Lcom/android/settings/notification/NotificationSettings;->mNotificationPreference:Lcom/android/settings/notification/VolumeSeekBarPreference;
-
-    invoke-virtual {v2, v1}, Lcom/android/settings/notification/VolumeSeekBarPreference;->setEnabled(Z)V
+    invoke-virtual {v3, v1}, Lcom/android/settings/notification/VolumeSeekBarPreference;->setEnabled(Z)V
 
     :cond_0
-    return-void
+    iget-object v1, p0, Lcom/android/settings/notification/NotificationSettings;->mVolumeLinkNotificationSwitch:Landroid/preference/SwitchPreference;
+
+    if-eqz v1, :cond_1
+
+    iget-object v1, p0, Lcom/android/settings/notification/NotificationSettings;->mVolumeLinkNotificationSwitch:Landroid/preference/SwitchPreference;
+
+    invoke-virtual {v1, v0}, Landroid/preference/SwitchPreference;->setChecked(Z)V
 
     :cond_1
-    move v0, v3
+    return-void
+
+    :cond_2
+    move v0, v2
 
     goto :goto_0
 
-    :cond_2
-    move v1, v3
+    :cond_3
+    move v1, v2
 
     goto :goto_1
 .end method
@@ -1406,6 +1414,16 @@
     move-result-object v2
 
     iput-object v2, p0, Lcom/android/settings/notification/NotificationSettings;->mRingPreference:Lcom/android/settings/notification/VolumeSeekBarPreference;
+
+    const-string v2, "volume_link_notification"
+
+    invoke-virtual {v1, v2}, Landroid/preference/PreferenceCategory;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
+
+    move-result-object v2
+
+    check-cast v2, Landroid/preference/SwitchPreference;
+
+    iput-object v2, p0, Lcom/android/settings/notification/NotificationSettings;->mVolumeLinkNotificationSwitch:Landroid/preference/SwitchPreference;
 
     :goto_0
     invoke-direct {p0, v1}, Lcom/android/settings/notification/NotificationSettings;->initRingtones(Landroid/preference/PreferenceCategory;)V
