@@ -483,15 +483,11 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "2" || file_getprop("/tmp/
     package_extract_dir("aroma/audio/viper", "/system");
 	delete_recursive("/system/priv-app/AudioFX");
 	delete_recursive("/system/priv-app/MusicFX");
-	run_program("/sbin/sh", "-c", "sed -i 's/lpa.decode=true/lpa.decode=false/' /system/build.prop");
-	run_program("/sbin/sh", "-c", "sed -i 's/lpa.use-stagefright=true/lpa.use-stagefright=false/' /system/build.prop");
   else
     delete_recursive("/system/priv-app/ViPER4Android_FX_A4.x");
 	delete("/system/lib/libV4AJniUtils.so");
 	delete("/system/lib/soundfx/libv4a_fx_ics.so");
     package_extract_file("system/etc/audio_effects.conf", "/system/etc/audio_effects.conf");
-	run_program("/sbin/sh", "-c", "sed -i 's/lpa.decode=false/lpa.decode=true/' /system/build.prop");
-	run_program("/sbin/sh", "-c", "sed -i 's/lpa.use-stagefright=false/lpa.use-stagefright=true/' /system/build.prop");
   endif;
   #
   #De-Bloat
