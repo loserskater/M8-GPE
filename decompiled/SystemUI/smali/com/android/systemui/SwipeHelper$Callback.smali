@@ -33,7 +33,7 @@
 .method public abstract onBeginDrag(Landroid/view/View;)V
 .end method
 
-.method public abstract onChildDismissed(Landroid/view/View;)V
+.method public abstract onChildDismissed(Landroid/view/View;Z)V
 .end method
 
 .method public abstract onChildSnappedBack(Landroid/view/View;)V

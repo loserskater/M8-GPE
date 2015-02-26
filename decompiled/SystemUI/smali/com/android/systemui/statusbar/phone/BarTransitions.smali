@@ -223,6 +223,21 @@
     return-void
 .end method
 
+.method public setWarningColor(I)V
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/BarTransitions;->mBarBackground:Lcom/android/systemui/statusbar/phone/BarTransitions$BarBackgroundDrawable;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/BarTransitions;->mBarBackground:Lcom/android/systemui/statusbar/phone/BarTransitions$BarBackgroundDrawable;
+
+    invoke-virtual {v0, p1}, Lcom/android/systemui/statusbar/phone/BarTransitions$BarBackgroundDrawable;->setWarningColor(I)V
+
+    :cond_0
+    return-void
+.end method
+
 .method public transitionTo(IZ)V
     .locals 2
 

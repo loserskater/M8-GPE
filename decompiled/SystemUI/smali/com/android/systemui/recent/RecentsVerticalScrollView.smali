@@ -735,7 +735,7 @@
     return-void
 .end method
 
-.method public onChildDismissed(Landroid/view/View;)V
+.method public onChildDismissed(Landroid/view/View;Z)V
     .locals 2
 
     invoke-direct {p0, p1}, Lcom/android/systemui/recent/RecentsVerticalScrollView;->addToRecycledViews(Landroid/view/View;)V

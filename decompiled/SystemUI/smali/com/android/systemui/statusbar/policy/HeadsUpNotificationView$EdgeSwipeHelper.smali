@@ -44,9 +44,9 @@
 .method public onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 6
 
-    const/4 v4, 0x0
+    const/4 v5, 0x1
 
-    const/4 v5, 0x0
+    const/4 v4, 0x0
 
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionMasked()I
 
@@ -120,7 +120,9 @@
 
     if-lez v3, :cond_0
 
-    cmpl-float v3, v0, v5
+    const/4 v3, 0x0
+
+    cmpl-float v3, v0, v3
 
     if-lez v3, :cond_1
 
@@ -133,11 +135,6 @@
 
     invoke-virtual {v3}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->animateExpandNotificationsPanel()V
 
-    :cond_1
-    cmpg-float v3, v0, v5
-
-    if-gez v3, :cond_2
-
     iget-object v3, p0, Lcom/android/systemui/statusbar/policy/HeadsUpNotificationView$EdgeSwipeHelper;->this$0:Lcom/android/systemui/statusbar/policy/HeadsUpNotificationView;
 
     # getter for: Lcom/android/systemui/statusbar/policy/HeadsUpNotificationView;->mBar:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
@@ -145,12 +142,10 @@
 
     move-result-object v3
 
-    invoke-virtual {v3}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->onHeadsUpDismissed()V
+    invoke-virtual {v3, v5}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->onHeadsUpDismissed(Z)V
 
-    :cond_2
-    const/4 v3, 0x1
-
-    iput-boolean v3, p0, Lcom/android/systemui/statusbar/policy/HeadsUpNotificationView$EdgeSwipeHelper;->mConsuming:Z
+    :cond_1
+    iput-boolean v5, p0, Lcom/android/systemui/statusbar/policy/HeadsUpNotificationView$EdgeSwipeHelper;->mConsuming:Z
 
     goto :goto_0
 

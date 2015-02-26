@@ -62,6 +62,8 @@
 
 .field mBatteryController:Lcom/android/systemui/statusbar/policy/BatteryController;
 
+.field private mBatterySaverWarningColor:I
+
 .field mBluetoothController:Lcom/android/systemui/statusbar/policy/BluetoothControllerImpl;
 
 .field mBrightnessMirrorController:Lcom/android/systemui/statusbar/policy/BrightnessMirrorController;
@@ -684,6 +686,22 @@
     iget-boolean v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mUserSetup:Z
 
     return v0
+.end method
+
+.method static synthetic access$111(Lcom/android/systemui/statusbar/phone/PhoneStatusBar;)I
+    .locals 1
+
+    iget v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mBatterySaverWarningColor:I
+
+    return v0
+.end method
+
+.method static synthetic access$112(Lcom/android/systemui/statusbar/phone/PhoneStatusBar;I)I
+    .locals 0
+
+    iput p1, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mBatterySaverWarningColor:I
+
+    return p1
 .end method
 
 .method static synthetic access$1000(Lcom/android/systemui/statusbar/phone/PhoneStatusBar;Z)V
@@ -1810,14 +1828,14 @@
 
     move-result v2
 
-    if-eqz v2, :cond_2
+    if-eqz v2, :cond_3
 
     :cond_0
     const/4 v2, 0x2
 
-    if-eq p2, v2, :cond_2
+    if-eq p2, v2, :cond_3
 
-    if-nez v1, :cond_2
+    if-nez v1, :cond_3
 
     const/4 v0, 0x1
 
@@ -1833,11 +1851,20 @@
     const/4 p1, 0x5
 
     :cond_1
+    const/4 v2, 0x5
+
+    if-ne p1, v2, :cond_2
+
+    iget v2, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mBatterySaverWarningColor:I
+
+    invoke-virtual {p3, v2}, Lcom/android/systemui/statusbar/phone/BarTransitions;->setWarningColor(I)V
+
+    :cond_2
     invoke-virtual {p3, p1, v0}, Lcom/android/systemui/statusbar/phone/BarTransitions;->transitionTo(IZ)V
 
     return-void
 
-    :cond_2
+    :cond_3
     const/4 v0, 0x0
 
     goto :goto_0
@@ -9358,6 +9385,55 @@
 
     iput v3, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mEdgeBorder:I
 
+    move-object/from16 v0, p0
+
+    iget-object v3, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v3}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v3
+
+    const-string v4, "battery_save_mode_color"
+
+    const/4 v5, -0x2
+
+    const/4 v6, -0x2
+
+    invoke-static {v3, v4, v5, v6}, Landroid/provider/Settings$System;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
+
+    move-result v3
+
+    move-object/from16 v0, p0
+
+    iput v3, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mBatterySaverWarningColor:I
+
+    move-object/from16 v0, p0
+
+    iget v3, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mBatterySaverWarningColor:I
+
+    const/4 v4, -0x2
+
+    if-ne v3, v4, :cond_next1
+
+    move-object/from16 v0, p0
+
+    iget-object v3, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v3}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v3
+
+    const v4, 0x106005b
+
+    invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getColor(I)I
+
+    move-result v3
+
+    move-object/from16 v0, p0
+
+    iput v3, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mBatterySaverWarningColor:I
+
+    :cond_next1
     invoke-virtual/range {p0 .. p0}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->setAreThereNotifications()V
 
     new-instance v3, Lcom/android/systemui/statusbar/policy/LocationControllerImpl;
@@ -10533,14 +10609,22 @@
     goto :goto_0
 .end method
 
-.method public onHeadsUpDismissed()V
+.method public onHeadsUpDismissed(Z)V
     .locals 1
 
+    if-eqz p1, :cond_0
+
+    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->scheduleHeadsUpClose()V
+
+    :goto_0
+    return-void
+
+    :cond_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mHeadsUpNotificationView:Lcom/android/systemui/statusbar/policy/HeadsUpNotificationView;
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/policy/HeadsUpNotificationView;->dismiss()V
 
-    return-void
+    goto :goto_0
 .end method
 
 .method public onHintFinished()V
