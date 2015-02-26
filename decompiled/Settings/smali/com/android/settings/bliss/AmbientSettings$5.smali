@@ -1,11 +1,11 @@
-.class final Lcom/android/settings/DisplaySettings$3;
+.class final Lcom/android/settings/bliss/AmbientSettings$5;
 .super Lcom/android/settings/search/BaseSearchIndexProvider;
-.source "DisplaySettings.java"
+.source "AmbientSettings.java"
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/android/settings/DisplaySettings;
+    value = Lcom/android/settings/bliss/AmbientSettings;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -26,7 +26,7 @@
 
 # virtual methods
 .method public getNonIndexableKeys(Landroid/content/Context;)Ljava/util/List;
-    .locals 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -43,75 +43,82 @@
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v1
-
-    const v2, 0x1120053
-
-    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getBoolean(I)Z
-
-    move-result v1
-
-    if-nez v1, :cond_0
-
-    const-string v1, "screensaver"
-
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    :cond_0
-    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v1
-
-    # invokes: Lcom/android/settings/DisplaySettings;->isAutomaticBrightnessAvailable(Landroid/content/res/Resources;)Z
-    invoke-static {v1}, Lcom/android/settings/DisplaySettings;->access$100(Landroid/content/res/Resources;)Z
+    # invokes: Lcom/android/settings/bliss/AmbientSettings;->isDozeAvailable(Landroid/content/Context;)Z
+    invoke-static {p1}, Lcom/android/settings/bliss/AmbientSettings;->access$300(Landroid/content/Context;)Z
 
     move-result v1
 
     if-nez v1, :cond_1
 
-    const-string v1, "auto_brightness"
+    const-string v1, "doze"
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    const-string v1, "doze_list_mode"
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    const-string v1, "doze_time_mode"
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    const-string v1, "doze_overwrite_value"
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    const-string v1, "doze_pulse_on_notifications"
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    const-string v1, "doze_pulse_in"
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    const-string v1, "doze_pulse_visible"
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    const-string v1, "doze_pulse_out"
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    const-string v1, "doze_shake_threshold"
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    :cond_0
+    :goto_0
+    return-object v0
+
     :cond_1
-    # invokes: Lcom/android/settings/DisplaySettings;->isLiftToWakeAvailable(Landroid/content/Context;)Z
-    invoke-static {p1}, Lcom/android/settings/DisplaySettings;->access$200(Landroid/content/Context;)Z
+    # invokes: Lcom/android/settings/bliss/AmbientSettings;->isAccelerometerAvailable(Landroid/content/Context;)Z
+    invoke-static {p1}, Lcom/android/settings/bliss/AmbientSettings;->access$400(Landroid/content/Context;)Z
 
     move-result v1
 
     if-nez v1, :cond_2
 
-    const-string v1, "lift_to_wake"
+    const-string v1, "doze_list_mode"
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    const-string v1, "doze_shake_threshold"
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     :cond_2
-    # invokes: Lcom/android/settings/DisplaySettings;->isDozeAvailable(Landroid/content/Context;)Z
-    invoke-static {p1}, Lcom/android/settings/DisplaySettings;->access$300(Landroid/content/Context;)Z
+    # invokes: Lcom/android/settings/bliss/AmbientSettings;->isAccelerometerAvailable(Landroid/content/Context;)Z
+    invoke-static {p1}, Lcom/android/settings/bliss/AmbientSettings;->access$400(Landroid/content/Context;)Z
 
     move-result v1
 
-    if-nez v1, :cond_3
+    if-eqz v1, :cond_0
 
-    const-string v1, "doze_fragment"
-
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    :cond_3
-    invoke-static {p1}, Lcom/android/internal/view/RotationPolicy;->isRotationLockToggleVisible(Landroid/content/Context;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_4
-
-    const-string v1, "auto_rotate"
+    const-string v1, "doze_pulse_on_notifications"
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    :cond_4
-    return-object v0
+    goto :goto_0
 .end method
 
 .method public getXmlResourcesToIndex(Landroid/content/Context;Z)Ljava/util/List;
@@ -136,7 +143,7 @@
 
     invoke-direct {v1, p1}, Landroid/provider/SearchIndexableResource;-><init>(Landroid/content/Context;)V
 
-    const v2, 0x7f050017
+    const v2, 0x7f05004e
 
     iput v2, v1, Landroid/provider/SearchIndexableResource;->xmlResId:I
 

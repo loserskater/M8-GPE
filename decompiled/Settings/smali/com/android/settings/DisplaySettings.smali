@@ -17,7 +17,7 @@
 
 .field private final mCurConfig:Landroid/content/res/Configuration;
 
-.field private mDozePreference:Landroid/preference/SwitchPreference;
+.field private mDozeFragement:Landroid/preference/PreferenceScreen;
 
 .field private mFontSizePref:Lcom/android/settings/WarnedListPreference;
 
@@ -473,7 +473,7 @@
 
     iget-object v5, p0, Lcom/android/settings/DisplaySettings;->mAutoBrightnessPreference:Landroid/preference/SwitchPreference;
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_2
 
     move v2, v3
 
@@ -495,54 +495,25 @@
 
     move-result v1
 
-    iget-object v5, p0, Lcom/android/settings/DisplaySettings;->mLiftToWakePreference:Landroid/preference/SwitchPreference;
+    iget-object v2, p0, Lcom/android/settings/DisplaySettings;->mLiftToWakePreference:Landroid/preference/SwitchPreference;
 
-    if-eqz v1, :cond_4
-
-    move v2, v3
+    if-eqz v1, :cond_3
 
     :goto_1
-    invoke-virtual {v5, v2}, Landroid/preference/SwitchPreference;->setChecked(Z)V
-
-    :cond_1
-    iget-object v2, p0, Lcom/android/settings/DisplaySettings;->mDozePreference:Landroid/preference/SwitchPreference;
-
-    if-eqz v2, :cond_2
-
-    invoke-virtual {p0}, Lcom/android/settings/DisplaySettings;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v2
-
-    const-string v5, "doze_enabled"
-
-    invoke-static {v2, v5, v3}, Landroid/provider/Settings$Secure;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
-
-    move-result v1
-
-    iget-object v2, p0, Lcom/android/settings/DisplaySettings;->mDozePreference:Landroid/preference/SwitchPreference;
-
-    if-eqz v1, :cond_5
-
-    :goto_2
     invoke-virtual {v2, v3}, Landroid/preference/SwitchPreference;->setChecked(Z)V
 
-    :cond_2
+    :cond_1
     return-void
 
-    :cond_3
+    :cond_2
     move v2, v4
 
     goto :goto_0
 
-    :cond_4
-    move v2, v4
-
-    goto :goto_1
-
-    :cond_5
+    :cond_3
     move v3, v4
 
-    goto :goto_2
+    goto :goto_1
 .end method
 
 .method private updateTimeoutPreferenceDescription(J)V
@@ -822,7 +793,7 @@
 
     move-result v6
 
-    if-eqz v6, :cond_1
+    if-eqz v6, :cond_2
 
     const-string v6, "auto_brightness"
 
@@ -843,7 +814,7 @@
 
     move-result v6
 
-    if-eqz v6, :cond_2
+    if-eqz v6, :cond_3
 
     const-string v6, "lift_to_wake"
 
@@ -860,27 +831,31 @@
     invoke-virtual {v6, p0}, Landroid/preference/SwitchPreference;->setOnPreferenceChangeListener(Landroid/preference/Preference$OnPreferenceChangeListener;)V
 
     :goto_1
-    invoke-static {v0}, Lcom/android/settings/DisplaySettings;->isDozeAvailable(Landroid/content/Context;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_3
-
-    const-string v6, "doze"
+    const-string v6, "doze_fragment"
 
     invoke-virtual {p0, v6}, Lcom/android/settings/DisplaySettings;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
 
     move-result-object v6
 
-    check-cast v6, Landroid/preference/SwitchPreference;
+    check-cast v6, Landroid/preference/PreferenceScreen;
 
-    iput-object v6, p0, Lcom/android/settings/DisplaySettings;->mDozePreference:Landroid/preference/SwitchPreference;
+    iput-object v6, p0, Lcom/android/settings/DisplaySettings;->mDozeFragement:Landroid/preference/PreferenceScreen;
 
-    iget-object v6, p0, Lcom/android/settings/DisplaySettings;->mDozePreference:Landroid/preference/SwitchPreference;
+    invoke-static {v0}, Lcom/android/settings/DisplaySettings;->isDozeAvailable(Landroid/content/Context;)Z
 
-    invoke-virtual {v6, p0}, Landroid/preference/SwitchPreference;->setOnPreferenceChangeListener(Landroid/preference/Preference$OnPreferenceChangeListener;)V
+    move-result v6
 
-    :goto_2
+    if-nez v6, :cond_1
+
+    invoke-virtual {p0}, Lcom/android/settings/DisplaySettings;->getPreferenceScreen()Landroid/preference/PreferenceScreen;
+
+    move-result-object v6
+
+    iget-object v9, p0, Lcom/android/settings/DisplaySettings;->mDozeFragement:Landroid/preference/PreferenceScreen;
+
+    invoke-virtual {v6, v9}, Landroid/preference/PreferenceScreen;->removePreference(Landroid/preference/Preference;)Z
+
+    :cond_1
     invoke-static {v0}, Lcom/android/internal/view/RotationPolicy;->isRotationLockToggleVisible(Landroid/content/Context;)Z
 
     move-result v6
@@ -915,7 +890,7 @@
 
     const v4, 0x7f080978
 
-    :goto_3
+    :goto_2
     invoke-virtual {v0, v4}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
     move-result-object v6
@@ -934,7 +909,7 @@
 
     move v6, v7
 
-    :goto_4
+    :goto_3
     invoke-virtual {v5, v6}, Lcom/android/settings/notification/DropDownPreference;->setSelectedItem(I)V
 
     new-instance v6, Lcom/android/settings/DisplaySettings$1;
@@ -943,29 +918,22 @@
 
     invoke-virtual {v5, v6}, Lcom/android/settings/notification/DropDownPreference;->setCallback(Lcom/android/settings/notification/DropDownPreference$Callback;)V
 
-    :goto_5
+    :goto_4
     return-void
 
-    :cond_1
+    :cond_2
     const-string v6, "auto_brightness"
 
     invoke-virtual {p0, v6}, Lcom/android/settings/DisplaySettings;->removePreference(Ljava/lang/String;)V
 
     goto :goto_0
 
-    :cond_2
+    :cond_3
     const-string v6, "lift_to_wake"
 
     invoke-virtual {p0, v6}, Lcom/android/settings/DisplaySettings;->removePreference(Ljava/lang/String;)V
 
     goto :goto_1
-
-    :cond_3
-    const-string v6, "doze"
-
-    invoke-virtual {p0, v6}, Lcom/android/settings/DisplaySettings;->removePreference(Ljava/lang/String;)V
-
-    goto :goto_2
 
     :cond_4
     invoke-static {v0}, Lcom/android/internal/view/RotationPolicy;->getRotationLockOrientation(Landroid/content/Context;)I
@@ -976,24 +944,24 @@
 
     const v4, 0x7f080976
 
-    goto :goto_3
+    goto :goto_2
 
     :cond_5
     const v4, 0x7f080977
 
-    goto :goto_3
+    goto :goto_2
 
     :cond_6
     move v6, v8
 
-    goto :goto_4
+    goto :goto_3
 
     :cond_7
     const-string v6, "auto_rotate"
 
     invoke-virtual {p0, v6}, Lcom/android/settings/DisplaySettings;->removePreference(Ljava/lang/String;)V
 
-    goto :goto_5
+    goto :goto_4
 .end method
 
 .method public onCreateDialog(I)Landroid/app/Dialog;
@@ -1101,7 +1069,7 @@
 
     const-string v10, "screen_brightness_mode"
 
-    if-eqz v2, :cond_6
+    if-eqz v2, :cond_4
 
     move v6, v7
 
@@ -1127,7 +1095,7 @@
 
     const-string v10, "wake_gesture_enabled"
 
-    if-eqz v5, :cond_7
+    if-eqz v5, :cond_5
 
     move v6, v7
 
@@ -1135,30 +1103,6 @@
     invoke-static {v9, v10, v6}, Landroid/provider/Settings$Secure;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
     :cond_3
-    iget-object v6, p0, Lcom/android/settings/DisplaySettings;->mDozePreference:Landroid/preference/SwitchPreference;
-
-    if-ne p1, v6, :cond_5
-
-    check-cast p2, Ljava/lang/Boolean;
-
-    invoke-virtual {p2}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v5
-
-    invoke-virtual {p0}, Lcom/android/settings/DisplaySettings;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v6
-
-    const-string v9, "doze_enabled"
-
-    if-eqz v5, :cond_4
-
-    move v8, v7
-
-    :cond_4
-    invoke-static {v6, v9, v8}, Landroid/provider/Settings$Secure;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
-
-    :cond_5
     return v7
 
     :catch_0
@@ -1172,12 +1116,12 @@
 
     goto :goto_0
 
-    :cond_6
+    :cond_4
     move v6, v8
 
     goto :goto_1
 
-    :cond_7
+    :cond_5
     move v6, v8
 
     goto :goto_2

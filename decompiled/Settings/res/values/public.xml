@@ -580,6 +580,7 @@
     <public type="xml" name="wifi_settings" id="0x7f05004b" />
     <public type="xml" name="wireless_settings" id="0x7f05004c" />
     <public type="xml" name="zen_mode_settings" id="0x7f05004d" />
+    <public type="xml" name="bliss_ambient_settings" id="0x7f05004e" />
     <public type="raw" name="htc_copyright" id="0x7f060000" />
     <public type="raw" name="media_volume" id="0x7f060001" />
     <public type="raw" name="sprint_copyright" id="0x7f060002" />
@@ -3090,6 +3091,55 @@
     <public type="string" name="pa_login_checking_password" id="0x7f0809bb" />
     <public type="string" name="pa_login_incorrect_login" id="0x7f0809bc" />
     <public type="string" name="link_volume_option_title" id="0x7f0809bd" />
+    <public type="string" name="doze_overwrite_value_title" id="0x7f0809be" />
+    <public type="string" name="doze_overwrite_value_summary" id="0x7f0809bf" />
+    <public type="string" name="doze_list_mode_title" id="0x7f0809c0" />
+    <public type="string" name="doze_list_mode_summary" id="0x7f0809c1" />
+    <public type="string" name="doze_pulse_title" id="0x7f0809c2" />
+    <public type="string" name="doze_pulse_duration_in_title" id="0x7f0809c3" />
+    <public type="string" name="doze_pulse_duration_in_summary" id="0x7f0809c4" />
+    <public type="string" name="doze_pulse_duration_visible_title" id="0x7f0809c5" />
+    <public type="string" name="doze_pulse_duration_visible_summary" id="0x7f0809c6" />
+    <public type="string" name="doze_pulse_duration_out_title" id="0x7f0809c7" />
+    <public type="string" name="doze_pulse_duration_out_summary" id="0x7f0809c8" />
+    <public type="string" name="doze_pulse_on_notifications_title" id="0x7f0809c9" />
+    <public type="string" name="doze_pulse_on_notifications_summary" id="0x7f0809ca" />
+    <public type="string" name="doze_shake_title" id="0x7f0809cb" />
+    <public type="string" name="doze_shake_mode_title" id="0x7f0809cc" />
+    <public type="string" name="doze_shake_mode_summary" id="0x7f0809cd" />
+    <public type="string" name="doze_shake_mode_test_summary" id="0x7f0809ce" />
+    <public type="string" name="doze_shake_mode_test_result" id="0x7f0809cf" />
+    <public type="string" name="doze_shake_test" id="0x7f0809d0" />
+    <public type="string" name="doze_shake_it" id="0x7f0809d1" />
+    <public type="string" name="doze_shake_acc_threshold_title" id="0x7f0809d2" />
+    <public type="string" name="doze_shake_acc_threshold_summary" id="0x7f0809d3" />
+    <public type="string" name="doze_time_mode_title" id="0x7f0809d4" />
+    <public type="string" name="doze_time_mode_summary" id="0x7f0809d5" />
+    <public type="string" name="twohundred_ms" id="0x7f0809d6" />
+    <public type="string" name="fivehundred_ms" id="0x7f0809d7" />
+    <public type="string" name="one_second" id="0x7f0809d8" />
+    <public type="string" name="one_second_default" id="0x7f0809d9" />
+    <public type="string" name="onehalf_second" id="0x7f0809da" />
+    <public type="string" name="two_second" id="0x7f0809db" />
+    <public type="string" name="twohalf_second" id="0x7f0809dc" />
+    <public type="string" name="three_second" id="0x7f0809dd" />
+    <public type="string" name="three_second_default" id="0x7f0809de" />
+    <public type="string" name="threehalf_second" id="0x7f0809df" />
+    <public type="string" name="four_second" id="0x7f0809e0" />
+    <public type="string" name="fourhalf_second" id="0x7f0809e1" />
+    <public type="string" name="five_second" id="0x7f0809e2" />
+    <public type="string" name="veryeasy_shake" id="0x7f0809e3" />
+    <public type="string" name="easy_shake" id="0x7f0809e4" />
+    <public type="string" name="medium_shake" id="0x7f0809e5" />
+    <public type="string" name="hard_shake" id="0x7f0809e6" />
+    <public type="string" name="veryhard_shake" id="0x7f0809e7" />
+    <public type="string" name="strong_shake" id="0x7f0809e8" />
+    <public type="string" name="fully_mode" id="0x7f0809e9" />
+    <public type="string" name="pocket_shake_mode" id="0x7f0809ea" />
+    <public type="string" name="pocket_pulse_mode" id="0x7f0809eb" />
+    <public type="string" name="pocket_only_mode" id="0x7f0809ec" />
+    <public type="string" name="shake_pulse_mode" id="0x7f0809ed" />
+    <public type="string" name="pulse_only_mode" id="0x7f0809ee" />
     <public type="string" name="APKTOOL_DUMMY_098a" id="0x7f08098a" />
     <public type="string" name="APKTOOL_DUMMY_098b" id="0x7f08098b" />
     <public type="string" name="APKTOOL_DUMMY_098c" id="0x7f08098c" />
@@ -3317,6 +3367,14 @@
     <public type="array" name="proc_stats_process_states" id="0x7f0a006a" />
     <public type="array" name="input_method_selector_titles" id="0x7f0a006e" />
     <public type="array" name="input_method_selector_values" id="0x7f0a006f" />
+    <public type="array" name="doze_pulse_duration_in_entries" id="0x7f0a0070" />
+    <public type="array" name="doze_pulse_duration_in_values" id="0x7f0a0071" />
+    <public type="array" name="doze_pulse_duration_visible_entries" id="0x7f0a0072" />
+    <public type="array" name="doze_pulse_duration_visible_values" id="0x7f0a0073" />
+    <public type="array" name="doze_shake_acc_threshold_entries" id="0x7f0a0074" />
+    <public type="array" name="doze_shake_acc_threshold_values" id="0x7f0a0075" />
+    <public type="array" name="doze_list_mode_entries" id="0x7f0a0076" />
+    <public type="array" name="doze_list_mode_values" id="0x7f0a0077" />
     <public type="array" name="APKTOOL_DUMMY_006b" id="0x7f0a006b" />
     <public type="array" name="APKTOOL_DUMMY_006c" id="0x7f0a006c" />
     <public type="array" name="APKTOOL_DUMMY_006d" id="0x7f0a006d" />
