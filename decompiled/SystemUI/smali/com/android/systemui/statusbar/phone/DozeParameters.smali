@@ -276,6 +276,85 @@
     return v0
 .end method
 
+.method public getFullMode()Z
+    .locals 1
+
+    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/DozeParameters;->getTimeMode()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/DozeParameters;->getPocketMode()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method public getHalfMode()Z
+    .locals 1
+
+    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/DozeParameters;->getTimeMode()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/DozeParameters;->getPocketMode()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method public getOverwriteValue()Z
+    .locals 5
+
+    const/4 v1, 0x0
+
+    iget-object v2, p0, Lcom/android/systemui/statusbar/phone/DozeParameters;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v2}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v2
+
+    const-string v3, "doze_overwrite_value"
+
+    const/4 v4, -0x2
+
+    invoke-static {v2, v3, v1, v4}, Landroid/provider/Settings$System;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const/4 v1, 0x1
+
+    :cond_0
+    return v1
+.end method
+
 .method public getPickupVibrationThreshold()I
     .locals 2
 
@@ -288,6 +367,33 @@
     move-result v0
 
     return v0
+.end method
+
+.method public getPocketMode()Z
+    .locals 5
+
+    const/4 v1, 0x0
+
+    iget-object v2, p0, Lcom/android/systemui/statusbar/phone/DozeParameters;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v2}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v2
+
+    const-string v3, "doze_pocket_mode"
+
+    const/4 v4, -0x2
+
+    invoke-static {v2, v3, v1, v4}, Landroid/provider/Settings$System;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const/4 v1, 0x1
+
+    :cond_0
+    return v1
 .end method
 
 .method public getPulseDuration()I
@@ -313,31 +419,95 @@
 .end method
 
 .method public getPulseInDuration()I
-    .locals 2
+    .locals 4
 
-    const-string v0, "doze.pulse.duration.in"
+    const v3, 0x7f090028
 
-    const v1, 0x7f090028
-
-    invoke-direct {p0, v0, v1}, Lcom/android/systemui/statusbar/phone/DozeParameters;->getInt(Ljava/lang/String;I)I
+    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/DozeParameters;->getOverwriteValue()Z
 
     move-result v0
 
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/DozeParameters;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v0
+
+    const-string v1, "doze_pulse_duration_in"
+
+    const/4 v2, -0x2
+
+    invoke-static {v0, v1, v3, v2}, Landroid/provider/Settings$System;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
+
+    move-result v0
+
+    :goto_0
     return v0
+
+    :cond_0
+    const-string v0, "doze.pulse.duration.in"
+
+    invoke-direct {p0, v0, v3}, Lcom/android/systemui/statusbar/phone/DozeParameters;->getInt(Ljava/lang/String;I)I
+
+    move-result v0
+
+    goto :goto_0
 .end method
 
 .method public getPulseOnNotifications()Z
-    .locals 2
+    .locals 5
 
-    const-string v0, "doze.pulse.notifications"
+    const/4 v1, 0x1
 
-    const v1, 0x7f080016
+    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/DozeParameters;->getOverwriteValue()Z
 
-    invoke-direct {p0, v0, v1}, Lcom/android/systemui/statusbar/phone/DozeParameters;->getBoolean(Ljava/lang/String;I)Z
+    move-result v2
+
+    if-nez v2, :cond_0
+
+    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/DozeParameters;->setUsingAccelerometerAsSensorPickUp()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    :cond_0
+    iget-object v2, p0, Lcom/android/systemui/statusbar/phone/DozeParameters;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v2}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v2
+
+    const-string v3, "doze_pulse_on_notifications"
+
+    const/4 v4, -0x2
+
+    invoke-static {v2, v3, v1, v4}, Landroid/provider/Settings$System;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
 
     move-result v0
 
-    return v0
+    if-eqz v0, :cond_1
+
+    :goto_0
+    return v1
+
+    :cond_1
+    const/4 v1, 0x0
+
+    goto :goto_0
+
+    :cond_2
+    const-string v1, "doze.pulse.notifications"
+
+    const v2, 0x7f080016
+
+    invoke-direct {p0, v1, v2}, Lcom/android/systemui/statusbar/phone/DozeParameters;->getBoolean(Ljava/lang/String;I)Z
+
+    move-result v1
+
+    goto :goto_0
 .end method
 
 .method public getPulseOnPickup()Z
@@ -369,17 +539,41 @@
 .end method
 
 .method public getPulseOutDuration()I
-    .locals 2
+    .locals 4
 
-    const-string v0, "doze.pulse.duration.out"
+    const v3, 0x7f09002a
 
-    const v1, 0x7f09002a
-
-    invoke-direct {p0, v0, v1}, Lcom/android/systemui/statusbar/phone/DozeParameters;->getInt(Ljava/lang/String;I)I
+    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/DozeParameters;->getOverwriteValue()Z
 
     move-result v0
 
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/DozeParameters;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v0
+
+    const-string v1, "doze_pulse_duration_out"
+
+    const/4 v2, -0x2
+
+    invoke-static {v0, v1, v3, v2}, Landroid/provider/Settings$System;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
+
+    move-result v0
+
+    :goto_0
     return v0
+
+    :cond_0
+    const-string v0, "doze.pulse.duration.out"
+
+    invoke-direct {p0, v0, v3}, Lcom/android/systemui/statusbar/phone/DozeParameters;->getInt(Ljava/lang/String;I)I
+
+    move-result v0
+
+    goto :goto_0
 .end method
 
 .method public getPulseSchedule()Lcom/android/systemui/statusbar/phone/DozeParameters$PulseSchedule;
@@ -438,17 +632,133 @@
 .end method
 
 .method public getPulseVisibleDuration()I
-    .locals 2
+    .locals 4
 
-    const-string v0, "doze.pulse.duration.visible"
+    const v3, 0x7f090029
 
-    const v1, 0x7f090029
-
-    invoke-direct {p0, v0, v1}, Lcom/android/systemui/statusbar/phone/DozeParameters;->getInt(Ljava/lang/String;I)I
+    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/DozeParameters;->getOverwriteValue()Z
 
     move-result v0
 
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/DozeParameters;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v0
+
+    const-string v1, "doze_pulse_duration_visible"
+
+    const/4 v2, -0x2
+
+    invoke-static {v0, v1, v3, v2}, Landroid/provider/Settings$System;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
+
+    move-result v0
+
+    :goto_0
     return v0
+
+    :cond_0
+    const-string v0, "doze.pulse.duration.visible"
+
+    invoke-direct {p0, v0, v3}, Lcom/android/systemui/statusbar/phone/DozeParameters;->getInt(Ljava/lang/String;I)I
+
+    move-result v0
+
+    goto :goto_0
+.end method
+
+.method public getShakeAccelerometerThreshold()I
+    .locals 4
+
+    const/16 v3, 0xa
+
+    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/DozeParameters;->getOverwriteValue()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/DozeParameters;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v0
+
+    const-string v1, "doze_shake_acc_threshold"
+
+    const/4 v2, -0x2
+
+    invoke-static {v0, v1, v3, v2}, Landroid/provider/Settings$System;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
+
+    move-result v0
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const-string v0, "doze.shake.acc.threshold"
+
+    invoke-direct {p0, v0, v3}, Lcom/android/systemui/statusbar/phone/DozeParameters;->getInt(Ljava/lang/String;I)I
+
+    move-result v0
+
+    goto :goto_0
+.end method
+
+.method public getShakeMode()Z
+    .locals 5
+
+    const/4 v1, 0x0
+
+    iget-object v2, p0, Lcom/android/systemui/statusbar/phone/DozeParameters;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v2}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v2
+
+    const-string v3, "doze_shake_mode"
+
+    const/4 v4, -0x2
+
+    invoke-static {v2, v3, v1, v4}, Landroid/provider/Settings$System;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const/4 v1, 0x1
+
+    :cond_0
+    return v1
+.end method
+
+.method public getTimeMode()Z
+    .locals 5
+
+    const/4 v1, 0x0
+
+    iget-object v2, p0, Lcom/android/systemui/statusbar/phone/DozeParameters;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v2}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v2
+
+    const-string v3, "doze_time_mode"
+
+    const/4 v4, -0x2
+
+    invoke-static {v2, v3, v1, v4}, Landroid/provider/Settings$System;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const/4 v1, 0x1
+
+    :cond_0
+    return v1
 .end method
 
 .method public getVibrateOnPickup()Z
@@ -475,6 +785,14 @@
     invoke-static {v0, v1}, Landroid/os/SystemProperties;->getBoolean(Ljava/lang/String;Z)Z
 
     move-result v0
+
+    return v0
+.end method
+
+.method public setUsingAccelerometerAsSensorPickUp()Z
+    .locals 1
+
+    const/4 v0, 0x1
 
     return v0
 .end method

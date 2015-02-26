@@ -1003,6 +1003,36 @@
 
     invoke-direct {v2, v3, v4, v5, v6}, Landroid/provider/SearchIndexableResource;-><init>(IILjava/lang/String;I)V
 
+    sget-object v0, Lcom/android/settings/search/SearchIndexableResources;->sResMap:Ljava/util/HashMap;
+
+    const-class v1, Lcom/android/settings/bliss/AmbientSettings;
+
+    invoke-virtual {v1}, Ljava/lang/Class;->getName()Ljava/lang/String;
+
+    move-result-object v1
+
+    new-instance v2, Landroid/provider/SearchIndexableResource;
+
+    const-class v3, Lcom/android/settings/bliss/AmbientSettings;
+
+    invoke-virtual {v3}, Ljava/lang/Class;->getName()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v3}, Lcom/android/settings/search/Ranking;->getRankForClassName(Ljava/lang/String;)I
+
+    move-result v3
+
+    sget v4, Lcom/android/settings/search/SearchIndexableResources;->NO_DATA_RES_ID:I
+
+    const-class v5, Lcom/android/settings/bliss/AmbientSettings;
+
+    invoke-virtual {v5}, Ljava/lang/Class;->getName()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-direct {v2, v3, v4, v5, v10}, Landroid/provider/SearchIndexableResource;-><init>(IILjava/lang/String;I)V
+
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     return-void

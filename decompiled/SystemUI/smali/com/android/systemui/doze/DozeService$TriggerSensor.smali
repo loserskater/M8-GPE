@@ -39,7 +39,7 @@
     invoke-direct {p0}, Landroid/hardware/TriggerEventListener;-><init>()V
 
     # getter for: Lcom/android/systemui/doze/DozeService;->mSensors:Landroid/hardware/SensorManager;
-    invoke-static {p1}, Lcom/android/systemui/doze/DozeService;->access$1700(Lcom/android/systemui/doze/DozeService;)Landroid/hardware/SensorManager;
+    invoke-static {p1}, Lcom/android/systemui/doze/DozeService;->access$2200(Lcom/android/systemui/doze/DozeService;)Landroid/hardware/SensorManager;
 
     move-result-object v0
 
@@ -83,7 +83,7 @@
     iget-object v0, p0, Lcom/android/systemui/doze/DozeService$TriggerSensor;->this$0:Lcom/android/systemui/doze/DozeService;
 
     # getter for: Lcom/android/systemui/doze/DozeService;->mSensors:Landroid/hardware/SensorManager;
-    invoke-static {v0}, Lcom/android/systemui/doze/DozeService;->access$1700(Lcom/android/systemui/doze/DozeService;)Landroid/hardware/SensorManager;
+    invoke-static {v0}, Lcom/android/systemui/doze/DozeService;->access$2200(Lcom/android/systemui/doze/DozeService;)Landroid/hardware/SensorManager;
 
     move-result-object v0
 
@@ -105,7 +105,7 @@
     iget-object v0, p0, Lcom/android/systemui/doze/DozeService$TriggerSensor;->this$0:Lcom/android/systemui/doze/DozeService;
 
     # getter for: Lcom/android/systemui/doze/DozeService;->mSensors:Landroid/hardware/SensorManager;
-    invoke-static {v0}, Lcom/android/systemui/doze/DozeService;->access$1700(Lcom/android/systemui/doze/DozeService;)Landroid/hardware/SensorManager;
+    invoke-static {v0}, Lcom/android/systemui/doze/DozeService;->access$2200(Lcom/android/systemui/doze/DozeService;)Landroid/hardware/SensorManager;
 
     move-result-object v0
 
@@ -130,7 +130,7 @@
     iget-object v4, p0, Lcom/android/systemui/doze/DozeService$TriggerSensor;->this$0:Lcom/android/systemui/doze/DozeService;
 
     # getter for: Lcom/android/systemui/doze/DozeService;->mWakeLock:Landroid/os/PowerManager$WakeLock;
-    invoke-static {v4}, Lcom/android/systemui/doze/DozeService;->access$300(Lcom/android/systemui/doze/DozeService;)Landroid/os/PowerManager$WakeLock;
+    invoke-static {v4}, Lcom/android/systemui/doze/DozeService;->access$400(Lcom/android/systemui/doze/DozeService;)Landroid/os/PowerManager$WakeLock;
 
     move-result-object v4
 
@@ -138,7 +138,7 @@
 
     :try_start_0
     # getter for: Lcom/android/systemui/doze/DozeService;->DEBUG:Z
-    invoke-static {}, Lcom/android/systemui/doze/DozeService;->access$700()Z
+    invoke-static {}, Lcom/android/systemui/doze/DozeService;->access$1000()Z
 
     move-result v4
 
@@ -147,7 +147,7 @@
     iget-object v4, p0, Lcom/android/systemui/doze/DozeService$TriggerSensor;->this$0:Lcom/android/systemui/doze/DozeService;
 
     # getter for: Lcom/android/systemui/doze/DozeService;->mTag:Ljava/lang/String;
-    invoke-static {v4}, Lcom/android/systemui/doze/DozeService;->access$800(Lcom/android/systemui/doze/DozeService;)Ljava/lang/String;
+    invoke-static {v4}, Lcom/android/systemui/doze/DozeService;->access$1100(Lcom/android/systemui/doze/DozeService;)Ljava/lang/String;
 
     move-result-object v4
 
@@ -162,7 +162,7 @@
     move-result-object v5
 
     # invokes: Lcom/android/systemui/doze/DozeService;->triggerEventToString(Landroid/hardware/TriggerEvent;)Ljava/lang/String;
-    invoke-static {p1}, Lcom/android/systemui/doze/DozeService;->access$1800(Landroid/hardware/TriggerEvent;)Ljava/lang/String;
+    invoke-static {p1}, Lcom/android/systemui/doze/DozeService;->access$2300(Landroid/hardware/TriggerEvent;)Ljava/lang/String;
 
     move-result-object v6
 
@@ -184,7 +184,7 @@
     iget-object v4, p0, Lcom/android/systemui/doze/DozeService$TriggerSensor;->this$0:Lcom/android/systemui/doze/DozeService;
 
     # getter for: Lcom/android/systemui/doze/DozeService;->mContext:Landroid/content/Context;
-    invoke-static {v4}, Lcom/android/systemui/doze/DozeService;->access$1900(Lcom/android/systemui/doze/DozeService;)Landroid/content/Context;
+    invoke-static {v4}, Lcom/android/systemui/doze/DozeService;->access$2400(Lcom/android/systemui/doze/DozeService;)Landroid/content/Context;
 
     move-result-object v4
 
@@ -226,7 +226,7 @@
     iget-object v4, p0, Lcom/android/systemui/doze/DozeService$TriggerSensor;->this$0:Lcom/android/systemui/doze/DozeService;
 
     # invokes: Lcom/android/systemui/doze/DozeService;->requestPulse()V
-    invoke-static {v4}, Lcom/android/systemui/doze/DozeService;->access$900(Lcom/android/systemui/doze/DozeService;)V
+    invoke-static {v4}, Lcom/android/systemui/doze/DozeService;->access$1300(Lcom/android/systemui/doze/DozeService;)V
 
     const/4 v4, 0x1
 
@@ -239,7 +239,7 @@
     iget-object v6, p0, Lcom/android/systemui/doze/DozeService$TriggerSensor;->this$0:Lcom/android/systemui/doze/DozeService;
 
     # getter for: Lcom/android/systemui/doze/DozeService;->mNotificationPulseTime:J
-    invoke-static {v6}, Lcom/android/systemui/doze/DozeService;->access$2000(Lcom/android/systemui/doze/DozeService;)J
+    invoke-static {v6}, Lcom/android/systemui/doze/DozeService;->access$2500(Lcom/android/systemui/doze/DozeService;)J
 
     move-result-wide v6
 
@@ -248,7 +248,7 @@
     iget-object v4, p0, Lcom/android/systemui/doze/DozeService$TriggerSensor;->this$0:Lcom/android/systemui/doze/DozeService;
 
     # getter for: Lcom/android/systemui/doze/DozeService;->mDozeParameters:Lcom/android/systemui/statusbar/phone/DozeParameters;
-    invoke-static {v4}, Lcom/android/systemui/doze/DozeService;->access$2100(Lcom/android/systemui/doze/DozeService;)Lcom/android/systemui/statusbar/phone/DozeParameters;
+    invoke-static {v4}, Lcom/android/systemui/doze/DozeService;->access$700(Lcom/android/systemui/doze/DozeService;)Lcom/android/systemui/statusbar/phone/DozeParameters;
 
     move-result-object v4
 
@@ -266,7 +266,7 @@
     if-eqz v3, :cond_5
 
     # getter for: Lcom/android/systemui/doze/DozeService;->DEBUG:Z
-    invoke-static {}, Lcom/android/systemui/doze/DozeService;->access$700()Z
+    invoke-static {}, Lcom/android/systemui/doze/DozeService;->access$1000()Z
 
     move-result v4
 
@@ -275,7 +275,7 @@
     iget-object v4, p0, Lcom/android/systemui/doze/DozeService$TriggerSensor;->this$0:Lcom/android/systemui/doze/DozeService;
 
     # getter for: Lcom/android/systemui/doze/DozeService;->mTag:Ljava/lang/String;
-    invoke-static {v4}, Lcom/android/systemui/doze/DozeService;->access$800(Lcom/android/systemui/doze/DozeService;)Ljava/lang/String;
+    invoke-static {v4}, Lcom/android/systemui/doze/DozeService;->access$1100(Lcom/android/systemui/doze/DozeService;)Ljava/lang/String;
 
     move-result-object v4
 
@@ -303,7 +303,7 @@
     iget-object v4, p0, Lcom/android/systemui/doze/DozeService$TriggerSensor;->this$0:Lcom/android/systemui/doze/DozeService;
 
     # getter for: Lcom/android/systemui/doze/DozeService;->mWakeLock:Landroid/os/PowerManager$WakeLock;
-    invoke-static {v4}, Lcom/android/systemui/doze/DozeService;->access$300(Lcom/android/systemui/doze/DozeService;)Landroid/os/PowerManager$WakeLock;
+    invoke-static {v4}, Lcom/android/systemui/doze/DozeService;->access$400(Lcom/android/systemui/doze/DozeService;)Landroid/os/PowerManager$WakeLock;
 
     move-result-object v4
 
@@ -321,7 +321,7 @@
     iget-object v4, p0, Lcom/android/systemui/doze/DozeService$TriggerSensor;->this$0:Lcom/android/systemui/doze/DozeService;
 
     # invokes: Lcom/android/systemui/doze/DozeService;->resetNotificationResets()V
-    invoke-static {v4}, Lcom/android/systemui/doze/DozeService;->access$2200(Lcom/android/systemui/doze/DozeService;)V
+    invoke-static {v4}, Lcom/android/systemui/doze/DozeService;->access$2600(Lcom/android/systemui/doze/DozeService;)V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
@@ -333,7 +333,7 @@
     iget-object v5, p0, Lcom/android/systemui/doze/DozeService$TriggerSensor;->this$0:Lcom/android/systemui/doze/DozeService;
 
     # getter for: Lcom/android/systemui/doze/DozeService;->mWakeLock:Landroid/os/PowerManager$WakeLock;
-    invoke-static {v5}, Lcom/android/systemui/doze/DozeService;->access$300(Lcom/android/systemui/doze/DozeService;)Landroid/os/PowerManager$WakeLock;
+    invoke-static {v5}, Lcom/android/systemui/doze/DozeService;->access$400(Lcom/android/systemui/doze/DozeService;)Landroid/os/PowerManager$WakeLock;
 
     move-result-object v5
 

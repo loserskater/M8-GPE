@@ -1,11 +1,11 @@
 .class Lcom/android/systemui/doze/DozeService$3;
-.super Landroid/content/BroadcastReceiver;
+.super Lcom/android/systemui/doze/DozeService$ProximityCheck;
 .source "DozeService.java"
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/android/systemui/doze/DozeService;
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lcom/android/systemui/doze/DozeService;->requestPulse()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -17,177 +17,152 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/systemui/doze/DozeService;
 
+.field final synthetic val$start:J
+
 
 # direct methods
-.method constructor <init>(Lcom/android/systemui/doze/DozeService;)V
-    .locals 0
+.method constructor <init>(Lcom/android/systemui/doze/DozeService;J)V
+    .locals 2
 
     iput-object p1, p0, Lcom/android/systemui/doze/DozeService$3;->this$0:Lcom/android/systemui/doze/DozeService;
 
-    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
+    iput-wide p2, p0, Lcom/android/systemui/doze/DozeService$3;->val$start:J
+
+    const/4 v0, 0x0
+
+    invoke-direct {p0, p1, v0}, Lcom/android/systemui/doze/DozeService$ProximityCheck;-><init>(Lcom/android/systemui/doze/DozeService;Lcom/android/systemui/doze/DozeService$1;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 6
+.method public onProximityResult(I)V
+    .locals 8
 
-    const-string v2, "com.android.systemui.doze.pulse"
+    const/4 v2, 0x1
 
-    invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
+    const/4 v3, 0x0
 
-    move-result-object v3
+    if-ne p1, v2, :cond_1
 
-    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    move v1, v2
 
-    move-result v2
+    :goto_0
+    iget-object v4, p0, Lcom/android/systemui/doze/DozeService$3;->this$0:Lcom/android/systemui/doze/DozeService;
 
-    if-eqz v2, :cond_1
+    # getter for: Lcom/android/systemui/doze/DozeService;->mUseAccelerometer:Z
+    invoke-static {v4}, Lcom/android/systemui/doze/DozeService;->access$600(Lcom/android/systemui/doze/DozeService;)Z
 
-    # getter for: Lcom/android/systemui/doze/DozeService;->DEBUG:Z
-    invoke-static {}, Lcom/android/systemui/doze/DozeService;->access$700()Z
+    move-result v4
 
-    move-result v2
+    if-eqz v4, :cond_2
 
-    if-eqz v2, :cond_0
+    iget-object v4, p0, Lcom/android/systemui/doze/DozeService$3;->this$0:Lcom/android/systemui/doze/DozeService;
+
+    # getter for: Lcom/android/systemui/doze/DozeService;->mDozeParameters:Lcom/android/systemui/statusbar/phone/DozeParameters;
+    invoke-static {v4}, Lcom/android/systemui/doze/DozeService;->access$700(Lcom/android/systemui/doze/DozeService;)Lcom/android/systemui/statusbar/phone/DozeParameters;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Lcom/android/systemui/statusbar/phone/DozeParameters;->getShakeMode()Z
+
+    move-result v4
+
+    if-eqz v4, :cond_2
+
+    move v0, v2
+
+    :goto_1
+    invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
+
+    move-result-wide v4
+
+    iget-wide v6, p0, Lcom/android/systemui/doze/DozeService$3;->val$start:J
+
+    sub-long/2addr v4, v6
+
+    invoke-static {v1, v4, v5}, Lcom/android/systemui/doze/DozeLog;->traceProximityResult(ZJ)V
+
+    if-eqz v1, :cond_3
 
     iget-object v2, p0, Lcom/android/systemui/doze/DozeService$3;->this$0:Lcom/android/systemui/doze/DozeService;
 
-    # getter for: Lcom/android/systemui/doze/DozeService;->mTag:Ljava/lang/String;
-    invoke-static {v2}, Lcom/android/systemui/doze/DozeService;->access$800(Lcom/android/systemui/doze/DozeService;)Ljava/lang/String;
+    # setter for: Lcom/android/systemui/doze/DozeService;->mPulsing:Z
+    invoke-static {v2, v3}, Lcom/android/systemui/doze/DozeService;->access$002(Lcom/android/systemui/doze/DozeService;Z)Z
+
+    iget-object v2, p0, Lcom/android/systemui/doze/DozeService$3;->this$0:Lcom/android/systemui/doze/DozeService;
+
+    # getter for: Lcom/android/systemui/doze/DozeService;->mWakeLock:Landroid/os/PowerManager$WakeLock;
+    invoke-static {v2}, Lcom/android/systemui/doze/DozeService;->access$400(Lcom/android/systemui/doze/DozeService;)Landroid/os/PowerManager$WakeLock;
 
     move-result-object v2
 
-    const-string v3, "Received pulse intent"
+    invoke-virtual {v2}, Landroid/os/PowerManager$WakeLock;->release()V
 
-    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    if-eqz v0, :cond_0
+
+    iget-object v2, p0, Lcom/android/systemui/doze/DozeService$3;->this$0:Lcom/android/systemui/doze/DozeService;
+
+    # getter for: Lcom/android/systemui/doze/DozeService;->mShakeSensorManager:Lcom/android/systemui/doze/ShakeSensorManager;
+    invoke-static {v2}, Lcom/android/systemui/doze/DozeService;->access$800(Lcom/android/systemui/doze/DozeService;)Lcom/android/systemui/doze/ShakeSensorManager;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Lcom/android/systemui/doze/ShakeSensorManager;->disable()V
 
     :cond_0
-    iget-object v2, p0, Lcom/android/systemui/doze/DozeService$3;->this$0:Lcom/android/systemui/doze/DozeService;
-
-    # invokes: Lcom/android/systemui/doze/DozeService;->requestPulse()V
-    invoke-static {v2}, Lcom/android/systemui/doze/DozeService;->access$900(Lcom/android/systemui/doze/DozeService;)V
+    :goto_2
+    return-void
 
     :cond_1
-    const-string v2, "com.android.systemui.doze.notification_pulse"
+    move v1, v3
 
-    invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_3
-
-    const-string v2, "instance"
-
-    const-wide/16 v4, -0x1
-
-    invoke-virtual {p2, v2, v4, v5}, Landroid/content/Intent;->getLongExtra(Ljava/lang/String;J)J
-
-    move-result-wide v0
-
-    # getter for: Lcom/android/systemui/doze/DozeService;->DEBUG:Z
-    invoke-static {}, Lcom/android/systemui/doze/DozeService;->access$700()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_2
-
-    iget-object v2, p0, Lcom/android/systemui/doze/DozeService$3;->this$0:Lcom/android/systemui/doze/DozeService;
-
-    # getter for: Lcom/android/systemui/doze/DozeService;->mTag:Ljava/lang/String;
-    invoke-static {v2}, Lcom/android/systemui/doze/DozeService;->access$800(Lcom/android/systemui/doze/DozeService;)Ljava/lang/String;
-
-    move-result-object v2
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "Received notification pulse intent instance="
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v0, v1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    goto :goto_0
 
     :cond_2
-    invoke-static {v0, v1}, Lcom/android/systemui/doze/DozeLog;->traceNotificationPulse(J)V
+    move v0, v3
+
+    goto :goto_1
+
+    :cond_3
+    if-eqz v0, :cond_4
 
     iget-object v2, p0, Lcom/android/systemui/doze/DozeService$3;->this$0:Lcom/android/systemui/doze/DozeService;
 
-    # invokes: Lcom/android/systemui/doze/DozeService;->requestPulse()V
-    invoke-static {v2}, Lcom/android/systemui/doze/DozeService;->access$900(Lcom/android/systemui/doze/DozeService;)V
+    # getter for: Lcom/android/systemui/doze/DozeService;->mShakeSensorManager:Lcom/android/systemui/doze/ShakeSensorManager;
+    invoke-static {v2}, Lcom/android/systemui/doze/DozeService;->access$800(Lcom/android/systemui/doze/DozeService;)Lcom/android/systemui/doze/ShakeSensorManager;
 
-    iget-object v2, p0, Lcom/android/systemui/doze/DozeService$3;->this$0:Lcom/android/systemui/doze/DozeService;
+    move-result-object v2
 
     iget-object v3, p0, Lcom/android/systemui/doze/DozeService$3;->this$0:Lcom/android/systemui/doze/DozeService;
 
-    # getter for: Lcom/android/systemui/doze/DozeService;->mNotificationLightOn:Z
-    invoke-static {v3}, Lcom/android/systemui/doze/DozeService;->access$1000(Lcom/android/systemui/doze/DozeService;)Z
-
-    move-result v3
-
-    # invokes: Lcom/android/systemui/doze/DozeService;->rescheduleNotificationPulse(Z)V
-    invoke-static {v2, v3}, Lcom/android/systemui/doze/DozeService;->access$1100(Lcom/android/systemui/doze/DozeService;Z)V
-
-    :cond_3
-    sget-object v2, Landroid/app/UiModeManager;->ACTION_ENTER_CAR_MODE:Ljava/lang/String;
-
-    invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
+    # getter for: Lcom/android/systemui/doze/DozeService;->mDozeParameters:Lcom/android/systemui/statusbar/phone/DozeParameters;
+    invoke-static {v3}, Lcom/android/systemui/doze/DozeService;->access$700(Lcom/android/systemui/doze/DozeService;)Lcom/android/systemui/statusbar/phone/DozeParameters;
 
     move-result-object v3
 
-    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v3}, Lcom/android/systemui/statusbar/phone/DozeParameters;->getShakeAccelerometerThreshold()I
 
-    move-result v2
+    move-result v3
 
-    if-eqz v2, :cond_4
+    int-to-float v3, v3
 
-    iget-object v2, p0, Lcom/android/systemui/doze/DozeService$3;->this$0:Lcom/android/systemui/doze/DozeService;
-
-    const/4 v3, 0x1
-
-    # setter for: Lcom/android/systemui/doze/DozeService;->mCarMode:Z
-    invoke-static {v2, v3}, Lcom/android/systemui/doze/DozeService;->access$1202(Lcom/android/systemui/doze/DozeService;Z)Z
-
-    iget-object v2, p0, Lcom/android/systemui/doze/DozeService$3;->this$0:Lcom/android/systemui/doze/DozeService;
-
-    # getter for: Lcom/android/systemui/doze/DozeService;->mCarMode:Z
-    invoke-static {v2}, Lcom/android/systemui/doze/DozeService;->access$1200(Lcom/android/systemui/doze/DozeService;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_4
-
-    iget-object v2, p0, Lcom/android/systemui/doze/DozeService$3;->this$0:Lcom/android/systemui/doze/DozeService;
-
-    # getter for: Lcom/android/systemui/doze/DozeService;->mDreaming:Z
-    invoke-static {v2}, Lcom/android/systemui/doze/DozeService;->access$000(Lcom/android/systemui/doze/DozeService;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_4
-
-    iget-object v2, p0, Lcom/android/systemui/doze/DozeService$3;->this$0:Lcom/android/systemui/doze/DozeService;
-
-    # invokes: Lcom/android/systemui/doze/DozeService;->finishForCarMode()V
-    invoke-static {v2}, Lcom/android/systemui/doze/DozeService;->access$1300(Lcom/android/systemui/doze/DozeService;)V
+    invoke-virtual {v2, v3}, Lcom/android/systemui/doze/ShakeSensorManager;->enable(F)V
 
     :cond_4
-    return-void
+    iget-object v2, p0, Lcom/android/systemui/doze/DozeService$3;->this$0:Lcom/android/systemui/doze/DozeService;
+
+    # getter for: Lcom/android/systemui/doze/DozeService;->mHost:Lcom/android/systemui/doze/DozeHost;
+    invoke-static {v2}, Lcom/android/systemui/doze/DozeService;->access$900(Lcom/android/systemui/doze/DozeService;)Lcom/android/systemui/doze/DozeHost;
+
+    move-result-object v2
+
+    new-instance v3, Lcom/android/systemui/doze/DozeService$3$1;
+
+    invoke-direct {v3, p0}, Lcom/android/systemui/doze/DozeService$3$1;-><init>(Lcom/android/systemui/doze/DozeService$3;)V
+
+    invoke-interface {v2, v3}, Lcom/android/systemui/doze/DozeHost;->pulseWhileDozing(Lcom/android/systemui/doze/DozeHost$PulseCallback;)V
+
+    goto :goto_2
 .end method
