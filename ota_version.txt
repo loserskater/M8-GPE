@@ -1,0 +1,1 @@
+ro.ota.version=6

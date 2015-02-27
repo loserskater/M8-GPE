@@ -4,5 +4,5 @@ build/
 dist/
 decompiled/*.jar
 decompiled/*.apk
-*version.txt
 *Thumbs.db
+META-INF/com/google/android/aroma/version.txt
