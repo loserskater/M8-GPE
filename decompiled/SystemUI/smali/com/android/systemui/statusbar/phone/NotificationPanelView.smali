@@ -111,7 +111,7 @@
 
 .field private mNotificationsHeaderCollideDistance:I
 
-.field private mOneFingerQuickSettingsIntercept:Z
+.field private mOneFingerQuickSettingsIntercept:I
 
 .field private mOnlyAffordanceInThisMotion:Z
 
@@ -453,10 +453,10 @@
     return-object v0
 .end method
 
-.method static synthetic access$2402(Lcom/android/systemui/statusbar/phone/NotificationPanelView;Z)Z
+.method static synthetic access$2402(Lcom/android/systemui/statusbar/phone/NotificationPanelView;I)I
     .locals 0
 
-    iput-boolean p1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mOneFingerQuickSettingsIntercept:Z
+    iput p1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mOneFingerQuickSettingsIntercept:I
 
     return p1
 .end method
@@ -2798,22 +2798,25 @@
 
     mul-float v2, v4, v7
 
-    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->isLayoutRtl()Z
+    const/4 v3, 0x0
 
-    move-result v7
+    iget v7, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mOneFingerQuickSettingsIntercept:I
 
-    if-eqz v7, :cond_6
+    packed-switch v7, :pswitch_data_0
 
-    cmpg-float v7, p1, v2
+    :goto_3
+    if-eqz v3, :cond_b
 
-    if-gez v7, :cond_5
+    iget v7, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mStatusBarState:I
+
+    if-nez v7, :cond_b
 
     move v3, v5
 
-    :goto_3
+    :goto_4
     iget-boolean v7, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mQsExpanded:Z
 
-    if-eqz v7, :cond_8
+    if-eqz v7, :cond_c
 
     if-nez v1, :cond_2
 
@@ -2852,10 +2855,26 @@
 
     goto :goto_2
 
+    :pswitch_0
+    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->isLayoutRtl()Z
+
+    move-result v7
+
+    if-eqz v7, :cond_6
+
+    cmpg-float v7, p1, v2
+
+    if-gez v7, :cond_5
+
+    move v3, v5
+
+    :goto_5
+    goto :goto_3
+
     :cond_5
     move v3, v6
 
-    goto :goto_3
+    goto :goto_5
 
     :cond_6
     sub-float v7, v4, v2
@@ -2864,28 +2883,72 @@
 
     if-gez v7, :cond_7
 
-    iget v7, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mStatusBarState:I
-
-    if-nez v7, :cond_7
-
     move v3, v5
 
-    goto :goto_3
+    goto :goto_5
 
     :cond_7
     move v3, v6
 
+    goto :goto_5
+
+    :pswitch_1
+    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->isLayoutRtl()Z
+
+    move-result v7
+
+    if-eqz v7, :cond_9
+
+    sub-float v7, v4, v2
+
+    cmpg-float v7, v7, p1
+
+    if-gez v7, :cond_8
+
+    move v3, v5
+
+    :goto_6
     goto :goto_3
 
     :cond_8
-    if-nez v1, :cond_9
+    move v3, v6
+
+    goto :goto_6
+
+    :cond_9
+    cmpg-float v7, p1, v2
+
+    if-gez v7, :cond_a
+
+    move v3, v5
+
+    goto :goto_6
+
+    :cond_a
+    move v3, v6
+
+    goto :goto_6
+
+    :cond_b
+    move v3, v6
+
+    goto :goto_4
+
+    :cond_c
+    if-nez v1, :cond_d
 
     if-eqz v3, :cond_0
 
-    :cond_9
+    :cond_d
     move v6, v5
 
-    goto :goto_0
+    goto/16 :goto_0
+
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_0
+        :pswitch_1
+    .end packed-switch
 .end method
 
 .method private startClockAnimation(I)V
@@ -5640,8 +5703,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->updateIsSmallScreen(I)V
 
-    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->requestPanelHeightUpdate()V
-
     return-void
 
     :cond_1
@@ -6058,10 +6119,6 @@
     move v1, v2
 
     :goto_1
-    iget-boolean v4, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mOneFingerQuickSettingsIntercept:Z
-
-    if-eqz v4, :cond_e
-
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionMasked()I
 
     move-result v4
