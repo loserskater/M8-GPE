@@ -13,9 +13,9 @@ del M8-GPE-*.zip
 echo %VERSION% > META-INF\com\google\android\aroma\version.txt
 ::Need to move to tools folder to run sed otherwise it won't remove the temp files it creates
 cd tools
-sed.exe s/%value%/%otaversion%/g ..\system\build.prop
-sed.exe s/%value%/%otaversion%/g ..\aroma\carrier\verizon\system\build.prop
-sed.exe s/%value%/%otaversion%/g ..\aroma\carrier\sprint\system\build.prop
+sed.exe -i s/%value%/%otaversion%/g ..\system\build.prop
+sed.exe -i s/%value%/%otaversion%/g ..\aroma\carrier\verizon\system\build.prop
+sed.exe -i s/%value%/%otaversion%/g ..\aroma\carrier\sprint\system\build.prop
 cd ..
 
 ::Build
