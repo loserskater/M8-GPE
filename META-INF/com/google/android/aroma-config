@@ -724,8 +724,8 @@ selectbox(
   "Undervolt -45mV","",0,
 
   "Select thermal throttling","",2,
-  "Performance","(best performance)",1,
-  "Stock","(cooler)",0
+  "Performance","(best performance)",0,
+  "Stock","(cooler)",1
 );
 
 if file_getprop("/tmp/aroma/cpu.prop","selected.1") == "1"
@@ -786,9 +786,9 @@ endif;
 
 selectbox(
   "Sweep2Sleep","<b>Sweep across navbar area to put phone to sleep</b>","","s2s.prop",
-  "Disable Sweep2Sleep","",0,
+  "Disable Sweep2Sleep","",1,
   "Sweep right","",0,
-  "Sweep left","(default)",1,
+  "Sweep left","(default)",0,
   "Sweep left or right","",0
 );
 
@@ -798,10 +798,10 @@ checkbox(
   "Disable fsync","Faster fileystem performance, but risk of data loss",0,
   "Disable max screen off frequency","",0,
   "Reduce button vibration","",0,
-  "Enable gboost","Enhanced gaming performance",1,
+  "Enable gboost","Enhanced gaming performance",0,
   "Disable magnetic cover sensor","",0,
   "Enable backlight dimmer","",0,
-  "Set SELinux permissive","",0
+  "Set SELinux permissive","",1
 );
 endif;
 
