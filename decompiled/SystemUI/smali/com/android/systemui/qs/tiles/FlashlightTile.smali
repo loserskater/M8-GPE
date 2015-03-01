@@ -162,9 +162,20 @@
 
     const-wide/16 v6, 0x0
 
-    instance-of v1, p2, Ljava/lang/Boolean;
+    iget-boolean v1, p1, Lcom/android/systemui/qs/QSTile$BooleanState;->value:Z
 
     if-eqz v1, :cond_0
+
+    invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
+
+    move-result-wide v2
+
+    iput-wide v2, p0, Lcom/android/systemui/qs/tiles/FlashlightTile;->mWasLastOn:J
+
+    :cond_0
+    instance-of v1, p2, Ljava/lang/Boolean;
+
+    if-eqz v1, :cond_1
 
     check-cast p2, Ljava/lang/Boolean;
 
@@ -173,17 +184,6 @@
     move-result v1
 
     iput-boolean v1, p1, Lcom/android/systemui/qs/QSTile$BooleanState;->value:Z
-
-    :cond_0
-    iget-boolean v1, p1, Lcom/android/systemui/qs/QSTile$BooleanState;->value:Z
-
-    if-eqz v1, :cond_1
-
-    invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
-
-    move-result-wide v2
-
-    iput-wide v2, p0, Lcom/android/systemui/qs/tiles/FlashlightTile;->mWasLastOn:J
 
     :cond_1
     iget-boolean v1, p1, Lcom/android/systemui/qs/QSTile$BooleanState;->value:Z
