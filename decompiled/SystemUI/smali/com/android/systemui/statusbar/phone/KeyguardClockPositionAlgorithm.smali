@@ -51,7 +51,7 @@
 
     const/4 v1, 0x0
 
-    const/high16 v4, 0x3f800000
+    const/high16 v4, 0x3f800000    # 1.0f
 
     new-instance v0, Landroid/graphics/Path;
 
@@ -59,11 +59,11 @@
 
     invoke-virtual {v0, v1, v1}, Landroid/graphics/Path;->moveTo(FF)V
 
-    const v1, 0x3e99999a
+    const v1, 0x3e99999a    # 0.3f
 
-    const/high16 v2, 0x3f600000
+    const/high16 v2, 0x3f600000    # 0.875f
 
-    const v3, 0x3f19999a
+    const v3, 0x3f19999a    # 0.6f
 
     move v5, v4
 
@@ -107,18 +107,18 @@
 
     if-nez v2, :cond_0
 
-    const/high16 v1, 0x3f000000
+    const/high16 v1, 0x3f000000    # 0.5f
 
     :goto_0
     sub-float v2, p1, v1
 
-    const v3, 0x3f733333
+    const v3, 0x3f733333    # 0.95f
 
     sub-float/2addr v3, v1
 
     div-float v0, v2, v3
 
-    const/high16 v2, 0x3f800000
+    const/high16 v2, 0x3f800000    # 1.0f
 
     invoke-static {v2, v0}, Ljava/lang/Math;->min(FF)F
 
@@ -131,7 +131,7 @@
     return v2
 
     :cond_0
-    const/high16 v1, 0x3f400000
+    const/high16 v1, 0x3f400000    # 0.75f
 
     goto :goto_0
 .end method
@@ -139,7 +139,7 @@
 .method private getClockNotificationsPadding()I
     .locals 4
 
-    const/high16 v2, 0x3f800000
+    const/high16 v2, 0x3f800000    # 1.0f
 
     invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/KeyguardClockPositionAlgorithm;->getNotificationAmountT()F
 
@@ -173,7 +173,7 @@
 .method private getClockScale(III)F
     .locals 10
 
-    const/high16 v8, 0x3f800000
+    const/high16 v8, 0x3f800000    # 1.0f
 
     const/4 v6, 0x0
 
@@ -185,7 +185,7 @@
 
     if-nez v4, :cond_0
 
-    const/high16 v3, 0x40c00000
+    const/high16 v3, 0x40c00000    # 6.0f
 
     :goto_0
     int-to-float v4, p2
@@ -230,7 +230,7 @@
 
     div-float/2addr v6, v7
 
-    const/high16 v7, 0x43960000
+    const/high16 v7, 0x43960000    # 300.0f
 
     div-float/2addr v6, v7
 
@@ -238,7 +238,7 @@
 
     float-to-double v6, v6
 
-    const-wide v8, 0x3fd3333340000000L
+    const-wide v8, 0x3fd3333340000000L    # 0.30000001192092896
 
     invoke-static {v6, v7, v8, v9}, Ljava/lang/Math;->pow(DD)D
 
@@ -251,7 +251,7 @@
     return v1
 
     :cond_0
-    const/high16 v3, 0x40a00000
+    const/high16 v3, 0x40a00000    # 5.0f
 
     goto :goto_0
 .end method
@@ -305,7 +305,7 @@
 
     neg-float v4, v4
 
-    const v5, 0x3ecccccd
+    const v5, 0x3ecccccd    # 0.4f
 
     mul-float/2addr v4, v5
 
@@ -319,13 +319,13 @@
 
     if-nez v4, :cond_0
 
-    const/high16 v4, -0x40000000
+    const/high16 v4, -0x40000000    # -2.0f
 
     mul-float/2addr v4, v3
 
     add-float/2addr v4, v1
 
-    const/high16 v5, 0x40400000
+    const/high16 v5, 0x40400000    # 3.0f
 
     div-float v1, v4, v5
 
@@ -336,7 +336,7 @@
 .method private getClockYExpansionRubberbandFactor()F
     .locals 6
 
-    const/high16 v1, 0x3f800000
+    const/high16 v1, 0x3f800000    # 1.0f
 
     invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/KeyguardClockPositionAlgorithm;->getNotificationAmountT()F
 
@@ -348,7 +348,7 @@
 
     float-to-double v2, v0
 
-    const-wide v4, 0x3fd3333340000000L
+    const-wide v4, 0x3fd3333340000000L    # 0.30000001192092896
 
     invoke-static {v2, v3, v4, v5}, Ljava/lang/Math;->pow(DD)D
 
@@ -358,11 +358,11 @@
 
     sub-float/2addr v1, v0
 
-    const v2, 0x3f4ccccd
+    const v2, 0x3f4ccccd    # 0.8f
 
     mul-float/2addr v1, v2
 
-    const v2, 0x3da3d70a
+    const v2, 0x3da3d70a    # 0.08f
 
     mul-float/2addr v2, v0
 
@@ -374,7 +374,7 @@
 .method private getClockYFraction()F
     .locals 3
 
-    const/high16 v1, 0x3f800000
+    const/high16 v1, 0x3f800000    # 1.0f
 
     invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/KeyguardClockPositionAlgorithm;->getNotificationAmountT()F
 
@@ -422,7 +422,7 @@
 .method private getTopPaddingAdjMultiplier()F
     .locals 3
 
-    const/high16 v1, 0x3f800000
+    const/high16 v1, 0x3f800000    # 1.0f
 
     invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/KeyguardClockPositionAlgorithm;->getNotificationAmountT()F
 
@@ -434,11 +434,11 @@
 
     sub-float/2addr v1, v0
 
-    const v2, 0x3fb33333
+    const v2, 0x3fb33333    # 1.4f
 
     mul-float/2addr v1, v2
 
-    const v2, 0x404ccccd
+    const v2, 0x404ccccd    # 3.2f
 
     mul-float/2addr v2, v0
 

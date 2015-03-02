@@ -165,7 +165,7 @@
 
     const/4 v7, 0x0
 
-    const/high16 v8, 0x41200000
+    const/high16 v8, 0x41200000    # 10.0f
 
     iget-object v9, p0, Lcom/android/systemui/statusbar/phone/NoisyVelocityTracker;->mEventBuf:Ljava/util/ArrayDeque;
 
@@ -243,7 +243,7 @@
 
     add-float/2addr v7, v8
 
-    const/high16 v9, 0x3f400000
+    const/high16 v9, 0x3f400000    # 0.75f
 
     mul-float/2addr v8, v9
 

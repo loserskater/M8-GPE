@@ -188,7 +188,7 @@
 
     if-ne p1, v0, :cond_0
 
-    const/high16 v0, 0x3f000000
+    const/high16 v0, 0x3f000000    # 0.5f
 
     :goto_0
     return v0
@@ -220,7 +220,7 @@
 
     if-nez v0, :cond_1
 
-    const/high16 v0, 0x3f800000
+    const/high16 v0, 0x3f800000    # 1.0f
 
     goto :goto_0
 

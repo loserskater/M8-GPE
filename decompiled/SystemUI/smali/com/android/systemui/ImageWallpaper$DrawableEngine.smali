@@ -70,7 +70,7 @@
 
     const/4 v2, 0x1
 
-    const/high16 v1, 0x3f000000
+    const/high16 v1, 0x3f000000    # 0.5f
 
     const/4 v0, -0x1
 
@@ -92,7 +92,7 @@
 
     iput v1, p0, Lcom/android/systemui/ImageWallpaper$DrawableEngine;->mYOffset:F
 
-    const/high16 v0, 0x3f800000
+    const/high16 v0, 0x3f800000    # 1.0f
 
     iput v0, p0, Lcom/android/systemui/ImageWallpaper$DrawableEngine;->mScale:F
 
@@ -430,7 +430,7 @@
 
     const/4 v7, 0x0
 
-    const/high16 v6, 0x3f800000
+    const/high16 v6, 0x3f800000    # 1.0f
 
     const/4 v5, 0x0
 
@@ -738,9 +738,9 @@
 
     const/4 v9, 0x0
 
-    const/high16 v10, -0x40800000
+    const/high16 v10, -0x40800000    # -1.0f
 
-    const/high16 v11, 0x3f800000
+    const/high16 v11, 0x3f800000    # 1.0f
 
     invoke-virtual/range {v5 .. v11}, Landroid/renderscript/Matrix4f;->loadOrtho(FFFFFF)V
 
@@ -1884,7 +1884,7 @@
     if-eqz v1, :cond_3
 
     :cond_8
-    const/high16 v1, 0x3f800000
+    const/high16 v1, 0x3f800000    # 1.0f
 
     int-to-float v15, v10
 
@@ -2012,13 +2012,13 @@
 
     iget v15, v0, Lcom/android/systemui/ImageWallpaper$DrawableEngine;->mXOffset:F
 
-    const/high16 v16, 0x3f000000
+    const/high16 v16, 0x3f000000    # 0.5f
 
     sub-float v15, v15, v16
 
     mul-float/2addr v1, v15
 
-    const/high16 v15, 0x3f000000
+    const/high16 v15, 0x3f000000    # 0.5f
 
     add-float/2addr v1, v15
 
@@ -2035,13 +2035,13 @@
 
     iget v15, v0, Lcom/android/systemui/ImageWallpaper$DrawableEngine;->mYOffset:F
 
-    const/high16 v16, 0x3f000000
+    const/high16 v16, 0x3f000000    # 0.5f
 
     sub-float v15, v15, v16
 
     mul-float/2addr v1, v15
 
-    const/high16 v15, 0x3f000000
+    const/high16 v15, 0x3f000000    # 0.5f
 
     add-float/2addr v1, v15
 

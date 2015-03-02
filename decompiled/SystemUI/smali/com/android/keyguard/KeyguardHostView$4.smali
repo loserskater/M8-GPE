@@ -92,7 +92,7 @@
     invoke-virtual {v0}, Lcom/android/keyguard/KeyguardWidgetPager;->scrollLeft()V
 
     :cond_0
-    const/high16 v0, 0x3f800000
+    const/high16 v0, 0x3f800000    # 1.0f
 
     invoke-direct {p0, v0}, Lcom/android/keyguard/KeyguardHostView$4;->setSliderHandleAlpha(F)V
 
@@ -108,7 +108,7 @@
 .method public onCameraLaunchedUnsuccessfully()V
     .locals 1
 
-    const/high16 v0, 0x3f800000
+    const/high16 v0, 0x3f800000    # 1.0f
 
     invoke-direct {p0, v0}, Lcom/android/keyguard/KeyguardHostView$4;->setSliderHandleAlpha(F)V
 

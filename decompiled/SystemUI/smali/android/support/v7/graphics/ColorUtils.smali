@@ -19,13 +19,13 @@
 
     aget v5, p0, v10
 
-    const/high16 v10, 0x3f800000
+    const/high16 v10, 0x3f800000    # 1.0f
 
-    const/high16 v11, 0x40000000
+    const/high16 v11, 0x40000000    # 2.0f
 
     mul-float/2addr v11, v5
 
-    const/high16 v12, 0x3f800000
+    const/high16 v12, 0x3f800000    # 1.0f
 
     sub-float/2addr v11, v12
 
@@ -37,23 +37,23 @@
 
     mul-float v1, v10, v8
 
-    const/high16 v10, 0x3f000000
+    const/high16 v10, 0x3f000000    # 0.5f
 
     mul-float/2addr v10, v1
 
     sub-float v6, v5, v10
 
-    const/high16 v10, 0x3f800000
+    const/high16 v10, 0x3f800000    # 1.0f
 
-    const/high16 v11, 0x42700000
+    const/high16 v11, 0x42700000    # 60.0f
 
     div-float v11, v3, v11
 
-    const/high16 v12, 0x40000000
+    const/high16 v12, 0x40000000    # 2.0f
 
     rem-float/2addr v11, v12
 
-    const/high16 v12, 0x3f800000
+    const/high16 v12, 0x3f800000    # 1.0f
 
     sub-float/2addr v11, v12
 
@@ -121,7 +121,7 @@
     return v10
 
     :pswitch_0
-    const/high16 v10, 0x437f0000
+    const/high16 v10, 0x437f0000    # 255.0f
 
     add-float v11, v1, v6
 
@@ -131,7 +131,7 @@
 
     move-result v7
 
-    const/high16 v10, 0x437f0000
+    const/high16 v10, 0x437f0000    # 255.0f
 
     add-float v11, v9, v6
 
@@ -141,7 +141,7 @@
 
     move-result v2
 
-    const/high16 v10, 0x437f0000
+    const/high16 v10, 0x437f0000    # 255.0f
 
     mul-float/2addr v10, v6
 
@@ -152,7 +152,7 @@
     goto :goto_0
 
     :pswitch_1
-    const/high16 v10, 0x437f0000
+    const/high16 v10, 0x437f0000    # 255.0f
 
     add-float v11, v9, v6
 
@@ -162,7 +162,7 @@
 
     move-result v7
 
-    const/high16 v10, 0x437f0000
+    const/high16 v10, 0x437f0000    # 255.0f
 
     add-float v11, v1, v6
 
@@ -172,7 +172,7 @@
 
     move-result v2
 
-    const/high16 v10, 0x437f0000
+    const/high16 v10, 0x437f0000    # 255.0f
 
     mul-float/2addr v10, v6
 
@@ -183,7 +183,7 @@
     goto :goto_0
 
     :pswitch_2
-    const/high16 v10, 0x437f0000
+    const/high16 v10, 0x437f0000    # 255.0f
 
     mul-float/2addr v10, v6
 
@@ -191,7 +191,7 @@
 
     move-result v7
 
-    const/high16 v10, 0x437f0000
+    const/high16 v10, 0x437f0000    # 255.0f
 
     add-float v11, v1, v6
 
@@ -201,7 +201,7 @@
 
     move-result v2
 
-    const/high16 v10, 0x437f0000
+    const/high16 v10, 0x437f0000    # 255.0f
 
     add-float v11, v9, v6
 
@@ -214,7 +214,7 @@
     goto :goto_0
 
     :pswitch_3
-    const/high16 v10, 0x437f0000
+    const/high16 v10, 0x437f0000    # 255.0f
 
     mul-float/2addr v10, v6
 
@@ -222,7 +222,7 @@
 
     move-result v7
 
-    const/high16 v10, 0x437f0000
+    const/high16 v10, 0x437f0000    # 255.0f
 
     add-float v11, v9, v6
 
@@ -232,7 +232,7 @@
 
     move-result v2
 
-    const/high16 v10, 0x437f0000
+    const/high16 v10, 0x437f0000    # 255.0f
 
     add-float v11, v1, v6
 
@@ -245,7 +245,7 @@
     goto/16 :goto_0
 
     :pswitch_4
-    const/high16 v10, 0x437f0000
+    const/high16 v10, 0x437f0000    # 255.0f
 
     add-float v11, v9, v6
 
@@ -255,7 +255,7 @@
 
     move-result v7
 
-    const/high16 v10, 0x437f0000
+    const/high16 v10, 0x437f0000    # 255.0f
 
     mul-float/2addr v10, v6
 
@@ -263,7 +263,7 @@
 
     move-result v2
 
-    const/high16 v10, 0x437f0000
+    const/high16 v10, 0x437f0000    # 255.0f
 
     add-float v11, v1, v6
 
@@ -276,7 +276,7 @@
     goto/16 :goto_0
 
     :pswitch_5
-    const/high16 v10, 0x437f0000
+    const/high16 v10, 0x437f0000    # 255.0f
 
     add-float v11, v1, v6
 
@@ -286,7 +286,7 @@
 
     move-result v7
 
-    const/high16 v10, 0x437f0000
+    const/high16 v10, 0x437f0000    # 255.0f
 
     mul-float/2addr v10, v6
 
@@ -294,7 +294,7 @@
 
     move-result v2
 
-    const/high16 v10, 0x437f0000
+    const/high16 v10, 0x437f0000    # 255.0f
 
     add-float v11, v9, v6
 
@@ -323,19 +323,19 @@
 
     int-to-float v9, p0
 
-    const/high16 v10, 0x437f0000
+    const/high16 v10, 0x437f0000    # 255.0f
 
     div-float v7, v9, v10
 
     int-to-float v9, p1
 
-    const/high16 v10, 0x437f0000
+    const/high16 v10, 0x437f0000    # 255.0f
 
     div-float v2, v9, v10
 
     int-to-float v9, p2
 
-    const/high16 v10, 0x437f0000
+    const/high16 v10, 0x437f0000    # 255.0f
 
     div-float v0, v9, v10
 
@@ -359,7 +359,7 @@
 
     add-float v9, v5, v6
 
-    const/high16 v10, 0x40000000
+    const/high16 v10, 0x40000000    # 2.0f
 
     div-float v4, v9, v10
 
@@ -374,11 +374,11 @@
     :goto_0
     const/4 v9, 0x0
 
-    const/high16 v10, 0x42700000
+    const/high16 v10, 0x42700000    # 60.0f
 
     mul-float/2addr v10, v3
 
-    const/high16 v11, 0x43b40000
+    const/high16 v11, 0x43b40000    # 360.0f
 
     rem-float/2addr v10, v11
 
@@ -403,18 +403,18 @@
 
     div-float/2addr v9, v1
 
-    const/high16 v10, 0x40c00000
+    const/high16 v10, 0x40c00000    # 6.0f
 
     rem-float v3, v9, v10
 
     :goto_1
-    const/high16 v9, 0x3f800000
+    const/high16 v9, 0x3f800000    # 1.0f
 
-    const/high16 v10, 0x40000000
+    const/high16 v10, 0x40000000    # 2.0f
 
     mul-float/2addr v10, v4
 
-    const/high16 v11, 0x3f800000
+    const/high16 v11, 0x3f800000    # 1.0f
 
     sub-float/2addr v10, v11
 
@@ -437,7 +437,7 @@
 
     div-float/2addr v9, v1
 
-    const/high16 v10, 0x40000000
+    const/high16 v10, 0x40000000    # 2.0f
 
     add-float v3, v9, v10
 
@@ -448,7 +448,7 @@
 
     div-float/2addr v9, v1
 
-    const/high16 v10, 0x40800000
+    const/high16 v10, 0x40800000    # 4.0f
 
     add-float v3, v9, v10
 

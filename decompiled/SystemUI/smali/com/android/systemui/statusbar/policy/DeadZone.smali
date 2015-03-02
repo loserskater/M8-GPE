@@ -270,7 +270,7 @@
 
     iget v0, p0, Lcom/android/systemui/statusbar/policy/DeadZone;->mFlashFrac:F
 
-    const/high16 v2, 0x437f0000
+    const/high16 v2, 0x437f0000    # 255.0f
 
     mul-float/2addr v2, v0
 

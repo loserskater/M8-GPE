@@ -138,7 +138,7 @@
     return v2
 
     :cond_1
-    const/high16 v3, 0x3f000000
+    const/high16 v3, 0x3f000000    # 0.5f
 
     mul-float/2addr v3, v1
 
@@ -481,7 +481,7 @@
 .method private computeAxisDuration(III)I
     .locals 10
 
-    const/high16 v9, 0x3f800000
+    const/high16 v9, 0x3f800000    # 1.0f
 
     if-nez p1, :cond_0
 
@@ -531,7 +531,7 @@
 
     if-lez p2, :cond_1
 
-    const/high16 v6, 0x447a0000
+    const/high16 v6, 0x447a0000    # 1000.0f
 
     int-to-float v7, p2
 
@@ -571,7 +571,7 @@
 
     add-float v6, v4, v9
 
-    const/high16 v7, 0x43800000
+    const/high16 v7, 0x43800000    # 256.0f
 
     mul-float/2addr v6, v7
 
@@ -740,13 +740,13 @@
 .method private distanceInfluenceForSnapDuration(F)F
     .locals 4
 
-    const/high16 v0, 0x3f000000
+    const/high16 v0, 0x3f000000    # 0.5f
 
     sub-float/2addr p1, v0
 
     float-to-double v0, p1
 
-    const-wide v2, 0x3fde28c7460698c7L
+    const-wide v2, 0x3fde28c7460698c7L    # 0.4712389167638204
 
     mul-double/2addr v0, v2
 

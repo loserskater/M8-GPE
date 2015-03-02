@@ -411,7 +411,7 @@
     :array_0
     .array-data 4
         0x0
-        0x3f800000
+        0x3f800000    # 1.0f
     .end array-data
 .end method
 
@@ -465,7 +465,7 @@
 
     int-to-float v7, p1
 
-    const/high16 v8, 0x40000000
+    const/high16 v8, 0x40000000    # 2.0f
 
     iget v9, p0, Lcom/android/systemui/screenshot/GlobalScreenshot;->mBgPadding:F
 
@@ -473,13 +473,13 @@
 
     sub-float/2addr v7, v8
 
-    const/high16 v8, 0x40000000
+    const/high16 v8, 0x40000000    # 2.0f
 
     div-float v3, v7, v8
 
     int-to-float v7, p2
 
-    const/high16 v8, 0x40000000
+    const/high16 v8, 0x40000000    # 2.0f
 
     iget v9, p0, Lcom/android/systemui/screenshot/GlobalScreenshot;->mBgPadding:F
 
@@ -487,7 +487,7 @@
 
     sub-float/2addr v7, v8
 
-    const/high16 v8, 0x40000000
+    const/high16 v8, 0x40000000    # 2.0f
 
     div-float v2, v7, v8
 
@@ -497,7 +497,7 @@
 
     neg-float v7, v3
 
-    const v8, 0x3ee66666
+    const v8, 0x3ee66666    # 0.45f
 
     mul-float/2addr v8, v3
 
@@ -505,7 +505,7 @@
 
     neg-float v8, v2
 
-    const v9, 0x3ee66666
+    const v9, 0x3ee66666    # 0.45f
 
     mul-float/2addr v9, v2
 
@@ -530,7 +530,7 @@
     :array_0
     .array-data 4
         0x0
-        0x3f800000
+        0x3f800000    # 1.0f
     .end array-data
 .end method
 
@@ -545,17 +545,17 @@
     return v0
 
     :pswitch_0
-    const/high16 v0, 0x43870000
+    const/high16 v0, 0x43870000    # 270.0f
 
     goto :goto_0
 
     :pswitch_1
-    const/high16 v0, 0x43340000
+    const/high16 v0, 0x43340000    # 180.0f
 
     goto :goto_0
 
     :pswitch_2
-    const/high16 v0, 0x42b40000
+    const/high16 v0, 0x42b40000    # 90.0f
 
     goto :goto_0
 
@@ -1001,7 +1001,7 @@
 
     neg-float v0, v0
 
-    const/high16 v1, 0x40000000
+    const/high16 v1, 0x40000000    # 2.0f
 
     div-float/2addr v0, v1
 
@@ -1011,7 +1011,7 @@
 
     neg-float v1, v1
 
-    const/high16 v2, 0x40000000
+    const/high16 v2, 0x40000000    # 2.0f
 
     div-float/2addr v1, v2
 

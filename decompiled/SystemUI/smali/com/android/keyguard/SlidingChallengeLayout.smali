@@ -177,17 +177,17 @@
 
     const/4 v8, 0x0
 
-    const/high16 v7, 0x41000000
+    const/high16 v7, 0x41000000    # 8.0f
 
     const/4 v6, 0x0
 
-    const/high16 v5, 0x3f000000
+    const/high16 v5, 0x3f000000    # 0.5f
 
     const/4 v4, 0x1
 
     invoke-direct {p0, p1, p2, p3}, Landroid/view/ViewGroup;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    const/high16 v3, 0x3f800000
+    const/high16 v3, 0x3f800000    # 1.0f
 
     iput v3, p0, Lcom/android/keyguard/SlidingChallengeLayout;->mChallengeOffset:F
 
@@ -549,7 +549,7 @@
 .method private getChallengeAlpha()F
     .locals 3
 
-    const/high16 v2, 0x3f800000
+    const/high16 v2, 0x3f800000    # 1.0f
 
     iget v1, p0, Lcom/android/keyguard/SlidingChallengeLayout;->mChallengeOffset:F
 
@@ -889,7 +889,7 @@
 
     packed-switch p2, :pswitch_data_0
 
-    const/high16 v0, 0x40000000
+    const/high16 v0, 0x40000000    # 2.0f
 
     invoke-static {p1, p2}, Ljava/lang/Math;->min(II)I
 
@@ -910,7 +910,7 @@
     goto :goto_0
 
     :pswitch_1
-    const/high16 v0, 0x40000000
+    const/high16 v0, 0x40000000    # 2.0f
 
     move v1, p1
 
@@ -969,7 +969,7 @@
 
     move-result p1
 
-    const/high16 v4, 0x3f800000
+    const/high16 v4, 0x3f800000    # 1.0f
 
     sub-int v5, p1, v1
 
@@ -1338,7 +1338,7 @@
     :cond_1
     iget v3, p0, Lcom/android/keyguard/SlidingChallengeLayout;->mChallengeOffset:F
 
-    const/high16 v4, 0x3f000000
+    const/high16 v4, 0x3f000000    # 0.5f
 
     cmpl-float v3, v3, v4
 
@@ -1411,7 +1411,7 @@
 
     const/4 v1, 0x0
 
-    const/high16 v12, 0x3f800000
+    const/high16 v12, 0x3f800000    # 1.0f
 
     iget-object v0, p0, Lcom/android/keyguard/SlidingChallengeLayout;->mChallengeView:Lcom/android/keyguard/KeyguardSecurityContainer;
 
@@ -1490,7 +1490,7 @@
 
     if-lez p2, :cond_2
 
-    const/high16 v0, 0x447a0000
+    const/high16 v0, 0x447a0000    # 1000.0f
 
     int-to-float v3, p2
 
@@ -1538,7 +1538,7 @@
 
     add-float v0, v6, v12
 
-    const/high16 v3, 0x42c80000
+    const/high16 v3, 0x42c80000    # 100.0f
 
     mul-float/2addr v0, v3
 
@@ -1565,7 +1565,7 @@
     :cond_0
     if-eqz p1, :cond_1
 
-    const/high16 v0, 0x3f800000
+    const/high16 v0, 0x3f800000    # 1.0f
 
     :goto_0
     iget v1, p0, Lcom/android/keyguard/SlidingChallengeLayout;->mHandleAlpha:F
@@ -1639,7 +1639,7 @@
 
     if-eqz v0, :cond_0
 
-    const/high16 v0, 0x3f800000
+    const/high16 v0, 0x3f800000    # 1.0f
 
     :goto_0
     iput v0, p0, Lcom/android/keyguard/SlidingChallengeLayout;->mChallengeOffset:F
@@ -1800,13 +1800,13 @@
 .method distanceInfluenceForSnapDuration(F)F
     .locals 4
 
-    const/high16 v0, 0x3f000000
+    const/high16 v0, 0x3f000000    # 0.5f
 
     sub-float/2addr p1, v0
 
     float-to-double v0, p1
 
-    const-wide v2, 0x3fde28c7460698c7L
+    const-wide v2, 0x3fde28c7460698c7L    # 0.4712389167638204
 
     mul-double/2addr v0, v2
 
@@ -1842,7 +1842,7 @@
 
     if-eqz p1, :cond_1
 
-    const/high16 v0, 0x3f800000
+    const/high16 v0, 0x3f800000    # 1.0f
 
     :goto_0
     if-eqz p1, :cond_2
@@ -2475,7 +2475,7 @@
 
     move/from16 v22, v0
 
-    const/high16 v23, 0x3f800000
+    const/high16 v23, 0x3f800000    # 1.0f
 
     move-object/from16 v0, p0
 
@@ -2714,7 +2714,7 @@
 
     move-result v2
 
-    const/high16 v3, 0x40000000
+    const/high16 v3, 0x40000000    # 2.0f
 
     if-ne v2, v3, :cond_0
 
@@ -2722,7 +2722,7 @@
 
     move-result v2
 
-    const/high16 v3, 0x40000000
+    const/high16 v3, 0x40000000    # 2.0f
 
     if-eq v2, v3, :cond_1
 
@@ -2766,7 +2766,7 @@
 
     sub-int v17, v2, v3
 
-    const/high16 v2, 0x40000000
+    const/high16 v2, 0x40000000    # 2.0f
 
     move/from16 v0, v17
 
@@ -3225,7 +3225,7 @@
 
     sub-int v25, v2, v3
 
-    const/high16 v2, 0x40000000
+    const/high16 v2, 0x40000000    # 2.0f
 
     move/from16 v0, v26
 
@@ -3233,7 +3233,7 @@
 
     move-result v9
 
-    const/high16 v2, 0x40000000
+    const/high16 v2, 0x40000000    # 2.0f
 
     move/from16 v0, v25
 
@@ -3810,7 +3810,7 @@
 
     const/4 v4, 0x0
 
-    const/high16 v5, 0x3f800000
+    const/high16 v5, 0x3f800000    # 1.0f
 
     aput v5, v3, v4
 

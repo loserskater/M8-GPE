@@ -547,7 +547,7 @@
     :try_start_0
     const-string v3, "ambientRatio"
 
-    const/high16 v4, 0x3fc00000
+    const/high16 v4, 0x3fc00000    # 1.5f
 
     invoke-static {v4}, Ljava/lang/String;->valueOf(F)Ljava/lang/String;
 

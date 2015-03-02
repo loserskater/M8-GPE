@@ -191,7 +191,7 @@
     :cond_0
     if-eqz p1, :cond_1
 
-    const/high16 v0, -0x3d4c0000
+    const/high16 v0, -0x3d4c0000    # -90.0f
 
     :goto_0
     iget v1, p0, Lcom/android/systemui/statusbar/phone/BackButtonDrawable;->mRotation:F

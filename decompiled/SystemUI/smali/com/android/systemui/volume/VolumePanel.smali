@@ -352,7 +352,7 @@
     invoke-static {v9, v10}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     :cond_2
-    const/high16 v9, 0x3f000000
+    const/high16 v9, 0x3f000000    # 0.5f
 
     iput v9, p0, Lcom/android/systemui/volume/VolumePanel;->mDisabledAlpha:F
 
@@ -2394,7 +2394,7 @@
 
     iget-object v3, p1, Lcom/android/systemui/volume/VolumePanel$StreamControl;->icon:Landroid/widget/ImageView;
 
-    const/high16 v5, 0x3f800000
+    const/high16 v5, 0x3f800000    # 1.0f
 
     invoke-virtual {v3, v5}, Landroid/widget/ImageView;->setAlpha(F)V
 

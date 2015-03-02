@@ -350,7 +350,7 @@
 
     move-result v8
 
-    const/high16 v19, 0x40000000
+    const/high16 v19, 0x40000000    # 2.0f
 
     move/from16 v0, v19
 
@@ -443,7 +443,7 @@
 
     if-le v0, v1, :cond_5
 
-    const/high16 v19, 0x40000000
+    const/high16 v19, 0x40000000    # 2.0f
 
     move/from16 v0, v16
 
@@ -503,7 +503,7 @@
 
     move/from16 v19, v0
 
-    const/high16 v20, 0x40000000
+    const/high16 v20, 0x40000000    # 2.0f
 
     invoke-static/range {v19 .. v20}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
@@ -530,7 +530,7 @@
     move/from16 v15, v16
 
     :goto_5
-    const/high16 v19, 0x40000000
+    const/high16 v19, 0x40000000    # 2.0f
 
     move/from16 v0, v19
 

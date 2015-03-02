@@ -397,7 +397,7 @@
 
     float-to-double v2, v0
 
-    const-wide v4, 0x3fe6666660000000L
+    const-wide v4, 0x3fe6666660000000L    # 0.699999988079071
 
     invoke-static {v2, v3, v4, v5}, Ljava/lang/Math;->pow(DD)D
 
@@ -405,7 +405,7 @@
 
     double-to-float v0, v2
 
-    const/high16 v1, 0x42400000
+    const/high16 v1, 0x42400000    # 48.0f
 
     mul-float/2addr v1, v0
 
@@ -620,7 +620,7 @@
 
     const/16 v10, 0x8
 
-    const/high16 v9, 0x40000000
+    const/high16 v9, 0x40000000    # 2.0f
 
     invoke-virtual {p1}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
@@ -729,7 +729,7 @@
 
     move-result v0
 
-    const/high16 v4, -0x40800000
+    const/high16 v4, -0x40800000    # -1.0f
 
     if-eqz v5, :cond_5
 
@@ -753,13 +753,13 @@
 
     div-float v4, v6, v7
 
-    const/high16 v6, 0x3f800000
+    const/high16 v6, 0x3f800000    # 1.0f
 
     invoke-static {v4, v6}, Ljava/lang/Math;->min(FF)F
 
     move-result v6
 
-    const/high16 v7, -0x40800000
+    const/high16 v7, -0x40800000    # -1.0f
 
     invoke-static {v6, v7}, Ljava/lang/Math;->max(FF)F
 
@@ -1282,7 +1282,7 @@
 
     float-to-double v6, v0
 
-    const-wide v12, 0x3fe6666660000000L
+    const-wide v12, 0x3fe6666660000000L    # 0.699999988079071
 
     invoke-static {v6, v7, v12, v13}, Ljava/lang/Math;->pow(DD)D
 
@@ -1294,7 +1294,7 @@
 
     const-wide/16 v6, 0x202
 
-    const/high16 v5, 0x42c80000
+    const/high16 v5, 0x42c80000    # 100.0f
 
     mul-float v5, v5, v25
 

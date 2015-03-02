@@ -134,7 +134,7 @@
 
     const/4 v3, 0x0
 
-    const/high16 v6, 0x3f800000
+    const/high16 v6, 0x3f800000    # 1.0f
 
     iget-boolean v4, p0, Lcom/android/systemui/statusbar/stack/PiecewiseLinearIndentationFunctor;->mStackStartsAtPeek:Z
 

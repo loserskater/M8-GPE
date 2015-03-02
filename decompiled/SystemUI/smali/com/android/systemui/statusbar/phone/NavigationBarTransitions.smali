@@ -67,7 +67,7 @@
 .method private alphaForMode(I)F
     .locals 3
 
-    const/high16 v2, 0x3f800000
+    const/high16 v2, 0x3f800000    # 1.0f
 
     if-eqz p1, :cond_0
 
@@ -97,7 +97,7 @@
 
     const/4 v5, 0x0
 
-    const/high16 v2, 0x3f800000
+    const/high16 v2, 0x3f800000    # 1.0f
 
     const/4 v7, 0x0
 
@@ -238,7 +238,7 @@
 
     new-instance v6, Landroid/view/animation/AccelerateInterpolator;
 
-    const/high16 v7, 0x40000000
+    const/high16 v7, 0x40000000    # 2.0f
 
     invoke-direct {v6, v7}, Landroid/view/animation/AccelerateInterpolator;-><init>(F)V
 

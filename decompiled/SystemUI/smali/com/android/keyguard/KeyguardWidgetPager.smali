@@ -67,11 +67,11 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    const v0, 0x461c4000
+    const v0, 0x461c4000    # 10000.0f
 
     sput v0, Lcom/android/keyguard/KeyguardWidgetPager;->CAMERA_DISTANCE:F
 
-    const/high16 v0, 0x41f00000
+    const/high16 v0, 0x41f00000    # 30.0f
 
     sput v0, Lcom/android/keyguard/KeyguardWidgetPager;->OVERSCROLL_MAX_ROTATION:F
 
@@ -109,7 +109,7 @@
 
     new-instance v0, Lcom/android/keyguard/KeyguardWidgetPager$ZInterpolator;
 
-    const/high16 v1, 0x3f000000
+    const/high16 v1, 0x3f000000    # 0.5f
 
     invoke-direct {v0, v1}, Lcom/android/keyguard/KeyguardWidgetPager$ZInterpolator;-><init>(F)V
 
@@ -127,7 +127,7 @@
 
     iput v0, p0, Lcom/android/keyguard/KeyguardWidgetPager;->mBouncerZoomInOutDuration:I
 
-    const v0, 0x3f2b851f
+    const v0, 0x3f2b851f    # 0.67f
 
     iput v0, p0, Lcom/android/keyguard/KeyguardWidgetPager;->BOUNCER_SCALE_FACTOR:F
 
@@ -762,7 +762,7 @@
 
     if-ne v8, v5, :cond_4
 
-    const/high16 v6, 0x3f800000
+    const/high16 v6, 0x3f800000    # 1.0f
 
     goto :goto_2
 
@@ -925,7 +925,7 @@
 
     const/4 v1, 0x0
 
-    const/high16 v0, 0x3f800000
+    const/high16 v0, 0x3f800000    # 1.0f
 
     invoke-virtual {p0}, Lcom/android/keyguard/KeyguardWidgetPager;->isWarping()Z
 
@@ -969,7 +969,7 @@
 
     move-result v0
 
-    const v1, 0x3f19999a
+    const v1, 0x3f19999a    # 0.6f
 
     mul-float/2addr v0, v1
 
@@ -2243,7 +2243,7 @@
     :cond_0
     invoke-virtual {v0, v4}, Lcom/android/keyguard/KeyguardWidgetFrame;->setBackgroundAlpha(F)V
 
-    const/high16 v3, 0x3f800000
+    const/high16 v3, 0x3f800000    # 1.0f
 
     invoke-virtual {v0, v3}, Lcom/android/keyguard/KeyguardWidgetFrame;->setContentAlpha(F)V
 
@@ -2260,7 +2260,7 @@
 
     const/4 v6, 0x0
 
-    const/high16 v5, 0x3f800000
+    const/high16 v5, 0x3f800000    # 1.0f
 
     iget-object v1, p0, Lcom/android/keyguard/KeyguardWidgetPager;->mZoomInOutAnim:Landroid/animation/AnimatorSet;
 
@@ -2354,7 +2354,7 @@
 
     new-instance v2, Landroid/view/animation/DecelerateInterpolator;
 
-    const/high16 v3, 0x3fc00000
+    const/high16 v3, 0x3fc00000    # 1.5f
 
     invoke-direct {v2, v3}, Landroid/view/animation/DecelerateInterpolator;-><init>(F)V
 
@@ -2380,7 +2380,7 @@
 .method zoomOutToBouncer()V
     .locals 9
 
-    const/high16 v4, 0x3f800000
+    const/high16 v4, 0x3f800000    # 1.0f
 
     const/4 v3, 0x0
 
@@ -2506,7 +2506,7 @@
 
     new-instance v3, Landroid/view/animation/DecelerateInterpolator;
 
-    const/high16 v4, 0x3fc00000
+    const/high16 v4, 0x3fc00000    # 1.5f
 
     invoke-direct {v3, v4}, Landroid/view/animation/DecelerateInterpolator;-><init>(F)V
 

@@ -25,7 +25,7 @@
 .method public constructor <init>()V
     .locals 3
 
-    const/high16 v2, 0x3f800000
+    const/high16 v2, 0x3f800000    # 1.0f
 
     const/4 v1, 0x0
 
@@ -59,7 +59,7 @@
 .method public static reset(Landroid/view/View;)V
     .locals 2
 
-    const/high16 v1, 0x3f800000
+    const/high16 v1, 0x3f800000    # 1.0f
 
     const/4 v0, 0x0
 
@@ -372,7 +372,7 @@
 .method public reset()V
     .locals 3
 
-    const/high16 v2, 0x3f800000
+    const/high16 v2, 0x3f800000    # 1.0f
 
     const/4 v1, 0x0
 

@@ -145,7 +145,7 @@
 
     new-instance v0, Lcom/android/systemui/statusbar/FlingAnimationUtils;
 
-    const v1, 0x3f19999a
+    const v1, 0x3f19999a    # 0.6f
 
     invoke-direct {v0, p1, v1}, Lcom/android/systemui/statusbar/FlingAnimationUtils;-><init>(Landroid/content/Context;F)V
 
@@ -330,7 +330,7 @@
 
     if-eqz v1, :cond_0
 
-    const/high16 v0, 0x3fc00000
+    const/high16 v0, 0x3fc00000    # 1.5f
 
     :goto_0
     iget v1, p0, Lcom/android/systemui/statusbar/phone/PanelView;->mUnlockFalsingThreshold:I
@@ -344,7 +344,7 @@
     return v1
 
     :cond_0
-    const/high16 v0, 0x3f800000
+    const/high16 v0, 0x3f800000    # 1.0f
 
     goto :goto_0
 .end method
@@ -1408,7 +1408,7 @@
 
     move-result v2
 
-    const/high16 v3, 0x3f000000
+    const/high16 v3, 0x3f000000    # 0.5f
 
     cmpl-float v2, v2, v3
 
@@ -3365,7 +3365,7 @@
 
     invoke-virtual {p0, v3}, Lcom/android/systemui/statusbar/phone/PanelView;->onHeightUpdated(F)V
 
-    const/high16 v3, 0x3f800000
+    const/high16 v3, 0x3f800000    # 1.0f
 
     cmpl-float v4, v0, v2
 

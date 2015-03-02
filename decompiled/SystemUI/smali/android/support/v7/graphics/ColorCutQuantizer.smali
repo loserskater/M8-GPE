@@ -338,7 +338,7 @@
 
     aget v0, p0, v0
 
-    const v1, 0x3d4ccccd
+    const v1, 0x3d4ccccd    # 0.05f
 
     cmpg-float v0, v0, v1
 
@@ -364,7 +364,7 @@
 
     aget v2, p0, v1
 
-    const/high16 v3, 0x41200000
+    const/high16 v3, 0x41200000    # 10.0f
 
     cmpl-float v2, v2, v3
 
@@ -372,7 +372,7 @@
 
     aget v2, p0, v1
 
-    const/high16 v3, 0x42140000
+    const/high16 v3, 0x42140000    # 37.0f
 
     cmpg-float v2, v2, v3
 
@@ -380,7 +380,7 @@
 
     aget v2, p0, v0
 
-    const v3, 0x3f51eb85
+    const v3, 0x3f51eb85    # 0.82f
 
     cmpg-float v2, v2, v3
 
@@ -402,7 +402,7 @@
 
     aget v0, p0, v0
 
-    const v1, 0x3f733333
+    const v1, 0x3f733333    # 0.95f
 
     cmpl-float v0, v0, v1
 

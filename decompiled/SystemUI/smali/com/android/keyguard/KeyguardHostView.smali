@@ -237,7 +237,7 @@
     :goto_0
     new-instance v5, Landroid/appwidget/AppWidgetHost;
 
-    const v6, 0x4b455947
+    const v6, 0x4b455947    # 1.2933447E7f
 
     iget-object v7, p0, Lcom/android/keyguard/KeyguardHostView;->mOnClickHandler:Lcom/android/keyguard/KeyguardHostView$MyOnClickHandler;
 
@@ -2336,7 +2336,7 @@
 
     iget-object v2, p0, Lcom/android/keyguard/KeyguardHostView;->mAppWidgetContainer:Lcom/android/keyguard/KeyguardWidgetPager;
 
-    const/high16 v3, 0x3f000000
+    const/high16 v3, 0x3f000000    # 0.5f
 
     invoke-virtual {v2, v3}, Lcom/android/keyguard/KeyguardWidgetPager;->setMinScale(F)V
 
@@ -2822,7 +2822,7 @@
 
     if-eqz v0, :cond_1
 
-    const/high16 v1, 0x3f800000
+    const/high16 v1, 0x3f800000    # 1.0f
 
     invoke-virtual {v0, v1}, Lcom/android/keyguard/SlidingChallengeLayout;->setHandleAlpha(F)V
 

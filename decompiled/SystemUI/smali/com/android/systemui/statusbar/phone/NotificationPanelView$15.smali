@@ -43,7 +43,7 @@
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$15;->val$icon:Lcom/android/systemui/statusbar/KeyguardAffordanceView;
 
-    const/high16 v2, 0x3f000000
+    const/high16 v2, 0x3f000000    # 0.5f
 
     const/4 v3, 0x1
 

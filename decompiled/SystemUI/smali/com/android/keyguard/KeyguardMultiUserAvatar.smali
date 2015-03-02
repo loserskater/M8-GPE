@@ -95,7 +95,7 @@
 
     const/4 v3, 0x1
 
-    const/high16 v2, 0x3f800000
+    const/high16 v2, 0x3f800000    # 1.0f
 
     invoke-direct {p0, p1, p2, p3}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
@@ -167,11 +167,11 @@
 
     iput v1, p0, Lcom/android/keyguard/KeyguardMultiUserAvatar;->mActiveTextAlpha:F
 
-    const/high16 v1, 0x3f000000
+    const/high16 v1, 0x3f000000    # 0.5f
 
     iput v1, p0, Lcom/android/keyguard/KeyguardMultiUserAvatar;->mInactiveTextAlpha:F
 
-    const/high16 v1, 0x3fc00000
+    const/high16 v1, 0x3fc00000    # 1.5f
 
     iput v1, p0, Lcom/android/keyguard/KeyguardMultiUserAvatar;->mActiveScale:F
 
@@ -563,11 +563,11 @@
 .method updateVisualsForActive(ZZILjava/lang/Runnable;)V
     .locals 11
 
-    const/high16 v3, 0x3f800000
+    const/high16 v3, 0x3f800000    # 1.0f
 
     const/16 v10, 0xff
 
-    const/high16 v1, 0x437f0000
+    const/high16 v1, 0x437f0000    # 255.0f
 
     if-eqz p1, :cond_1
 
@@ -717,6 +717,6 @@
     :array_0
     .array-data 4
         0x0
-        0x3f800000
+        0x3f800000    # 1.0f
     .end array-data
 .end method

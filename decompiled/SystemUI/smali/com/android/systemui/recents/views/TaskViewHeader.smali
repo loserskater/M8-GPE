@@ -191,7 +191,7 @@
     const/4 v0, -0x1
 
     :goto_0
-    const v1, 0x3f4ccccd
+    const v1, 0x3f4ccccd    # 0.8f
 
     invoke-static {p1, v0, v1}, Lcom/android/systemui/recents/misc/Utilities;->getColorWithOverlay(IIF)I
 
@@ -238,7 +238,7 @@
 
     int-to-float v0, v0
 
-    const/high16 v1, 0x40000000
+    const/high16 v1, 0x40000000    # 2.0f
 
     div-float/2addr v0, v1
 
@@ -599,7 +599,7 @@
 
     const/4 v11, 0x0
 
-    const/high16 v12, 0x41700000
+    const/high16 v12, 0x41700000    # 15.0f
 
     aput v12, v10, v11
 
@@ -1013,7 +1013,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskViewHeader;->mDismissButton:Landroid/widget/ImageView;
 
-    const/high16 v1, 0x3f800000
+    const/high16 v1, 0x3f800000    # 1.0f
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setAlpha(F)V
 
@@ -1107,7 +1107,7 @@
 
     move-result-object v0
 
-    const/high16 v1, 0x3f800000
+    const/high16 v1, 0x3f800000    # 1.0f
 
     invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
 

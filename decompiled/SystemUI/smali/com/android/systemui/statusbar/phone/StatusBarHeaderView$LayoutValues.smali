@@ -60,7 +60,7 @@
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/high16 v0, 0x3f800000
+    const/high16 v0, 0x3f800000    # 1.0f
 
     iput v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$LayoutValues;->timeScale:F
 
@@ -80,11 +80,11 @@
 .method public interpoloate(Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$LayoutValues;Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$LayoutValues;F)V
     .locals 8
 
-    const/high16 v7, 0x40000000
+    const/high16 v7, 0x40000000    # 2.0f
 
     const/4 v6, 0x0
 
-    const/high16 v5, 0x3f800000
+    const/high16 v5, 0x3f800000    # 1.0f
 
     iget v3, p1, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$LayoutValues;->timeScale:F
 
@@ -226,7 +226,7 @@
 
     iput v3, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$LayoutValues;->weatherY:F
 
-    const/high16 v3, 0x3f000000
+    const/high16 v3, 0x3f000000    # 0.5f
 
     sub-float v3, p3, v3
 
@@ -284,7 +284,7 @@
 
     iput v3, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$LayoutValues;->signalClusterAlpha:F
 
-    const v3, 0x3f333333
+    const v3, 0x3f333333    # 0.7f
 
     sub-float v3, p3, v3
 
@@ -292,7 +292,7 @@
 
     move-result v3
 
-    const v4, 0x3e99999a
+    const v4, 0x3e99999a    # 0.3f
 
     div-float v2, v3, v4
 

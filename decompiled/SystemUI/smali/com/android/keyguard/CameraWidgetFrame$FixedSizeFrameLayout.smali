@@ -34,7 +34,7 @@
 .method protected onMeasure(II)V
     .locals 3
 
-    const/high16 v2, 0x40000000
+    const/high16 v2, 0x40000000    # 2.0f
 
     iget v0, p0, Lcom/android/keyguard/CameraWidgetFrame$FixedSizeFrameLayout;->width:I
 

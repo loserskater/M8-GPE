@@ -104,7 +104,7 @@
 
     int-to-float v3, v2
 
-    const/high16 v4, 0x3f400000
+    const/high16 v4, 0x3f400000    # 0.75f
 
     mul-float/2addr v3, v4
 
@@ -161,7 +161,7 @@
 
     int-to-float v6, v2
 
-    const/high16 v7, 0x3fc00000
+    const/high16 v7, 0x3fc00000    # 1.5f
 
     mul-float/2addr v6, v7
 

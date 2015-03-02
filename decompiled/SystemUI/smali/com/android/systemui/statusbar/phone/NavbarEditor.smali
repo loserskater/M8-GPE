@@ -704,7 +704,7 @@
     int-to-float v1, v4
 
     :goto_1
-    const/high16 v4, 0x40800000
+    const/high16 v4, 0x40800000    # 4.0f
 
     div-float v4, v1, v4
 
@@ -1097,7 +1097,7 @@
 
     int-to-float v10, v10
 
-    const/high16 v11, 0x40000000
+    const/high16 v11, 0x40000000    # 2.0f
 
     div-float v11, v2, v11
 
@@ -1133,7 +1133,7 @@
 
     sub-float v10, v8, v10
 
-    const/high16 v11, 0x40000000
+    const/high16 v11, 0x40000000    # 2.0f
 
     div-float v11, v2, v11
 
@@ -1161,7 +1161,7 @@
 
     sub-float v10, v8, v10
 
-    const/high16 v11, 0x40000000
+    const/high16 v11, 0x40000000    # 2.0f
 
     div-float v11, v2, v11
 

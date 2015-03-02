@@ -196,9 +196,9 @@
 
     const/16 v7, 0xff
 
-    const/high16 v6, 0x437f0000
+    const/high16 v6, 0x437f0000    # 255.0f
 
-    const/high16 v5, 0x3f800000
+    const/high16 v5, 0x3f800000    # 1.0f
 
     iget-boolean v3, p0, Lcom/android/systemui/recents/views/TaskViewThumbnail;->mInvisible:Z
 
@@ -332,7 +332,7 @@
 
     add-float/2addr v2, v3
 
-    const/high16 v3, 0x3f800000
+    const/high16 v3, 0x3f800000    # 1.0f
 
     sub-float/2addr v2, v3
 
@@ -410,7 +410,7 @@
 .method protected onFinishInflate()V
     .locals 1
 
-    const v0, 0x3f666666
+    const v0, 0x3f666666    # 0.9f
 
     iput v0, p0, Lcom/android/systemui/recents/views/TaskViewThumbnail;->mBitmapAlpha:F
 
@@ -428,7 +428,7 @@
 
     const/4 v2, 0x0
 
-    const/high16 v1, 0x3f800000
+    const/high16 v1, 0x3f800000    # 1.0f
 
     if-eqz p1, :cond_1
 
@@ -508,7 +508,7 @@
 
     if-eqz p1, :cond_0
 
-    const/high16 v0, 0x3f800000
+    const/high16 v0, 0x3f800000    # 1.0f
 
     iput v0, p0, Lcom/android/systemui/recents/views/TaskViewThumbnail;->mBitmapAlpha:F
 
@@ -696,7 +696,7 @@
 .method startLaunchTaskAnimation(Ljava/lang/Runnable;)V
     .locals 3
 
-    const/high16 v0, 0x3f800000
+    const/high16 v0, 0x3f800000    # 1.0f
 
     const/4 v1, 0x0
 

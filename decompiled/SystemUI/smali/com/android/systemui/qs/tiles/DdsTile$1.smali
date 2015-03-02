@@ -126,7 +126,7 @@
 
     move-result-object v0
 
-    const/high16 v1, 0x3f800000
+    const/high16 v1, 0x3f800000    # 1.0f
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/qs/QSTileView;->setAlpha(F)V
 
@@ -166,7 +166,7 @@
 
     move-result-object v0
 
-    const/high16 v1, 0x3f000000
+    const/high16 v1, 0x3f000000    # 0.5f
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/qs/QSTileView;->setAlpha(F)V
 

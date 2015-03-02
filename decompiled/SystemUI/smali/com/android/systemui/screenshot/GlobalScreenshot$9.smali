@@ -37,7 +37,7 @@
 .method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 6
 
-    const/high16 v5, 0x3f800000
+    const/high16 v5, 0x3f800000    # 1.0f
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
@@ -49,7 +49,7 @@
 
     move-result v1
 
-    const v2, 0x3f39999a
+    const v2, 0x3f39999a    # 0.725f
 
     iget-object v3, p0, Lcom/android/systemui/screenshot/GlobalScreenshot$9;->this$0:Lcom/android/systemui/screenshot/GlobalScreenshot;
 
@@ -60,7 +60,7 @@
 
     add-float/2addr v2, v3
 
-    const/high16 v3, 0x3e000000
+    const/high16 v3, 0x3e000000    # 0.125f
 
     mul-float/2addr v3, v1
 
@@ -75,7 +75,7 @@
 
     sub-float v3, v5, v1
 
-    const/high16 v4, 0x3f000000
+    const/high16 v4, 0x3f000000    # 0.5f
 
     mul-float/2addr v3, v4
 

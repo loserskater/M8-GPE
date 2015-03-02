@@ -140,7 +140,7 @@
 
     int-to-float v1, v1
 
-    const/high16 v2, 0x40000000
+    const/high16 v2, 0x40000000    # 2.0f
 
     mul-float/2addr v1, v2
 
@@ -228,7 +228,7 @@
 
     new-instance v1, Lcom/android/systemui/statusbar/FlingAnimationUtils;
 
-    const v2, 0x3e99999a
+    const v2, 0x3e99999a    # 0.3f
 
     invoke-direct {v1, p1, v2}, Lcom/android/systemui/statusbar/FlingAnimationUtils;-><init>(Landroid/content/Context;F)V
 
@@ -934,7 +934,7 @@
 .method private updateExpansion()V
     .locals 9
 
-    const/high16 v7, 0x3f800000
+    const/high16 v7, 0x3f800000    # 1.0f
 
     iget-object v6, p0, Lcom/android/systemui/ExpandHelper;->mSGD:Landroid/view/ScaleGestureDetector;
 
@@ -966,7 +966,7 @@
 
     if-ne v6, v8, :cond_0
 
-    const/high16 v6, -0x40800000
+    const/high16 v6, -0x40800000    # -1.0f
 
     :goto_0
     mul-float/2addr v0, v6

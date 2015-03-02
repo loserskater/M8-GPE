@@ -40,7 +40,7 @@
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 7
 
-    const/high16 v4, 0x3f800000
+    const/high16 v4, 0x3f800000    # 1.0f
 
     const-wide/16 v2, 0xdc
 
@@ -100,7 +100,7 @@
 .method private calculateDelay(II)J
     .locals 8
 
-    const-wide v6, 0x3fd999999999999aL
+    const-wide v6, 0x3fd999999999999aL    # 0.4
 
     mul-int/lit8 v0, p1, 0x28
 
@@ -118,7 +118,7 @@
 
     mul-double/2addr v2, v4
 
-    const-wide/high16 v4, 0x4034000000000000L
+    const-wide/high16 v4, 0x4034000000000000L    # 20.0
 
     mul-double/2addr v2, v4
 
@@ -520,7 +520,7 @@
 
     move-result-object v0
 
-    const/high16 v1, 0x3f800000
+    const/high16 v1, 0x3f800000    # 1.0f
 
     invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
 

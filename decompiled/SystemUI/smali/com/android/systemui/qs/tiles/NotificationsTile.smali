@@ -20,6 +20,10 @@
 .end annotation
 
 
+# static fields
+.field private static final SOUND_SETTINGS:Landroid/content/Intent;
+
+
 # instance fields
 .field private final mAudioManager:Landroid/media/AudioManager;
 
@@ -35,6 +39,20 @@
 
 
 # direct methods
+.method static constructor <clinit>()V
+    .locals 2
+
+    new-instance v0, Landroid/content/Intent;
+
+    const-string v1, "android.settings.SOUND_SETTINGS"
+
+    invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+
+    sput-object v0, Lcom/android/systemui/qs/tiles/NotificationsTile;->SOUND_SETTINGS:Landroid/content/Intent;
+
+    return-void
+.end method
+
 .method public constructor <init>(Lcom/android/systemui/qs/QSTile$Host;)V
     .locals 2
 
@@ -198,6 +216,34 @@
     const/4 v0, 0x1
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/qs/tiles/NotificationsTile;->showDetail(Z)V
+
+    invoke-virtual {p0}, Lcom/android/systemui/qs/tiles/NotificationsTile;->qsCollapsePanel()V
+
+    return-void
+.end method
+
+.method protected handleLongClick()V
+    .locals 2
+
+    invoke-super {p0}, Lcom/android/systemui/qs/QSTile;->handleLongClick()V
+
+    iget-object v0, p0, Lcom/android/systemui/qs/tiles/NotificationsTile;->mHost:Lcom/android/systemui/qs/QSTile$Host;
+
+    sget-object v1, Lcom/android/systemui/volume/ZenModePanel;->ZEN_SETTINGS:Landroid/content/Intent;
+
+    invoke-interface {v0, v1}, Lcom/android/systemui/qs/QSTile$Host;->startSettingsActivity(Landroid/content/Intent;)V
+
+    return-void
+.end method
+
+.method protected handleSecondaryClick()V
+    .locals 2
+
+    iget-object v0, p0, Lcom/android/systemui/qs/tiles/NotificationsTile;->mHost:Lcom/android/systemui/qs/QSTile$Host;
+
+    sget-object v1, Lcom/android/systemui/volume/ZenModePanel;->ZEN_SETTINGS:Landroid/content/Intent;
+
+    invoke-interface {v0, v1}, Lcom/android/systemui/qs/QSTile$Host;->startSettingsActivity(Landroid/content/Intent;)V
 
     return-void
 .end method

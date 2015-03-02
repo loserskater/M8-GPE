@@ -132,7 +132,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/recents/views/DebugOverlayView;->mDebugOutline:Landroid/graphics/Paint;
 
-    const/high16 v1, 0x41000000
+    const/high16 v1, 0x41000000    # 8.0f
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setStrokeWidth(F)V
 
@@ -296,7 +296,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/recents/views/DebugOverlayView;->mTmpPaint:Landroid/graphics/Paint;
 
-    const/high16 v1, 0x42700000
+    const/high16 v1, 0x42700000    # 60.0f
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setTextSize(F)V
 
@@ -314,7 +314,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/recents/views/DebugOverlayView;->mText:Ljava/lang/String;
 
-    const/high16 v1, 0x41200000
+    const/high16 v1, 0x41200000    # 10.0f
 
     invoke-virtual {p0}, Lcom/android/systemui/recents/views/DebugOverlayView;->getMeasuredHeight()I
 

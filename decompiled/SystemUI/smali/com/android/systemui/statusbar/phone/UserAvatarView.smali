@@ -85,7 +85,7 @@
 
     iput-object v4, p0, Lcom/android/systemui/statusbar/phone/UserAvatarView;->mDrawMatrix:Landroid/graphics/Matrix;
 
-    const/high16 v4, 0x3f800000
+    const/high16 v4, 0x3f800000    # 1.0f
 
     iput v4, p0, Lcom/android/systemui/statusbar/phone/UserAvatarView;->mScale:F
 
@@ -188,11 +188,11 @@
 
     const/4 v12, 0x0
 
-    const/high16 v11, 0x40000000
+    const/high16 v11, 0x40000000    # 2.0f
 
-    const/high16 v9, 0x3f800000
+    const/high16 v9, 0x3f800000    # 1.0f
 
-    const/high16 v10, 0x3f000000
+    const/high16 v10, 0x3f000000    # 0.5f
 
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/UserAvatarView;->getWidth()I
 
@@ -388,9 +388,9 @@
 
     const/4 v9, 0x0
 
-    const/high16 v11, 0x3f800000
+    const/high16 v11, 0x3f800000    # 1.0f
 
-    const/high16 v10, 0x40000000
+    const/high16 v10, 0x40000000    # 2.0f
 
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/UserAvatarView;->isActivated()Z
 

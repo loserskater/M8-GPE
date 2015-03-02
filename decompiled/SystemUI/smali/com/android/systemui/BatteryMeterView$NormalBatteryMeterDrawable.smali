@@ -394,7 +394,7 @@
 
     int-to-float v3, v0
 
-    const/high16 v5, 0x42c80000
+    const/high16 v5, 0x42c80000    # 100.0f
 
     div-float v16, v3, v5
 
@@ -423,7 +423,7 @@
 
     int-to-float v3, v3
 
-    const v6, 0x3df5c28f
+    const v6, 0x3df5c28f    # 0.12f
 
     mul-float/2addr v3, v6
 
@@ -473,7 +473,7 @@
 
     int-to-float v3, v3
 
-    const v6, 0x3da3d70a
+    const v6, 0x3da3d70a    # 0.08f
 
     mul-float/2addr v3, v6
 
@@ -600,7 +600,7 @@
 
     int-to-float v9, v0
 
-    const/high16 v32, 0x3e800000
+    const/high16 v32, 0x3e800000    # 0.25f
 
     mul-float v9, v9, v32
 
@@ -636,7 +636,7 @@
 
     move/from16 v33, v0
 
-    const/high16 v34, 0x3e800000
+    const/high16 v34, 0x3e800000    # 0.25f
 
     mul-float v33, v33, v34
 
@@ -832,11 +832,11 @@
 
     if-lt v0, v3, :cond_a
 
-    const/high16 v16, 0x3f800000
+    const/high16 v16, 0x3f800000    # 1.0f
 
     :cond_2
     :goto_7
-    const/high16 v3, 0x3f800000
+    const/high16 v3, 0x3f800000    # 1.0f
 
     cmpl-float v3, v16, v3
 
@@ -1108,7 +1108,7 @@
 
     if-eqz v3, :cond_f
 
-    const/high16 v3, 0x41100000
+    const/high16 v3, 0x41100000    # 9.0f
 
     :goto_a
     div-float v3, v6, v3
@@ -1135,7 +1135,7 @@
 
     if-eqz v3, :cond_10
 
-    const/high16 v3, 0x40900000
+    const/high16 v3, 0x40900000    # 4.5f
 
     :goto_b
     div-float v3, v6, v3
@@ -1162,7 +1162,7 @@
 
     if-eqz v3, :cond_11
 
-    const/high16 v3, 0x40c00000
+    const/high16 v3, 0x40c00000    # 6.0f
 
     :goto_c
     div-float v3, v6, v3
@@ -1189,7 +1189,7 @@
 
     if-eqz v3, :cond_12
 
-    const/high16 v3, 0x40e00000
+    const/high16 v3, 0x40e00000    # 7.0f
 
     :goto_d
     div-float v3, v6, v3
@@ -1414,7 +1414,7 @@
 
     int-to-float v6, v0
 
-    const/high16 v9, 0x3e800000
+    const/high16 v9, 0x3e800000    # 0.25f
 
     mul-float/2addr v6, v9
 
@@ -1444,7 +1444,7 @@
 
     move/from16 v32, v0
 
-    const/high16 v33, 0x3e800000
+    const/high16 v33, 0x3e800000    # 0.25f
 
     mul-float v32, v32, v33
 
@@ -1619,7 +1619,7 @@
 
     move-result v5
 
-    const/high16 v6, 0x3f800000
+    const/high16 v6, 0x3f800000    # 1.0f
 
     sub-float v6, v6, v16
 
@@ -1644,7 +1644,7 @@
 
     move-result v5
 
-    const/high16 v6, 0x3f800000
+    const/high16 v6, 0x3f800000    # 1.0f
 
     sub-float v6, v6, v16
 
@@ -1842,22 +1842,22 @@
     goto/16 :goto_9
 
     :cond_f
-    const/high16 v3, 0x40900000
+    const/high16 v3, 0x40900000    # 4.5f
 
     goto/16 :goto_a
 
     :cond_10
-    const/high16 v3, 0x40c00000
+    const/high16 v3, 0x40c00000    # 6.0f
 
     goto/16 :goto_b
 
     :cond_11
-    const/high16 v3, 0x40e00000
+    const/high16 v3, 0x40e00000    # 7.0f
 
     goto/16 :goto_c
 
     :cond_12
-    const/high16 v3, 0x41200000
+    const/high16 v3, 0x41200000    # 10.0f
 
     goto/16 :goto_d
 
@@ -1960,13 +1960,13 @@
 
     move-result v3
 
-    const/high16 v5, 0x3f800000
+    const/high16 v5, 0x3f800000    # 1.0f
 
     invoke-static {v3, v5}, Ljava/lang/Math;->min(FF)F
 
     move-result v12
 
-    const v3, 0x3e99999a
+    const v3, 0x3e99999a    # 0.3f
 
     cmpg-float v3, v12, v3
 
@@ -2160,7 +2160,7 @@
 
     int-to-float v3, v3
 
-    const/high16 v5, 0x3f000000
+    const/high16 v5, 0x3f000000    # 0.5f
 
     mul-float v30, v3, v5
 
@@ -2181,7 +2181,7 @@
 
     add-float/2addr v3, v5
 
-    const v5, 0x3ef5c28f
+    const v5, 0x3ef5c28f    # 0.48f
 
     mul-float v31, v3, v5
 
@@ -2278,7 +2278,7 @@
 
     if-eqz v3, :cond_1a
 
-    const v17, 0x3f19999a
+    const v17, 0x3f19999a    # 0.6f
 
     :goto_13
     move-object/from16 v0, p0
@@ -2287,7 +2287,7 @@
 
     if-eqz v3, :cond_1b
 
-    const/high16 v22, 0x3f400000
+    const/high16 v22, 0x3f400000    # 0.75f
 
     :goto_14
     move-object/from16 v0, p0
@@ -2296,7 +2296,7 @@
 
     if-eqz v3, :cond_1c
 
-    const v28, 0x3f5c28f6
+    const v28, 0x3f5c28f6    # 0.86f
 
     :goto_15
     move-object/from16 v0, p0
@@ -2351,7 +2351,7 @@
 
     int-to-float v3, v3
 
-    const/high16 v5, 0x3f000000
+    const/high16 v5, 0x3f000000    # 0.5f
 
     mul-float v7, v3, v5
 
@@ -2372,7 +2372,7 @@
 
     add-float/2addr v3, v5
 
-    const v5, 0x3ef0a3d7
+    const v5, 0x3ef0a3d7    # 0.47f
 
     mul-float v8, v3, v5
 
@@ -2448,17 +2448,17 @@
     goto/16 :goto_11
 
     :cond_1a
-    const v17, 0x3ee66666
+    const v17, 0x3ee66666    # 0.45f
 
     goto/16 :goto_13
 
     :cond_1b
-    const v22, 0x3f19999a
+    const v22, 0x3f19999a    # 0.6f
 
     goto/16 :goto_14
 
     :cond_1c
-    const/high16 v28, 0x3f400000
+    const/high16 v28, 0x3f400000    # 0.75f
 
     goto/16 :goto_15
 
@@ -2529,7 +2529,7 @@
 
     int-to-float v1, p2
 
-    const/high16 v2, 0x3f400000
+    const/high16 v2, 0x3f400000    # 0.75f
 
     mul-float/2addr v1, v2
 

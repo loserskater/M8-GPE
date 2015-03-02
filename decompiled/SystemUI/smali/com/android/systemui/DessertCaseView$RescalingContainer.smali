@@ -46,11 +46,11 @@
 
     iget-object v6, p0, Lcom/android/systemui/DessertCaseView$RescalingContainer;->mView:Lcom/android/systemui/DessertCaseView;
 
-    const/high16 v6, 0x3e800000
+    const/high16 v6, 0x3e800000    # 0.25f
 
     div-float v6, v4, v6
 
-    const/high16 v7, 0x40000000
+    const/high16 v7, 0x40000000    # 2.0f
 
     div-float/2addr v6, v7
 
@@ -58,11 +58,11 @@
 
     iget-object v6, p0, Lcom/android/systemui/DessertCaseView$RescalingContainer;->mView:Lcom/android/systemui/DessertCaseView;
 
-    const/high16 v6, 0x3e800000
+    const/high16 v6, 0x3e800000    # 0.25f
 
     div-float v6, v2, v6
 
-    const/high16 v7, 0x40000000
+    const/high16 v7, 0x40000000    # 2.0f
 
     div-float/2addr v6, v7
 
@@ -70,7 +70,7 @@
 
     int-to-float v6, p2
 
-    const/high16 v7, 0x3f000000
+    const/high16 v7, 0x3f000000    # 0.5f
 
     mul-float/2addr v7, v4
 
@@ -80,7 +80,7 @@
 
     int-to-float v6, p3
 
-    const/high16 v7, 0x3f000000
+    const/high16 v7, 0x3f000000    # 0.5f
 
     mul-float/2addr v7, v2
 

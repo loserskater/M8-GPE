@@ -51,7 +51,7 @@
 .method public onAnimationStart(Landroid/animation/Animator;)V
     .locals 5
 
-    const/high16 v4, 0x3f800000
+    const/high16 v4, 0x3f800000    # 1.0f
 
     const/4 v3, 0x0
 

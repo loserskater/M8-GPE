@@ -32,12 +32,30 @@
 
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 1
+    .locals 3
 
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/LockscreenToggleTile$1;->this$0:Lcom/android/systemui/qs/tiles/LockscreenToggleTile;
 
-    # invokes: Lcom/android/systemui/qs/tiles/LockscreenToggleTile;->updateBasedOnIntent(Landroid/content/Intent;)V
-    invoke-static {v0, p2}, Lcom/android/systemui/qs/tiles/LockscreenToggleTile;->access$000(Lcom/android/systemui/qs/tiles/LockscreenToggleTile;Landroid/content/Intent;)V
+    const-string v1, "active"
+
+    const/4 v2, 0x0
+
+    invoke-virtual {p2, v1, v2}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
+
+    move-result v1
+
+    # setter for: Lcom/android/systemui/qs/tiles/LockscreenToggleTile;->mKeyguardBound:Z
+    invoke-static {v0, v1}, Lcom/android/systemui/qs/tiles/LockscreenToggleTile;->access$002(Lcom/android/systemui/qs/tiles/LockscreenToggleTile;Z)Z
+
+    iget-object v0, p0, Lcom/android/systemui/qs/tiles/LockscreenToggleTile$1;->this$0:Lcom/android/systemui/qs/tiles/LockscreenToggleTile;
+
+    # invokes: Lcom/android/systemui/qs/tiles/LockscreenToggleTile;->applyLockscreenState()V
+    invoke-static {v0}, Lcom/android/systemui/qs/tiles/LockscreenToggleTile;->access$100(Lcom/android/systemui/qs/tiles/LockscreenToggleTile;)V
+
+    iget-object v0, p0, Lcom/android/systemui/qs/tiles/LockscreenToggleTile$1;->this$0:Lcom/android/systemui/qs/tiles/LockscreenToggleTile;
+
+    # invokes: Lcom/android/systemui/qs/tiles/LockscreenToggleTile;->refreshState()V
+    invoke-static {v0}, Lcom/android/systemui/qs/tiles/LockscreenToggleTile;->access$200(Lcom/android/systemui/qs/tiles/LockscreenToggleTile;)V
 
     return-void
 .end method

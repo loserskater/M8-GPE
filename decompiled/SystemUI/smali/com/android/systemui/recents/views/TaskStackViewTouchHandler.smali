@@ -134,7 +134,7 @@
 
     iget-object v2, p0, Lcom/android/systemui/recents/views/TaskStackViewTouchHandler;->mSwipeHelper:Lcom/android/systemui/recents/views/SwipeHelper;
 
-    const/high16 v3, 0x3f800000
+    const/high16 v3, 0x3f800000    # 1.0f
 
     invoke-virtual {v2, v3}, Lcom/android/systemui/recents/views/SwipeHelper;->setMinAlpha(F)V
 
@@ -1094,7 +1094,7 @@
 
     move/from16 v20, v0
 
-    const/high16 v2, 0x3f800000
+    const/high16 v2, 0x3f800000    # 1.0f
 
     move/from16 v0, v20
 
@@ -1243,7 +1243,7 @@
 
     if-le v2, v3, :cond_9
 
-    const/high16 v2, 0x3f800000
+    const/high16 v2, 0x3f800000    # 1.0f
 
     int-to-float v3, v6
 
@@ -1263,7 +1263,7 @@
 
     move-result v2
 
-    const/high16 v3, 0x43160000
+    const/high16 v3, 0x43160000    # 150.0f
 
     mul-float/2addr v2, v3
 

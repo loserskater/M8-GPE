@@ -43,7 +43,7 @@
 .method static constructor <clinit>()V
     .locals 2
 
-    const-wide v0, 0x4046800000000000L
+    const-wide v0, 0x4046800000000000L    # 45.0
 
     invoke-static {v0, v1}, Ljava/lang/Math;->toRadians(D)D
 
@@ -159,7 +159,7 @@
 
     iget v1, p0, Lcom/android/systemui/recents/views/FakeShadowDrawable;->mMaxShadowSize:F
 
-    const/high16 v2, 0x3fc00000
+    const/high16 v2, 0x3fc00000    # 1.5f
 
     mul-float v0, v1, v2
 
@@ -272,9 +272,9 @@
 
     iget-object v0, p0, Lcom/android/systemui/recents/views/FakeShadowDrawable;->mCornerShadowPath:Landroid/graphics/Path;
 
-    const/high16 v1, 0x43340000
+    const/high16 v1, 0x43340000    # 180.0f
 
-    const/high16 v2, 0x42b40000
+    const/high16 v2, 0x42b40000    # 90.0f
 
     const/4 v3, 0x0
 
@@ -282,9 +282,9 @@
 
     iget-object v0, p0, Lcom/android/systemui/recents/views/FakeShadowDrawable;->mCornerShadowPath:Landroid/graphics/Path;
 
-    const/high16 v1, 0x43870000
+    const/high16 v1, 0x43870000    # 270.0f
 
-    const/high16 v2, -0x3d4c0000
+    const/high16 v2, -0x3d4c0000    # -90.0f
 
     const/4 v3, 0x0
 
@@ -356,7 +356,7 @@
 
     const/4 v6, 0x2
 
-    const/high16 v11, 0x3f800000
+    const/high16 v11, 0x3f800000    # 1.0f
 
     aput v11, v5, v6
 
@@ -438,8 +438,8 @@
     :array_0
     .array-data 4
         0x0
-        0x3f000000
-        0x3f800000
+        0x3f000000    # 0.5f
+        0x3f800000    # 1.0f
     .end array-data
 .end method
 
@@ -450,7 +450,7 @@
 
     float-to-double v0, p0
 
-    const-wide/high16 v2, 0x3ff0000000000000L
+    const-wide/high16 v2, 0x3ff0000000000000L    # 1.0
 
     sget-wide v4, Lcom/android/systemui/recents/views/FakeShadowDrawable;->COS_45:D
 
@@ -471,7 +471,7 @@
 .method static calculateVerticalPadding(FFZ)F
     .locals 6
 
-    const/high16 v0, 0x3fc00000
+    const/high16 v0, 0x3fc00000    # 1.5f
 
     if-eqz p2, :cond_0
 
@@ -479,7 +479,7 @@
 
     float-to-double v0, v0
 
-    const-wide/high16 v2, 0x3ff0000000000000L
+    const-wide/high16 v2, 0x3ff0000000000000L    # 1.0
 
     sget-wide v4, Lcom/android/systemui/recents/views/FakeShadowDrawable;->COS_45:D
 
@@ -511,7 +511,7 @@
 
     const/4 v1, 0x0
 
-    const/high16 v10, 0x40000000
+    const/high16 v10, 0x40000000    # 2.0f
 
     iget v4, p0, Lcom/android/systemui/recents/views/FakeShadowDrawable;->mCornerRadius:F
 
@@ -634,7 +634,7 @@
 
     invoke-virtual {p1, v0, v3}, Landroid/graphics/Canvas;->translate(FF)V
 
-    const/high16 v0, 0x43340000
+    const/high16 v0, 0x43340000    # 180.0f
 
     invoke-virtual {p1, v0}, Landroid/graphics/Canvas;->rotate(F)V
 
@@ -691,7 +691,7 @@
 
     invoke-virtual {p1, v0, v3}, Landroid/graphics/Canvas;->translate(FF)V
 
-    const/high16 v0, 0x43870000
+    const/high16 v0, 0x43870000    # 270.0f
 
     invoke-virtual {p1, v0}, Landroid/graphics/Canvas;->rotate(F)V
 
@@ -744,7 +744,7 @@
 
     invoke-virtual {p1, v0, v3}, Landroid/graphics/Canvas;->translate(FF)V
 
-    const/high16 v0, 0x42b40000
+    const/high16 v0, 0x42b40000    # 90.0f
 
     invoke-virtual {p1, v0}, Landroid/graphics/Canvas;->rotate(F)V
 
@@ -797,7 +797,7 @@
 .method public draw(Landroid/graphics/Canvas;)V
     .locals 3
 
-    const/high16 v2, 0x40800000
+    const/high16 v2, 0x40800000    # 4.0f
 
     const/4 v1, 0x0
 
@@ -993,7 +993,7 @@
 
     iput p2, p0, Lcom/android/systemui/recents/views/FakeShadowDrawable;->mRawMaxShadowSize:F
 
-    const/high16 v0, 0x3fc00000
+    const/high16 v0, 0x3fc00000    # 1.5f
 
     mul-float/2addr v0, p1
 

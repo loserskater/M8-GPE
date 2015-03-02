@@ -84,7 +84,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/policy/HeadsUpNotificationView;->mTmpTwoArray:[I
 
-    const/high16 v0, 0x3f800000
+    const/high16 v0, 0x3f800000    # 1.0f
 
     iput v0, p0, Lcom/android/systemui/statusbar/policy/HeadsUpNotificationView;->mMaxAlpha:F
 
@@ -278,7 +278,7 @@
 .method public getFalsingThresholdFactor()F
     .locals 1
 
-    const/high16 v0, 0x3f800000
+    const/high16 v0, 0x3f800000    # 1.0f
 
     return v0
 .end method
@@ -411,7 +411,7 @@
 
     iget-object v4, p0, Lcom/android/systemui/statusbar/policy/HeadsUpNotificationView;->mSwipeHelper:Lcom/android/systemui/SwipeHelper;
 
-    const/high16 v5, 0x3f800000
+    const/high16 v5, 0x3f800000    # 1.0f
 
     invoke-virtual {v4, v5}, Lcom/android/systemui/SwipeHelper;->setMaxSwipeProgress(F)V
 
@@ -608,7 +608,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/HeadsUpNotificationView;->mContentHolder:Landroid/view/ViewGroup;
 
-    const/high16 v1, 0x3f800000
+    const/high16 v1, 0x3f800000    # 1.0f
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setAlpha(F)V
 
@@ -853,7 +853,7 @@
 
     const/4 v0, 0x1
 
-    const/high16 v8, 0x3f800000
+    const/high16 v8, 0x3f800000    # 1.0f
 
     const/4 v2, 0x0
 
@@ -1039,7 +1039,7 @@
 
     move-result-object v0
 
-    const/high16 v1, 0x437f0000
+    const/high16 v1, 0x437f0000    # 255.0f
 
     mul-float/2addr v1, p3
 

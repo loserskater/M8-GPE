@@ -172,9 +172,9 @@
 
     const/4 v0, 0x0
 
-    const/high16 v4, 0x40200000
+    const/high16 v4, 0x40200000    # 2.5f
 
-    const/high16 v3, 0x3fc00000
+    const/high16 v3, 0x3fc00000    # 1.5f
 
     sput-boolean v0, Landroid/support/v4/app/FragmentManagerImpl;->DEBUG:Z
 
@@ -321,11 +321,11 @@
 
     const/4 v5, 0x1
 
-    const/high16 v6, 0x3f000000
+    const/high16 v6, 0x3f000000    # 0.5f
 
     const/4 v7, 0x1
 
-    const/high16 v8, 0x3f000000
+    const/high16 v8, 0x3f000000    # 0.5f
 
     move v1, p1
 
@@ -2914,13 +2914,13 @@
 .method loadAnimation(Landroid/support/v4/app/Fragment;IZI)Landroid/view/animation/Animation;
     .locals 9
 
-    const v8, 0x3f79999a
+    const v8, 0x3f79999a    # 0.975f
 
     const/4 v3, 0x0
 
     const/4 v7, 0x0
 
-    const/high16 v6, 0x3f800000
+    const/high16 v6, 0x3f800000    # 1.0f
 
     iget v4, p1, Landroid/support/v4/app/Fragment;->mNextAnim:I
 
@@ -3005,7 +3005,7 @@
     :pswitch_0
     iget-object v3, p0, Landroid/support/v4/app/FragmentManagerImpl;->mActivity:Landroid/support/v4/app/FragmentActivity;
 
-    const/high16 v4, 0x3f900000
+    const/high16 v4, 0x3f900000    # 1.125f
 
     invoke-static {v3, v4, v6, v7, v6}, Landroid/support/v4/app/FragmentManagerImpl;->makeOpenCloseAnimation(Landroid/content/Context;FFFF)Landroid/view/animation/Animation;
 
@@ -3034,7 +3034,7 @@
     :pswitch_3
     iget-object v3, p0, Landroid/support/v4/app/FragmentManagerImpl;->mActivity:Landroid/support/v4/app/FragmentActivity;
 
-    const v4, 0x3f89999a
+    const v4, 0x3f89999a    # 1.075f
 
     invoke-static {v3, v6, v4, v6, v7}, Landroid/support/v4/app/FragmentManagerImpl;->makeOpenCloseAnimation(Landroid/content/Context;FFFF)Landroid/view/animation/Animation;
 

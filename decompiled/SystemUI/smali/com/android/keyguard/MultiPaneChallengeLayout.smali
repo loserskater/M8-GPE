@@ -325,7 +325,7 @@
 
     mul-float v21, v21, v22
 
-    const/high16 v22, 0x3f000000
+    const/high16 v22, 0x3f000000    # 0.5f
 
     add-float v21, v21, v22
 
@@ -463,7 +463,7 @@
 
     mul-float v21, v21, v22
 
-    const/high16 v22, 0x3f000000
+    const/high16 v22, 0x3f000000    # 0.5f
 
     add-float v21, v21, v22
 
@@ -1108,7 +1108,7 @@
 
     move-result v2
 
-    const/high16 v5, 0x40000000
+    const/high16 v5, 0x40000000    # 2.0f
 
     if-ne v2, v5, :cond_0
 
@@ -1116,7 +1116,7 @@
 
     move-result v2
 
-    const/high16 v5, 0x40000000
+    const/high16 v5, 0x40000000    # 2.0f
 
     if-eq v2, v5, :cond_1
 
@@ -1160,7 +1160,7 @@
 
     sub-int v12, v2, v5
 
-    const/high16 v2, 0x40000000
+    const/high16 v2, 0x40000000    # 2.0f
 
     invoke-static {v12, v2}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
@@ -1299,7 +1299,7 @@
 
     move-result v2
 
-    const/high16 v5, 0x40000000
+    const/high16 v5, 0x40000000    # 2.0f
 
     invoke-static {v2, v5}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
@@ -1316,7 +1316,7 @@
 
     move-result v2
 
-    const/high16 v5, 0x40000000
+    const/high16 v5, 0x40000000    # 2.0f
 
     invoke-static {v2, v5}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
@@ -1347,7 +1347,7 @@
 
     int-to-float v5, v5
 
-    const/high16 v7, 0x3fc00000
+    const/high16 v7, 0x3fc00000    # 1.5f
 
     mul-float/2addr v5, v7
 
@@ -1376,7 +1376,7 @@
 
     int-to-float v5, v5
 
-    const/high16 v7, 0x3fc00000
+    const/high16 v7, 0x3fc00000    # 1.5f
 
     mul-float/2addr v5, v7
 
@@ -1480,19 +1480,19 @@
 
     mul-float/2addr v2, v5
 
-    const/high16 v5, 0x3f000000
+    const/high16 v5, 0x3f000000    # 0.5f
 
     add-float/2addr v2, v5
 
     float-to-int v2, v2
 
-    const/high16 v5, 0x40000000
+    const/high16 v5, 0x40000000    # 2.0f
 
     invoke-static {v2, v5}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result v4
 
-    const/high16 v2, 0x40000000
+    const/high16 v2, 0x40000000    # 2.0f
 
     invoke-static {v15, v2}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
@@ -1513,7 +1513,7 @@
 
     move-result v2
 
-    const/high16 v5, 0x40000000
+    const/high16 v5, 0x40000000    # 2.0f
 
     invoke-static {v2, v5}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
@@ -1534,7 +1534,7 @@
 
     move-result v2
 
-    const/high16 v5, 0x40000000
+    const/high16 v5, 0x40000000    # 2.0f
 
     invoke-static {v2, v5}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
@@ -1554,7 +1554,7 @@
     :cond_10
     sub-int v2, v16, v17
 
-    const/high16 v5, 0x40000000
+    const/high16 v5, 0x40000000    # 2.0f
 
     invoke-static {v2, v5}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
@@ -1566,13 +1566,13 @@
 
     mul-float/2addr v2, v5
 
-    const/high16 v5, 0x3f000000
+    const/high16 v5, 0x3f000000    # 0.5f
 
     add-float/2addr v2, v5
 
     float-to-int v2, v2
 
-    const/high16 v5, 0x40000000
+    const/high16 v5, 0x40000000    # 2.0f
 
     invoke-static {v2, v5}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
@@ -1583,13 +1583,13 @@
     :cond_11
     sub-int v2, v16, v17
 
-    const/high16 v5, 0x40000000
+    const/high16 v5, 0x40000000    # 2.0f
 
     invoke-static {v2, v5}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result v4
 
-    const/high16 v2, 0x40000000
+    const/high16 v2, 0x40000000    # 2.0f
 
     invoke-static {v15, v2}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
@@ -1664,7 +1664,7 @@
 
     if-eqz v0, :cond_2
 
-    const/high16 v0, 0x3f800000
+    const/high16 v0, 0x3f800000    # 1.0f
 
     :goto_0
     invoke-virtual {v1, v0}, Landroid/view/View;->setAlpha(F)V
@@ -1745,7 +1745,7 @@
 
     const/4 v4, 0x0
 
-    const/high16 v5, 0x3f800000
+    const/high16 v5, 0x3f800000    # 1.0f
 
     aput v5, v3, v4
 

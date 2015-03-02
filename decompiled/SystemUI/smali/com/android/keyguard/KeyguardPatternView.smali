@@ -106,9 +106,9 @@
 
     const-wide/16 v2, 0xdc
 
-    const/high16 v4, 0x3fc00000
+    const/high16 v4, 0x3fc00000    # 1.5f
 
-    const/high16 v5, 0x40000000
+    const/high16 v5, 0x40000000    # 2.0f
 
     iget-object v1, p0, Lcom/android/keyguard/KeyguardPatternView;->mContext:Landroid/content/Context;
 
@@ -779,7 +779,7 @@
 
     invoke-direct {p0, v0}, Lcom/android/keyguard/KeyguardPatternView;->enableClipping(Z)V
 
-    const/high16 v0, 0x3f800000
+    const/high16 v0, 0x3f800000    # 1.0f
 
     invoke-virtual {p0, v0}, Lcom/android/keyguard/KeyguardPatternView;->setAlpha(F)V
 

@@ -231,7 +231,7 @@
 
     long-to-double v4, v4
 
-    const-wide/high16 v6, 0x3ff8000000000000L
+    const-wide/high16 v6, 0x3ff8000000000000L    # 1.5
 
     mul-double/2addr v4, v6
 
@@ -266,7 +266,7 @@
 
     long-to-double v4, v4
 
-    const-wide v6, 0x3fe3333333333333L
+    const-wide v6, 0x3fe3333333333333L    # 0.6
 
     mul-double/2addr v4, v6
 
@@ -313,7 +313,7 @@
 
     long-to-double v6, v6
 
-    const-wide v8, 0x3fe4cccccccccccdL
+    const-wide v8, 0x3fe4cccccccccccdL    # 0.65
 
     mul-double/2addr v6, v8
 

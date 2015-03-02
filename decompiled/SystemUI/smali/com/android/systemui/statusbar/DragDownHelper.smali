@@ -297,7 +297,7 @@
 
     if-eqz v0, :cond_2
 
-    const/high16 v3, 0x3f000000
+    const/high16 v3, 0x3f000000    # 0.5f
 
     :goto_0
     mul-float v2, p1, v3
@@ -338,7 +338,7 @@
 
     sub-float v1, v4, v5
 
-    const v4, 0x3f59999a
+    const v4, 0x3f59999a    # 0.85f
 
     mul-float/2addr v1, v4
 
@@ -360,7 +360,7 @@
     return-void
 
     :cond_2
-    const v3, 0x3e19999a
+    const v3, 0x3e19999a    # 0.15f
 
     goto :goto_0
 .end method

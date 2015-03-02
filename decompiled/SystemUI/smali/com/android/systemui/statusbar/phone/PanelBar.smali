@@ -479,7 +479,7 @@
 
     if-ne p1, v3, :cond_0
 
-    const/high16 v6, 0x3f800000
+    const/high16 v6, 0x3f800000    # 1.0f
 
     cmpl-float v6, v4, v6
 

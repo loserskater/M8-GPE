@@ -62,17 +62,17 @@
 
     iput v0, p0, Landroid/support/v7/graphics/Palette;->mHighestPopulation:I
 
-    const/high16 v1, 0x3f000000
+    const/high16 v1, 0x3f000000    # 0.5f
 
-    const v2, 0x3e99999a
+    const v2, 0x3e99999a    # 0.3f
 
-    const v3, 0x3f333333
+    const v3, 0x3f333333    # 0.7f
 
-    const/high16 v4, 0x3f800000
+    const/high16 v4, 0x3f800000    # 1.0f
 
-    const v5, 0x3eb33333
+    const v5, 0x3eb33333    # 0.35f
 
-    const/high16 v6, 0x3f800000
+    const/high16 v6, 0x3f800000    # 1.0f
 
     move-object v0, p0
 
@@ -82,17 +82,17 @@
 
     iput-object v0, p0, Landroid/support/v7/graphics/Palette;->mVibrantSwatch:Landroid/support/v7/graphics/Palette$Swatch;
 
-    const v1, 0x3f3d70a4
+    const v1, 0x3f3d70a4    # 0.74f
 
-    const v2, 0x3f0ccccd
+    const v2, 0x3f0ccccd    # 0.55f
 
-    const/high16 v3, 0x3f800000
+    const/high16 v3, 0x3f800000    # 1.0f
 
-    const/high16 v4, 0x3f800000
+    const/high16 v4, 0x3f800000    # 1.0f
 
-    const v5, 0x3eb33333
+    const v5, 0x3eb33333    # 0.35f
 
-    const/high16 v6, 0x3f800000
+    const/high16 v6, 0x3f800000    # 1.0f
 
     move-object v0, p0
 
@@ -102,17 +102,17 @@
 
     iput-object v0, p0, Landroid/support/v7/graphics/Palette;->mLightVibrantSwatch:Landroid/support/v7/graphics/Palette$Swatch;
 
-    const v1, 0x3e851eb8
+    const v1, 0x3e851eb8    # 0.26f
 
     const/4 v2, 0x0
 
-    const v3, 0x3ee66666
+    const v3, 0x3ee66666    # 0.45f
 
-    const/high16 v4, 0x3f800000
+    const/high16 v4, 0x3f800000    # 1.0f
 
-    const v5, 0x3eb33333
+    const v5, 0x3eb33333    # 0.35f
 
-    const/high16 v6, 0x3f800000
+    const/high16 v6, 0x3f800000    # 1.0f
 
     move-object v0, p0
 
@@ -122,17 +122,17 @@
 
     iput-object v0, p0, Landroid/support/v7/graphics/Palette;->mDarkVibrantSwatch:Landroid/support/v7/graphics/Palette$Swatch;
 
-    const/high16 v1, 0x3f000000
+    const/high16 v1, 0x3f000000    # 0.5f
 
-    const v2, 0x3e99999a
+    const v2, 0x3e99999a    # 0.3f
 
-    const v3, 0x3f333333
+    const v3, 0x3f333333    # 0.7f
 
-    const v4, 0x3e99999a
+    const v4, 0x3e99999a    # 0.3f
 
     const/4 v5, 0x0
 
-    const v6, 0x3ecccccd
+    const v6, 0x3ecccccd    # 0.4f
 
     move-object v0, p0
 
@@ -142,17 +142,17 @@
 
     iput-object v0, p0, Landroid/support/v7/graphics/Palette;->mMutedSwatch:Landroid/support/v7/graphics/Palette$Swatch;
 
-    const v1, 0x3f3d70a4
+    const v1, 0x3f3d70a4    # 0.74f
 
-    const v2, 0x3f0ccccd
+    const v2, 0x3f0ccccd    # 0.55f
 
-    const/high16 v3, 0x3f800000
+    const/high16 v3, 0x3f800000    # 1.0f
 
-    const v4, 0x3e99999a
+    const v4, 0x3e99999a    # 0.3f
 
     const/4 v5, 0x0
 
-    const v6, 0x3ecccccd
+    const v6, 0x3ecccccd    # 0.4f
 
     move-object v0, p0
 
@@ -162,17 +162,17 @@
 
     iput-object v0, p0, Landroid/support/v7/graphics/Palette;->mLightMutedColor:Landroid/support/v7/graphics/Palette$Swatch;
 
-    const v1, 0x3e851eb8
+    const v1, 0x3e851eb8    # 0.26f
 
     const/4 v2, 0x0
 
-    const v3, 0x3ee66666
+    const v3, 0x3ee66666    # 0.45f
 
-    const v4, 0x3e99999a
+    const v4, 0x3e99999a    # 0.3f
 
     const/4 v5, 0x0
 
-    const v6, 0x3ecccccd
+    const v6, 0x3ecccccd    # 0.4f
 
     move-object v0, p0
 
@@ -290,7 +290,7 @@
 
     const/4 v1, 0x1
 
-    const/high16 v2, 0x40400000
+    const/high16 v2, 0x40400000    # 3.0f
 
     aput v2, v0, v1
 
@@ -304,7 +304,7 @@
 
     const/4 v1, 0x3
 
-    const/high16 v2, 0x40c00000
+    const/high16 v2, 0x40c00000    # 6.0f
 
     aput v2, v0, v1
 
@@ -320,7 +320,7 @@
 
     const/4 v1, 0x5
 
-    const/high16 v2, 0x3f800000
+    const/high16 v2, 0x3f800000    # 1.0f
 
     aput v2, v0, v1
 
@@ -586,7 +586,7 @@
 
     move-result-object v0
 
-    const/high16 v1, 0x3f000000
+    const/high16 v1, 0x3f000000    # 0.5f
 
     aput v1, v0, v4
 
@@ -615,7 +615,7 @@
 
     move-result-object v0
 
-    const v1, 0x3e851eb8
+    const v1, 0x3e851eb8    # 0.26f
 
     aput v1, v0, v4
 
@@ -636,7 +636,7 @@
 .method private static invertDiff(FF)F
     .locals 2
 
-    const/high16 v0, 0x3f800000
+    const/high16 v0, 0x3f800000    # 1.0f
 
     sub-float v1, p0, p1
 
@@ -711,7 +711,7 @@
     return-object p0
 
     :cond_0
-    const/high16 v2, 0x42c80000
+    const/high16 v2, 0x42c80000    # 100.0f
 
     int-to-float v3, v0
 

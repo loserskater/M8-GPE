@@ -67,7 +67,7 @@
 
     :cond_0
     :goto_0
-    const/high16 v0, 0x3f800000
+    const/high16 v0, 0x3f800000    # 1.0f
 
     iget v1, p0, Lcom/android/keyguard/PagedView$10;->mOffset:F
 
@@ -84,7 +84,7 @@
 
     if-nez v0, :cond_0
 
-    const/high16 v0, 0x3f000000
+    const/high16 v0, 0x3f000000    # 0.5f
 
     invoke-static {}, Landroid/view/animation/AnimationUtils;->currentAnimationTimeMillis()J
 

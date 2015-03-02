@@ -25,11 +25,11 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    const v0, 0x3fa66666
+    const v0, 0x3fa66666    # 1.3f
 
     sput v0, Lcom/android/keyguard/KeyguardWidgetCarousel;->MAX_SCROLL_PROGRESS:F
 
-    const v0, 0x461c4000
+    const v0, 0x461c4000    # 10000.0f
 
     sput v0, Lcom/android/keyguard/KeyguardWidgetCarousel;->CAMERA_DISTANCE:F
 
@@ -101,7 +101,7 @@
 .method private getTransformForPage(II[F)V
     .locals 9
 
-    const/high16 v8, 0x40000000
+    const/high16 v8, 0x40000000    # 2.0f
 
     invoke-virtual {p0, p2}, Lcom/android/keyguard/KeyguardWidgetCarousel;->getChildAt(I)Landroid/view/View;
 
@@ -685,7 +685,7 @@
 
     const/4 v12, 0x0
 
-    const/high16 v13, 0x3f800000
+    const/high16 v13, 0x3f800000    # 1.0f
 
     aput v13, v11, v12
 
@@ -701,7 +701,7 @@
 
     const/4 v12, 0x0
 
-    const v13, 0x3f19999a
+    const v13, 0x3f19999a    # 0.6f
 
     aput v13, v11, v12
 
@@ -798,7 +798,7 @@
 
     const/4 v0, 0x0
 
-    const/high16 v4, 0x3f800000
+    const/high16 v4, 0x3f800000    # 1.0f
 
     invoke-virtual {p0, p2}, Lcom/android/keyguard/KeyguardWidgetCarousel;->getChildAt(I)Landroid/view/View;
 
@@ -962,7 +962,7 @@
 .method protected screenScrolled(I)V
     .locals 14
 
-    const/high16 v13, 0x40000000
+    const/high16 v13, 0x40000000    # 2.0f
 
     const/4 v12, 0x0
 

@@ -36,7 +36,7 @@
 
     long-to-float v3, p1
 
-    const/high16 v4, 0x447a0000
+    const/high16 v4, 0x447a0000    # 1000.0f
 
     div-float/2addr v3, v4
 
@@ -270,7 +270,7 @@
 
     long-to-float v8, v0
 
-    const/high16 v9, 0x447a0000
+    const/high16 v9, 0x447a0000    # 1000.0f
 
     div-float/2addr v8, v9
 
@@ -288,7 +288,7 @@
 
     long-to-float v8, v0
 
-    const/high16 v9, 0x447a0000
+    const/high16 v9, 0x447a0000    # 1000.0f
 
     div-float/2addr v8, v9
 
@@ -427,7 +427,7 @@
 
     int-to-double v14, v3
 
-    const-wide v22, 0x3fee666666666666L
+    const-wide v22, 0x3fee666666666666L    # 0.95
 
     mul-double v14, v14, v22
 

@@ -50,9 +50,9 @@
 
     new-instance v0, Landroid/view/animation/PathInterpolator;
 
-    const v1, 0x3eb33333
+    const v1, 0x3eb33333    # 0.35f
 
-    const/high16 v2, 0x3f800000
+    const/high16 v2, 0x3f800000    # 1.0f
 
     invoke-direct {v0, v3, v3, v1, v2}, Landroid/view/animation/PathInterpolator;-><init>(FFFF)V
 
@@ -74,7 +74,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/FlingAnimationUtils;->mFastOutLinearIn:Landroid/view/animation/Interpolator;
 
-    const/high16 v0, 0x437a0000
+    const/high16 v0, 0x437a0000    # 250.0f
 
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -90,7 +90,7 @@
 
     iput v0, p0, Lcom/android/systemui/statusbar/FlingAnimationUtils;->mMinVelocityPxPerSecond:F
 
-    const v0, 0x453b8000
+    const v0, 0x453b8000    # 3000.0f
 
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -112,7 +112,7 @@
 .method private calculateLinearOutFasterInY2(F)F
     .locals 5
 
-    const/high16 v4, 0x3f800000
+    const/high16 v4, 0x3f800000    # 1.0f
 
     iget v1, p0, Lcom/android/systemui/statusbar/FlingAnimationUtils;->mMinVelocityPxPerSecond:F
 
@@ -138,11 +138,11 @@
 
     sub-float v1, v4, v0
 
-    const v2, 0x3ecccccd
+    const v2, 0x3ecccccd    # 0.4f
 
     mul-float/2addr v1, v2
 
-    const/high16 v2, 0x3f000000
+    const/high16 v2, 0x3f000000    # 0.5f
 
     mul-float/2addr v2, v0
 
@@ -170,7 +170,7 @@
 
     float-to-double v14, v11
 
-    const-wide/high16 v16, 0x3fe0000000000000L
+    const-wide/high16 v16, 0x3fe0000000000000L    # 0.5
 
     invoke-static/range {v14 .. v17}, Ljava/lang/Math;->pow(DD)D
 
@@ -196,7 +196,7 @@
 
     move-result v10
 
-    const/high16 v11, 0x3f000000
+    const/high16 v11, 0x3f000000    # 0.5f
 
     div-float v6, v10, v11
 
@@ -206,7 +206,7 @@
 
     const/4 v12, 0x0
 
-    const/high16 v13, 0x3f000000
+    const/high16 v13, 0x3f000000    # 0.5f
 
     invoke-direct {v4, v11, v12, v13, v10}, Landroid/view/animation/PathInterpolator;-><init>(FFFF)V
 
@@ -229,7 +229,7 @@
 
     iget-object v11, v0, Lcom/android/systemui/statusbar/FlingAnimationUtils;->mAnimatorProperties:Lcom/android/systemui/statusbar/FlingAnimationUtils$AnimatorProperties;
 
-    const/high16 v12, 0x447a0000
+    const/high16 v12, 0x447a0000    # 1000.0f
 
     mul-float/2addr v12, v3
 
@@ -346,7 +346,7 @@
     :goto_0
     iget-object v6, p0, Lcom/android/systemui/statusbar/FlingAnimationUtils;->mAnimatorProperties:Lcom/android/systemui/statusbar/FlingAnimationUtils$AnimatorProperties;
 
-    const/high16 v7, 0x447a0000
+    const/high16 v7, 0x447a0000    # 1000.0f
 
     mul-float/2addr v7, v1
 

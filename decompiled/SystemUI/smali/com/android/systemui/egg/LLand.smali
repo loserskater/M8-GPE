@@ -319,7 +319,7 @@
 .method public static final clamp(F)F
     .locals 3
 
-    const/high16 v1, 0x3f800000
+    const/high16 v1, 0x3f800000    # 1.0f
 
     const/4 v0, 0x0
 
@@ -445,7 +445,7 @@
 
     iget v1, v0, Lcom/android/systemui/egg/LLand$Player;->dv:F
 
-    const/high16 v2, 0x3f800000
+    const/high16 v2, 0x3f800000    # 1.0f
 
     mul-float/2addr v1, v2
 
@@ -528,7 +528,7 @@
 
     move-result v21
 
-    const/high16 v22, 0x3f000000
+    const/high16 v22, 0x3f000000    # 0.5f
 
     cmpl-float v21, v21, v22
 
@@ -551,7 +551,7 @@
 
     if-eqz v21, :cond_2
 
-    const/high16 v21, -0x40800000
+    const/high16 v21, -0x40800000    # -1.0f
 
     :goto_1
     move-object/from16 v0, p0
@@ -608,7 +608,7 @@
     goto :goto_0
 
     :cond_2
-    const/high16 v21, 0x3f800000
+    const/high16 v21, 0x3f800000    # 1.0f
 
     goto :goto_1
 
@@ -674,7 +674,7 @@
 
     move-wide/from16 v22, v0
 
-    const-wide/high16 v24, 0x3fd0000000000000L
+    const-wide/high16 v24, 0x3fd0000000000000L    # 0.25
 
     cmpl-double v21, v22, v24
 
@@ -773,7 +773,7 @@
 
     move/from16 v22, v0
 
-    const v23, 0x3f28f5c3
+    const v23, 0x3f28f5c3    # 0.66f
 
     mul-float v22, v22, v23
 
@@ -855,14 +855,14 @@
 
     if-eqz v6, :cond_7
 
-    const/high16 v21, 0x3f400000
+    const/high16 v21, 0x3f400000    # 0.75f
 
     cmpg-float v21, v7, v21
 
     if-ltz v21, :cond_8
 
     :cond_7
-    const/high16 v21, 0x3f000000
+    const/high16 v21, 0x3f000000    # 0.5f
 
     cmpg-float v21, v7, v21
 
@@ -912,13 +912,13 @@
 
     move-wide/from16 v22, v0
 
-    const-wide/high16 v24, 0x3fe0000000000000L
+    const-wide/high16 v24, 0x3fe0000000000000L    # 0.5
 
     cmpl-double v21, v22, v24
 
     if-lez v21, :cond_e
 
-    const/high16 v21, -0x40800000
+    const/high16 v21, -0x40800000    # -1.0f
 
     :goto_7
     move/from16 v0, v21
@@ -929,9 +929,9 @@
 
     move-result v21
 
-    const/high16 v22, 0x40a00000
+    const/high16 v22, 0x40a00000    # 5.0f
 
-    const/high16 v23, 0x41f00000
+    const/high16 v23, 0x41f00000    # 30.0f
 
     invoke-static/range {v22 .. v23}, Lcom/android/systemui/egg/LLand;->frand(FF)F
 
@@ -1044,7 +1044,7 @@
 
     move-wide/from16 v22, v0
 
-    const-wide/high16 v24, 0x3fd0000000000000L
+    const-wide/high16 v24, 0x3fd0000000000000L    # 0.25
 
     cmpg-double v21, v22, v24
 
@@ -1072,7 +1072,7 @@
 
     move-wide/from16 v22, v0
 
-    const-wide v24, 0x3fd3333333333333L
+    const-wide v24, 0x3fd3333333333333L    # 0.3
 
     cmpg-double v21, v22, v24
 
@@ -1196,7 +1196,7 @@
 
     move/from16 v21, v0
 
-    const v22, 0x3f28f5c3
+    const v22, 0x3f28f5c3    # 0.66f
 
     mul-float v21, v21, v22
 
@@ -1236,7 +1236,7 @@
 
     move-result-object v21
 
-    const v22, -0x3f008000
+    const v22, -0x3f008000    # -7.984375f
 
     invoke-virtual/range {v21 .. v22}, Landroid/graphics/drawable/Drawable;->setTint(I)V
 
@@ -1253,7 +1253,7 @@
     goto/16 :goto_6
 
     :cond_e
-    const/high16 v21, 0x3f800000
+    const/high16 v21, 0x3f800000    # 1.0f
 
     goto/16 :goto_7
 
@@ -1267,7 +1267,7 @@
 
     move-wide/from16 v22, v0
 
-    const-wide v24, 0x3fe3333333333333L
+    const-wide v24, 0x3fe3333333333333L    # 0.6
 
     cmpg-double v21, v22, v24
 
@@ -1306,7 +1306,7 @@
 
     move/from16 v21, v0
 
-    const/high16 v22, 0x41a00000
+    const/high16 v22, 0x41a00000    # 20.0f
 
     div-float v21, v21, v22
 
@@ -1322,7 +1322,7 @@
 
     move/from16 v21, v0
 
-    const/high16 v22, 0x3f800000
+    const/high16 v22, 0x3f800000    # 1.0f
 
     iget v0, v15, Lcom/android/systemui/egg/LLand$Scenery;->z:F
 
@@ -1336,7 +1336,7 @@
 
     invoke-virtual {v15, v0}, Lcom/android/systemui/egg/LLand$Scenery;->setTranslationZ(F)V
 
-    const v21, 0x3f59999a
+    const v21, 0x3f59999a    # 0.85f
 
     iget v0, v15, Lcom/android/systemui/egg/LLand$Scenery;->z:F
 
@@ -1356,7 +1356,7 @@
 
     const/16 v22, 0x0
 
-    const/high16 v23, 0x432f0000
+    const/high16 v23, 0x432f0000    # 175.0f
 
     aput v23, v21, v22
 
@@ -1368,7 +1368,7 @@
 
     const/16 v22, 0x1
 
-    const/high16 v23, 0x3e800000
+    const/high16 v23, 0x3e800000    # 0.25f
 
     aput v23, v21, v22
 
@@ -1380,7 +1380,7 @@
 
     const/16 v22, 0x2
 
-    const/high16 v23, 0x3f800000
+    const/high16 v23, 0x3f800000    # 1.0f
 
     iget v0, v15, Lcom/android/systemui/egg/LLand$Scenery;->z:F
 
@@ -1470,7 +1470,7 @@
     goto/16 :goto_b
 
     :cond_13
-    const/high16 v21, 0x3f800000
+    const/high16 v21, 0x3f800000    # 1.0f
 
     mul-float v22, v13, v13
 
@@ -1488,7 +1488,7 @@
 
     mul-float v22, v22, v23
 
-    const/high16 v23, 0x40000000
+    const/high16 v23, 0x40000000    # 2.0f
 
     div-float v22, v22, v23
 
@@ -1854,7 +1854,7 @@
 
     long-to-float v3, v0
 
-    const/high16 v4, 0x447a0000
+    const/high16 v4, 0x447a0000    # 1000.0f
 
     div-float/2addr v3, v4
 
@@ -1866,7 +1866,7 @@
 
     long-to-float v3, v0
 
-    const/high16 v4, 0x447a0000
+    const/high16 v4, 0x447a0000    # 1000.0f
 
     div-float/2addr v3, v4
 
@@ -1882,7 +1882,7 @@
 
     iget v3, v0, Lcom/android/systemui/egg/LLand;->t:F
 
-    const/high16 v4, 0x3f800000
+    const/high16 v4, 0x3f800000    # 1.0f
 
     mul-float/2addr v3, v4
 
@@ -1894,7 +1894,7 @@
 
     iget v3, v0, Lcom/android/systemui/egg/LLand;->dt:F
 
-    const/high16 v4, 0x3f800000
+    const/high16 v4, 0x3f800000    # 1.0f
 
     mul-float/2addr v3, v4
 
@@ -2341,7 +2341,7 @@
 
     iget v3, v3, Lcom/android/systemui/egg/LLand$Params;->OBSTACLE_Z:F
 
-    const/high16 v4, 0x3f400000
+    const/high16 v4, 0x3f400000    # 0.75f
 
     mul-float/2addr v3, v4
 
@@ -2445,13 +2445,13 @@
 
     invoke-virtual {v0, v3}, Lcom/android/systemui/egg/LLand$Obstacle;->setTranslationZ(F)V
 
-    const/high16 v3, 0x3e800000
+    const/high16 v3, 0x3e800000    # 0.25f
 
     move-object/from16 v0, v19
 
     invoke-virtual {v0, v3}, Lcom/android/systemui/egg/LLand$Obstacle;->setScaleX(F)V
 
-    const/high16 v3, 0x3e800000
+    const/high16 v3, 0x3e800000    # 0.25f
 
     move-object/from16 v0, v19
 
@@ -2473,13 +2473,13 @@
 
     move-result-object v3
 
-    const/high16 v4, 0x3f800000
+    const/high16 v4, 0x3f800000    # 1.0f
 
     invoke-virtual {v3, v4}, Landroid/view/ViewPropertyAnimator;->scaleX(F)Landroid/view/ViewPropertyAnimator;
 
     move-result-object v3
 
-    const/high16 v4, 0x3f800000
+    const/high16 v4, 0x3f800000    # 1.0f
 
     invoke-virtual {v3, v4}, Landroid/view/ViewPropertyAnimator;->scaleY(F)Landroid/view/ViewPropertyAnimator;
 
@@ -2591,7 +2591,7 @@
 
     iget v3, v3, Lcom/android/systemui/egg/LLand$Params;->OBSTACLE_Z:F
 
-    const/high16 v4, 0x3f400000
+    const/high16 v4, 0x3f400000    # 0.75f
 
     mul-float/2addr v3, v4
 
@@ -2703,13 +2703,13 @@
 
     invoke-virtual {v0, v3}, Lcom/android/systemui/egg/LLand$Obstacle;->setTranslationZ(F)V
 
-    const/high16 v3, 0x3e800000
+    const/high16 v3, 0x3e800000    # 0.25f
 
     move-object/from16 v0, v20
 
     invoke-virtual {v0, v3}, Lcom/android/systemui/egg/LLand$Obstacle;->setScaleX(F)V
 
-    const/high16 v3, 0x3e800000
+    const/high16 v3, 0x3e800000    # 0.25f
 
     move-object/from16 v0, v20
 
@@ -2741,13 +2741,13 @@
 
     move-result-object v3
 
-    const/high16 v4, 0x3f800000
+    const/high16 v4, 0x3f800000    # 1.0f
 
     invoke-virtual {v3, v4}, Landroid/view/ViewPropertyAnimator;->scaleX(F)Landroid/view/ViewPropertyAnimator;
 
     move-result-object v3
 
-    const/high16 v4, 0x3f800000
+    const/high16 v4, 0x3f800000    # 1.0f
 
     invoke-virtual {v3, v4}, Landroid/view/ViewPropertyAnimator;->scaleY(F)Landroid/view/ViewPropertyAnimator;
 
@@ -3128,7 +3128,7 @@
     if-nez v0, :cond_1
 
     :cond_0
-    const/high16 v0, -0x3c060000
+    const/high16 v0, -0x3c060000    # -500.0f
 
     invoke-virtual {p1, v0}, Landroid/widget/TextView;->setTranslationY(F)V
 

@@ -33,7 +33,7 @@
 
     long-to-double v6, v0
 
-    const-wide/high16 v8, 0x4199000000000000L
+    const-wide/high16 v8, 0x4199000000000000L    # 1.048576E8
 
     cmpl-double v3, v6, v8
 
@@ -41,7 +41,7 @@
 
     long-to-double v6, v0
 
-    const-wide/high16 v8, 0x41d0000000000000L
+    const-wide/high16 v8, 0x41d0000000000000L    # 1.073741824E9
 
     div-double v4, v6, v8
 
@@ -94,7 +94,7 @@
     :cond_0
     long-to-double v6, v0
 
-    const-wide/high16 v8, 0x40f9000000000000L
+    const-wide/high16 v8, 0x40f9000000000000L    # 102400.0
 
     cmpl-double v3, v6, v8
 
@@ -102,7 +102,7 @@
 
     long-to-double v6, v0
 
-    const-wide/high16 v8, 0x4130000000000000L
+    const-wide/high16 v8, 0x4130000000000000L    # 1048576.0
 
     div-double v4, v6, v8
 
@@ -113,7 +113,7 @@
     :cond_1
     long-to-double v6, v0
 
-    const-wide/high16 v8, 0x4090000000000000L
+    const-wide/high16 v8, 0x4090000000000000L    # 1024.0
 
     div-double v4, v6, v8
 

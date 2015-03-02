@@ -1055,7 +1055,7 @@
 
     div-float/2addr v3, v4
 
-    const/high16 v4, 0x3f800000
+    const/high16 v4, 0x3f800000    # 1.0f
 
     invoke-static {v3, v4}, Ljava/lang/Math;->min(FF)F
 
@@ -1085,7 +1085,7 @@
 
     iget-object v2, v0, Landroid/support/v4/widget/DrawerLayout;->mShadowLeft:Landroid/graphics/drawable/Drawable;
 
-    const/high16 v3, 0x437f0000
+    const/high16 v3, 0x437f0000    # 255.0f
 
     mul-float/2addr v3, v8
 
@@ -1160,7 +1160,7 @@
 
     div-float/2addr v3, v4
 
-    const/high16 v4, 0x3f800000
+    const/high16 v4, 0x3f800000    # 1.0f
 
     invoke-static {v3, v4}, Ljava/lang/Math;->min(FF)F
 
@@ -1190,7 +1190,7 @@
 
     iget-object v2, v0, Landroid/support/v4/widget/DrawerLayout;->mShadowRight:Landroid/graphics/drawable/Drawable;
 
-    const/high16 v3, 0x437f0000
+    const/high16 v3, 0x437f0000    # 255.0f
 
     mul-float/2addr v3, v8
 
@@ -2233,7 +2233,7 @@
 
     move-result v14
 
-    const/high16 v20, 0x40000000
+    const/high16 v20, 0x40000000    # 2.0f
 
     move/from16 v0, v18
 
@@ -2241,7 +2241,7 @@
 
     if-ne v0, v1, :cond_0
 
-    const/high16 v20, 0x40000000
+    const/high16 v20, 0x40000000    # 2.0f
 
     move/from16 v0, v20
 
@@ -2262,7 +2262,7 @@
 
     if-ne v0, v1, :cond_3
 
-    const/high16 v18, 0x40000000
+    const/high16 v18, 0x40000000    # 2.0f
 
     :cond_1
     :goto_0
@@ -2272,7 +2272,7 @@
 
     if-ne v13, v0, :cond_4
 
-    const/high16 v13, 0x40000000
+    const/high16 v13, 0x40000000    # 2.0f
 
     :cond_2
     :goto_1
@@ -2340,7 +2340,7 @@
     :cond_3
     if-nez v18, :cond_1
 
-    const/high16 v18, 0x40000000
+    const/high16 v18, 0x40000000    # 2.0f
 
     const/16 v19, 0x12c
 
@@ -2349,7 +2349,7 @@
     :cond_4
     if-nez v13, :cond_2
 
-    const/high16 v13, 0x40000000
+    const/high16 v13, 0x40000000    # 2.0f
 
     const/16 v14, 0x12c
 
@@ -2438,7 +2438,7 @@
 
     sub-int v20, v20, v21
 
-    const/high16 v21, 0x40000000
+    const/high16 v21, 0x40000000    # 2.0f
 
     invoke-static/range {v20 .. v21}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
@@ -2460,7 +2460,7 @@
 
     sub-int v20, v20, v21
 
-    const/high16 v21, 0x40000000
+    const/high16 v21, 0x40000000    # 2.0f
 
     invoke-static/range {v20 .. v21}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
@@ -3011,7 +3011,7 @@
 
     check-cast v1, Landroid/support/v4/widget/DrawerLayout$LayoutParams;
 
-    const/high16 v2, 0x3f800000
+    const/high16 v2, 0x3f800000    # 1.0f
 
     iput v2, v1, Landroid/support/v4/widget/DrawerLayout$LayoutParams;->onScreen:F
 
@@ -3296,7 +3296,7 @@
     :cond_6
     iget v4, v1, Landroid/support/v4/widget/DrawerLayout$LayoutParams;->onScreen:F
 
-    const/high16 v5, 0x3f800000
+    const/high16 v5, 0x3f800000    # 1.0f
 
     cmpl-float v4, v4, v5
 

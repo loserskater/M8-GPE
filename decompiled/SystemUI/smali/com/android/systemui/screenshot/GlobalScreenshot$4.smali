@@ -43,7 +43,7 @@
 
     if-gtz v0, :cond_0
 
-    const-wide v0, 0x400921fb54442d18L
+    const-wide v0, 0x400921fb54442d18L    # Math.PI
 
     div-float v2, p1, v2
 

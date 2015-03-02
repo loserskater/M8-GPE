@@ -133,7 +133,7 @@
 
     iput-boolean v4, p0, Lcom/android/keyguard/KeyguardWidgetFrame;->mIsSmall:Z
 
-    const/high16 v3, 0x3f800000
+    const/high16 v3, 0x3f800000    # 1.0f
 
     iput v3, p0, Lcom/android/keyguard/KeyguardWidgetFrame;->mBackgroundAlphaMultiplier:F
 
@@ -177,7 +177,7 @@
 
     iget v3, v3, Landroid/util/DisplayMetrics;->density:F
 
-    const/high16 v4, 0x41000000
+    const/high16 v4, 0x41000000    # 8.0f
 
     mul-float/2addr v3, v4
 
@@ -185,7 +185,7 @@
 
     invoke-virtual {p0, v1, v1, v1, v1}, Lcom/android/keyguard/KeyguardWidgetFrame;->setPadding(IIII)V
 
-    const/high16 v3, 0x40000000
+    const/high16 v3, 0x40000000    # 2.0f
 
     mul-float/2addr v3, v0
 
@@ -566,7 +566,7 @@
 
     mul-float/2addr v1, v2
 
-    const/high16 v2, 0x437f0000
+    const/high16 v2, 0x437f0000    # 255.0f
 
     mul-float/2addr v1, v2
 
@@ -1260,11 +1260,11 @@
     :goto_0
     iput-object v1, p0, Lcom/android/keyguard/KeyguardWidgetFrame;->mForegroundGradient:Landroid/graphics/LinearGradient;
 
-    const/high16 v1, 0x3f000000
+    const/high16 v1, 0x3f000000    # 0.5f
 
     mul-float/2addr v1, p1
 
-    const/high16 v2, 0x437f0000
+    const/high16 v2, 0x437f0000    # 255.0f
 
     mul-float/2addr v1, v2
 
@@ -1274,15 +1274,15 @@
 
     iput v1, p0, Lcom/android/keyguard/KeyguardWidgetFrame;->mForegroundAlpha:I
 
-    const v1, 0x3f19999a
+    const v1, 0x3f19999a    # 0.6f
 
-    const v2, 0x3ecccccc
+    const v2, 0x3ecccccc    # 0.39999998f
 
     mul-float/2addr v2, p1
 
     add-float/2addr v1, v2
 
-    const/high16 v2, 0x3f800000
+    const/high16 v2, 0x3f800000    # 1.0f
 
     invoke-static {v1, v2}, Ljava/lang/Math;->min(FF)F
 
@@ -1329,7 +1329,7 @@
 
     const/4 v0, 0x1
 
-    const v1, 0x3f19999a
+    const v1, 0x3f19999a    # 0.6f
 
     const/16 v2, 0x64
 

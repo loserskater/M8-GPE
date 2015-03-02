@@ -97,15 +97,15 @@
 .method static constructor <clinit>()V
     .locals 5
 
-    const/high16 v4, 0x3f800000
+    const/high16 v4, 0x3f800000    # 1.0f
 
-    const/high16 v3, 0x3f000000
+    const/high16 v3, 0x3f000000    # 0.5f
 
     const/4 v2, 0x0
 
     new-instance v0, Landroid/view/animation/PathInterpolator;
 
-    const v1, 0x3f19999a
+    const v1, 0x3f19999a    # 0.6f
 
     invoke-direct {v0, v1, v2, v3, v4}, Landroid/view/animation/PathInterpolator;-><init>(FFFF)V
 
@@ -123,11 +123,11 @@
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 6
 
-    const v5, 0x3f4ccccd
+    const v5, 0x3f4ccccd    # 0.8f
 
     const/4 v4, 0x0
 
-    const/high16 v3, 0x3f800000
+    const/high16 v3, 0x3f800000    # 1.0f
 
     const/4 v2, 0x0
 
@@ -153,7 +153,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/ActivatableNotificationView;->mAppearPaint:Landroid/graphics/Paint;
 
-    const/high16 v0, -0x40800000
+    const/high16 v0, -0x40800000    # -1.0f
 
     iput v0, p0, Lcom/android/systemui/statusbar/ActivatableNotificationView;->mAppearAnimationFraction:F
 
@@ -185,7 +185,7 @@
 
     new-instance v0, Landroid/view/animation/PathInterpolator;
 
-    const v1, 0x3f19999a
+    const v1, 0x3f19999a    # 0.6f
 
     invoke-direct {v0, v5, v4, v1, v3}, Landroid/view/animation/PathInterpolator;-><init>(FFFF)V
 
@@ -434,25 +434,25 @@
 
     :array_0
     .array-data 4
-        -0x40800000
+        -0x40800000    # -1.0f
         0x0
         0x0
-        0x3f800000
-        0x3f800000
+        0x3f800000    # 1.0f
+        0x3f800000    # 1.0f
         0x0
-        -0x40800000
+        -0x40800000    # -1.0f
         0x0
-        0x3f800000
-        0x3f800000
-        0x0
-        0x0
-        -0x40800000
-        0x3f800000
-        0x3f800000
+        0x3f800000    # 1.0f
+        0x3f800000    # 1.0f
         0x0
         0x0
+        -0x40800000    # -1.0f
+        0x3f800000    # 1.0f
+        0x3f800000    # 1.0f
         0x0
-        0x3f800000
+        0x0
+        0x0
+        0x3f800000    # 1.0f
         0x0
     .end array-data
 .end method
@@ -565,7 +565,7 @@
 .method private fadeBackground()V
     .locals 7
 
-    const/high16 v3, 0x3f800000
+    const/high16 v3, 0x3f800000    # 1.0f
 
     const/4 v4, 0x0
 
@@ -973,7 +973,7 @@
 
     const-wide/16 v10, 0xdc
 
-    const/high16 v7, 0x3f800000
+    const/high16 v7, 0x3f800000    # 1.0f
 
     const/4 v6, 0x0
 
@@ -1098,7 +1098,7 @@
     :cond_3
     iget-object v8, p0, Lcom/android/systemui/statusbar/ActivatableNotificationView;->mBackgroundNormal:Lcom/android/systemui/statusbar/NotificationBackgroundView;
 
-    const v9, 0x3ecccccd
+    const v9, 0x3ecccccd    # 0.4f
 
     invoke-virtual {v8, v9}, Lcom/android/systemui/statusbar/NotificationBackgroundView;->setAlpha(F)V
 
@@ -1136,7 +1136,7 @@
 
     iget v1, p0, Lcom/android/systemui/statusbar/ActivatableNotificationView;->mAppearAnimationFraction:F
 
-    const/high16 v2, -0x40800000
+    const/high16 v2, -0x40800000    # -1.0f
 
     cmpl-float v1, v1, v2
 
@@ -1162,7 +1162,7 @@
 
     iput-object v1, p0, Lcom/android/systemui/statusbar/ActivatableNotificationView;->mCurrentAlphaInterpolator:Landroid/view/animation/Interpolator;
 
-    const/high16 v0, 0x3f800000
+    const/high16 v0, 0x3f800000    # 1.0f
 
     :goto_1
     const/4 v1, 0x2
@@ -1247,7 +1247,7 @@
     return-void
 
     :cond_3
-    const/high16 v1, 0x3f800000
+    const/high16 v1, 0x3f800000    # 1.0f
 
     iput v1, p0, Lcom/android/systemui/statusbar/ActivatableNotificationView;->mAppearAnimationFraction:F
 
@@ -1272,7 +1272,7 @@
 .method private updateAppearAnimationAlpha()V
     .locals 7
 
-    const/high16 v4, 0x3f800000
+    const/high16 v4, 0x3f800000    # 1.0f
 
     invoke-direct {p0}, Lcom/android/systemui/statusbar/ActivatableNotificationView;->getBackgroundColor()I
 
@@ -1296,7 +1296,7 @@
 
     move-result v1
 
-    const/high16 v3, 0x437f0000
+    const/high16 v3, 0x437f0000    # 255.0f
 
     sub-float/2addr v4, v1
 
@@ -1337,9 +1337,9 @@
 .method private updateAppearRect()V
     .locals 14
 
-    const v13, 0x3dcccccd
+    const v13, 0x3dcccccd    # 0.1f
 
-    const/high16 v12, 0x3f800000
+    const/high16 v12, 0x3f800000    # 1.0f
 
     const/4 v11, 0x0
 
@@ -1361,7 +1361,7 @@
 
     sub-float v9, v2, v11
 
-    const v10, 0x3f4ccccd
+    const v10, 0x3f4ccccd    # 0.8f
 
     div-float v8, v9, v10
 
@@ -1385,7 +1385,7 @@
 
     int-to-float v9, v9
 
-    const v10, 0x3ef33333
+    const v10, 0x3ef33333    # 0.475f
 
     mul-float/2addr v9, v10
 
@@ -1517,7 +1517,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/ActivatableNotificationView;->mBackgroundNormal:Lcom/android/systemui/statusbar/NotificationBackgroundView;
 
-    const/high16 v1, 0x3f800000
+    const/high16 v1, 0x3f800000    # 1.0f
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/NotificationBackgroundView;->setAlpha(F)V
 
@@ -1776,7 +1776,7 @@
 
     if-eqz v0, :cond_0
 
-    const/high16 v3, -0x40800000
+    const/high16 v3, -0x40800000    # -1.0f
 
     const/4 v8, 0x0
 

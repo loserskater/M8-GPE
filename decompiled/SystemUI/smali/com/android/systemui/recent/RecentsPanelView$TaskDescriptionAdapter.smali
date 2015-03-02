@@ -208,7 +208,7 @@
 
     const/4 v11, 0x0
 
-    const/high16 v10, 0x3f800000
+    const/high16 v10, 0x3f800000    # 1.0f
 
     const/4 v9, 0x1
 
@@ -492,7 +492,7 @@
 
     const/4 v6, 0x0
 
-    const/high16 v5, 0x3f800000
+    const/high16 v5, 0x3f800000    # 1.0f
 
     const/4 v4, 0x0
 

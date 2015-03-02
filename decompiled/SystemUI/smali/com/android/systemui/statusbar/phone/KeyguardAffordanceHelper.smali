@@ -65,7 +65,7 @@
 .method constructor <init>(Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper$Callback;Landroid/content/Context;)V
     .locals 6
 
-    const/high16 v3, 0x3f000000
+    const/high16 v3, 0x3f000000    # 0.5f
 
     const/4 v2, 0x0
 
@@ -280,7 +280,7 @@
 
     if-nez p2, :cond_3
 
-    const/high16 v5, 0x3ec00000
+    const/high16 v5, 0x3ec00000    # 0.375f
 
     mul-float/2addr v5, p1
 
@@ -500,7 +500,7 @@
 .method private getRadiusFromTranslation(F)F
     .locals 2
 
-    const v0, 0x3e19999a
+    const v0, 0x3e19999a    # 0.15f
 
     mul-float/2addr v0, p1
 
@@ -516,19 +516,19 @@
 .method private getScale(F)F
     .locals 3
 
-    const/high16 v1, 0x3f000000
+    const/high16 v1, 0x3f000000    # 0.5f
 
     div-float v1, p1, v1
 
-    const v2, 0x3e4ccccd
+    const v2, 0x3e4ccccd    # 0.2f
 
     mul-float/2addr v1, v2
 
-    const v2, 0x3f4ccccd
+    const v2, 0x3f4ccccd    # 0.8f
 
     add-float v0, v1, v2
 
-    const/high16 v1, 0x3fc00000
+    const/high16 v1, 0x3fc00000    # 1.5f
 
     invoke-static {v0, v1}, Ljava/lang/Math;->min(FF)F
 
@@ -546,7 +546,7 @@
 
     sub-float v1, p1, v1
 
-    const v2, 0x3e19999a
+    const v2, 0x3e19999a    # 0.15f
 
     div-float v0, v1, v2
 
@@ -626,7 +626,7 @@
 
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->mContext:Landroid/content/Context;
 
-    const v3, 0x3ecccccd
+    const v3, 0x3ecccccd    # 0.4f
 
     invoke-direct {v1, v2, v3}, Lcom/android/systemui/statusbar/FlingAnimationUtils;-><init>(Landroid/content/Context;F)V
 
@@ -919,9 +919,9 @@
 
     div-float v3, v10, v0
 
-    const/high16 v0, 0x3f000000
+    const/high16 v0, 0x3f000000    # 0.5f
 
-    const/high16 v4, 0x3f800000
+    const/high16 v4, 0x3f800000    # 1.0f
 
     sub-float/2addr v4, v3
 
@@ -1193,7 +1193,7 @@
 
     move-result v0
 
-    const/high16 v1, 0x3f800000
+    const/high16 v1, 0x3f800000    # 1.0f
 
     invoke-static {v1, p2}, Ljava/lang/Math;->min(FF)F
 
@@ -1217,9 +1217,9 @@
 
     div-float v0, p2, v3
 
-    const/high16 v3, 0x3f000000
+    const/high16 v3, 0x3f000000    # 0.5f
 
-    const/high16 v4, 0x3f800000
+    const/high16 v4, 0x3f800000    # 1.0f
 
     sub-float/2addr v4, v0
 

@@ -117,9 +117,9 @@
 
     const-wide/16 v2, 0x190
 
-    const/high16 v4, -0x41000000
+    const/high16 v4, -0x41000000    # -0.5f
 
-    const/high16 v5, 0x3f000000
+    const/high16 v5, 0x3f000000    # 0.5f
 
     const v1, 0x10c000d
 

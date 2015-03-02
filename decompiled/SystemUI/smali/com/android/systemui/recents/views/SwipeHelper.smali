@@ -63,7 +63,7 @@
 
     sput-object v0, Lcom/android/systemui/recents/views/SwipeHelper;->sLinearInterpolator:Landroid/view/animation/LinearInterpolator;
 
-    const v0, 0x3e19999a
+    const v0, 0x3e19999a    # 0.15f
 
     sput v0, Lcom/android/systemui/recents/views/SwipeHelper;->ALPHA_FADE_START:F
 
@@ -77,7 +77,7 @@
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/high16 v0, 0x42c80000
+    const/high16 v0, 0x42c80000    # 100.0f
 
     iput v0, p0, Lcom/android/systemui/recents/views/SwipeHelper;->SWIPE_ESCAPE_VELOCITY:F
 
@@ -226,7 +226,7 @@
 
     move-result v4
 
-    const/high16 v5, 0x447a0000
+    const/high16 v5, 0x447a0000    # 1000.0f
 
     mul-float/2addr v4, v5
 
@@ -325,7 +325,7 @@
 
     float-to-double v8, v8
 
-    const-wide v10, 0x3fe3333333333333L
+    const-wide v10, 0x3fe3333333333333L    # 0.6
 
     iget-object v12, p0, Lcom/android/systemui/recents/views/SwipeHelper;->mCurrView:Landroid/view/View;
 
@@ -702,7 +702,7 @@
 
     move-result v2
 
-    const v3, 0x3e19999a
+    const v3, 0x3e19999a    # 0.15f
 
     mul-float v1, v3, v2
 
@@ -755,7 +755,7 @@
 
     float-to-double v4, v3
 
-    const-wide v6, 0x3ff921fb54442d18L
+    const-wide v6, 0x3ff921fb54442d18L    # 1.5707963267948966
 
     mul-double/2addr v4, v6
 
@@ -839,17 +839,17 @@
 .method getAlphaForOffset(Landroid/view/View;)F
     .locals 6
 
-    const/high16 v5, 0x3f800000
+    const/high16 v5, 0x3f800000    # 1.0f
 
     invoke-direct {p0, p1}, Lcom/android/systemui/recents/views/SwipeHelper;->getSize(Landroid/view/View;)F
 
     move-result v3
 
-    const v4, 0x3f266666
+    const v4, 0x3f266666    # 0.65f
 
     mul-float v0, v4, v3
 
-    const/high16 v2, 0x3f800000
+    const/high16 v2, 0x3f800000    # 1.0f
 
     invoke-direct {p0, p1}, Lcom/android/systemui/recents/views/SwipeHelper;->getTranslation(Landroid/view/View;)F
 

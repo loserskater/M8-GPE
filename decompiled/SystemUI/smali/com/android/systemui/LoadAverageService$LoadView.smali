@@ -92,7 +92,7 @@
 
     iget v0, v3, Landroid/util/DisplayMetrics;->density:F
 
-    const/high16 v3, 0x3f800000
+    const/high16 v3, 0x3f800000    # 1.0f
 
     cmpg-float v3, v0, v3
 
@@ -190,7 +190,7 @@
 
     iget-object v3, p0, Lcom/android/systemui/LoadAverageService$LoadView;->mLoadPaint:Landroid/graphics/Paint;
 
-    const/high16 v4, 0x40800000
+    const/high16 v4, 0x40800000    # 4.0f
 
     const/high16 v5, -0x1000000
 
@@ -220,7 +220,7 @@
 
     iget-object v3, p0, Lcom/android/systemui/LoadAverageService$LoadView;->mLoadPaint:Landroid/graphics/Paint;
 
-    const/high16 v4, 0x40000000
+    const/high16 v4, 0x40000000    # 2.0f
 
     const/high16 v5, -0x1000000
 
@@ -238,7 +238,7 @@
 
     iget-object v3, p0, Lcom/android/systemui/LoadAverageService$LoadView;->mIrqPaint:Landroid/graphics/Paint;
 
-    const/high16 v4, 0x40000000
+    const/high16 v4, 0x40000000    # 2.0f
 
     const/high16 v5, -0x1000000
 
@@ -256,7 +256,7 @@
 
     iget-object v3, p0, Lcom/android/systemui/LoadAverageService$LoadView;->mSystemPaint:Landroid/graphics/Paint;
 
-    const/high16 v4, 0x40000000
+    const/high16 v4, 0x40000000    # 2.0f
 
     const/high16 v5, -0x1000000
 
@@ -274,7 +274,7 @@
 
     iget-object v3, p0, Lcom/android/systemui/LoadAverageService$LoadView;->mSystemPaint:Landroid/graphics/Paint;
 
-    const/high16 v4, 0x40000000
+    const/high16 v4, 0x40000000    # 2.0f
 
     const/high16 v5, -0x1000000
 
@@ -298,7 +298,7 @@
 
     sub-float v3, v1, v3
 
-    const/high16 v4, 0x3f000000
+    const/high16 v4, 0x3f000000    # 0.5f
 
     add-float/2addr v3, v4
 
@@ -323,7 +323,7 @@
     return-void
 
     :cond_1
-    const/high16 v3, 0x41200000
+    const/high16 v3, 0x41200000    # 10.0f
 
     mul-float/2addr v3, v0
 

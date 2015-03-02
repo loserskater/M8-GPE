@@ -48,7 +48,7 @@
 
     packed-switch p2, :pswitch_data_0
 
-    const/high16 v0, 0x40000000
+    const/high16 v0, 0x40000000    # 2.0f
 
     invoke-static {p1, p2}, Ljava/lang/Math;->min(II)I
 
@@ -69,7 +69,7 @@
     goto :goto_0
 
     :pswitch_1
-    const/high16 v0, 0x40000000
+    const/high16 v0, 0x40000000    # 2.0f
 
     move v1, p1
 
@@ -354,7 +354,7 @@
 
     sub-int/2addr v13, v7
 
-    const/high16 v19, 0x40000000
+    const/high16 v19, 0x40000000    # 2.0f
 
     move/from16 v0, v17
 
@@ -365,7 +365,7 @@
     move/from16 v16, v18
 
     :goto_1
-    const/high16 v19, 0x40000000
+    const/high16 v19, 0x40000000    # 2.0f
 
     move/from16 v0, v19
 

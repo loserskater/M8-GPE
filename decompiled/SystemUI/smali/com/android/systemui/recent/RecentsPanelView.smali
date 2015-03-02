@@ -295,7 +295,7 @@
 
     new-instance v3, Landroid/view/animation/DecelerateInterpolator;
 
-    const/high16 v13, 0x3fc00000
+    const/high16 v13, 0x3fc00000    # 1.5f
 
     invoke-direct {v3, v13}, Landroid/view/animation/DecelerateInterpolator;-><init>(F)V
 
@@ -352,7 +352,7 @@
 
     move-result-object v13
 
-    const/high16 v14, 0x3f800000
+    const/high16 v14, 0x3f800000    # 1.0f
 
     invoke-virtual {v13, v14}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
 
@@ -574,7 +574,7 @@
     :goto_0
     iget-object v3, p0, Lcom/android/systemui/recent/RecentsPanelView;->mRecentsNoApps:Landroid/view/View;
 
-    const/high16 v4, 0x3f800000
+    const/high16 v4, 0x3f800000    # 1.0f
 
     invoke-virtual {v3, v4}, Landroid/view/View;->setAlpha(F)V
 

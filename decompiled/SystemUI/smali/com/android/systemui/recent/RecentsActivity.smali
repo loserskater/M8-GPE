@@ -390,7 +390,7 @@
 
     int-to-float v2, v2
 
-    const/high16 v3, 0x42c80000
+    const/high16 v3, 0x42c80000    # 100.0f
 
     div-float/2addr v2, v3
 

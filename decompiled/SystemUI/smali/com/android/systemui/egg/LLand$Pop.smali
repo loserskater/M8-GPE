@@ -32,7 +32,7 @@
 
     const/4 v2, 0x0
 
-    const/high16 v4, 0x3f000000
+    const/high16 v4, 0x3f000000    # 0.5f
 
     iput-object p1, p0, Lcom/android/systemui/egg/LLand$Pop;->this$0:Lcom/android/systemui/egg/LLand;
 
@@ -64,7 +64,7 @@
 
     if-gez v1, :cond_0
 
-    const/high16 v1, -0x40800000
+    const/high16 v1, -0x40800000    # -1.0f
 
     :goto_0
     invoke-virtual {p0, v1}, Lcom/android/systemui/egg/LLand$Pop;->setScaleX(F)V
@@ -91,7 +91,7 @@
     return-void
 
     :cond_0
-    const/high16 v1, 0x3f800000
+    const/high16 v1, 0x3f800000    # 1.0f
 
     goto :goto_0
 
@@ -201,7 +201,7 @@
 
     move-result v0
 
-    const/high16 v1, 0x42340000
+    const/high16 v1, 0x42340000    # 45.0f
 
     mul-float/2addr v1, p6
 

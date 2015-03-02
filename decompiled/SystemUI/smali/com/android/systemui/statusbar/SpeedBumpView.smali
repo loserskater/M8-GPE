@@ -61,7 +61,7 @@
 
     if-eqz p1, :cond_1
 
-    const/high16 v0, 0x3f800000
+    const/high16 v0, 0x3f800000    # 1.0f
 
     :goto_0
     iget-object v1, p0, Lcom/android/systemui/statusbar/SpeedBumpView;->mLine:Lcom/android/systemui/statusbar/AlphaOptimizedView;

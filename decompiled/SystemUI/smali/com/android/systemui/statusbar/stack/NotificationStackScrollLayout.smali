@@ -599,7 +599,7 @@
 .method private fling(I)V
     .locals 14
 
-    const/high16 v4, 0x447a0000
+    const/high16 v4, 0x447a0000    # 1000.0f
 
     const/4 v3, 0x1
 
@@ -678,7 +678,7 @@
 
     move-result v8
 
-    const v10, 0x3fffffff
+    const v10, 0x3fffffff    # 1.9999999f
 
     move v4, p1
 
@@ -1526,7 +1526,7 @@
 .method private getRubberBandFactor(Z)F
     .locals 2
 
-    const v0, 0x3eb33333
+    const v0, 0x3eb33333    # 0.35f
 
     if-nez p1, :cond_1
 
@@ -1539,7 +1539,7 @@
 
     if-eqz v1, :cond_2
 
-    const v0, 0x3e19999a
+    const v0, 0x3e19999a    # 0.15f
 
     goto :goto_0
 
@@ -1548,7 +1548,7 @@
 
     if-eqz v1, :cond_3
 
-    const v0, 0x3e570a3d
+    const v0, 0x3e570a3d    # 0.21f
 
     goto :goto_0
 
@@ -1557,7 +1557,7 @@
 
     if-eqz v1, :cond_0
 
-    const/high16 v0, 0x3f800000
+    const/high16 v0, 0x3f800000    # 1.0f
 
     goto :goto_0
 .end method
@@ -2000,7 +2000,7 @@
 
     iget-object v2, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->mExpandHelper:Lcom/android/systemui/ExpandHelper;
 
-    const/high16 v0, 0x3f800000
+    const/high16 v0, 0x3f800000    # 1.0f
 
     cmpl-float v0, p1, v0
 
@@ -4338,7 +4338,7 @@
 
     move-result v0
 
-    const/high16 v1, 0x447a0000
+    const/high16 v1, 0x447a0000    # 1000.0f
 
     div-float/2addr v0, v1
 
@@ -4851,13 +4851,13 @@
 
     if-eqz v0, :cond_0
 
-    const/high16 v0, 0x3fc00000
+    const/high16 v0, 0x3fc00000    # 1.5f
 
     :goto_0
     return v0
 
     :cond_0
-    const/high16 v0, 0x3f800000
+    const/high16 v0, 0x3f800000    # 1.0f
 
     goto :goto_0
 .end method
@@ -5614,7 +5614,7 @@
 .method protected onLayout(ZIIII)V
     .locals 10
 
-    const/high16 v9, 0x40000000
+    const/high16 v9, 0x40000000    # 2.0f
 
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->getWidth()I
 
@@ -6542,7 +6542,7 @@
 
     int-to-float v5, v4
 
-    const/high16 v6, 0x3f800000
+    const/high16 v6, 0x3f800000    # 1.0f
 
     sub-float/2addr v6, v2
 

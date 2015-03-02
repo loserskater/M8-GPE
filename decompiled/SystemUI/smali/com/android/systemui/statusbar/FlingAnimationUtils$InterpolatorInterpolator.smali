@@ -51,7 +51,7 @@
 
     move-result v0
 
-    const/high16 v1, 0x3f800000
+    const/high16 v1, 0x3f800000    # 1.0f
 
     sub-float/2addr v1, v0
 

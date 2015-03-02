@@ -1456,7 +1456,7 @@
 
     const/4 v5, 0x0
 
-    const/high16 v6, 0x3f800000
+    const/high16 v6, 0x3f800000    # 1.0f
 
     move v1, p1
 
@@ -1905,11 +1905,11 @@
 
     move-result v1
 
-    const-wide/high16 v4, 0x4024000000000000L
+    const-wide/high16 v4, 0x4024000000000000L    # 10.0
 
     int-to-float v3, v1
 
-    const/high16 v6, 0x41a00000
+    const/high16 v6, 0x41a00000    # 20.0f
 
     div-float/2addr v3, v6
 

@@ -348,7 +348,7 @@
 
     move-result v16
 
-    const v17, 0x3c23d70a
+    const v17, 0x3c23d70a    # 0.01f
 
     invoke-static/range {v16 .. v17}, Ljava/lang/Math;->max(FF)F
 
@@ -420,7 +420,7 @@
 
     const/16 v20, 0x0
 
-    const/high16 v21, 0x3f800000
+    const/high16 v21, 0x3f800000    # 1.0f
 
     aput v21, v19, v20
 

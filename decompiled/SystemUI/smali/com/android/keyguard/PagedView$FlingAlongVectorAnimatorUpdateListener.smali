@@ -39,7 +39,7 @@
 
     new-instance v0, Landroid/view/animation/DecelerateInterpolator;
 
-    const/high16 v1, 0x3f400000
+    const/high16 v1, 0x3f400000    # 0.75f
 
     invoke-direct {v0, v1}, Landroid/view/animation/DecelerateInterpolator;-><init>(F)V
 
@@ -53,7 +53,7 @@
 
     iput-wide p4, p0, Lcom/android/keyguard/PagedView$FlingAlongVectorAnimatorUpdateListener;->mPrevTime:J
 
-    const/high16 v0, 0x3f800000
+    const/high16 v0, 0x3f800000    # 1.0f
 
     iget-object v1, p0, Lcom/android/keyguard/PagedView$FlingAlongVectorAnimatorUpdateListener;->mDragView:Landroid/view/View;
 
@@ -81,7 +81,7 @@
 .method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 9
 
-    const/high16 v8, 0x447a0000
+    const/high16 v8, 0x447a0000    # 1000.0f
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
@@ -171,7 +171,7 @@
 
     iget-object v3, p0, Lcom/android/keyguard/PagedView$FlingAlongVectorAnimatorUpdateListener;->mDragView:Landroid/view/View;
 
-    const/high16 v4, 0x3f800000
+    const/high16 v4, 0x3f800000    # 1.0f
 
     iget-object v5, p0, Lcom/android/keyguard/PagedView$FlingAlongVectorAnimatorUpdateListener;->mAlphaInterpolator:Landroid/animation/TimeInterpolator;
 

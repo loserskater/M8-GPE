@@ -1071,7 +1071,7 @@
 
     int-to-float v2, v0
 
-    const v3, 0x3f99999a
+    const v3, 0x3f99999a    # 1.2f
 
     mul-float/2addr v2, v3
 

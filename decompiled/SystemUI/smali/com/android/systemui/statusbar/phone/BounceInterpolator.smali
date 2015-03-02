@@ -20,9 +20,9 @@
 .method public getInterpolation(F)F
     .locals 3
 
-    const/high16 v2, 0x40f20000
+    const/high16 v2, 0x40f20000    # 7.5625f
 
-    const v1, 0x3f8ccccd
+    const v1, 0x3f8ccccd    # 1.1f
 
     mul-float/2addr p1, v1
 
@@ -54,7 +54,7 @@
 
     mul-float/2addr v1, v0
 
-    const/high16 v2, 0x3f400000
+    const/high16 v2, 0x3f400000    # 0.75f
 
     add-float/2addr v1, v2
 
@@ -75,14 +75,14 @@
 
     mul-float/2addr v1, v0
 
-    const/high16 v2, 0x3f700000
+    const/high16 v2, 0x3f700000    # 0.9375f
 
     add-float/2addr v1, v2
 
     goto :goto_0
 
     :cond_2
-    const/high16 v1, 0x3f800000
+    const/high16 v1, 0x3f800000    # 1.0f
 
     goto :goto_0
 .end method

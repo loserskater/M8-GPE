@@ -772,7 +772,7 @@
 
     add-float v34, v34, v30
 
-    const/high16 v35, 0x40000000
+    const/high16 v35, 0x40000000    # 2.0f
 
     mul-float v35, v35, v26
 
@@ -790,7 +790,7 @@
 
     sub-float v34, v34, v31
 
-    const/high16 v35, 0x40000000
+    const/high16 v35, 0x40000000    # 2.0f
 
     div-float v34, v34, v35
 
@@ -1075,7 +1075,7 @@
 
     add-float v34, v29, v27
 
-    const/high16 v35, 0x40000000
+    const/high16 v35, 0x40000000    # 2.0f
 
     mul-float v35, v35, v26
 
@@ -1173,7 +1173,7 @@
 
     sub-float v34, v34, v14
 
-    const/high16 v35, 0x40000000
+    const/high16 v35, 0x40000000    # 2.0f
 
     div-float v34, v34, v35
 

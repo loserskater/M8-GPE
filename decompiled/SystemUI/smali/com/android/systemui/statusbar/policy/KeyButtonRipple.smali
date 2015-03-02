@@ -144,7 +144,7 @@
 
     iput v0, p0, Lcom/android/systemui/statusbar/policy/KeyButtonRipple;->mGlowAlpha:F
 
-    const/high16 v0, 0x3f800000
+    const/high16 v0, 0x3f800000    # 1.0f
 
     iput v0, p0, Lcom/android/systemui/statusbar/policy/KeyButtonRipple;->mGlowScale:F
 
@@ -315,7 +315,7 @@
 
     iget v1, v0, Lcom/android/systemui/statusbar/policy/KeyButtonRipple;->mGlowAlpha:F
 
-    const/high16 v2, 0x437f0000
+    const/high16 v2, 0x437f0000    # 255.0f
 
     mul-float/2addr v1, v2
 
@@ -364,15 +364,15 @@
 
     mul-float v11, v1, v2
 
-    const/high16 v1, 0x3f000000
+    const/high16 v1, 0x3f000000    # 0.5f
 
     mul-float v14, v11, v1
 
-    const/high16 v1, 0x3f000000
+    const/high16 v1, 0x3f000000    # 0.5f
 
     mul-float v9, v17, v1
 
-    const/high16 v1, 0x3f000000
+    const/high16 v1, 0x3f000000    # 0.5f
 
     mul-float v10, v12, v1
 
@@ -434,11 +434,11 @@
 
     const-wide/16 v8, 0x15e
 
-    const/high16 v7, 0x40000000
+    const/high16 v7, 0x40000000    # 2.0f
 
     const/4 v6, 0x0
 
-    const v5, 0x3faccccd
+    const v5, 0x3faccccd    # 1.35f
 
     invoke-direct {p0}, Lcom/android/systemui/statusbar/policy/KeyButtonRipple;->cancelAnimations()V
 
@@ -625,7 +625,7 @@
     :goto_0
     iput v5, p0, Lcom/android/systemui/statusbar/policy/KeyButtonRipple;->mGlowScale:F
 
-    const v2, 0x3e4ccccd
+    const v2, 0x3e4ccccd    # 0.2f
 
     iput v2, p0, Lcom/android/systemui/statusbar/policy/KeyButtonRipple;->mGlowAlpha:F
 
@@ -639,7 +639,7 @@
 
     iget v3, p0, Lcom/android/systemui/statusbar/policy/KeyButtonRipple;->mGlowAlpha:F
 
-    const/high16 v4, 0x437f0000
+    const/high16 v4, 0x437f0000    # 255.0f
 
     mul-float/2addr v3, v4
 
@@ -738,7 +738,7 @@
 
     invoke-direct {p0}, Lcom/android/systemui/statusbar/policy/KeyButtonRipple;->cancelAnimations()V
 
-    const v1, 0x3e4ccccd
+    const v1, 0x3e4ccccd    # 0.2f
 
     iput v1, p0, Lcom/android/systemui/statusbar/policy/KeyButtonRipple;->mGlowAlpha:F
 
@@ -777,7 +777,7 @@
     :array_0
     .array-data 4
         0x0
-        0x3faccccd
+        0x3faccccd    # 1.35f
     .end array-data
 .end method
 

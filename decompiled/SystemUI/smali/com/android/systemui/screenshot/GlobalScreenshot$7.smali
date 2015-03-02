@@ -55,7 +55,7 @@
 
     move-result v1
 
-    const/high16 v2, 0x3f800000
+    const/high16 v2, 0x3f800000    # 1.0f
 
     iget-object v3, p0, Lcom/android/systemui/screenshot/GlobalScreenshot$7;->this$0:Lcom/android/systemui/screenshot/GlobalScreenshot;
 
@@ -72,7 +72,7 @@
 
     move-result v3
 
-    const v4, 0x3e8ccccc
+    const v4, 0x3e8ccccc    # 0.27499998f
 
     mul-float/2addr v3, v4
 
@@ -91,7 +91,7 @@
 
     move-result v3
 
-    const/high16 v4, 0x3f000000
+    const/high16 v4, 0x3f000000    # 0.5f
 
     mul-float/2addr v3, v4
 

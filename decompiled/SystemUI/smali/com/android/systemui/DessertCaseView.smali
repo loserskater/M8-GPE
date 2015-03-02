@@ -215,18 +215,18 @@
         0x0
         0x0
         0x0
-        0x437f0000
+        0x437f0000    # 255.0f
         0x0
         0x0
         0x0
         0x0
-        0x437f0000
+        0x437f0000    # 255.0f
         0x0
         0x0
         0x0
         0x0
-        0x437f0000
-        0x3f800000
+        0x437f0000    # 255.0f
+        0x3f800000    # 1.0f
         0x0
         0x0
         0x0
@@ -239,21 +239,21 @@
         0x0
         0x0
         0x0
-        0x437f0000
+        0x437f0000    # 255.0f
         0x0
         0x0
         0x0
         0x0
-        0x437f0000
+        0x437f0000    # 255.0f
         0x0
         0x0
         0x0
         0x0
-        0x437f0000
+        0x437f0000    # 255.0f
         0x0
         0x0
         0x0
-        0x3f800000
+        0x3f800000    # 1.0f
         0x0
     .end array-data
 
@@ -263,22 +263,22 @@
         0x0
         0x0
         0x0
-        0x437f0000
+        0x437f0000    # 255.0f
         0x0
         0x0
         0x0
         0x0
-        0x437f0000
+        0x437f0000    # 255.0f
         0x0
         0x0
         0x0
         0x0
-        0x437f0000
-        -0x40800000
+        0x437f0000    # 255.0f
+        -0x40800000    # -1.0f
         0x0
         0x0
         0x0
-        0x437f0000
+        0x437f0000    # 255.0f
     .end array-data
 .end method
 
@@ -521,8 +521,8 @@
     :array_0
     .array-data 4
         0x0
-        0x3f800000
-        0x3f59999a
+        0x3f800000    # 1.0f
+        0x3f59999a    # 0.85f
     .end array-data
 .end method
 
@@ -820,7 +820,7 @@
 
     move-result v9
 
-    const v10, 0x3a03126f
+    const v10, 0x3a03126f    # 5.0E-4f
 
     cmpg-float v10, v9, v10
 
@@ -878,13 +878,13 @@
 
     int-to-float v7, v10
 
-    const/high16 v10, 0x3f000000
+    const/high16 v10, 0x3f000000    # 0.5f
 
     mul-float/2addr v10, v7
 
     invoke-virtual {v8, v10}, Landroid/widget/ImageView;->setScaleX(F)V
 
-    const/high16 v10, 0x3f000000
+    const/high16 v10, 0x3f000000    # 0.5f
 
     mul-float/2addr v10, v7
 
@@ -910,7 +910,7 @@
 
     move-result-object v10
 
-    const/high16 v11, 0x3f800000
+    const/high16 v11, 0x3f800000    # 1.0f
 
     invoke-virtual {v10, v11}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
 
@@ -932,7 +932,7 @@
     throw v10
 
     :cond_2
-    const v10, 0x3ba3d70a
+    const v10, 0x3ba3d70a    # 0.005f
 
     cmpg-float v10, v9, v10
 
@@ -956,7 +956,7 @@
     goto :goto_1
 
     :cond_3
-    const/high16 v10, 0x3f000000
+    const/high16 v10, 0x3f000000    # 0.5f
 
     cmpg-float v10, v9, v10
 
@@ -979,7 +979,7 @@
     goto :goto_1
 
     :cond_4
-    const v10, 0x3f333333
+    const v10, 0x3f333333    # 0.7f
 
     cmpg-float v10, v9, v10
 
@@ -1025,9 +1025,9 @@
 .method protected declared-synchronized onSizeChanged(IIII)V
     .locals 8
 
-    const/high16 v7, 0x3f000000
+    const/high16 v7, 0x3f000000    # 0.5f
 
-    const/high16 v6, 0x3e800000
+    const/high16 v6, 0x3e800000    # 0.25f
 
     monitor-enter p0
 
@@ -1099,11 +1099,11 @@
 
     iput-object v3, p0, Lcom/android/systemui/DessertCaseView;->mCells:[Landroid/view/View;
 
-    const/high16 v3, 0x3e800000
+    const/high16 v3, 0x3e800000    # 0.25f
 
     invoke-virtual {p0, v3}, Lcom/android/systemui/DessertCaseView;->setScaleX(F)V
 
-    const/high16 v3, 0x3e800000
+    const/high16 v3, 0x3e800000    # 0.25f
 
     invoke-virtual {p0, v3}, Lcom/android/systemui/DessertCaseView;->setScaleY(F)V
 
@@ -1299,7 +1299,7 @@
     :cond_0
     const/4 v14, 0x1
 
-    const v19, 0x3c23d70a
+    const v19, 0x3c23d70a    # 0.01f
 
     cmpg-float v19, v12, v19
 
@@ -1426,7 +1426,7 @@
     goto :goto_2
 
     :cond_3
-    const v19, 0x3dcccccd
+    const v19, 0x3dcccccd    # 0.1f
 
     cmpg-float v19, v12, v19
 
@@ -1461,7 +1461,7 @@
     goto :goto_1
 
     :cond_4
-    const v19, 0x3ea8f5c3
+    const v19, 0x3ea8f5c3    # 0.33f
 
     cmpg-float v19, v12, v19
 
@@ -1608,13 +1608,13 @@
 
     move-result-object v19
 
-    const/high16 v20, 0x3f000000
+    const/high16 v20, 0x3f000000    # 0.5f
 
     invoke-virtual/range {v19 .. v20}, Landroid/view/ViewPropertyAnimator;->scaleX(F)Landroid/view/ViewPropertyAnimator;
 
     move-result-object v19
 
-    const/high16 v20, 0x3f000000
+    const/high16 v20, 0x3f000000    # 0.5f
 
     invoke-virtual/range {v19 .. v20}, Landroid/view/ViewPropertyAnimator;->scaleY(F)Landroid/view/ViewPropertyAnimator;
 
@@ -1744,7 +1744,7 @@
 
     move/from16 v19, v0
 
-    const/high16 v20, 0x42b40000
+    const/high16 v20, 0x42b40000    # 90.0f
 
     mul-float v13, v19, v20
 
@@ -2183,7 +2183,7 @@
 
     int-to-float v2, v2
 
-    const/high16 v3, 0x41f00000
+    const/high16 v3, 0x41f00000    # 30.0f
 
     mul-float/2addr v2, v3
 

@@ -685,7 +685,7 @@
 
     int-to-float v1, v1
 
-    const/high16 v11, 0x40000000
+    const/high16 v11, 0x40000000    # 2.0f
 
     div-float v11, v10, v11
 

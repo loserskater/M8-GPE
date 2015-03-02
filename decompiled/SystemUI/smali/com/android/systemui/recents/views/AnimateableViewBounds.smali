@@ -59,11 +59,11 @@
 
     iput-object v0, p0, Lcom/android/systemui/recents/views/AnimateableViewBounds;->mOutlineClipRect:Landroid/graphics/Rect;
 
-    const/high16 v0, 0x3f800000
+    const/high16 v0, 0x3f800000    # 1.0f
 
     iput v0, p0, Lcom/android/systemui/recents/views/AnimateableViewBounds;->mAlpha:F
 
-    const/high16 v0, 0x3e800000
+    const/high16 v0, 0x3e800000    # 0.25f
 
     iput v0, p0, Lcom/android/systemui/recents/views/AnimateableViewBounds;->mMinAlpha:F
 
@@ -353,11 +353,11 @@
 .method public getOutline(Landroid/view/View;Landroid/graphics/Outline;)V
     .locals 6
 
-    const/high16 v0, 0x3e800000
+    const/high16 v0, 0x3e800000    # 0.25f
 
     iget v1, p0, Lcom/android/systemui/recents/views/AnimateableViewBounds;->mAlpha:F
 
-    const/high16 v2, 0x3f400000
+    const/high16 v2, 0x3f400000    # 0.75f
 
     div-float/2addr v1, v2
 

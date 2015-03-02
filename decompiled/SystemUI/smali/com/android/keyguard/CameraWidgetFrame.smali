@@ -1010,7 +1010,7 @@
 
     int-to-float v13, v13
 
-    const/high16 v14, 0x40000000
+    const/high16 v14, 0x40000000    # 2.0f
 
     div-float v14, v11, v14
 
@@ -1089,7 +1089,7 @@
 
     int-to-float v13, v13
 
-    const/high16 v14, 0x40000000
+    const/high16 v14, 0x40000000    # 2.0f
 
     div-float v14, v4, v14
 
@@ -1149,13 +1149,13 @@
 
     move-result-object v13
 
-    const/high16 v14, 0x3f800000
+    const/high16 v14, 0x3f800000    # 1.0f
 
     invoke-virtual {v13, v14}, Landroid/view/ViewPropertyAnimator;->scaleX(F)Landroid/view/ViewPropertyAnimator;
 
     move-result-object v13
 
-    const/high16 v14, 0x3f800000
+    const/high16 v14, 0x3f800000    # 1.0f
 
     invoke-virtual {v13, v14}, Landroid/view/ViewPropertyAnimator;->scaleY(F)Landroid/view/ViewPropertyAnimator;
 
@@ -1291,7 +1291,7 @@
 
     iget-object v13, v0, Lcom/android/keyguard/CameraWidgetFrame;->mFakeNavBar:Landroid/view/View;
 
-    const/high16 v14, 0x3f000000
+    const/high16 v14, 0x3f000000    # 0.5f
 
     invoke-virtual {v13, v14}, Landroid/view/View;->setScaleY(F)V
 
@@ -1312,19 +1312,19 @@
 
     move-result-object v13
 
-    const/high16 v14, 0x3f800000
+    const/high16 v14, 0x3f800000    # 1.0f
 
     invoke-virtual {v13, v14}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
 
     move-result-object v13
 
-    const/high16 v14, 0x3f800000
+    const/high16 v14, 0x3f800000    # 1.0f
 
     invoke-virtual {v13, v14}, Landroid/view/ViewPropertyAnimator;->scaleY(F)Landroid/view/ViewPropertyAnimator;
 
     move-result-object v13
 
-    const/high16 v14, 0x3f800000
+    const/high16 v14, 0x3f800000    # 1.0f
 
     invoke-virtual {v13, v14}, Landroid/view/ViewPropertyAnimator;->scaleY(F)Landroid/view/ViewPropertyAnimator;
 
@@ -1374,7 +1374,7 @@
 
     iget-object v13, v0, Lcom/android/keyguard/CameraWidgetFrame;->mFakeNavBar:Landroid/view/View;
 
-    const/high16 v14, 0x3f000000
+    const/high16 v14, 0x3f000000    # 0.5f
 
     invoke-virtual {v13, v14}, Landroid/view/View;->setScaleX(F)V
 

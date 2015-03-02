@@ -470,7 +470,7 @@
 .method private startEditAnimation(Z)V
     .locals 4
 
-    const/high16 v2, 0x3f800000
+    const/high16 v2, 0x3f800000    # 1.0f
 
     const/4 v1, 0x0
 
@@ -590,7 +590,7 @@
 
     move-result-object v0
 
-    const/high16 v1, 0x3f800000
+    const/high16 v1, 0x3f800000    # 1.0f
 
     invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
 
@@ -1666,7 +1666,7 @@
     :cond_2
     iget-object v0, p0, Lcom/android/systemui/SearchPanelView;->mScrim:Landroid/view/View;
 
-    const/high16 v1, 0x3f800000
+    const/high16 v1, 0x3f800000    # 1.0f
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setAlpha(F)V
 

@@ -39,7 +39,7 @@
 
     if-eqz p1, :cond_1
 
-    const/high16 v0, 0x3f800000
+    const/high16 v0, 0x3f800000    # 1.0f
 
     :goto_0
     if-eqz p1, :cond_2

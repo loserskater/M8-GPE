@@ -66,7 +66,7 @@
 
     long-to-double v2, v2
 
-    const-wide v4, 0x3fd6666666666666L
+    const-wide v4, 0x3fd6666666666666L    # 0.35
 
     mul-double/2addr v2, v4
 

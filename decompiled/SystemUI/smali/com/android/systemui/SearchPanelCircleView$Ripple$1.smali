@@ -39,7 +39,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/SearchPanelCircleView$Ripple$1;->this$1:Lcom/android/systemui/SearchPanelCircleView$Ripple;
 
-    const/high16 v1, 0x3f800000
+    const/high16 v1, 0x3f800000    # 1.0f
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedFraction()F
 

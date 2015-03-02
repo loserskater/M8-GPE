@@ -237,7 +237,7 @@
 
     int-to-double v4, v3
 
-    const-wide/high16 v6, 0x3fe8000000000000L
+    const-wide/high16 v6, 0x3fe8000000000000L    # 0.75
 
     mul-double/2addr v4, v6
 

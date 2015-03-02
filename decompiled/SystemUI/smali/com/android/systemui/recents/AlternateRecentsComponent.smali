@@ -857,7 +857,7 @@
 .method reloadHeaderBarLayout()V
     .locals 14
 
-    const/high16 v13, 0x40000000
+    const/high16 v13, 0x40000000    # 2.0f
 
     const/4 v12, 0x0
 

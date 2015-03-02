@@ -221,7 +221,7 @@
 .method private findNumberOfItemsInTopStackAndUpdateState(Lcom/android/systemui/statusbar/stack/StackScrollState;Lcom/android/systemui/statusbar/stack/StackScrollAlgorithm$StackScrollAlgorithmState;)V
     .locals 13
 
-    const/high16 v12, 0x3f800000
+    const/high16 v12, 0x3f800000    # 1.0f
 
     const/4 v8, 0x0
 
@@ -556,7 +556,7 @@
 
     move-result-object v5
 
-    const/high16 v6, 0x3f800000
+    const/high16 v6, 0x3f800000    # 1.0f
 
     iput v6, v5, Lcom/android/systemui/statusbar/stack/StackScrollState$ViewState;->alpha:F
 
@@ -887,7 +887,7 @@
 
     int-to-float v14, v14
 
-    const/high16 v15, 0x3f800000
+    const/high16 v15, 0x3f800000    # 1.0f
 
     iget v0, v12, Lcom/android/systemui/statusbar/stack/StackScrollState$ViewState;->scale:F
 
@@ -897,7 +897,7 @@
 
     mul-float/2addr v14, v15
 
-    const/high16 v15, 0x40000000
+    const/high16 v15, 0x40000000    # 2.0f
 
     div-float/2addr v14, v15
 
@@ -1060,7 +1060,7 @@
     if-eqz v8, :cond_3
 
     :cond_0
-    const/high16 v9, 0x3f800000
+    const/high16 v9, 0x3f800000    # 1.0f
 
     :goto_2
     iput v9, v3, Lcom/android/systemui/statusbar/stack/StackScrollState$ViewState;->scale:F
@@ -1071,7 +1071,7 @@
 
     iget v9, v3, Lcom/android/systemui/statusbar/stack/StackScrollState$ViewState;->zTranslation:F
 
-    const/high16 v10, 0x40000000
+    const/high16 v10, 0x40000000    # 2.0f
 
     iget v11, p0, Lcom/android/systemui/statusbar/stack/StackScrollAlgorithm;->mZDistanceBetweenElements:I
 
@@ -1094,7 +1094,7 @@
     goto :goto_1
 
     :cond_3
-    const v9, 0x3f733333
+    const v9, 0x3f733333    # 0.95f
 
     goto :goto_2
 
@@ -1198,7 +1198,7 @@
 
     const/4 v5, 0x3
 
-    const/high16 v4, 0x3f000000
+    const/high16 v4, 0x3f000000    # 0.5f
 
     if-eqz p1, :cond_0
 
@@ -1490,7 +1490,7 @@
     :goto_1
     if-nez v5, :cond_3
 
-    const/high16 v2, 0x3f800000
+    const/high16 v2, 0x3f800000    # 1.0f
 
     iput v2, v7, Lcom/android/systemui/statusbar/stack/StackScrollState$ViewState;->alpha:F
 
@@ -1723,7 +1723,7 @@
 .method private updateStateForChildFullyInBottomStack(Lcom/android/systemui/statusbar/stack/StackScrollAlgorithm$StackScrollAlgorithmState;FLcom/android/systemui/statusbar/stack/StackScrollState$ViewState;I)V
     .locals 4
 
-    const/high16 v3, 0x3f800000
+    const/high16 v3, 0x3f800000    # 1.0f
 
     iget v1, p1, Lcom/android/systemui/statusbar/stack/StackScrollAlgorithm$StackScrollAlgorithmState;->itemsInBottomStack:F
 
@@ -1733,7 +1733,7 @@
 
     iget v1, p1, Lcom/android/systemui/statusbar/stack/StackScrollAlgorithm$StackScrollAlgorithmState;->itemsInBottomStack:F
 
-    const/high16 v2, 0x40400000
+    const/high16 v2, 0x40400000    # 3.0f
 
     cmpg-float v1, v1, v2
 
@@ -1773,7 +1773,7 @@
     :cond_0
     iget v1, p1, Lcom/android/systemui/statusbar/stack/StackScrollAlgorithm$StackScrollAlgorithmState;->itemsInBottomStack:F
 
-    const/high16 v2, 0x40a00000
+    const/high16 v2, 0x40a00000    # 5.0f
 
     cmpl-float v1, v1, v2
 
@@ -1798,7 +1798,7 @@
     :cond_2
     iget v1, p1, Lcom/android/systemui/statusbar/stack/StackScrollAlgorithm$StackScrollAlgorithmState;->itemsInBottomStack:F
 
-    const/high16 v2, 0x40800000
+    const/high16 v2, 0x40800000    # 4.0f
 
     cmpl-float v1, v1, v2
 
@@ -1816,7 +1816,7 @@
 .method private updateStateForChildTransitioningInBottom(Lcom/android/systemui/statusbar/stack/StackScrollAlgorithm$StackScrollAlgorithmState;FFFLcom/android/systemui/statusbar/stack/StackScrollState$ViewState;I)V
     .locals 5
 
-    const/high16 v2, 0x3f800000
+    const/high16 v2, 0x3f800000    # 1.0f
 
     sub-float v3, p2, p4
 
@@ -1913,7 +1913,7 @@
 .method private updateStateForTopStackChild(Lcom/android/systemui/statusbar/stack/StackScrollAlgorithm$StackScrollAlgorithmState;IIILcom/android/systemui/statusbar/stack/StackScrollState$ViewState;F)V
     .locals 8
 
-    const/high16 v7, 0x3f800000
+    const/high16 v7, 0x3f800000    # 1.0f
 
     add-int/lit8 v4, p3, -0x1
 
@@ -2153,7 +2153,7 @@
 
     sub-float v5, v7, v8
 
-    const/high16 v7, 0x40a00000
+    const/high16 v7, 0x40a00000    # 5.0f
 
     invoke-static {v5, v7}, Ljava/lang/Math;->min(FF)F
 
@@ -2163,13 +2163,13 @@
 
     iget v7, p2, Lcom/android/systemui/statusbar/stack/StackScrollAlgorithm$StackScrollAlgorithmState;->itemsInTopStack:F
 
-    const/high16 v8, 0x40000000
+    const/high16 v8, 0x40000000    # 2.0f
 
     cmpg-float v7, v7, v8
 
     if-gez v7, :cond_0
 
-    const/high16 v7, 0x3f800000
+    const/high16 v7, 0x3f800000    # 1.0f
 
     sub-float/2addr v5, v7
 
@@ -2179,9 +2179,9 @@
 
     if-le v7, v8, :cond_0
 
-    const v7, 0x3dcccccd
+    const v7, 0x3dcccccd    # 0.1f
 
-    const v8, 0x3ff33333
+    const v8, 0x3ff33333    # 1.9f
 
     mul-float/2addr v8, v5
 

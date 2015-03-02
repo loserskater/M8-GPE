@@ -463,7 +463,7 @@
 
     add-float/2addr v12, v13
 
-    const/high16 v13, 0x3f800000
+    const/high16 v13, 0x3f800000    # 1.0f
 
     sub-float/2addr v12, v13
 
@@ -510,7 +510,7 @@
     goto :goto_7
 
     :cond_8
-    const v12, 0x7f7fffff
+    const v12, 0x7f7fffff    # Float.MAX_VALUE
 
     goto :goto_8
 
@@ -594,7 +594,7 @@
 
     add-float/2addr v12, v7
 
-    const/high16 v13, 0x3f800000
+    const/high16 v13, 0x3f800000    # 1.0f
 
     sub-float/2addr v12, v13
 
@@ -816,7 +816,7 @@
 
     if-lt p1, v4, :cond_3
 
-    const v3, 0x3ecccccd
+    const v3, 0x3ecccccd    # 0.4f
 
     :goto_1
     int-to-float v4, p1
@@ -830,7 +830,7 @@
     goto :goto_0
 
     :cond_3
-    const v3, 0x3f19999a
+    const v3, 0x3f19999a    # 0.6f
 
     goto :goto_1
 .end method
@@ -2903,13 +2903,13 @@
 .method distanceInfluenceForSnapDuration(F)F
     .locals 4
 
-    const/high16 v0, 0x3f000000
+    const/high16 v0, 0x3f000000    # 0.5f
 
     sub-float/2addr p1, v0
 
     float-to-double v0, p1
 
-    const-wide v2, 0x3fde28c7460698c7L
+    const-wide v2, 0x3fde28c7460698c7L    # 0.4712389167638204
 
     mul-double/2addr v0, v2
 
@@ -2988,7 +2988,7 @@
 
     move-result v4
 
-    const/high16 v5, 0x43870000
+    const/high16 v5, 0x43870000    # 270.0f
 
     invoke-virtual {p1, v5}, Landroid/graphics/Canvas;->rotate(F)V
 
@@ -3057,7 +3057,7 @@
 
     sub-int v0, v5, v6
 
-    const/high16 v5, 0x42b40000
+    const/high16 v5, 0x42b40000    # 90.0f
 
     invoke-virtual {p1, v5}, Landroid/graphics/Canvas;->rotate(F)V
 
@@ -3071,7 +3071,7 @@
 
     iget v6, p0, Landroid/support/v4/view/ViewPager;->mLastOffset:F
 
-    const/high16 v7, 0x3f800000
+    const/high16 v7, 0x3f800000    # 1.0f
 
     add-float/2addr v6, v7
 
@@ -3626,7 +3626,7 @@
 
     add-float v16, v16, v1
 
-    const/high16 v17, 0x3f000000
+    const/high16 v17, 0x3f000000    # 0.5f
 
     add-float v16, v16, v17
 
@@ -3871,7 +3871,7 @@
 
     if-lez v0, :cond_a
 
-    const/high16 v0, 0x3f000000
+    const/high16 v0, 0x3f000000    # 0.5f
 
     mul-float/2addr v0, v11
 
@@ -4393,7 +4393,7 @@
 
     move/from16 v26, v0
 
-    const/high16 v27, 0x40000000
+    const/high16 v27, 0x40000000    # 2.0f
 
     invoke-static/range {v26 .. v27}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
@@ -4403,7 +4403,7 @@
 
     sub-int v26, v26, v18
 
-    const/high16 v27, 0x40000000
+    const/high16 v27, 0x40000000    # 2.0f
 
     invoke-static/range {v26 .. v27}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
@@ -4698,7 +4698,7 @@
     :goto_2
     if-eqz v7, :cond_8
 
-    const/high16 v18, 0x40000000
+    const/high16 v18, 0x40000000    # 2.0f
 
     :cond_2
     :goto_3
@@ -4718,7 +4718,7 @@
 
     if-eq v0, v1, :cond_3
 
-    const/high16 v18, 0x40000000
+    const/high16 v18, 0x40000000    # 2.0f
 
     iget v0, v13, Landroid/support/v4/view/ViewPager$LayoutParams;->width:I
 
@@ -4749,7 +4749,7 @@
 
     if-eq v0, v1, :cond_4
 
-    const/high16 v8, 0x40000000
+    const/high16 v8, 0x40000000    # 2.0f
 
     iget v0, v13, Landroid/support/v4/view/ViewPager$LayoutParams;->height:I
 
@@ -4809,7 +4809,7 @@
     :cond_8
     if-eqz v6, :cond_2
 
-    const/high16 v8, 0x40000000
+    const/high16 v8, 0x40000000    # 2.0f
 
     goto :goto_3
 
@@ -4825,7 +4825,7 @@
     goto :goto_4
 
     :cond_a
-    const/high16 v21, 0x40000000
+    const/high16 v21, 0x40000000    # 2.0f
 
     move/from16 v0, v21
 
@@ -4839,7 +4839,7 @@
 
     iput v0, v1, Landroid/support/v4/view/ViewPager;->mChildWidthMeasureSpec:I
 
-    const/high16 v21, 0x40000000
+    const/high16 v21, 0x40000000    # 2.0f
 
     move/from16 v0, v21
 
@@ -4931,7 +4931,7 @@
 
     move/from16 v21, v0
 
-    const/high16 v22, 0x40000000
+    const/high16 v22, 0x40000000    # 2.0f
 
     invoke-static/range {v21 .. v22}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
@@ -6657,7 +6657,7 @@
 
     add-int/lit8 v18, v8, 0x1
 
-    const/high16 v27, 0x40000000
+    const/high16 v27, 0x40000000    # 2.0f
 
     cmpg-float v27, v14, v27
 
@@ -6874,7 +6874,7 @@
     goto/16 :goto_4
 
     :cond_e
-    const/high16 v27, 0x40000000
+    const/high16 v27, 0x40000000    # 2.0f
 
     iget v0, v9, Landroid/support/v4/view/ViewPager$ItemInfo;->widthFactor:F
 
@@ -7118,7 +7118,7 @@
 
     div-float v27, v27, v28
 
-    const/high16 v28, 0x40000000
+    const/high16 v28, 0x40000000    # 2.0f
 
     add-float v25, v27, v28
 
@@ -7727,9 +7727,9 @@
 
     div-int/lit8 v9, v12, 0x2
 
-    const/high16 v1, 0x3f800000
+    const/high16 v1, 0x3f800000    # 1.0f
 
-    const/high16 v13, 0x3f800000
+    const/high16 v13, 0x3f800000    # 1.0f
 
     invoke-static {v4}, Ljava/lang/Math;->abs(I)I
 
@@ -7767,7 +7767,7 @@
 
     if-lez p3, :cond_2
 
-    const/high16 v1, 0x447a0000
+    const/high16 v1, 0x447a0000    # 1000.0f
 
     move/from16 v0, p3
 
@@ -7829,11 +7829,11 @@
 
     div-float v10, v1, v13
 
-    const/high16 v1, 0x3f800000
+    const/high16 v1, 0x3f800000    # 1.0f
 
     add-float/2addr v1, v10
 
-    const/high16 v13, 0x42c80000
+    const/high16 v13, 0x42c80000    # 100.0f
 
     mul-float/2addr v1, v13
 

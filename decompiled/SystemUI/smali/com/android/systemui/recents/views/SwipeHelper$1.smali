@@ -56,7 +56,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/recents/views/SwipeHelper$1;->val$view:Landroid/view/View;
 
-    const/high16 v1, 0x3f800000
+    const/high16 v1, 0x3f800000    # 1.0f
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setAlpha(F)V
 

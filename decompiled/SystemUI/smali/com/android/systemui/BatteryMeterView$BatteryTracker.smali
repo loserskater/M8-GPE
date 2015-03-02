@@ -107,7 +107,7 @@
     return-void
 
     :cond_1
-    const/high16 v1, 0x42c80000
+    const/high16 v1, 0x42c80000    # 100.0f
 
     const-string v4, "level"
 

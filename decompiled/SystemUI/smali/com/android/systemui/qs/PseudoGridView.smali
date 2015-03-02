@@ -271,7 +271,7 @@
 
     div-int v3, v15, v16
 
-    const/high16 v15, 0x40000000
+    const/high16 v15, 0x40000000    # 2.0f
 
     invoke-static {v3, v15}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
@@ -350,7 +350,7 @@
     goto :goto_1
 
     :cond_1
-    const/high16 v15, 0x40000000
+    const/high16 v15, 0x40000000    # 2.0f
 
     invoke-static {v8, v15}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 

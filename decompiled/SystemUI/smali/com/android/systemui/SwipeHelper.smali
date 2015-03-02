@@ -92,7 +92,7 @@
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/high16 v0, 0x42c80000
+    const/high16 v0, 0x42c80000    # 100.0f
 
     iput v0, p0, Lcom/android/systemui/SwipeHelper;->SWIPE_ESCAPE_VELOCITY:F
 
@@ -112,7 +112,7 @@
 
     iput v0, p0, Lcom/android/systemui/SwipeHelper;->mMinSwipeProgress:F
 
-    const/high16 v0, 0x3f800000
+    const/high16 v0, 0x3f800000    # 1.0f
 
     iput v0, p0, Lcom/android/systemui/SwipeHelper;->mMaxSwipeProgress:F
 
@@ -168,7 +168,7 @@
 
     int-to-float v0, v0
 
-    const/high16 v1, 0x3fc00000
+    const/high16 v1, 0x3fc00000    # 1.5f
 
     mul-float/2addr v0, v1
 
@@ -378,17 +378,17 @@
 .method private getSwipeProgressForOffset(Landroid/view/View;)F
     .locals 6
 
-    const/high16 v5, 0x3f800000
+    const/high16 v5, 0x3f800000    # 1.0f
 
     invoke-direct {p0, p1}, Lcom/android/systemui/SwipeHelper;->getSize(Landroid/view/View;)F
 
     move-result v3
 
-    const/high16 v4, 0x3f000000
+    const/high16 v4, 0x3f000000    # 0.5f
 
     mul-float v0, v4, v3
 
-    const/high16 v2, 0x3f800000
+    const/high16 v2, 0x3f800000    # 1.0f
 
     invoke-direct {p0, p1}, Lcom/android/systemui/SwipeHelper;->getTranslation(Landroid/view/View;)F
 
@@ -655,7 +655,7 @@
 
     if-eqz v2, :cond_1
 
-    const/high16 v2, 0x3f800000
+    const/high16 v2, 0x3f800000    # 1.0f
 
     cmpl-float v2, v0, v2
 
@@ -829,7 +829,7 @@
 
     move-result v2
 
-    const/high16 v3, 0x447a0000
+    const/high16 v3, 0x447a0000    # 1000.0f
 
     mul-float/2addr v2, v3
 
@@ -1296,7 +1296,7 @@
 
     move-result v13
 
-    const v15, 0x3e19999a
+    const v15, 0x3e19999a    # 0.15f
 
     mul-float v10, v15, v13
 
@@ -1352,7 +1352,7 @@
 
     move-wide/from16 v16, v0
 
-    const-wide v18, 0x3ff921fb54442d18L
+    const-wide v18, 0x3ff921fb54442d18L    # 1.5707963267948966
 
     mul-double v16, v16, v18
 
@@ -1449,7 +1449,7 @@
 
     move-wide/from16 v16, v0
 
-    const-wide v18, 0x3fd999999999999aL
+    const-wide v18, 0x3fd999999999999aL    # 0.4
 
     move-object/from16 v0, p0
 

@@ -72,7 +72,7 @@
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/high16 v0, 0x3f800000
+    const/high16 v0, 0x3f800000    # 1.0f
 
     iput v0, p0, Lcom/android/keyguard/PasswordTextView$CharState;->currentTextTranslationY:F
 
@@ -233,7 +233,7 @@
 .method private startDotAppearAnimation(J)V
     .locals 13
 
-    const/high16 v11, 0x3f800000
+    const/high16 v11, 0x3f800000    # 1.0f
 
     const/4 v10, 0x0
 
@@ -260,7 +260,7 @@
 
     aput v7, v6, v10
 
-    const/high16 v7, 0x3fc00000
+    const/high16 v7, 0x3fc00000    # 1.5f
 
     aput v7, v6, v8
 
@@ -347,7 +347,7 @@
 
     invoke-virtual {v1, v6}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    const/high16 v6, 0x43200000
+    const/high16 v6, 0x43200000    # 160.0f
 
     iget v7, p0, Lcom/android/keyguard/PasswordTextView$CharState;->currentDotSizeFactor:F
 
@@ -375,8 +375,8 @@
 
     :array_0
     .array-data 4
-        0x3fc00000
-        0x3f800000
+        0x3fc00000    # 1.5f
+        0x3f800000    # 1.0f
     .end array-data
 .end method
 
@@ -424,11 +424,11 @@
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    const/high16 v1, 0x43200000
+    const/high16 v1, 0x43200000    # 160.0f
 
     iget v4, p0, Lcom/android/keyguard/PasswordTextView$CharState;->currentDotSizeFactor:F
 
-    const/high16 v5, 0x3f800000
+    const/high16 v5, 0x3f800000    # 1.0f
 
     invoke-static {v4, v5}, Ljava/lang/Math;->min(FF)F
 
@@ -458,7 +458,7 @@
 
     const/4 v4, 0x1
 
-    const/high16 v3, 0x3f800000
+    const/high16 v3, 0x3f800000    # 1.0f
 
     iget-object v0, p0, Lcom/android/keyguard/PasswordTextView$CharState;->textAnimator:Landroid/animation/ValueAnimator;
 
@@ -505,7 +505,7 @@
 
     iget-object v0, p0, Lcom/android/keyguard/PasswordTextView$CharState;->textAnimator:Landroid/animation/ValueAnimator;
 
-    const/high16 v1, 0x43200000
+    const/high16 v1, 0x43200000    # 160.0f
 
     iget v2, p0, Lcom/android/keyguard/PasswordTextView$CharState;->currentTextSizeFactor:F
 
@@ -575,7 +575,7 @@
 
     :array_0
     .array-data 4
-        0x3f800000
+        0x3f800000    # 1.0f
         0x0
     .end array-data
 .end method
@@ -634,7 +634,7 @@
 
     iget-object v0, p0, Lcom/android/keyguard/PasswordTextView$CharState;->textAnimator:Landroid/animation/ValueAnimator;
 
-    const/high16 v1, 0x43200000
+    const/high16 v1, 0x43200000    # 160.0f
 
     iget v2, p0, Lcom/android/keyguard/PasswordTextView$CharState;->currentTextSizeFactor:F
 
@@ -662,7 +662,7 @@
 
     const/4 v4, 0x1
 
-    const/high16 v3, 0x3f800000
+    const/high16 v3, 0x3f800000    # 1.0f
 
     iget-object v0, p0, Lcom/android/keyguard/PasswordTextView$CharState;->widthAnimator:Landroid/animation/ValueAnimator;
 
@@ -700,7 +700,7 @@
 
     iget-object v0, p0, Lcom/android/keyguard/PasswordTextView$CharState;->widthAnimator:Landroid/animation/ValueAnimator;
 
-    const/high16 v1, 0x43200000
+    const/high16 v1, 0x43200000    # 160.0f
 
     iget v2, p0, Lcom/android/keyguard/PasswordTextView$CharState;->currentWidthFactor:F
 
@@ -770,7 +770,7 @@
 
     iget-object v0, p0, Lcom/android/keyguard/PasswordTextView$CharState;->widthAnimator:Landroid/animation/ValueAnimator;
 
-    const/high16 v1, 0x43200000
+    const/high16 v1, 0x43200000    # 160.0f
 
     iget v2, p0, Lcom/android/keyguard/PasswordTextView$CharState;->currentWidthFactor:F
 
@@ -802,7 +802,7 @@
 
     const/4 v6, 0x0
 
-    const/high16 v9, 0x40000000
+    const/high16 v9, 0x40000000    # 2.0f
 
     const/4 v8, 0x0
 
@@ -846,7 +846,7 @@
 
     mul-float/2addr v6, v7
 
-    const v7, 0x3f4ccccd
+    const v7, 0x3f4ccccd    # 0.8f
 
     mul-float/2addr v6, v7
 
@@ -984,7 +984,7 @@
 
     iput-object v2, p0, Lcom/android/keyguard/PasswordTextView$CharState;->widthAnimator:Landroid/animation/ValueAnimator;
 
-    const/high16 v0, 0x3f800000
+    const/high16 v0, 0x3f800000    # 1.0f
 
     iput v0, p0, Lcom/android/keyguard/PasswordTextView$CharState;->currentTextTranslationY:F
 

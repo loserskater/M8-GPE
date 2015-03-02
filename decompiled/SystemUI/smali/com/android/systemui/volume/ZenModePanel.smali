@@ -718,7 +718,7 @@
 
     if-eqz v2, :cond_a
 
-    const/high16 v10, 0x3f800000
+    const/high16 v10, 0x3f800000    # 1.0f
 
     :goto_4
     invoke-virtual {v11, v10}, Landroid/widget/TextView;->setAlpha(F)V
@@ -812,7 +812,7 @@
 
     if-eqz v10, :cond_10
 
-    const/high16 v10, 0x3f800000
+    const/high16 v10, 0x3f800000    # 1.0f
 
     :goto_8
     invoke-virtual {v0, v10}, Landroid/widget/ImageView;->setAlpha(F)V
@@ -823,7 +823,7 @@
 
     if-eqz v10, :cond_11
 
-    const/high16 v10, 0x3f800000
+    const/high16 v10, 0x3f800000    # 1.0f
 
     :goto_9
     invoke-virtual {v1, v10}, Landroid/widget/ImageView;->setAlpha(F)V
@@ -883,7 +883,7 @@
     goto/16 :goto_3
 
     :cond_a
-    const v10, 0x3ecccccd
+    const v10, 0x3ecccccd    # 0.4f
 
     goto/16 :goto_4
 
@@ -955,12 +955,12 @@
     goto :goto_c
 
     :cond_10
-    const/high16 v10, 0x3f000000
+    const/high16 v10, 0x3f000000    # 0.5f
 
     goto :goto_8
 
     :cond_11
-    const/high16 v10, 0x3f000000
+    const/high16 v10, 0x3f000000    # 0.5f
 
     goto :goto_9
 
@@ -1866,7 +1866,7 @@
 
     long-to-float v4, v0
 
-    const v5, 0x476a6000
+    const v5, 0x476a6000    # 60000.0f
 
     div-float/2addr v4, v5
 
@@ -2778,7 +2778,7 @@
 .method public showSilentHint()V
     .locals 4
 
-    const v3, 0x3f8ccccd
+    const v3, 0x3f8ccccd    # 1.1f
 
     sget-boolean v1, Lcom/android/systemui/volume/ZenModePanel;->DEBUG:Z
 
@@ -2820,7 +2820,7 @@
 
     move-result v1
 
-    const/high16 v2, 0x3f800000
+    const/high16 v2, 0x3f800000    # 1.0f
 
     cmpl-float v1, v1, v2
 

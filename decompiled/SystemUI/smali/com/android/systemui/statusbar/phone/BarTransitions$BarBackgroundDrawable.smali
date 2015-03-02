@@ -153,7 +153,7 @@
 .method public draw(Landroid/graphics/Canvas;)V
     .locals 13
 
-    const/high16 v12, 0x3f800000
+    const/high16 v12, 0x3f800000    # 1.0f
 
     const/4 v4, 0x0
 

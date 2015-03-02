@@ -477,7 +477,7 @@
 .method private addRipple(I)V
     .locals 9
 
-    const/high16 v8, 0x3f800000
+    const/high16 v8, 0x3f800000    # 1.0f
 
     iget-object v6, p0, Lcom/android/systemui/SearchPanelCircleView;->mRipples:Ljava/util/ArrayList;
 
@@ -497,9 +497,9 @@
 
     if-eqz v6, :cond_2
 
-    const/high16 v4, 0x3f400000
+    const/high16 v4, 0x3f400000    # 0.75f
 
-    const/high16 v5, 0x3f000000
+    const/high16 v5, 0x3f000000    # 0.5f
 
     :goto_1
     iget-object v6, p0, Lcom/android/systemui/SearchPanelCircleView;->mStaticRect:Landroid/graphics/Rect;
@@ -568,7 +568,7 @@
 
     int-to-float v7, v7
 
-    const/high16 v8, 0x3fa00000
+    const/high16 v8, 0x3fa00000    # 1.25f
 
     mul-float/2addr v7, v8
 
@@ -576,7 +576,7 @@
 
     move-result v6
 
-    const v7, 0x3f333333
+    const v7, 0x3f333333    # 0.7f
 
     mul-float v2, v6, v7
 
@@ -589,9 +589,9 @@
     goto :goto_0
 
     :cond_2
-    const/high16 v4, 0x3f000000
+    const/high16 v4, 0x3f000000    # 0.5f
 
-    const/high16 v5, 0x3f400000
+    const/high16 v5, 0x3f400000    # 0.75f
 
     goto :goto_1
 
@@ -850,7 +850,7 @@
 
     int-to-float v2, v2
 
-    const/high16 v3, 0x437f0000
+    const/high16 v3, 0x437f0000    # 255.0f
 
     div-float/2addr v2, v3
 
@@ -920,7 +920,7 @@
 
     float-to-double v0, v0
 
-    const-wide v2, 0x3fe3333340000000L
+    const-wide v2, 0x3fe3333340000000L    # 0.6000000238418579
 
     invoke-static {v0, v1, v2, v3}, Ljava/lang/Math;->pow(DD)D
 
@@ -1077,7 +1077,7 @@
 .method private updateCircleRect(Landroid/graphics/Rect;FZ)V
     .locals 6
 
-    const/high16 v5, 0x40000000
+    const/high16 v5, 0x40000000    # 2.0f
 
     if-eqz p3, :cond_0
 
@@ -1183,7 +1183,7 @@
 .method private updateCircleRectLeft(FZ)V
     .locals 6
 
-    const/high16 v5, 0x40000000
+    const/high16 v5, 0x40000000    # 2.0f
 
     if-eqz p2, :cond_0
 
@@ -1218,11 +1218,11 @@
 
     int-to-float v3, v3
 
-    const/high16 v4, 0x40400000
+    const/high16 v4, 0x40400000    # 3.0f
 
     mul-float/2addr v4, v0
 
-    const/high16 v5, 0x40800000
+    const/high16 v5, 0x40800000    # 4.0f
 
     div-float/2addr v4, v5
 
@@ -1309,7 +1309,7 @@
 .method private updateCircleRectRight(FZ)V
     .locals 7
 
-    const/high16 v6, 0x40000000
+    const/high16 v6, 0x40000000    # 2.0f
 
     if-eqz p2, :cond_0
 
@@ -1391,11 +1391,11 @@
 
     int-to-float v3, v3
 
-    const/high16 v4, 0x40400000
+    const/high16 v4, 0x40400000    # 3.0f
 
     mul-float/2addr v4, v0
 
-    const/high16 v5, 0x40800000
+    const/high16 v5, 0x40800000    # 4.0f
 
     div-float/2addr v4, v5
 
@@ -1499,7 +1499,7 @@
 
     div-float v1, v2, v3
 
-    const/high16 v2, 0x3f800000
+    const/high16 v2, 0x3f800000    # 1.0f
 
     const/4 v3, 0x0
 
@@ -1583,9 +1583,9 @@
 .method private updateLogo(Landroid/graphics/Rect;Landroid/view/View;Z)V
     .locals 8
 
-    const v7, 0x3e99999a
+    const v7, 0x3e99999a    # 0.3f
 
-    const/high16 v6, 0x40000000
+    const/high16 v6, 0x40000000    # 2.0f
 
     iget v4, p1, Landroid/graphics/Rect;->left:I
 
@@ -1658,11 +1658,11 @@
     add-float/2addr v2, v4
 
     :goto_0
-    const/high16 v4, 0x3f800000
+    const/high16 v4, 0x3f800000    # 1.0f
 
     sub-float v0, v4, v1
 
-    const/high16 v4, 0x3f000000
+    const/high16 v4, 0x3f000000    # 0.5f
 
     sub-float v4, v0, v4
 
@@ -2032,7 +2032,7 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    const/high16 v0, 0x3f800000
+    const/high16 v0, 0x3f800000    # 1.0f
 
     iput v0, p0, Lcom/android/systemui/SearchPanelCircleView;->mOutlineAlpha:F
 
@@ -2517,7 +2517,7 @@
 
     int-to-float v0, v0
 
-    const/high16 v2, 0x40000000
+    const/high16 v2, 0x40000000    # 2.0f
 
     div-float v6, v0, v2
 
@@ -2563,7 +2563,7 @@
 
     move-result-wide v2
 
-    const-wide/high16 v4, 0x4000000000000000L
+    const-wide/high16 v4, 0x4000000000000000L    # 2.0
 
     mul-double/2addr v2, v4
 

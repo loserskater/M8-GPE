@@ -87,7 +87,7 @@
 
     int-to-float v8, v8
 
-    const/high16 v9, 0x437f0000
+    const/high16 v9, 0x437f0000    # 255.0f
 
     div-float v3, v8, v9
 
@@ -97,7 +97,7 @@
 
     int-to-float v8, v8
 
-    const/high16 v9, 0x437f0000
+    const/high16 v9, 0x437f0000    # 255.0f
 
     div-float v1, v8, v9
 
@@ -107,54 +107,54 @@
 
     int-to-float v8, v8
 
-    const/high16 v9, 0x437f0000
+    const/high16 v9, 0x437f0000    # 255.0f
 
     div-float v0, v8, v9
 
-    const v8, 0x3d20e411
+    const v8, 0x3d20e411    # 0.03928f
 
     cmpg-float v8, v3, v8
 
     if-gez v8, :cond_0
 
-    const v8, 0x414eb852
+    const v8, 0x414eb852    # 12.92f
 
     div-float/2addr v3, v8
 
     :goto_0
-    const v8, 0x3d20e411
+    const v8, 0x3d20e411    # 0.03928f
 
     cmpg-float v8, v1, v8
 
     if-gez v8, :cond_1
 
-    const v8, 0x414eb852
+    const v8, 0x414eb852    # 12.92f
 
     div-float/2addr v1, v8
 
     :goto_1
-    const v8, 0x3d20e411
+    const v8, 0x3d20e411    # 0.03928f
 
     cmpg-float v8, v0, v8
 
     if-gez v8, :cond_2
 
-    const v8, 0x414eb852
+    const v8, 0x414eb852    # 12.92f
 
     div-float/2addr v0, v8
 
     :goto_2
-    const v8, 0x3e59b3d0
+    const v8, 0x3e59b3d0    # 0.2126f
 
     mul-float/2addr v8, v3
 
-    const v9, 0x3f371759
+    const v9, 0x3f371759    # 0.7152f
 
     mul-float/2addr v9, v1
 
     add-float/2addr v8, v9
 
-    const v9, 0x3d93dd98
+    const v9, 0x3d93dd98    # 0.0722f
 
     mul-float/2addr v9, v0
 
@@ -166,7 +166,7 @@
 
     int-to-float v8, v8
 
-    const/high16 v9, 0x437f0000
+    const/high16 v9, 0x437f0000    # 255.0f
 
     div-float v7, v8, v9
 
@@ -176,7 +176,7 @@
 
     int-to-float v8, v8
 
-    const/high16 v9, 0x437f0000
+    const/high16 v9, 0x437f0000    # 255.0f
 
     div-float v5, v8, v9
 
@@ -186,64 +186,64 @@
 
     int-to-float v8, v8
 
-    const/high16 v9, 0x437f0000
+    const/high16 v9, 0x437f0000    # 255.0f
 
     div-float v4, v8, v9
 
-    const v8, 0x3d20e411
+    const v8, 0x3d20e411    # 0.03928f
 
     cmpg-float v8, v7, v8
 
     if-gez v8, :cond_3
 
-    const v8, 0x414eb852
+    const v8, 0x414eb852    # 12.92f
 
     div-float/2addr v7, v8
 
     :goto_3
-    const v8, 0x3d20e411
+    const v8, 0x3d20e411    # 0.03928f
 
     cmpg-float v8, v5, v8
 
     if-gez v8, :cond_4
 
-    const v8, 0x414eb852
+    const v8, 0x414eb852    # 12.92f
 
     div-float/2addr v5, v8
 
     :goto_4
-    const v8, 0x3d20e411
+    const v8, 0x3d20e411    # 0.03928f
 
     cmpg-float v8, v4, v8
 
     if-gez v8, :cond_5
 
-    const v8, 0x414eb852
+    const v8, 0x414eb852    # 12.92f
 
     div-float/2addr v4, v8
 
     :goto_5
-    const v8, 0x3e59b3d0
+    const v8, 0x3e59b3d0    # 0.2126f
 
     mul-float/2addr v8, v7
 
-    const v9, 0x3f371759
+    const v9, 0x3f371759    # 0.7152f
 
     mul-float/2addr v9, v5
 
     add-float/2addr v8, v9
 
-    const v9, 0x3d93dd98
+    const v9, 0x3d93dd98    # 0.0722f
 
     mul-float/2addr v9, v4
 
     add-float v6, v8, v9
 
-    const v8, 0x3d4ccccd
+    const v8, 0x3d4ccccd    # 0.05f
 
     add-float/2addr v8, v6
 
-    const v9, 0x3d4ccccd
+    const v9, 0x3d4ccccd    # 0.05f
 
     add-float/2addr v9, v2
 
@@ -256,17 +256,17 @@
     return v8
 
     :cond_0
-    const v8, 0x3d6147ae
+    const v8, 0x3d6147ae    # 0.055f
 
     add-float/2addr v8, v3
 
-    const v9, 0x3f870a3d
+    const v9, 0x3f870a3d    # 1.055f
 
     div-float/2addr v8, v9
 
     float-to-double v8, v8
 
-    const-wide v10, 0x4003333340000000L
+    const-wide v10, 0x4003333340000000L    # 2.4000000953674316
 
     invoke-static {v8, v9, v10, v11}, Ljava/lang/Math;->pow(DD)D
 
@@ -277,17 +277,17 @@
     goto/16 :goto_0
 
     :cond_1
-    const v8, 0x3d6147ae
+    const v8, 0x3d6147ae    # 0.055f
 
     add-float/2addr v8, v1
 
-    const v9, 0x3f870a3d
+    const v9, 0x3f870a3d    # 1.055f
 
     div-float/2addr v8, v9
 
     float-to-double v8, v8
 
-    const-wide v10, 0x4003333340000000L
+    const-wide v10, 0x4003333340000000L    # 2.4000000953674316
 
     invoke-static {v8, v9, v10, v11}, Ljava/lang/Math;->pow(DD)D
 
@@ -298,17 +298,17 @@
     goto/16 :goto_1
 
     :cond_2
-    const v8, 0x3d6147ae
+    const v8, 0x3d6147ae    # 0.055f
 
     add-float/2addr v8, v0
 
-    const v9, 0x3f870a3d
+    const v9, 0x3f870a3d    # 1.055f
 
     div-float/2addr v8, v9
 
     float-to-double v8, v8
 
-    const-wide v10, 0x4003333340000000L
+    const-wide v10, 0x4003333340000000L    # 2.4000000953674316
 
     invoke-static {v8, v9, v10, v11}, Ljava/lang/Math;->pow(DD)D
 
@@ -319,17 +319,17 @@
     goto/16 :goto_2
 
     :cond_3
-    const v8, 0x3d6147ae
+    const v8, 0x3d6147ae    # 0.055f
 
     add-float/2addr v8, v7
 
-    const v9, 0x3f870a3d
+    const v9, 0x3f870a3d    # 1.055f
 
     div-float/2addr v8, v9
 
     float-to-double v8, v8
 
-    const-wide v10, 0x4003333340000000L
+    const-wide v10, 0x4003333340000000L    # 2.4000000953674316
 
     invoke-static {v8, v9, v10, v11}, Ljava/lang/Math;->pow(DD)D
 
@@ -340,17 +340,17 @@
     goto/16 :goto_3
 
     :cond_4
-    const v8, 0x3d6147ae
+    const v8, 0x3d6147ae    # 0.055f
 
     add-float/2addr v8, v5
 
-    const v9, 0x3f870a3d
+    const v9, 0x3f870a3d    # 1.055f
 
     div-float/2addr v8, v9
 
     float-to-double v8, v8
 
-    const-wide v10, 0x4003333340000000L
+    const-wide v10, 0x4003333340000000L    # 2.4000000953674316
 
     invoke-static {v8, v9, v10, v11}, Ljava/lang/Math;->pow(DD)D
 
@@ -361,17 +361,17 @@
     goto/16 :goto_4
 
     :cond_5
-    const v8, 0x3d6147ae
+    const v8, 0x3d6147ae    # 0.055f
 
     add-float/2addr v8, v4
 
-    const v9, 0x3f870a3d
+    const v9, 0x3f870a3d    # 1.055f
 
     div-float/2addr v8, v9
 
     float-to-double v8, v8
 
-    const-wide v10, 0x4003333340000000L
+    const-wide v10, 0x4003333340000000L    # 2.4000000953674316
 
     invoke-static {v8, v9, v10, v11}, Ljava/lang/Math;->pow(DD)D
 
@@ -385,7 +385,7 @@
 .method public static getColorWithOverlay(IIF)I
     .locals 5
 
-    const/high16 v4, 0x3f800000
+    const/high16 v4, 0x3f800000    # 1.0f
 
     invoke-static {p0}, Landroid/graphics/Color;->red(I)I
 
@@ -527,7 +527,7 @@
     :cond_0
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    const/high16 v4, 0x3f800000
+    const/high16 v4, 0x3f800000    # 1.0f
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
@@ -667,7 +667,7 @@
     :cond_0
     invoke-virtual {v1, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    const/high16 v6, 0x3f800000
+    const/high16 v6, 0x3f800000    # 1.0f
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
@@ -790,9 +790,9 @@
 .method public static scaleRectAboutCenter(Landroid/graphics/Rect;F)V
     .locals 5
 
-    const/high16 v4, 0x3f000000
+    const/high16 v4, 0x3f000000    # 0.5f
 
-    const/high16 v2, 0x3f800000
+    const/high16 v2, 0x3f800000    # 1.0f
 
     cmpl-float v2, p1, v2
 

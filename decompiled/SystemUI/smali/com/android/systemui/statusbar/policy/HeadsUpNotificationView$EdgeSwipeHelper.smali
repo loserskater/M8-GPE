@@ -106,7 +106,7 @@
 
     if-nez v3, :cond_0
 
-    const/high16 v3, 0x40800000
+    const/high16 v3, 0x40800000    # 4.0f
 
     mul-float/2addr v3, v1
 

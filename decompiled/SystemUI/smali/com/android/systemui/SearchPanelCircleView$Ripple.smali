@@ -59,7 +59,7 @@
 
     iget v1, p0, Lcom/android/systemui/SearchPanelCircleView$Ripple;->alpha:F
 
-    const/high16 v2, 0x437f0000
+    const/high16 v2, 0x437f0000    # 255.0f
 
     mul-float/2addr v1, v2
 
@@ -129,6 +129,6 @@
     :array_0
     .array-data 4
         0x0
-        0x3f800000
+        0x3f800000    # 1.0f
     .end array-data
 .end method

@@ -121,13 +121,13 @@
 
     iget v8, p0, Lcom/android/keyguard/KeyguardCircleFramedDrawable;->mStrokeWidth:F
 
-    const/high16 v9, 0x40000000
+    const/high16 v9, 0x40000000    # 2.0f
 
     div-float/2addr v8, v9
 
     iget v9, p0, Lcom/android/keyguard/KeyguardCircleFramedDrawable;->mStrokeWidth:F
 
-    const/high16 v10, 0x40000000
+    const/high16 v10, 0x40000000    # 2.0f
 
     div-float/2addr v9, v10
 
@@ -145,7 +145,7 @@
 
     const/4 v8, 0x0
 
-    const/high16 v9, 0x43b40000
+    const/high16 v9, 0x43b40000    # 360.0f
 
     invoke-virtual {v4, v2, v8, v9}, Landroid/graphics/Path;->addArc(Landroid/graphics/RectF;FF)V
 
@@ -203,7 +203,7 @@
 
     invoke-virtual {v8, v9}, Landroid/graphics/Paint;->setXfermode(Landroid/graphics/Xfermode;)Landroid/graphics/Xfermode;
 
-    const/high16 v8, 0x3f800000
+    const/high16 v8, 0x3f800000    # 1.0f
 
     iput v8, p0, Lcom/android/keyguard/KeyguardCircleFramedDrawable;->mScale:F
 
@@ -261,7 +261,7 @@
 .method public draw(Landroid/graphics/Canvas;)V
     .locals 9
 
-    const/high16 v7, 0x40000000
+    const/high16 v7, 0x40000000    # 2.0f
 
     const/4 v8, 0x0
 
@@ -339,7 +339,7 @@
 
     iget-object v4, p0, Lcom/android/keyguard/KeyguardCircleFramedDrawable;->mFrameRect:Landroid/graphics/RectF;
 
-    const/high16 v5, 0x43b40000
+    const/high16 v5, 0x43b40000    # 360.0f
 
     invoke-virtual {v3, v4, v8, v5}, Landroid/graphics/Path;->addArc(Landroid/graphics/RectF;FF)V
 
@@ -452,7 +452,7 @@
 .method public reset()V
     .locals 1
 
-    const/high16 v0, 0x3f800000
+    const/high16 v0, 0x3f800000    # 1.0f
 
     iput v0, p0, Lcom/android/keyguard/KeyguardCircleFramedDrawable;->mScale:F
 

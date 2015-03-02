@@ -257,7 +257,7 @@
 
     invoke-direct {v6}, Landroid/graphics/ColorMatrix;-><init>()V
 
-    const/high16 v19, 0x3e800000
+    const/high16 v19, 0x3e800000    # 0.25f
 
     move/from16 v0, v19
 
@@ -325,7 +325,7 @@
 
     invoke-virtual {v4, v0, v9, v11}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;Landroid/graphics/Matrix;Landroid/graphics/Paint;)V
 
-    const v19, 0x40ffffff
+    const v19, 0x40ffffff    # 7.9999995f
 
     move/from16 v0, v19
 

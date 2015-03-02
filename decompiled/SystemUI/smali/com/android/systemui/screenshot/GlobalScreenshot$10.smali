@@ -37,7 +37,7 @@
 .method public getInterpolation(F)F
     .locals 6
 
-    const/high16 v0, 0x3f800000
+    const/high16 v0, 0x3f800000    # 1.0f
 
     const v4, 0x3f5c4771
 
@@ -45,7 +45,7 @@
 
     if-gez v1, :cond_0
 
-    const-wide/high16 v2, 0x3ff0000000000000L
+    const-wide/high16 v2, 0x3ff0000000000000L    # 1.0
 
     div-float v1, p1, v4
 
@@ -53,7 +53,7 @@
 
     float-to-double v0, v0
 
-    const-wide/high16 v4, 0x4000000000000000L
+    const-wide/high16 v4, 0x4000000000000000L    # 2.0
 
     invoke-static {v0, v1, v4, v5}, Ljava/lang/Math;->pow(DD)D
 

@@ -83,22 +83,22 @@
 
     :array_0
     .array-data 4
-        0x3e99999a
+        0x3e99999a    # 0.3f
         0x0
-        0x3f333333
+        0x3f333333    # 0.7f
         0x0
-        0x3f6b851f
-        0x3ea8f5c3
-        0x3f6b851f
-        0x3f400000
-        0x3f19999a
-        0x3f800000
-        0x3ecccccd
-        0x3f800000
-        0x3da3d70a
-        0x3f400000
-        0x3da3d70a
-        0x3ea8f5c3
+        0x3f6b851f    # 0.92f
+        0x3ea8f5c3    # 0.33f
+        0x3f6b851f    # 0.92f
+        0x3f400000    # 0.75f
+        0x3f19999a    # 0.6f
+        0x3f800000    # 1.0f
+        0x3ecccccd    # 0.4f
+        0x3f800000    # 1.0f
+        0x3da3d70a    # 0.08f
+        0x3f400000    # 0.75f
+        0x3da3d70a    # 0.08f
+        0x3ea8f5c3    # 0.33f
     .end array-data
 .end method
 
@@ -149,7 +149,7 @@
 .method public boost()V
     .locals 5
 
-    const/high16 v4, 0x3fa00000
+    const/high16 v4, 0x3fa00000    # 1.25f
 
     const/4 v0, 0x1
 
@@ -310,7 +310,7 @@
 .method public step(JJFF)V
     .locals 5
 
-    const/high16 v4, 0x42b40000
+    const/high16 v4, 0x42b40000    # 90.0f
 
     const/4 v1, 0x0
 
@@ -423,7 +423,7 @@
 
     move-result v1
 
-    const/high16 v2, -0x3d4c0000
+    const/high16 v2, -0x3d4c0000    # -90.0f
 
     invoke-static {v1, v4, v2}, Lcom/android/systemui/egg/LLand;->lerp(FFF)F
 
@@ -488,7 +488,7 @@
 .method public unboost()V
     .locals 4
 
-    const/high16 v1, 0x3f800000
+    const/high16 v1, 0x3f800000    # 1.0f
 
     const/4 v0, 0x0
 

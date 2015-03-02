@@ -52,7 +52,7 @@
 .method public dump(Ljava/io/PrintWriter;Ljava/lang/String;)V
     .locals 10
 
-    const-wide/high16 v8, 0x404e000000000000L
+    const-wide/high16 v8, 0x404e000000000000L    # 60.0
 
     const-string v2, "    "
 
@@ -91,7 +91,7 @@
 
     div-double/2addr v2, v4
 
-    const-wide v4, 0x408f400000000000L
+    const-wide v4, 0x408f400000000000L    # 1000.0
 
     mul-double/2addr v2, v4
 

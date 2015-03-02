@@ -210,7 +210,7 @@
 .method private showMessage(I)V
     .locals 5
 
-    const/high16 v4, 0x3f800000
+    const/high16 v4, 0x3f800000    # 1.0f
 
     if-lez p1, :cond_0
 
@@ -284,7 +284,7 @@
 .method public securityMessageChanged()V
     .locals 8
 
-    const/high16 v0, 0x3f800000
+    const/high16 v0, 0x3f800000    # 1.0f
 
     invoke-virtual {p0, v0}, Lcom/android/keyguard/KeyguardMessageArea;->setAlpha(F)V
 

@@ -181,7 +181,7 @@
 
     if-eqz p3, :cond_0
 
-    const/high16 v0, 0x3f800000
+    const/high16 v0, 0x3f800000    # 1.0f
 
     :goto_0
     invoke-virtual {p1}, Landroid/view/View;->getAlpha()F
@@ -409,7 +409,7 @@
 
     move-result v2
 
-    const/high16 v3, 0x40000000
+    const/high16 v3, 0x40000000    # 2.0f
 
     invoke-static {v2, v3}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 

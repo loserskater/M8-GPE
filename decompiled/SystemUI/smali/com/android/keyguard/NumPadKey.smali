@@ -448,7 +448,7 @@
 
     int-to-float v8, v3
 
-    const v9, 0x3eb33333
+    const v9, 0x3eb33333    # 0.35f
 
     mul-float/2addr v8, v9
 

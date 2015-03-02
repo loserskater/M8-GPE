@@ -86,15 +86,15 @@
 
     float-to-double v2, p1
 
-    const-wide v4, 0x4036800000000000L
+    const-wide v4, 0x4036800000000000L    # 22.5
 
     sub-double/2addr v2, v4
 
-    const-wide v4, 0x4076800000000000L
+    const-wide v4, 0x4076800000000000L    # 360.0
 
     rem-double/2addr v2, v4
 
-    const-wide v4, 0x4046800000000000L
+    const-wide v4, 0x4046800000000000L    # 45.0
 
     div-double/2addr v2, v4
 
@@ -102,7 +102,7 @@
 
     move-result-wide v2
 
-    const-wide/high16 v4, 0x3ff0000000000000L
+    const-wide/high16 v4, 0x3ff0000000000000L    # 1.0
 
     add-double/2addr v2, v4
 
@@ -261,7 +261,7 @@
 .method protected handleUpdateState(Lcom/android/systemui/qs/QSTile$BooleanState;Ljava/lang/Object;)V
     .locals 6
 
-    const/high16 v5, 0x43b40000
+    const/high16 v5, 0x43b40000    # 360.0f
 
     const/4 v4, 0x0
 
@@ -316,7 +316,7 @@
 
     sub-float v1, v2, v3
 
-    const/high16 v3, 0x43340000
+    const/high16 v3, 0x43340000    # 180.0f
 
     cmpl-float v3, v1, v3
 
@@ -333,7 +333,7 @@
 
     move-result v4
 
-    const/high16 v5, 0x40000000
+    const/high16 v5, 0x40000000    # 2.0f
 
     div-float v5, v1, v5
 
@@ -437,7 +437,7 @@
 
     const/4 v10, 0x3
 
-    const/high16 v9, 0x43b40000
+    const/high16 v9, 0x43b40000    # 360.0f
 
     iget-object v6, p1, Landroid/hardware/SensorEvent;->sensor:Landroid/hardware/Sensor;
 
@@ -472,13 +472,13 @@
     :goto_1
     if-ge v2, v10, :cond_3
 
-    const v6, 0x3f7851ec
+    const v6, 0x3f7851ec    # 0.97f
 
     aget v7, v5, v2
 
     mul-float/2addr v6, v7
 
-    const v7, 0x3cf5c280
+    const v7, 0x3cf5c280    # 0.029999971f
 
     iget-object v8, p1, Landroid/hardware/SensorEvent;->values:[F
 

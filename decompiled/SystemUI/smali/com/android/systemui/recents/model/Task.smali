@@ -100,7 +100,7 @@
 
     move-result v2
 
-    const/high16 v3, 0x40400000
+    const/high16 v3, 0x40400000    # 3.0f
 
     cmpl-float v2, v2, v3
 

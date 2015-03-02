@@ -37,7 +37,7 @@
 .method public getInterpolation(F)F
     .locals 4
 
-    const/high16 v3, 0x3f800000
+    const/high16 v3, 0x3f800000    # 1.0f
 
     iget v0, p0, Lcom/android/keyguard/KeyguardWidgetPager$ZInterpolator;->focalLength:F
 

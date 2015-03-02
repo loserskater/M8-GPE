@@ -691,7 +691,7 @@
 
     move-result v5
 
-    const/high16 v6, 0x40000000
+    const/high16 v6, 0x40000000    # 2.0f
 
     invoke-static {v5, v6}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
@@ -701,7 +701,7 @@
 
     move-result v6
 
-    const/high16 v16, 0x40000000
+    const/high16 v16, 0x40000000    # 2.0f
 
     move/from16 v0, v16
 
@@ -1700,7 +1700,7 @@
 
     move-result-object v0
 
-    const/high16 v1, 0x3f800000
+    const/high16 v1, 0x3f800000    # 1.0f
 
     invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
 

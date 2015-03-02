@@ -39,15 +39,15 @@
 .method public getInterpolation(F)F
     .locals 8
 
-    const/high16 v0, 0x3f800000
+    const/high16 v0, 0x3f800000    # 1.0f
 
-    const-wide/high16 v2, 0x4079000000000000L
+    const-wide/high16 v2, 0x4079000000000000L    # 400.0
 
     neg-float v1, p1
 
     float-to-double v4, v1
 
-    const-wide v6, 0x3ff6666666666666L
+    const-wide v6, 0x3ff6666666666666L    # 1.4
 
     mul-double/2addr v4, v6
 

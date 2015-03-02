@@ -37,11 +37,11 @@
 .method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 7
 
-    const/high16 v5, 0x3f000000
+    const/high16 v5, 0x3f000000    # 0.5f
 
-    const v6, 0x3e4ccccd
+    const v6, 0x3e4ccccd    # 0.2f
 
-    const/high16 v3, 0x3f800000
+    const/high16 v3, 0x3f800000    # 1.0f
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedFraction()F
 
@@ -78,7 +78,7 @@
 
     move-result-object v3
 
-    const/high16 v4, 0x437f0000
+    const/high16 v4, 0x437f0000    # 255.0f
 
     mul-float/2addr v4, v1
 
@@ -138,7 +138,7 @@
 
     sub-float v5, v0, v6
 
-    const v6, 0x3f4ccccd
+    const v6, 0x3f4ccccd    # 0.8f
 
     div-float/2addr v5, v6
 

@@ -121,7 +121,7 @@
 
     int-to-float v3, v5
 
-    const-wide/high16 v6, 0x4024000000000000L
+    const-wide/high16 v6, 0x4024000000000000L    # 10.0
 
     float-to-double v8, v3
 

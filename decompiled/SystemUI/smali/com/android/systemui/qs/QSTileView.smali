@@ -193,7 +193,7 @@
 .method private static exactly(I)I
     .locals 1
 
-    const/high16 v0, 0x40000000
+    const/high16 v0, 0x40000000    # 2.0f
 
     invoke-static {p0, v0}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
@@ -555,7 +555,7 @@
 
     int-to-float v3, v3
 
-    const/high16 v4, 0x3fa00000
+    const/high16 v4, 0x3fa00000    # 1.25f
 
     mul-float/2addr v3, v4
 
@@ -584,7 +584,7 @@
 .method private updateTopPadding()V
     .locals 7
 
-    const/high16 v6, 0x3f800000
+    const/high16 v6, 0x3f800000    # 1.0f
 
     invoke-virtual {p0}, Lcom/android/systemui/qs/QSTileView;->getResources()Landroid/content/res/Resources;
 
@@ -612,7 +612,7 @@
 
     iget v4, v4, Landroid/content/res/Configuration;->fontScale:F
 
-    const v5, 0x3fa66666
+    const v5, 0x3fa66666    # 1.3f
 
     invoke-static {v4, v6, v5}, Landroid/util/MathUtils;->constrain(FFF)F
 
@@ -620,7 +620,7 @@
 
     sub-float/2addr v4, v6
 
-    const v5, 0x3e999998
+    const v5, 0x3e999998    # 0.29999995f
 
     div-float v0, v4, v5
 

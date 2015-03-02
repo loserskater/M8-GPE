@@ -157,9 +157,9 @@
 
     const/4 v4, 0x0
 
-    const/high16 v5, 0x3f800000
+    const/high16 v5, 0x3f800000    # 1.0f
 
-    const/high16 v6, -0x34000000
+    const/high16 v6, -0x34000000    # -3.3554432E7f
 
     const/4 v7, 0x0
 
@@ -250,7 +250,7 @@
 
     const/4 v1, 0x0
 
-    const/high16 v2, 0x3f800000
+    const/high16 v2, 0x3f800000    # 1.0f
 
     move/from16 v0, p8
 
@@ -264,7 +264,7 @@
 
     mul-float v1, v18, v14
 
-    const/high16 v2, 0x3f800000
+    const/high16 v2, 0x3f800000    # 1.0f
 
     cmpl-float v1, v1, v2
 
@@ -275,7 +275,7 @@
     :goto_0
     const/4 v1, 0x0
 
-    const/high16 v2, 0x3f800000
+    const/high16 v2, 0x3f800000    # 1.0f
 
     move/from16 v0, p9
 
@@ -289,7 +289,7 @@
 
     mul-float v1, v9, v14
 
-    const/high16 v2, 0x3f800000
+    const/high16 v2, 0x3f800000    # 1.0f
 
     cmpl-float v1, v1, v2
 
@@ -307,7 +307,7 @@
 
     const/4 v1, 0x0
 
-    const/high16 v2, 0x3f800000
+    const/high16 v2, 0x3f800000    # 1.0f
 
     move/from16 v0, p10
 
@@ -321,7 +321,7 @@
 
     mul-float v1, v15, v14
 
-    const/high16 v2, 0x3f800000
+    const/high16 v2, 0x3f800000    # 1.0f
 
     cmpl-float v1, v1, v2
 
@@ -332,7 +332,7 @@
     :goto_2
     const/4 v1, 0x0
 
-    const/high16 v2, 0x3f800000
+    const/high16 v2, 0x3f800000    # 1.0f
 
     move/from16 v0, p11
 
@@ -346,7 +346,7 @@
 
     mul-float v1, v17, v14
 
-    const/high16 v2, 0x3f800000
+    const/high16 v2, 0x3f800000    # 1.0f
 
     cmpl-float v1, v1, v2
 
@@ -362,7 +362,7 @@
 
     iget-object v1, v0, Lcom/android/systemui/recent/FadedEdgeDrawHelper;->mFadeMatrix:Landroid/graphics/Matrix;
 
-    const/high16 v2, 0x3f800000
+    const/high16 v2, 0x3f800000    # 1.0f
 
     mul-float v3, v14, v18
 
@@ -480,7 +480,7 @@
 
     iget-object v1, v0, Lcom/android/systemui/recent/FadedEdgeDrawHelper;->mFadeMatrix:Landroid/graphics/Matrix;
 
-    const/high16 v2, 0x3f800000
+    const/high16 v2, 0x3f800000    # 1.0f
 
     mul-float v3, v14, v9
 
@@ -490,7 +490,7 @@
 
     iget-object v1, v0, Lcom/android/systemui/recent/FadedEdgeDrawHelper;->mFadeMatrix:Landroid/graphics/Matrix;
 
-    const/high16 v2, 0x43340000
+    const/high16 v2, 0x43340000    # 180.0f
 
     invoke-virtual {v1, v2}, Landroid/graphics/Matrix;->postRotate(F)Z
 
@@ -559,7 +559,7 @@
 
     iget-object v1, v0, Lcom/android/systemui/recent/FadedEdgeDrawHelper;->mFadeMatrix:Landroid/graphics/Matrix;
 
-    const/high16 v2, 0x3f800000
+    const/high16 v2, 0x3f800000    # 1.0f
 
     mul-float v3, v14, v15
 
@@ -569,7 +569,7 @@
 
     iget-object v1, v0, Lcom/android/systemui/recent/FadedEdgeDrawHelper;->mFadeMatrix:Landroid/graphics/Matrix;
 
-    const/high16 v2, -0x3d4c0000
+    const/high16 v2, -0x3d4c0000    # -90.0f
 
     invoke-virtual {v1, v2}, Landroid/graphics/Matrix;->postRotate(F)Z
 
@@ -638,7 +638,7 @@
 
     iget-object v1, v0, Lcom/android/systemui/recent/FadedEdgeDrawHelper;->mFadeMatrix:Landroid/graphics/Matrix;
 
-    const/high16 v2, 0x3f800000
+    const/high16 v2, 0x3f800000    # 1.0f
 
     mul-float v3, v14, v17
 
@@ -648,7 +648,7 @@
 
     iget-object v1, v0, Lcom/android/systemui/recent/FadedEdgeDrawHelper;->mFadeMatrix:Landroid/graphics/Matrix;
 
-    const/high16 v2, 0x42b40000
+    const/high16 v2, 0x42b40000    # 90.0f
 
     invoke-virtual {v1, v2}, Landroid/graphics/Matrix;->postRotate(F)Z
 

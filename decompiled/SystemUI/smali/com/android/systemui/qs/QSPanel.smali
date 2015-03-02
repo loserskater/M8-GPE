@@ -458,7 +458,7 @@
 .method private static exactly(I)I
     .locals 1
 
-    const/high16 v0, 0x40000000
+    const/high16 v0, 0x40000000    # 2.0f
 
     invoke-static {p0, v0}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
@@ -2146,7 +2146,7 @@
 .method public updateResources()V
     .locals 5
 
-    const v4, 0x3f99999a
+    const v4, 0x3f99999a    # 1.2f
 
     iget-object v2, p0, Lcom/android/systemui/qs/QSPanel;->mContext:Landroid/content/Context;
 

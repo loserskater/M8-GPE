@@ -240,7 +240,7 @@
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mContext:Landroid/content/Context;
 
-    const v2, 0x3e99999a
+    const v2, 0x3e99999a    # 0.3f
 
     invoke-direct {v0, v1, v2}, Lcom/android/systemui/statusbar/FlingAnimationUtils;-><init>(Landroid/content/Context;F)V
 
@@ -475,9 +475,9 @@
 
     if-eqz v0, :cond_0
 
-    const/high16 v0, -0x40800000
+    const/high16 v0, -0x40800000    # -1.0f
 
-    const/high16 v1, 0x3f800000
+    const/high16 v1, 0x3f800000    # 1.0f
 
     invoke-virtual {p1, v0, v1}, Landroid/graphics/Canvas;->scale(FF)V
 
@@ -522,7 +522,7 @@
 
     iget v1, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mArrowAlpha:F
 
-    const/high16 v2, 0x437f0000
+    const/high16 v2, 0x437f0000    # 255.0f
 
     mul-float/2addr v1, v2
 
@@ -875,7 +875,7 @@
 
     div-float v4, v10, v11
 
-    const/high16 v10, 0x42a00000
+    const/high16 v10, 0x42a00000    # 80.0f
 
     mul-float/2addr v10, v4
 
@@ -973,11 +973,11 @@
 .method private updateCircleColor()V
     .locals 8
 
-    const/high16 v7, 0x3f800000
+    const/high16 v7, 0x3f800000    # 1.0f
 
     const/4 v6, 0x0
 
-    const/high16 v5, 0x3f000000
+    const/high16 v5, 0x3f000000    # 0.5f
 
     iget v3, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mCircleRadius:F
 
@@ -1094,7 +1094,7 @@
 
     div-float v0, v3, v4
 
-    const/high16 v3, 0x3f800000
+    const/high16 v3, 0x3f800000    # 1.0f
 
     invoke-static {v3, v0}, Ljava/lang/Math;->min(FF)F
 
@@ -1446,7 +1446,7 @@
 .method public setImageAlpha(FZJLandroid/view/animation/Interpolator;Ljava/lang/Runnable;)V
     .locals 9
 
-    const/high16 v8, 0x437f0000
+    const/high16 v8, 0x437f0000    # 255.0f
 
     iget-object v5, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mAlphaAnimator:Landroid/animation/ValueAnimator;
 
@@ -1539,13 +1539,13 @@
 
     div-float v3, v5, v8
 
-    const/high16 v5, 0x3f800000
+    const/high16 v5, 0x3f800000    # 1.0f
 
     invoke-static {v5, v3}, Ljava/lang/Math;->min(FF)F
 
     move-result v3
 
-    const/high16 v5, 0x43480000
+    const/high16 v5, 0x43480000    # 200.0f
 
     mul-float/2addr v5, v3
 
@@ -1676,17 +1676,17 @@
 
     move-result v2
 
-    const v3, 0x3e4ccccc
+    const v3, 0x3e4ccccc    # 0.19999999f
 
     div-float v1, v2, v3
 
-    const/high16 v2, 0x3f800000
+    const/high16 v2, 0x3f800000    # 1.0f
 
     invoke-static {v2, v1}, Ljava/lang/Math;->min(FF)F
 
     move-result v1
 
-    const/high16 v2, 0x43480000
+    const/high16 v2, 0x43480000    # 200.0f
 
     mul-float/2addr v2, v1
 
@@ -1743,7 +1743,7 @@
 
     if-eqz p1, :cond_0
 
-    const/high16 v5, 0x3f800000
+    const/high16 v5, 0x3f800000    # 1.0f
 
     :goto_0
     iget v6, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->mArrowAlpha:F
@@ -1806,7 +1806,7 @@
 
     move-result v1
 
-    const/high16 v6, 0x43480000
+    const/high16 v6, 0x43480000    # 200.0f
 
     mul-float/2addr v6, v1
 

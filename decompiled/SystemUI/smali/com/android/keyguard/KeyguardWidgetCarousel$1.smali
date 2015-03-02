@@ -35,13 +35,13 @@
 
     new-instance v0, Landroid/view/animation/DecelerateInterpolator;
 
-    const/high16 v1, 0x3fc00000
+    const/high16 v1, 0x3fc00000    # 1.5f
 
     invoke-direct {v0, v1}, Landroid/view/animation/DecelerateInterpolator;-><init>(F)V
 
     iput-object v0, p0, Lcom/android/keyguard/KeyguardWidgetCarousel$1;->mInternal:Landroid/view/animation/Interpolator;
 
-    const/high16 v0, 0x40200000
+    const/high16 v0, 0x40200000    # 2.5f
 
     iput v0, p0, Lcom/android/keyguard/KeyguardWidgetCarousel$1;->mFactor:F
 
@@ -59,7 +59,7 @@
 
     mul-float/2addr v1, p1
 
-    const/high16 v2, 0x3f800000
+    const/high16 v2, 0x3f800000    # 1.0f
 
     invoke-static {v1, v2}, Ljava/lang/Math;->min(FF)F
 

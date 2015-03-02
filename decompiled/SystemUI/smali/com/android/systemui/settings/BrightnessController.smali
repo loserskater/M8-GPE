@@ -325,15 +325,15 @@
 
     iget-object v1, p0, Lcom/android/systemui/settings/BrightnessController;->mControl:Lcom/android/systemui/settings/ToggleSlider;
 
-    const/high16 v2, 0x3f800000
+    const/high16 v2, 0x3f800000    # 1.0f
 
     add-float/2addr v2, v0
 
-    const/high16 v3, 0x42c80000
+    const/high16 v3, 0x42c80000    # 100.0f
 
     mul-float/2addr v2, v3
 
-    const/high16 v3, 0x40000000
+    const/high16 v3, 0x40000000    # 2.0f
 
     div-float/2addr v2, v3
 
@@ -443,11 +443,11 @@
     :cond_3
     int-to-float v4, p4
 
-    const/high16 v5, 0x42480000
+    const/high16 v5, 0x42480000    # 50.0f
 
     div-float/2addr v4, v5
 
-    const/high16 v5, 0x3f800000
+    const/high16 v5, 0x3f800000    # 1.0f
 
     sub-float v0, v4, v5
 

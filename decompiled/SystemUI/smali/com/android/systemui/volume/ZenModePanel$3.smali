@@ -38,7 +38,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
 
-    const/high16 v1, 0x3f800000
+    const/high16 v1, 0x3f800000    # 1.0f
 
     iget-object v0, p0, Lcom/android/systemui/volume/ZenModePanel$3;->val$noneButton:Landroid/view/View;
 

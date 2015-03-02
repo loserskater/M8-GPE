@@ -415,7 +415,7 @@
     invoke-virtual {p1, v4, v2}, Lcom/android/systemui/statusbar/ScrimView;->setTag(ILjava/lang/Object;)V
 
     :cond_0
-    const/high16 v2, 0x437f0000
+    const/high16 v2, 0x437f0000    # 255.0f
 
     mul-float/2addr v2, p2
 
@@ -606,11 +606,11 @@
 .method private updateScrimKeyguard()V
     .locals 8
 
-    const/high16 v5, 0x3f400000
+    const/high16 v5, 0x3f400000    # 0.75f
 
-    const-wide v6, 0x3fe99999a0000000L
+    const-wide v6, 0x3fe99999a0000000L    # 0.800000011920929
 
-    const/high16 v4, 0x3f800000
+    const/high16 v4, 0x3f800000    # 1.0f
 
     const/4 v3, 0x0
 
@@ -654,7 +654,7 @@
 
     invoke-direct {p0, v2}, Lcom/android/systemui/statusbar/phone/ScrimController;->setScrimInFrontColor(F)V
 
-    const v2, 0x3f0ccccd
+    const v2, 0x3f0ccccd    # 0.55f
 
     mul-float/2addr v2, v0
 
@@ -696,11 +696,11 @@
 
     invoke-direct {p0, v3}, Lcom/android/systemui/statusbar/phone/ScrimController;->setScrimInFrontColor(F)V
 
-    const v2, 0x3eb33334
+    const v2, 0x3eb33334    # 0.35000002f
 
     mul-float/2addr v2, v1
 
-    const v3, 0x3e4ccccd
+    const v3, 0x3e4ccccd    # 0.2f
 
     add-float/2addr v2, v3
 
@@ -714,15 +714,15 @@
 
     const/4 v4, 0x0
 
-    const-wide/high16 v10, 0x3ff0000000000000L
+    const-wide/high16 v10, 0x3ff0000000000000L    # 1.0
 
     iget v0, p0, Lcom/android/systemui/statusbar/phone/ScrimController;->mFraction:F
 
-    const v2, 0x3f99999a
+    const v2, 0x3f99999a    # 1.2f
 
     mul-float/2addr v2, v0
 
-    const v3, 0x3e4ccccd
+    const v3, 0x3e4ccccd    # 0.2f
 
     sub-float v0, v2, v3
 
@@ -736,17 +736,17 @@
     return-void
 
     :cond_0
-    const-wide/high16 v2, 0x3fe0000000000000L
+    const-wide/high16 v2, 0x3fe0000000000000L    # 0.5
 
-    const-wide v4, 0x400921fa00000000L
+    const-wide v4, 0x400921fa00000000L    # 3.141590118408203
 
-    const/high16 v6, 0x3f800000
+    const/high16 v6, 0x3f800000    # 1.0f
 
     sub-float/2addr v6, v0
 
     float-to-double v6, v6
 
-    const-wide/high16 v8, 0x4000000000000000L
+    const-wide/high16 v8, 0x4000000000000000L    # 2.0
 
     invoke-static {v6, v7, v8, v9}, Ljava/lang/Math;->pow(DD)D
 
@@ -766,7 +766,7 @@
 
     double-to-float v1, v2
 
-    const v2, 0x3f1eb852
+    const v2, 0x3f1eb852    # 0.62f
 
     mul-float/2addr v2, v1
 

@@ -30,7 +30,7 @@
 
     move-result v0
 
-    const v1, 0x3c23d70a
+    const v1, 0x3c23d70a    # 0.01f
 
     cmpg-float v0, v0, v1
 
@@ -75,9 +75,9 @@
 
     iput v0, p0, Lcom/android/systemui/egg/LLand$Cloud;->z:F
 
-    const v0, 0x3e19999a
+    const v0, 0x3e19999a    # 0.15f
 
-    const/high16 v1, 0x3f000000
+    const/high16 v1, 0x3f000000    # 0.5f
 
     invoke-static {v0, v1}, Lcom/android/systemui/egg/LLand;->frand(FF)F
 

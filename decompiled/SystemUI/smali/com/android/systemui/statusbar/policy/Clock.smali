@@ -254,7 +254,7 @@
 
     new-instance v3, Landroid/text/style/RelativeSizeSpan;
 
-    const v4, 0x3f333333
+    const v4, 0x3f333333    # 0.7f
 
     invoke-direct {v3, v4}, Landroid/text/style/RelativeSizeSpan;-><init>(F)V
 
@@ -327,7 +327,7 @@
 
     new-instance v2, Landroid/text/style/RelativeSizeSpan;
 
-    const v3, 0x3f333333
+    const v3, 0x3f333333    # 0.7f
 
     invoke-direct {v2, v3}, Landroid/text/style/RelativeSizeSpan;-><init>(F)V
 
@@ -680,7 +680,7 @@
 
     new-instance v17, Landroid/text/style/RelativeSizeSpan;
 
-    const v18, 0x3f333333
+    const v18, 0x3f333333    # 0.7f
 
     invoke-direct/range {v17 .. v18}, Landroid/text/style/RelativeSizeSpan;-><init>(F)V
 

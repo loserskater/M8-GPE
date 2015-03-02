@@ -23,9 +23,9 @@
 
 .field private mKeyguardBound:Z
 
-.field private mLock:Landroid/app/KeyguardManager$KeyguardLock;
+.field private mKeyguardViewMediator:Lcom/android/systemui/keyguard/KeyguardViewMediator;
 
-.field private mLockscreenDisabled:Z
+.field private mPersistedState:Z
 
 .field private mPrefs:Landroid/content/SharedPreferences;
 
@@ -34,84 +34,33 @@
 
 # direct methods
 .method public constructor <init>(Lcom/android/systemui/qs/QSTile$Host;)V
-    .locals 5
+    .locals 4
 
     invoke-direct {p0, p1}, Lcom/android/systemui/qs/QSTile;-><init>(Lcom/android/systemui/qs/QSTile$Host;)V
 
-    new-instance v2, Lcom/android/systemui/qs/tiles/LockscreenToggleTile$1;
+    new-instance v1, Lcom/android/systemui/qs/tiles/LockscreenToggleTile$1;
 
-    invoke-direct {v2, p0}, Lcom/android/systemui/qs/tiles/LockscreenToggleTile$1;-><init>(Lcom/android/systemui/qs/tiles/LockscreenToggleTile;)V
+    invoke-direct {v1, p0}, Lcom/android/systemui/qs/tiles/LockscreenToggleTile$1;-><init>(Lcom/android/systemui/qs/tiles/LockscreenToggleTile;)V
 
-    iput-object v2, p0, Lcom/android/systemui/qs/tiles/LockscreenToggleTile;->mReceiver:Landroid/content/BroadcastReceiver;
+    iput-object v1, p0, Lcom/android/systemui/qs/tiles/LockscreenToggleTile;->mReceiver:Landroid/content/BroadcastReceiver;
 
-    iget-object v2, p0, Lcom/android/systemui/qs/tiles/LockscreenToggleTile;->mContext:Landroid/content/Context;
+    iget-object v1, p0, Lcom/android/systemui/qs/tiles/LockscreenToggleTile;->mContext:Landroid/content/Context;
 
-    const-string v3, "quicksettings"
+    const-string v2, "quicksettings"
 
-    const/4 v4, 0x0
+    const/4 v3, 0x0
 
-    invoke-virtual {v2, v3, v4}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
-
-    move-result-object v2
-
-    iput-object v2, p0, Lcom/android/systemui/qs/tiles/LockscreenToggleTile;->mPrefs:Landroid/content/SharedPreferences;
-
-    invoke-interface {p1}, Lcom/android/systemui/qs/QSTile$Host;->getKeyguardMonitor()Lcom/android/systemui/statusbar/policy/KeyguardMonitor;
-
-    move-result-object v2
-
-    iput-object v2, p0, Lcom/android/systemui/qs/tiles/LockscreenToggleTile;->mKeyguard:Lcom/android/systemui/statusbar/policy/KeyguardMonitor;
-
-    invoke-direct {p0}, Lcom/android/systemui/qs/tiles/LockscreenToggleTile;->getPersistedState()Z
-
-    move-result v2
-
-    iput-boolean v2, p0, Lcom/android/systemui/qs/tiles/LockscreenToggleTile;->mLockscreenDisabled:Z
-
-    new-instance v0, Landroid/content/IntentFilter;
-
-    const-string v2, "com.android.internal.action.KEYGUARD_SERVICE_STATE_CHANGED"
-
-    invoke-direct {v0, v2}, Landroid/content/IntentFilter;-><init>(Ljava/lang/String;)V
-
-    iget-object v2, p0, Lcom/android/systemui/qs/tiles/LockscreenToggleTile;->mContext:Landroid/content/Context;
-
-    iget-object v3, p0, Lcom/android/systemui/qs/tiles/LockscreenToggleTile;->mReceiver:Landroid/content/BroadcastReceiver;
-
-    invoke-virtual {v2, v3, v0}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
+    invoke-virtual {v1, v2, v3}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
 
     move-result-object v1
 
-    if-eqz v1, :cond_0
+    iput-object v1, p0, Lcom/android/systemui/qs/tiles/LockscreenToggleTile;->mPrefs:Landroid/content/SharedPreferences;
 
-    invoke-direct {p0, v1}, Lcom/android/systemui/qs/tiles/LockscreenToggleTile;->updateBasedOnIntent(Landroid/content/Intent;)V
+    invoke-interface {p1}, Lcom/android/systemui/qs/QSTile$Host;->getKeyguardMonitor()Lcom/android/systemui/statusbar/policy/KeyguardMonitor;
 
-    :cond_0
-    return-void
-.end method
+    move-result-object v1
 
-.method static synthetic access$000(Lcom/android/systemui/qs/tiles/LockscreenToggleTile;Landroid/content/Intent;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lcom/android/systemui/qs/tiles/LockscreenToggleTile;->updateBasedOnIntent(Landroid/content/Intent;)V
-
-    return-void
-.end method
-
-.method private applyLockscreenState()V
-    .locals 3
-
-    iget-boolean v1, p0, Lcom/android/systemui/qs/tiles/LockscreenToggleTile;->mKeyguardBound:Z
-
-    if-nez v1, :cond_0
-
-    :goto_0
-    return-void
-
-    :cond_0
-    iget-object v1, p0, Lcom/android/systemui/qs/tiles/LockscreenToggleTile;->mLock:Landroid/app/KeyguardManager$KeyguardLock;
-
-    if-nez v1, :cond_1
+    iput-object v1, p0, Lcom/android/systemui/qs/tiles/LockscreenToggleTile;->mKeyguard:Lcom/android/systemui/statusbar/policy/KeyguardMonitor;
 
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/LockscreenToggleTile;->mContext:Landroid/content/Context;
 
@@ -119,46 +68,81 @@
 
     move-result-object v1
 
-    const-string v2, "keyguard"
+    check-cast v1, Lcom/android/systemui/SystemUIApplication;
 
-    invoke-virtual {v1, v2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    const-class v2, Lcom/android/systemui/keyguard/KeyguardViewMediator;
 
-    move-result-object v0
-
-    check-cast v0, Landroid/app/KeyguardManager;
-
-    const-class v1, Lcom/android/systemui/qs/tiles/LockscreenToggleTile;
-
-    invoke-virtual {v1}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
+    invoke-virtual {v1, v2}, Lcom/android/systemui/SystemUIApplication;->getComponent(Ljava/lang/Class;)Ljava/lang/Object;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Landroid/app/KeyguardManager;->newKeyguardLock(Ljava/lang/String;)Landroid/app/KeyguardManager$KeyguardLock;
+    check-cast v1, Lcom/android/systemui/keyguard/KeyguardViewMediator;
 
-    move-result-object v1
+    iput-object v1, p0, Lcom/android/systemui/qs/tiles/LockscreenToggleTile;->mKeyguardViewMediator:Lcom/android/systemui/keyguard/KeyguardViewMediator;
 
-    iput-object v1, p0, Lcom/android/systemui/qs/tiles/LockscreenToggleTile;->mLock:Landroid/app/KeyguardManager$KeyguardLock;
+    invoke-direct {p0}, Lcom/android/systemui/qs/tiles/LockscreenToggleTile;->getPersistedState()Z
 
-    :cond_1
-    iget-boolean v1, p0, Lcom/android/systemui/qs/tiles/LockscreenToggleTile;->mLockscreenDisabled:Z
+    move-result v1
 
-    if-eqz v1, :cond_2
+    iput-boolean v1, p0, Lcom/android/systemui/qs/tiles/LockscreenToggleTile;->mPersistedState:Z
 
-    iget-object v1, p0, Lcom/android/systemui/qs/tiles/LockscreenToggleTile;->mLock:Landroid/app/KeyguardManager$KeyguardLock;
+    new-instance v0, Landroid/content/IntentFilter;
 
-    invoke-virtual {v1}, Landroid/app/KeyguardManager$KeyguardLock;->disableKeyguard()V
+    const-string v1, "com.android.internal.action.KEYGUARD_SERVICE_STATE_CHANGED"
 
-    :goto_1
+    invoke-direct {v0, v1}, Landroid/content/IntentFilter;-><init>(Ljava/lang/String;)V
+
+    iget-object v1, p0, Lcom/android/systemui/qs/tiles/LockscreenToggleTile;->mContext:Landroid/content/Context;
+
+    iget-object v2, p0, Lcom/android/systemui/qs/tiles/LockscreenToggleTile;->mReceiver:Landroid/content/BroadcastReceiver;
+
+    invoke-virtual {v1, v2, v0}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
+
+    return-void
+.end method
+
+.method static synthetic access$002(Lcom/android/systemui/qs/tiles/LockscreenToggleTile;Z)Z
+    .locals 0
+
+    iput-boolean p1, p0, Lcom/android/systemui/qs/tiles/LockscreenToggleTile;->mKeyguardBound:Z
+
+    return p1
+.end method
+
+.method static synthetic access$100(Lcom/android/systemui/qs/tiles/LockscreenToggleTile;)V
+    .locals 0
+
+    invoke-direct {p0}, Lcom/android/systemui/qs/tiles/LockscreenToggleTile;->applyLockscreenState()V
+
+    return-void
+.end method
+
+.method static synthetic access$200(Lcom/android/systemui/qs/tiles/LockscreenToggleTile;)V
+    .locals 0
+
     invoke-virtual {p0}, Lcom/android/systemui/qs/tiles/LockscreenToggleTile;->refreshState()V
 
+    return-void
+.end method
+
+.method private applyLockscreenState()V
+    .locals 2
+
+    iget-boolean v0, p0, Lcom/android/systemui/qs/tiles/LockscreenToggleTile;->mKeyguardBound:Z
+
+    if-nez v0, :cond_0
+
+    :goto_0
+    return-void
+
+    :cond_0
+    iget-object v0, p0, Lcom/android/systemui/qs/tiles/LockscreenToggleTile;->mKeyguardViewMediator:Lcom/android/systemui/keyguard/KeyguardViewMediator;
+
+    iget-boolean v1, p0, Lcom/android/systemui/qs/tiles/LockscreenToggleTile;->mPersistedState:Z
+
+    invoke-virtual {v0, v1}, Lcom/android/systemui/keyguard/KeyguardViewMediator;->setKeyguardEnabledInternal(Z)V
+
     goto :goto_0
-
-    :cond_2
-    iget-object v1, p0, Lcom/android/systemui/qs/tiles/LockscreenToggleTile;->mLock:Landroid/app/KeyguardManager$KeyguardLock;
-
-    invoke-virtual {v1}, Landroid/app/KeyguardManager$KeyguardLock;->reenableKeyguard()V
-
-    goto :goto_1
 .end method
 
 .method private getPersistedState()Z
@@ -166,9 +150,9 @@
 
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/LockscreenToggleTile;->mPrefs:Landroid/content/SharedPreferences;
 
-    const-string v1, "lockscreen_disabled"
+    const-string v1, "lockscreen_enabled"
 
-    const/4 v2, 0x0
+    const/4 v2, 0x1
 
     invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
 
@@ -177,7 +161,7 @@
     return v0
 .end method
 
-.method private setLockscreenEnabled(Z)V
+.method private setPersistedState(Z)V
     .locals 2
 
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/LockscreenToggleTile;->mPrefs:Landroid/content/SharedPreferences;
@@ -186,7 +170,7 @@
 
     move-result-object v0
 
-    const-string v1, "lockscreen_disabled"
+    const-string v1, "lockscreen_enabled"
 
     invoke-interface {v0, v1, p1}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
@@ -194,69 +178,24 @@
 
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    iput-boolean p1, p0, Lcom/android/systemui/qs/tiles/LockscreenToggleTile;->mLockscreenDisabled:Z
-
-    return-void
-.end method
-
-.method private updateBasedOnIntent(Landroid/content/Intent;)V
-    .locals 2
-
-    const-string v0, "active"
-
-    const/4 v1, 0x0
-
-    invoke-virtual {p1, v0, v1}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
-
-    move-result v0
-
-    iput-boolean v0, p0, Lcom/android/systemui/qs/tiles/LockscreenToggleTile;->mKeyguardBound:Z
-
-    invoke-direct {p0}, Lcom/android/systemui/qs/tiles/LockscreenToggleTile;->applyLockscreenState()V
+    iput-boolean p1, p0, Lcom/android/systemui/qs/tiles/LockscreenToggleTile;->mPersistedState:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public destroy()V
-    .locals 2
-
-    invoke-super {p0}, Lcom/android/systemui/qs/QSTile;->destroy()V
-
-    iget-object v0, p0, Lcom/android/systemui/qs/tiles/LockscreenToggleTile;->mContext:Landroid/content/Context;
-
-    iget-object v1, p0, Lcom/android/systemui/qs/tiles/LockscreenToggleTile;->mReceiver:Landroid/content/BroadcastReceiver;
-
-    invoke-virtual {v0, v1}, Landroid/content/Context;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
-
-    iget-object v0, p0, Lcom/android/systemui/qs/tiles/LockscreenToggleTile;->mLock:Landroid/app/KeyguardManager$KeyguardLock;
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lcom/android/systemui/qs/tiles/LockscreenToggleTile;->mLock:Landroid/app/KeyguardManager$KeyguardLock;
-
-    invoke-virtual {v0}, Landroid/app/KeyguardManager$KeyguardLock;->reenableKeyguard()V
-
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Lcom/android/systemui/qs/tiles/LockscreenToggleTile;->mLock:Landroid/app/KeyguardManager$KeyguardLock;
-
-    :cond_0
-    return-void
-.end method
-
 .method protected handleClick()V
     .locals 1
 
-    iget-boolean v0, p0, Lcom/android/systemui/qs/tiles/LockscreenToggleTile;->mLockscreenDisabled:Z
+    iget-boolean v0, p0, Lcom/android/systemui/qs/tiles/LockscreenToggleTile;->mPersistedState:Z
 
     if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
     :goto_0
-    invoke-direct {p0, v0}, Lcom/android/systemui/qs/tiles/LockscreenToggleTile;->setLockscreenEnabled(Z)V
+    invoke-direct {p0, v0}, Lcom/android/systemui/qs/tiles/LockscreenToggleTile;->setPersistedState(Z)V
 
     invoke-direct {p0}, Lcom/android/systemui/qs/tiles/LockscreenToggleTile;->applyLockscreenState()V
 
@@ -270,84 +209,116 @@
     goto :goto_0
 .end method
 
-.method protected handleUpdateState(Lcom/android/systemui/qs/QSTile$BooleanState;Ljava/lang/Object;)V
-    .locals 4
+.method protected handleDestroy()V
+    .locals 2
 
-    const/4 v1, 0x1
+    invoke-super {p0}, Lcom/android/systemui/qs/QSTile;->handleDestroy()V
+
+    iget-object v0, p0, Lcom/android/systemui/qs/tiles/LockscreenToggleTile;->mContext:Landroid/content/Context;
+
+    iget-object v1, p0, Lcom/android/systemui/qs/tiles/LockscreenToggleTile;->mReceiver:Landroid/content/BroadcastReceiver;
+
+    invoke-virtual {v0, v1}, Landroid/content/Context;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
+
+    return-void
+.end method
+
+.method protected handleUpdateState(Lcom/android/systemui/qs/QSTile$BooleanState;Ljava/lang/Object;)V
+    .locals 5
+
+    const/4 v3, 0x1
 
     const/4 v2, 0x0
 
-    iget-boolean v3, p0, Lcom/android/systemui/qs/tiles/LockscreenToggleTile;->mLockscreenDisabled:Z
+    iget-object v4, p0, Lcom/android/systemui/qs/tiles/LockscreenToggleTile;->mKeyguardViewMediator:Lcom/android/systemui/keyguard/KeyguardViewMediator;
 
-    if-nez v3, :cond_0
+    invoke-virtual {v4}, Lcom/android/systemui/keyguard/KeyguardViewMediator;->lockscreenEnforcedByDevicePolicy()Z
 
-    iget-object v3, p0, Lcom/android/systemui/qs/tiles/LockscreenToggleTile;->mKeyguard:Lcom/android/systemui/statusbar/policy/KeyguardMonitor;
+    move-result v1
 
-    invoke-virtual {v3}, Lcom/android/systemui/statusbar/policy/KeyguardMonitor;->isShowing()Z
+    if-nez v1, :cond_0
 
-    move-result v3
+    iget-boolean v4, p0, Lcom/android/systemui/qs/tiles/LockscreenToggleTile;->mPersistedState:Z
 
-    if-eqz v3, :cond_0
+    if-nez v4, :cond_0
 
-    iget-object v3, p0, Lcom/android/systemui/qs/tiles/LockscreenToggleTile;->mKeyguard:Lcom/android/systemui/statusbar/policy/KeyguardMonitor;
+    iget-object v4, p0, Lcom/android/systemui/qs/tiles/LockscreenToggleTile;->mKeyguardViewMediator:Lcom/android/systemui/keyguard/KeyguardViewMediator;
 
-    invoke-virtual {v3}, Lcom/android/systemui/statusbar/policy/KeyguardMonitor;->isSecure()Z
+    invoke-virtual {v4}, Lcom/android/systemui/keyguard/KeyguardViewMediator;->getKeyguardEnabledInternal()Z
 
-    move-result v3
+    move-result v4
 
-    if-eqz v3, :cond_0
+    if-eqz v4, :cond_2
 
-    move v0, v1
+    :cond_0
+    move v0, v3
 
     :goto_0
-    iget-boolean v3, p0, Lcom/android/systemui/qs/tiles/LockscreenToggleTile;->mKeyguardBound:Z
+    iget-boolean v4, p0, Lcom/android/systemui/qs/tiles/LockscreenToggleTile;->mKeyguardBound:Z
 
-    if-eqz v3, :cond_1
+    if-eqz v4, :cond_3
 
-    if-nez v0, :cond_1
+    iget-object v4, p0, Lcom/android/systemui/qs/tiles/LockscreenToggleTile;->mKeyguard:Lcom/android/systemui/statusbar/policy/KeyguardMonitor;
 
+    invoke-virtual {v4}, Lcom/android/systemui/statusbar/policy/KeyguardMonitor;->isShowing()Z
+
+    move-result v4
+
+    if-eqz v4, :cond_1
+
+    iget-object v4, p0, Lcom/android/systemui/qs/tiles/LockscreenToggleTile;->mKeyguard:Lcom/android/systemui/statusbar/policy/KeyguardMonitor;
+
+    invoke-virtual {v4}, Lcom/android/systemui/statusbar/policy/KeyguardMonitor;->isSecure()Z
+
+    move-result v4
+
+    if-nez v4, :cond_3
+
+    :cond_1
     :goto_1
-    iput-boolean v1, p1, Lcom/android/systemui/qs/QSTile$BooleanState;->visible:Z
+    iput-boolean v3, p1, Lcom/android/systemui/qs/QSTile$BooleanState;->visible:Z
 
-    iget-object v1, p0, Lcom/android/systemui/qs/tiles/LockscreenToggleTile;->mContext:Landroid/content/Context;
+    iget-object v3, p0, Lcom/android/systemui/qs/tiles/LockscreenToggleTile;->mContext:Landroid/content/Context;
 
-    const v2, 0x7f0b0201
+    if-eqz v1, :cond_4
 
-    invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v1
-
-    iput-object v1, p1, Lcom/android/systemui/qs/QSTile$BooleanState;->label:Ljava/lang/String;
-
-    iget-boolean v1, p0, Lcom/android/systemui/qs/tiles/LockscreenToggleTile;->mKeyguardBound:Z
-
-    if-eqz v1, :cond_2
-
-    iget-boolean v1, p0, Lcom/android/systemui/qs/tiles/LockscreenToggleTile;->mLockscreenDisabled:Z
-
-    if-eqz v1, :cond_2
-
-    const v1, 0x7f02015a
+    const v2, 0x7f0b022c
 
     :goto_2
-    iput v1, p1, Lcom/android/systemui/qs/QSTile$BooleanState;->iconId:I
+    invoke-virtual {v3, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    iput-object v2, p1, Lcom/android/systemui/qs/QSTile$BooleanState;->label:Ljava/lang/String;
+
+    if-eqz v0, :cond_5
+
+    const v2, 0x7f02015b
+
+    :goto_3
+    iput v2, p1, Lcom/android/systemui/qs/QSTile$BooleanState;->iconId:I
 
     return-void
 
-    :cond_0
+    :cond_2
     move v0, v2
 
     goto :goto_0
 
-    :cond_1
-    move v1, v2
+    :cond_3
+    move v3, v2
 
     goto :goto_1
 
-    :cond_2
-    const v1, 0x7f02015b
+    :cond_4
+    const v2, 0x7f0b0201
 
     goto :goto_2
+
+    :cond_5
+    const v2, 0x7f02015a
+
+    goto :goto_3
 .end method
 
 .method protected bridge synthetic handleUpdateState(Lcom/android/systemui/qs/QSTile$State;Ljava/lang/Object;)V

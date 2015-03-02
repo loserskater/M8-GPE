@@ -237,7 +237,7 @@
 
     iget v2, v14, Lcom/android/systemui/recents/model/Task;->taskAffiliationColor:I
 
-    const/high16 v14, 0x3f800000
+    const/high16 v14, 0x3f800000    # 1.0f
 
     sub-float/2addr v14, v8
 
@@ -245,7 +245,7 @@
 
     div-float v4, v14, v15
 
-    const/high16 v3, 0x3f800000
+    const/high16 v3, 0x3f800000    # 1.0f
 
     const/4 v7, 0x0
 

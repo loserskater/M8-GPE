@@ -339,7 +339,7 @@
 
     if-eqz v2, :cond_5
 
-    const/high16 v2, 0x42c80000
+    const/high16 v2, 0x42c80000    # 100.0f
 
     const-string v5, "level"
 

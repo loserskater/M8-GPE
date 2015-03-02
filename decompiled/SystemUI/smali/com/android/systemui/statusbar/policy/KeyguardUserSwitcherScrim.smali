@@ -70,7 +70,7 @@
 
     int-to-float v0, v0
 
-    const/high16 v1, 0x40200000
+    const/high16 v1, 0x40200000    # 2.5f
 
     mul-float v3, v0, v1
 
@@ -108,7 +108,7 @@
 
     int-to-float v5, v5
 
-    const/high16 v10, 0x437f0000
+    const/high16 v10, 0x437f0000    # 255.0f
 
     div-float/2addr v5, v10
 
@@ -128,7 +128,7 @@
 
     int-to-float v10, v10
 
-    const/high16 v11, 0x3f400000
+    const/high16 v11, 0x3f400000    # 0.75f
 
     mul-float/2addr v10, v11
 
@@ -140,7 +140,7 @@
 
     aput v10, v5, v8
 
-    const/high16 v8, 0x3f800000
+    const/high16 v8, 0x3f800000    # 1.0f
 
     aput v8, v5, v6
 
@@ -168,7 +168,7 @@
 .method public draw(Landroid/graphics/Canvas;)V
     .locals 9
 
-    const/high16 v3, 0x40200000
+    const/high16 v3, 0x40200000    # 2.5f
 
     const/4 v2, 0x0
 
@@ -213,7 +213,7 @@
 
     invoke-virtual {p1, v2, v0}, Landroid/graphics/Canvas;->translate(FF)V
 
-    const/high16 v0, 0x3f800000
+    const/high16 v0, 0x3f800000    # 1.0f
 
     div-float v1, v7, v4
 

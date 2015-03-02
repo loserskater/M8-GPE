@@ -841,7 +841,7 @@
 
     move-result v2
 
-    const/high16 v3, 0x3f000000
+    const/high16 v3, 0x3f000000    # 0.5f
 
     cmpl-float v2, v2, v3
 
@@ -1063,7 +1063,7 @@
 
     if-eqz v1, :cond_0
 
-    const/high16 v0, 0x3fc00000
+    const/high16 v0, 0x3fc00000    # 1.5f
 
     :goto_0
     iget v1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mQsFalsingThreshold:I
@@ -1077,7 +1077,7 @@
     return v1
 
     :cond_0
-    const/high16 v0, 0x3f800000
+    const/high16 v0, 0x3f800000    # 1.0f
 
     goto :goto_0
 .end method
@@ -1097,7 +1097,7 @@
     return v0
 
     :cond_0
-    const/high16 v0, 0x3f800000
+    const/high16 v0, 0x3f800000    # 1.0f
 
     goto :goto_0
 .end method
@@ -1105,7 +1105,7 @@
 .method private getHeaderTranslation()F
     .locals 4
 
-    const v3, 0x40033333
+    const v3, 0x40033333    # 2.05f
 
     const/4 v0, 0x0
 
@@ -1249,7 +1249,7 @@
 .method private getQsExpansionFraction()F
     .locals 4
 
-    const/high16 v0, 0x3f800000
+    const/high16 v0, 0x3f800000    # 1.0f
 
     iget v1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mQsExpansionHeight:F
 
@@ -1338,7 +1338,7 @@
 
     move-result v1
 
-    const/high16 v2, -0x40800000
+    const/high16 v2, -0x40800000    # -1.0f
 
     invoke-direct {p0, v0, v1, v2}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->shouldQuickSettingsIntercept(FFF)Z
 
@@ -1402,7 +1402,7 @@
 .method private static interpolate(FFF)F
     .locals 2
 
-    const/high16 v0, 0x3f800000
+    const/high16 v0, 0x3f800000    # 1.0f
 
     sub-float/2addr v0, p0
 
@@ -1742,7 +1742,7 @@
     if-ltz v9, :cond_6
 
     :cond_4
-    const/high16 v9, 0x3f800000
+    const/high16 v9, 0x3f800000    # 1.0f
 
     cmpl-float v9, v0, v9
 
@@ -2095,7 +2095,7 @@
 .method private setKeyguardBottomAreaVisibility(IZ)V
     .locals 6
 
-    const/high16 v2, 0x3f800000
+    const/high16 v2, 0x3f800000    # 1.0f
 
     if-eqz p2, :cond_0
 
@@ -2219,7 +2219,7 @@
 
     const/4 v5, 0x0
 
-    const/high16 v4, 0x3f800000
+    const/high16 v4, 0x3f800000    # 1.0f
 
     const/4 v3, 0x0
 
@@ -2980,7 +2980,7 @@
 .method private startHighlightIconAnimation(Lcom/android/systemui/statusbar/KeyguardAffordanceView;)V
     .locals 8
 
-    const/high16 v2, 0x3f800000
+    const/high16 v2, 0x3f800000    # 1.0f
 
     const/4 v3, 0x1
 
@@ -3113,7 +3113,7 @@
 .method private updateHeaderKeyguard()V
     .locals 7
 
-    const/high16 v6, 0x3f800000
+    const/high16 v6, 0x3f800000    # 1.0f
 
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mStatusBar:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
@@ -3152,7 +3152,7 @@
 
     float-to-double v2, v0
 
-    const-wide/high16 v4, 0x3fe8000000000000L
+    const-wide/high16 v4, 0x3fe8000000000000L    # 0.75
 
     invoke-static {v2, v3, v4, v5}, Ljava/lang/Math;->pow(DD)D
 
@@ -3164,7 +3164,7 @@
 
     move-result v2
 
-    const/high16 v3, 0x40000000
+    const/high16 v3, 0x40000000    # 2.0f
 
     mul-float/2addr v2, v3
 
@@ -3292,7 +3292,7 @@
 
     const/4 v2, 0x0
 
-    const/high16 v3, 0x3f800000
+    const/high16 v3, 0x3f800000    # 1.0f
 
     invoke-static {v0, v3}, Ljava/lang/Math;->min(FF)F
 
@@ -3312,7 +3312,7 @@
 
     const/4 v7, 0x2
 
-    const/high16 v6, 0x3f800000
+    const/high16 v6, 0x3f800000    # 1.0f
 
     invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->getNotificationsTopY()F
 
@@ -3362,7 +3362,7 @@
 
     float-to-double v2, v0
 
-    const-wide/high16 v4, 0x3fe8000000000000L
+    const-wide/high16 v4, 0x3fe8000000000000L    # 0.75
 
     invoke-static {v2, v3, v4, v5}, Ljava/lang/Math;->pow(DD)D
 
@@ -3662,7 +3662,7 @@
 
     if-eqz v2, :cond_4
 
-    const/high16 v2, 0x3f800000
+    const/high16 v2, 0x3f800000    # 1.0f
 
     const/4 v3, 0x1
 
@@ -3674,7 +3674,7 @@
 
     invoke-virtual/range {v1 .. v7}, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->setImageAlpha(FZJLandroid/view/animation/Interpolator;Ljava/lang/Runnable;)V
 
-    const v2, 0x3f99999a
+    const v2, 0x3f99999a    # 1.2f
 
     const/4 v3, 0x1
 
@@ -3707,7 +3707,7 @@
 
     if-eqz v2, :cond_1
 
-    const/high16 v2, 0x3f000000
+    const/high16 v2, 0x3f000000    # 0.5f
 
     const/4 v3, 0x1
 
@@ -3719,7 +3719,7 @@
 
     invoke-virtual/range {v1 .. v7}, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->setImageAlpha(FZJLandroid/view/animation/Interpolator;Ljava/lang/Runnable;)V
 
-    const/high16 v2, 0x3f800000
+    const/high16 v2, 0x3f800000    # 1.0f
 
     const/4 v3, 0x1
 
@@ -4023,13 +4023,13 @@
 
     if-eqz v0, :cond_0
 
-    const/high16 v0, 0x3fc00000
+    const/high16 v0, 0x3fc00000    # 1.5f
 
     :goto_0
     return v0
 
     :cond_0
-    const/high16 v0, 0x3f800000
+    const/high16 v0, 0x3f800000    # 1.0f
 
     goto :goto_0
 .end method
@@ -4041,13 +4041,13 @@
 
     if-eqz v0, :cond_0
 
-    const v0, 0x3f333333
+    const v0, 0x3f333333    # 0.7f
 
     :goto_0
     return v0
 
     :cond_0
-    const v0, 0x3f19999a
+    const v0, 0x3f19999a    # 0.6f
 
     goto :goto_0
 .end method
@@ -4169,7 +4169,7 @@
 
     add-float/2addr v3, v4
 
-    const v4, 0x40033333
+    const v4, 0x40033333    # 2.05f
 
     mul-float/2addr v3, v4
 
@@ -4291,7 +4291,7 @@
 
     int-to-float v0, v0
 
-    const v1, 0x40033333
+    const v1, 0x40033333    # 2.05f
 
     mul-float/2addr v0, v1
 
@@ -4534,7 +4534,7 @@
 
     move-result-object v1
 
-    const v2, 0x3ecccccd
+    const v2, 0x3ecccccd    # 0.4f
 
     invoke-direct {v0, v1, v2}, Lcom/android/systemui/statusbar/FlingAnimationUtils;-><init>(Landroid/content/Context;F)V
 
@@ -5760,7 +5760,7 @@
     const/4 p1, 0x0
 
     :cond_0
-    const/high16 v1, 0x3f800000
+    const/high16 v1, 0x3f800000    # 1.0f
 
     cmpl-float v1, p1, v1
 
@@ -5824,7 +5824,7 @@
 
     if-eqz v0, :cond_0
 
-    const/high16 v0, -0x40800000
+    const/high16 v0, -0x40800000    # -1.0f
 
     invoke-direct {p0, p1, p2, v0}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->shouldQuickSettingsIntercept(FFF)Z
 
@@ -5990,7 +5990,7 @@
 
     move-result v4
 
-    const/high16 v5, 0x3f800000
+    const/high16 v5, 0x3f800000    # 1.0f
 
     cmpl-float v4, v4, v5
 
@@ -6133,7 +6133,7 @@
 
     move-result v5
 
-    const/high16 v6, -0x40800000
+    const/high16 v6, -0x40800000    # -1.0f
 
     invoke-direct {p0, v4, v5, v6, v3}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->shouldQuickSettingsIntercept(FFFZ)Z
 
@@ -6310,7 +6310,7 @@
 
     invoke-virtual/range {v1 .. v7}, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->setImageAlpha(FZJLandroid/view/animation/Interpolator;Ljava/lang/Runnable;)V
 
-    const/high16 v2, 0x40000000
+    const/high16 v2, 0x40000000    # 2.0f
 
     iget-object v6, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mFastOutLinearInterpolator:Landroid/view/animation/Interpolator;
 
@@ -6453,7 +6453,7 @@
     :cond_4
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mKeyguardStatusBar:Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;
 
-    const/high16 v3, 0x3f800000
+    const/high16 v3, 0x3f800000    # 1.0f
 
     invoke-virtual {v2, v3}, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->setAlpha(F)V
 
@@ -6513,7 +6513,7 @@
 .method public setEmptyDragAmount(F)V
     .locals 2
 
-    const v0, 0x3f4ccccd
+    const v0, 0x3f4ccccd    # 0.8f
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mNotificationStackScroller:Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;
 
@@ -6523,7 +6523,7 @@
 
     if-lez v1, :cond_1
 
-    const v0, 0x3ecccccd
+    const v0, 0x3ecccccd    # 0.4f
 
     :cond_0
     :goto_0
@@ -6544,7 +6544,7 @@
 
     if-nez v1, :cond_0
 
-    const v0, 0x3ecccccd
+    const v0, 0x3ecccccd    # 0.4f
 
     goto :goto_0
 .end method

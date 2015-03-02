@@ -717,7 +717,7 @@
 
     invoke-virtual {v5, v0}, Landroid/graphics/Paint;->setColor(I)V
 
-    const/high16 v0, 0x41400000
+    const/high16 v0, 0x41400000    # 12.0f
 
     invoke-virtual {v5, v0}, Landroid/graphics/Paint;->setStrokeWidth(F)V
 

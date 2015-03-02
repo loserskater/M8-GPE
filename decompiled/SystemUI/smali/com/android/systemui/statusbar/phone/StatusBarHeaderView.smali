@@ -402,7 +402,7 @@
 .method private applyLayoutValues(Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$LayoutValues;)V
     .locals 5
 
-    const/high16 v4, 0x3f800000
+    const/high16 v4, 0x3f800000    # 1.0f
 
     const/4 v3, 0x0
 
@@ -775,7 +775,7 @@
 .method private captureLayoutValues(Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$LayoutValues;)V
     .locals 4
 
-    const/high16 v1, 0x3f800000
+    const/high16 v1, 0x3f800000    # 1.0f
 
     const/4 v2, 0x0
 
@@ -983,7 +983,7 @@
 
     if-nez v0, :cond_1
 
-    const/high16 v2, 0x42b40000
+    const/high16 v2, 0x42b40000    # 90.0f
 
     :cond_1
     iput v2, p1, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$LayoutValues;->settingsRotation:F
@@ -1048,7 +1048,7 @@
     if-nez v0, :cond_1
 
     :cond_0
-    const/high16 v0, 0x3f800000
+    const/high16 v0, 0x3f800000    # 1.0f
 
     :goto_0
     return v0
@@ -1372,7 +1372,7 @@
 
     int-to-float v1, v1
 
-    const/high16 v3, 0x3f800000
+    const/high16 v3, 0x3f800000    # 1.0f
 
     iget-object v4, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->mTime:Landroid/widget/TextView;
 
@@ -1402,7 +1402,7 @@
 .method private updateAvatarScale()V
     .locals 2
 
-    const/high16 v1, 0x3f800000
+    const/high16 v1, 0x3f800000    # 1.0f
 
     iget-boolean v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->mExpanded:Z
 
@@ -1492,7 +1492,7 @@
 .method private updateClockCollapsedMargin()V
     .locals 7
 
-    const/high16 v6, 0x3f800000
+    const/high16 v6, 0x3f800000    # 1.0f
 
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->getResources()Landroid/content/res/Resources;
 
@@ -1520,7 +1520,7 @@
 
     iget v4, v4, Landroid/content/res/Configuration;->fontScale:F
 
-    const v5, 0x3fa66666
+    const v5, 0x3fa66666    # 1.3f
 
     invoke-static {v4, v6, v5}, Landroid/util/MathUtils;->constrain(FFF)F
 
@@ -1528,7 +1528,7 @@
 
     sub-float/2addr v4, v6
 
-    const v5, 0x3e999998
+    const v5, 0x3e999998    # 0.29999995f
 
     div-float v0, v4, v5
 
@@ -1595,7 +1595,7 @@
 .method private updateClockScale()V
     .locals 4
 
-    const/high16 v3, 0x3f800000
+    const/high16 v3, 0x3f800000    # 1.0f
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->mTime:Landroid/widget/TextView;
 

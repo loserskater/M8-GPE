@@ -103,7 +103,7 @@
 
     new-instance v0, Landroid/view/animation/AccelerateInterpolator;
 
-    const/high16 v1, 0x3f800000
+    const/high16 v1, 0x3f800000    # 1.0f
 
     invoke-direct {v0, v1}, Landroid/view/animation/AccelerateInterpolator;-><init>(F)V
 
@@ -143,7 +143,7 @@
 
     int-to-float v0, v0
 
-    const/high16 v1, 0x437f0000
+    const/high16 v1, 0x437f0000    # 255.0f
 
     div-float/2addr v0, v1
 
@@ -344,7 +344,7 @@
 
     iget-object v2, p0, Lcom/android/systemui/recents/views/TaskView;->mDimInterpolator:Landroid/view/animation/AccelerateInterpolator;
 
-    const/high16 v3, 0x3f800000
+    const/high16 v3, 0x3f800000    # 1.0f
 
     iget v4, p0, Lcom/android/systemui/recents/views/TaskView;->mTaskProgress:F
 
@@ -356,7 +356,7 @@
 
     mul-float v0, v1, v2
 
-    const/high16 v1, 0x437f0000
+    const/high16 v1, 0x437f0000    # 255.0f
 
     mul-float/2addr v1, v0
 
@@ -655,7 +655,7 @@
 
     const/high16 v8, -0x80000000
 
-    const/high16 v7, 0x40000000
+    const/high16 v7, 0x40000000    # 2.0f
 
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
@@ -1015,7 +1015,7 @@
 
     const/4 v4, 0x0
 
-    const/high16 v3, 0x3f800000
+    const/high16 v3, 0x3f800000    # 1.0f
 
     const/4 v2, 0x0
 
@@ -1218,7 +1218,7 @@
 
     int-to-float v2, v2
 
-    const/high16 v3, 0x437f0000
+    const/high16 v3, 0x437f0000    # 255.0f
 
     div-float v0, v2, v3
 
@@ -1539,7 +1539,7 @@
 
     mul-float v13, v16, v17
 
-    const/high16 v16, 0x3f800000
+    const/high16 v16, 0x3f800000    # 1.0f
 
     sub-float v16, v16, v13
 
@@ -1555,7 +1555,7 @@
 
     mul-float v16, v16, v17
 
-    const/high16 v17, 0x40000000
+    const/high16 v17, 0x40000000    # 2.0f
 
     div-float v9, v16, v17
 
@@ -1909,7 +1909,7 @@
 
     move-result-object v16
 
-    const/high16 v17, 0x3f800000
+    const/high16 v17, 0x3f800000    # 1.0f
 
     invoke-virtual/range {v16 .. v17}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
 
@@ -2054,7 +2054,7 @@
 
     move-result-object v16
 
-    const/high16 v17, 0x3f800000
+    const/high16 v17, 0x3f800000    # 1.0f
 
     invoke-virtual/range {v16 .. v17}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
 
@@ -2556,7 +2556,7 @@
     :cond_0
     if-nez p4, :cond_1
 
-    const v1, 0x3f666666
+    const v1, 0x3f666666    # 0.9f
 
     iget-object v2, p0, Lcom/android/systemui/recents/views/TaskView;->mActionButtonView:Landroid/view/View;
 

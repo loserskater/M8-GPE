@@ -35,13 +35,13 @@
 
     new-instance v0, Landroid/view/animation/AccelerateInterpolator;
 
-    const/high16 v1, 0x3fc00000
+    const/high16 v1, 0x3fc00000    # 1.5f
 
     invoke-direct {v0, v1}, Landroid/view/animation/AccelerateInterpolator;-><init>(F)V
 
     iput-object v0, p0, Lcom/android/keyguard/KeyguardWidgetCarousel$2;->mInternal:Landroid/view/animation/Interpolator;
 
-    const v0, 0x3fa66666
+    const v0, 0x3fa66666    # 1.3f
 
     iput v0, p0, Lcom/android/keyguard/KeyguardWidgetCarousel$2;->mFactor:F
 
@@ -53,7 +53,7 @@
 .method public getInterpolation(F)F
     .locals 2
 
-    const/high16 v1, 0x3f800000
+    const/high16 v1, 0x3f800000    # 1.0f
 
     iget v0, p0, Lcom/android/keyguard/KeyguardWidgetCarousel$2;->mFactor:F
 

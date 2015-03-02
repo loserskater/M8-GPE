@@ -48,7 +48,7 @@
 
     int-to-float v4, v3
 
-    const v5, 0x3e99999a
+    const v5, 0x3e99999a    # 0.3f
 
     mul-float/2addr v4, v5
 
@@ -56,7 +56,7 @@
 
     int-to-float v4, v0
 
-    const v5, 0x3e4ccccd
+    const v5, 0x3e4ccccd    # 0.2f
 
     mul-float/2addr v4, v5
 

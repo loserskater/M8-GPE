@@ -266,7 +266,7 @@
 
     if-nez v4, :cond_3
 
-    const/high16 v4, 0x3f800000
+    const/high16 v4, 0x3f800000    # 1.0f
 
     cmpl-float v4, v17, v4
 
@@ -718,7 +718,7 @@
     :goto_1
     iput-boolean v4, v3, Lcom/android/systemui/statusbar/stack/StackScrollState$ViewState;->gone:Z
 
-    const/high16 v4, 0x3f800000
+    const/high16 v4, 0x3f800000    # 1.0f
 
     iput v4, v3, Lcom/android/systemui/statusbar/stack/StackScrollState$ViewState;->alpha:F
 

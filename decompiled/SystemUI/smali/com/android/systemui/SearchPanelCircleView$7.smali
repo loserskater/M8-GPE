@@ -38,7 +38,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 3
 
-    const/high16 v2, 0x3f800000
+    const/high16 v2, 0x3f800000    # 1.0f
 
     iget-object v0, p0, Lcom/android/systemui/SearchPanelCircleView$7;->val$endRunnable:Ljava/lang/Runnable;
 

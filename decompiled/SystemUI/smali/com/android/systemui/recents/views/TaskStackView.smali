@@ -605,7 +605,7 @@
 
     sub-float/2addr v7, v8
 
-    const/high16 v8, 0x3f800000
+    const/high16 v8, 0x3f800000    # 1.0f
 
     sub-float/2addr v7, v8
 
@@ -879,7 +879,7 @@
 
     move-result v4
 
-    const/high16 v5, 0x3f000000
+    const/high16 v5, 0x3f000000    # 0.5f
 
     sub-float v0, v4, v5
 
@@ -1504,7 +1504,7 @@
 .method protected onMeasure(II)V
     .locals 10
 
-    const/high16 v9, 0x40000000
+    const/high16 v9, 0x40000000    # 2.0f
 
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
@@ -3095,7 +3095,7 @@
 
     iget-object v2, v0, Lcom/android/systemui/recents/views/TaskStackView;->mLayoutAlgorithm:Lcom/android/systemui/recents/views/TaskStackViewLayoutAlgorithm;
 
-    const/high16 v3, 0x3f800000
+    const/high16 v3, 0x3f800000    # 1.0f
 
     const/4 v7, 0x0
 

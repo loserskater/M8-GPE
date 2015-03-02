@@ -596,7 +596,7 @@
 
     invoke-direct {p0, v5}, Lcom/android/keyguard/KeyguardPINView;->enableClipping(Z)V
 
-    const/high16 v0, 0x3f800000
+    const/high16 v0, 0x3f800000    # 1.0f
 
     invoke-virtual {p0, v0}, Lcom/android/keyguard/KeyguardPINView;->setAlpha(F)V
 

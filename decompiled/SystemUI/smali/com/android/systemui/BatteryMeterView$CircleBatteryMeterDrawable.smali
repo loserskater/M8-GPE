@@ -263,9 +263,9 @@
 
     :cond_0
     :goto_1
-    const/high16 v4, 0x43870000
+    const/high16 v4, 0x43870000    # 270.0f
 
-    const/high16 v5, 0x43b40000
+    const/high16 v5, 0x43b40000    # 360.0f
 
     const/4 v6, 0x0
 
@@ -287,7 +287,7 @@
 
     int-to-float v4, v2
 
-    const v2, 0x40666666
+    const v2, 0x40666666    # 3.6f
 
     int-to-float v3, v13
 
@@ -382,7 +382,7 @@
 
     move-result v3
 
-    const v4, 0x404ccccd
+    const v4, 0x404ccccd    # 3.2f
 
     div-float/2addr v3, v4
 
@@ -400,7 +400,7 @@
 
     move-result v3
 
-    const/high16 v4, 0x40800000
+    const/high16 v4, 0x40800000    # 4.0f
 
     div-float/2addr v3, v4
 
@@ -418,7 +418,7 @@
 
     move-result v3
 
-    const v4, 0x40a66666
+    const v4, 0x40a66666    # 5.2f
 
     div-float/2addr v3, v4
 
@@ -436,7 +436,7 @@
 
     move-result v3
 
-    const/high16 v4, 0x41000000
+    const/high16 v4, 0x41000000    # 8.0f
 
     div-float/2addr v3, v4
 
@@ -802,7 +802,7 @@
 .method private initSizeBasedStuff()V
     .locals 10
 
-    const/high16 v9, 0x40000000
+    const/high16 v9, 0x40000000    # 2.0f
 
     iget-object v3, p0, Lcom/android/systemui/BatteryMeterView$CircleBatteryMeterDrawable;->this$0:Lcom/android/systemui/BatteryMeterView;
 
@@ -846,7 +846,7 @@
 
     int-to-float v3, v3
 
-    const/high16 v4, 0x40d00000
+    const/high16 v4, 0x40d00000    # 6.5f
 
     div-float v2, v3, v4
 

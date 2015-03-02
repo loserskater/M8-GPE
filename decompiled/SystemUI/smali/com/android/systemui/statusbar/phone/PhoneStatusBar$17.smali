@@ -60,7 +60,7 @@
 
     const-string v0, "extraRasterBucket"
 
-    const v1, 0x3f733333
+    const v1, 0x3f733333    # 0.95f
 
     invoke-static {v1}, Ljava/lang/Float;->toString(F)Ljava/lang/String;
 
