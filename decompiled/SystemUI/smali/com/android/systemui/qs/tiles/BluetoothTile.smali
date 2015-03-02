@@ -225,6 +225,8 @@
     :goto_0
     invoke-interface {v2, v1}, Lcom/android/systemui/statusbar/policy/BluetoothController;->setBluetoothEnabled(Z)V
 
+    invoke-virtual {p0}, Lcom/android/systemui/qs/tiles/BluetoothTile;->qsCollapsePanel()V
+
     return-void
 
     :cond_0

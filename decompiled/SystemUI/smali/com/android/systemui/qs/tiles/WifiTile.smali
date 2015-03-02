@@ -307,6 +307,8 @@
     :goto_0
     invoke-interface {v1, v0}, Lcom/android/systemui/statusbar/policy/NetworkController;->setWifiEnabled(Z)V
 
+    invoke-virtual {p0}, Lcom/android/systemui/qs/tiles/WifiTile;->qsCollapsePanel()V
+
     return-void
 
     :cond_0

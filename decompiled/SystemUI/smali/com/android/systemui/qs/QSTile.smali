@@ -512,6 +512,36 @@
     return-void
 .end method
 
+.method public isQsCollapsePanelEnabled()Z
+    .locals 4
+
+    const/4 v0, 0x1
+
+    const/4 v1, 0x0
+
+    iget-object v2, p0, Lcom/android/systemui/qs/QSTile;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v2}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v2
+
+    const-string v3, "quick_settings_collapse_panel"
+
+    invoke-static {v2, v3, v1}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+
+    move-result v2
+
+    if-ne v2, v0, :cond_0
+
+    :goto_0
+    return v0
+
+    :cond_0
+    move v0, v1
+
+    goto :goto_0
+.end method
+
 .method public longClick()V
     .locals 2
 
@@ -530,6 +560,26 @@
             "()TTState;"
         }
     .end annotation
+.end method
+
+.method public qsCollapsePanel()V
+    .locals 1
+
+    invoke-virtual {p0}, Lcom/android/systemui/qs/QSTile;->isQsCollapsePanelEnabled()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    :goto_0
+    return-void
+
+    :cond_0
+    iget-object v0, p0, Lcom/android/systemui/qs/QSTile;->mHost:Lcom/android/systemui/qs/QSTile$Host;
+
+    invoke-interface {v0}, Lcom/android/systemui/qs/QSTile$Host;->collapsePanels()V
+
+    goto :goto_0
 .end method
 
 .method protected final refreshState()V

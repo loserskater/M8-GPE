@@ -136,10 +136,121 @@
 
     goto :goto_1
 
+    :sswitch_5
+    const-string v5, "toggleAppCircleBar"
+
+    invoke-virtual {v2, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v5
+
+    if-eqz v5, :cond_1
+
+    const/4 v3, 0x5
+
+    goto :goto_1
+
+    :sswitch_6
+    const-string v5, "expanded_desktop"
+
+    invoke-virtual {v2, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v5
+
+    if-eqz v5, :cond_1
+
+    const/4 v3, 0x6
+
+    goto :goto_1
+
+    :sswitch_7
+    const-string v5, "toggleHeadsUp"
+
+    invoke-virtual {v2, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v5
+
+    if-eqz v5, :cond_1
+
+    const/4 v3, 0x7
+
+    goto :goto_1
+
+    :sswitch_8
+    const-string v5, "toggleNavBar"
+
+    invoke-virtual {v2, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v5
+
+    if-eqz v5, :cond_1
+
+    const/16 v3, 0x8
+
+    goto :goto_1
+
+    :sswitch_9
+    const-string v5, "notifications"
+
+    invoke-virtual {v2, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v5
+
+    if-eqz v5, :cond_1
+
+    const/16 v3, 0x9
+
+    goto :goto_1
+
+    :sswitch_a
+    const-string v5, "togglePowerMenu"
+
+    invoke-virtual {v2, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v5
+
+    if-eqz v5, :cond_1
+
+    const/16 v3, 0xa
+
+    goto :goto_1
+
+    :sswitch_b
+    const-string v5, "reboot"
+
+    invoke-virtual {v2, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v5
+
+    if-eqz v5, :cond_1
+
+    const/16 v3, 0xb
+
+    goto/16 :goto_1
+
+    :sswitch_c
+    const-string v5, "sync"
+
+    invoke-virtual {v2, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v5
+
+    if-eqz v5, :cond_1
+
+    const/16 v3, 0xc
+
+    goto/16 :goto_1
+
     :pswitch_0
+    invoke-static {p0}, Lcom/android/internal/policy/impl/QSUtils;->isV4AInstalled(Landroid/content/Context;)Z
+
+    move-result v1
+
+    goto/16 :goto_2
+
+    :pswitch_1
     const/4 v1, 0x1
 
-    goto :goto_2
+    goto/16 :goto_2
 
     :cond_2
     sput-boolean v4, Lcom/android/internal/policy/impl/QSUtils;->sAvailableTilesFiltered:Z
@@ -151,20 +262,36 @@
 
     :sswitch_data_0
     .sparse-switch
+        -0x6ef414f0 -> :sswitch_a
         -0x583cefd0 -> :sswitch_3
+        -0x49b42966 -> :sswitch_7
         -0x3bbd5416 -> :sswitch_2
+        -0x37ba085b -> :sswitch_b
         -0x130a8722 -> :sswitch_0
+        -0x8dd7e8a -> :sswitch_5
+        -0x52ce56a -> :sswitch_6
         0x1a3dd -> :sswitch_1
+        0x361a9b -> :sswitch_c
+        0x39397c64 -> :sswitch_8
+        0x4bd694e8 -> :sswitch_9
         0x6adcb957 -> :sswitch_4
     .end sparse-switch
 
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
+        :pswitch_1
+        :pswitch_1
+        :pswitch_1
+        :pswitch_1
+        :pswitch_1
+        :pswitch_1
+        :pswitch_1
+        :pswitch_1
+        :pswitch_1
+        :pswitch_1
+        :pswitch_1
+        :pswitch_1
     .end packed-switch
 .end method
 
@@ -227,4 +354,34 @@
     move-result-object v1
 
     return-object v1
+.end method
+
+.method private static isV4AInstalled(Landroid/content/Context;)Z
+    .locals 5
+    .param p0    # Landroid/content/Context;
+
+    const/4 v2, 0x1
+
+    invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
+
+    move-result-object v1
+
+    :try_start_0
+    const-string v3, "com.vipercn.viper4android_v2"
+
+    const/4 v4, 0x1
+
+    invoke-virtual {v1, v3, v4}, Landroid/content/pm/PackageManager;->getPackageInfo(Ljava/lang/String;I)Landroid/content/pm/PackageInfo;
+    :try_end_0
+    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
+
+    :goto_0
+    return v2
+
+    :catch_0
+    move-exception v0
+
+    const/4 v2, 0x0
+
+    goto :goto_0
 .end method

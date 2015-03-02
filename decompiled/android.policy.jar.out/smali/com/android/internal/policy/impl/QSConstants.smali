@@ -32,7 +32,13 @@
 
 .field public static final TILE_APN:Ljava/lang/String; = "apn"
 
+.field public static final TILE_APPCIRCLEBAR:Ljava/lang/String; = "toggleAppCircleBar"
+
+.field public static final TILE_BATTERY_SAVER:Ljava/lang/String; = "battery_saver"
+
 .field public static final TILE_BLUETOOTH:Ljava/lang/String; = "bt"
+
+.field public static final TILE_BRIGHTNESS:Ljava/lang/String; = "brightness"
 
 .field public static final TILE_CAST:Ljava/lang/String; = "cast"
 
@@ -44,7 +50,11 @@
 
 .field public static final TILE_DDS:Ljava/lang/String; = "dds"
 
+.field public static final TILE_EXPANDED_DESKTOP:Ljava/lang/String; = "expanded_desktop"
+
 .field public static final TILE_FLASHLIGHT:Ljava/lang/String; = "flashlight"
+
+.field public static final TILE_HEADS_UP:Ljava/lang/String; = "toggleHeadsUp"
 
 .field public static final TILE_HOTSPOT:Ljava/lang/String; = "hotspot"
 
@@ -56,19 +66,31 @@
 
 .field public static final TILE_LTE:Ljava/lang/String; = "lte"
 
+.field public static final TILE_NAVBAR:Ljava/lang/String; = "toggleNavBar"
+
 .field public static final TILE_NFC:Ljava/lang/String; = "nfc"
 
 .field public static final TILE_NOTIFICATIONS:Ljava/lang/String; = "notifications"
 
 .field public static final TILE_PERFORMANCE:Ljava/lang/String; = "performance"
 
+.field public static final TILE_POWERMENU:Ljava/lang/String; = "togglePowerMenu"
+
 .field public static final TILE_PROFILES:Ljava/lang/String; = "profiles"
+
+.field public static final TILE_REBOOT:Ljava/lang/String; = "reboot"
 
 .field public static final TILE_ROAMING:Ljava/lang/String; = "roaming"
 
 .field public static final TILE_ROTATION:Ljava/lang/String; = "rotation"
 
+.field public static final TILE_SCREENSHOT:Ljava/lang/String; = "screenshot"
+
+.field public static final TILE_SCREEN_OFF:Ljava/lang/String; = "screen_off"
+
 .field public static final TILE_SCREEN_TIMEOUT:Ljava/lang/String; = "screen_timeout"
+
+.field public static final TILE_SYNC:Ljava/lang/String; = "sync"
 
 .field public static final TILE_VISUALIZER:Ljava/lang/String; = "visualizer"
 
@@ -201,6 +223,12 @@
 
     sget-object v0, Lcom/android/internal/policy/impl/QSConstants;->TILES_AVAILABLE:Ljava/util/ArrayList;
 
+    const-string v1, "togglePowerMenu"
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    sget-object v0, Lcom/android/internal/policy/impl/QSConstants;->TILES_AVAILABLE:Ljava/util/ArrayList;
+
     const-string v1, "adb_network"
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
@@ -238,6 +266,66 @@
     sget-object v0, Lcom/android/internal/policy/impl/QSConstants;->TILES_AVAILABLE:Ljava/util/ArrayList;
 
     const-string v1, "screen_timeout"
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    sget-object v0, Lcom/android/internal/policy/impl/QSConstants;->TILES_AVAILABLE:Ljava/util/ArrayList;
+
+    const-string v1, "screenshot"
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    sget-object v0, Lcom/android/internal/policy/impl/QSConstants;->TILES_AVAILABLE:Ljava/util/ArrayList;
+
+    const-string v1, "sync"
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    sget-object v0, Lcom/android/internal/policy/impl/QSConstants;->TILES_AVAILABLE:Ljava/util/ArrayList;
+
+    const-string v1, "toggleHeadsUp"
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    sget-object v0, Lcom/android/internal/policy/impl/QSConstants;->TILES_AVAILABLE:Ljava/util/ArrayList;
+
+    const-string v1, "battery_saver"
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    sget-object v0, Lcom/android/internal/policy/impl/QSConstants;->TILES_AVAILABLE:Ljava/util/ArrayList;
+
+    const-string v1, "brightness"
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    sget-object v0, Lcom/android/internal/policy/impl/QSConstants;->TILES_AVAILABLE:Ljava/util/ArrayList;
+
+    const-string v1, "expanded_desktop"
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    sget-object v0, Lcom/android/internal/policy/impl/QSConstants;->TILES_AVAILABLE:Ljava/util/ArrayList;
+
+    const-string v1, "screen_off"
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    sget-object v0, Lcom/android/internal/policy/impl/QSConstants;->TILES_AVAILABLE:Ljava/util/ArrayList;
+
+    const-string v1, "toggleNavBar"
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    sget-object v0, Lcom/android/internal/policy/impl/QSConstants;->TILES_AVAILABLE:Ljava/util/ArrayList;
+
+    const-string v1, "toggleAppCircleBar"
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    sget-object v0, Lcom/android/internal/policy/impl/QSConstants;->TILES_AVAILABLE:Ljava/util/ArrayList;
+
+    const-string v1, "reboot"
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 

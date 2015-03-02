@@ -157,6 +157,8 @@
 
     invoke-static {v1, v2, v0, v3}, Landroid/provider/Settings$Secure;->putIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)Z
 
+    invoke-virtual {p0}, Lcom/android/systemui/qs/tiles/AdbOverNetworkTile;->qsCollapsePanel()V
+
     return-void
 
     :cond_0
@@ -166,6 +168,18 @@
 .end method
 
 .method protected handleLongClick()V
+    .locals 2
+
+    iget-object v0, p0, Lcom/android/systemui/qs/tiles/AdbOverNetworkTile;->mHost:Lcom/android/systemui/qs/QSTile$Host;
+
+    sget-object v1, Lcom/android/systemui/qs/tiles/AdbOverNetworkTile;->SETTINGS_DEVELOPMENT:Landroid/content/Intent;
+
+    invoke-interface {v0, v1}, Lcom/android/systemui/qs/QSTile$Host;->startSettingsActivity(Landroid/content/Intent;)V
+
+    return-void
+.end method
+
+.method protected handleSecondaryClick()V
     .locals 2
 
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/AdbOverNetworkTile;->mHost:Lcom/android/systemui/qs/QSTile$Host;

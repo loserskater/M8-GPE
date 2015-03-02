@@ -14,35 +14,27 @@
 .end annotation
 
 
-# static fields
-.field private static final DISPLAY_SETTINGS:Landroid/content/Intent;
-
-
 # instance fields
+.field intent:Landroid/content/Intent;
+
 .field private final mCallback:Lcom/android/systemui/statusbar/policy/RotationLockController$RotationLockControllerCallback;
 
 .field private final mController:Lcom/android/systemui/statusbar/policy/RotationLockController;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>(Lcom/android/systemui/qs/QSTile$Host;)V
     .locals 2
+
+    invoke-direct {p0, p1}, Lcom/android/systemui/qs/QSTile;-><init>(Lcom/android/systemui/qs/QSTile$Host;)V
 
     new-instance v0, Landroid/content/Intent;
 
-    const-string v1, "android.settings.DISPLAY_SETTINGS"
+    const-string v1, "android.intent.action.MAIN"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    sput-object v0, Lcom/android/systemui/qs/tiles/RotationLockTile;->DISPLAY_SETTINGS:Landroid/content/Intent;
-
-    return-void
-.end method
-
-.method public constructor <init>(Lcom/android/systemui/qs/QSTile$Host;)V
-    .locals 1
-
-    invoke-direct {p0, p1}, Lcom/android/systemui/qs/QSTile;-><init>(Lcom/android/systemui/qs/QSTile$Host;)V
+    iput-object v0, p0, Lcom/android/systemui/qs/tiles/RotationLockTile;->intent:Landroid/content/Intent;
 
     new-instance v0, Lcom/android/systemui/qs/tiles/RotationLockTile$2;
 
@@ -170,6 +162,8 @@
     :goto_1
     invoke-interface {v1, v0}, Lcom/android/systemui/statusbar/policy/RotationLockController;->setRotationLocked(Z)V
 
+    invoke-virtual {p0}, Lcom/android/systemui/qs/tiles/RotationLockTile;->qsCollapsePanel()V
+
     goto :goto_0
 
     :cond_1
@@ -179,11 +173,39 @@
 .end method
 
 .method protected handleLongClick()V
-    .locals 2
+    .locals 3
+
+    iget-object v0, p0, Lcom/android/systemui/qs/tiles/RotationLockTile;->intent:Landroid/content/Intent;
+
+    const-string v1, "com.android.settings"
+
+    const-string v2, "com.android.settings.Settings$DisplayRotationSettingsActivity"
+
+    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/RotationLockTile;->mHost:Lcom/android/systemui/qs/QSTile$Host;
 
-    sget-object v1, Lcom/android/systemui/qs/tiles/RotationLockTile;->DISPLAY_SETTINGS:Landroid/content/Intent;
+    iget-object v1, p0, Lcom/android/systemui/qs/tiles/RotationLockTile;->intent:Landroid/content/Intent;
+
+    invoke-interface {v0, v1}, Lcom/android/systemui/qs/QSTile$Host;->startSettingsActivity(Landroid/content/Intent;)V
+
+    return-void
+.end method
+
+.method protected handleSecondaryClick()V
+    .locals 3
+
+    iget-object v0, p0, Lcom/android/systemui/qs/tiles/RotationLockTile;->intent:Landroid/content/Intent;
+
+    const-string v1, "com.android.settings"
+
+    const-string v2, "com.android.settings.Settings$DisplayRotationSettingsActivity"
+
+    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+
+    iget-object v0, p0, Lcom/android/systemui/qs/tiles/RotationLockTile;->mHost:Lcom/android/systemui/qs/QSTile$Host;
+
+    iget-object v1, p0, Lcom/android/systemui/qs/tiles/RotationLockTile;->intent:Landroid/content/Intent;
 
     invoke-interface {v0, v1}, Lcom/android/systemui/qs/QSTile$Host;->startSettingsActivity(Landroid/content/Intent;)V
 

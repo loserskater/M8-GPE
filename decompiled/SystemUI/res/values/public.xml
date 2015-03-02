@@ -330,6 +330,9 @@
     <public type="drawable" name="nav_ring_edit_fab" id="0x7f0201a0" />
     <public type="drawable" name="navring_edit_circle" id="0x7f0201a1" />
     <public type="drawable" name="ic_notification_audible" id="0x7f0201a3" />
+    <public type="drawable" name="ic_qs_expanded_desktop" id="0x7f0201a6" />
+    <public type="drawable" name="ic_qs_expanded_desktop_off" id="0x7f0201a7" />
+    <public type="drawable" name="ic_qs_screenshot" id="0x7f0201b1" />
     <public type="drawable" name="bg_protect" id="0x7f020001" />
     <public type="drawable" name="bottom_divider_glow" id="0x7f020002" />
     <public type="drawable" name="btn_fab_recents" id="0x7f020005" />
@@ -440,6 +443,7 @@
     <public type="drawable" name="ic_sysbar_back_side" id="0x7f02018b" />
     <public type="drawable" name="ic_sysbar_recent_side" id="0x7f020190" />
     <public type="drawable" name="ic_sysbar_search_side" id="0x7f020193" />
+    <public type="drawable" name="ic_qs_powermenu" id="0x7f0201ad" />
     <public type="drawable" name="ic_ringer_audible" id="0x7f0200a5" />
     <public type="drawable" name="recents_task_shadow" id="0x7f0200ed" />
     <public type="drawable" name="ic_notify_clear_normal" id="0x7f02014e" />
@@ -457,6 +461,18 @@
     <public type="drawable" name="ic_sysbar_search" id="0x7f020191" />
     <public type="drawable" name="ic_sysbar_search_land" id="0x7f020192" />
     <public type="drawable" name="ic_expand_slider_panel" id="0x7f0201a2" />
+    <public type="drawable" name="ic_qs_battery_saver_off" id="0x7f0201a4" />
+    <public type="drawable" name="ic_qs_battery_saver_on" id="0x7f0201a5" />
+    <public type="drawable" name="ic_qs_heads_up_off" id="0x7f0201a8" />
+    <public type="drawable" name="ic_qs_heads_up_on" id="0x7f0201a9" />
+    <public type="drawable" name="ic_qs_navbar_off" id="0x7f0201aa" />
+    <public type="drawable" name="ic_qs_navbar_on" id="0x7f0201ab" />
+    <public type="drawable" name="ic_qs_power" id="0x7f0201ac" />
+    <public type="drawable" name="ic_qs_reboot" id="0x7f0201ae" />
+    <public type="drawable" name="ic_qs_reboot_recovery" id="0x7f0201af" />
+    <public type="drawable" name="ic_qs_screen_off" id="0x7f0201b0" />
+    <public type="drawable" name="ic_qs_sync_off" id="0x7f0201b2" />
+    <public type="drawable" name="ic_qs_sync_on" id="0x7f0201b3" />
     <public type="drawable" name="APKTOOL_DUMMY_002d" id="0x7f02002d" />
     <public type="mipmap" name="ic_daydreams" id="0x7f030000" />
     <public type="mipmap" name="ic_launcher_dreams" id="0x7f030001" />
@@ -1375,6 +1391,18 @@
     <public type="string" name="navring_choose_action_title" id="0x7f0b021f" />
     <public type="string" name="select_application" id="0x7f0b0220" />
     <public type="string" name="lockscreen_target_empty" id="0x7f0b0221" />
+    <public type="string" name="quick_settings_screenshot" id="0x7f0b0222" />
+    <public type="string" name="quick_settings_sync" id="0x7f0b0223" />
+    <public type="string" name="quick_settings_sync_off" id="0x7f0b0224" />
+    <public type="string" name="quick_settings_battery_saver" id="0x7f0b0225" />
+    <public type="string" name="quick_settings_battery_saver_off" id="0x7f0b0226" />
+    <public type="string" name="quick_settings_expanded_desktop" id="0x7f0b0227" />
+    <public type="string" name="quick_settings_expanded_desktop_off" id="0x7f0b0228" />
+    <public type="string" name="quick_settings_screen_off" id="0x7f0b0229" />
+    <public type="string" name="quick_settings_reboot_label" id="0x7f0b022a" />
+    <public type="string" name="quick_settings_reboot_recovery_label" id="0x7f0b022b" />
+    <public type="string" name="quick_settings_lockscreen_label_enforced" id="0x7f0b022c" />
+    <public type="string" name="quick_settings_powermenu_label" id="0x7f0b022d" />
     <public type="string" name="status_bar_date_formatter" id="0x7f0b0006" />
     <public type="string" name="toast_rotation_locked" id="0x7f0b0158" />
     <public type="string" name="APKTOOL_DUMMY_0159" id="0x7f0b0159" />

@@ -135,6 +135,8 @@
 
     invoke-virtual {p0, v1}, Lcom/android/systemui/qs/tiles/FlashlightTile;->refreshState(Ljava/lang/Object;)V
 
+    invoke-virtual {p0}, Lcom/android/systemui/qs/tiles/FlashlightTile;->qsCollapsePanel()V
+
     goto :goto_0
 
     :cond_1

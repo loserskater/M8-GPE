@@ -207,6 +207,8 @@
     invoke-virtual {p0, v0}, Lcom/android/systemui/qs/tiles/CellularTile;->showDetail(Z)V
 
     :goto_0
+    invoke-virtual {p0}, Lcom/android/systemui/qs/tiles/CellularTile;->qsCollapsePanel()V
+
     return-void
 
     :cond_0
@@ -220,11 +222,31 @@
 .end method
 
 .method protected handleLongClick()V
-    .locals 2
+    .locals 3
 
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/CellularTile;->mHost:Lcom/android/systemui/qs/QSTile$Host;
 
-    sget-object v1, Lcom/android/systemui/qs/tiles/CellularTile;->WIRELESS_SETTINGS:Landroid/content/Intent;
+    new-instance v1, Landroid/content/Intent;
+
+    const-string v2, "android.settings.DATA_ROAMING_SETTINGS"
+
+    invoke-direct {v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+
+    invoke-interface {v0, v1}, Lcom/android/systemui/qs/QSTile$Host;->startSettingsActivity(Landroid/content/Intent;)V
+
+    return-void
+.end method
+
+.method protected handleSecondaryClick()V
+    .locals 3
+
+    iget-object v0, p0, Lcom/android/systemui/qs/tiles/CellularTile;->mHost:Lcom/android/systemui/qs/QSTile$Host;
+
+    new-instance v1, Landroid/content/Intent;
+
+    const-string v2, "android.settings.DATA_ROAMING_SETTINGS"
+
+    invoke-direct {v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
     invoke-interface {v0, v1}, Lcom/android/systemui/qs/QSTile$Host;->startSettingsActivity(Landroid/content/Intent;)V
 

@@ -100,10 +100,28 @@
 
     invoke-virtual {p0}, Lcom/android/systemui/qs/tiles/NfcTile;->toggleState()V
 
+    invoke-virtual {p0}, Lcom/android/systemui/qs/tiles/NfcTile;->qsCollapsePanel()V
+
     return-void
 .end method
 
 .method protected handleLongClick()V
+    .locals 3
+
+    iget-object v0, p0, Lcom/android/systemui/qs/tiles/NfcTile;->mHost:Lcom/android/systemui/qs/QSTile$Host;
+
+    new-instance v1, Landroid/content/Intent;
+
+    const-string v2, "android.settings.NFC_SETTINGS"
+
+    invoke-direct {v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+
+    invoke-interface {v0, v1}, Lcom/android/systemui/qs/QSTile$Host;->startSettingsActivity(Landroid/content/Intent;)V
+
+    return-void
+.end method
+
+.method protected handleSecondaryClick()V
     .locals 3
 
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/NfcTile;->mHost:Lcom/android/systemui/qs/QSTile$Host;

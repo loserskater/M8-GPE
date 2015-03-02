@@ -561,7 +561,7 @@
     goto/16 :goto_1
 
     :sswitch_12
-    const-string v1, "adb_network"
+    const-string v1, "togglePowerMenu"
 
     invoke-virtual {p1, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -574,7 +574,7 @@
     goto/16 :goto_1
 
     :sswitch_13
-    const-string v1, "nfc"
+    const-string v1, "adb_network"
 
     invoke-virtual {p1, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -587,7 +587,7 @@
     goto/16 :goto_1
 
     :sswitch_14
-    const-string v1, "lockscreen"
+    const-string v1, "nfc"
 
     invoke-virtual {p1, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -600,7 +600,7 @@
     goto/16 :goto_1
 
     :sswitch_15
-    const-string v1, "lte"
+    const-string v1, "lockscreen"
 
     invoke-virtual {p1, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -613,7 +613,7 @@
     goto/16 :goto_1
 
     :sswitch_16
-    const-string v1, "visualizer"
+    const-string v1, "lte"
 
     invoke-virtual {p1, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -626,7 +626,7 @@
     goto/16 :goto_1
 
     :sswitch_17
-    const-string v1, "screen_timeout"
+    const-string v1, "visualizer"
 
     invoke-virtual {p1, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -635,6 +635,149 @@
     if-eqz v1, :cond_2
 
     const/16 v0, 0x17
+
+    goto/16 :goto_1
+
+    :sswitch_18
+    const-string v1, "screen_timeout"
+
+    invoke-virtual {p1, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_2
+
+    const/16 v0, 0x18
+
+    goto/16 :goto_1
+
+    :sswitch_19
+    const-string v1, "screenshot"
+
+    invoke-virtual {p1, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_2
+
+    const/16 v0, 0x19
+
+    goto/16 :goto_1
+
+    :sswitch_1a
+    const-string v1, "sync"
+
+    invoke-virtual {p1, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_2
+
+    const/16 v0, 0x1a
+
+    goto/16 :goto_1
+
+    :sswitch_1b
+    const-string v1, "toggleHeadsUp"
+
+    invoke-virtual {p1, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_2
+
+    const/16 v0, 0x1b
+
+    goto/16 :goto_1
+
+    :sswitch_1c
+    const-string v1, "battery_saver"
+
+    invoke-virtual {p1, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_2
+
+    const/16 v0, 0x1c
+
+    goto/16 :goto_1
+
+    :sswitch_1d
+    const-string v1, "brightness"
+
+    invoke-virtual {p1, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_2
+
+    const/16 v0, 0x1d
+
+    goto/16 :goto_1
+
+    :sswitch_1e
+    const-string v1, "expanded_desktop"
+
+    invoke-virtual {p1, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_2
+
+    const/16 v0, 0x1e
+
+    goto/16 :goto_1
+
+    :sswitch_1f
+    const-string v1, "screen_off"
+
+    invoke-virtual {p1, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_2
+
+    const/16 v0, 0x1f
+
+    goto/16 :goto_1
+
+    :sswitch_20
+    const-string v1, "toggleNavBar"
+
+    invoke-virtual {p1, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_2
+
+    const/16 v0, 0x20
+
+    goto/16 :goto_1
+
+    :sswitch_21
+    const-string v1, "toggleAppCircleBar"
+
+    invoke-virtual {p1, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_2
+
+    const/16 v0, 0x21
+
+    goto/16 :goto_1
+
+    :sswitch_22
+    const-string v1, "reboot"
+
+    invoke-virtual {p1, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_2
+
+    const/16 v0, 0x22
 
     goto/16 :goto_1
 
@@ -765,72 +908,162 @@
     goto/16 :goto_0
 
     :pswitch_12
+    new-instance v0, Lcom/android/systemui/qs/tiles/PowerMenuTile;
+
+    invoke-direct {v0, p0}, Lcom/android/systemui/qs/tiles/PowerMenuTile;-><init>(Lcom/android/systemui/qs/QSTile$Host;)V
+
+    goto/16 :goto_0
+
+    :pswitch_13
     new-instance v0, Lcom/android/systemui/qs/tiles/AdbOverNetworkTile;
 
     invoke-direct {v0, p0}, Lcom/android/systemui/qs/tiles/AdbOverNetworkTile;-><init>(Lcom/android/systemui/qs/QSTile$Host;)V
 
     goto/16 :goto_0
 
-    :pswitch_13
+    :pswitch_14
     new-instance v0, Lcom/android/systemui/qs/tiles/NfcTile;
 
     invoke-direct {v0, p0}, Lcom/android/systemui/qs/tiles/NfcTile;-><init>(Lcom/android/systemui/qs/QSTile$Host;)V
 
     goto/16 :goto_0
 
-    :pswitch_14
+    :pswitch_15
     new-instance v0, Lcom/android/systemui/qs/tiles/LockscreenToggleTile;
 
     invoke-direct {v0, p0}, Lcom/android/systemui/qs/tiles/LockscreenToggleTile;-><init>(Lcom/android/systemui/qs/QSTile$Host;)V
 
     goto/16 :goto_0
 
-    :pswitch_15
+    :pswitch_16
     new-instance v0, Lcom/android/systemui/qs/tiles/LteTile;
 
     invoke-direct {v0, p0}, Lcom/android/systemui/qs/tiles/LteTile;-><init>(Lcom/android/systemui/qs/QSTile$Host;)V
 
     goto/16 :goto_0
 
-    :pswitch_16
+    :pswitch_17
     new-instance v0, Lcom/android/systemui/qs/tiles/VisualizerTile;
 
     invoke-direct {v0, p0}, Lcom/android/systemui/qs/tiles/VisualizerTile;-><init>(Lcom/android/systemui/qs/QSTile$Host;)V
 
     goto/16 :goto_0
 
-    :pswitch_17
+    :pswitch_18
     new-instance v0, Lcom/android/systemui/qs/tiles/ScreenTimeoutTile;
 
     invoke-direct {v0, p0}, Lcom/android/systemui/qs/tiles/ScreenTimeoutTile;-><init>(Lcom/android/systemui/qs/QSTile$Host;)V
 
     goto/16 :goto_0
 
+    :pswitch_19
+    new-instance v0, Lcom/android/systemui/qs/tiles/ScreenshotTile;
+
+    invoke-direct {v0, p0}, Lcom/android/systemui/qs/tiles/ScreenshotTile;-><init>(Lcom/android/systemui/qs/QSTile$Host;)V
+
+    goto/16 :goto_0
+
+    :pswitch_1a
+    new-instance v0, Lcom/android/systemui/qs/tiles/SyncTile;
+
+    invoke-direct {v0, p0}, Lcom/android/systemui/qs/tiles/SyncTile;-><init>(Lcom/android/systemui/qs/QSTile$Host;)V
+
+    goto/16 :goto_0
+
+    :pswitch_1b
+    new-instance v0, Lcom/android/systemui/qs/tiles/HeadsupTile;
+
+    invoke-direct {v0, p0}, Lcom/android/systemui/qs/tiles/HeadsupTile;-><init>(Lcom/android/systemui/qs/QSTile$Host;)V
+
+    goto/16 :goto_0
+
+    :pswitch_1c
+    new-instance v0, Lcom/android/systemui/qs/tiles/BatterySaverTile;
+
+    invoke-direct {v0, p0}, Lcom/android/systemui/qs/tiles/BatterySaverTile;-><init>(Lcom/android/systemui/qs/QSTile$Host;)V
+
+    goto/16 :goto_0
+
+    :pswitch_1d
+    new-instance v0, Lcom/android/systemui/qs/tiles/BrightnessTile;
+
+    invoke-direct {v0, p0}, Lcom/android/systemui/qs/tiles/BrightnessTile;-><init>(Lcom/android/systemui/qs/QSTile$Host;)V
+
+    goto/16 :goto_0
+
+    :pswitch_1e
+    new-instance v0, Lcom/android/systemui/qs/tiles/ExpandedDesktopTile;
+
+    invoke-direct {v0, p0}, Lcom/android/systemui/qs/tiles/ExpandedDesktopTile;-><init>(Lcom/android/systemui/qs/QSTile$Host;)V
+
+    goto/16 :goto_0
+
+    :pswitch_1f
+    new-instance v0, Lcom/android/systemui/qs/tiles/ScreenOffTile;
+
+    invoke-direct {v0, p0}, Lcom/android/systemui/qs/tiles/ScreenOffTile;-><init>(Lcom/android/systemui/qs/QSTile$Host;)V
+
+    goto/16 :goto_0
+
+    :pswitch_20
+    new-instance v0, Lcom/android/systemui/qs/tiles/NavBarTile;
+
+    invoke-direct {v0, p0}, Lcom/android/systemui/qs/tiles/NavBarTile;-><init>(Lcom/android/systemui/qs/QSTile$Host;)V
+
+    goto/16 :goto_0
+
+    :pswitch_21
+    new-instance v0, Lcom/android/systemui/qs/tiles/AppCircleBarTile;
+
+    invoke-direct {v0, p0}, Lcom/android/systemui/qs/tiles/AppCircleBarTile;-><init>(Lcom/android/systemui/qs/QSTile$Host;)V
+
+    goto/16 :goto_0
+
+    :pswitch_22
+    new-instance v0, Lcom/android/systemui/qs/tiles/RebootTile;
+
+    invoke-direct {v0, p0}, Lcom/android/systemui/qs/tiles/RebootTile;-><init>(Lcom/android/systemui/qs/QSTile$Host;)V
+
+    goto/16 :goto_0
+
+    nop
+
     :sswitch_data_0
     .sparse-switch
         -0x783813ed -> :sswitch_2
-        -0x6c049572 -> :sswitch_12
+        -0x6ef414f0 -> :sswitch_12
+        -0x6c049572 -> :sswitch_13
         -0x583cefd0 -> :sswitch_11
+        -0x49b42966 -> :sswitch_1b
         -0x468444da -> :sswitch_6
         -0x3bbd5416 -> :sswitch_10
+        -0x37ba085b -> :sswitch_22
+        -0x33e8fe1d -> :sswitch_1c
         -0x285a60ae -> :sswitch_4
-        -0x130a8722 -> :sswitch_16
+        -0x18db78e4 -> :sswitch_1f
+        -0x18d27a9a -> :sswitch_19
+        -0x130a8722 -> :sswitch_17
+        -0x8dd7e8a -> :sswitch_21
+        -0x52ce56a -> :sswitch_1e
         -0x266f082 -> :sswitch_5
         0xc52 -> :sswitch_1
         0x17a1f -> :sswitch_f
         0x183f3 -> :sswitch_d
-        0x1a3dd -> :sswitch_15
-        0x1a9ab -> :sswitch_13
+        0x1a3dd -> :sswitch_16
+        0x1a9ab -> :sswitch_14
         0x2e7b3f -> :sswitch_8
         0x2e8962 -> :sswitch_3
         0x2eefaa -> :sswitch_b
+        0x361a9b -> :sswitch_1a
         0x37af15 -> :sswitch_0
-        0x3343888e -> :sswitch_17
+        0x26a22c51 -> :sswitch_1d
+        0x3343888e -> :sswitch_18
         0x38a73d12 -> :sswitch_e
+        0x39397c64 -> :sswitch_20
         0x418a9ecf -> :sswitch_9
         0x4bd694e8 -> :sswitch_a
         0x517a5c19 -> :sswitch_c
-        0x6adcb957 -> :sswitch_14
+        0x6adcb957 -> :sswitch_15
         0x714f9fb5 -> :sswitch_7
     .end sparse-switch
 
@@ -860,6 +1093,17 @@
         :pswitch_15
         :pswitch_16
         :pswitch_17
+        :pswitch_18
+        :pswitch_19
+        :pswitch_1a
+        :pswitch_1b
+        :pswitch_1c
+        :pswitch_1d
+        :pswitch_1e
+        :pswitch_1f
+        :pswitch_20
+        :pswitch_21
+        :pswitch_22
     .end packed-switch
 .end method
 

@@ -21,6 +21,9 @@
 
 
 # virtual methods
+.method public abstract collapsePanels()V
+.end method
+
 .method public abstract getBluetoothController()Lcom/android/systemui/statusbar/policy/BluetoothController;
 .end method
 
