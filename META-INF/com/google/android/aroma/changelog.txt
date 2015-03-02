@@ -1,3 +1,27 @@
+<b>3-2-2015</b>
+<b>*New Additions</b>
+Double tap lock screen to sleep
+Hide search bar in recents
+Hide & and move clear all button in recents
+Ambient display options
+Heads up display swipe option
+-left = dismiss, right = background
+Add left option to one finger QS pulldown
+Add new QS tiles
+Auto hide QS panel on tile toggle
+<b>*Updates</b>
+Potential T-Mobile data fix
+Fix center clock not animating when using ticker
+Viper4Android audio
+Fix volume link toggle not updating
+Fix flashlight tile disappearing
+Update CM apps
+Update APN list
+Fixed AppOps (now uses built in files instead of app)
+Update busybox to 1.23.1
+Update aroma binary to 3.00b1
+
+
 <b>2-22-2015</b>
 <b>*Updates</b>
 Fixed network traffic
