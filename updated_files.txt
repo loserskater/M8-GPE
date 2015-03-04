@@ -1,7 +1,6 @@
 system\build.prop
 system\app\LockClock\LockClock.apk
 system\etc\apns-conf.xml
-system\etc\usf_post_boot.sh
 system\framework\android.policy.jar
 system\framework\framework-res.apk
 system\framework\framework.jar
