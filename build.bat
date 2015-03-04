@@ -17,3 +17,5 @@ tools\sed.exe -i s/%value%/%otaversion%/g ..\aroma\carrier\sprint\system\build.p
 
 ::Build
 tools\7za.exe a -mx9 -xr@tools/exclusion.txt M8-GPE-%VERSION%.zip aroma META-INF supersu system boot.img
+
+tools\7za.exe a -mx9 -xr@tools/exclusion.txt M8-GPE-%VERSION%-UPDATE.zip @updated_files.txt
