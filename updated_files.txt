@@ -16,4 +16,7 @@ system\xbin\busybox
 aroma\theme\
 aroma\carrier\
 aroma\navbar\
+aroma\scripts\
+aroma\cm_apps\
+aroma\email\
 .\ota\*

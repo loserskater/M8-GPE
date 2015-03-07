@@ -4,39 +4,100 @@ ui_print("Extracting system...");
 package_extract_dir("system", "/system");
 set_progress(0.55);
 #
+#Email
+#
+if file_getprop("/sdcard/aroma/Email.prop","selected.1") == "2" then
+  ui_print("Updating AOSP email");
+  package_extract_dir("aroma/email/aosp", "/system");
+endif;
+#
+#CyanogenMod apps
+#
+ui_print("@CyanogenMod apps");
+if file_getprop("/sdcard/aroma/CM.prop","item.0.1") == "1" then
+  ui_print("Updating AudioFX");
+  package_extract_dir("aroma/cm_apps/audiofx", "/system");
+endif;
+if file_getprop("/sdcard/aroma/CM.prop","item.0.2") == "1" then
+  ui_print("Updating Browser");
+  package_extract_dir("aroma/cm_apps/browser", "/system");
+endif;
+if file_getprop("/sdcard/aroma/CM.prop","item.0.3") == "1" then
+  ui_print("Updating AOSP Calendar");
+  package_extract_dir("aroma/cm_apps/calendar", "/system");
+  delete_recursive("/system/app/CalendarGoogle");
+endif;
+if file_getprop("/sdcard/aroma/CM.prop","item.0.4") == "1" then
+  ui_print("Updating CM File Manager");
+  package_extract_dir("aroma/cm_apps/cmfilemanager", "/system");
+endif;
+if file_getprop("/sdcard/aroma/CM.prop","item.0.5") == "1" then
+  ui_print("Updating Eleven Music");
+  package_extract_dir("aroma/cm_apps/eleven", "/system");
+  delete_recursive("/system/app/Music2");
+endif;
+if file_getprop("/sdcard/aroma/CM.prop","item.0.6") == "1" then
+  ui_print("Updating Sound Recorder");
+  package_extract_dir("aroma/cm_apps/soundrecorder", "/system");
+endif;
+if file_getprop("/sdcard/aroma/CM.prop","item.0.7") == "1" then
+  ui_print("Updating Trebuchet");
+  package_extract_dir("aroma/cm_apps/trebuchet", "/system");
+endif;
+#
+#Camera/Gallery
+#
+#if file_getprop("/sdcard/aroma/Camera.prop","item.1.3") == "1" then
+#  ui_print("Updating Sense Camera & Gallery");
+#  package_extract_dir("aroma/cameras/sense/system", "/system");
+#  package_extract_dir("aroma/cameras/sense/data", "/data");
+#endif;
+if file_getprop("/sdcard/aroma/Camera.prop","item.2.1") == "1" then
+  ui_print("Updating CM Gallery2");
+  package_extract_dir("aroma/cm_apps/gallery2", "/system");
+endif;
+#
+#Audio
+#
+#if file_getprop("/sdcard/aroma/Audio.prop","item.0.3") == "1" then
+#  ui_print("Updating Viper4Android");
+#  package_extract_dir("aroma/audio/viper", "/system");
+#endif;
+#
 #Theme extract
 #
 if file_getprop("/sdcard/aroma/Themes.prop","selected.0") == "2" then
-    ui_print("Adding dark theme...");
+    ui_print("Updating Dark Theme");
     package_extract_dir("aroma/theme/dark", "/system");
 endif;
 #
 #NavBar theme
 #
 if file_getprop("/sdcard/aroma/NavBar.prop","item.0.1") == "1" then
-    ui_print("Adding navbar theme...");
-    package_extract_dir("aroma/navbar/", "/system");
-else
-    package_extract_file("system/framework/framework-res.apk", "/system/framework/framework-res.apk");
+  ui_print("Updating NavBar Theme");
+  package_extract_dir("aroma/scripts/patch_apk", "/tmp");
+  set_perm_recursive(0, 0, 0755, 0755, "/tmp");
+  package_extract_dir("aroma/navbar/framework", "/tmp");
+  run_program("/tmp/patch_apk.sh", "/system/framework/framework-res.apk");
+  set_perm(0, 0, 0644, "/system/framework/framework-res.apk");
 endif;
 #
 #Carrier patch
 #
 if file_getprop("/sdcard/aroma/carrier.prop","selected.0") != "1" then
-    package_extract_dir("aroma/carrier/tmp_files", "/tmp");
-    package_extract_file("aroma/scripts/bash", "/tmp/bash");
-    set_perm_recursive(0, 0, 0755, 0755, "/tmp");
-    if file_getprop("/sdcard/aroma/carrier.prop","selected.0") == "3" then
-        ui_print("Modifying for Sprint device...");
-        package_extract_dir("aroma/carrier/sprint/system", "/system");
-        package_extract_dir("aroma/carrier/sprint/framework", "/tmp");
-    else
-        ui_print("Modifying for Verizon device...");
-        package_extract_dir("aroma/carrier/verizon/system", "/system");
-        package_extract_dir("aroma/carrier/verizon/framework", "/tmp");
-    endif;
-    run_program("/tmp/patch_carrier.sh", "/system/framework/framework-res.apk");
-    set_perm(0, 0, 0644, "/system/framework/framework-res.apk");
+  package_extract_dir("aroma/scripts/patch_apk", "/tmp");
+  set_perm_recursive(0, 0, 0755, 0755, "/tmp");
+  if file_getprop("/sdcard/aroma/carrier.prop","selected.0") == "3" then
+      ui_print("Modifying for Sprint device...");
+      package_extract_dir("aroma/carrier/sprint/system", "/system");
+      package_extract_dir("aroma/carrier/sprint/framework", "/tmp");
+  else
+      ui_print("Modifying for Verizon device...");
+      package_extract_dir("aroma/carrier/verizon/system", "/system");
+      package_extract_dir("aroma/carrier/verizon/framework", "/tmp");
+  endif;
+  run_program("/tmp/patch_carrier.sh", "/system/framework/framework-res.apk");
+  set_perm(0, 0, 0644, "/system/framework/framework-res.apk");
 endif;
 ui_print("Success...");
 set_progress(1.0);
