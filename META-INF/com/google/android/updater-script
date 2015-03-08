@@ -629,10 +629,14 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "2" || file_getprop("/tmp/
   #NavBar theme
   #
   if file_getprop("/tmp/aroma/navbar.prop","item.0.1") == "1" then
-    ui_print("Adding NavBar Theme");
-	package_extract_dir("aroma/scripts/patch_apk", "/tmp");
+    package_extract_dir("aroma/scripts/patch_apk", "/tmp");
 	set_perm_recursive(0, 0, 0755, 0755, "/tmp");
-    package_extract_dir("aroma/navbar/framework", "/tmp");
+    if file_getprop("/tmp/aroma/themes.prop","selected.0") == "1" then
+	  ui_print("Adding NavBar Theme");
+      package_extract_dir("aroma/navbar/stock", "/tmp");
+	else
+	  package_extract_dir("aroma/navbar/dark", "/tmp");
+	endif;
     run_program("/tmp/patch_apk.sh", "/system/framework/framework-res.apk");
     set_perm(0, 0, 0644, "/system/framework/framework-res.apk");
   endif;
