@@ -252,7 +252,7 @@ if prop("type.prop","selected")=="2"||prop("type.prop","selected")=="3" then
         "themes.prop",
 		
         "Stock Material UI",  "Stock UI, No themeing has been done.",           1,      #-- selected.0 = 1
-        "Dark Material UI",   "Dark UI",                                        0       #-- selected.0 = 2
+        "Dark Material UI",   "Darker material themed UI",                      0       #-- selected.0 = 2
 		  
     );
 	write(
