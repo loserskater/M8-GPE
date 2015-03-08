@@ -419,9 +419,253 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "2" || file_getprop("/tmp/
     package_extract_dir("aroma/keyboards/htc", "/system");
   else
     delete_recursive("/system/priv-app/HTC_IME");
-	delete_recursive("/system/priv-app/IMEXT9English");
 	delete("/system/lib/libcootek_pte_oem.so", "/system/lib/libcpt9.so", "/system/lib/libcpt9core.so", "/system/lib/libcpt9provider.so", "/system/lib/libhtcime_baseinputmethod_jni.so",
 	"/system/lib/libhtcime_baseinputmethod2_jni.so", "/system/lib/libpphwr.so", "/system/lib/libpphwrcore.so", "/system/lib/libpphwrphrase.so", "/system/lib/libt9.so");
+  endif;
+  #
+  #HTC IME Languages
+  #
+  if file_getprop("/tmp/aroma/keyboard.prop","item.2.1") == "1" then
+    ui_print("Adding Arabic");
+    package_extract_file("aroma/keyboards/languages/IMEXT9Arabic", "/system/app/IMEXT9Arabic");
+  else
+    delete_recursive("/system/priv-app/IMEXT9Arabic");
+  endif;
+  if file_getprop("/tmp/aroma/keyboard.prop","item.2.2") == "1" then
+    ui_print("Adding Armenian");
+    package_extract_file("aroma/keyboards/languages/IMEXT9Armenian", "/system/app,IMEXT9Armenian");
+  else
+    delete_recursive("/system/priv-app/IMEXT9Armenian");
+  endif;
+  if file_getprop("/tmp/aroma/keyboard.prop","item.2.3") == "1" then
+    ui_print("Adding Bulgarian");
+    package_extract_file("aroma/keyboards/languages/IMEXT9Bulgaria", "/system/app/IMEXT9Bulgaria");
+  else
+    delete_recursive("/system/priv-app/IMEXT9Bulgaria");
+  endif;
+  if file_getprop("/tmp/aroma/keyboard.prop","item.2.4") == "1" then
+    ui_print("Adding Catalan");
+    package_extract_file("aroma/keyboards/languages/IMEXT9Catalan", "/system/app/IMEXT9Catalan");
+  else
+    delete_recursive("/system/priv-app/IMEXT9Catalan");
+  endif;
+  if file_getprop("/tmp/aroma/keyboard.prop","item.2.5") == "1" then
+    ui_print("Adding Chinese");
+    package_extract_file("aroma/keyboards/languages/IMEHWRPenPower", "/system/app/IMEHWRPenPower");
+    package_extract_file("aroma/keyboards/languages/CIMEXT9", "/system/app/CIMEXT9");
+  else
+    delete_recursive("/system/priv-app/IMEHWRPenPower");
+	delete_recursive("/system/priv-app/CIMEXT9");
+  endif;
+  if file_getprop("/tmp/aroma/keyboard.prop","item.2.6") == "1" then
+    ui_print("Adding Croatian"); 
+    package_extract_file("aroma/keyboards/languages/IMEXT9Croatian", "/system/app/IMEXT9Croatian");
+  else
+    delete_recursive("/system/priv-app/IMEXT9Croatian");
+  endif;
+  if file_getprop("/tmp/aroma/keyboard.prop","item.2.7") == "1" then
+    ui_print("Adding Czech"); 
+    package_extract_file("aroma/keyboards/languages/IMEXT9Czech", "/system/app/IMEXT9Czech");
+  else
+    delete_recursive("/system/priv-app/IMEXT9Czech");
+  endif;
+  if file_getprop("/tmp/aroma/keyboard.prop","item.2.8") == "1" then
+    ui_print("Adding Danish"); 
+    package_extract_file("aroma/keyboards/languages/IMEXT9Danish", "/system/app/IMEXT9Danish");
+  else
+    delete_recursive("/system/priv-app/IMEXT9Danish");
+  endif;
+  if file_getprop("/tmp/aroma/keyboard.prop","item.2.9") == "1" then
+    ui_print("Adding Dutch"); 
+    package_extract_file("aroma/keyboards/languages/IMEXT9Dutch", "/system/app/IMEXT9Dutch");
+  else
+    delete_recursive("/system/priv-app/IMEXT9Dutch");
+  endif;
+  if file_getprop("/tmp/aroma/keyboard.prop","item.2.10") == "1" then
+    ui_print("Adding English"); 
+    package_extract_file("aroma/keyboards/languages/IMEXT9English", "/system/app/IMEXT9English");
+  else
+    delete_recursive("/system/priv-app/IMEXT9English");
+  endif;
+  if file_getprop("/tmp/aroma/keyboard.prop","item.2.11") == "1" then
+    ui_print("Adding English UK"); 
+    package_extract_file("aroma/keyboards/languages/IMEXT9EnglishUK", "/system/app/IMEXT9EnglishUK");
+  else
+    delete_recursive("/system/priv-app/IMEXT9EnglishUK");
+  endif;
+  if file_getprop("/tmp/aroma/keyboard.prop","item.2.12") == "1" then
+    ui_print("Adding Estonian"); 
+    package_extract_file("aroma/keyboards/languages/IMEXT9Estonian", "/system/app/IMEXT9Estonian");
+  else
+    delete_recursive("/system/priv-app/IMEXT9Estonian");
+  endif;
+  if file_getprop("/tmp/aroma/keyboard.prop","item.2.13") == "1" then
+    ui_print("Adding Finnish"); 
+    package_extract_file("aroma/keyboards/languages/IMEXT9Finnish", "/system/app/IMEXT9Finnish");
+  else
+    delete_recursive("/system/priv-app/IMEXT9Finnish");
+  endif;
+  if file_getprop("/tmp/aroma/keyboard.prop","item.2.14") == "1" then
+    ui_print("Adding French"); 
+    package_extract_file("aroma/keyboards/languages/IMEXT9French", "/system/app/IMEXT9French");
+  else
+    delete_recursive("/system/priv-app/IMEXT9French");
+  endif;
+  if file_getprop("/tmp/aroma/keyboard.prop","item.2.15") == "1" then
+    ui_print("Adding German"); 
+    package_extract_file("aroma/keyboards/languages/IMEXT9German", "/system/app/IMEXT9German");
+  else
+    delete_recursive("/system/priv-app/IMEXT9German");
+  endif;
+  if file_getprop("/tmp/aroma/keyboard.prop","item.2.16") == "1" then
+    ui_print("Adding Greek"); 
+    package_extract_file("aroma/keyboards/languages/IMEXT9Greek", "/system/app/IMEXT9Greek");
+  else
+    delete_recursive("/system/priv-app/IMEXT9Greek");
+  endif;
+  if file_getprop("/tmp/aroma/keyboard.prop","item.2.17") == "1" then
+    ui_print("Adding Hebrew"); 
+    package_extract_file("aroma/keyboards/languages/IMEXT9Hebrew", "/system/app/IMEXT9Hebrew");
+  else
+    delete_recursive("/system/priv-app/IMEXT9Hebrew");
+  endif;
+  if file_getprop("/tmp/aroma/keyboard.prop","item.2.18") == "1" then
+    ui_print("Adding Hungarian"); 
+    package_extract_file("aroma/keyboards/languages/IMEXT9Hungarian", "/system/app/IMEXT9Hungarian");
+  else
+    delete_recursive("/system/priv-app/IMEXT9Hungarian");
+  endif;
+  if file_getprop("/tmp/aroma/keyboard.prop","item.2.19") == "1" then
+    ui_print("Adding Indian"); 
+    package_extract_file("aroma/keyboards/languages/IMEMurasuIndic", "/system/app/IMEMurasuIndic");
+  else
+    delete_recursive("/system/priv-app/IMEMurasuIndic");
+  endif;
+  if file_getprop("/tmp/aroma/keyboard.prop","item.2.20") == "1" then
+    ui_print("Adding Indonesian"); 
+    package_extract_file("aroma/keyboards/languages/IMEXT9BahasaIndonesia", "/system/app/IMEXT9BahasaIndonesia");
+  else
+    delete_recursive("/system/priv-app/IMEXT9BahasaIndonesia");
+  endif;
+  if file_getprop("/tmp/aroma/keyboard.prop","item.2.21") == "1" then
+    ui_print("Adding Italian"); 
+    package_extract_file("aroma/keyboards/languages/IMEXT9Italian", "/system/app/IMEXT9Italian");
+  else
+    delete_recursive("/system/priv-app/IMEXT9Italian");
+  endif;
+  if file_getprop("/tmp/aroma/keyboard.prop","item.2.22") == "1" then
+    ui_print("Adding Kazakhistan"); 
+    package_extract_file("aroma/keyboards/languages/IMEXT9Kazakh", "/system/app/IMEXT9Kazakh");
+  else
+    delete_recursive("/system/priv-app/IMEXT9Kazakh");
+  endif;
+  if file_getprop("/tmp/aroma/keyboard.prop","item.2.23") == "1" then
+    ui_print("Adding Latvian"); 
+    package_extract_file("aroma/keyboards/languages/IMEXT9Latvian", "/system/app/IMEXT9Latvian");
+  else
+    delete_recursive("/system/priv-app/IMEXT9Latvian");
+  endif;
+  if file_getprop("/tmp/aroma/keyboard.prop","item.2.24") == "1" then
+    ui_print("Adding Lithuanian"); 
+    package_extract_file("aroma/keyboards/languages/IMEXT9Lithuanian", "/system/app/IMEXT9Lithuanian");
+  else
+    delete_recursive("/system/priv-app/IMEXT9Lithuanian");
+  endif;
+  if file_getprop("/tmp/aroma/keyboard.prop","item.2.25") == "1" then
+    ui_print("Adding Malay"); 
+    package_extract_file("aroma/keyboards/languages/IMEXT9BahasaMalaysia", "/system/app/IMEXT9BahasaMalaysia");
+  else
+    delete_recursive("/system/priv-app/IMEXT9BahasaMalaysia");
+  endif;
+  if file_getprop("/tmp/aroma/keyboard.prop","item.2.26") == "1" then
+    ui_print("Adding Norwegian"); 
+    package_extract_file("aroma/keyboards/languages/IMEXT9Norwegian", "/system/app/IMEXT9Norwegian");
+  else
+    delete_recursive("/system/priv-app/IMEXT9Norwegian");
+  endif;
+  if file_getprop("/tmp/aroma/keyboard.prop","item.2.27") == "1" then
+    ui_print("Adding Persian"); 
+    package_extract_file("aroma/keyboards/languages/IMEXT9Farsi", "/system/app/IMEXT9Farsi");
+  else
+    delete_recursive("/system/priv-app/IMEXT9Farsi");
+  endif;
+  if file_getprop("/tmp/aroma/keyboard.prop","item.2.28") == "1" then
+    ui_print("Adding Polish"); 
+    package_extract_file("aroma/keyboards/languages/IMEXT9Polish", "/system/app/IMEXT9Polish");
+  else
+    delete_recursive("/system/priv-app/IMEXT9Polish");
+  endif;
+  if file_getprop("/tmp/aroma/keyboard.prop","item.2.29") == "1" then
+    ui_print("Adding Portuguese"); 
+    package_extract_file("aroma/keyboards/languages/IMEXT9Portuguese", "/system/app/IMEXT9Portuguese");
+  else
+    delete_recursive("/system/priv-app/IMEXT9Portuguese");
+  endif;
+  if file_getprop("/tmp/aroma/keyboard.prop","item.2.30") == "1" then
+    ui_print("Adding Romanian"); 
+    package_extract_file("aroma/keyboards/languages/IMEXT9Romanian", "/system/app/IMEXT9Romanian");
+  else
+    delete_recursive("/system/priv-app/IMEXT9Romanian");
+  endif;
+  if file_getprop("/tmp/aroma/keyboard.prop","item.2.31") == "1" then
+    ui_print("Adding Russian"); 
+    package_extract_file("aroma/keyboards/languages/IMEXT9Russian", "/system/app/IMEXT9Russian");
+  else
+    delete_recursive("/system/priv-app/IMEXT9Russian");
+  endif;
+  if file_getprop("/tmp/aroma/keyboard.prop","item.2.32") == "1" then
+    ui_print("Adding Serbian"); 
+    package_extract_file("aroma/keyboards/languages/IMEXT9Serbian", "/system/app/IMEXT9Serbian");
+  else
+    delete_recursive("/system/priv-app/IMEXT9Serbian");
+  endif;
+  if file_getprop("/tmp/aroma/keyboard.prop","item.2.33") == "1" then
+    ui_print("Adding Slovak"); 
+    package_extract_file("aroma/keyboards/languages/IMEXT9Slovak", "/system/app/IMEXT9Slovak");
+  else
+    delete_recursive("/system/priv-app/IMEXT9Slovak");
+  endif;
+  if file_getprop("/tmp/aroma/keyboard.prop","item.2.34") == "1" then
+    ui_print("Adding Slovenian"); 
+    package_extract_file("aroma/keyboards/languages/IMEXT9Slovenian", "/system/app/IMEXT9Slovenian");
+  else
+    delete_recursive("/system/priv-app/IMEXT9Slovenian");
+  endif;
+  if file_getprop("/tmp/aroma/keyboard.prop","item.2.35") == "1" then
+    ui_print("Adding Spanish"); 
+    package_extract_file("aroma/keyboards/languages/IMEXT9Spanish", "/system/app/IMEXT9Spanish");
+  else
+    delete_recursive("/system/priv-app/IMEXT9Spanish");
+  endif;
+  if file_getprop("/tmp/aroma/keyboard.prop","item.2.36") == "1" then
+    ui_print("Adding Swedish"); 
+    package_extract_file("aroma/keyboards/languages/IMEXT9Swedish", "/system/app/IMEXT9Swedish");
+  else
+    delete_recursive("/system/priv-app/IMEXT9Swedish");
+  endif;
+  if file_getprop("/tmp/aroma/keyboard.prop","item.2.37") == "1" then
+    ui_print("Adding Thai"); 
+    package_extract_file("aroma/keyboards/languages/IMEXT9Thai", "/system/app/IMEXT9Thai");
+  else
+    delete_recursive("/system/priv-app/IMEXT9Thai");
+  endif;
+  if file_getprop("/tmp/aroma/keyboard.prop","item.2.38") == "1" then
+    ui_print("Adding Turkish"); 
+    package_extract_file("aroma/keyboards/languages/IMEXT9Turkish", "/system/app/IMEXT9Turkish");
+  else
+    delete_recursive("/system/priv-app/IMEXT9Turkish");
+  endif;
+  if file_getprop("/tmp/aroma/keyboard.prop","item.2.39") == "1" then
+    ui_print("Adding Ukrainian"); 
+    package_extract_file("aroma/keyboards/languages/IMEXT9Ukrainian", "/system/app/IMEXT9Ukrainian");
+  else
+    delete_recursive("/system/priv-app/IMEXT9Ukrainian");
+  endif;
+  if file_getprop("/tmp/aroma/keyboard.prop","item.2.40") == "1" then
+    ui_print("Adding Vietnamese"); 
+    package_extract_file("aroma/keyboards/languages/IMEMurasuViet", "/system/app/IMEMurasuViet");
+  else
+    delete_recursive("/system/priv-app/IMEMurasuViet");
   endif;
   #
   #CyanogenMod apps

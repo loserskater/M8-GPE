@@ -364,7 +364,50 @@ if prop("type.prop","selected")=="2"||prop("type.prop","selected")=="3" then
       #-- Will be saved in /tmp/aroma/keyboard.prop
         "keyboard.prop",
           
-		"HTC",    "HTC Sense 6 Keyboard",     0       #-- item.0.1
+	  "Keyboard", "",                         2,
+		"HTC",    "HTC Sense 6 Keyboard",     0,        #-- item.1.1
+		
+	  "Languages"               "",           2,
+	    "Arabic",               "",           0,		#-- item.2.1
+        "Armenian",             "",           0,		#-- item.2.2
+        "Bulgarian",            "",           0,		#-- item.2.3
+        "Catalan",              "",           0,		#-- item.2.4
+        "Chinese",              "",           0,		#-- item.2.5
+        "Croatian",             "",           0,		#-- item.2.6
+        "Czech",                "",           0,		#-- item.2.7
+        "Danish",               "",           0,		#-- item.2.8
+        "Dutch",                "",           0,		#-- item.2.9
+		"English",              "",           0,        #-- item.2.10
+		"English UK",           "",           0,        #-- item.2.11
+        "Estonian",             "",           0,		#-- item.2.12
+        "Finnish",              "",           0,		#-- item.2.13
+        "French",               "",           0,		#-- item.2.14
+        "German",               "",           0,		#-- item.2.15
+        "Greek",                "",           0,		#-- item.2.16
+        "Hebrew",               "",           0,		#-- item.2.17
+        "Hungarian",            "",           0,		#-- item.2.18
+        "Indian",            	"",           0,		#-- item.2.19
+        "Indonesian",           "",           0,		#-- item.2.20
+        "Italian",              "",           0,		#-- item.2.21
+        "Kazakh",               "",           0,		#-- item.2.22
+        "Latvian",              "",           0,		#-- item.2.23
+        "Lithuanian",           "",           0,		#-- item.2.24
+        "Malay",                "",           0,		#-- item.2.25
+        "Norwegian",            "",           0,		#-- item.2.26
+        "Persian",              "",           0,		#-- item.2.27
+        "Polish",               "",           0,		#-- item.2.28
+        "Portuguese",           "",           0,		#-- item.2.29
+        "Romanian",             "",           0,		#-- item.2.30
+        "Russian",              "",           0,		#-- item.2.31
+        "Serbian",              "",           0,		#-- item.2.32
+        "Slovak",               "",           0,		#-- item.2.33
+        "Slovenian",            "",           0,		#-- item.2.34
+        "Spanish",              "",           0,		#-- item.2.35
+        "Swedish",              "",           0,		#-- item.2.36
+        "Thai",             	"",           0,		#-- item.2.37
+        "Turkish",              "",           0,		#-- item.2.38
+        "Ukrainian",            "",           0,		#-- item.2.39
+        "Vietnamese",           "",           0 		#-- item.2.40
 			  
     );
 	write(
