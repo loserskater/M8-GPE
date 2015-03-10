@@ -22,7 +22,7 @@ anisplash(
     "splash/a5", 30,
     "splash/a6", 30
 );
-##
+#
 # Show Splash
 #
 
@@ -186,18 +186,11 @@ if prop("type.prop","selected")=="3" then
 endif;
 
 ###################################################################################################################
+
 if prop("type.prop","selected")=="1"||prop("type.prop","selected")=="2"||prop("type.prop","selected")=="4" then
-    setvar(
-    #-- Variable name
-      "carrier_prop",
-    #-- Value
-      read(
-        #-- Absolute Path
-          "/data/media/0/aroma/Carrier.prop"
-      )
-    );
+    setvar("carrier_prop", read("/data/media/0/aroma/Carrier.prop"));
     if (getvar("carrier_prop")!="") then
-        writetmpfile("carrier.prop",getvar("carrier_prop"));
+      writetmpfile("carrier.prop",getvar("carrier_prop"));
     endif;
     selectbox(
       #-- Title
@@ -217,26 +210,15 @@ if prop("type.prop","selected")=="1"||prop("type.prop","selected")=="2"||prop("t
         "Sprint",   			"",                               0       #-- selected.0 = 3
 		  
     );
-	write(
-      #-- Absolute path into the file
-      "/data/media/0/aroma/carrier.prop",
-        
-      #-- File Content to be writen into the file
-      readtmpfile("carrier.prop");
-    );
+	write("/data/media/0/aroma/carrier.prop", readtmpfile("carrier.prop"));
 endif;
+
+###################################################################################################################
+
 if prop("type.prop","selected")=="2"||prop("type.prop","selected")=="3" then
-  setvar(
-    #-- Variable name
-      "themes_prop",
-    #-- Value
-      read(
-        #-- Absolute Path
-          "/data/media/0/aroma/Themes.prop"
-      )
-    );
+    setvar("themes_prop", read("/data/media/0/aroma/Themes.prop"));
     if (getvar("themes_prop")!="") then
-        writetmpfile("themes.prop",getvar("themes_prop"));
+      writetmpfile("themes.prop",getvar("themes_prop"));
     endif;
     selectbox(
       #-- Title
@@ -255,24 +237,10 @@ if prop("type.prop","selected")=="2"||prop("type.prop","selected")=="3" then
         "Dark Material UI",   "Darker material themed UI",                      0       #-- selected.0 = 2
 		  
     );
-	write(
-      #-- Absolute path into the file
-      "/data/media/0/aroma/Themes.prop",
-        
-      #-- File Content to be writen into the file
-      readtmpfile("themes.prop");
-    );
-	setvar(
-      #-- Variable name
-        "mms_prop",
-      #-- Value
-        read(
-          #-- Absolute Path
-            "/data/media/0/aroma/MMS.prop"
-        )
-      );
+	write("/data/media/0/aroma/Themes.prop", readtmpfile("themes.prop"));
+	setvar("mms_prop", read("/data/media/0/aroma/MMS.prop"));
     if (getvar("mms_prop")!="") then
-        writetmpfile("mms.prop",getvar("mms_prop"));
+      writetmpfile("mms.prop",getvar("mms_prop"));
     endif;
     checkbox(
       #-- Title
@@ -293,24 +261,10 @@ if prop("type.prop","selected")=="2"||prop("type.prop","selected")=="3" then
           "AOSP",             "",           3       #-- item.0.2
 
     );
-	write(
-      #-- Absolute path into the file
-      "/data/media/0/aroma/MMS.prop",
-        
-      #-- File Content to be writen into the file
-      readtmpfile("mms.prop");
-    );
-	setvar(
-      #-- Variable name
-        "email_prop",
-      #-- Value
-        read(
-          #-- Absolute Path
-            "/data/media/0/aroma/Email.prop"
-        )
-      );
+	write("/data/media/0/aroma/MMS.prop", readtmpfile("mms.prop"));
+	setvar("email_prop", read("/data/media/0/aroma/Email.prop"));
     if (getvar("email_prop")!="") then
-        writetmpfile("email.prop",getvar("email_prop"));
+      writetmpfile("email.prop",getvar("email_prop"));
     endif;
     selectbox(
       #-- Title
@@ -330,24 +284,10 @@ if prop("type.prop","selected")=="2"||prop("type.prop","selected")=="3" then
           "AOSP",             "AOSP Email and Exchange, separate from Gmail",  0       #-- selected.1 = 2
 
     );
-	write(
-      #-- Absolute path into the file
-      "/data/media/0/aroma/Email.prop",
-        
-      #-- File Content to be writen into the file
-      readtmpfile("email.prop");
-    );
-	setvar(
-      #-- Variable name
-        "keyboard_prop",
-      #-- Value
-        read(
-          #-- Absolute Path
-            "/data/media/0/aroma/Keyboard.prop"
-        )
-      );
+	write("/data/media/0/aroma/Email.prop", readtmpfile("email.prop"));
+	setvar("keyboard_prop", read("/data/media/0/aroma/Keyboard.prop"));
     if (getvar("keyboard_prop")!="") then
-        writetmpfile("keyboard.prop",getvar("keyboard_prop"));
+      writetmpfile("keyboard.prop",getvar("keyboard_prop"));
     endif;
     checkbox(
       #-- Title
@@ -367,7 +307,7 @@ if prop("type.prop","selected")=="2"||prop("type.prop","selected")=="3" then
 	  "Keyboard", "",                         2,
 		"HTC",    "HTC Sense 6 Keyboard",     0,        #-- item.1.1
 		
-	  "Languages"               "",           2,
+	  "Languages",              "",           2,
 	    "Arabic",               "",           0,		#-- item.2.1
         "Armenian",             "",           0,		#-- item.2.2
         "Bulgarian",            "",           0,		#-- item.2.3
@@ -410,24 +350,10 @@ if prop("type.prop","selected")=="2"||prop("type.prop","selected")=="3" then
         "Vietnamese",           "",           0 		#-- item.2.40
 			  
     );
-	write(
-      #-- Absolute path into the file
-      "/data/media/0/aroma/Keyboard.prop",
-        
-      #-- File Content to be writen into the file
-      readtmpfile("keyboard.prop");
-    );
-	setvar(
-      #-- Variable name
-        "cm_prop",
-      #-- Value
-        read(
-          #-- Absolute Path
-            "/data/media/0/aroma/CM.prop"
-        )
-      );
+	write("/data/media/0/aroma/Keyboard.prop", readtmpfile("keyboard.prop"));
+	setvar("cm_prop", read("/data/media/0/aroma/CM.prop"));
     if (getvar("cm_prop")!="") then
-        writetmpfile("cm.prop",getvar("cm_prop"));
+      writetmpfile("cm.prop",getvar("cm_prop"));
     endif;
     checkbox(
       #-- Title
@@ -453,24 +379,10 @@ if prop("type.prop","selected")=="2"||prop("type.prop","selected")=="3" then
 		"Trebuchet",      "Launcher, will replace Google Home",                                          0       #-- item.0.7
     
 	);
-    write(
-      #-- Absolute path into the file
-      "/data/media/0/aroma/CM.prop",
-        
-      #-- File Content to be writen into the file
-      readtmpfile("cm.prop");
-    );
-	setvar(
-      #-- Variable name
-        "camera_prop",
-      #-- Value
-        read(
-          #-- Absolute Path
-            "/data/media/0/aroma/Camera.prop"
-        )
-      );
+    write("/data/media/0/aroma/CM.prop", readtmpfile("cm.prop"));
+	setvar("camera_prop", read("/data/media/0/aroma/Camera.prop"));
     if (getvar("camera_prop")!="") then
-        writetmpfile("camera.prop",getvar("camera_prop"));
+      writetmpfile("camera.prop",getvar("camera_prop"));
     endif;
 	checkbox(
       #-- Title
@@ -497,24 +409,10 @@ if prop("type.prop","selected")=="2"||prop("type.prop","selected")=="3" then
 		 "MotoX Gallery",  "",                                                                0        #-- item.2.2
 			  
     );
-	write(
-      #-- Absolute path into the file
-      "/data/media/0/aroma/Camera.prop",
-        
-      #-- File Content to be writen into the file
-      readtmpfile("camera.prop");
-    );
-    setvar(
-      #-- Variable name
-        "live_prop",
-      #-- Value
-        read(
-          #-- Absolute Path
-            "/data/media/0/aroma/LiveWallpaper.prop"
-        )
-      );
+	write("/data/media/0/aroma/Camera.prop", readtmpfile("camera.prop"));
+    setvar("live_prop", read("/data/media/0/aroma/LiveWallpaper.prop"));
     if (getvar("live_prop")!="") then
-        writetmpfile("live.prop",getvar("live_prop"));
+      writetmpfile("live.prop",getvar("live_prop"));
     endif;
     checkbox(
       #-- Title
@@ -538,24 +436,10 @@ if prop("type.prop","selected")=="2"||prop("type.prop","selected")=="3" then
 		"SunBeam",      "",         0       #-- item.0.5
     
 	);
-    write(
-      #-- Absolute path into the file
-      "/data/media/0/aroma/LiveWallpaper.prop",
-        
-      #-- File Content to be writen into the file
-      readtmpfile("live.prop");
-    );
-	setvar(
-      #-- Variable name
-        "audio_prop",
-      #-- Value
-        read(
-          #-- Absolute Path
-            "/data/media/0/aroma/Audio.prop"
-        )
-      );
+    write("/data/media/0/aroma/LiveWallpaper.prop", readtmpfile("live.prop"));
+	setvar("audio_prop", read("/data/media/0/aroma/Audio.prop"));
     if (getvar("audio_prop")!="") then
-        writetmpfile("audio.prop",getvar("audio_prop"));
+      writetmpfile("audio.prop",getvar("audio_prop"));
     endif;
     checkbox(
       #-- Title
@@ -577,24 +461,10 @@ if prop("type.prop","selected")=="2"||prop("type.prop","selected")=="3" then
 		"Viper4Android",          "Will remove MusicFX and AudioFX",           0       #-- item.0.3
     
 	);
-    write(
-      #-- Absolute path into the file
-      "/data/media/0/aroma/Audio.prop",
-        
-      #-- File Content to be writen into the file
-      readtmpfile("audio.prop");
-    );
-	setvar(
-      #-- Variable name
-        "navbar_prop",
-      #-- Value
-        read(
-          #-- Absolute Path
-            "/data/media/0/aroma/NavBar.prop"
-        )
-      );
+    write("/data/media/0/aroma/Audio.prop", readtmpfile("audio.prop"));
+	setvar("navbar_prop", read("/data/media/0/aroma/NavBar.prop"));
     if (getvar("navbar_prop")!="") then
-        writetmpfile("navbar.prop",getvar("navbar_prop"));
+      writetmpfile("navbar.prop",getvar("navbar_prop"));
     endif;
     checkbox(
       #-- Title
@@ -613,13 +483,7 @@ if prop("type.prop","selected")=="2"||prop("type.prop","selected")=="3" then
 	    "NavBar theme",       "NavBar will change colors in certain app just like the status bar.",         0      #-- item.0.1
 		
 	);
-    write(
-      #-- Absolute path into the file
-      "/data/media/0/aroma/NavBar.prop",
-        
-      #-- File Content to be writen into the file
-      readtmpfile("navbar.prop");
-    );
+    write("/data/media/0/aroma/NavBar.prop", readtmpfile("navbar.prop"));
 	selectbox(
       #-- Title
         "System De-Bloat",
@@ -639,17 +503,9 @@ if prop("type.prop","selected")=="2"||prop("type.prop","selected")=="3" then
     );
 endif;
 if prop("debloat.prop","selected.1")=="1" then
-	setvar(
-      #-- Variable name
-        "debloat_prop",
-      #-- Value
-        read(
-          #-- Absolute Path
-            "/data/media/0/aroma/Debloat.prop"
-        )
-      );
+	setvar("debloat_prop", read("/data/media/0/aroma/Debloat.prop"));
     if (getvar("debloat_prop")!="") then
-        writetmpfile("debloat.prop",getvar("debloat_prop"));
+      writetmpfile("debloat.prop",getvar("debloat_prop"));
     endif;
     checkbox(
       #-- Title
@@ -685,19 +541,17 @@ if prop("debloat.prop","selected.1")=="1" then
 		  "DotMatrix",       "6.42Mb",                    0,      #-- item.2.2
 		  "Wallet",          "7.84Mb May cause Wallet not to work if downloaded form the play store.", 0      #-- item.2.2
 	);
-    write(
-      #-- Absolute path into the file
-      "/data/media/0/aroma/Debloat.prop",
-        
-      #-- File Content to be writen into the file
-      readtmpfile("debloat.prop");
-    );
+    write("/data/media/0/aroma/Debloat.prop", readtmpfile("debloat.prop"));
 endif;
 
 ##################################################################################################################
 
 if prop("type.prop","selected")=="1"||prop("type.prop","selected")=="2"||prop("type.prop","selected")=="4" then
   if prop("carrier.prop","selected.0")=="1" then
+    setvar("kernel_prop", read("/data/media/0/aroma/Kernel.prop"));
+    if (getvar("kernel_prop")!="") then
+      writetmpfile("kernel.prop",getvar("kernel_prop"));
+    endif;
     selectbox(
       #-- Title
         "Kernel Options",
@@ -716,13 +570,6 @@ if prop("type.prop","selected")=="1"||prop("type.prop","selected")=="2"||prop("t
        "Quantum",    "Kernel by PwnCakes193",      0,     #-- selected.1 = 2
        "Elemental X","Kernel by Flar2",            0,     #-- selected.1 = 3
        "Elite",      "Kernel by buckmarble",       0      #-- selected.1 = 4
-    );
-    write(
-      #-- Absolute path into the file
-      "/data/media/0/aroma/Kernel.prop",
-        
-      #-- File Content to be write into the file
-      readtmpfile("kernel.prop");
     );
   else
     selectbox(
@@ -743,13 +590,7 @@ if prop("type.prop","selected")=="1"||prop("type.prop","selected")=="2"||prop("t
       "CodeCraft",  "Kernel by Evolutionmods",     0,     #-- selected.1 = 2
       "Elite",      "Kernel by buckmarble",        1      #-- selected.1 = 3
     );
-    write(
-      #-- Absolute path into the file
-      "/data/media/0/aroma/Kernel.prop",
-        
-      #-- File Content to be write into the file
-      readtmpfile("kernel.prop");
-    );
+    write("/data/media/0/aroma/Kernel.prop", readtmpfile("kernel.prop"););
   endif;
 endif;
 if prop("type.prop","selected")=="2"&&prop("carrier.prop","selected.0")=="1"&&prop("kernel.prop","selected.1")=="3"||prop("type.prop","selected")=="4"&&prop("carrier.prop","selected.0")=="1"&&prop("kernel.prop","selected.1")=="3" then
