@@ -40,7 +40,7 @@
     .end annotation
 .end field
 
-.field private mAllowMockLocation:Landroid/preference/CheckBoxPreference;
+.field private mAllowMockLocation:Landroid/preference/SwitchPreference;
 
 .field private mAnimatorDurationScale:Landroid/preference/ListPreference;
 
@@ -48,11 +48,11 @@
 
 .field private mBackupManager:Landroid/app/backup/IBackupManager;
 
-.field private mBtHciSnoopLog:Landroid/preference/CheckBoxPreference;
+.field private mBtHciSnoopLog:Landroid/preference/SwitchPreference;
 
 .field private mBugreport:Landroid/preference/Preference;
 
-.field private mBugreportInPower:Landroid/preference/CheckBoxPreference;
+.field private mBugreportInPower:Landroid/preference/SwitchPreference;
 
 .field private mClearAdbKeys:Landroid/preference/Preference;
 
@@ -62,13 +62,13 @@
 
 .field private mDebugHwOverdraw:Landroid/preference/ListPreference;
 
-.field private mDebugLayout:Landroid/preference/CheckBoxPreference;
+.field private mDebugLayout:Landroid/preference/SwitchPreference;
 
-.field private mDebugViewAttributes:Landroid/preference/CheckBoxPreference;
+.field private mDebugViewAttributes:Landroid/preference/SwitchPreference;
 
 .field private mDialogClicked:Z
 
-.field private mDisableOverlays:Landroid/preference/CheckBoxPreference;
+.field private mDisableOverlays:Landroid/preference/SwitchPreference;
 
 .field private final mDisabledPrefs:Ljava/util/HashSet;
     .annotation system Ldalvik/annotation/Signature;
@@ -85,25 +85,25 @@
 
 .field private mDpm:Landroid/app/admin/DevicePolicyManager;
 
-.field private mEnableAdb:Landroid/preference/CheckBoxPreference;
+.field private mEnableAdb:Landroid/preference/SwitchPreference;
 
 .field private mEnableDialog:Landroid/app/Dialog;
 
-.field private mEnableOemUnlock:Landroid/preference/CheckBoxPreference;
+.field private mEnableOemUnlock:Landroid/preference/SwitchPreference;
 
-.field private mEnableTerminal:Landroid/preference/CheckBoxPreference;
+.field private mEnableTerminal:Landroid/preference/SwitchPreference;
 
-.field private mForceHardwareUi:Landroid/preference/CheckBoxPreference;
+.field private mForceHardwareUi:Landroid/preference/SwitchPreference;
 
-.field private mForceMsaa:Landroid/preference/CheckBoxPreference;
+.field private mForceMsaa:Landroid/preference/SwitchPreference;
 
-.field private mForceRtlLayout:Landroid/preference/CheckBoxPreference;
+.field private mForceRtlLayout:Landroid/preference/SwitchPreference;
 
 .field private mHaveDebugSettings:Z
 
-.field private mImmediatelyDestroyActivities:Landroid/preference/CheckBoxPreference;
+.field private mImmediatelyDestroyActivities:Landroid/preference/SwitchPreference;
 
-.field private mKeepScreenOn:Landroid/preference/CheckBoxPreference;
+.field private mKeepScreenOn:Landroid/preference/SwitchPreference;
 
 .field private mLastEnabledState:Z
 
@@ -115,7 +115,7 @@
 
 .field private mPassword:Landroid/preference/PreferenceScreen;
 
-.field private mPointerLocation:Landroid/preference/CheckBoxPreference;
+.field private mPointerLocation:Landroid/preference/SwitchPreference;
 
 .field private mProcessStats:Landroid/preference/PreferenceScreen;
 
@@ -124,29 +124,29 @@
         value = {
             "Ljava/util/ArrayList",
             "<",
-            "Landroid/preference/CheckBoxPreference;",
+            "Landroid/preference/SwitchPreference;",
             ">;"
         }
     .end annotation
 .end field
 
-.field private mShowAllANRs:Landroid/preference/CheckBoxPreference;
+.field private mShowAllANRs:Landroid/preference/SwitchPreference;
 
-.field private mShowCpuUsage:Landroid/preference/CheckBoxPreference;
+.field private mShowCpuUsage:Landroid/preference/SwitchPreference;
 
-.field private mShowHwLayersUpdates:Landroid/preference/CheckBoxPreference;
+.field private mShowHwLayersUpdates:Landroid/preference/SwitchPreference;
 
-.field private mShowHwScreenUpdates:Landroid/preference/CheckBoxPreference;
+.field private mShowHwScreenUpdates:Landroid/preference/SwitchPreference;
 
 .field private mShowNonRectClip:Landroid/preference/ListPreference;
 
-.field private mShowScreenUpdates:Landroid/preference/CheckBoxPreference;
+.field private mShowScreenUpdates:Landroid/preference/SwitchPreference;
 
-.field private mShowTouches:Landroid/preference/CheckBoxPreference;
+.field private mShowTouches:Landroid/preference/SwitchPreference;
 
 .field private mSimulateColorSpace:Landroid/preference/ListPreference;
 
-.field private mStrictMode:Landroid/preference/CheckBoxPreference;
+.field private mStrictMode:Landroid/preference/SwitchPreference;
 
 .field private mSwitchBar:Lcom/android/settings/widget/SwitchBar;
 
@@ -154,27 +154,27 @@
 
 .field private mTransitionAnimationScale:Landroid/preference/ListPreference;
 
-.field private mUSBAudio:Landroid/preference/CheckBoxPreference;
+.field private mUSBAudio:Landroid/preference/SwitchPreference;
 
 .field private mUm:Landroid/os/UserManager;
 
 .field private mUnavailable:Z
 
-.field private mUseNuplayer:Landroid/preference/CheckBoxPreference;
+.field private mUseNuplayer:Landroid/preference/SwitchPreference;
 
-.field private mVerifyAppsOverUsb:Landroid/preference/CheckBoxPreference;
+.field private mVerifyAppsOverUsb:Landroid/preference/SwitchPreference;
 
-.field private mWaitForDebugger:Landroid/preference/CheckBoxPreference;
+.field private mWaitForDebugger:Landroid/preference/SwitchPreference;
 
-.field private mWifiAggressiveHandover:Landroid/preference/CheckBoxPreference;
+.field private mWifiAggressiveHandover:Landroid/preference/SwitchPreference;
 
-.field private mWifiAllowScansWithTraffic:Landroid/preference/CheckBoxPreference;
+.field private mWifiAllowScansWithTraffic:Landroid/preference/SwitchPreference;
 
-.field private mWifiDisplayCertification:Landroid/preference/CheckBoxPreference;
+.field private mWifiDisplayCertification:Landroid/preference/SwitchPreference;
 
 .field private mWifiManager:Landroid/net/wifi/WifiManager;
 
-.field private mWifiVerboseLogging:Landroid/preference/CheckBoxPreference;
+.field private mWifiVerboseLogging:Landroid/preference/SwitchPreference;
 
 .field private mWindowAnimationScale:Landroid/preference/ListPreference;
 
@@ -420,14 +420,14 @@
     goto :goto_0
 .end method
 
-.method private findAndInitCheckboxPref(Ljava/lang/String;)Landroid/preference/CheckBoxPreference;
+.method private findAndInitSwitchPref(Ljava/lang/String;)Landroid/preference/SwitchPreference;
     .locals 4
 
     invoke-virtual {p0, p1}, Lcom/android/settings/DevelopmentSettings;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
 
     move-result-object v0
 
-    check-cast v0, Landroid/preference/CheckBoxPreference;
+    check-cast v0, Landroid/preference/SwitchPreference;
 
     if-nez v0, :cond_0
 
@@ -569,15 +569,15 @@
 
     move-result-object v0
 
-    check-cast v0, Landroid/preference/CheckBoxPreference;
+    check-cast v0, Landroid/preference/SwitchPreference;
 
-    invoke-virtual {v0}, Landroid/preference/CheckBoxPreference;->isChecked()Z
+    invoke-virtual {v0}, Landroid/preference/SwitchPreference;->isChecked()Z
 
     move-result v2
 
     if-eqz v2, :cond_0
 
-    invoke-virtual {v0, v5}, Landroid/preference/CheckBoxPreference;->setChecked(Z)V
+    invoke-virtual {v0, v5}, Landroid/preference/SwitchPreference;->setChecked(Z)V
 
     invoke-virtual {p0, v4, v0}, Lcom/android/settings/DevelopmentSettings;->onPreferenceTreeClick(Landroid/preference/PreferenceScreen;Landroid/preference/Preference;)Z
 
@@ -789,7 +789,7 @@
 
     iput-boolean v4, p0, Lcom/android/settings/DevelopmentSettings;->mHaveDebugSettings:Z
 
-    iget-object v5, p0, Lcom/android/settings/DevelopmentSettings;->mEnableAdb:Landroid/preference/CheckBoxPreference;
+    iget-object v5, p0, Lcom/android/settings/DevelopmentSettings;->mEnableAdb:Landroid/preference/SwitchPreference;
 
     const-string v2, "adb_enabled"
 
@@ -802,13 +802,13 @@
     move v2, v3
 
     :goto_0
-    invoke-virtual {p0, v5, v2}, Lcom/android/settings/DevelopmentSettings;->updateCheckBox(Landroid/preference/CheckBoxPreference;Z)V
+    invoke-virtual {p0, v5, v2}, Lcom/android/settings/DevelopmentSettings;->updateSwitch(Landroid/preference/SwitchPreference;Z)V
 
-    iget-object v2, p0, Lcom/android/settings/DevelopmentSettings;->mEnableTerminal:Landroid/preference/CheckBoxPreference;
+    iget-object v2, p0, Lcom/android/settings/DevelopmentSettings;->mEnableTerminal:Landroid/preference/SwitchPreference;
 
     if-eqz v2, :cond_0
 
-    iget-object v5, p0, Lcom/android/settings/DevelopmentSettings;->mEnableTerminal:Landroid/preference/CheckBoxPreference;
+    iget-object v5, p0, Lcom/android/settings/DevelopmentSettings;->mEnableTerminal:Landroid/preference/SwitchPreference;
 
     invoke-virtual {v0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
@@ -825,10 +825,10 @@
     move v2, v3
 
     :goto_1
-    invoke-virtual {p0, v5, v2}, Lcom/android/settings/DevelopmentSettings;->updateCheckBox(Landroid/preference/CheckBoxPreference;Z)V
+    invoke-virtual {p0, v5, v2}, Lcom/android/settings/DevelopmentSettings;->updateSwitch(Landroid/preference/SwitchPreference;Z)V
 
     :cond_0
-    iget-object v5, p0, Lcom/android/settings/DevelopmentSettings;->mBugreportInPower:Landroid/preference/CheckBoxPreference;
+    iget-object v5, p0, Lcom/android/settings/DevelopmentSettings;->mBugreportInPower:Landroid/preference/SwitchPreference;
 
     const-string v2, "bugreport_in_power_menu"
 
@@ -841,9 +841,9 @@
     move v2, v3
 
     :goto_2
-    invoke-virtual {p0, v5, v2}, Lcom/android/settings/DevelopmentSettings;->updateCheckBox(Landroid/preference/CheckBoxPreference;Z)V
+    invoke-virtual {p0, v5, v2}, Lcom/android/settings/DevelopmentSettings;->updateSwitch(Landroid/preference/SwitchPreference;Z)V
 
-    iget-object v5, p0, Lcom/android/settings/DevelopmentSettings;->mKeepScreenOn:Landroid/preference/CheckBoxPreference;
+    iget-object v5, p0, Lcom/android/settings/DevelopmentSettings;->mKeepScreenOn:Landroid/preference/SwitchPreference;
 
     const-string v2, "stay_on_while_plugged_in"
 
@@ -856,9 +856,9 @@
     move v2, v3
 
     :goto_3
-    invoke-virtual {p0, v5, v2}, Lcom/android/settings/DevelopmentSettings;->updateCheckBox(Landroid/preference/CheckBoxPreference;Z)V
+    invoke-virtual {p0, v5, v2}, Lcom/android/settings/DevelopmentSettings;->updateSwitch(Landroid/preference/SwitchPreference;Z)V
 
-    iget-object v5, p0, Lcom/android/settings/DevelopmentSettings;->mBtHciSnoopLog:Landroid/preference/CheckBoxPreference;
+    iget-object v5, p0, Lcom/android/settings/DevelopmentSettings;->mBtHciSnoopLog:Landroid/preference/SwitchPreference;
 
     const-string v2, "bluetooth_hci_log"
 
@@ -871,13 +871,13 @@
     move v2, v3
 
     :goto_4
-    invoke-virtual {p0, v5, v2}, Lcom/android/settings/DevelopmentSettings;->updateCheckBox(Landroid/preference/CheckBoxPreference;Z)V
+    invoke-virtual {p0, v5, v2}, Lcom/android/settings/DevelopmentSettings;->updateSwitch(Landroid/preference/SwitchPreference;Z)V
 
-    iget-object v2, p0, Lcom/android/settings/DevelopmentSettings;->mEnableOemUnlock:Landroid/preference/CheckBoxPreference;
+    iget-object v2, p0, Lcom/android/settings/DevelopmentSettings;->mEnableOemUnlock:Landroid/preference/SwitchPreference;
 
     if-eqz v2, :cond_1
 
-    iget-object v2, p0, Lcom/android/settings/DevelopmentSettings;->mEnableOemUnlock:Landroid/preference/CheckBoxPreference;
+    iget-object v2, p0, Lcom/android/settings/DevelopmentSettings;->mEnableOemUnlock:Landroid/preference/SwitchPreference;
 
     invoke-virtual {p0}, Lcom/android/settings/DevelopmentSettings;->getActivity()Landroid/app/Activity;
 
@@ -887,10 +887,10 @@
 
     move-result v5
 
-    invoke-virtual {p0, v2, v5}, Lcom/android/settings/DevelopmentSettings;->updateCheckBox(Landroid/preference/CheckBoxPreference;Z)V
+    invoke-virtual {p0, v2, v5}, Lcom/android/settings/DevelopmentSettings;->updateSwitch(Landroid/preference/SwitchPreference;Z)V
 
     :cond_1
-    iget-object v5, p0, Lcom/android/settings/DevelopmentSettings;->mAllowMockLocation:Landroid/preference/CheckBoxPreference;
+    iget-object v5, p0, Lcom/android/settings/DevelopmentSettings;->mAllowMockLocation:Landroid/preference/SwitchPreference;
 
     const-string v2, "mock_location"
 
@@ -903,9 +903,9 @@
     move v2, v3
 
     :goto_5
-    invoke-virtual {p0, v5, v2}, Lcom/android/settings/DevelopmentSettings;->updateCheckBox(Landroid/preference/CheckBoxPreference;Z)V
+    invoke-virtual {p0, v5, v2}, Lcom/android/settings/DevelopmentSettings;->updateSwitch(Landroid/preference/SwitchPreference;Z)V
 
-    iget-object v2, p0, Lcom/android/settings/DevelopmentSettings;->mDebugViewAttributes:Landroid/preference/CheckBoxPreference;
+    iget-object v2, p0, Lcom/android/settings/DevelopmentSettings;->mDebugViewAttributes:Landroid/preference/SwitchPreference;
 
     const-string v5, "debug_view_attributes"
 
@@ -916,7 +916,7 @@
     if-eqz v5, :cond_8
 
     :goto_6
-    invoke-virtual {p0, v2, v3}, Lcom/android/settings/DevelopmentSettings;->updateCheckBox(Landroid/preference/CheckBoxPreference;Z)V
+    invoke-virtual {p0, v2, v3}, Lcom/android/settings/DevelopmentSettings;->updateSwitch(Landroid/preference/SwitchPreference;Z)V
 
     invoke-direct {p0}, Lcom/android/settings/DevelopmentSettings;->updateHdcpValues()V
 
@@ -1278,9 +1278,9 @@
 
     invoke-virtual {v3, v2}, Landroid/preference/Preference;->setEnabled(Z)V
 
-    iget-object v3, p0, Lcom/android/settings/DevelopmentSettings;->mBugreportInPower:Landroid/preference/CheckBoxPreference;
+    iget-object v3, p0, Lcom/android/settings/DevelopmentSettings;->mBugreportInPower:Landroid/preference/SwitchPreference;
 
-    invoke-virtual {v3, v2}, Landroid/preference/CheckBoxPreference;->setEnabled(Z)V
+    invoke-virtual {v3, v2}, Landroid/preference/SwitchPreference;->setEnabled(Z)V
 
     :goto_1
     return-void
@@ -1295,13 +1295,13 @@
 
     invoke-virtual {v2, v3}, Landroid/preference/Preference;->setEnabled(Z)V
 
-    iget-object v2, p0, Lcom/android/settings/DevelopmentSettings;->mBugreportInPower:Landroid/preference/CheckBoxPreference;
+    iget-object v2, p0, Lcom/android/settings/DevelopmentSettings;->mBugreportInPower:Landroid/preference/SwitchPreference;
 
-    invoke-virtual {v2, v3}, Landroid/preference/CheckBoxPreference;->setEnabled(Z)V
+    invoke-virtual {v2, v3}, Landroid/preference/SwitchPreference;->setEnabled(Z)V
 
-    iget-object v2, p0, Lcom/android/settings/DevelopmentSettings;->mBugreportInPower:Landroid/preference/CheckBoxPreference;
+    iget-object v2, p0, Lcom/android/settings/DevelopmentSettings;->mBugreportInPower:Landroid/preference/SwitchPreference;
 
-    invoke-virtual {v2, v3}, Landroid/preference/CheckBoxPreference;->setChecked(Z)V
+    invoke-virtual {v2, v3}, Landroid/preference/SwitchPreference;->setChecked(Z)V
 
     const-string v2, "bugreport_in_power_menu"
 
@@ -1310,9 +1310,9 @@
     goto :goto_1
 
     :cond_2
-    iget-object v3, p0, Lcom/android/settings/DevelopmentSettings;->mBugreportInPower:Landroid/preference/CheckBoxPreference;
+    iget-object v3, p0, Lcom/android/settings/DevelopmentSettings;->mBugreportInPower:Landroid/preference/SwitchPreference;
 
-    invoke-virtual {v3, v2}, Landroid/preference/CheckBoxPreference;->setEnabled(Z)V
+    invoke-virtual {v3, v2}, Landroid/preference/SwitchPreference;->setEnabled(Z)V
 
     goto :goto_1
 .end method
@@ -1322,7 +1322,7 @@
 
     const/4 v0, 0x0
 
-    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->mShowCpuUsage:Landroid/preference/CheckBoxPreference;
+    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->mShowCpuUsage:Landroid/preference/SwitchPreference;
 
     invoke-virtual {p0}, Lcom/android/settings/DevelopmentSettings;->getActivity()Landroid/app/Activity;
 
@@ -1343,7 +1343,7 @@
     const/4 v0, 0x1
 
     :cond_0
-    invoke-virtual {p0, v1, v0}, Lcom/android/settings/DevelopmentSettings;->updateCheckBox(Landroid/preference/CheckBoxPreference;Z)V
+    invoke-virtual {p0, v1, v0}, Lcom/android/settings/DevelopmentSettings;->updateSwitch(Landroid/preference/SwitchPreference;Z)V
 
     return-void
 .end method
@@ -1432,7 +1432,7 @@
 .method private updateDebugLayoutOptions()V
     .locals 3
 
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->mDebugLayout:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->mDebugLayout:Landroid/preference/SwitchPreference;
 
     const-string v1, "debug.layout"
 
@@ -1442,7 +1442,7 @@
 
     move-result v1
 
-    invoke-virtual {p0, v0, v1}, Lcom/android/settings/DevelopmentSettings;->updateCheckBox(Landroid/preference/CheckBoxPreference;Z)V
+    invoke-virtual {p0, v0, v1}, Lcom/android/settings/DevelopmentSettings;->updateSwitch(Landroid/preference/SwitchPreference;Z)V
 
     return-void
 .end method
@@ -1470,7 +1470,7 @@
 
     iput-object v4, p0, Lcom/android/settings/DevelopmentSettings;->mDebugApp:Ljava/lang/String;
 
-    iget-object v7, p0, Lcom/android/settings/DevelopmentSettings;->mWaitForDebugger:Landroid/preference/CheckBoxPreference;
+    iget-object v7, p0, Lcom/android/settings/DevelopmentSettings;->mWaitForDebugger:Landroid/preference/SwitchPreference;
 
     invoke-virtual {p0}, Lcom/android/settings/DevelopmentSettings;->getActivity()Landroid/app/Activity;
 
@@ -1491,7 +1491,7 @@
     move v4, v5
 
     :goto_0
-    invoke-virtual {p0, v7, v4}, Lcom/android/settings/DevelopmentSettings;->updateCheckBox(Landroid/preference/CheckBoxPreference;Z)V
+    invoke-virtual {p0, v7, v4}, Lcom/android/settings/DevelopmentSettings;->updateSwitch(Landroid/preference/SwitchPreference;Z)V
 
     iget-object v4, p0, Lcom/android/settings/DevelopmentSettings;->mDebugApp:Ljava/lang/String;
 
@@ -1561,9 +1561,9 @@
 
     invoke-virtual {v4, v6}, Landroid/preference/Preference;->setSummary(Ljava/lang/CharSequence;)V
 
-    iget-object v4, p0, Lcom/android/settings/DevelopmentSettings;->mWaitForDebugger:Landroid/preference/CheckBoxPreference;
+    iget-object v4, p0, Lcom/android/settings/DevelopmentSettings;->mWaitForDebugger:Landroid/preference/SwitchPreference;
 
-    invoke-virtual {v4, v5}, Landroid/preference/CheckBoxPreference;->setEnabled(Z)V
+    invoke-virtual {v4, v5}, Landroid/preference/SwitchPreference;->setEnabled(Z)V
 
     iput-boolean v5, p0, Lcom/android/settings/DevelopmentSettings;->mHaveDebugSettings:Z
 
@@ -1605,9 +1605,9 @@
 
     invoke-virtual {v4, v5}, Landroid/preference/Preference;->setSummary(Ljava/lang/CharSequence;)V
 
-    iget-object v4, p0, Lcom/android/settings/DevelopmentSettings;->mWaitForDebugger:Landroid/preference/CheckBoxPreference;
+    iget-object v4, p0, Lcom/android/settings/DevelopmentSettings;->mWaitForDebugger:Landroid/preference/SwitchPreference;
 
-    invoke-virtual {v4, v6}, Landroid/preference/CheckBoxPreference;->setEnabled(Z)V
+    invoke-virtual {v4, v6}, Landroid/preference/SwitchPreference;->setEnabled(Z)V
 
     goto :goto_2
 .end method
@@ -1658,14 +1658,14 @@
 
     move-result v7
 
-    iget-object v11, p0, Lcom/android/settings/DevelopmentSettings;->mShowScreenUpdates:Landroid/preference/CheckBoxPreference;
+    iget-object v11, p0, Lcom/android/settings/DevelopmentSettings;->mShowScreenUpdates:Landroid/preference/SwitchPreference;
 
     if-eqz v7, :cond_1
 
     move v10, v8
 
     :goto_0
-    invoke-virtual {p0, v11, v10}, Lcom/android/settings/DevelopmentSettings;->updateCheckBox(Landroid/preference/CheckBoxPreference;Z)V
+    invoke-virtual {p0, v11, v10}, Lcom/android/settings/DevelopmentSettings;->updateSwitch(Landroid/preference/SwitchPreference;Z)V
 
     invoke-virtual {v4}, Landroid/os/Parcel;->readInt()I
 
@@ -1675,12 +1675,12 @@
 
     move-result v1
 
-    iget-object v10, p0, Lcom/android/settings/DevelopmentSettings;->mDisableOverlays:Landroid/preference/CheckBoxPreference;
+    iget-object v10, p0, Lcom/android/settings/DevelopmentSettings;->mDisableOverlays:Landroid/preference/SwitchPreference;
 
     if-eqz v1, :cond_2
 
     :goto_1
-    invoke-virtual {p0, v10, v8}, Lcom/android/settings/DevelopmentSettings;->updateCheckBox(Landroid/preference/CheckBoxPreference;Z)V
+    invoke-virtual {p0, v10, v8}, Lcom/android/settings/DevelopmentSettings;->updateSwitch(Landroid/preference/SwitchPreference;Z)V
 
     invoke-virtual {v4}, Landroid/os/Parcel;->recycle()V
 
@@ -1713,7 +1713,7 @@
 
     const/4 v0, 0x0
 
-    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->mForceRtlLayout:Landroid/preference/CheckBoxPreference;
+    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->mForceRtlLayout:Landroid/preference/SwitchPreference;
 
     invoke-virtual {p0}, Lcom/android/settings/DevelopmentSettings;->getActivity()Landroid/app/Activity;
 
@@ -1734,7 +1734,7 @@
     const/4 v0, 0x1
 
     :cond_0
-    invoke-virtual {p0, v1, v0}, Lcom/android/settings/DevelopmentSettings;->updateCheckBox(Landroid/preference/CheckBoxPreference;Z)V
+    invoke-virtual {p0, v1, v0}, Lcom/android/settings/DevelopmentSettings;->updateSwitch(Landroid/preference/SwitchPreference;Z)V
 
     return-void
 .end method
@@ -1742,7 +1742,7 @@
 .method private updateHardwareUiOptions()V
     .locals 3
 
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->mForceHardwareUi:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->mForceHardwareUi:Landroid/preference/SwitchPreference;
 
     const-string v1, "persist.sys.ui.hw"
 
@@ -1752,7 +1752,7 @@
 
     move-result v1
 
-    invoke-virtual {p0, v0, v1}, Lcom/android/settings/DevelopmentSettings;->updateCheckBox(Landroid/preference/CheckBoxPreference;Z)V
+    invoke-virtual {p0, v0, v1}, Lcom/android/settings/DevelopmentSettings;->updateSwitch(Landroid/preference/SwitchPreference;Z)V
 
     return-void
 .end method
@@ -1840,7 +1840,7 @@
 
     const/4 v0, 0x0
 
-    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->mImmediatelyDestroyActivities:Landroid/preference/CheckBoxPreference;
+    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->mImmediatelyDestroyActivities:Landroid/preference/SwitchPreference;
 
     invoke-virtual {p0}, Lcom/android/settings/DevelopmentSettings;->getActivity()Landroid/app/Activity;
 
@@ -1861,7 +1861,7 @@
     const/4 v0, 0x1
 
     :cond_0
-    invoke-virtual {p0, v1, v0}, Lcom/android/settings/DevelopmentSettings;->updateCheckBox(Landroid/preference/CheckBoxPreference;Z)V
+    invoke-virtual {p0, v1, v0}, Lcom/android/settings/DevelopmentSettings;->updateSwitch(Landroid/preference/SwitchPreference;Z)V
 
     return-void
 .end method
@@ -2008,7 +2008,7 @@
 .method private updateMsaaOptions()V
     .locals 3
 
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->mForceMsaa:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->mForceMsaa:Landroid/preference/SwitchPreference;
 
     const-string v1, "debug.egl.force_msaa"
 
@@ -2018,7 +2018,7 @@
 
     move-result v1
 
-    invoke-virtual {p0, v0, v1}, Lcom/android/settings/DevelopmentSettings;->updateCheckBox(Landroid/preference/CheckBoxPreference;Z)V
+    invoke-virtual {p0, v0, v1}, Lcom/android/settings/DevelopmentSettings;->updateSwitch(Landroid/preference/SwitchPreference;Z)V
 
     return-void
 .end method
@@ -2236,7 +2236,7 @@
 
     const/4 v0, 0x0
 
-    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->mPointerLocation:Landroid/preference/CheckBoxPreference;
+    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->mPointerLocation:Landroid/preference/SwitchPreference;
 
     invoke-virtual {p0}, Lcom/android/settings/DevelopmentSettings;->getActivity()Landroid/app/Activity;
 
@@ -2257,7 +2257,7 @@
     const/4 v0, 0x1
 
     :cond_0
-    invoke-virtual {p0, v1, v0}, Lcom/android/settings/DevelopmentSettings;->updateCheckBox(Landroid/preference/CheckBoxPreference;Z)V
+    invoke-virtual {p0, v1, v0}, Lcom/android/settings/DevelopmentSettings;->updateSwitch(Landroid/preference/SwitchPreference;Z)V
 
     return-void
 .end method
@@ -2267,7 +2267,7 @@
 
     const/4 v0, 0x0
 
-    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->mShowAllANRs:Landroid/preference/CheckBoxPreference;
+    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->mShowAllANRs:Landroid/preference/SwitchPreference;
 
     invoke-virtual {p0}, Lcom/android/settings/DevelopmentSettings;->getActivity()Landroid/app/Activity;
 
@@ -2288,7 +2288,7 @@
     const/4 v0, 0x1
 
     :cond_0
-    invoke-virtual {p0, v1, v0}, Lcom/android/settings/DevelopmentSettings;->updateCheckBox(Landroid/preference/CheckBoxPreference;Z)V
+    invoke-virtual {p0, v1, v0}, Lcom/android/settings/DevelopmentSettings;->updateSwitch(Landroid/preference/SwitchPreference;Z)V
 
     return-void
 .end method
@@ -2296,7 +2296,7 @@
 .method private updateShowHwLayersUpdatesOptions()V
     .locals 3
 
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->mShowHwLayersUpdates:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->mShowHwLayersUpdates:Landroid/preference/SwitchPreference;
 
     const-string v1, "debug.hwui.show_layers_updates"
 
@@ -2306,7 +2306,7 @@
 
     move-result v1
 
-    invoke-virtual {p0, v0, v1}, Lcom/android/settings/DevelopmentSettings;->updateCheckBox(Landroid/preference/CheckBoxPreference;Z)V
+    invoke-virtual {p0, v0, v1}, Lcom/android/settings/DevelopmentSettings;->updateSwitch(Landroid/preference/SwitchPreference;Z)V
 
     return-void
 .end method
@@ -2314,7 +2314,7 @@
 .method private updateShowHwScreenUpdatesOptions()V
     .locals 3
 
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->mShowHwScreenUpdates:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->mShowHwScreenUpdates:Landroid/preference/SwitchPreference;
 
     const-string v1, "debug.hwui.show_dirty_regions"
 
@@ -2324,7 +2324,7 @@
 
     move-result v1
 
-    invoke-virtual {p0, v0, v1}, Lcom/android/settings/DevelopmentSettings;->updateCheckBox(Landroid/preference/CheckBoxPreference;Z)V
+    invoke-virtual {p0, v0, v1}, Lcom/android/settings/DevelopmentSettings;->updateSwitch(Landroid/preference/SwitchPreference;Z)V
 
     return-void
 .end method
@@ -2415,7 +2415,7 @@
 
     const/4 v0, 0x0
 
-    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->mShowTouches:Landroid/preference/CheckBoxPreference;
+    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->mShowTouches:Landroid/preference/SwitchPreference;
 
     invoke-virtual {p0}, Lcom/android/settings/DevelopmentSettings;->getActivity()Landroid/app/Activity;
 
@@ -2436,7 +2436,7 @@
     const/4 v0, 0x1
 
     :cond_0
-    invoke-virtual {p0, v1, v0}, Lcom/android/settings/DevelopmentSettings;->updateCheckBox(Landroid/preference/CheckBoxPreference;Z)V
+    invoke-virtual {p0, v1, v0}, Lcom/android/settings/DevelopmentSettings;->updateSwitch(Landroid/preference/SwitchPreference;Z)V
 
     return-void
 .end method
@@ -2543,7 +2543,7 @@
 
     const/4 v0, 0x1
 
-    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->mStrictMode:Landroid/preference/CheckBoxPreference;
+    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->mStrictMode:Landroid/preference/SwitchPreference;
 
     invoke-static {}, Lcom/android/settings/DevelopmentSettings;->currentStrictModeActiveIndex()I
 
@@ -2552,7 +2552,7 @@
     if-ne v2, v0, :cond_0
 
     :goto_0
-    invoke-virtual {p0, v1, v0}, Lcom/android/settings/DevelopmentSettings;->updateCheckBox(Landroid/preference/CheckBoxPreference;Z)V
+    invoke-virtual {p0, v1, v0}, Lcom/android/settings/DevelopmentSettings;->updateSwitch(Landroid/preference/SwitchPreference;Z)V
 
     return-void
 
@@ -2648,7 +2648,7 @@
 
     const/4 v0, 0x0
 
-    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->mUSBAudio:Landroid/preference/CheckBoxPreference;
+    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->mUSBAudio:Landroid/preference/SwitchPreference;
 
     invoke-virtual {p0}, Lcom/android/settings/DevelopmentSettings;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -2665,7 +2665,7 @@
     const/4 v0, 0x1
 
     :cond_0
-    invoke-virtual {p0, v1, v0}, Lcom/android/settings/DevelopmentSettings;->updateCheckBox(Landroid/preference/CheckBoxPreference;Z)V
+    invoke-virtual {p0, v1, v0}, Lcom/android/settings/DevelopmentSettings;->updateSwitch(Landroid/preference/SwitchPreference;Z)V
 
     return-void
 .end method
@@ -2675,7 +2675,7 @@
 
     const/4 v0, 0x0
 
-    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->mUseNuplayer:Landroid/preference/CheckBoxPreference;
+    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->mUseNuplayer:Landroid/preference/SwitchPreference;
 
     const-string v2, "persist.sys.media.use-awesome"
 
@@ -2688,7 +2688,7 @@
     const/4 v0, 0x1
 
     :cond_0
-    invoke-virtual {p0, v1, v0}, Lcom/android/settings/DevelopmentSettings;->updateCheckBox(Landroid/preference/CheckBoxPreference;Z)V
+    invoke-virtual {p0, v1, v0}, Lcom/android/settings/DevelopmentSettings;->updateSwitch(Landroid/preference/SwitchPreference;Z)V
 
     return-void
 .end method
@@ -2698,7 +2698,7 @@
 
     const/4 v0, 0x1
 
-    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->mVerifyAppsOverUsb:Landroid/preference/CheckBoxPreference;
+    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->mVerifyAppsOverUsb:Landroid/preference/SwitchPreference;
 
     invoke-virtual {p0}, Lcom/android/settings/DevelopmentSettings;->getActivity()Landroid/app/Activity;
 
@@ -2717,15 +2717,15 @@
     if-eqz v2, :cond_0
 
     :goto_0
-    invoke-virtual {p0, v1, v0}, Lcom/android/settings/DevelopmentSettings;->updateCheckBox(Landroid/preference/CheckBoxPreference;Z)V
+    invoke-virtual {p0, v1, v0}, Lcom/android/settings/DevelopmentSettings;->updateSwitch(Landroid/preference/SwitchPreference;Z)V
 
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->mVerifyAppsOverUsb:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->mVerifyAppsOverUsb:Landroid/preference/SwitchPreference;
 
     invoke-direct {p0}, Lcom/android/settings/DevelopmentSettings;->enableVerifierSetting()Z
 
     move-result v1
 
-    invoke-virtual {v0, v1}, Landroid/preference/CheckBoxPreference;->setEnabled(Z)V
+    invoke-virtual {v0, v1}, Landroid/preference/SwitchPreference;->setEnabled(Z)V
 
     return-void
 
@@ -2749,9 +2749,9 @@
     const/4 v0, 0x1
 
     :goto_0
-    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->mWifiAggressiveHandover:Landroid/preference/CheckBoxPreference;
+    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->mWifiAggressiveHandover:Landroid/preference/SwitchPreference;
 
-    invoke-virtual {p0, v1, v0}, Lcom/android/settings/DevelopmentSettings;->updateCheckBox(Landroid/preference/CheckBoxPreference;Z)V
+    invoke-virtual {p0, v1, v0}, Lcom/android/settings/DevelopmentSettings;->updateSwitch(Landroid/preference/SwitchPreference;Z)V
 
     return-void
 
@@ -2775,9 +2775,9 @@
     const/4 v0, 0x1
 
     :goto_0
-    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->mWifiAllowScansWithTraffic:Landroid/preference/CheckBoxPreference;
+    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->mWifiAllowScansWithTraffic:Landroid/preference/SwitchPreference;
 
-    invoke-virtual {p0, v1, v0}, Lcom/android/settings/DevelopmentSettings;->updateCheckBox(Landroid/preference/CheckBoxPreference;Z)V
+    invoke-virtual {p0, v1, v0}, Lcom/android/settings/DevelopmentSettings;->updateSwitch(Landroid/preference/SwitchPreference;Z)V
 
     return-void
 
@@ -2792,7 +2792,7 @@
 
     const/4 v0, 0x0
 
-    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->mWifiDisplayCertification:Landroid/preference/CheckBoxPreference;
+    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->mWifiDisplayCertification:Landroid/preference/SwitchPreference;
 
     invoke-virtual {p0}, Lcom/android/settings/DevelopmentSettings;->getActivity()Landroid/app/Activity;
 
@@ -2813,7 +2813,7 @@
     const/4 v0, 0x1
 
     :cond_0
-    invoke-virtual {p0, v1, v0}, Lcom/android/settings/DevelopmentSettings;->updateCheckBox(Landroid/preference/CheckBoxPreference;Z)V
+    invoke-virtual {p0, v1, v0}, Lcom/android/settings/DevelopmentSettings;->updateSwitch(Landroid/preference/SwitchPreference;Z)V
 
     return-void
 .end method
@@ -2832,9 +2832,9 @@
     const/4 v0, 0x1
 
     :goto_0
-    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->mWifiVerboseLogging:Landroid/preference/CheckBoxPreference;
+    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->mWifiVerboseLogging:Landroid/preference/SwitchPreference;
 
-    invoke-virtual {p0, v1, v0}, Lcom/android/settings/DevelopmentSettings;->updateCheckBox(Landroid/preference/CheckBoxPreference;Z)V
+    invoke-virtual {p0, v1, v0}, Lcom/android/settings/DevelopmentSettings;->updateSwitch(Landroid/preference/SwitchPreference;Z)V
 
     return-void
 
@@ -2985,9 +2985,9 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->mBtHciSnoopLog:Landroid/preference/CheckBoxPreference;
+    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->mBtHciSnoopLog:Landroid/preference/SwitchPreference;
 
-    invoke-virtual {v1}, Landroid/preference/CheckBoxPreference;->isChecked()Z
+    invoke-virtual {v1}, Landroid/preference/SwitchPreference;->isChecked()Z
 
     move-result v1
 
@@ -3003,9 +3003,9 @@
 
     const-string v3, "bluetooth_hci_log"
 
-    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->mBtHciSnoopLog:Landroid/preference/CheckBoxPreference;
+    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->mBtHciSnoopLog:Landroid/preference/SwitchPreference;
 
-    invoke-virtual {v1}, Landroid/preference/CheckBoxPreference;->isChecked()Z
+    invoke-virtual {v1}, Landroid/preference/SwitchPreference;->isChecked()Z
 
     move-result v1
 
@@ -3027,9 +3027,9 @@
 .method private writeCpuUsageOptions()V
     .locals 5
 
-    iget-object v2, p0, Lcom/android/settings/DevelopmentSettings;->mShowCpuUsage:Landroid/preference/CheckBoxPreference;
+    iget-object v2, p0, Lcom/android/settings/DevelopmentSettings;->mShowCpuUsage:Landroid/preference/SwitchPreference;
 
-    invoke-virtual {v2}, Landroid/preference/CheckBoxPreference;->isChecked()Z
+    invoke-virtual {v2}, Landroid/preference/SwitchPreference;->isChecked()Z
 
     move-result v1
 
@@ -3119,9 +3119,9 @@
 
     const-string v1, "debug.layout"
 
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->mDebugLayout:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->mDebugLayout:Landroid/preference/SwitchPreference;
 
-    invoke-virtual {v0}, Landroid/preference/CheckBoxPreference;->isChecked()Z
+    invoke-virtual {v0}, Landroid/preference/SwitchPreference;->isChecked()Z
 
     move-result v0
 
@@ -3152,9 +3152,9 @@
 
     iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->mDebugApp:Ljava/lang/String;
 
-    iget-object v2, p0, Lcom/android/settings/DevelopmentSettings;->mWaitForDebugger:Landroid/preference/CheckBoxPreference;
+    iget-object v2, p0, Lcom/android/settings/DevelopmentSettings;->mWaitForDebugger:Landroid/preference/SwitchPreference;
 
-    invoke-virtual {v2}, Landroid/preference/CheckBoxPreference;->isChecked()Z
+    invoke-virtual {v2}, Landroid/preference/SwitchPreference;->isChecked()Z
 
     move-result v2
 
@@ -3195,9 +3195,9 @@
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    iget-object v3, p0, Lcom/android/settings/DevelopmentSettings;->mDisableOverlays:Landroid/preference/CheckBoxPreference;
+    iget-object v3, p0, Lcom/android/settings/DevelopmentSettings;->mDisableOverlays:Landroid/preference/SwitchPreference;
 
-    invoke-virtual {v3}, Landroid/preference/CheckBoxPreference;->isChecked()Z
+    invoke-virtual {v3}, Landroid/preference/SwitchPreference;->isChecked()Z
 
     move-result v3
 
@@ -3235,9 +3235,9 @@
 .method private writeForceRtlOptions()V
     .locals 4
 
-    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->mForceRtlLayout:Landroid/preference/CheckBoxPreference;
+    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->mForceRtlLayout:Landroid/preference/SwitchPreference;
 
-    invoke-virtual {v1}, Landroid/preference/CheckBoxPreference;->isChecked()Z
+    invoke-virtual {v1}, Landroid/preference/SwitchPreference;->isChecked()Z
 
     move-result v0
 
@@ -3301,9 +3301,9 @@
 
     const-string v1, "persist.sys.ui.hw"
 
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->mForceHardwareUi:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->mForceHardwareUi:Landroid/preference/SwitchPreference;
 
-    invoke-virtual {v0}, Landroid/preference/CheckBoxPreference;->isChecked()Z
+    invoke-virtual {v0}, Landroid/preference/SwitchPreference;->isChecked()Z
 
     move-result v0
 
@@ -3332,9 +3332,9 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->mImmediatelyDestroyActivities:Landroid/preference/CheckBoxPreference;
+    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->mImmediatelyDestroyActivities:Landroid/preference/SwitchPreference;
 
-    invoke-virtual {v1}, Landroid/preference/CheckBoxPreference;->isChecked()Z
+    invoke-virtual {v1}, Landroid/preference/SwitchPreference;->isChecked()Z
 
     move-result v1
 
@@ -3458,9 +3458,9 @@
 
     const-string v1, "debug.egl.force_msaa"
 
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->mForceMsaa:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->mForceMsaa:Landroid/preference/SwitchPreference;
 
-    invoke-virtual {v0}, Landroid/preference/CheckBoxPreference;->isChecked()Z
+    invoke-virtual {v0}, Landroid/preference/SwitchPreference;->isChecked()Z
 
     move-result v0
 
@@ -3542,9 +3542,9 @@
 
     const-string v2, "pointer_location"
 
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->mPointerLocation:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->mPointerLocation:Landroid/preference/SwitchPreference;
 
-    invoke-virtual {v0}, Landroid/preference/CheckBoxPreference;->isChecked()Z
+    invoke-virtual {v0}, Landroid/preference/SwitchPreference;->isChecked()Z
 
     move-result v0
 
@@ -3576,9 +3576,9 @@
 
     const-string v2, "anr_show_background"
 
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->mShowAllANRs:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->mShowAllANRs:Landroid/preference/SwitchPreference;
 
-    invoke-virtual {v0}, Landroid/preference/CheckBoxPreference;->isChecked()Z
+    invoke-virtual {v0}, Landroid/preference/SwitchPreference;->isChecked()Z
 
     move-result v0
 
@@ -3602,9 +3602,9 @@
 
     const-string v1, "debug.hwui.show_layers_updates"
 
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->mShowHwLayersUpdates:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->mShowHwLayersUpdates:Landroid/preference/SwitchPreference;
 
-    invoke-virtual {v0}, Landroid/preference/CheckBoxPreference;->isChecked()Z
+    invoke-virtual {v0}, Landroid/preference/SwitchPreference;->isChecked()Z
 
     move-result v0
 
@@ -3630,9 +3630,9 @@
 
     const-string v1, "debug.hwui.show_dirty_regions"
 
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->mShowHwScreenUpdates:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->mShowHwScreenUpdates:Landroid/preference/SwitchPreference;
 
-    invoke-virtual {v0}, Landroid/preference/CheckBoxPreference;->isChecked()Z
+    invoke-virtual {v0}, Landroid/preference/SwitchPreference;->isChecked()Z
 
     move-result v0
 
@@ -3692,9 +3692,9 @@
 
     const-string v2, "show_touches"
 
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->mShowTouches:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->mShowTouches:Landroid/preference/SwitchPreference;
 
-    invoke-virtual {v0}, Landroid/preference/CheckBoxPreference;->isChecked()Z
+    invoke-virtual {v0}, Landroid/preference/SwitchPreference;->isChecked()Z
 
     move-result v0
 
@@ -3735,9 +3735,9 @@
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    iget-object v3, p0, Lcom/android/settings/DevelopmentSettings;->mShowScreenUpdates:Landroid/preference/CheckBoxPreference;
+    iget-object v3, p0, Lcom/android/settings/DevelopmentSettings;->mShowScreenUpdates:Landroid/preference/SwitchPreference;
 
-    invoke-virtual {v3}, Landroid/preference/CheckBoxPreference;->isChecked()Z
+    invoke-virtual {v3}, Landroid/preference/SwitchPreference;->isChecked()Z
 
     move-result v3
 
@@ -3818,9 +3818,9 @@
     :try_start_0
     iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->mWindowManager:Landroid/view/IWindowManager;
 
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->mStrictMode:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->mStrictMode:Landroid/preference/SwitchPreference;
 
-    invoke-virtual {v0}, Landroid/preference/CheckBoxPreference;->isChecked()Z
+    invoke-virtual {v0}, Landroid/preference/SwitchPreference;->isChecked()Z
 
     move-result v0
 
@@ -3882,9 +3882,9 @@
 
     const-string v2, "usb_audio_automatic_routing_disabled"
 
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->mUSBAudio:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->mUSBAudio:Landroid/preference/SwitchPreference;
 
-    invoke-virtual {v0}, Landroid/preference/CheckBoxPreference;->isChecked()Z
+    invoke-virtual {v0}, Landroid/preference/SwitchPreference;->isChecked()Z
 
     move-result v0
 
@@ -3908,9 +3908,9 @@
 
     const-string v1, "persist.sys.media.use-awesome"
 
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->mUseNuplayer:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->mUseNuplayer:Landroid/preference/SwitchPreference;
 
-    invoke-virtual {v0}, Landroid/preference/CheckBoxPreference;->isChecked()Z
+    invoke-virtual {v0}, Landroid/preference/SwitchPreference;->isChecked()Z
 
     move-result v0
 
@@ -3944,9 +3944,9 @@
 
     const-string v2, "verifier_verify_adb_installs"
 
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->mVerifyAppsOverUsb:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->mVerifyAppsOverUsb:Landroid/preference/SwitchPreference;
 
-    invoke-virtual {v0}, Landroid/preference/CheckBoxPreference;->isChecked()Z
+    invoke-virtual {v0}, Landroid/preference/SwitchPreference;->isChecked()Z
 
     move-result v0
 
@@ -3970,9 +3970,9 @@
 
     iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->mWifiManager:Landroid/net/wifi/WifiManager;
 
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->mWifiAggressiveHandover:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->mWifiAggressiveHandover:Landroid/preference/SwitchPreference;
 
-    invoke-virtual {v0}, Landroid/preference/CheckBoxPreference;->isChecked()Z
+    invoke-virtual {v0}, Landroid/preference/SwitchPreference;->isChecked()Z
 
     move-result v0
 
@@ -3996,9 +3996,9 @@
 
     iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->mWifiManager:Landroid/net/wifi/WifiManager;
 
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->mWifiAllowScansWithTraffic:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->mWifiAllowScansWithTraffic:Landroid/preference/SwitchPreference;
 
-    invoke-virtual {v0}, Landroid/preference/CheckBoxPreference;->isChecked()Z
+    invoke-virtual {v0}, Landroid/preference/SwitchPreference;->isChecked()Z
 
     move-result v0
 
@@ -4030,9 +4030,9 @@
 
     const-string v2, "wifi_display_certification_on"
 
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->mWifiDisplayCertification:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->mWifiDisplayCertification:Landroid/preference/SwitchPreference;
 
-    invoke-virtual {v0}, Landroid/preference/CheckBoxPreference;->isChecked()Z
+    invoke-virtual {v0}, Landroid/preference/SwitchPreference;->isChecked()Z
 
     move-result v0
 
@@ -4056,9 +4056,9 @@
 
     iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->mWifiManager:Landroid/net/wifi/WifiManager;
 
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->mWifiVerboseLogging:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->mWifiVerboseLogging:Landroid/preference/SwitchPreference;
 
-    invoke-virtual {v0}, Landroid/preference/CheckBoxPreference;->isChecked()Z
+    invoke-virtual {v0}, Landroid/preference/SwitchPreference;->isChecked()Z
 
     move-result v0
 
@@ -4177,9 +4177,9 @@
 
     invoke-static {v3, v4, v5}, Landroid/provider/Settings$Global;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    iget-object v3, p0, Lcom/android/settings/DevelopmentSettings;->mVerifyAppsOverUsb:Landroid/preference/CheckBoxPreference;
+    iget-object v3, p0, Lcom/android/settings/DevelopmentSettings;->mVerifyAppsOverUsb:Landroid/preference/SwitchPreference;
 
-    invoke-virtual {v3, v5}, Landroid/preference/CheckBoxPreference;->setEnabled(Z)V
+    invoke-virtual {v3, v5}, Landroid/preference/SwitchPreference;->setEnabled(Z)V
 
     invoke-direct {p0}, Lcom/android/settings/DevelopmentSettings;->updateVerifyAppsOverUsbOptions()V
 
@@ -4190,9 +4190,9 @@
     return-void
 
     :cond_1
-    iget-object v3, p0, Lcom/android/settings/DevelopmentSettings;->mEnableAdb:Landroid/preference/CheckBoxPreference;
+    iget-object v3, p0, Lcom/android/settings/DevelopmentSettings;->mEnableAdb:Landroid/preference/SwitchPreference;
 
-    invoke-virtual {v3, v6}, Landroid/preference/CheckBoxPreference;->setChecked(Z)V
+    invoke-virtual {v3, v6}, Landroid/preference/SwitchPreference;->setChecked(Z)V
 
     goto :goto_0
 
@@ -4388,11 +4388,11 @@
 
     const-string v2, "enable_adb"
 
-    invoke-direct {p0, v2}, Lcom/android/settings/DevelopmentSettings;->findAndInitCheckboxPref(Ljava/lang/String;)Landroid/preference/CheckBoxPreference;
+    invoke-direct {p0, v2}, Lcom/android/settings/DevelopmentSettings;->findAndInitSwitchPref(Ljava/lang/String;)Landroid/preference/SwitchPreference;
 
     move-result-object v2
 
-    iput-object v2, p0, Lcom/android/settings/DevelopmentSettings;->mEnableAdb:Landroid/preference/CheckBoxPreference;
+    iput-object v2, p0, Lcom/android/settings/DevelopmentSettings;->mEnableAdb:Landroid/preference/SwitchPreference;
 
     const-string v2, "clear_adb_keys"
 
@@ -4425,11 +4425,11 @@
 
     const-string v2, "enable_terminal"
 
-    invoke-direct {p0, v2}, Lcom/android/settings/DevelopmentSettings;->findAndInitCheckboxPref(Ljava/lang/String;)Landroid/preference/CheckBoxPreference;
+    invoke-direct {p0, v2}, Lcom/android/settings/DevelopmentSettings;->findAndInitSwitchPref(Ljava/lang/String;)Landroid/preference/SwitchPreference;
 
     move-result-object v2
 
-    iput-object v2, p0, Lcom/android/settings/DevelopmentSettings;->mEnableTerminal:Landroid/preference/CheckBoxPreference;
+    iput-object v2, p0, Lcom/android/settings/DevelopmentSettings;->mEnableTerminal:Landroid/preference/SwitchPreference;
 
     invoke-virtual {p0}, Lcom/android/settings/DevelopmentSettings;->getActivity()Landroid/app/Activity;
 
@@ -4443,11 +4443,11 @@
 
     if-nez v2, :cond_3
 
-    iget-object v2, p0, Lcom/android/settings/DevelopmentSettings;->mEnableTerminal:Landroid/preference/CheckBoxPreference;
+    iget-object v2, p0, Lcom/android/settings/DevelopmentSettings;->mEnableTerminal:Landroid/preference/SwitchPreference;
 
     invoke-virtual {v0, v2}, Landroid/preference/PreferenceGroup;->removePreference(Landroid/preference/Preference;)Z
 
-    iput-object v4, p0, Lcom/android/settings/DevelopmentSettings;->mEnableTerminal:Landroid/preference/CheckBoxPreference;
+    iput-object v4, p0, Lcom/android/settings/DevelopmentSettings;->mEnableTerminal:Landroid/preference/SwitchPreference;
 
     :cond_3
     const-string v2, "bugreport"
@@ -4460,35 +4460,35 @@
 
     const-string v2, "bugreport_in_power"
 
-    invoke-direct {p0, v2}, Lcom/android/settings/DevelopmentSettings;->findAndInitCheckboxPref(Ljava/lang/String;)Landroid/preference/CheckBoxPreference;
+    invoke-direct {p0, v2}, Lcom/android/settings/DevelopmentSettings;->findAndInitSwitchPref(Ljava/lang/String;)Landroid/preference/SwitchPreference;
 
     move-result-object v2
 
-    iput-object v2, p0, Lcom/android/settings/DevelopmentSettings;->mBugreportInPower:Landroid/preference/CheckBoxPreference;
+    iput-object v2, p0, Lcom/android/settings/DevelopmentSettings;->mBugreportInPower:Landroid/preference/SwitchPreference;
 
     const-string v2, "keep_screen_on"
 
-    invoke-direct {p0, v2}, Lcom/android/settings/DevelopmentSettings;->findAndInitCheckboxPref(Ljava/lang/String;)Landroid/preference/CheckBoxPreference;
+    invoke-direct {p0, v2}, Lcom/android/settings/DevelopmentSettings;->findAndInitSwitchPref(Ljava/lang/String;)Landroid/preference/SwitchPreference;
 
     move-result-object v2
 
-    iput-object v2, p0, Lcom/android/settings/DevelopmentSettings;->mKeepScreenOn:Landroid/preference/CheckBoxPreference;
+    iput-object v2, p0, Lcom/android/settings/DevelopmentSettings;->mKeepScreenOn:Landroid/preference/SwitchPreference;
 
     const-string v2, "bt_hci_snoop_log"
 
-    invoke-direct {p0, v2}, Lcom/android/settings/DevelopmentSettings;->findAndInitCheckboxPref(Ljava/lang/String;)Landroid/preference/CheckBoxPreference;
+    invoke-direct {p0, v2}, Lcom/android/settings/DevelopmentSettings;->findAndInitSwitchPref(Ljava/lang/String;)Landroid/preference/SwitchPreference;
 
     move-result-object v2
 
-    iput-object v2, p0, Lcom/android/settings/DevelopmentSettings;->mBtHciSnoopLog:Landroid/preference/CheckBoxPreference;
+    iput-object v2, p0, Lcom/android/settings/DevelopmentSettings;->mBtHciSnoopLog:Landroid/preference/SwitchPreference;
 
     const-string v2, "oem_unlock_enable"
 
-    invoke-direct {p0, v2}, Lcom/android/settings/DevelopmentSettings;->findAndInitCheckboxPref(Ljava/lang/String;)Landroid/preference/CheckBoxPreference;
+    invoke-direct {p0, v2}, Lcom/android/settings/DevelopmentSettings;->findAndInitSwitchPref(Ljava/lang/String;)Landroid/preference/SwitchPreference;
 
     move-result-object v2
 
-    iput-object v2, p0, Lcom/android/settings/DevelopmentSettings;->mEnableOemUnlock:Landroid/preference/CheckBoxPreference;
+    iput-object v2, p0, Lcom/android/settings/DevelopmentSettings;->mEnableOemUnlock:Landroid/preference/SwitchPreference;
 
     invoke-static {}, Lcom/android/settings/DevelopmentSettings;->showEnableOemUnlockPreference()Z
 
@@ -4496,28 +4496,28 @@
 
     if-nez v2, :cond_4
 
-    iget-object v2, p0, Lcom/android/settings/DevelopmentSettings;->mEnableOemUnlock:Landroid/preference/CheckBoxPreference;
+    iget-object v2, p0, Lcom/android/settings/DevelopmentSettings;->mEnableOemUnlock:Landroid/preference/SwitchPreference;
 
     invoke-direct {p0, v2}, Lcom/android/settings/DevelopmentSettings;->removePreference(Landroid/preference/Preference;)V
 
-    iput-object v4, p0, Lcom/android/settings/DevelopmentSettings;->mEnableOemUnlock:Landroid/preference/CheckBoxPreference;
+    iput-object v4, p0, Lcom/android/settings/DevelopmentSettings;->mEnableOemUnlock:Landroid/preference/SwitchPreference;
 
     :cond_4
     const-string v2, "allow_mock_location"
 
-    invoke-direct {p0, v2}, Lcom/android/settings/DevelopmentSettings;->findAndInitCheckboxPref(Ljava/lang/String;)Landroid/preference/CheckBoxPreference;
+    invoke-direct {p0, v2}, Lcom/android/settings/DevelopmentSettings;->findAndInitSwitchPref(Ljava/lang/String;)Landroid/preference/SwitchPreference;
 
     move-result-object v2
 
-    iput-object v2, p0, Lcom/android/settings/DevelopmentSettings;->mAllowMockLocation:Landroid/preference/CheckBoxPreference;
+    iput-object v2, p0, Lcom/android/settings/DevelopmentSettings;->mAllowMockLocation:Landroid/preference/SwitchPreference;
 
     const-string v2, "debug_view_attributes"
 
-    invoke-direct {p0, v2}, Lcom/android/settings/DevelopmentSettings;->findAndInitCheckboxPref(Ljava/lang/String;)Landroid/preference/CheckBoxPreference;
+    invoke-direct {p0, v2}, Lcom/android/settings/DevelopmentSettings;->findAndInitSwitchPref(Ljava/lang/String;)Landroid/preference/SwitchPreference;
 
     move-result-object v2
 
-    iput-object v2, p0, Lcom/android/settings/DevelopmentSettings;->mDebugViewAttributes:Landroid/preference/CheckBoxPreference;
+    iput-object v2, p0, Lcom/android/settings/DevelopmentSettings;->mDebugViewAttributes:Landroid/preference/SwitchPreference;
 
     const-string v2, "local_backup_password"
 
@@ -4547,7 +4547,7 @@
 
     if-nez v2, :cond_5
 
-    iget-object v2, p0, Lcom/android/settings/DevelopmentSettings;->mEnableAdb:Landroid/preference/CheckBoxPreference;
+    iget-object v2, p0, Lcom/android/settings/DevelopmentSettings;->mEnableAdb:Landroid/preference/SwitchPreference;
 
     invoke-direct {p0, v2}, Lcom/android/settings/DevelopmentSettings;->disableForUser(Landroid/preference/Preference;)V
 
@@ -4555,7 +4555,7 @@
 
     invoke-direct {p0, v2}, Lcom/android/settings/DevelopmentSettings;->disableForUser(Landroid/preference/Preference;)V
 
-    iget-object v2, p0, Lcom/android/settings/DevelopmentSettings;->mEnableTerminal:Landroid/preference/CheckBoxPreference;
+    iget-object v2, p0, Lcom/android/settings/DevelopmentSettings;->mEnableTerminal:Landroid/preference/SwitchPreference;
 
     invoke-direct {p0, v2}, Lcom/android/settings/DevelopmentSettings;->disableForUser(Landroid/preference/Preference;)V
 
@@ -4580,19 +4580,19 @@
 
     const-string v2, "wait_for_debugger"
 
-    invoke-direct {p0, v2}, Lcom/android/settings/DevelopmentSettings;->findAndInitCheckboxPref(Ljava/lang/String;)Landroid/preference/CheckBoxPreference;
+    invoke-direct {p0, v2}, Lcom/android/settings/DevelopmentSettings;->findAndInitSwitchPref(Ljava/lang/String;)Landroid/preference/SwitchPreference;
 
     move-result-object v2
 
-    iput-object v2, p0, Lcom/android/settings/DevelopmentSettings;->mWaitForDebugger:Landroid/preference/CheckBoxPreference;
+    iput-object v2, p0, Lcom/android/settings/DevelopmentSettings;->mWaitForDebugger:Landroid/preference/SwitchPreference;
 
     const-string v2, "verify_apps_over_usb"
 
-    invoke-direct {p0, v2}, Lcom/android/settings/DevelopmentSettings;->findAndInitCheckboxPref(Ljava/lang/String;)Landroid/preference/CheckBoxPreference;
+    invoke-direct {p0, v2}, Lcom/android/settings/DevelopmentSettings;->findAndInitSwitchPref(Ljava/lang/String;)Landroid/preference/SwitchPreference;
 
     move-result-object v2
 
-    iput-object v2, p0, Lcom/android/settings/DevelopmentSettings;->mVerifyAppsOverUsb:Landroid/preference/CheckBoxPreference;
+    iput-object v2, p0, Lcom/android/settings/DevelopmentSettings;->mVerifyAppsOverUsb:Landroid/preference/SwitchPreference;
 
     invoke-direct {p0}, Lcom/android/settings/DevelopmentSettings;->showVerifierSetting()Z
 
@@ -4602,7 +4602,7 @@
 
     if-eqz v0, :cond_8
 
-    iget-object v2, p0, Lcom/android/settings/DevelopmentSettings;->mVerifyAppsOverUsb:Landroid/preference/CheckBoxPreference;
+    iget-object v2, p0, Lcom/android/settings/DevelopmentSettings;->mVerifyAppsOverUsb:Landroid/preference/SwitchPreference;
 
     invoke-virtual {v0, v2}, Landroid/preference/PreferenceGroup;->removePreference(Landroid/preference/Preference;)Z
 
@@ -4610,67 +4610,67 @@
     :goto_1
     const-string v2, "strict_mode"
 
-    invoke-direct {p0, v2}, Lcom/android/settings/DevelopmentSettings;->findAndInitCheckboxPref(Ljava/lang/String;)Landroid/preference/CheckBoxPreference;
+    invoke-direct {p0, v2}, Lcom/android/settings/DevelopmentSettings;->findAndInitSwitchPref(Ljava/lang/String;)Landroid/preference/SwitchPreference;
 
     move-result-object v2
 
-    iput-object v2, p0, Lcom/android/settings/DevelopmentSettings;->mStrictMode:Landroid/preference/CheckBoxPreference;
+    iput-object v2, p0, Lcom/android/settings/DevelopmentSettings;->mStrictMode:Landroid/preference/SwitchPreference;
 
     const-string v2, "pointer_location"
 
-    invoke-direct {p0, v2}, Lcom/android/settings/DevelopmentSettings;->findAndInitCheckboxPref(Ljava/lang/String;)Landroid/preference/CheckBoxPreference;
+    invoke-direct {p0, v2}, Lcom/android/settings/DevelopmentSettings;->findAndInitSwitchPref(Ljava/lang/String;)Landroid/preference/SwitchPreference;
 
     move-result-object v2
 
-    iput-object v2, p0, Lcom/android/settings/DevelopmentSettings;->mPointerLocation:Landroid/preference/CheckBoxPreference;
+    iput-object v2, p0, Lcom/android/settings/DevelopmentSettings;->mPointerLocation:Landroid/preference/SwitchPreference;
 
     const-string v2, "show_touches"
 
-    invoke-direct {p0, v2}, Lcom/android/settings/DevelopmentSettings;->findAndInitCheckboxPref(Ljava/lang/String;)Landroid/preference/CheckBoxPreference;
+    invoke-direct {p0, v2}, Lcom/android/settings/DevelopmentSettings;->findAndInitSwitchPref(Ljava/lang/String;)Landroid/preference/SwitchPreference;
 
     move-result-object v2
 
-    iput-object v2, p0, Lcom/android/settings/DevelopmentSettings;->mShowTouches:Landroid/preference/CheckBoxPreference;
+    iput-object v2, p0, Lcom/android/settings/DevelopmentSettings;->mShowTouches:Landroid/preference/SwitchPreference;
 
     const-string v2, "show_screen_updates"
 
-    invoke-direct {p0, v2}, Lcom/android/settings/DevelopmentSettings;->findAndInitCheckboxPref(Ljava/lang/String;)Landroid/preference/CheckBoxPreference;
+    invoke-direct {p0, v2}, Lcom/android/settings/DevelopmentSettings;->findAndInitSwitchPref(Ljava/lang/String;)Landroid/preference/SwitchPreference;
 
     move-result-object v2
 
-    iput-object v2, p0, Lcom/android/settings/DevelopmentSettings;->mShowScreenUpdates:Landroid/preference/CheckBoxPreference;
+    iput-object v2, p0, Lcom/android/settings/DevelopmentSettings;->mShowScreenUpdates:Landroid/preference/SwitchPreference;
 
     const-string v2, "disable_overlays"
 
-    invoke-direct {p0, v2}, Lcom/android/settings/DevelopmentSettings;->findAndInitCheckboxPref(Ljava/lang/String;)Landroid/preference/CheckBoxPreference;
+    invoke-direct {p0, v2}, Lcom/android/settings/DevelopmentSettings;->findAndInitSwitchPref(Ljava/lang/String;)Landroid/preference/SwitchPreference;
 
     move-result-object v2
 
-    iput-object v2, p0, Lcom/android/settings/DevelopmentSettings;->mDisableOverlays:Landroid/preference/CheckBoxPreference;
+    iput-object v2, p0, Lcom/android/settings/DevelopmentSettings;->mDisableOverlays:Landroid/preference/SwitchPreference;
 
     const-string v2, "show_cpu_usage"
 
-    invoke-direct {p0, v2}, Lcom/android/settings/DevelopmentSettings;->findAndInitCheckboxPref(Ljava/lang/String;)Landroid/preference/CheckBoxPreference;
+    invoke-direct {p0, v2}, Lcom/android/settings/DevelopmentSettings;->findAndInitSwitchPref(Ljava/lang/String;)Landroid/preference/SwitchPreference;
 
     move-result-object v2
 
-    iput-object v2, p0, Lcom/android/settings/DevelopmentSettings;->mShowCpuUsage:Landroid/preference/CheckBoxPreference;
+    iput-object v2, p0, Lcom/android/settings/DevelopmentSettings;->mShowCpuUsage:Landroid/preference/SwitchPreference;
 
     const-string v2, "force_hw_ui"
 
-    invoke-direct {p0, v2}, Lcom/android/settings/DevelopmentSettings;->findAndInitCheckboxPref(Ljava/lang/String;)Landroid/preference/CheckBoxPreference;
+    invoke-direct {p0, v2}, Lcom/android/settings/DevelopmentSettings;->findAndInitSwitchPref(Ljava/lang/String;)Landroid/preference/SwitchPreference;
 
     move-result-object v2
 
-    iput-object v2, p0, Lcom/android/settings/DevelopmentSettings;->mForceHardwareUi:Landroid/preference/CheckBoxPreference;
+    iput-object v2, p0, Lcom/android/settings/DevelopmentSettings;->mForceHardwareUi:Landroid/preference/SwitchPreference;
 
     const-string v2, "force_msaa"
 
-    invoke-direct {p0, v2}, Lcom/android/settings/DevelopmentSettings;->findAndInitCheckboxPref(Ljava/lang/String;)Landroid/preference/CheckBoxPreference;
+    invoke-direct {p0, v2}, Lcom/android/settings/DevelopmentSettings;->findAndInitSwitchPref(Ljava/lang/String;)Landroid/preference/SwitchPreference;
 
     move-result-object v2
 
-    iput-object v2, p0, Lcom/android/settings/DevelopmentSettings;->mForceMsaa:Landroid/preference/CheckBoxPreference;
+    iput-object v2, p0, Lcom/android/settings/DevelopmentSettings;->mForceMsaa:Landroid/preference/SwitchPreference;
 
     const-string v2, "track_frame_time"
 
@@ -4690,35 +4690,35 @@
 
     const-string v2, "show_hw_screen_udpates"
 
-    invoke-direct {p0, v2}, Lcom/android/settings/DevelopmentSettings;->findAndInitCheckboxPref(Ljava/lang/String;)Landroid/preference/CheckBoxPreference;
+    invoke-direct {p0, v2}, Lcom/android/settings/DevelopmentSettings;->findAndInitSwitchPref(Ljava/lang/String;)Landroid/preference/SwitchPreference;
 
     move-result-object v2
 
-    iput-object v2, p0, Lcom/android/settings/DevelopmentSettings;->mShowHwScreenUpdates:Landroid/preference/CheckBoxPreference;
+    iput-object v2, p0, Lcom/android/settings/DevelopmentSettings;->mShowHwScreenUpdates:Landroid/preference/SwitchPreference;
 
     const-string v2, "show_hw_layers_udpates"
 
-    invoke-direct {p0, v2}, Lcom/android/settings/DevelopmentSettings;->findAndInitCheckboxPref(Ljava/lang/String;)Landroid/preference/CheckBoxPreference;
+    invoke-direct {p0, v2}, Lcom/android/settings/DevelopmentSettings;->findAndInitSwitchPref(Ljava/lang/String;)Landroid/preference/SwitchPreference;
 
     move-result-object v2
 
-    iput-object v2, p0, Lcom/android/settings/DevelopmentSettings;->mShowHwLayersUpdates:Landroid/preference/CheckBoxPreference;
+    iput-object v2, p0, Lcom/android/settings/DevelopmentSettings;->mShowHwLayersUpdates:Landroid/preference/SwitchPreference;
 
     const-string v2, "debug_layout"
 
-    invoke-direct {p0, v2}, Lcom/android/settings/DevelopmentSettings;->findAndInitCheckboxPref(Ljava/lang/String;)Landroid/preference/CheckBoxPreference;
+    invoke-direct {p0, v2}, Lcom/android/settings/DevelopmentSettings;->findAndInitSwitchPref(Ljava/lang/String;)Landroid/preference/SwitchPreference;
 
     move-result-object v2
 
-    iput-object v2, p0, Lcom/android/settings/DevelopmentSettings;->mDebugLayout:Landroid/preference/CheckBoxPreference;
+    iput-object v2, p0, Lcom/android/settings/DevelopmentSettings;->mDebugLayout:Landroid/preference/SwitchPreference;
 
     const-string v2, "force_rtl_layout_all_locales"
 
-    invoke-direct {p0, v2}, Lcom/android/settings/DevelopmentSettings;->findAndInitCheckboxPref(Ljava/lang/String;)Landroid/preference/CheckBoxPreference;
+    invoke-direct {p0, v2}, Lcom/android/settings/DevelopmentSettings;->findAndInitSwitchPref(Ljava/lang/String;)Landroid/preference/SwitchPreference;
 
     move-result-object v2
 
-    iput-object v2, p0, Lcom/android/settings/DevelopmentSettings;->mForceRtlLayout:Landroid/preference/CheckBoxPreference;
+    iput-object v2, p0, Lcom/android/settings/DevelopmentSettings;->mForceRtlLayout:Landroid/preference/SwitchPreference;
 
     const-string v2, "debug_hw_overdraw"
 
@@ -4730,35 +4730,35 @@
 
     const-string v2, "wifi_display_certification"
 
-    invoke-direct {p0, v2}, Lcom/android/settings/DevelopmentSettings;->findAndInitCheckboxPref(Ljava/lang/String;)Landroid/preference/CheckBoxPreference;
+    invoke-direct {p0, v2}, Lcom/android/settings/DevelopmentSettings;->findAndInitSwitchPref(Ljava/lang/String;)Landroid/preference/SwitchPreference;
 
     move-result-object v2
 
-    iput-object v2, p0, Lcom/android/settings/DevelopmentSettings;->mWifiDisplayCertification:Landroid/preference/CheckBoxPreference;
+    iput-object v2, p0, Lcom/android/settings/DevelopmentSettings;->mWifiDisplayCertification:Landroid/preference/SwitchPreference;
 
     const-string v2, "wifi_verbose_logging"
 
-    invoke-direct {p0, v2}, Lcom/android/settings/DevelopmentSettings;->findAndInitCheckboxPref(Ljava/lang/String;)Landroid/preference/CheckBoxPreference;
+    invoke-direct {p0, v2}, Lcom/android/settings/DevelopmentSettings;->findAndInitSwitchPref(Ljava/lang/String;)Landroid/preference/SwitchPreference;
 
     move-result-object v2
 
-    iput-object v2, p0, Lcom/android/settings/DevelopmentSettings;->mWifiVerboseLogging:Landroid/preference/CheckBoxPreference;
+    iput-object v2, p0, Lcom/android/settings/DevelopmentSettings;->mWifiVerboseLogging:Landroid/preference/SwitchPreference;
 
     const-string v2, "wifi_aggressive_handover"
 
-    invoke-direct {p0, v2}, Lcom/android/settings/DevelopmentSettings;->findAndInitCheckboxPref(Ljava/lang/String;)Landroid/preference/CheckBoxPreference;
+    invoke-direct {p0, v2}, Lcom/android/settings/DevelopmentSettings;->findAndInitSwitchPref(Ljava/lang/String;)Landroid/preference/SwitchPreference;
 
     move-result-object v2
 
-    iput-object v2, p0, Lcom/android/settings/DevelopmentSettings;->mWifiAggressiveHandover:Landroid/preference/CheckBoxPreference;
+    iput-object v2, p0, Lcom/android/settings/DevelopmentSettings;->mWifiAggressiveHandover:Landroid/preference/SwitchPreference;
 
     const-string v2, "wifi_allow_scan_with_traffic"
 
-    invoke-direct {p0, v2}, Lcom/android/settings/DevelopmentSettings;->findAndInitCheckboxPref(Ljava/lang/String;)Landroid/preference/CheckBoxPreference;
+    invoke-direct {p0, v2}, Lcom/android/settings/DevelopmentSettings;->findAndInitSwitchPref(Ljava/lang/String;)Landroid/preference/SwitchPreference;
 
     move-result-object v2
 
-    iput-object v2, p0, Lcom/android/settings/DevelopmentSettings;->mWifiAllowScansWithTraffic:Landroid/preference/CheckBoxPreference;
+    iput-object v2, p0, Lcom/android/settings/DevelopmentSettings;->mWifiAllowScansWithTraffic:Landroid/preference/SwitchPreference;
 
     const-string v2, "select_logd_size"
 
@@ -4818,19 +4818,19 @@
 
     const-string v2, "use_nuplayer"
 
-    invoke-direct {p0, v2}, Lcom/android/settings/DevelopmentSettings;->findAndInitCheckboxPref(Ljava/lang/String;)Landroid/preference/CheckBoxPreference;
+    invoke-direct {p0, v2}, Lcom/android/settings/DevelopmentSettings;->findAndInitSwitchPref(Ljava/lang/String;)Landroid/preference/SwitchPreference;
 
     move-result-object v2
 
-    iput-object v2, p0, Lcom/android/settings/DevelopmentSettings;->mUseNuplayer:Landroid/preference/CheckBoxPreference;
+    iput-object v2, p0, Lcom/android/settings/DevelopmentSettings;->mUseNuplayer:Landroid/preference/SwitchPreference;
 
     const-string v2, "usb_audio"
 
-    invoke-direct {p0, v2}, Lcom/android/settings/DevelopmentSettings;->findAndInitCheckboxPref(Ljava/lang/String;)Landroid/preference/CheckBoxPreference;
+    invoke-direct {p0, v2}, Lcom/android/settings/DevelopmentSettings;->findAndInitSwitchPref(Ljava/lang/String;)Landroid/preference/SwitchPreference;
 
     move-result-object v2
 
-    iput-object v2, p0, Lcom/android/settings/DevelopmentSettings;->mUSBAudio:Landroid/preference/CheckBoxPreference;
+    iput-object v2, p0, Lcom/android/settings/DevelopmentSettings;->mUSBAudio:Landroid/preference/SwitchPreference;
 
     const-string v2, "immediately_destroy_activities"
 
@@ -4838,19 +4838,19 @@
 
     move-result-object v2
 
-    check-cast v2, Landroid/preference/CheckBoxPreference;
+    check-cast v2, Landroid/preference/SwitchPreference;
 
-    iput-object v2, p0, Lcom/android/settings/DevelopmentSettings;->mImmediatelyDestroyActivities:Landroid/preference/CheckBoxPreference;
+    iput-object v2, p0, Lcom/android/settings/DevelopmentSettings;->mImmediatelyDestroyActivities:Landroid/preference/SwitchPreference;
 
     iget-object v2, p0, Lcom/android/settings/DevelopmentSettings;->mAllPrefs:Ljava/util/ArrayList;
 
-    iget-object v3, p0, Lcom/android/settings/DevelopmentSettings;->mImmediatelyDestroyActivities:Landroid/preference/CheckBoxPreference;
+    iget-object v3, p0, Lcom/android/settings/DevelopmentSettings;->mImmediatelyDestroyActivities:Landroid/preference/SwitchPreference;
 
     invoke-virtual {v2, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     iget-object v2, p0, Lcom/android/settings/DevelopmentSettings;->mResetCbPrefs:Ljava/util/ArrayList;
 
-    iget-object v3, p0, Lcom/android/settings/DevelopmentSettings;->mImmediatelyDestroyActivities:Landroid/preference/CheckBoxPreference;
+    iget-object v3, p0, Lcom/android/settings/DevelopmentSettings;->mImmediatelyDestroyActivities:Landroid/preference/SwitchPreference;
 
     invoke-virtual {v2, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -4868,19 +4868,19 @@
 
     move-result-object v2
 
-    check-cast v2, Landroid/preference/CheckBoxPreference;
+    check-cast v2, Landroid/preference/SwitchPreference;
 
-    iput-object v2, p0, Lcom/android/settings/DevelopmentSettings;->mShowAllANRs:Landroid/preference/CheckBoxPreference;
+    iput-object v2, p0, Lcom/android/settings/DevelopmentSettings;->mShowAllANRs:Landroid/preference/SwitchPreference;
 
     iget-object v2, p0, Lcom/android/settings/DevelopmentSettings;->mAllPrefs:Ljava/util/ArrayList;
 
-    iget-object v3, p0, Lcom/android/settings/DevelopmentSettings;->mShowAllANRs:Landroid/preference/CheckBoxPreference;
+    iget-object v3, p0, Lcom/android/settings/DevelopmentSettings;->mShowAllANRs:Landroid/preference/SwitchPreference;
 
     invoke-virtual {v2, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     iget-object v2, p0, Lcom/android/settings/DevelopmentSettings;->mResetCbPrefs:Ljava/util/ArrayList;
 
-    iget-object v3, p0, Lcom/android/settings/DevelopmentSettings;->mShowAllANRs:Landroid/preference/CheckBoxPreference;
+    iget-object v3, p0, Lcom/android/settings/DevelopmentSettings;->mShowAllANRs:Landroid/preference/SwitchPreference;
 
     invoke-virtual {v2, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -4918,9 +4918,9 @@
     goto/16 :goto_0
 
     :cond_8
-    iget-object v2, p0, Lcom/android/settings/DevelopmentSettings;->mVerifyAppsOverUsb:Landroid/preference/CheckBoxPreference;
+    iget-object v2, p0, Lcom/android/settings/DevelopmentSettings;->mVerifyAppsOverUsb:Landroid/preference/SwitchPreference;
 
-    invoke-virtual {v2, v5}, Landroid/preference/CheckBoxPreference;->setEnabled(Z)V
+    invoke-virtual {v2, v5}, Landroid/preference/SwitchPreference;->setEnabled(Z)V
 
     goto/16 :goto_1
 .end method
@@ -4974,9 +4974,9 @@
 
     if-nez v0, :cond_0
 
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->mEnableAdb:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->mEnableAdb:Landroid/preference/SwitchPreference;
 
-    invoke-virtual {v0, v1}, Landroid/preference/CheckBoxPreference;->setChecked(Z)V
+    invoke-virtual {v0, v1}, Landroid/preference/SwitchPreference;->setChecked(Z)V
 
     :cond_0
     iput-object v2, p0, Lcom/android/settings/DevelopmentSettings;->mAdbDialog:Landroid/app/Dialog;
@@ -5168,13 +5168,13 @@
     return v2
 
     :cond_0
-    iget-object v3, p0, Lcom/android/settings/DevelopmentSettings;->mEnableAdb:Landroid/preference/CheckBoxPreference;
+    iget-object v3, p0, Lcom/android/settings/DevelopmentSettings;->mEnableAdb:Landroid/preference/SwitchPreference;
 
     if-ne p2, v3, :cond_3
 
-    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->mEnableAdb:Landroid/preference/CheckBoxPreference;
+    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->mEnableAdb:Landroid/preference/SwitchPreference;
 
-    invoke-virtual {v1}, Landroid/preference/CheckBoxPreference;->isChecked()Z
+    invoke-virtual {v1}, Landroid/preference/SwitchPreference;->isChecked()Z
 
     move-result v1
 
@@ -5258,13 +5258,13 @@
 
     invoke-static {v1, v3, v2}, Landroid/provider/Settings$Global;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->mVerifyAppsOverUsb:Landroid/preference/CheckBoxPreference;
+    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->mVerifyAppsOverUsb:Landroid/preference/SwitchPreference;
 
-    invoke-virtual {v1, v2}, Landroid/preference/CheckBoxPreference;->setEnabled(Z)V
+    invoke-virtual {v1, v2}, Landroid/preference/SwitchPreference;->setEnabled(Z)V
 
-    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->mVerifyAppsOverUsb:Landroid/preference/CheckBoxPreference;
+    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->mVerifyAppsOverUsb:Landroid/preference/SwitchPreference;
 
-    invoke-virtual {v1, v2}, Landroid/preference/CheckBoxPreference;->setChecked(Z)V
+    invoke-virtual {v1, v2}, Landroid/preference/SwitchPreference;->setChecked(Z)V
 
     invoke-direct {p0}, Lcom/android/settings/DevelopmentSettings;->updateBugreportOptions()V
 
@@ -5319,7 +5319,7 @@
     goto/16 :goto_0
 
     :cond_5
-    iget-object v3, p0, Lcom/android/settings/DevelopmentSettings;->mEnableTerminal:Landroid/preference/CheckBoxPreference;
+    iget-object v3, p0, Lcom/android/settings/DevelopmentSettings;->mEnableTerminal:Landroid/preference/SwitchPreference;
 
     if-ne p2, v3, :cond_7
 
@@ -5333,9 +5333,9 @@
 
     const-string v3, "com.android.terminal"
 
-    iget-object v4, p0, Lcom/android/settings/DevelopmentSettings;->mEnableTerminal:Landroid/preference/CheckBoxPreference;
+    iget-object v4, p0, Lcom/android/settings/DevelopmentSettings;->mEnableTerminal:Landroid/preference/SwitchPreference;
 
-    invoke-virtual {v4}, Landroid/preference/CheckBoxPreference;->isChecked()Z
+    invoke-virtual {v4}, Landroid/preference/SwitchPreference;->isChecked()Z
 
     move-result v4
 
@@ -5352,7 +5352,7 @@
     goto :goto_1
 
     :cond_7
-    iget-object v3, p0, Lcom/android/settings/DevelopmentSettings;->mBugreportInPower:Landroid/preference/CheckBoxPreference;
+    iget-object v3, p0, Lcom/android/settings/DevelopmentSettings;->mBugreportInPower:Landroid/preference/SwitchPreference;
 
     if-ne p2, v3, :cond_9
 
@@ -5366,9 +5366,9 @@
 
     const-string v4, "bugreport_in_power_menu"
 
-    iget-object v5, p0, Lcom/android/settings/DevelopmentSettings;->mBugreportInPower:Landroid/preference/CheckBoxPreference;
+    iget-object v5, p0, Lcom/android/settings/DevelopmentSettings;->mBugreportInPower:Landroid/preference/SwitchPreference;
 
-    invoke-virtual {v5}, Landroid/preference/CheckBoxPreference;->isChecked()Z
+    invoke-virtual {v5}, Landroid/preference/SwitchPreference;->isChecked()Z
 
     move-result v5
 
@@ -5385,7 +5385,7 @@
     goto :goto_2
 
     :cond_9
-    iget-object v3, p0, Lcom/android/settings/DevelopmentSettings;->mKeepScreenOn:Landroid/preference/CheckBoxPreference;
+    iget-object v3, p0, Lcom/android/settings/DevelopmentSettings;->mKeepScreenOn:Landroid/preference/SwitchPreference;
 
     if-ne p2, v3, :cond_b
 
@@ -5399,9 +5399,9 @@
 
     const-string v4, "stay_on_while_plugged_in"
 
-    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->mKeepScreenOn:Landroid/preference/CheckBoxPreference;
+    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->mKeepScreenOn:Landroid/preference/SwitchPreference;
 
-    invoke-virtual {v1}, Landroid/preference/CheckBoxPreference;->isChecked()Z
+    invoke-virtual {v1}, Landroid/preference/SwitchPreference;->isChecked()Z
 
     move-result v1
 
@@ -5420,7 +5420,7 @@
     goto :goto_3
 
     :cond_b
-    iget-object v3, p0, Lcom/android/settings/DevelopmentSettings;->mBtHciSnoopLog:Landroid/preference/CheckBoxPreference;
+    iget-object v3, p0, Lcom/android/settings/DevelopmentSettings;->mBtHciSnoopLog:Landroid/preference/SwitchPreference;
 
     if-ne p2, v3, :cond_c
 
@@ -5429,7 +5429,7 @@
     goto/16 :goto_0
 
     :cond_c
-    iget-object v3, p0, Lcom/android/settings/DevelopmentSettings;->mEnableOemUnlock:Landroid/preference/CheckBoxPreference;
+    iget-object v3, p0, Lcom/android/settings/DevelopmentSettings;->mEnableOemUnlock:Landroid/preference/SwitchPreference;
 
     if-ne p2, v3, :cond_d
 
@@ -5437,9 +5437,9 @@
 
     move-result-object v1
 
-    iget-object v3, p0, Lcom/android/settings/DevelopmentSettings;->mEnableOemUnlock:Landroid/preference/CheckBoxPreference;
+    iget-object v3, p0, Lcom/android/settings/DevelopmentSettings;->mEnableOemUnlock:Landroid/preference/SwitchPreference;
 
-    invoke-virtual {v3}, Landroid/preference/CheckBoxPreference;->isChecked()Z
+    invoke-virtual {v3}, Landroid/preference/SwitchPreference;->isChecked()Z
 
     move-result v3
 
@@ -5448,7 +5448,7 @@
     goto/16 :goto_0
 
     :cond_d
-    iget-object v3, p0, Lcom/android/settings/DevelopmentSettings;->mAllowMockLocation:Landroid/preference/CheckBoxPreference;
+    iget-object v3, p0, Lcom/android/settings/DevelopmentSettings;->mAllowMockLocation:Landroid/preference/SwitchPreference;
 
     if-ne p2, v3, :cond_f
 
@@ -5462,9 +5462,9 @@
 
     const-string v4, "mock_location"
 
-    iget-object v5, p0, Lcom/android/settings/DevelopmentSettings;->mAllowMockLocation:Landroid/preference/CheckBoxPreference;
+    iget-object v5, p0, Lcom/android/settings/DevelopmentSettings;->mAllowMockLocation:Landroid/preference/SwitchPreference;
 
-    invoke-virtual {v5}, Landroid/preference/CheckBoxPreference;->isChecked()Z
+    invoke-virtual {v5}, Landroid/preference/SwitchPreference;->isChecked()Z
 
     move-result v5
 
@@ -5481,7 +5481,7 @@
     goto :goto_4
 
     :cond_f
-    iget-object v3, p0, Lcom/android/settings/DevelopmentSettings;->mDebugViewAttributes:Landroid/preference/CheckBoxPreference;
+    iget-object v3, p0, Lcom/android/settings/DevelopmentSettings;->mDebugViewAttributes:Landroid/preference/SwitchPreference;
 
     if-ne p2, v3, :cond_11
 
@@ -5495,9 +5495,9 @@
 
     const-string v4, "debug_view_attributes"
 
-    iget-object v5, p0, Lcom/android/settings/DevelopmentSettings;->mDebugViewAttributes:Landroid/preference/CheckBoxPreference;
+    iget-object v5, p0, Lcom/android/settings/DevelopmentSettings;->mDebugViewAttributes:Landroid/preference/SwitchPreference;
 
-    invoke-virtual {v5}, Landroid/preference/CheckBoxPreference;->isChecked()Z
+    invoke-virtual {v5}, Landroid/preference/SwitchPreference;->isChecked()Z
 
     move-result v5
 
@@ -5535,7 +5535,7 @@
     goto/16 :goto_0
 
     :cond_12
-    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->mWaitForDebugger:Landroid/preference/CheckBoxPreference;
+    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->mWaitForDebugger:Landroid/preference/SwitchPreference;
 
     if-ne p2, v1, :cond_13
 
@@ -5544,7 +5544,7 @@
     goto/16 :goto_0
 
     :cond_13
-    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->mVerifyAppsOverUsb:Landroid/preference/CheckBoxPreference;
+    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->mVerifyAppsOverUsb:Landroid/preference/SwitchPreference;
 
     if-ne p2, v1, :cond_14
 
@@ -5553,7 +5553,7 @@
     goto/16 :goto_0
 
     :cond_14
-    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->mStrictMode:Landroid/preference/CheckBoxPreference;
+    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->mStrictMode:Landroid/preference/SwitchPreference;
 
     if-ne p2, v1, :cond_15
 
@@ -5562,7 +5562,7 @@
     goto/16 :goto_0
 
     :cond_15
-    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->mPointerLocation:Landroid/preference/CheckBoxPreference;
+    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->mPointerLocation:Landroid/preference/SwitchPreference;
 
     if-ne p2, v1, :cond_16
 
@@ -5571,7 +5571,7 @@
     goto/16 :goto_0
 
     :cond_16
-    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->mShowTouches:Landroid/preference/CheckBoxPreference;
+    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->mShowTouches:Landroid/preference/SwitchPreference;
 
     if-ne p2, v1, :cond_17
 
@@ -5580,7 +5580,7 @@
     goto/16 :goto_0
 
     :cond_17
-    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->mShowScreenUpdates:Landroid/preference/CheckBoxPreference;
+    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->mShowScreenUpdates:Landroid/preference/SwitchPreference;
 
     if-ne p2, v1, :cond_18
 
@@ -5589,7 +5589,7 @@
     goto/16 :goto_0
 
     :cond_18
-    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->mDisableOverlays:Landroid/preference/CheckBoxPreference;
+    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->mDisableOverlays:Landroid/preference/SwitchPreference;
 
     if-ne p2, v1, :cond_19
 
@@ -5598,7 +5598,7 @@
     goto/16 :goto_0
 
     :cond_19
-    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->mShowCpuUsage:Landroid/preference/CheckBoxPreference;
+    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->mShowCpuUsage:Landroid/preference/SwitchPreference;
 
     if-ne p2, v1, :cond_1a
 
@@ -5607,7 +5607,7 @@
     goto/16 :goto_0
 
     :cond_1a
-    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->mImmediatelyDestroyActivities:Landroid/preference/CheckBoxPreference;
+    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->mImmediatelyDestroyActivities:Landroid/preference/SwitchPreference;
 
     if-ne p2, v1, :cond_1b
 
@@ -5616,7 +5616,7 @@
     goto/16 :goto_0
 
     :cond_1b
-    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->mShowAllANRs:Landroid/preference/CheckBoxPreference;
+    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->mShowAllANRs:Landroid/preference/SwitchPreference;
 
     if-ne p2, v1, :cond_1c
 
@@ -5625,7 +5625,7 @@
     goto/16 :goto_0
 
     :cond_1c
-    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->mForceHardwareUi:Landroid/preference/CheckBoxPreference;
+    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->mForceHardwareUi:Landroid/preference/SwitchPreference;
 
     if-ne p2, v1, :cond_1d
 
@@ -5634,7 +5634,7 @@
     goto/16 :goto_0
 
     :cond_1d
-    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->mForceMsaa:Landroid/preference/CheckBoxPreference;
+    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->mForceMsaa:Landroid/preference/SwitchPreference;
 
     if-ne p2, v1, :cond_1e
 
@@ -5643,7 +5643,7 @@
     goto/16 :goto_0
 
     :cond_1e
-    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->mShowHwScreenUpdates:Landroid/preference/CheckBoxPreference;
+    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->mShowHwScreenUpdates:Landroid/preference/SwitchPreference;
 
     if-ne p2, v1, :cond_1f
 
@@ -5652,7 +5652,7 @@
     goto/16 :goto_0
 
     :cond_1f
-    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->mShowHwLayersUpdates:Landroid/preference/CheckBoxPreference;
+    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->mShowHwLayersUpdates:Landroid/preference/SwitchPreference;
 
     if-ne p2, v1, :cond_20
 
@@ -5661,7 +5661,7 @@
     goto/16 :goto_0
 
     :cond_20
-    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->mDebugLayout:Landroid/preference/CheckBoxPreference;
+    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->mDebugLayout:Landroid/preference/SwitchPreference;
 
     if-ne p2, v1, :cond_21
 
@@ -5670,7 +5670,7 @@
     goto/16 :goto_0
 
     :cond_21
-    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->mForceRtlLayout:Landroid/preference/CheckBoxPreference;
+    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->mForceRtlLayout:Landroid/preference/SwitchPreference;
 
     if-ne p2, v1, :cond_22
 
@@ -5679,7 +5679,7 @@
     goto/16 :goto_0
 
     :cond_22
-    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->mWifiDisplayCertification:Landroid/preference/CheckBoxPreference;
+    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->mWifiDisplayCertification:Landroid/preference/SwitchPreference;
 
     if-ne p2, v1, :cond_23
 
@@ -5688,7 +5688,7 @@
     goto/16 :goto_0
 
     :cond_23
-    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->mWifiVerboseLogging:Landroid/preference/CheckBoxPreference;
+    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->mWifiVerboseLogging:Landroid/preference/SwitchPreference;
 
     if-ne p2, v1, :cond_24
 
@@ -5697,7 +5697,7 @@
     goto/16 :goto_0
 
     :cond_24
-    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->mWifiAggressiveHandover:Landroid/preference/CheckBoxPreference;
+    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->mWifiAggressiveHandover:Landroid/preference/SwitchPreference;
 
     if-ne p2, v1, :cond_25
 
@@ -5706,7 +5706,7 @@
     goto/16 :goto_0
 
     :cond_25
-    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->mWifiAllowScansWithTraffic:Landroid/preference/CheckBoxPreference;
+    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->mWifiAllowScansWithTraffic:Landroid/preference/SwitchPreference;
 
     if-ne p2, v1, :cond_26
 
@@ -5715,7 +5715,7 @@
     goto/16 :goto_0
 
     :cond_26
-    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->mUseNuplayer:Landroid/preference/CheckBoxPreference;
+    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->mUseNuplayer:Landroid/preference/SwitchPreference;
 
     if-ne p2, v1, :cond_27
 
@@ -5724,7 +5724,7 @@
     goto/16 :goto_0
 
     :cond_27
-    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->mUSBAudio:Landroid/preference/CheckBoxPreference;
+    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->mUSBAudio:Landroid/preference/SwitchPreference;
 
     if-ne p2, v1, :cond_28
 
@@ -5798,7 +5798,7 @@
 
     iget-object v4, p0, Lcom/android/settings/DevelopmentSettings;->mDisabledPrefs:Ljava/util/HashSet;
 
-    iget-object v5, p0, Lcom/android/settings/DevelopmentSettings;->mKeepScreenOn:Landroid/preference/CheckBoxPreference;
+    iget-object v5, p0, Lcom/android/settings/DevelopmentSettings;->mKeepScreenOn:Landroid/preference/SwitchPreference;
 
     invoke-virtual {v4, v5}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
@@ -5876,7 +5876,7 @@
     :cond_4
     iget-object v4, p0, Lcom/android/settings/DevelopmentSettings;->mDisabledPrefs:Ljava/util/HashSet;
 
-    iget-object v5, p0, Lcom/android/settings/DevelopmentSettings;->mKeepScreenOn:Landroid/preference/CheckBoxPreference;
+    iget-object v5, p0, Lcom/android/settings/DevelopmentSettings;->mKeepScreenOn:Landroid/preference/SwitchPreference;
 
     invoke-virtual {v4, v5}, Ljava/util/HashSet;->remove(Ljava/lang/Object;)Z
 
@@ -6017,10 +6017,10 @@
     return-void
 .end method
 
-.method updateCheckBox(Landroid/preference/CheckBoxPreference;Z)V
+.method updateSwitch(Landroid/preference/SwitchPreference;Z)V
     .locals 1
 
-    invoke-virtual {p1, p2}, Landroid/preference/CheckBoxPreference;->setChecked(Z)V
+    invoke-virtual {p1, p2}, Landroid/preference/SwitchPreference;->setChecked(Z)V
 
     iget-boolean v0, p0, Lcom/android/settings/DevelopmentSettings;->mHaveDebugSettings:Z
 

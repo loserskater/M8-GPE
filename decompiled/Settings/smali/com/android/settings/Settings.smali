@@ -46,6 +46,7 @@
         Lcom/android/settings/Settings$AccessibilitySettingsActivity;,
         Lcom/android/settings/Settings$DevelopmentSettingsActivity;,
         Lcom/android/settings/Settings$StorageUseActivity;,
+        Lcom/android/settings/Settings$AppOpsSummaryActivity;,
         Lcom/android/settings/Settings$ManageApplicationsActivity;,
         Lcom/android/settings/Settings$DeviceInfoSettingsActivity;,
         Lcom/android/settings/Settings$DisplaySettingsActivity;,

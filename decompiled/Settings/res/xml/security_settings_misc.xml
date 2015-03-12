@@ -11,9 +11,7 @@
     </PreferenceCategory>
     <PreferenceCategory android:persistent="false" android:title="@string/device_admin_title" android:key="device_admin_category">
         <Preference android:persistent="false" android:title="@string/manage_device_admin" android:key="manage_device_admin" android:summary="@string/manage_device_admin_summary" android:fragment="com.android.settings.DeviceAdminSettings" />
-        <PreferenceScreen android:title="@string/app_ops_settings" android:key="app_ops1" android:summary="@string/app_ops_settings_summary">
-            <intent android:targetPackage="com.appops.apppermission" android:action="android.intent.action.MAIN" android:targetClass="com.appops.apppermission.MainActivity" />
-        </PreferenceScreen>
+        <Preference android:persistent="false" android:title="@string/app_ops_settings" android:key="app_ops_summary" android:summary="@string/app_ops_settings_summary" android:fragment="com.android.settings.applications.AppOpsSummary" />
         <SwitchPreference android:persistent="false" android:title="@string/install_applications" android:key="toggle_install_applications" android:summaryOn="@string/install_unknown_applications" android:summaryOff="@string/install_unknown_applications" />
     </PreferenceCategory>
     <PreferenceCategory android:persistent="false" android:title="@string/credentials_title" android:key="credentials_management">

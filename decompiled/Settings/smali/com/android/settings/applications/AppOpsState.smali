@@ -27,6 +27,8 @@
     .end annotation
 .end field
 
+.field public static final BOOTUP_TEMPLATE:Lcom/android/settings/applications/AppOpsState$OpsTemplate;
+
 .field public static final DEVICE_TEMPLATE:Lcom/android/settings/applications/AppOpsState$OpsTemplate;
 
 .field public static final LOCATION_TEMPLATE:Lcom/android/settings/applications/AppOpsState$OpsTemplate;
@@ -52,13 +54,17 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 5
+    .locals 7
 
-    const/16 v4, 0x9
+    const/16 v6, 0x9
 
     const/4 v2, 0x7
 
-    const/16 v3, 0x8
+    const/4 v5, 0x0
+
+    const/16 v4, 0x8
+
+    const/4 v3, 0x1
 
     new-instance v0, Lcom/android/settings/applications/AppOpsState$OpsTemplate;
 
@@ -76,11 +82,11 @@
 
     new-instance v0, Lcom/android/settings/applications/AppOpsState$OpsTemplate;
 
-    new-array v1, v3, [I
+    new-array v1, v4, [I
 
     fill-array-data v1, :array_2
 
-    new-array v2, v3, [Z
+    new-array v2, v4, [Z
 
     fill-array-data v2, :array_3
 
@@ -90,11 +96,11 @@
 
     new-instance v0, Lcom/android/settings/applications/AppOpsState$OpsTemplate;
 
-    new-array v1, v4, [I
+    new-array v1, v6, [I
 
     fill-array-data v1, :array_4
 
-    new-array v2, v4, [Z
+    new-array v2, v6, [Z
 
     fill-array-data v2, :array_5
 
@@ -110,7 +116,7 @@
 
     fill-array-data v1, :array_6
 
-    const/16 v2, 0xd
+    const/16 v2, 0xe
 
     new-array v2, v2, [Z
 
@@ -122,11 +128,11 @@
 
     new-instance v0, Lcom/android/settings/applications/AppOpsState$OpsTemplate;
 
-    new-array v1, v3, [I
+    new-array v1, v4, [I
 
     fill-array-data v1, :array_8
 
-    new-array v2, v3, [Z
+    new-array v2, v4, [Z
 
     fill-array-data v2, :array_9
 
@@ -134,21 +140,33 @@
 
     sput-object v0, Lcom/android/settings/applications/AppOpsState;->DEVICE_TEMPLATE:Lcom/android/settings/applications/AppOpsState$OpsTemplate;
 
-    const/4 v0, 0x5
+    new-instance v0, Lcom/android/settings/applications/AppOpsState$OpsTemplate;
+
+    new-array v1, v3, [I
+
+    const/16 v2, 0x30
+
+    aput v2, v1, v5
+
+    new-array v2, v3, [Z
+
+    aput-boolean v3, v2, v5
+
+    invoke-direct {v0, v1, v2}, Lcom/android/settings/applications/AppOpsState$OpsTemplate;-><init>([I[Z)V
+
+    sput-object v0, Lcom/android/settings/applications/AppOpsState;->BOOTUP_TEMPLATE:Lcom/android/settings/applications/AppOpsState$OpsTemplate;
+
+    const/4 v0, 0x6
 
     new-array v0, v0, [Lcom/android/settings/applications/AppOpsState$OpsTemplate;
 
-    const/4 v1, 0x0
+    sget-object v1, Lcom/android/settings/applications/AppOpsState;->LOCATION_TEMPLATE:Lcom/android/settings/applications/AppOpsState$OpsTemplate;
 
-    sget-object v2, Lcom/android/settings/applications/AppOpsState;->LOCATION_TEMPLATE:Lcom/android/settings/applications/AppOpsState$OpsTemplate;
+    aput-object v1, v0, v5
 
-    aput-object v2, v0, v1
+    sget-object v1, Lcom/android/settings/applications/AppOpsState;->PERSONAL_TEMPLATE:Lcom/android/settings/applications/AppOpsState$OpsTemplate;
 
-    const/4 v1, 0x1
-
-    sget-object v2, Lcom/android/settings/applications/AppOpsState;->PERSONAL_TEMPLATE:Lcom/android/settings/applications/AppOpsState$OpsTemplate;
-
-    aput-object v2, v0, v1
+    aput-object v1, v0, v3
 
     const/4 v1, 0x2
 
@@ -165,6 +183,12 @@
     const/4 v1, 0x4
 
     sget-object v2, Lcom/android/settings/applications/AppOpsState;->DEVICE_TEMPLATE:Lcom/android/settings/applications/AppOpsState$OpsTemplate;
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x5
+
+    sget-object v2, Lcom/android/settings/applications/AppOpsState;->BOOTUP_TEMPLATE:Lcom/android/settings/applications/AppOpsState$OpsTemplate;
 
     aput-object v2, v0, v1
 
@@ -275,6 +299,7 @@
         0x0t
         0x1t
         0x1t
+        0x0t
         0x0t
         0x0t
         0x0t
@@ -623,7 +648,7 @@
 
     invoke-direct/range {v25 .. v25}, Ljava/util/ArrayList;-><init>()V
 
-    const/16 v3, 0x30
+    const/16 v3, 0x31
 
     new-array v0, v3, [I
 
