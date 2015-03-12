@@ -233,9 +233,9 @@ if prop("type.prop","selected")=="2"||prop("type.prop","selected")=="3" then
       #-- Will be saved in /tmp/aroma/themes.prop
         "themes.prop",
 		
-        "Stock Material UI",  "Stock UI, No themeing has been done.",                      1,      #-- selected.0 = 1
-        "Dark Material UI",   "Dark material themed UI, material teal and white accents",  0,      #-- selected.0 = 2
-		"Darker Material UI", "Darker material themed UI, white accents",                  0       #-- selected.0 = 3
+        "Stock Material UI",  "Stock UI, No themeing has been done.",                                1,      #-- selected.0 = 1
+        "Dark Material UI",   "Dark (greyish) material themed UI, material teal and white accents",  0,      #-- selected.0 = 2
+		"Darker Material UI", "Darker (blackened) material themed UI, white accents",                0       #-- selected.0 = 3
 		
     );
 	write("/data/media/0/aroma/Themes.prop", readtmpfile("themes.prop"));
