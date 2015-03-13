@@ -43,7 +43,7 @@
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$SettingsObserver;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
     # getter for: Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mContext:Landroid/content/Context;
-    invoke-static {v1}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->access$2100(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)Landroid/content/Context;
+    invoke-static {v1}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->access$2700(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)Landroid/content/Context;
 
     move-result-object v1
 
@@ -80,7 +80,7 @@
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$SettingsObserver;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
     # getter for: Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mContext:Landroid/content/Context;
-    invoke-static {v0}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->access$2200(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)Landroid/content/Context;
+    invoke-static {v0}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->access$2800(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)Landroid/content/Context;
 
     move-result-object v0
 
@@ -105,7 +105,7 @@
     iget-object v3, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$SettingsObserver;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
     # getter for: Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mContext:Landroid/content/Context;
-    invoke-static {v3}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->access$2300(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)Landroid/content/Context;
+    invoke-static {v3}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->access$2900(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)Landroid/content/Context;
 
     move-result-object v3
 
@@ -122,7 +122,7 @@
     move-result v4
 
     # setter for: Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mOneFingerQuickSettingsIntercept:I
-    invoke-static {v3, v4}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->access$2402(Lcom/android/systemui/statusbar/phone/NotificationPanelView;I)I
+    invoke-static {v3, v4}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->access$3002(Lcom/android/systemui/statusbar/phone/NotificationPanelView;I)I
 
     iget-object v3, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$SettingsObserver;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
@@ -136,7 +136,7 @@
 
     :goto_0
     # setter for: Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mDoubleTapToSleepEnabled:Z
-    invoke-static {v3, v1}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->access$2502(Lcom/android/systemui/statusbar/phone/NotificationPanelView;Z)Z
+    invoke-static {v3, v1}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->access$3102(Lcom/android/systemui/statusbar/phone/NotificationPanelView;Z)Z
 
     return-void
 

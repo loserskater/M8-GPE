@@ -45,6 +45,8 @@
 
 .field private mClockView:Landroid/widget/TextView;
 
+.field private mCloseQsRunnable:Ljava/lang/Runnable;
+
 .field private mConflictingQsExpansionGesture:Z
 
 .field private mDoubleTapGesture:Landroid/view/GestureDetector;
@@ -230,51 +232,57 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mHandler:Landroid/os/Handler;
 
-    new-instance v0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$5;
-
-    invoke-direct {v0, p0}, Lcom/android/systemui/statusbar/phone/NotificationPanelView$5;-><init>(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)V
-
-    iput-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mAnimateKeyguardStatusViewInvisibleEndRunnable:Ljava/lang/Runnable;
-
     new-instance v0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$6;
 
     invoke-direct {v0, p0}, Lcom/android/systemui/statusbar/phone/NotificationPanelView$6;-><init>(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)V
 
-    iput-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mAnimateKeyguardStatusViewVisibleEndRunnable:Ljava/lang/Runnable;
+    iput-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mAnimateKeyguardStatusViewInvisibleEndRunnable:Ljava/lang/Runnable;
 
     new-instance v0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$7;
 
     invoke-direct {v0, p0}, Lcom/android/systemui/statusbar/phone/NotificationPanelView$7;-><init>(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)V
 
-    iput-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mAnimateHeaderSlidingInListener:Landroid/animation/Animator$AnimatorListener;
+    iput-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mAnimateKeyguardStatusViewVisibleEndRunnable:Ljava/lang/Runnable;
 
     new-instance v0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$8;
 
     invoke-direct {v0, p0}, Lcom/android/systemui/statusbar/phone/NotificationPanelView$8;-><init>(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)V
 
-    iput-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mQsContainerAnimatorUpdater:Landroid/view/View$OnLayoutChangeListener;
+    iput-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mAnimateHeaderSlidingInListener:Landroid/animation/Animator$AnimatorListener;
 
     new-instance v0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$9;
 
     invoke-direct {v0, p0}, Lcom/android/systemui/statusbar/phone/NotificationPanelView$9;-><init>(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)V
 
-    iput-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mStartHeaderSlidingIn:Landroid/view/ViewTreeObserver$OnPreDrawListener;
+    iput-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mQsContainerAnimatorUpdater:Landroid/view/View$OnLayoutChangeListener;
 
     new-instance v0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$10;
 
     invoke-direct {v0, p0}, Lcom/android/systemui/statusbar/phone/NotificationPanelView$10;-><init>(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)V
 
-    iput-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mAnimateKeyguardStatusBarInvisibleEndRunnable:Ljava/lang/Runnable;
+    iput-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mStartHeaderSlidingIn:Landroid/view/ViewTreeObserver$OnPreDrawListener;
 
     new-instance v0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$11;
 
     invoke-direct {v0, p0}, Lcom/android/systemui/statusbar/phone/NotificationPanelView$11;-><init>(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)V
 
+    iput-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mAnimateKeyguardStatusBarInvisibleEndRunnable:Ljava/lang/Runnable;
+
+    new-instance v0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$12;
+
+    invoke-direct {v0, p0}, Lcom/android/systemui/statusbar/phone/NotificationPanelView$12;-><init>(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)V
+
     iput-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mAnimateKeyguardBottomAreaInvisibleEndRunnable:Ljava/lang/Runnable;
 
-    new-instance v0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$18;
+    new-instance v0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$15;
 
-    invoke-direct {v0, p0}, Lcom/android/systemui/statusbar/phone/NotificationPanelView$18;-><init>(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)V
+    invoke-direct {v0, p0}, Lcom/android/systemui/statusbar/phone/NotificationPanelView$15;-><init>(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)V
+
+    iput-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mCloseQsRunnable:Ljava/lang/Runnable;
+
+    new-instance v0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$20;
+
+    invoke-direct {v0, p0}, Lcom/android/systemui/statusbar/phone/NotificationPanelView$20;-><init>(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)V
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mUpdateHeader:Ljava/lang/Runnable;
 
@@ -309,47 +317,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$100(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)Landroid/animation/ObjectAnimator;
-    .locals 1
-
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mClockAnimator:Landroid/animation/ObjectAnimator;
-
-    return-object v0
-.end method
-
-.method static synthetic access$1000(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)Landroid/animation/ObjectAnimator;
-    .locals 1
-
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mQsContainerAnimator:Landroid/animation/ObjectAnimator;
-
-    return-object v0
-.end method
-
-.method static synthetic access$1002(Lcom/android/systemui/statusbar/phone/NotificationPanelView;Landroid/animation/ObjectAnimator;)Landroid/animation/ObjectAnimator;
-    .locals 0
-
-    iput-object p1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mQsContainerAnimator:Landroid/animation/ObjectAnimator;
-
-    return-object p1
-.end method
-
-.method static synthetic access$102(Lcom/android/systemui/statusbar/phone/NotificationPanelView;Landroid/animation/ObjectAnimator;)Landroid/animation/ObjectAnimator;
-    .locals 0
-
-    iput-object p1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mClockAnimator:Landroid/animation/ObjectAnimator;
-
-    return-object p1
-.end method
-
-.method static synthetic access$1100(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)Landroid/view/View$OnLayoutChangeListener;
-    .locals 1
-
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mQsContainerAnimatorUpdater:Landroid/view/View$OnLayoutChangeListener;
-
-    return-object v0
-.end method
-
-.method static synthetic access$1200(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)Landroid/view/View;
+.method static synthetic access$100(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)Landroid/view/View;
     .locals 1
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mQsContainer:Landroid/view/View;
@@ -357,143 +325,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$1300(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;
-    .locals 1
-
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mHeader:Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;
-
-    return-object v0
-.end method
-
-.method static synthetic access$1400(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)I
-    .locals 1
-
-    iget v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mQsPeekHeight:I
-
-    return v0
-.end method
-
-.method static synthetic access$1500(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)Landroid/animation/Animator$AnimatorListener;
-    .locals 1
-
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mAnimateHeaderSlidingInListener:Landroid/animation/Animator$AnimatorListener;
-
-    return-object v0
-.end method
-
-.method static synthetic access$1600(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;
-    .locals 1
-
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mKeyguardStatusBar:Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;
-
-    return-object v0
-.end method
-
-.method static synthetic access$1700(Lcom/android/systemui/statusbar/phone/NotificationPanelView;F)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->setQsExpansion(F)V
-
-    return-void
-.end method
-
-.method static synthetic access$1800(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)Lcom/android/systemui/statusbar/phone/ObservableScrollView;
-    .locals 1
-
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mScrollView:Lcom/android/systemui/statusbar/phone/ObservableScrollView;
-
-    return-object v0
-.end method
-
-.method static synthetic access$1902(Lcom/android/systemui/statusbar/phone/NotificationPanelView;I)I
-    .locals 0
-
-    iput p1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mScrollYOverride:I
-
-    return p1
-.end method
-
-.method static synthetic access$200(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)Lcom/android/keyguard/KeyguardStatusView;
-    .locals 1
-
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mKeyguardStatusView:Lcom/android/keyguard/KeyguardStatusView;
-
-    return-object v0
-.end method
-
-.method static synthetic access$2002(Lcom/android/systemui/statusbar/phone/NotificationPanelView;Landroid/animation/ValueAnimator;)Landroid/animation/ValueAnimator;
-    .locals 0
-
-    iput-object p1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mQsExpansionAnimator:Landroid/animation/ValueAnimator;
-
-    return-object p1
-.end method
-
-.method static synthetic access$2100(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)Landroid/content/Context;
-    .locals 1
-
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mContext:Landroid/content/Context;
-
-    return-object v0
-.end method
-
-.method static synthetic access$2200(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)Landroid/content/Context;
-    .locals 1
-
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mContext:Landroid/content/Context;
-
-    return-object v0
-.end method
-
-.method static synthetic access$2300(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)Landroid/content/Context;
-    .locals 1
-
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mContext:Landroid/content/Context;
-
-    return-object v0
-.end method
-
-.method static synthetic access$2402(Lcom/android/systemui/statusbar/phone/NotificationPanelView;I)I
-    .locals 0
-
-    iput p1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mOneFingerQuickSettingsIntercept:I
-
-    return p1
-.end method
-
-.method static synthetic access$2502(Lcom/android/systemui/statusbar/phone/NotificationPanelView;Z)Z
-    .locals 0
-
-    iput-boolean p1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mDoubleTapToSleepEnabled:Z
-
-    return p1
-.end method
-
-.method static synthetic access$300(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)I
-    .locals 1
-
-    iget v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mClockAnimationTarget:I
-
-    return v0
-.end method
-
-.method static synthetic access$302(Lcom/android/systemui/statusbar/phone/NotificationPanelView;I)I
-    .locals 0
-
-    iput p1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mClockAnimationTarget:I
-
-    return p1
-.end method
-
-.method static synthetic access$400(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)Landroid/view/animation/Interpolator;
-    .locals 1
-
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mFastOutSlowInInterpolator:Landroid/view/animation/Interpolator;
-
-    return-object v0
-.end method
-
-.method static synthetic access$502(Lcom/android/systemui/statusbar/phone/NotificationPanelView;Z)Z
+.method static synthetic access$1002(Lcom/android/systemui/statusbar/phone/NotificationPanelView;Z)Z
     .locals 0
 
     iput-boolean p1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mStackScrollerOverscrolling:Z
@@ -501,7 +333,7 @@
     return p1
 .end method
 
-.method static synthetic access$602(Lcom/android/systemui/statusbar/phone/NotificationPanelView;Z)Z
+.method static synthetic access$1102(Lcom/android/systemui/statusbar/phone/NotificationPanelView;Z)Z
     .locals 0
 
     iput-boolean p1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mQsExpansionFromOverscroll:Z
@@ -509,7 +341,7 @@
     return p1
 .end method
 
-.method static synthetic access$700(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)V
+.method static synthetic access$1200(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)V
     .locals 0
 
     invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->updateQsState()V
@@ -517,7 +349,7 @@
     return-void
 .end method
 
-.method static synthetic access$802(Lcom/android/systemui/statusbar/phone/NotificationPanelView;Z)Z
+.method static synthetic access$1302(Lcom/android/systemui/statusbar/phone/NotificationPanelView;Z)Z
     .locals 0
 
     iput-boolean p1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mKeyguardStatusViewAnimating:Z
@@ -525,12 +357,244 @@
     return p1
 .end method
 
-.method static synthetic access$902(Lcom/android/systemui/statusbar/phone/NotificationPanelView;Z)Z
+.method static synthetic access$1402(Lcom/android/systemui/statusbar/phone/NotificationPanelView;Z)Z
     .locals 0
 
     iput-boolean p1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mHeaderAnimatingIn:Z
 
     return p1
+.end method
+
+.method static synthetic access$1500(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)Landroid/animation/ObjectAnimator;
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mQsContainerAnimator:Landroid/animation/ObjectAnimator;
+
+    return-object v0
+.end method
+
+.method static synthetic access$1502(Lcom/android/systemui/statusbar/phone/NotificationPanelView;Landroid/animation/ObjectAnimator;)Landroid/animation/ObjectAnimator;
+    .locals 0
+
+    iput-object p1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mQsContainerAnimator:Landroid/animation/ObjectAnimator;
+
+    return-object p1
+.end method
+
+.method static synthetic access$1600(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)Landroid/view/View$OnLayoutChangeListener;
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mQsContainerAnimatorUpdater:Landroid/view/View$OnLayoutChangeListener;
+
+    return-object v0
+.end method
+
+.method static synthetic access$1700(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mHeader:Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;
+
+    return-object v0
+.end method
+
+.method static synthetic access$1800(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)I
+    .locals 1
+
+    iget v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mQsPeekHeight:I
+
+    return v0
+.end method
+
+.method static synthetic access$1900(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)Landroid/animation/Animator$AnimatorListener;
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mAnimateHeaderSlidingInListener:Landroid/animation/Animator$AnimatorListener;
+
+    return-object v0
+.end method
+
+.method static synthetic access$200(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)Lcom/android/systemui/qs/QSPanel;
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mQsPanel:Lcom/android/systemui/qs/QSPanel;
+
+    return-object v0
+.end method
+
+.method static synthetic access$2000(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mKeyguardStatusBar:Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;
+
+    return-object v0
+.end method
+
+.method static synthetic access$2100(Lcom/android/systemui/statusbar/phone/NotificationPanelView;F)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->setQsExpansion(F)V
+
+    return-void
+.end method
+
+.method static synthetic access$2202(Lcom/android/systemui/statusbar/phone/NotificationPanelView;I)I
+    .locals 0
+
+    iput p1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mScrollYOverride:I
+
+    return p1
+.end method
+
+.method static synthetic access$2300(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)Landroid/animation/ValueAnimator;
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mQsExpansionAnimator:Landroid/animation/ValueAnimator;
+
+    return-object v0
+.end method
+
+.method static synthetic access$2302(Lcom/android/systemui/statusbar/phone/NotificationPanelView;Landroid/animation/ValueAnimator;)Landroid/animation/ValueAnimator;
+    .locals 0
+
+    iput-object p1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mQsExpansionAnimator:Landroid/animation/ValueAnimator;
+
+    return-object p1
+.end method
+
+.method static synthetic access$2400(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)Z
+    .locals 1
+
+    iget-boolean v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mQsTracking:Z
+
+    return v0
+.end method
+
+.method static synthetic access$2500(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)I
+    .locals 1
+
+    iget v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mStatusBarState:I
+
+    return v0
+.end method
+
+.method static synthetic access$2600(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)Z
+    .locals 1
+
+    iget-boolean v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mIntercepting:Z
+
+    return v0
+.end method
+
+.method static synthetic access$2700(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)Landroid/content/Context;
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mContext:Landroid/content/Context;
+
+    return-object v0
+.end method
+
+.method static synthetic access$2800(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)Landroid/content/Context;
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mContext:Landroid/content/Context;
+
+    return-object v0
+.end method
+
+.method static synthetic access$2900(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)Landroid/content/Context;
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mContext:Landroid/content/Context;
+
+    return-object v0
+.end method
+
+.method static synthetic access$300(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)Lcom/android/systemui/statusbar/phone/ObservableScrollView;
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mScrollView:Lcom/android/systemui/statusbar/phone/ObservableScrollView;
+
+    return-object v0
+.end method
+
+.method static synthetic access$3002(Lcom/android/systemui/statusbar/phone/NotificationPanelView;I)I
+    .locals 0
+
+    iput p1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mOneFingerQuickSettingsIntercept:I
+
+    return p1
+.end method
+
+.method static synthetic access$3102(Lcom/android/systemui/statusbar/phone/NotificationPanelView;Z)Z
+    .locals 0
+
+    iput-boolean p1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mDoubleTapToSleepEnabled:Z
+
+    return p1
+.end method
+
+.method static synthetic access$400(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)Ljava/lang/Runnable;
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mCloseQsRunnable:Ljava/lang/Runnable;
+
+    return-object v0
+.end method
+
+.method static synthetic access$500(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)Landroid/os/Handler;
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mHandler:Landroid/os/Handler;
+
+    return-object v0
+.end method
+
+.method static synthetic access$600(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)Landroid/animation/ObjectAnimator;
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mClockAnimator:Landroid/animation/ObjectAnimator;
+
+    return-object v0
+.end method
+
+.method static synthetic access$602(Lcom/android/systemui/statusbar/phone/NotificationPanelView;Landroid/animation/ObjectAnimator;)Landroid/animation/ObjectAnimator;
+    .locals 0
+
+    iput-object p1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mClockAnimator:Landroid/animation/ObjectAnimator;
+
+    return-object p1
+.end method
+
+.method static synthetic access$700(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)Lcom/android/keyguard/KeyguardStatusView;
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mKeyguardStatusView:Lcom/android/keyguard/KeyguardStatusView;
+
+    return-object v0
+.end method
+
+.method static synthetic access$800(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)I
+    .locals 1
+
+    iget v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mClockAnimationTarget:I
+
+    return v0
+.end method
+
+.method static synthetic access$802(Lcom/android/systemui/statusbar/phone/NotificationPanelView;I)I
+    .locals 0
+
+    iput p1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mClockAnimationTarget:I
+
+    return p1
+.end method
+
+.method static synthetic access$900(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)Landroid/view/animation/Interpolator;
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mFastOutSlowInInterpolator:Landroid/view/animation/Interpolator;
+
+    return-object v0
 .end method
 
 .method private animateHeaderSlidingIn()V
@@ -810,19 +874,27 @@
 
     const/4 v1, 0x0
 
-    invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->isBelowFalsingThreshold()Z
+    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->isQsDetailShowing()Z
 
     move-result v2
 
     if-eqz v2, :cond_1
 
-    move v0, v1
+    iget v2, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mStatusBarState:I
+
+    if-nez v2, :cond_1
 
     :cond_0
     :goto_0
-    return v0
+    return v1
 
     :cond_1
+    invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->isBelowFalsingThreshold()Z
+
+    move-result v2
+
+    if-nez v2, :cond_0
+
     invoke-static {p1}, Ljava/lang/Math;->abs(F)F
 
     move-result v2
@@ -835,7 +907,7 @@
 
     cmpg-float v2, v2, v3
 
-    if-gez v2, :cond_2
+    if-gez v2, :cond_3
 
     invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->getQsExpansionFraction()F
 
@@ -845,22 +917,34 @@
 
     cmpl-float v2, v2, v3
 
-    if-gtz v2, :cond_0
+    if-lez v2, :cond_2
 
-    move v0, v1
+    :goto_1
+    move v1, v0
 
     goto :goto_0
 
     :cond_2
+    move v0, v1
+
+    goto :goto_1
+
+    :cond_3
     const/4 v2, 0x0
 
     cmpl-float v2, p1, v2
 
-    if-gtz v2, :cond_0
+    if-lez v2, :cond_4
 
-    move v0, v1
+    :goto_2
+    move v1, v0
 
     goto :goto_0
+
+    :cond_4
+    move v0, v1
+
+    goto :goto_2
 .end method
 
 .method private flingQsWithCurrentVelocity()V
@@ -969,15 +1053,15 @@
     invoke-virtual {v0, v4, v5}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
     :cond_4
-    new-instance v3, Lcom/android/systemui/statusbar/phone/NotificationPanelView$12;
+    new-instance v3, Lcom/android/systemui/statusbar/phone/NotificationPanelView$13;
 
-    invoke-direct {v3, p0}, Lcom/android/systemui/statusbar/phone/NotificationPanelView$12;-><init>(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)V
+    invoke-direct {v3, p0}, Lcom/android/systemui/statusbar/phone/NotificationPanelView$13;-><init>(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)V
 
     invoke-virtual {v0, v3}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    new-instance v3, Lcom/android/systemui/statusbar/phone/NotificationPanelView$13;
+    new-instance v3, Lcom/android/systemui/statusbar/phone/NotificationPanelView$14;
 
-    invoke-direct {v3, p0, p3}, Lcom/android/systemui/statusbar/phone/NotificationPanelView$13;-><init>(Lcom/android/systemui/statusbar/phone/NotificationPanelView;Ljava/lang/Runnable;)V
+    invoke-direct {v3, p0, p3}, Lcom/android/systemui/statusbar/phone/NotificationPanelView$14;-><init>(Lcom/android/systemui/statusbar/phone/NotificationPanelView;Ljava/lang/Runnable;)V
 
     invoke-virtual {v0, v3}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
@@ -2069,9 +2153,9 @@
 
     move-result-object v0
 
-    new-instance v6, Lcom/android/systemui/statusbar/phone/NotificationPanelView$16;
+    new-instance v6, Lcom/android/systemui/statusbar/phone/NotificationPanelView$18;
 
-    invoke-direct {v6, p0, v4, v3, v1}, Lcom/android/systemui/statusbar/phone/NotificationPanelView$16;-><init>(Landroid/view/View;III)V
+    invoke-direct {v6, p0, v4, v3, v1}, Lcom/android/systemui/statusbar/phone/NotificationPanelView$18;-><init>(Landroid/view/View;III)V
 
     invoke-virtual {v0, v6}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
@@ -2079,9 +2163,9 @@
 
     invoke-virtual {v0, v6, v7}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    new-instance v6, Lcom/android/systemui/statusbar/phone/NotificationPanelView$17;
+    new-instance v6, Lcom/android/systemui/statusbar/phone/NotificationPanelView$19;
 
-    invoke-direct {v6, p0}, Lcom/android/systemui/statusbar/phone/NotificationPanelView$17;-><init>(Landroid/view/View;)V
+    invoke-direct {v6, p0}, Lcom/android/systemui/statusbar/phone/NotificationPanelView$19;-><init>(Landroid/view/View;)V
 
     invoke-virtual {v0, v6}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
@@ -2804,7 +2888,7 @@
 
     int-to-float v4, v7
 
-    const v7, 0x3eaaaaab
+    const v7, 0x3e4ccccd    # 0.2f
 
     mul-float v2, v4, v7
 
@@ -2978,9 +3062,9 @@
 
     move-result-object v0
 
-    new-instance v1, Lcom/android/systemui/statusbar/phone/NotificationPanelView$3;
+    new-instance v1, Lcom/android/systemui/statusbar/phone/NotificationPanelView$4;
 
-    invoke-direct {v1, p0}, Lcom/android/systemui/statusbar/phone/NotificationPanelView$3;-><init>(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)V
+    invoke-direct {v1, p0}, Lcom/android/systemui/statusbar/phone/NotificationPanelView$4;-><init>(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)V
 
     invoke-virtual {v0, v1}, Landroid/view/ViewTreeObserver;->addOnPreDrawListener(Landroid/view/ViewTreeObserver$OnPreDrawListener;)V
 
@@ -2998,9 +3082,9 @@
 
     iget-object v6, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mFastOutSlowInInterpolator:Landroid/view/animation/Interpolator;
 
-    new-instance v7, Lcom/android/systemui/statusbar/phone/NotificationPanelView$15;
+    new-instance v7, Lcom/android/systemui/statusbar/phone/NotificationPanelView$17;
 
-    invoke-direct {v7, p0, p1}, Lcom/android/systemui/statusbar/phone/NotificationPanelView$15;-><init>(Lcom/android/systemui/statusbar/phone/NotificationPanelView;Lcom/android/systemui/statusbar/KeyguardAffordanceView;)V
+    invoke-direct {v7, p0, p1}, Lcom/android/systemui/statusbar/phone/NotificationPanelView$17;-><init>(Lcom/android/systemui/statusbar/phone/NotificationPanelView;Lcom/android/systemui/statusbar/KeyguardAffordanceView;)V
 
     move-object v1, p1
 
@@ -3942,6 +4026,15 @@
     const/4 v0, 0x1
 
     :cond_0
+    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->isQsDetailShowing()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    const/4 v0, 0x0
+
+    :cond_1
     return v0
 .end method
 
@@ -3974,9 +4067,9 @@
     const/4 v0, 0x1
 
     :goto_0
-    new-instance v1, Lcom/android/systemui/statusbar/phone/NotificationPanelView$4;
+    new-instance v1, Lcom/android/systemui/statusbar/phone/NotificationPanelView$5;
 
-    invoke-direct {v1, p0}, Lcom/android/systemui/statusbar/phone/NotificationPanelView$4;-><init>(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)V
+    invoke-direct {v1, p0}, Lcom/android/systemui/statusbar/phone/NotificationPanelView$5;-><init>(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)V
 
     invoke-direct {p0, p1, v0, v1}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->flingSettings(FZLjava/lang/Runnable;)V
 
@@ -4891,9 +4984,9 @@
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mAfforanceHelper:Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;
 
-    new-instance v2, Lcom/android/systemui/statusbar/phone/NotificationPanelView$14;
+    new-instance v2, Lcom/android/systemui/statusbar/phone/NotificationPanelView$16;
 
-    invoke-direct {v2, p0}, Lcom/android/systemui/statusbar/phone/NotificationPanelView$14;-><init>(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)V
+    invoke-direct {v2, p0}, Lcom/android/systemui/statusbar/phone/NotificationPanelView$16;-><init>(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)V
 
     invoke-virtual {v1, p1, v2}, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->startHintAnimation(ZLjava/lang/Runnable;)V
 
@@ -5068,6 +5161,14 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mQsPanel:Lcom/android/systemui/qs/QSPanel;
 
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mQsPanel:Lcom/android/systemui/qs/QSPanel;
+
+    new-instance v1, Lcom/android/systemui/statusbar/phone/NotificationPanelView$2;
+
+    invoke-direct {v1, p0}, Lcom/android/systemui/statusbar/phone/NotificationPanelView$2;-><init>(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)V
+
+    invoke-virtual {v0, v1}, Lcom/android/systemui/qs/QSPanel;->setDetailCallback(Lcom/android/systemui/qs/QSPanel$DetailCallback;)V
+
     const v0, 0x7f0e0077
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->findViewById(I)Landroid/view/View;
@@ -5204,9 +5305,9 @@
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mQsContainer:Landroid/view/View;
 
-    new-instance v1, Lcom/android/systemui/statusbar/phone/NotificationPanelView$2;
+    new-instance v1, Lcom/android/systemui/statusbar/phone/NotificationPanelView$3;
 
-    invoke-direct {v1, p0}, Lcom/android/systemui/statusbar/phone/NotificationPanelView$2;-><init>(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)V
+    invoke-direct {v1, p0}, Lcom/android/systemui/statusbar/phone/NotificationPanelView$3;-><init>(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)V
 
     invoke-virtual {v0, v1}, Landroid/view/View;->addOnLayoutChangeListener(Landroid/view/View$OnLayoutChangeListener;)V
 
@@ -5881,19 +5982,50 @@
 .end method
 
 .method public onScrollChanged()V
-    .locals 1
+    .locals 4
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mQsPanel:Lcom/android/systemui/qs/QSPanel;
+
+    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mScrollView:Lcom/android/systemui/statusbar/phone/ObservableScrollView;
+
+    invoke-virtual {v1}, Lcom/android/systemui/statusbar/phone/ObservableScrollView;->getScrollY()I
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Lcom/android/systemui/qs/QSPanel;->setDetailOffset(I)V
 
     iget-boolean v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mQsExpanded:Z
 
+    if-eqz v0, :cond_1
+
+    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->isQsDetailShowing()Z
+
+    move-result v0
+
     if-eqz v0, :cond_0
 
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mHandler:Landroid/os/Handler;
+
+    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mCloseQsRunnable:Ljava/lang/Runnable;
+
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mHandler:Landroid/os/Handler;
+
+    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mCloseQsRunnable:Ljava/lang/Runnable;
+
+    const-wide/16 v2, 0xc8
+
+    invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
+
+    :cond_0
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->requestScrollerTopPaddingUpdate(Z)V
 
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->requestPanelHeightUpdate()V
 
-    :cond_0
+    :cond_1
     return-void
 .end method
 

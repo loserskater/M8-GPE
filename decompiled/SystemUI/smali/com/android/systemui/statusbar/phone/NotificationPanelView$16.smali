@@ -1,43 +1,31 @@
-.class final Lcom/android/systemui/statusbar/phone/NotificationPanelView$16;
+.class Lcom/android/systemui/statusbar/phone/NotificationPanelView$16;
 .super Ljava/lang/Object;
 .source "NotificationPanelView.java"
 
 # interfaces
-.implements Landroid/animation/ValueAnimator$AnimatorUpdateListener;
+.implements Ljava/lang/Runnable;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/systemui/statusbar/phone/NotificationPanelView;->setBackgroundColorAlpha(Landroid/view/View;IIZ)V
+    value = Lcom/android/systemui/statusbar/phone/NotificationPanelView;->onEdgeClicked(Z)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
+    accessFlags = 0x0
     name = null
 .end annotation
 
 
 # instance fields
-.field final synthetic val$b:I
-
-.field final synthetic val$g:I
-
-.field final synthetic val$r:I
-
-.field final synthetic val$target:Landroid/view/View;
+.field final synthetic this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
 
 # direct methods
-.method constructor <init>(Landroid/view/View;III)V
+.method constructor <init>(Lcom/android/systemui/statusbar/phone/NotificationPanelView;)V
     .locals 0
 
-    iput-object p1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$16;->val$target:Landroid/view/View;
-
-    iput p2, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$16;->val$r:I
-
-    iput p3, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$16;->val$g:I
-
-    iput p4, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$16;->val$b:I
+    iput-object p1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$16;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -46,32 +34,20 @@
 
 
 # virtual methods
-.method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
-    .locals 5
+.method public run()V
+    .locals 2
 
-    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$16;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
-    move-result-object v1
+    const/4 v1, 0x0
 
-    check-cast v1, Ljava/lang/Integer;
+    iput-boolean v1, v0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mHintAnimationRunning:Z
 
-    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$16;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
-    move-result v0
+    iget-object v0, v0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mStatusBar:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
-    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$16;->val$target:Landroid/view/View;
-
-    iget v2, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$16;->val$r:I
-
-    iget v3, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$16;->val$g:I
-
-    iget v4, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$16;->val$b:I
-
-    invoke-static {v0, v2, v3, v4}, Landroid/graphics/Color;->argb(IIII)I
-
-    move-result v2
-
-    invoke-virtual {v1, v2}, Landroid/view/View;->setBackgroundColor(I)V
+    invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->onHintFinished()V
 
     return-void
 .end method
