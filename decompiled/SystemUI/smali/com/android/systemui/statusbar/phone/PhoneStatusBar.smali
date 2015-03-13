@@ -5443,17 +5443,8 @@
 
     iget v4, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mClockLocation:I
 
-    const/4 v5, 0x2
+    if-eqz v4, :cond_2
 
-    if-eq v4, v5, :cond_1
-
-    iget v4, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mClockLocation:I
-
-    const/4 v5, 0x3
-
-    if-ne v4, v5, :cond_2
-
-    :cond_1
     iget-object v4, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mClockView:Landroid/widget/TextView;
 
     invoke-direct {p0, v4, p2}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->animateStatusBarHide(Landroid/view/View;Z)V
@@ -5676,17 +5667,8 @@
     :cond_1d
     iget v4, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mClockLocation:I
 
-    const/4 v5, 0x2
+    if-eqz v4, :cond_1f
 
-    if-eq v4, v5, :cond_1e
-
-    iget v4, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mClockLocation:I
-
-    const/4 v5, 0x3
-
-    if-ne v4, v5, :cond_1f
-
-    :cond_1e
     iget-object v4, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mClockView:Landroid/widget/TextView;
 
     invoke-direct {p0, v4, p2}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->animateStatusBarShow(Landroid/view/View;Z)V
