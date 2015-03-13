@@ -102,7 +102,7 @@
     iget-object v1, p0, Lcom/android/systemui/BatteryMeterView$NormalBatteryMeterDrawable;->mFramePaint:Landroid/graphics/Paint;
 
     # getter for: Lcom/android/systemui/BatteryMeterView;->mFrameColor:I
-    invoke-static {p1}, Lcom/android/systemui/BatteryMeterView;->access$500(Lcom/android/systemui/BatteryMeterView;)I
+    invoke-static {p1}, Lcom/android/systemui/BatteryMeterView;->access$400(Lcom/android/systemui/BatteryMeterView;)I
 
     move-result v2
 
@@ -173,7 +173,7 @@
     iget-object v1, p0, Lcom/android/systemui/BatteryMeterView$NormalBatteryMeterDrawable;->mWarningTextPaint:Landroid/graphics/Paint;
 
     # getter for: Lcom/android/systemui/BatteryMeterView;->mColors:[I
-    invoke-static {p1}, Lcom/android/systemui/BatteryMeterView;->access$600(Lcom/android/systemui/BatteryMeterView;)[I
+    invoke-static {p1}, Lcom/android/systemui/BatteryMeterView;->access$500(Lcom/android/systemui/BatteryMeterView;)[I
 
     move-result-object v2
 
@@ -234,7 +234,7 @@
     return-void
 .end method
 
-.method static synthetic access$400(Lcom/android/systemui/BatteryMeterView$NormalBatteryMeterDrawable;Landroid/content/res/Resources;)[F
+.method static synthetic access$300(Lcom/android/systemui/BatteryMeterView$NormalBatteryMeterDrawable;Landroid/content/res/Resources;)[F
     .locals 1
 
     invoke-direct {p0, p1}, Lcom/android/systemui/BatteryMeterView$NormalBatteryMeterDrawable;->loadBoltPoints(Landroid/content/res/Resources;)[F
@@ -344,14 +344,14 @@
     iget-object v0, p0, Lcom/android/systemui/BatteryMeterView$NormalBatteryMeterDrawable;->this$0:Lcom/android/systemui/BatteryMeterView;
 
     # getter for: Lcom/android/systemui/BatteryMeterView;->mHandler:Landroid/os/Handler;
-    invoke-static {v0}, Lcom/android/systemui/BatteryMeterView;->access$1800(Lcom/android/systemui/BatteryMeterView;)Landroid/os/Handler;
+    invoke-static {v0}, Lcom/android/systemui/BatteryMeterView;->access$1700(Lcom/android/systemui/BatteryMeterView;)Landroid/os/Handler;
 
     move-result-object v0
 
     iget-object v1, p0, Lcom/android/systemui/BatteryMeterView$NormalBatteryMeterDrawable;->this$0:Lcom/android/systemui/BatteryMeterView;
 
     # getter for: Lcom/android/systemui/BatteryMeterView;->mInvalidate:Ljava/lang/Runnable;
-    invoke-static {v1}, Lcom/android/systemui/BatteryMeterView;->access$1700(Lcom/android/systemui/BatteryMeterView;)Ljava/lang/Runnable;
+    invoke-static {v1}, Lcom/android/systemui/BatteryMeterView;->access$1600(Lcom/android/systemui/BatteryMeterView;)Ljava/lang/Runnable;
 
     move-result-object v1
 
@@ -417,7 +417,7 @@
     iget-object v3, v0, Lcom/android/systemui/BatteryMeterView$NormalBatteryMeterDrawable;->this$0:Lcom/android/systemui/BatteryMeterView;
 
     # getter for: Lcom/android/systemui/BatteryMeterView;->mHeight:I
-    invoke-static {v3}, Lcom/android/systemui/BatteryMeterView;->access$700(Lcom/android/systemui/BatteryMeterView;)I
+    invoke-static {v3}, Lcom/android/systemui/BatteryMeterView;->access$600(Lcom/android/systemui/BatteryMeterView;)I
 
     move-result v3
 
@@ -467,7 +467,7 @@
     iget-object v3, v0, Lcom/android/systemui/BatteryMeterView$NormalBatteryMeterDrawable;->this$0:Lcom/android/systemui/BatteryMeterView;
 
     # getter for: Lcom/android/systemui/BatteryMeterView;->mHeight:I
-    invoke-static {v3}, Lcom/android/systemui/BatteryMeterView;->access$700(Lcom/android/systemui/BatteryMeterView;)I
+    invoke-static {v3}, Lcom/android/systemui/BatteryMeterView;->access$600(Lcom/android/systemui/BatteryMeterView;)I
 
     move-result v3
 
@@ -487,7 +487,7 @@
     iget-object v3, v0, Lcom/android/systemui/BatteryMeterView$NormalBatteryMeterDrawable;->this$0:Lcom/android/systemui/BatteryMeterView;
 
     # getter for: Lcom/android/systemui/BatteryMeterView;->mHeight:I
-    invoke-static {v3}, Lcom/android/systemui/BatteryMeterView;->access$700(Lcom/android/systemui/BatteryMeterView;)I
+    invoke-static {v3}, Lcom/android/systemui/BatteryMeterView;->access$600(Lcom/android/systemui/BatteryMeterView;)I
 
     move-result v3
 
@@ -500,7 +500,7 @@
     iget-object v3, v0, Lcom/android/systemui/BatteryMeterView$NormalBatteryMeterDrawable;->this$0:Lcom/android/systemui/BatteryMeterView;
 
     # getter for: Lcom/android/systemui/BatteryMeterView;->mWidth:I
-    invoke-static {v3}, Lcom/android/systemui/BatteryMeterView;->access$800(Lcom/android/systemui/BatteryMeterView;)I
+    invoke-static {v3}, Lcom/android/systemui/BatteryMeterView;->access$700(Lcom/android/systemui/BatteryMeterView;)I
 
     move-result v3
 
@@ -524,7 +524,7 @@
     iget-object v5, v0, Lcom/android/systemui/BatteryMeterView$NormalBatteryMeterDrawable;->this$0:Lcom/android/systemui/BatteryMeterView;
 
     # getter for: Lcom/android/systemui/BatteryMeterView;->mButtonHeightFraction:F
-    invoke-static {v5}, Lcom/android/systemui/BatteryMeterView;->access$900(Lcom/android/systemui/BatteryMeterView;)F
+    invoke-static {v5}, Lcom/android/systemui/BatteryMeterView;->access$800(Lcom/android/systemui/BatteryMeterView;)F
 
     move-result v5
 
@@ -667,7 +667,7 @@
     iget-object v6, v0, Lcom/android/systemui/BatteryMeterView$NormalBatteryMeterDrawable;->this$0:Lcom/android/systemui/BatteryMeterView;
 
     # getter for: Lcom/android/systemui/BatteryMeterView;->mSubpixelSmoothingLeft:F
-    invoke-static {v6}, Lcom/android/systemui/BatteryMeterView;->access$1000(Lcom/android/systemui/BatteryMeterView;)F
+    invoke-static {v6}, Lcom/android/systemui/BatteryMeterView;->access$900(Lcom/android/systemui/BatteryMeterView;)F
 
     move-result v6
 
@@ -686,7 +686,7 @@
     iget-object v6, v0, Lcom/android/systemui/BatteryMeterView$NormalBatteryMeterDrawable;->this$0:Lcom/android/systemui/BatteryMeterView;
 
     # getter for: Lcom/android/systemui/BatteryMeterView;->mSubpixelSmoothingRight:F
-    invoke-static {v6}, Lcom/android/systemui/BatteryMeterView;->access$1100(Lcom/android/systemui/BatteryMeterView;)F
+    invoke-static {v6}, Lcom/android/systemui/BatteryMeterView;->access$1000(Lcom/android/systemui/BatteryMeterView;)F
 
     move-result v6
 
@@ -705,7 +705,7 @@
     iget-object v6, v0, Lcom/android/systemui/BatteryMeterView$NormalBatteryMeterDrawable;->this$0:Lcom/android/systemui/BatteryMeterView;
 
     # getter for: Lcom/android/systemui/BatteryMeterView;->mSubpixelSmoothingRight:F
-    invoke-static {v6}, Lcom/android/systemui/BatteryMeterView;->access$1100(Lcom/android/systemui/BatteryMeterView;)F
+    invoke-static {v6}, Lcom/android/systemui/BatteryMeterView;->access$1000(Lcom/android/systemui/BatteryMeterView;)F
 
     move-result v6
 
@@ -744,7 +744,7 @@
     iget-object v6, v0, Lcom/android/systemui/BatteryMeterView$NormalBatteryMeterDrawable;->this$0:Lcom/android/systemui/BatteryMeterView;
 
     # getter for: Lcom/android/systemui/BatteryMeterView;->mSubpixelSmoothingLeft:F
-    invoke-static {v6}, Lcom/android/systemui/BatteryMeterView;->access$1000(Lcom/android/systemui/BatteryMeterView;)F
+    invoke-static {v6}, Lcom/android/systemui/BatteryMeterView;->access$900(Lcom/android/systemui/BatteryMeterView;)F
 
     move-result v6
 
@@ -763,7 +763,7 @@
     iget-object v6, v0, Lcom/android/systemui/BatteryMeterView$NormalBatteryMeterDrawable;->this$0:Lcom/android/systemui/BatteryMeterView;
 
     # getter for: Lcom/android/systemui/BatteryMeterView;->mSubpixelSmoothingLeft:F
-    invoke-static {v6}, Lcom/android/systemui/BatteryMeterView;->access$1000(Lcom/android/systemui/BatteryMeterView;)F
+    invoke-static {v6}, Lcom/android/systemui/BatteryMeterView;->access$900(Lcom/android/systemui/BatteryMeterView;)F
 
     move-result v6
 
@@ -782,7 +782,7 @@
     iget-object v6, v0, Lcom/android/systemui/BatteryMeterView$NormalBatteryMeterDrawable;->this$0:Lcom/android/systemui/BatteryMeterView;
 
     # getter for: Lcom/android/systemui/BatteryMeterView;->mSubpixelSmoothingRight:F
-    invoke-static {v6}, Lcom/android/systemui/BatteryMeterView;->access$1100(Lcom/android/systemui/BatteryMeterView;)F
+    invoke-static {v6}, Lcom/android/systemui/BatteryMeterView;->access$1000(Lcom/android/systemui/BatteryMeterView;)F
 
     move-result v6
 
@@ -801,7 +801,7 @@
     iget-object v6, v0, Lcom/android/systemui/BatteryMeterView$NormalBatteryMeterDrawable;->this$0:Lcom/android/systemui/BatteryMeterView;
 
     # getter for: Lcom/android/systemui/BatteryMeterView;->mSubpixelSmoothingRight:F
-    invoke-static {v6}, Lcom/android/systemui/BatteryMeterView;->access$1100(Lcom/android/systemui/BatteryMeterView;)F
+    invoke-static {v6}, Lcom/android/systemui/BatteryMeterView;->access$1000(Lcom/android/systemui/BatteryMeterView;)F
 
     move-result v6
 
@@ -862,7 +862,7 @@
     iget-object v3, v0, Lcom/android/systemui/BatteryMeterView$NormalBatteryMeterDrawable;->this$0:Lcom/android/systemui/BatteryMeterView;
 
     # getter for: Lcom/android/systemui/BatteryMeterView;->mShapePath:Landroid/graphics/Path;
-    invoke-static {v3}, Lcom/android/systemui/BatteryMeterView;->access$1300(Lcom/android/systemui/BatteryMeterView;)Landroid/graphics/Path;
+    invoke-static {v3}, Lcom/android/systemui/BatteryMeterView;->access$1200(Lcom/android/systemui/BatteryMeterView;)Landroid/graphics/Path;
 
     move-result-object v3
 
@@ -873,7 +873,7 @@
     iget-object v3, v0, Lcom/android/systemui/BatteryMeterView$NormalBatteryMeterDrawable;->this$0:Lcom/android/systemui/BatteryMeterView;
 
     # getter for: Lcom/android/systemui/BatteryMeterView;->mShapePath:Landroid/graphics/Path;
-    invoke-static {v3}, Lcom/android/systemui/BatteryMeterView;->access$1300(Lcom/android/systemui/BatteryMeterView;)Landroid/graphics/Path;
+    invoke-static {v3}, Lcom/android/systemui/BatteryMeterView;->access$1200(Lcom/android/systemui/BatteryMeterView;)Landroid/graphics/Path;
 
     move-result-object v3
 
@@ -902,7 +902,7 @@
     iget-object v3, v0, Lcom/android/systemui/BatteryMeterView$NormalBatteryMeterDrawable;->this$0:Lcom/android/systemui/BatteryMeterView;
 
     # getter for: Lcom/android/systemui/BatteryMeterView;->mShapePath:Landroid/graphics/Path;
-    invoke-static {v3}, Lcom/android/systemui/BatteryMeterView;->access$1300(Lcom/android/systemui/BatteryMeterView;)Landroid/graphics/Path;
+    invoke-static {v3}, Lcom/android/systemui/BatteryMeterView;->access$1200(Lcom/android/systemui/BatteryMeterView;)Landroid/graphics/Path;
 
     move-result-object v3
 
@@ -925,7 +925,7 @@
     iget-object v3, v0, Lcom/android/systemui/BatteryMeterView$NormalBatteryMeterDrawable;->this$0:Lcom/android/systemui/BatteryMeterView;
 
     # getter for: Lcom/android/systemui/BatteryMeterView;->mShapePath:Landroid/graphics/Path;
-    invoke-static {v3}, Lcom/android/systemui/BatteryMeterView;->access$1300(Lcom/android/systemui/BatteryMeterView;)Landroid/graphics/Path;
+    invoke-static {v3}, Lcom/android/systemui/BatteryMeterView;->access$1200(Lcom/android/systemui/BatteryMeterView;)Landroid/graphics/Path;
 
     move-result-object v3
 
@@ -948,7 +948,7 @@
     iget-object v3, v0, Lcom/android/systemui/BatteryMeterView$NormalBatteryMeterDrawable;->this$0:Lcom/android/systemui/BatteryMeterView;
 
     # getter for: Lcom/android/systemui/BatteryMeterView;->mShapePath:Landroid/graphics/Path;
-    invoke-static {v3}, Lcom/android/systemui/BatteryMeterView;->access$1300(Lcom/android/systemui/BatteryMeterView;)Landroid/graphics/Path;
+    invoke-static {v3}, Lcom/android/systemui/BatteryMeterView;->access$1200(Lcom/android/systemui/BatteryMeterView;)Landroid/graphics/Path;
 
     move-result-object v3
 
@@ -971,7 +971,7 @@
     iget-object v3, v0, Lcom/android/systemui/BatteryMeterView$NormalBatteryMeterDrawable;->this$0:Lcom/android/systemui/BatteryMeterView;
 
     # getter for: Lcom/android/systemui/BatteryMeterView;->mShapePath:Landroid/graphics/Path;
-    invoke-static {v3}, Lcom/android/systemui/BatteryMeterView;->access$1300(Lcom/android/systemui/BatteryMeterView;)Landroid/graphics/Path;
+    invoke-static {v3}, Lcom/android/systemui/BatteryMeterView;->access$1200(Lcom/android/systemui/BatteryMeterView;)Landroid/graphics/Path;
 
     move-result-object v3
 
@@ -994,7 +994,7 @@
     iget-object v3, v0, Lcom/android/systemui/BatteryMeterView$NormalBatteryMeterDrawable;->this$0:Lcom/android/systemui/BatteryMeterView;
 
     # getter for: Lcom/android/systemui/BatteryMeterView;->mShapePath:Landroid/graphics/Path;
-    invoke-static {v3}, Lcom/android/systemui/BatteryMeterView;->access$1300(Lcom/android/systemui/BatteryMeterView;)Landroid/graphics/Path;
+    invoke-static {v3}, Lcom/android/systemui/BatteryMeterView;->access$1200(Lcom/android/systemui/BatteryMeterView;)Landroid/graphics/Path;
 
     move-result-object v3
 
@@ -1017,7 +1017,7 @@
     iget-object v3, v0, Lcom/android/systemui/BatteryMeterView$NormalBatteryMeterDrawable;->this$0:Lcom/android/systemui/BatteryMeterView;
 
     # getter for: Lcom/android/systemui/BatteryMeterView;->mShapePath:Landroid/graphics/Path;
-    invoke-static {v3}, Lcom/android/systemui/BatteryMeterView;->access$1300(Lcom/android/systemui/BatteryMeterView;)Landroid/graphics/Path;
+    invoke-static {v3}, Lcom/android/systemui/BatteryMeterView;->access$1200(Lcom/android/systemui/BatteryMeterView;)Landroid/graphics/Path;
 
     move-result-object v3
 
@@ -1040,7 +1040,7 @@
     iget-object v3, v0, Lcom/android/systemui/BatteryMeterView$NormalBatteryMeterDrawable;->this$0:Lcom/android/systemui/BatteryMeterView;
 
     # getter for: Lcom/android/systemui/BatteryMeterView;->mShapePath:Landroid/graphics/Path;
-    invoke-static {v3}, Lcom/android/systemui/BatteryMeterView;->access$1300(Lcom/android/systemui/BatteryMeterView;)Landroid/graphics/Path;
+    invoke-static {v3}, Lcom/android/systemui/BatteryMeterView;->access$1200(Lcom/android/systemui/BatteryMeterView;)Landroid/graphics/Path;
 
     move-result-object v3
 
@@ -1063,7 +1063,7 @@
     iget-object v3, v0, Lcom/android/systemui/BatteryMeterView$NormalBatteryMeterDrawable;->this$0:Lcom/android/systemui/BatteryMeterView;
 
     # getter for: Lcom/android/systemui/BatteryMeterView;->mShapePath:Landroid/graphics/Path;
-    invoke-static {v3}, Lcom/android/systemui/BatteryMeterView;->access$1300(Lcom/android/systemui/BatteryMeterView;)Landroid/graphics/Path;
+    invoke-static {v3}, Lcom/android/systemui/BatteryMeterView;->access$1200(Lcom/android/systemui/BatteryMeterView;)Landroid/graphics/Path;
 
     move-result-object v3
 
@@ -1493,7 +1493,7 @@
     iget-object v6, v0, Lcom/android/systemui/BatteryMeterView$NormalBatteryMeterDrawable;->this$0:Lcom/android/systemui/BatteryMeterView;
 
     # getter for: Lcom/android/systemui/BatteryMeterView;->mSubpixelSmoothingLeft:F
-    invoke-static {v6}, Lcom/android/systemui/BatteryMeterView;->access$1000(Lcom/android/systemui/BatteryMeterView;)F
+    invoke-static {v6}, Lcom/android/systemui/BatteryMeterView;->access$900(Lcom/android/systemui/BatteryMeterView;)F
 
     move-result v6
 
@@ -1512,7 +1512,7 @@
     iget-object v6, v0, Lcom/android/systemui/BatteryMeterView$NormalBatteryMeterDrawable;->this$0:Lcom/android/systemui/BatteryMeterView;
 
     # getter for: Lcom/android/systemui/BatteryMeterView;->mSubpixelSmoothingLeft:F
-    invoke-static {v6}, Lcom/android/systemui/BatteryMeterView;->access$1000(Lcom/android/systemui/BatteryMeterView;)F
+    invoke-static {v6}, Lcom/android/systemui/BatteryMeterView;->access$900(Lcom/android/systemui/BatteryMeterView;)F
 
     move-result v6
 
@@ -1531,7 +1531,7 @@
     iget-object v6, v0, Lcom/android/systemui/BatteryMeterView$NormalBatteryMeterDrawable;->this$0:Lcom/android/systemui/BatteryMeterView;
 
     # getter for: Lcom/android/systemui/BatteryMeterView;->mSubpixelSmoothingRight:F
-    invoke-static {v6}, Lcom/android/systemui/BatteryMeterView;->access$1100(Lcom/android/systemui/BatteryMeterView;)F
+    invoke-static {v6}, Lcom/android/systemui/BatteryMeterView;->access$1000(Lcom/android/systemui/BatteryMeterView;)F
 
     move-result v6
 
@@ -1575,7 +1575,7 @@
     iget-object v3, v0, Lcom/android/systemui/BatteryMeterView$NormalBatteryMeterDrawable;->this$0:Lcom/android/systemui/BatteryMeterView;
 
     # getter for: Lcom/android/systemui/BatteryMeterView;->mCriticalLevel:I
-    invoke-static {v3}, Lcom/android/systemui/BatteryMeterView;->access$1200(Lcom/android/systemui/BatteryMeterView;)I
+    invoke-static {v3}, Lcom/android/systemui/BatteryMeterView;->access$1100(Lcom/android/systemui/BatteryMeterView;)I
 
     move-result v3
 
@@ -1660,7 +1660,7 @@
     iget-object v3, v0, Lcom/android/systemui/BatteryMeterView$NormalBatteryMeterDrawable;->this$0:Lcom/android/systemui/BatteryMeterView;
 
     # getter for: Lcom/android/systemui/BatteryMeterView;->mShapePath:Landroid/graphics/Path;
-    invoke-static {v3}, Lcom/android/systemui/BatteryMeterView;->access$1300(Lcom/android/systemui/BatteryMeterView;)Landroid/graphics/Path;
+    invoke-static {v3}, Lcom/android/systemui/BatteryMeterView;->access$1200(Lcom/android/systemui/BatteryMeterView;)Landroid/graphics/Path;
 
     move-result-object v3
 
@@ -1683,7 +1683,7 @@
     iget-object v3, v0, Lcom/android/systemui/BatteryMeterView$NormalBatteryMeterDrawable;->this$0:Lcom/android/systemui/BatteryMeterView;
 
     # getter for: Lcom/android/systemui/BatteryMeterView;->mShapePath:Landroid/graphics/Path;
-    invoke-static {v3}, Lcom/android/systemui/BatteryMeterView;->access$1300(Lcom/android/systemui/BatteryMeterView;)Landroid/graphics/Path;
+    invoke-static {v3}, Lcom/android/systemui/BatteryMeterView;->access$1200(Lcom/android/systemui/BatteryMeterView;)Landroid/graphics/Path;
 
     move-result-object v3
 
@@ -1706,7 +1706,7 @@
     iget-object v3, v0, Lcom/android/systemui/BatteryMeterView$NormalBatteryMeterDrawable;->this$0:Lcom/android/systemui/BatteryMeterView;
 
     # getter for: Lcom/android/systemui/BatteryMeterView;->mShapePath:Landroid/graphics/Path;
-    invoke-static {v3}, Lcom/android/systemui/BatteryMeterView;->access$1300(Lcom/android/systemui/BatteryMeterView;)Landroid/graphics/Path;
+    invoke-static {v3}, Lcom/android/systemui/BatteryMeterView;->access$1200(Lcom/android/systemui/BatteryMeterView;)Landroid/graphics/Path;
 
     move-result-object v3
 
@@ -1729,7 +1729,7 @@
     iget-object v3, v0, Lcom/android/systemui/BatteryMeterView$NormalBatteryMeterDrawable;->this$0:Lcom/android/systemui/BatteryMeterView;
 
     # getter for: Lcom/android/systemui/BatteryMeterView;->mShapePath:Landroid/graphics/Path;
-    invoke-static {v3}, Lcom/android/systemui/BatteryMeterView;->access$1300(Lcom/android/systemui/BatteryMeterView;)Landroid/graphics/Path;
+    invoke-static {v3}, Lcom/android/systemui/BatteryMeterView;->access$1200(Lcom/android/systemui/BatteryMeterView;)Landroid/graphics/Path;
 
     move-result-object v3
 
@@ -1752,7 +1752,7 @@
     iget-object v3, v0, Lcom/android/systemui/BatteryMeterView$NormalBatteryMeterDrawable;->this$0:Lcom/android/systemui/BatteryMeterView;
 
     # getter for: Lcom/android/systemui/BatteryMeterView;->mShapePath:Landroid/graphics/Path;
-    invoke-static {v3}, Lcom/android/systemui/BatteryMeterView;->access$1300(Lcom/android/systemui/BatteryMeterView;)Landroid/graphics/Path;
+    invoke-static {v3}, Lcom/android/systemui/BatteryMeterView;->access$1200(Lcom/android/systemui/BatteryMeterView;)Landroid/graphics/Path;
 
     move-result-object v3
 
@@ -1775,7 +1775,7 @@
     iget-object v3, v0, Lcom/android/systemui/BatteryMeterView$NormalBatteryMeterDrawable;->this$0:Lcom/android/systemui/BatteryMeterView;
 
     # getter for: Lcom/android/systemui/BatteryMeterView;->mShapePath:Landroid/graphics/Path;
-    invoke-static {v3}, Lcom/android/systemui/BatteryMeterView;->access$1300(Lcom/android/systemui/BatteryMeterView;)Landroid/graphics/Path;
+    invoke-static {v3}, Lcom/android/systemui/BatteryMeterView;->access$1200(Lcom/android/systemui/BatteryMeterView;)Landroid/graphics/Path;
 
     move-result-object v3
 
@@ -1798,7 +1798,7 @@
     iget-object v3, v0, Lcom/android/systemui/BatteryMeterView$NormalBatteryMeterDrawable;->this$0:Lcom/android/systemui/BatteryMeterView;
 
     # getter for: Lcom/android/systemui/BatteryMeterView;->mShapePath:Landroid/graphics/Path;
-    invoke-static {v3}, Lcom/android/systemui/BatteryMeterView;->access$1300(Lcom/android/systemui/BatteryMeterView;)Landroid/graphics/Path;
+    invoke-static {v3}, Lcom/android/systemui/BatteryMeterView;->access$1200(Lcom/android/systemui/BatteryMeterView;)Landroid/graphics/Path;
 
     move-result-object v3
 
@@ -1821,7 +1821,7 @@
     iget-object v3, v0, Lcom/android/systemui/BatteryMeterView$NormalBatteryMeterDrawable;->this$0:Lcom/android/systemui/BatteryMeterView;
 
     # getter for: Lcom/android/systemui/BatteryMeterView;->mShapePath:Landroid/graphics/Path;
-    invoke-static {v3}, Lcom/android/systemui/BatteryMeterView;->access$1300(Lcom/android/systemui/BatteryMeterView;)Landroid/graphics/Path;
+    invoke-static {v3}, Lcom/android/systemui/BatteryMeterView;->access$1200(Lcom/android/systemui/BatteryMeterView;)Landroid/graphics/Path;
 
     move-result-object v3
 
@@ -2005,7 +2005,7 @@
     iget-object v3, v0, Lcom/android/systemui/BatteryMeterView$NormalBatteryMeterDrawable;->this$0:Lcom/android/systemui/BatteryMeterView;
 
     # getter for: Lcom/android/systemui/BatteryMeterView;->mCriticalLevel:I
-    invoke-static {v3}, Lcom/android/systemui/BatteryMeterView;->access$1200(Lcom/android/systemui/BatteryMeterView;)I
+    invoke-static {v3}, Lcom/android/systemui/BatteryMeterView;->access$1100(Lcom/android/systemui/BatteryMeterView;)I
 
     move-result v3
 
@@ -2036,7 +2036,7 @@
     iget-object v3, v0, Lcom/android/systemui/BatteryMeterView$NormalBatteryMeterDrawable;->this$0:Lcom/android/systemui/BatteryMeterView;
 
     # getter for: Lcom/android/systemui/BatteryMeterView;->mShapePath:Landroid/graphics/Path;
-    invoke-static {v3}, Lcom/android/systemui/BatteryMeterView;->access$1300(Lcom/android/systemui/BatteryMeterView;)Landroid/graphics/Path;
+    invoke-static {v3}, Lcom/android/systemui/BatteryMeterView;->access$1200(Lcom/android/systemui/BatteryMeterView;)Landroid/graphics/Path;
 
     move-result-object v3
 
@@ -2068,7 +2068,7 @@
     iget-object v3, v0, Lcom/android/systemui/BatteryMeterView$NormalBatteryMeterDrawable;->this$0:Lcom/android/systemui/BatteryMeterView;
 
     # getter for: Lcom/android/systemui/BatteryMeterView;->mClipPath:Landroid/graphics/Path;
-    invoke-static {v3}, Lcom/android/systemui/BatteryMeterView;->access$1500(Lcom/android/systemui/BatteryMeterView;)Landroid/graphics/Path;
+    invoke-static {v3}, Lcom/android/systemui/BatteryMeterView;->access$1400(Lcom/android/systemui/BatteryMeterView;)Landroid/graphics/Path;
 
     move-result-object v3
 
@@ -2079,7 +2079,7 @@
     iget-object v3, v0, Lcom/android/systemui/BatteryMeterView$NormalBatteryMeterDrawable;->this$0:Lcom/android/systemui/BatteryMeterView;
 
     # getter for: Lcom/android/systemui/BatteryMeterView;->mClipPath:Landroid/graphics/Path;
-    invoke-static {v3}, Lcom/android/systemui/BatteryMeterView;->access$1500(Lcom/android/systemui/BatteryMeterView;)Landroid/graphics/Path;
+    invoke-static {v3}, Lcom/android/systemui/BatteryMeterView;->access$1400(Lcom/android/systemui/BatteryMeterView;)Landroid/graphics/Path;
 
     move-result-object v3
 
@@ -2096,7 +2096,7 @@
     iget-object v3, v0, Lcom/android/systemui/BatteryMeterView$NormalBatteryMeterDrawable;->this$0:Lcom/android/systemui/BatteryMeterView;
 
     # getter for: Lcom/android/systemui/BatteryMeterView;->mShapePath:Landroid/graphics/Path;
-    invoke-static {v3}, Lcom/android/systemui/BatteryMeterView;->access$1300(Lcom/android/systemui/BatteryMeterView;)Landroid/graphics/Path;
+    invoke-static {v3}, Lcom/android/systemui/BatteryMeterView;->access$1200(Lcom/android/systemui/BatteryMeterView;)Landroid/graphics/Path;
 
     move-result-object v3
 
@@ -2105,7 +2105,7 @@
     iget-object v5, v0, Lcom/android/systemui/BatteryMeterView$NormalBatteryMeterDrawable;->this$0:Lcom/android/systemui/BatteryMeterView;
 
     # getter for: Lcom/android/systemui/BatteryMeterView;->mClipPath:Landroid/graphics/Path;
-    invoke-static {v5}, Lcom/android/systemui/BatteryMeterView;->access$1500(Lcom/android/systemui/BatteryMeterView;)Landroid/graphics/Path;
+    invoke-static {v5}, Lcom/android/systemui/BatteryMeterView;->access$1400(Lcom/android/systemui/BatteryMeterView;)Landroid/graphics/Path;
 
     move-result-object v5
 
@@ -2118,7 +2118,7 @@
     iget-object v3, v0, Lcom/android/systemui/BatteryMeterView$NormalBatteryMeterDrawable;->this$0:Lcom/android/systemui/BatteryMeterView;
 
     # getter for: Lcom/android/systemui/BatteryMeterView;->mShapePath:Landroid/graphics/Path;
-    invoke-static {v3}, Lcom/android/systemui/BatteryMeterView;->access$1300(Lcom/android/systemui/BatteryMeterView;)Landroid/graphics/Path;
+    invoke-static {v3}, Lcom/android/systemui/BatteryMeterView;->access$1200(Lcom/android/systemui/BatteryMeterView;)Landroid/graphics/Path;
 
     move-result-object v3
 
@@ -2141,7 +2141,7 @@
     iget-object v3, v0, Lcom/android/systemui/BatteryMeterView$NormalBatteryMeterDrawable;->this$0:Lcom/android/systemui/BatteryMeterView;
 
     # getter for: Lcom/android/systemui/BatteryMeterView;->mCriticalLevel:I
-    invoke-static {v3}, Lcom/android/systemui/BatteryMeterView;->access$1200(Lcom/android/systemui/BatteryMeterView;)I
+    invoke-static {v3}, Lcom/android/systemui/BatteryMeterView;->access$1100(Lcom/android/systemui/BatteryMeterView;)I
 
     move-result v3
 
@@ -2154,7 +2154,7 @@
     iget-object v3, v0, Lcom/android/systemui/BatteryMeterView$NormalBatteryMeterDrawable;->this$0:Lcom/android/systemui/BatteryMeterView;
 
     # getter for: Lcom/android/systemui/BatteryMeterView;->mWidth:I
-    invoke-static {v3}, Lcom/android/systemui/BatteryMeterView;->access$800(Lcom/android/systemui/BatteryMeterView;)I
+    invoke-static {v3}, Lcom/android/systemui/BatteryMeterView;->access$700(Lcom/android/systemui/BatteryMeterView;)I
 
     move-result v3
 
@@ -2169,7 +2169,7 @@
     iget-object v3, v0, Lcom/android/systemui/BatteryMeterView$NormalBatteryMeterDrawable;->this$0:Lcom/android/systemui/BatteryMeterView;
 
     # getter for: Lcom/android/systemui/BatteryMeterView;->mHeight:I
-    invoke-static {v3}, Lcom/android/systemui/BatteryMeterView;->access$700(Lcom/android/systemui/BatteryMeterView;)I
+    invoke-static {v3}, Lcom/android/systemui/BatteryMeterView;->access$600(Lcom/android/systemui/BatteryMeterView;)I
 
     move-result v3
 
@@ -2190,7 +2190,7 @@
     iget-object v3, v0, Lcom/android/systemui/BatteryMeterView$NormalBatteryMeterDrawable;->this$0:Lcom/android/systemui/BatteryMeterView;
 
     # getter for: Lcom/android/systemui/BatteryMeterView;->mWarningString:Ljava/lang/String;
-    invoke-static {v3}, Lcom/android/systemui/BatteryMeterView;->access$1600(Lcom/android/systemui/BatteryMeterView;)Ljava/lang/String;
+    invoke-static {v3}, Lcom/android/systemui/BatteryMeterView;->access$1500(Lcom/android/systemui/BatteryMeterView;)Ljava/lang/String;
 
     move-result-object v3
 
@@ -2241,7 +2241,7 @@
     iget-object v3, v0, Lcom/android/systemui/BatteryMeterView$NormalBatteryMeterDrawable;->this$0:Lcom/android/systemui/BatteryMeterView;
 
     # getter for: Lcom/android/systemui/BatteryMeterView;->mShapePath:Landroid/graphics/Path;
-    invoke-static {v3}, Lcom/android/systemui/BatteryMeterView;->access$1300(Lcom/android/systemui/BatteryMeterView;)Landroid/graphics/Path;
+    invoke-static {v3}, Lcom/android/systemui/BatteryMeterView;->access$1200(Lcom/android/systemui/BatteryMeterView;)Landroid/graphics/Path;
 
     move-result-object v3
 
@@ -2345,7 +2345,7 @@
     iget-object v3, v0, Lcom/android/systemui/BatteryMeterView$NormalBatteryMeterDrawable;->this$0:Lcom/android/systemui/BatteryMeterView;
 
     # getter for: Lcom/android/systemui/BatteryMeterView;->mWidth:I
-    invoke-static {v3}, Lcom/android/systemui/BatteryMeterView;->access$800(Lcom/android/systemui/BatteryMeterView;)I
+    invoke-static {v3}, Lcom/android/systemui/BatteryMeterView;->access$700(Lcom/android/systemui/BatteryMeterView;)I
 
     move-result v3
 
@@ -2360,7 +2360,7 @@
     iget-object v3, v0, Lcom/android/systemui/BatteryMeterView$NormalBatteryMeterDrawable;->this$0:Lcom/android/systemui/BatteryMeterView;
 
     # getter for: Lcom/android/systemui/BatteryMeterView;->mHeight:I
-    invoke-static {v3}, Lcom/android/systemui/BatteryMeterView;->access$700(Lcom/android/systemui/BatteryMeterView;)I
+    invoke-static {v3}, Lcom/android/systemui/BatteryMeterView;->access$600(Lcom/android/systemui/BatteryMeterView;)I
 
     move-result v3
 
@@ -2396,7 +2396,7 @@
     iget-object v3, v0, Lcom/android/systemui/BatteryMeterView$NormalBatteryMeterDrawable;->this$0:Lcom/android/systemui/BatteryMeterView;
 
     # getter for: Lcom/android/systemui/BatteryMeterView;->mTextPath:Landroid/graphics/Path;
-    invoke-static {v3}, Lcom/android/systemui/BatteryMeterView;->access$1400(Lcom/android/systemui/BatteryMeterView;)Landroid/graphics/Path;
+    invoke-static {v3}, Lcom/android/systemui/BatteryMeterView;->access$1300(Lcom/android/systemui/BatteryMeterView;)Landroid/graphics/Path;
 
     move-result-object v3
 
@@ -2417,7 +2417,7 @@
     iget-object v9, v0, Lcom/android/systemui/BatteryMeterView$NormalBatteryMeterDrawable;->this$0:Lcom/android/systemui/BatteryMeterView;
 
     # getter for: Lcom/android/systemui/BatteryMeterView;->mTextPath:Landroid/graphics/Path;
-    invoke-static {v9}, Lcom/android/systemui/BatteryMeterView;->access$1400(Lcom/android/systemui/BatteryMeterView;)Landroid/graphics/Path;
+    invoke-static {v9}, Lcom/android/systemui/BatteryMeterView;->access$1300(Lcom/android/systemui/BatteryMeterView;)Landroid/graphics/Path;
 
     move-result-object v9
 
@@ -2428,7 +2428,7 @@
     iget-object v3, v0, Lcom/android/systemui/BatteryMeterView$NormalBatteryMeterDrawable;->this$0:Lcom/android/systemui/BatteryMeterView;
 
     # getter for: Lcom/android/systemui/BatteryMeterView;->mShapePath:Landroid/graphics/Path;
-    invoke-static {v3}, Lcom/android/systemui/BatteryMeterView;->access$1300(Lcom/android/systemui/BatteryMeterView;)Landroid/graphics/Path;
+    invoke-static {v3}, Lcom/android/systemui/BatteryMeterView;->access$1200(Lcom/android/systemui/BatteryMeterView;)Landroid/graphics/Path;
 
     move-result-object v3
 
@@ -2437,7 +2437,7 @@
     iget-object v5, v0, Lcom/android/systemui/BatteryMeterView$NormalBatteryMeterDrawable;->this$0:Lcom/android/systemui/BatteryMeterView;
 
     # getter for: Lcom/android/systemui/BatteryMeterView;->mTextPath:Landroid/graphics/Path;
-    invoke-static {v5}, Lcom/android/systemui/BatteryMeterView;->access$1400(Lcom/android/systemui/BatteryMeterView;)Landroid/graphics/Path;
+    invoke-static {v5}, Lcom/android/systemui/BatteryMeterView;->access$1300(Lcom/android/systemui/BatteryMeterView;)Landroid/graphics/Path;
 
     move-result-object v5
 
@@ -2518,12 +2518,12 @@
     iget-object v0, p0, Lcom/android/systemui/BatteryMeterView$NormalBatteryMeterDrawable;->this$0:Lcom/android/systemui/BatteryMeterView;
 
     # setter for: Lcom/android/systemui/BatteryMeterView;->mHeight:I
-    invoke-static {v0, p2}, Lcom/android/systemui/BatteryMeterView;->access$702(Lcom/android/systemui/BatteryMeterView;I)I
+    invoke-static {v0, p2}, Lcom/android/systemui/BatteryMeterView;->access$602(Lcom/android/systemui/BatteryMeterView;I)I
 
     iget-object v0, p0, Lcom/android/systemui/BatteryMeterView$NormalBatteryMeterDrawable;->this$0:Lcom/android/systemui/BatteryMeterView;
 
     # setter for: Lcom/android/systemui/BatteryMeterView;->mWidth:I
-    invoke-static {v0, p1}, Lcom/android/systemui/BatteryMeterView;->access$802(Lcom/android/systemui/BatteryMeterView;I)I
+    invoke-static {v0, p1}, Lcom/android/systemui/BatteryMeterView;->access$702(Lcom/android/systemui/BatteryMeterView;I)I
 
     iget-object v0, p0, Lcom/android/systemui/BatteryMeterView$NormalBatteryMeterDrawable;->mWarningTextPaint:Landroid/graphics/Paint;
 

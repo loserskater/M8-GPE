@@ -40,6 +40,12 @@
     return-void
 .end method
 
+.method public onBatteryStyleChanged(II)V
+    .locals 0
+
+    return-void
+.end method
+
 .method public onPowerSaveChanged()V
     .locals 2
 

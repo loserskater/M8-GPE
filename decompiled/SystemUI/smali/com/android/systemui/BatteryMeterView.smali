@@ -10,7 +10,7 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/android/systemui/BatteryMeterView$3;,
+        Lcom/android/systemui/BatteryMeterView$2;,
         Lcom/android/systemui/BatteryMeterView$CircleBatteryMeterDrawable;,
         Lcom/android/systemui/BatteryMeterView$NormalBatteryMeterDrawable;,
         Lcom/android/systemui/BatteryMeterView$BatteryMeterDrawable;,
@@ -54,8 +54,6 @@
 .field private final mLock:Ljava/lang/Object;
 
 .field protected mMeterMode:Lcom/android/systemui/BatteryMeterView$BatteryMeterMode;
-
-.field private mObserver:Landroid/database/ContentObserver;
 
 .field private mPowerSaveEnabled:Z
 
@@ -169,16 +167,6 @@
     invoke-direct {v6, p0}, Lcom/android/systemui/BatteryMeterView$1;-><init>(Lcom/android/systemui/BatteryMeterView;)V
 
     iput-object v6, p0, Lcom/android/systemui/BatteryMeterView;->mInvalidate:Ljava/lang/Runnable;
-
-    new-instance v6, Lcom/android/systemui/BatteryMeterView$2;
-
-    new-instance v7, Landroid/os/Handler;
-
-    invoke-direct {v7}, Landroid/os/Handler;-><init>()V
-
-    invoke-direct {v6, p0, v7}, Lcom/android/systemui/BatteryMeterView$2;-><init>(Lcom/android/systemui/BatteryMeterView;Landroid/os/Handler;)V
-
-    iput-object v6, p0, Lcom/android/systemui/BatteryMeterView;->mObserver:Landroid/database/ContentObserver;
 
     new-instance v6, Landroid/os/Handler;
 
@@ -326,16 +314,6 @@
 
     iput v6, p0, Lcom/android/systemui/BatteryMeterView;->mSubpixelSmoothingRight:F
 
-    invoke-direct {p0}, Lcom/android/systemui/BatteryMeterView;->loadShowBatterySetting()V
-
-    iget-object v6, p0, Lcom/android/systemui/BatteryMeterView;->mMeterMode:Lcom/android/systemui/BatteryMeterView$BatteryMeterMode;
-
-    invoke-virtual {p0, v6}, Lcom/android/systemui/BatteryMeterView;->createBatteryMeterDrawable(Lcom/android/systemui/BatteryMeterView$BatteryMeterMode;)Lcom/android/systemui/BatteryMeterView$BatteryMeterDrawable;
-
-    move-result-object v6
-
-    iput-object v6, p0, Lcom/android/systemui/BatteryMeterView;->mBatteryMeterDrawable:Lcom/android/systemui/BatteryMeterView$BatteryMeterDrawable;
-
     return-void
 .end method
 
@@ -350,20 +328,12 @@
 .method static synthetic access$1000(Lcom/android/systemui/BatteryMeterView;)F
     .locals 1
 
-    iget v0, p0, Lcom/android/systemui/BatteryMeterView;->mSubpixelSmoothingLeft:F
-
-    return v0
-.end method
-
-.method static synthetic access$1100(Lcom/android/systemui/BatteryMeterView;)F
-    .locals 1
-
     iget v0, p0, Lcom/android/systemui/BatteryMeterView;->mSubpixelSmoothingRight:F
 
     return v0
 .end method
 
-.method static synthetic access$1200(Lcom/android/systemui/BatteryMeterView;)I
+.method static synthetic access$1100(Lcom/android/systemui/BatteryMeterView;)I
     .locals 1
 
     iget v0, p0, Lcom/android/systemui/BatteryMeterView;->mCriticalLevel:I
@@ -371,7 +341,7 @@
     return v0
 .end method
 
-.method static synthetic access$1300(Lcom/android/systemui/BatteryMeterView;)Landroid/graphics/Path;
+.method static synthetic access$1200(Lcom/android/systemui/BatteryMeterView;)Landroid/graphics/Path;
     .locals 1
 
     iget-object v0, p0, Lcom/android/systemui/BatteryMeterView;->mShapePath:Landroid/graphics/Path;
@@ -379,7 +349,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$1400(Lcom/android/systemui/BatteryMeterView;)Landroid/graphics/Path;
+.method static synthetic access$1300(Lcom/android/systemui/BatteryMeterView;)Landroid/graphics/Path;
     .locals 1
 
     iget-object v0, p0, Lcom/android/systemui/BatteryMeterView;->mTextPath:Landroid/graphics/Path;
@@ -387,7 +357,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$1500(Lcom/android/systemui/BatteryMeterView;)Landroid/graphics/Path;
+.method static synthetic access$1400(Lcom/android/systemui/BatteryMeterView;)Landroid/graphics/Path;
     .locals 1
 
     iget-object v0, p0, Lcom/android/systemui/BatteryMeterView;->mClipPath:Landroid/graphics/Path;
@@ -395,7 +365,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$1600(Lcom/android/systemui/BatteryMeterView;)Ljava/lang/String;
+.method static synthetic access$1500(Lcom/android/systemui/BatteryMeterView;)Ljava/lang/String;
     .locals 1
 
     iget-object v0, p0, Lcom/android/systemui/BatteryMeterView;->mWarningString:Ljava/lang/String;
@@ -403,7 +373,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$1700(Lcom/android/systemui/BatteryMeterView;)Ljava/lang/Runnable;
+.method static synthetic access$1600(Lcom/android/systemui/BatteryMeterView;)Ljava/lang/Runnable;
     .locals 1
 
     iget-object v0, p0, Lcom/android/systemui/BatteryMeterView;->mInvalidate:Ljava/lang/Runnable;
@@ -411,7 +381,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$1800(Lcom/android/systemui/BatteryMeterView;)Landroid/os/Handler;
+.method static synthetic access$1700(Lcom/android/systemui/BatteryMeterView;)Landroid/os/Handler;
     .locals 1
 
     iget-object v0, p0, Lcom/android/systemui/BatteryMeterView;->mHandler:Landroid/os/Handler;
@@ -427,15 +397,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$300(Lcom/android/systemui/BatteryMeterView;)V
-    .locals 0
-
-    invoke-direct {p0}, Lcom/android/systemui/BatteryMeterView;->loadShowBatterySetting()V
-
-    return-void
-.end method
-
-.method static synthetic access$500(Lcom/android/systemui/BatteryMeterView;)I
+.method static synthetic access$400(Lcom/android/systemui/BatteryMeterView;)I
     .locals 1
 
     iget v0, p0, Lcom/android/systemui/BatteryMeterView;->mFrameColor:I
@@ -443,7 +405,7 @@
     return v0
 .end method
 
-.method static synthetic access$600(Lcom/android/systemui/BatteryMeterView;)[I
+.method static synthetic access$500(Lcom/android/systemui/BatteryMeterView;)[I
     .locals 1
 
     iget-object v0, p0, Lcom/android/systemui/BatteryMeterView;->mColors:[I
@@ -451,7 +413,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$700(Lcom/android/systemui/BatteryMeterView;)I
+.method static synthetic access$600(Lcom/android/systemui/BatteryMeterView;)I
     .locals 1
 
     iget v0, p0, Lcom/android/systemui/BatteryMeterView;->mHeight:I
@@ -459,7 +421,7 @@
     return v0
 .end method
 
-.method static synthetic access$702(Lcom/android/systemui/BatteryMeterView;I)I
+.method static synthetic access$602(Lcom/android/systemui/BatteryMeterView;I)I
     .locals 0
 
     iput p1, p0, Lcom/android/systemui/BatteryMeterView;->mHeight:I
@@ -467,7 +429,7 @@
     return p1
 .end method
 
-.method static synthetic access$800(Lcom/android/systemui/BatteryMeterView;)I
+.method static synthetic access$700(Lcom/android/systemui/BatteryMeterView;)I
     .locals 1
 
     iget v0, p0, Lcom/android/systemui/BatteryMeterView;->mWidth:I
@@ -475,7 +437,7 @@
     return v0
 .end method
 
-.method static synthetic access$802(Lcom/android/systemui/BatteryMeterView;I)I
+.method static synthetic access$702(Lcom/android/systemui/BatteryMeterView;I)I
     .locals 0
 
     iput p1, p0, Lcom/android/systemui/BatteryMeterView;->mWidth:I
@@ -483,7 +445,7 @@
     return p1
 .end method
 
-.method static synthetic access$900(Lcom/android/systemui/BatteryMeterView;)F
+.method static synthetic access$800(Lcom/android/systemui/BatteryMeterView;)F
     .locals 1
 
     iget v0, p0, Lcom/android/systemui/BatteryMeterView;->mButtonHeightFraction:F
@@ -491,89 +453,12 @@
     return v0
 .end method
 
-.method private loadShowBatterySetting()V
-    .locals 7
+.method static synthetic access$900(Lcom/android/systemui/BatteryMeterView;)F
+    .locals 1
 
-    const/4 v4, 0x1
+    iget v0, p0, Lcom/android/systemui/BatteryMeterView;->mSubpixelSmoothingLeft:F
 
-    const/4 v5, 0x0
-
-    iget-object v6, p0, Lcom/android/systemui/BatteryMeterView;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v6}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v3
-
-    invoke-static {}, Landroid/app/ActivityManager;->getCurrentUser()I
-
-    move-result v1
-
-    const-string v6, "status_bar_show_battery_percent"
-
-    invoke-static {v3, v6, v5, v1}, Landroid/provider/Settings$System;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
-
-    move-result v6
-
-    if-ne v6, v4, :cond_0
-
-    :goto_0
-    const-string v6, "status_bar_battery_style"
-
-    invoke-static {v3, v6, v5, v1}, Landroid/provider/Settings$System;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
-
-    move-result v0
-
-    sget-object v2, Lcom/android/systemui/BatteryMeterView$BatteryMeterMode;->BATTERY_METER_ICON_PORTRAIT:Lcom/android/systemui/BatteryMeterView$BatteryMeterMode;
-
-    packed-switch v0, :pswitch_data_0
-
-    :goto_1
-    :pswitch_0
-    invoke-virtual {p0, v2}, Lcom/android/systemui/BatteryMeterView;->setMode(Lcom/android/systemui/BatteryMeterView$BatteryMeterMode;)V
-
-    iput-boolean v4, p0, Lcom/android/systemui/BatteryMeterView;->mShowPercent:Z
-
-    invoke-virtual {p0}, Lcom/android/systemui/BatteryMeterView;->invalidateIfVisible()V
-
-    return-void
-
-    :cond_0
-    move v4, v5
-
-    goto :goto_0
-
-    :pswitch_1
-    sget-object v2, Lcom/android/systemui/BatteryMeterView$BatteryMeterMode;->BATTERY_METER_CIRCLE:Lcom/android/systemui/BatteryMeterView$BatteryMeterMode;
-
-    goto :goto_1
-
-    :pswitch_2
-    sget-object v2, Lcom/android/systemui/BatteryMeterView$BatteryMeterMode;->BATTERY_METER_GONE:Lcom/android/systemui/BatteryMeterView$BatteryMeterMode;
-
-    const/4 v4, 0x0
-
-    goto :goto_1
-
-    :pswitch_3
-    sget-object v2, Lcom/android/systemui/BatteryMeterView$BatteryMeterMode;->BATTERY_METER_ICON_LANDSCAPE:Lcom/android/systemui/BatteryMeterView$BatteryMeterMode;
-
-    goto :goto_1
-
-    :pswitch_4
-    sget-object v2, Lcom/android/systemui/BatteryMeterView$BatteryMeterMode;->BATTERY_METER_TEXT:Lcom/android/systemui/BatteryMeterView$BatteryMeterMode;
-
-    const/4 v4, 0x0
-
-    goto :goto_1
-
-    :pswitch_data_0
-    .packed-switch 0x2
-        :pswitch_1
-        :pswitch_0
-        :pswitch_2
-        :pswitch_3
-        :pswitch_4
-    .end packed-switch
+    return v0
 .end method
 
 
@@ -587,7 +472,7 @@
 
     move-result-object v0
 
-    sget-object v1, Lcom/android/systemui/BatteryMeterView$3;->$SwitchMap$com$android$systemui$BatteryMeterView$BatteryMeterMode:[I
+    sget-object v1, Lcom/android/systemui/BatteryMeterView$2;->$SwitchMap$com$android$systemui$BatteryMeterView$BatteryMeterMode:[I
 
     invoke-virtual {p1}, Lcom/android/systemui/BatteryMeterView$BatteryMeterMode;->ordinal()I
 
@@ -896,9 +781,7 @@
 .end method
 
 .method public onAttachedToWindow()V
-    .locals 6
-
-    const/4 v5, 0x0
+    .locals 4
 
     invoke-super {p0}, Landroid/view/View;->onAttachedToWindow()V
 
@@ -943,42 +826,6 @@
 
     iput-boolean v2, p0, Lcom/android/systemui/BatteryMeterView;->mAttached:Z
 
-    invoke-virtual {p0}, Lcom/android/systemui/BatteryMeterView;->getContext()Landroid/content/Context;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v2
-
-    const-string v3, "status_bar_battery_style"
-
-    invoke-static {v3}, Landroid/provider/Settings$System;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
-
-    move-result-object v3
-
-    iget-object v4, p0, Lcom/android/systemui/BatteryMeterView;->mObserver:Landroid/database/ContentObserver;
-
-    invoke-virtual {v2, v3, v5, v4}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
-
-    invoke-virtual {p0}, Lcom/android/systemui/BatteryMeterView;->getContext()Landroid/content/Context;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v2
-
-    const-string v3, "status_bar_show_battery_percent"
-
-    invoke-static {v3}, Landroid/provider/Settings$System;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
-
-    move-result-object v3
-
-    iget-object v4, p0, Lcom/android/systemui/BatteryMeterView;->mObserver:Landroid/database/ContentObserver;
-
-    invoke-virtual {v2, v3, v5, v4}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
-
     return-void
 .end method
 
@@ -986,6 +833,69 @@
     .locals 0
 
     return-void
+.end method
+
+.method public onBatteryStyleChanged(II)V
+    .locals 2
+
+    const/4 v1, 0x1
+
+    if-ne p2, v1, :cond_0
+
+    :goto_0
+    sget-object v0, Lcom/android/systemui/BatteryMeterView$BatteryMeterMode;->BATTERY_METER_ICON_PORTRAIT:Lcom/android/systemui/BatteryMeterView$BatteryMeterMode;
+
+    packed-switch p1, :pswitch_data_0
+
+    :goto_1
+    :pswitch_0
+    invoke-virtual {p0, v0}, Lcom/android/systemui/BatteryMeterView;->setMode(Lcom/android/systemui/BatteryMeterView$BatteryMeterMode;)V
+
+    iput-boolean v1, p0, Lcom/android/systemui/BatteryMeterView;->mShowPercent:Z
+
+    invoke-virtual {p0}, Lcom/android/systemui/BatteryMeterView;->invalidateIfVisible()V
+
+    return-void
+
+    :cond_0
+    const/4 v1, 0x0
+
+    goto :goto_0
+
+    :pswitch_1
+    sget-object v0, Lcom/android/systemui/BatteryMeterView$BatteryMeterMode;->BATTERY_METER_CIRCLE:Lcom/android/systemui/BatteryMeterView$BatteryMeterMode;
+
+    goto :goto_1
+
+    :pswitch_2
+    sget-object v0, Lcom/android/systemui/BatteryMeterView$BatteryMeterMode;->BATTERY_METER_GONE:Lcom/android/systemui/BatteryMeterView$BatteryMeterMode;
+
+    const/4 v1, 0x0
+
+    goto :goto_1
+
+    :pswitch_3
+    sget-object v0, Lcom/android/systemui/BatteryMeterView$BatteryMeterMode;->BATTERY_METER_ICON_LANDSCAPE:Lcom/android/systemui/BatteryMeterView$BatteryMeterMode;
+
+    goto :goto_1
+
+    :pswitch_4
+    sget-object v0, Lcom/android/systemui/BatteryMeterView$BatteryMeterMode;->BATTERY_METER_TEXT:Lcom/android/systemui/BatteryMeterView$BatteryMeterMode;
+
+    const/4 v1, 0x0
+
+    goto :goto_1
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x2
+        :pswitch_1
+        :pswitch_0
+        :pswitch_2
+        :pswitch_3
+        :pswitch_4
+    .end packed-switch
 .end method
 
 .method public onDetachedFromWindow()V

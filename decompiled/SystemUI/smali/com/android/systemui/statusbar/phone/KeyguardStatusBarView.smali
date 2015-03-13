@@ -2,16 +2,11 @@
 .super Landroid/widget/RelativeLayout;
 .source "KeyguardStatusBarView.java"
 
-# interfaces
-.implements Lcom/android/systemui/statusbar/policy/BatteryController$BatteryStateChangeCallback;
-
 
 # instance fields
 .field private mBatteryController:Lcom/android/systemui/statusbar/policy/BatteryController;
 
 .field private mBatteryLevel:Lcom/android/systemui/BatteryLevelTextView;
-
-.field private mBatteryListening:Z
 
 .field private mCarrierLabel:Landroid/widget/TextView;
 
@@ -272,12 +267,6 @@
     return v0
 .end method
 
-.method public onBatteryLevelChanged(IZZ)V
-    .locals 0
-
-    return-void
-.end method
-
 .method protected onConfigurationChanged(Landroid/content/res/Configuration;)V
     .locals 4
 
@@ -378,12 +367,6 @@
     return-void
 .end method
 
-.method public onPowerSaveChanged()V
-    .locals 0
-
-    return-void
-.end method
-
 .method public setBatteryController(Lcom/android/systemui/statusbar/policy/BatteryController;)V
     .locals 1
 
@@ -435,37 +418,6 @@
     invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->updateSystemIconsLayoutParams()V
 
     return-void
-.end method
-
-.method public setListening(Z)V
-    .locals 1
-
-    iget-boolean v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->mBatteryListening:Z
-
-    if-ne p1, v0, :cond_0
-
-    :goto_0
-    return-void
-
-    :cond_0
-    iput-boolean p1, p0, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->mBatteryListening:Z
-
-    iget-boolean v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->mBatteryListening:Z
-
-    if-eqz v0, :cond_1
-
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->mBatteryController:Lcom/android/systemui/statusbar/policy/BatteryController;
-
-    invoke-virtual {v0, p0}, Lcom/android/systemui/statusbar/policy/BatteryController;->addStateChangedCallback(Lcom/android/systemui/statusbar/policy/BatteryController$BatteryStateChangeCallback;)V
-
-    goto :goto_0
-
-    :cond_1
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->mBatteryController:Lcom/android/systemui/statusbar/policy/BatteryController;
-
-    invoke-virtual {v0, p0}, Lcom/android/systemui/statusbar/policy/BatteryController;->removeStateChangedCallback(Lcom/android/systemui/statusbar/policy/BatteryController$BatteryStateChangeCallback;)V
-
-    goto :goto_0
 .end method
 
 .method public setUserInfoController(Lcom/android/systemui/statusbar/policy/UserInfoController;)V

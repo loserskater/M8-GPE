@@ -174,7 +174,7 @@
     iget-object v1, p0, Lcom/android/systemui/BatteryMeterView$CircleBatteryMeterDrawable;->mWarningTextPaint:Landroid/graphics/Paint;
 
     # getter for: Lcom/android/systemui/BatteryMeterView;->mColors:[I
-    invoke-static {p1}, Lcom/android/systemui/BatteryMeterView;->access$600(Lcom/android/systemui/BatteryMeterView;)[I
+    invoke-static {p1}, Lcom/android/systemui/BatteryMeterView;->access$500(Lcom/android/systemui/BatteryMeterView;)[I
 
     move-result-object v2
 
@@ -708,7 +708,7 @@
     iget-object v2, v0, Lcom/android/systemui/BatteryMeterView$CircleBatteryMeterDrawable;->this$0:Lcom/android/systemui/BatteryMeterView;
 
     # getter for: Lcom/android/systemui/BatteryMeterView;->mCriticalLevel:I
-    invoke-static {v2}, Lcom/android/systemui/BatteryMeterView;->access$1200(Lcom/android/systemui/BatteryMeterView;)I
+    invoke-static {v2}, Lcom/android/systemui/BatteryMeterView;->access$1100(Lcom/android/systemui/BatteryMeterView;)I
 
     move-result v2
 
@@ -736,7 +736,7 @@
     iget-object v2, v0, Lcom/android/systemui/BatteryMeterView$CircleBatteryMeterDrawable;->this$0:Lcom/android/systemui/BatteryMeterView;
 
     # getter for: Lcom/android/systemui/BatteryMeterView;->mCriticalLevel:I
-    invoke-static {v2}, Lcom/android/systemui/BatteryMeterView;->access$1200(Lcom/android/systemui/BatteryMeterView;)I
+    invoke-static {v2}, Lcom/android/systemui/BatteryMeterView;->access$1100(Lcom/android/systemui/BatteryMeterView;)I
 
     move-result v2
 
@@ -747,7 +747,7 @@
     iget-object v2, v0, Lcom/android/systemui/BatteryMeterView$CircleBatteryMeterDrawable;->this$0:Lcom/android/systemui/BatteryMeterView;
 
     # getter for: Lcom/android/systemui/BatteryMeterView;->mWarningString:Ljava/lang/String;
-    invoke-static {v2}, Lcom/android/systemui/BatteryMeterView;->access$1600(Lcom/android/systemui/BatteryMeterView;)Ljava/lang/String;
+    invoke-static {v2}, Lcom/android/systemui/BatteryMeterView;->access$1500(Lcom/android/systemui/BatteryMeterView;)Ljava/lang/String;
 
     move-result-object v2
 
@@ -1095,14 +1095,14 @@
     iget-object v0, p0, Lcom/android/systemui/BatteryMeterView$CircleBatteryMeterDrawable;->this$0:Lcom/android/systemui/BatteryMeterView;
 
     # getter for: Lcom/android/systemui/BatteryMeterView;->mHandler:Landroid/os/Handler;
-    invoke-static {v0}, Lcom/android/systemui/BatteryMeterView;->access$1800(Lcom/android/systemui/BatteryMeterView;)Landroid/os/Handler;
+    invoke-static {v0}, Lcom/android/systemui/BatteryMeterView;->access$1700(Lcom/android/systemui/BatteryMeterView;)Landroid/os/Handler;
 
     move-result-object v0
 
     iget-object v1, p0, Lcom/android/systemui/BatteryMeterView$CircleBatteryMeterDrawable;->this$0:Lcom/android/systemui/BatteryMeterView;
 
     # getter for: Lcom/android/systemui/BatteryMeterView;->mInvalidate:Ljava/lang/Runnable;
-    invoke-static {v1}, Lcom/android/systemui/BatteryMeterView;->access$1700(Lcom/android/systemui/BatteryMeterView;)Ljava/lang/Runnable;
+    invoke-static {v1}, Lcom/android/systemui/BatteryMeterView;->access$1600(Lcom/android/systemui/BatteryMeterView;)Ljava/lang/Runnable;
 
     move-result-object v1
 
@@ -1129,14 +1129,14 @@
     iget-object v0, p0, Lcom/android/systemui/BatteryMeterView$CircleBatteryMeterDrawable;->this$0:Lcom/android/systemui/BatteryMeterView;
 
     # getter for: Lcom/android/systemui/BatteryMeterView;->mHandler:Landroid/os/Handler;
-    invoke-static {v0}, Lcom/android/systemui/BatteryMeterView;->access$1800(Lcom/android/systemui/BatteryMeterView;)Landroid/os/Handler;
+    invoke-static {v0}, Lcom/android/systemui/BatteryMeterView;->access$1700(Lcom/android/systemui/BatteryMeterView;)Landroid/os/Handler;
 
     move-result-object v0
 
     iget-object v1, p0, Lcom/android/systemui/BatteryMeterView$CircleBatteryMeterDrawable;->this$0:Lcom/android/systemui/BatteryMeterView;
 
     # getter for: Lcom/android/systemui/BatteryMeterView;->mInvalidate:Ljava/lang/Runnable;
-    invoke-static {v1}, Lcom/android/systemui/BatteryMeterView;->access$1700(Lcom/android/systemui/BatteryMeterView;)Ljava/lang/Runnable;
+    invoke-static {v1}, Lcom/android/systemui/BatteryMeterView;->access$1600(Lcom/android/systemui/BatteryMeterView;)Ljava/lang/Runnable;
 
     move-result-object v1
 
@@ -1145,14 +1145,14 @@
     iget-object v0, p0, Lcom/android/systemui/BatteryMeterView$CircleBatteryMeterDrawable;->this$0:Lcom/android/systemui/BatteryMeterView;
 
     # getter for: Lcom/android/systemui/BatteryMeterView;->mHandler:Landroid/os/Handler;
-    invoke-static {v0}, Lcom/android/systemui/BatteryMeterView;->access$1800(Lcom/android/systemui/BatteryMeterView;)Landroid/os/Handler;
+    invoke-static {v0}, Lcom/android/systemui/BatteryMeterView;->access$1700(Lcom/android/systemui/BatteryMeterView;)Landroid/os/Handler;
 
     move-result-object v0
 
     iget-object v1, p0, Lcom/android/systemui/BatteryMeterView$CircleBatteryMeterDrawable;->this$0:Lcom/android/systemui/BatteryMeterView;
 
     # getter for: Lcom/android/systemui/BatteryMeterView;->mInvalidate:Ljava/lang/Runnable;
-    invoke-static {v1}, Lcom/android/systemui/BatteryMeterView;->access$1700(Lcom/android/systemui/BatteryMeterView;)Ljava/lang/Runnable;
+    invoke-static {v1}, Lcom/android/systemui/BatteryMeterView;->access$1600(Lcom/android/systemui/BatteryMeterView;)Ljava/lang/Runnable;
 
     move-result-object v1
 
@@ -1180,14 +1180,14 @@
     iget-object v0, p0, Lcom/android/systemui/BatteryMeterView$CircleBatteryMeterDrawable;->this$0:Lcom/android/systemui/BatteryMeterView;
 
     # getter for: Lcom/android/systemui/BatteryMeterView;->mHandler:Landroid/os/Handler;
-    invoke-static {v0}, Lcom/android/systemui/BatteryMeterView;->access$1800(Lcom/android/systemui/BatteryMeterView;)Landroid/os/Handler;
+    invoke-static {v0}, Lcom/android/systemui/BatteryMeterView;->access$1700(Lcom/android/systemui/BatteryMeterView;)Landroid/os/Handler;
 
     move-result-object v0
 
     iget-object v1, p0, Lcom/android/systemui/BatteryMeterView$CircleBatteryMeterDrawable;->this$0:Lcom/android/systemui/BatteryMeterView;
 
     # getter for: Lcom/android/systemui/BatteryMeterView;->mInvalidate:Ljava/lang/Runnable;
-    invoke-static {v1}, Lcom/android/systemui/BatteryMeterView;->access$1700(Lcom/android/systemui/BatteryMeterView;)Ljava/lang/Runnable;
+    invoke-static {v1}, Lcom/android/systemui/BatteryMeterView;->access$1600(Lcom/android/systemui/BatteryMeterView;)Ljava/lang/Runnable;
 
     move-result-object v1
 

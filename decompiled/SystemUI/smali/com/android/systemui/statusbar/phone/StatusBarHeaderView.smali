@@ -4,7 +4,6 @@
 
 # interfaces
 .implements Landroid/view/View$OnClickListener;
-.implements Lcom/android/systemui/statusbar/policy/BatteryController$BatteryStateChangeCallback;
 .implements Lcom/android/systemui/statusbar/policy/NextAlarmController$NextAlarmChangeCallback;
 .implements Lcom/android/systemui/statusbar/policy/WeatherController$Callback;
 
@@ -1700,10 +1699,6 @@
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$SettingsObserver;->observe()V
 
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->mBatteryController:Lcom/android/systemui/statusbar/policy/BatteryController;
-
-    invoke-virtual {v0, p0}, Lcom/android/systemui/statusbar/policy/BatteryController;->addStateChangedCallback(Lcom/android/systemui/statusbar/policy/BatteryController$BatteryStateChangeCallback;)V
-
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->mNextAlarmController:Lcom/android/systemui/statusbar/policy/NextAlarmController;
 
     invoke-virtual {v0, p0}, Lcom/android/systemui/statusbar/policy/NextAlarmController;->addStateChangedCallback(Lcom/android/systemui/statusbar/policy/NextAlarmController$NextAlarmChangeCallback;)V
@@ -1716,10 +1711,6 @@
     return-void
 
     :cond_0
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->mBatteryController:Lcom/android/systemui/statusbar/policy/BatteryController;
-
-    invoke-virtual {v0, p0}, Lcom/android/systemui/statusbar/policy/BatteryController;->removeStateChangedCallback(Lcom/android/systemui/statusbar/policy/BatteryController$BatteryStateChangeCallback;)V
-
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->mNextAlarmController:Lcom/android/systemui/statusbar/policy/NextAlarmController;
 
     invoke-virtual {v0, p0}, Lcom/android/systemui/statusbar/policy/NextAlarmController;->removeStateChangedCallback(Lcom/android/systemui/statusbar/policy/NextAlarmController$NextAlarmChangeCallback;)V
@@ -2063,12 +2054,6 @@
     iget v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->mExpandedHeight:I
 
     return v0
-.end method
-
-.method public onBatteryLevelChanged(IZZ)V
-    .locals 0
-
-    return-void
 .end method
 
 .method public onClick(Landroid/view/View;)V
@@ -2608,12 +2593,6 @@
     const/4 v0, 0x0
 
     goto :goto_0
-.end method
-
-.method public onPowerSaveChanged()V
-    .locals 0
-
-    return-void
 .end method
 
 .method public onWeatherChanged(Lcom/android/systemui/statusbar/policy/WeatherController$WeatherInfo;)V
