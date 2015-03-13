@@ -58,7 +58,7 @@
     iget-object v0, v0, Lcom/android/systemui/qs/tiles/VisualizerTile$CallbackInfo;->this$0:Lcom/android/systemui/qs/tiles/VisualizerTile;
 
     # invokes: Lcom/android/systemui/qs/tiles/VisualizerTile;->checkIfPlaying()V
-    invoke-static {v0}, Lcom/android/systemui/qs/tiles/VisualizerTile;->access$200(Lcom/android/systemui/qs/tiles/VisualizerTile;)V
+    invoke-static {v0}, Lcom/android/systemui/qs/tiles/VisualizerTile;->access$100(Lcom/android/systemui/qs/tiles/VisualizerTile;)V
 
     return-void
 
@@ -80,7 +80,7 @@
     iget-object v0, v0, Lcom/android/systemui/qs/tiles/VisualizerTile$CallbackInfo;->this$0:Lcom/android/systemui/qs/tiles/VisualizerTile;
 
     # invokes: Lcom/android/systemui/qs/tiles/VisualizerTile;->checkIfPlaying()V
-    invoke-static {v0}, Lcom/android/systemui/qs/tiles/VisualizerTile;->access$200(Lcom/android/systemui/qs/tiles/VisualizerTile;)V
+    invoke-static {v0}, Lcom/android/systemui/qs/tiles/VisualizerTile;->access$100(Lcom/android/systemui/qs/tiles/VisualizerTile;)V
 
     return-void
 .end method

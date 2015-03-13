@@ -35,42 +35,12 @@
 
 # virtual methods
 .method public run()V
-    .locals 2
+    .locals 1
 
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/VisualizerTile$3;->this$0:Lcom/android/systemui/qs/tiles/VisualizerTile;
 
-    # getter for: Lcom/android/systemui/qs/tiles/VisualizerTile;->mVisualizer:Lcom/pheelicks/visualizer/VisualizerView;
-    invoke-static {v0}, Lcom/android/systemui/qs/tiles/VisualizerTile;->access$000(Lcom/android/systemui/qs/tiles/VisualizerTile;)Lcom/pheelicks/visualizer/VisualizerView;
+    # invokes: Lcom/android/systemui/qs/tiles/VisualizerTile;->refreshState()V
+    invoke-static {v0}, Lcom/android/systemui/qs/tiles/VisualizerTile;->access$400(Lcom/android/systemui/qs/tiles/VisualizerTile;)V
 
-    move-result-object v0
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lcom/android/systemui/qs/tiles/VisualizerTile$3;->this$0:Lcom/android/systemui/qs/tiles/VisualizerTile;
-
-    # getter for: Lcom/android/systemui/qs/tiles/VisualizerTile;->mLinked:Z
-    invoke-static {v0}, Lcom/android/systemui/qs/tiles/VisualizerTile;->access$100(Lcom/android/systemui/qs/tiles/VisualizerTile;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lcom/android/systemui/qs/tiles/VisualizerTile$3;->this$0:Lcom/android/systemui/qs/tiles/VisualizerTile;
-
-    # getter for: Lcom/android/systemui/qs/tiles/VisualizerTile;->mVisualizer:Lcom/pheelicks/visualizer/VisualizerView;
-    invoke-static {v0}, Lcom/android/systemui/qs/tiles/VisualizerTile;->access$000(Lcom/android/systemui/qs/tiles/VisualizerTile;)Lcom/pheelicks/visualizer/VisualizerView;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/pheelicks/visualizer/VisualizerView;->unlink()V
-
-    iget-object v0, p0, Lcom/android/systemui/qs/tiles/VisualizerTile$3;->this$0:Lcom/android/systemui/qs/tiles/VisualizerTile;
-
-    const/4 v1, 0x0
-
-    # setter for: Lcom/android/systemui/qs/tiles/VisualizerTile;->mLinked:Z
-    invoke-static {v0, v1}, Lcom/android/systemui/qs/tiles/VisualizerTile;->access$102(Lcom/android/systemui/qs/tiles/VisualizerTile;Z)Z
-
-    :cond_0
     return-void
 .end method

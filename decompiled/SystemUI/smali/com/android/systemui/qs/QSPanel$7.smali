@@ -50,5 +50,26 @@
     # invokes: Lcom/android/systemui/qs/QSPanel;->setDetailRecord(Lcom/android/systemui/qs/QSPanel$Record;)V
     invoke-static {v0, v1}, Lcom/android/systemui/qs/QSPanel;->access$1300(Lcom/android/systemui/qs/QSPanel;Lcom/android/systemui/qs/QSPanel$Record;)V
 
+    iget-object v0, p0, Lcom/android/systemui/qs/QSPanel$7;->this$0:Lcom/android/systemui/qs/QSPanel;
+
+    # getter for: Lcom/android/systemui/qs/QSPanel;->mDetailCallback:Lcom/android/systemui/qs/QSPanel$DetailCallback;
+    invoke-static {v0}, Lcom/android/systemui/qs/QSPanel;->access$1400(Lcom/android/systemui/qs/QSPanel;)Lcom/android/systemui/qs/QSPanel$DetailCallback;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/android/systemui/qs/QSPanel$7;->this$0:Lcom/android/systemui/qs/QSPanel;
+
+    # getter for: Lcom/android/systemui/qs/QSPanel;->mDetailCallback:Lcom/android/systemui/qs/QSPanel$DetailCallback;
+    invoke-static {v0}, Lcom/android/systemui/qs/QSPanel;->access$1400(Lcom/android/systemui/qs/QSPanel;)Lcom/android/systemui/qs/QSPanel$DetailCallback;
+
+    move-result-object v0
+
+    const/4 v1, 0x0
+
+    invoke-interface {v0, v1}, Lcom/android/systemui/qs/QSPanel$DetailCallback;->onDetailChanged(Z)V
+
+    :cond_0
     return-void
 .end method

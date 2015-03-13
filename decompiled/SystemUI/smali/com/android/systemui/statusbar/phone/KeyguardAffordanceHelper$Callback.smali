@@ -42,5 +42,8 @@
 .method public abstract onAnimationToSideStarted(Z)V
 .end method
 
+.method public abstract onSwipingAnimationFinished(Z)V
+.end method
+
 .method public abstract onSwipingStarted()V
 .end method

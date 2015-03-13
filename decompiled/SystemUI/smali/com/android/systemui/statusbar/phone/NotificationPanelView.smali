@@ -2097,7 +2097,13 @@
 
     const/high16 v2, 0x3f800000    # 1.0f
 
+    const/4 v1, 0x0
+
     if-eqz p2, :cond_0
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mKeyguardBottomArea:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
+
+    invoke-virtual {v0, v1, v1}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->requestVisualizer(ZI)V
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mKeyguardBottomArea:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
 
@@ -2180,8 +2186,6 @@
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mKeyguardBottomArea:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
 
-    const/4 v1, 0x0
-
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->setVisibility(I)V
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mKeyguardBottomArea:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
@@ -2213,25 +2217,25 @@
 .end method
 
 .method private setKeyguardStatusViewVisibility(IZZ)V
-    .locals 8
+    .locals 10
 
-    const-wide/16 v6, 0x0
-
-    const/4 v5, 0x0
-
-    const/high16 v4, 0x3f800000    # 1.0f
+    const-wide/16 v8, 0x0
 
     const/4 v3, 0x0
 
-    const/4 v2, 0x1
+    const/high16 v2, 0x3f800000    # 1.0f
+
+    const/4 v6, 0x0
+
+    const/4 v4, 0x1
 
     if-nez p2, :cond_0
 
     iget v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mStatusBarState:I
 
-    if-ne v0, v2, :cond_0
+    if-ne v0, v4, :cond_0
 
-    if-ne p1, v2, :cond_1
+    if-ne p1, v4, :cond_1
 
     :cond_0
     if-eqz p3, :cond_3
@@ -2245,7 +2249,7 @@
 
     invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->cancel()V
 
-    iput-boolean v2, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mKeyguardStatusViewAnimating:Z
+    iput-boolean v4, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mKeyguardStatusViewAnimating:Z
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mKeyguardStatusView:Lcom/android/keyguard/KeyguardStatusView;
 
@@ -2253,11 +2257,11 @@
 
     move-result-object v0
 
-    invoke-virtual {v0, v5}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
+    invoke-virtual {v0, v3}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
 
-    invoke-virtual {v0, v6, v7}, Landroid/view/ViewPropertyAnimator;->setStartDelay(J)Landroid/view/ViewPropertyAnimator;
+    invoke-virtual {v0, v8, v9}, Landroid/view/ViewPropertyAnimator;->setStartDelay(J)Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
 
@@ -2312,6 +2316,10 @@
     invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->start()V
 
     :cond_2
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mKeyguardBottomArea:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
+
+    invoke-virtual {v0, v6, v6}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->requestVisualizer(ZI)V
+
     :goto_0
     return-void
 
@@ -2322,7 +2330,7 @@
 
     if-ne v0, v1, :cond_4
 
-    if-ne p1, v2, :cond_4
+    if-ne p1, v4, :cond_4
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mKeyguardStatusView:Lcom/android/keyguard/KeyguardStatusView;
 
@@ -2334,13 +2342,13 @@
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mKeyguardStatusView:Lcom/android/keyguard/KeyguardStatusView;
 
-    invoke-virtual {v0, v3}, Lcom/android/keyguard/KeyguardStatusView;->setVisibility(I)V
+    invoke-virtual {v0, v6}, Lcom/android/keyguard/KeyguardStatusView;->setVisibility(I)V
 
-    iput-boolean v2, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mKeyguardStatusViewAnimating:Z
+    iput-boolean v4, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mKeyguardStatusViewAnimating:Z
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mKeyguardStatusView:Lcom/android/keyguard/KeyguardStatusView;
 
-    invoke-virtual {v0, v5}, Lcom/android/keyguard/KeyguardStatusView;->setAlpha(F)V
+    invoke-virtual {v0, v3}, Lcom/android/keyguard/KeyguardStatusView;->setAlpha(F)V
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mKeyguardStatusView:Lcom/android/keyguard/KeyguardStatusView;
 
@@ -2348,11 +2356,11 @@
 
     move-result-object v0
 
-    invoke-virtual {v0, v4}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
+    invoke-virtual {v0, v2}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
 
-    invoke-virtual {v0, v6, v7}, Landroid/view/ViewPropertyAnimator;->setStartDelay(J)Landroid/view/ViewPropertyAnimator;
+    invoke-virtual {v0, v8, v9}, Landroid/view/ViewPropertyAnimator;->setStartDelay(J)Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
 
@@ -2372,10 +2380,16 @@
 
     invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->withEndAction(Ljava/lang/Runnable;)Landroid/view/ViewPropertyAnimator;
 
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mKeyguardBottomArea:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
+
+    const/16 v1, 0x140
+
+    invoke-virtual {v0, v4, v1}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->requestVisualizer(ZI)V
+
     goto :goto_0
 
     :cond_4
-    if-ne p1, v2, :cond_5
+    if-ne p1, v4, :cond_5
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mKeyguardStatusView:Lcom/android/keyguard/KeyguardStatusView;
 
@@ -2385,15 +2399,15 @@
 
     invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->cancel()V
 
-    iput-boolean v3, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mKeyguardStatusViewAnimating:Z
+    iput-boolean v6, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mKeyguardStatusViewAnimating:Z
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mKeyguardStatusView:Lcom/android/keyguard/KeyguardStatusView;
 
-    invoke-virtual {v0, v3}, Lcom/android/keyguard/KeyguardStatusView;->setVisibility(I)V
+    invoke-virtual {v0, v6}, Lcom/android/keyguard/KeyguardStatusView;->setVisibility(I)V
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mKeyguardStatusView:Lcom/android/keyguard/KeyguardStatusView;
 
-    invoke-virtual {v0, v4}, Lcom/android/keyguard/KeyguardStatusView;->setAlpha(F)V
+    invoke-virtual {v0, v2}, Lcom/android/keyguard/KeyguardStatusView;->setAlpha(F)V
 
     goto :goto_0
 
@@ -2406,7 +2420,7 @@
 
     invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->cancel()V
 
-    iput-boolean v3, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mKeyguardStatusViewAnimating:Z
+    iput-boolean v6, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mKeyguardStatusViewAnimating:Z
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mKeyguardStatusView:Lcom/android/keyguard/KeyguardStatusView;
 
@@ -2416,7 +2430,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mKeyguardStatusView:Lcom/android/keyguard/KeyguardStatusView;
 
-    invoke-virtual {v0, v4}, Lcom/android/keyguard/KeyguardStatusView;->setAlpha(F)V
+    invoke-virtual {v0, v2}, Lcom/android/keyguard/KeyguardStatusView;->setAlpha(F)V
 
     goto :goto_0
 .end method
@@ -5887,6 +5901,23 @@
     return-void
 .end method
 
+.method public onSwipingAnimationFinished(Z)V
+    .locals 3
+
+    if-eqz p1, :cond_0
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mKeyguardBottomArea:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
+
+    const/4 v1, 0x1
+
+    const/16 v2, 0x12c
+
+    invoke-virtual {v0, v1, v2}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->requestVisualizer(ZI)V
+
+    :cond_0
+    return-void
+.end method
+
 .method public onSwipingStarted()V
     .locals 2
 
@@ -6511,8 +6542,27 @@
 .end method
 
 .method public setEmptyDragAmount(F)V
-    .locals 2
+    .locals 4
 
+    const/4 v3, 0x1
+
+    const/4 v1, 0x0
+
+    cmpl-float v1, p1, v1
+
+    if-nez v1, :cond_0
+
+    iget v1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mStatusBarState:I
+
+    if-ne v1, v3, :cond_0
+
+    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mKeyguardBottomArea:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
+
+    const/16 v2, 0x12c
+
+    invoke-virtual {v1, v3, v2}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->requestVisualizer(ZI)V
+
+    :cond_0
     const v0, 0x3f4ccccd    # 0.8f
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mNotificationStackScroller:Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;
@@ -6521,11 +6571,11 @@
 
     move-result v1
 
-    if-lez v1, :cond_1
+    if-lez v1, :cond_2
 
     const v0, 0x3ecccccd    # 0.4f
 
-    :cond_0
+    :cond_1
     :goto_0
     mul-float v1, p1, v0
 
@@ -6535,14 +6585,14 @@
 
     return-void
 
-    :cond_1
+    :cond_2
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mStatusBar:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
     invoke-virtual {v1}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->hasActiveNotifications()Z
 
     move-result v1
 
-    if-nez v1, :cond_0
+    if-nez v1, :cond_1
 
     const v0, 0x3ecccccd    # 0.4f
 

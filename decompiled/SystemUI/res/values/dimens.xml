@@ -268,6 +268,10 @@
     <dimen name="password_char_padding">8.0dip</dimen>
     <dimen name="date_owner_info_margin">10.0dip</dimen>
     <dimen name="disappear_y_translation">-32.0dip</dimen>
+    <dimen name="qs_tile_icon_size_visualizer_width">36.0dip</dimen>
+    <dimen name="qs_tile_icon_size_visualizer_height">24.0dip</dimen>
+    <dimen name="kg_visualizer_path_effect_1">8.0dip</dimen>
+    <dimen name="kg_visualizer_path_effect_2">1.0dip</dimen>
     <dimen name="floating_action_button_height">54.0dip</dimen>
     <dimen name="floating_action_button_width">54.0dip</dimen>
     <dimen name="floating_action_button_translation_z">12.0dip</dimen>
@@ -277,7 +281,7 @@
     <dimen name="detail_radio_group_padding">8.0dip</dimen>
     <dimen name="net_traffic_single_text_size">8.0dip</dimen>
     <dimen name="net_traffic_multi_text_size">8.0dip</dimen>
-    <dimen name="qs_tile_icon_size_visualizer">40.0dip</dimen>
+    <dimen name="kg_visualizer_path_stroke_width">20.0dip</dimen>
     <dimen name="visualizer_path_effect_1">6.0dip</dimen>
     <dimen name="visualizer_path_effect_2">1.0dip</dimen>
     <dimen name="visualizer_path_stroke_width">6.0dip</dimen>

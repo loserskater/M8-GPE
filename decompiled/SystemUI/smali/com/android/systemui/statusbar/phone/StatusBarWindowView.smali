@@ -750,13 +750,32 @@
 .method public onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 7
 
+    const/4 v3, 0x0
+
     const/4 v6, 0x1
 
+    iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBarWindowView;->mService:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
+
+    invoke-virtual {v2}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->getBarState()I
+
+    move-result v2
+
+    if-ne v2, v6, :cond_0
+
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
+
+    move-result v2
+
+    packed-switch v2, :pswitch_data_0
+
+    :cond_0
+    :goto_0
+    :pswitch_0
     const/4 v1, 0x0
 
     iget-boolean v2, p0, Lcom/android/systemui/statusbar/phone/StatusBarWindowView;->mDoubleTapToSleepEnabled:Z
 
-    if-eqz v2, :cond_1
+    if-eqz v2, :cond_2
 
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
 
@@ -768,11 +787,11 @@
 
     cmpg-float v2, v2, v3
 
-    if-gez v2, :cond_1
+    if-gez v2, :cond_2
 
     sget-boolean v2, Lcom/android/systemui/statusbar/phone/StatusBarWindowView;->DEBUG:Z
 
-    if-eqz v2, :cond_0
+    if-eqz v2, :cond_1
 
     const-string v2, "StatusBarWindowView"
 
@@ -780,19 +799,19 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_0
+    :cond_1
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBarWindowView;->mDoubleTapGesture:Landroid/view/GestureDetector;
 
     invoke-virtual {v2, p1}, Landroid/view/GestureDetector;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
-    :cond_1
+    :cond_2
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBarWindowView;->mNotificationPanel:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
     invoke-virtual {v2}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->isFullyExpanded()Z
 
     move-result v2
 
-    if-eqz v2, :cond_2
+    if-eqz v2, :cond_3
 
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBarWindowView;->mStackScrollLayout:Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;
 
@@ -800,7 +819,7 @@
 
     move-result v2
 
-    if-nez v2, :cond_2
+    if-nez v2, :cond_3
 
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBarWindowView;->mService:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
@@ -808,7 +827,7 @@
 
     move-result v2
 
-    if-ne v2, v6, :cond_2
+    if-ne v2, v6, :cond_3
 
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBarWindowView;->mService:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
@@ -816,7 +835,7 @@
 
     move-result v2
 
-    if-nez v2, :cond_2
+    if-nez v2, :cond_3
 
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBarWindowView;->mDragDownHelper:Lcom/android/systemui/statusbar/DragDownHelper;
 
@@ -828,7 +847,7 @@
 
     move-result v2
 
-    if-nez v2, :cond_2
+    if-nez v2, :cond_3
 
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBarWindowView;->mService:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
@@ -838,13 +857,13 @@
 
     invoke-virtual {v2, v4, v5, v6}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->wakeUpIfDozing(JZ)V
 
-    :cond_2
-    if-nez v1, :cond_3
+    :cond_3
+    if-nez v1, :cond_4
 
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
 
-    :cond_3
-    if-eqz v1, :cond_4
+    :cond_4
+    if-eqz v1, :cond_5
 
     invoke-static {p1}, Landroid/view/MotionEvent;->obtain(Landroid/view/MotionEvent;)Landroid/view/MotionEvent;
 
@@ -864,8 +883,36 @@
 
     invoke-virtual {v0}, Landroid/view/MotionEvent;->recycle()V
 
-    :cond_4
+    :cond_5
     return v1
+
+    :pswitch_1
+    iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBarWindowView;->mService:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
+
+    iget-object v2, v2, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mKeyguardBottomArea:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
+
+    invoke-virtual {v2, v3, v3}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->requestVisualizer(ZI)V
+
+    goto :goto_0
+
+    :pswitch_2
+    iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBarWindowView;->mService:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
+
+    iget-object v2, v2, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mKeyguardBottomArea:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
+
+    const/16 v3, 0x1f4
+
+    invoke-virtual {v2, v6, v3}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->requestVisualizer(ZI)V
+
+    goto/16 :goto_0
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_2
+        :pswitch_0
+        :pswitch_2
+    .end packed-switch
 .end method
 
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="visualizer_divisions">4</integer>
+    <integer name="visualizer_db_fuzz_factor">2</integer>
+    <integer name="visualizer_db_fuzz">-20</integer>
+    <integer name="kg_visualizer_divisions">12</integer>
+    <integer name="kg_visualizer_db_fuzz_factor">15</integer>
+    <integer name="kg_visualizer_db_fuzz">0</integer>
+</resources>

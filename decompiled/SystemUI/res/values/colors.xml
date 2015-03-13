@@ -75,4 +75,5 @@
     <color name="navring_check_tint">@android:color/white</color>
     <color name="navring_edit_fill">#ff558b2f</color>
     <color name="navring_edit_tint">#ff689f38</color>
+    <color name="equalizer_fill_color">#32ffffff</color>
 </resources>

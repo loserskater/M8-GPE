@@ -1,5 +1,5 @@
-.class synthetic Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$5;
-.super Ljava/lang/Object;
+.class Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$5;
+.super Lcom/android/keyguard/KeyguardUpdateMonitorCallback;
 .source "KeyguardBottomAreaView.java"
 
 
@@ -9,70 +9,81 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x1008
+    accessFlags = 0x0
     name = null
 .end annotation
 
 
-# static fields
-.field static final synthetic $SwitchMap$com$android$internal$policy$impl$LockscreenShortcutsHelper$Shortcuts:[I
+# instance fields
+.field final synthetic this$0:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method constructor <init>(Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;)V
+    .locals 0
+
+    iput-object p1, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$5;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
+
+    invoke-direct {p0}, Lcom/android/keyguard/KeyguardUpdateMonitorCallback;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public onScreenTurnedOff(I)V
+    .locals 2
+
+    const/4 v1, 0x0
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$5;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
+
+    # setter for: Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mScreenOn:Z
+    invoke-static {v0, v1}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->access$802(Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;Z)Z
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$5;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
+
+    # invokes: Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->updateLockIcon()V
+    invoke-static {v0}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->access$900(Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;)V
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$5;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
+
+    invoke-virtual {v0, v1, v1}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->requestVisualizer(ZI)V
+
+    return-void
+.end method
+
+.method public onScreenTurnedOn()V
     .locals 3
-
-    invoke-static {}, Lcom/android/internal/policy/impl/LockscreenShortcutsHelper$Shortcuts;->values()[Lcom/android/internal/policy/impl/LockscreenShortcutsHelper$Shortcuts;
-
-    move-result-object v0
-
-    array-length v0, v0
-
-    new-array v0, v0, [I
-
-    sput-object v0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$5;->$SwitchMap$com$android$internal$policy$impl$LockscreenShortcutsHelper$Shortcuts:[I
-
-    :try_start_0
-    sget-object v0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$5;->$SwitchMap$com$android$internal$policy$impl$LockscreenShortcutsHelper$Shortcuts:[I
-
-    sget-object v1, Lcom/android/internal/policy/impl/LockscreenShortcutsHelper$Shortcuts;->LEFT_SHORTCUT:Lcom/android/internal/policy/impl/LockscreenShortcutsHelper$Shortcuts;
-
-    invoke-virtual {v1}, Lcom/android/internal/policy/impl/LockscreenShortcutsHelper$Shortcuts;->ordinal()I
-
-    move-result v1
 
     const/4 v2, 0x1
 
-    aput v2, v0, v1
-    :try_end_0
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_1
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$5;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
 
-    :goto_0
-    :try_start_1
-    sget-object v0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$5;->$SwitchMap$com$android$internal$policy$impl$LockscreenShortcutsHelper$Shortcuts:[I
+    # setter for: Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mScreenOn:Z
+    invoke-static {v0, v2}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->access$802(Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;Z)Z
 
-    sget-object v1, Lcom/android/internal/policy/impl/LockscreenShortcutsHelper$Shortcuts;->RIGHT_SHORTCUT:Lcom/android/internal/policy/impl/LockscreenShortcutsHelper$Shortcuts;
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$5;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
 
-    invoke-virtual {v1}, Lcom/android/internal/policy/impl/LockscreenShortcutsHelper$Shortcuts;->ordinal()I
+    # invokes: Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->updateLockIcon()V
+    invoke-static {v0}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->access$900(Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;)V
 
-    move-result v1
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$5;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
 
-    const/4 v2, 0x2
+    const/16 v1, 0x12c
 
-    aput v2, v0, v1
-    :try_end_1
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_0
+    invoke-virtual {v0, v2, v1}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->requestVisualizer(ZI)V
 
-    :goto_1
     return-void
+.end method
 
-    :catch_0
-    move-exception v0
+.method public onUserSwitchComplete(I)V
+    .locals 1
 
-    goto :goto_1
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$5;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
 
-    :catch_1
-    move-exception v0
+    # invokes: Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->updateCameraVisibility()V
+    invoke-static {v0}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->access$400(Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;)V
 
-    goto :goto_0
+    return-void
 .end method

@@ -688,6 +688,12 @@
 
     const-wide/16 v6, 0xfa
 
+    const/4 v3, 0x0
+
+    iget-object v2, p0, Lcom/android/systemui/statusbar/phone/PanelView;->mKeyguardBottomArea:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
+
+    invoke-virtual {v2, v3, v3}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->requestVisualizer(ZI)V
+
     const/4 v2, 0x0
 
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/PanelView;->getMaxPanelHeight()I

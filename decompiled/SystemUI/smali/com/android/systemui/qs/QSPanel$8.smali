@@ -47,7 +47,7 @@
     const/4 v1, 0x0
 
     # invokes: Lcom/android/systemui/qs/QSPanel;->setGridContentVisibility(Z)V
-    invoke-static {v0, v1}, Lcom/android/systemui/qs/QSPanel;->access$1400(Lcom/android/systemui/qs/QSPanel;Z)V
+    invoke-static {v0, v1}, Lcom/android/systemui/qs/QSPanel;->access$1500(Lcom/android/systemui/qs/QSPanel;Z)V
 
     return-void
 .end method

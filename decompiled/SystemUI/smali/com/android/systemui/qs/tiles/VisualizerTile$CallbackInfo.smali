@@ -59,7 +59,7 @@
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/VisualizerTile$CallbackInfo;->this$0:Lcom/android/systemui/qs/tiles/VisualizerTile;
 
     # getter for: Lcom/android/systemui/qs/tiles/VisualizerTile;->mCallbacks:Ljava/util/Map;
-    invoke-static {v0}, Lcom/android/systemui/qs/tiles/VisualizerTile;->access$300(Lcom/android/systemui/qs/tiles/VisualizerTile;)Ljava/util/Map;
+    invoke-static {v0}, Lcom/android/systemui/qs/tiles/VisualizerTile;->access$800(Lcom/android/systemui/qs/tiles/VisualizerTile;)Ljava/util/Map;
 
     move-result-object v0
 
