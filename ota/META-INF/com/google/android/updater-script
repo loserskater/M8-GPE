@@ -77,7 +77,15 @@ if file_getprop("/sdcard/aroma/NavBar.prop","item.0.1") == "1" then
   ui_print("Updating NavBar Theme");
   package_extract_dir("aroma/scripts/patch_apk", "/tmp");
   set_perm_recursive(0, 0, 0755, 0755, "/tmp");
-  package_extract_dir("aroma/navbar/framework", "/tmp");
+  if file_getprop("/sdcard/aroma/Themes.prop","selected.0") == "1" then
+    package_extract_dir("aroma/navbar/stock", "/tmp");
+  endif;
+  if file_getprop("/sdcard/aroma/Themes.prop","selected.0") == "2" then
+	package_extract_dir("aroma/navbar/dark", "/tmp");
+  endif;
+  if file_getprop("/sdcard/aroma/Themes.prop","selected.0") == "3" then
+	package_extract_dir("aroma/navbar/darker", "/tmp");
+  endif;
   run_program("/tmp/patch_apk.sh", "/system/framework/framework-res.apk");
   set_perm(0, 0, 0644, "/system/framework/framework-res.apk");
 endif;
