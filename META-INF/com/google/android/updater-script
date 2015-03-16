@@ -871,12 +871,18 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "2" || file_getprop("/tmp/
 	if file_getprop("/tmp/aroma/cm.prop","item.0.7") == "1" then
       package_extract_dir("aroma/cm_apps/trebuchet_dark", "/system");
     endif;
+	if file_getprop("/tmp/aroma/cm.prop","item.0.2") == "1" then
+      package_extract_dir("aroma/cm_apps/browser_dark", "/system");
+    endif;
   endif;
   if file_getprop("/tmp/aroma/themes.prop","selected.0") == "3" then
     ui_print("Darker Theme");
     package_extract_dir("aroma/theme/darker", "/system");
 	if file_getprop("/tmp/aroma/cm.prop","item.0.7") == "1" then
       package_extract_dir("aroma/cm_apps/trebuchet_dark", "/system");
+    endif;
+	if file_getprop("/tmp/aroma/cm.prop","item.0.2") == "1" then
+      package_extract_dir("aroma/cm_apps/browser_dark", "/system");
     endif;
   endif;
   #
