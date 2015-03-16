@@ -6,3 +6,4 @@ decompiled/*.jar
 decompiled/*.apk
 *Thumbs.db
 META-INF/com/google/android/aroma/version.txt
+tools/sed*
