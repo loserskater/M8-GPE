@@ -1,4 +1,4 @@
-version: 2.0.0-RC3
+version: 2.0.0-RC4
 apkFileName: SystemUI.apk
 isFrameworkApk: false
 usesFramework:
@@ -12,4 +12,4 @@ packageInfo:
 versionInfo:
   versionCode: '21'
   versionName: 5.0.1-eng.buildteam.20141202.223530
-compressionType: false
+compressionType: true
