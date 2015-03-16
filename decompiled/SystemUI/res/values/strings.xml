@@ -613,4 +613,6 @@ Try again in %d seconds."</string>
     <string name="quick_settings_reboot_recovery_label">Recovery</string>
     <string name="quick_settings_lockscreen_label_enforced">Lock screen enforced</string>
     <string name="quick_settings_powermenu_label">Power Menu</string>
+    <string name="accessibility_power">Power</string>
+    <string name="navbar_power_button">Power button</string>
 </resources>

@@ -36,6 +36,8 @@
 
 .field public static final NAVBAR_MENU_BIG:Lcom/android/systemui/statusbar/phone/NavbarEditor$ButtonInfo;
 
+.field public static final NAVBAR_POWER:Lcom/android/systemui/statusbar/phone/NavbarEditor$ButtonInfo;
+
 .field public static final NAVBAR_RECENT:Lcom/android/systemui/statusbar/phone/NavbarEditor$ButtonInfo;
 
 .field public static final NAVBAR_SEARCH:Lcom/android/systemui/statusbar/phone/NavbarEditor$ButtonInfo;
@@ -308,7 +310,27 @@
 
     sput-object v0, Lcom/android/systemui/statusbar/phone/NavbarEditor;->NAVBAR_DPAD_RIGHT:Lcom/android/systemui/statusbar/phone/NavbarEditor$ButtonInfo;
 
-    const/16 v0, 0x8
+    new-instance v0, Lcom/android/systemui/statusbar/phone/NavbarEditor$ButtonInfo;
+
+    const-string v1, "power"
+
+    const v2, 0x7f0b022f
+
+    const v3, 0x7f0b022e
+
+    const/16 v4, 0x1a
+
+    const v5, 0x7f0201b4
+
+    const v6, 0x7f0201b5
+
+    const v7, 0x7f0201b4
+
+    invoke-direct/range {v0 .. v7}, Lcom/android/systemui/statusbar/phone/NavbarEditor$ButtonInfo;-><init>(Ljava/lang/String;IIIIII)V
+
+    sput-object v0, Lcom/android/systemui/statusbar/phone/NavbarEditor;->NAVBAR_POWER:Lcom/android/systemui/statusbar/phone/NavbarEditor$ButtonInfo;
+
+    const/16 v0, 0x9
 
     new-array v0, v0, [Lcom/android/systemui/statusbar/phone/NavbarEditor$ButtonInfo;
 
@@ -357,6 +379,12 @@
     const/4 v1, 0x7
 
     sget-object v2, Lcom/android/systemui/statusbar/phone/NavbarEditor;->NAVBAR_MENU_BIG:Lcom/android/systemui/statusbar/phone/NavbarEditor$ButtonInfo;
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0x8
+
+    sget-object v2, Lcom/android/systemui/statusbar/phone/NavbarEditor;->NAVBAR_POWER:Lcom/android/systemui/statusbar/phone/NavbarEditor$ButtonInfo;
 
     aput-object v2, v0, v1
 

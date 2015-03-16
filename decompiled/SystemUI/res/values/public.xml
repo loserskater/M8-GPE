@@ -429,6 +429,8 @@
     <public type="drawable" name="status_bar_close_on" id="0x7f020137" />
     <public type="drawable" name="sym_keyboard_return_holo" id="0x7f02013d" />
     <public type="drawable" name="top_divider_glow" id="0x7f02013f" />
+    <public type="drawable" name="ic_sysbar_power" id="0x7f0201b4" />
+    <public type="drawable" name="ic_sysbar_power_land" id="0x7f0201b5" />
     <public type="drawable" name="ic_qs_default_user" id="0x7f02006c" />
     <public type="drawable" name="ic_qs_data_off" id="0x7f020153" />
     <public type="drawable" name="ic_qs_data_off_1" id="0x7f020154" />
@@ -1407,6 +1409,8 @@
     <public type="string" name="quick_settings_reboot_recovery_label" id="0x7f0b022b" />
     <public type="string" name="quick_settings_lockscreen_label_enforced" id="0x7f0b022c" />
     <public type="string" name="quick_settings_powermenu_label" id="0x7f0b022d" />
+    <public type="string" name="accessibility_power" id="0x7f0b022e" />
+    <public type="string" name="navbar_power_button" id="0x7f0b022f" />
     <public type="string" name="status_bar_date_formatter" id="0x7f0b0006" />
     <public type="string" name="toast_rotation_locked" id="0x7f0b0158" />
     <public type="string" name="APKTOOL_DUMMY_0159" id="0x7f0b0159" />
