@@ -1166,7 +1166,7 @@
     move-result-object v2
 
     # invokes: Lcom/android/systemui/BatteryMeterView$NormalBatteryMeterDrawable;->loadBoltPoints(Landroid/content/res/Resources;)[F
-    invoke-static {v1, v2}, Lcom/android/systemui/BatteryMeterView$NormalBatteryMeterDrawable;->access$400(Lcom/android/systemui/BatteryMeterView$NormalBatteryMeterDrawable;Landroid/content/res/Resources;)[F
+    invoke-static {v1, v2}, Lcom/android/systemui/BatteryMeterView$NormalBatteryMeterDrawable;->access$300(Lcom/android/systemui/BatteryMeterView$NormalBatteryMeterDrawable;Landroid/content/res/Resources;)[F
 
     :cond_6
     iget-boolean v1, v0, Lcom/android/systemui/BatteryMeterView$BatteryTracker;->present:Z
