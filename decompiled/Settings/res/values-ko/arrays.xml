@@ -209,6 +209,7 @@
         <item>메시지</item>
         <item>미디어</item>
         <item>기기</item>
+		<item>Autorun</item>
     </string-array>
     <string-array name="app_ops_summaries">
         <item>대략적 위치</item>
@@ -256,8 +257,10 @@
         <item>고전력 위치 모니터링</item>
         <item>사용 통계 가져오기</item>
         <item>마이크 음소거/음소거 해제</item>
+		<item>toast window</item>
         <item>프로젝트 미디어</item>
         <item>VPN 활성화</item>
+		<item>run at boot</item>
     </string-array>
     <string-array name="app_ops_labels">
         <item>위치</item>
@@ -305,8 +308,10 @@
         <item>위치</item>
         <item>사용 통계 가져오기</item>
         <item>마이크 음소거/음소거 해제</item>
+		<item>Toast window</item>
         <item>프로젝트 미디어</item>
         <item>VPN 활성화</item>
+		<item>Run at boot</item>
     </string-array>
     <string-array name="long_press_timeout_selector_titles">
         <item>짧게</item>
@@ -384,7 +389,9 @@
     </string-array>
     <string-array name="window_animation_scale_entries">
         <item>애니메이션 사용 안함</item>
+		<item>애니메이션 배율 .25x</item>
         <item>애니메이션 배율 .5x</item>
+		<item>애니메이션 배율 .75x</item>
         <item>애니메이션 배율 1x</item>
         <item>애니메이션 배율 1.5x</item>
         <item>애니메이션 배율 2x</item>
@@ -393,7 +400,9 @@
     </string-array>
     <string-array name="transition_animation_scale_entries">
         <item>애니메이션 사용 안함</item>
+        <item>애니메이션 배율 .25x</item>
         <item>애니메이션 배율 .5x</item>
+		<item>애니메이션 배율 .75x</item>
         <item>애니메이션 배율 1x</item>
         <item>애니메이션 배율 1.5x</item>
         <item>애니메이션 배율 2x</item>
@@ -402,7 +411,9 @@
     </string-array>
     <string-array name="animator_duration_scale_entries">
         <item>애니메이션 사용 안함</item>
+        <item>애니메이션 배율 .25x</item>
         <item>애니메이션 배율 .5x</item>
+		<item>애니메이션 배율 .75x</item>
         <item>애니메이션 배율 1x</item>
         <item>애니메이션 배율 1.5x</item>
         <item>애니메이션 배율 2x</item>

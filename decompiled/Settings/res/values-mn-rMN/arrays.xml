@@ -209,6 +209,7 @@
         <item>Зурвас</item>
         <item>Медиа</item>
         <item>Төхөөрөмж</item>
+		<item>Autorun</item>
     </string-array>
     <string-array name="app_ops_summaries">
         <item>бүдүүн байршил</item>
@@ -256,8 +257,10 @@
         <item>өндөр чадалтай байршлуудыг хянах</item>
         <item>ашиглалтын статистик авах</item>
         <item>Микрофон хаах/нээх</item>
+		<item>toast window</item>
         <item>төслийн медиа</item>
         <item>VPN идэвхжүүлэх</item>
+		<item>run at boot</item>
     </string-array>
     <string-array name="app_ops_labels">
         <item>Байршил</item>
@@ -305,8 +308,10 @@
         <item>Байршил</item>
         <item>Ашиглалтын статистик авах</item>
         <item>Микрофон хаах/нээх</item>
+		<item>Toast window</item>
         <item>Төслийн медиа</item>
         <item>VPN идэвхжүүлэх</item>
+		<item>Run at boot</item>
     </string-array>
     <string-array name="long_press_timeout_selector_titles">
         <item>Богино</item>
@@ -384,7 +389,9 @@
     </string-array>
     <string-array name="window_animation_scale_entries">
         <item>Дүрс амилуулалт идэвхгүй</item>
+		<item>Дүрс амилуулах далайц .25x</item>
         <item>Дүрс амилуулах далайц .5x</item>
+		<item>Дүрс амилуулах далайц .75x</item>
         <item>Дүрс амилуулах далайц 1x</item>
         <item>Дүрс амилуулах далайц 1.5x</item>
         <item>Дүрс амилуулалтын далайц 2x</item>
@@ -393,7 +400,9 @@
     </string-array>
     <string-array name="transition_animation_scale_entries">
         <item>Дүрс амилуулалт идэвхгүй</item>
+        <item>Дүрс амилуулах далайц .25x</item>
         <item>Дүрс амилуулах далайц .5x</item>
+		<item>Дүрс амилуулах далайц .75x</item>
         <item>Дүрс амилуулах далайц 1x</item>
         <item>Дүрс амилуулах далайц 1.5x</item>
         <item>Дүрс амилуулалтын далайц 2x</item>
@@ -402,7 +411,9 @@
     </string-array>
     <string-array name="animator_duration_scale_entries">
         <item>Дүрс амилуулалт идэвхгүй</item>
+        <item>Дүрс амилуулах далайц .25x</item>
         <item>Дүрс амилуулах далайц .5x</item>
+		<item>Дүрс амилуулах далайц .75x</item>
         <item>Дүрс амилуулах далайц 1x</item>
         <item>Дүрс амилуулах далайц 1.5x</item>
         <item>Дүрс амилуулалтын далайц 2x</item>

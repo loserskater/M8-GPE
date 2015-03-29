@@ -209,6 +209,7 @@
         <item>Nhắn tin</item>
         <item>Truyền thông</item>
         <item>Thiết bị</item>
+		<item>Autorun</item>
     </string-array>
     <string-array name="app_ops_summaries">
         <item>vị trí tổng thể</item>
@@ -256,8 +257,10 @@
         <item>theo dõi vị trí dùng điện năng cao</item>
         <item>tải thống kế sử dụng</item>
         <item>tắt/bật micrô</item>
+		<item>toast window</item>
         <item>chiếu phương tiện</item>
         <item>kích hoạt VPN</item>
+		<item>run at boot</item>
     </string-array>
     <string-array name="app_ops_labels">
         <item>Vị trí</item>
@@ -305,8 +308,10 @@
         <item>Vị trí</item>
         <item>Tải thống kê sử dụng</item>
         <item>Tắt/bật micrô</item>
+		<item>Toast window</item>
         <item>Chiếu phương tiện</item>
         <item>Kích hoạt VPN</item>
+		<item>Run at boot</item>
     </string-array>
     <string-array name="long_press_timeout_selector_titles">
         <item>Ngắn</item>
@@ -384,7 +389,9 @@
     </string-array>
     <string-array name="window_animation_scale_entries">
         <item>Tắt hình động</item>
+		<item>Tỷ lệ hình động 0,25x</item>
         <item>Tỷ lệ hình động 0,5x</item>
+		<item>Tỷ lệ hình động 0,75x</item>
         <item>Tỷ lệ hình động 1x</item>
         <item>Tỷ lệ hình động 1,5x</item>
         <item>Tỷ lệ hình động 2x</item>
@@ -393,7 +400,9 @@
     </string-array>
     <string-array name="transition_animation_scale_entries">
         <item>Tắt hình động</item>
+        <item>Tỷ lệ hình động 0,25x</item>
         <item>Tỷ lệ hình động 0,5x</item>
+		<item>Tỷ lệ hình động 0,75x</item>
         <item>Tỷ lệ hình động 1x</item>
         <item>Tỷ lệ hình động 1,5x</item>
         <item>Tỷ lệ hình động 2x</item>
@@ -402,7 +411,9 @@
     </string-array>
     <string-array name="animator_duration_scale_entries">
         <item>Tắt hình động</item>
+        <item>Tỷ lệ hình động 0,25x</item>
         <item>Tỷ lệ hình động 0,5x</item>
+		<item>Tỷ lệ hình động 0,75x</item>
         <item>Tỷ lệ hình động 1x</item>
         <item>Tỷ lệ hình động 1,5x</item>
         <item>Tỷ lệ hình động 2x</item>

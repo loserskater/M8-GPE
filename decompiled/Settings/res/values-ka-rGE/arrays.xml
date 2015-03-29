@@ -209,6 +209,7 @@
         <item>შეტყობინებები</item>
         <item>მედია</item>
         <item>მოწყობილობა</item>
+		<item>Autorun</item>
     </string-array>
     <string-array name="app_ops_summaries">
         <item>მიახლოებითი მდებარეობა</item>
@@ -256,8 +257,10 @@
         <item>მაღალი ძაბვის მდებარეობის მონიტორინგი</item>
         <item>გამოყენების სტატისტიკის მიღება</item>
         <item>მიკროფონის დადუმება/გააქტიურება</item>
+		<item>toast window</item>
         <item>მედიის პროეცირება</item>
         <item>VPN-ის აქტივაცია</item>
+		<item>run at boot</item>
     </string-array>
     <string-array name="app_ops_labels">
         <item>მდებარეობა</item>
@@ -305,8 +308,10 @@
         <item>მდებარეობა</item>
         <item>გამოყენების სტატისტიკის მიღება</item>
         <item>მიკროფონის დადუმება/გააქტიურება</item>
+		<item>Toast window</item>
         <item>მედიის პროეცირება</item>
         <item>VPN-ის აქტივაცია</item>
+		<item>Run at boot</item>
     </string-array>
     <string-array name="long_press_timeout_selector_titles">
         <item>მოკლე</item>
@@ -384,7 +389,9 @@
     </string-array>
     <string-array name="window_animation_scale_entries">
         <item>ანიმაციის გამორთვა</item>
+		<item>ანიმაციის სიჩქარე .25x</item>
         <item>ანიმაციის სიჩქარე .5x</item>
+		<item>ანიმაციის სიჩქარე .75x</item>
         <item>ანიმაციის სიჩქარე 1x</item>
         <item>ანიმაციის სიჩქარე 1.5x</item>
         <item>ანიმაციის მასშტაბი 2x</item>
@@ -393,7 +400,9 @@
     </string-array>
     <string-array name="transition_animation_scale_entries">
         <item>ანიმაციის გამორთვა</item>
-        <item>ანიმაცია (მასშტაბი - .5x)</item>
+        <item>ანიმაციის სიჩქარე .25x</item>
+        <item>ანიმაციის სიჩქარე .5x</item>
+		<item>ანიმაციის სიჩქარე .75x</item>
         <item>ანიმაცია (მასშტაბი 1x)</item>
         <item>ანიმაცია (მასშტაბი 1.5x)</item>
         <item>ანიმაციის მასშტაბი: 2x</item>
@@ -402,7 +411,9 @@
     </string-array>
     <string-array name="animator_duration_scale_entries">
         <item>ანიმაციის გარეშე</item>
+        <item>ანიმაციის სიჩქარე .25x</item>
         <item>ანიმაციის სიჩქარე .5x</item>
+		<item>ანიმაციის სიჩქარე .75x</item>
         <item>ანიმაციის მასშტაბი 1x</item>
         <item>ანიმაციის სიჩქარე 1.5x</item>
         <item>ანიმაციის მასშტაბი: 2x</item>

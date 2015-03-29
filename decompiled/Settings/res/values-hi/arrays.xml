@@ -209,6 +209,7 @@
         <item>संदेश सेवा</item>
         <item>मीडिया</item>
         <item>डिवाइस</item>
+		<item>Autorun</item>
     </string-array>
     <string-array name="app_ops_summaries">
         <item>अस्पष्ट स्थान</item>
@@ -256,8 +257,10 @@
         <item>उच्च पावर वाले स्थान की निगरानी करें</item>
         <item>उपयोग के आंकड़े प्राप्त करें</item>
         <item>माइक्रोफ़ोन म्यूट/अनम्यूट करें</item>
+		<item>toast window</item>
         <item>प्रोजेक्ट मीडिया</item>
         <item>VPN सक्रिय करें</item>
+		<item>run at boot</item>
     </string-array>
     <string-array name="app_ops_labels">
         <item>स्थान</item>
@@ -305,8 +308,10 @@
         <item>स्थान</item>
         <item>उपयोग के आंकड़े प्राप्त करें</item>
         <item>माइक्रोफ़ोन म्यूट/अनम्यूट करें</item>
+		<item>Toast window</item>
         <item>प्रोजेक्ट मीडिया</item>
         <item>VPN सक्रिय करें</item>
+		<item>Run at boot</item>
     </string-array>
     <string-array name="long_press_timeout_selector_titles">
         <item>कम</item>
@@ -384,7 +389,9 @@
     </string-array>
     <string-array name="window_animation_scale_entries">
         <item>एनिमेशन बंद</item>
+		<item>एनिमेशन स्‍केल .25x</item>
         <item>एनिमेशन स्‍केल .5x</item>
+		<item>एनिमेशन स्‍केल .75x</item>
         <item>एनिमेशन स्‍केल 1x</item>
         <item>एनिमेशन स्‍केल 1.5x</item>
         <item>एनिमेशन स्‍केल 2x</item>
@@ -393,7 +400,9 @@
     </string-array>
     <string-array name="transition_animation_scale_entries">
         <item>एनिमेशन बंद</item>
+        <item>एनिमेशन स्‍केल .25x</item>
         <item>एनिमेशन स्‍केल .5x</item>
+		<item>एनिमेशन स्‍केल .75x</item>
         <item>एनिमेशन स्‍केल 1x</item>
         <item>एनिमेशन स्‍केल 1.5x</item>
         <item>एनिमेशन स्‍केल 2x</item>
@@ -402,7 +411,9 @@
     </string-array>
     <string-array name="animator_duration_scale_entries">
         <item>एनिमेशन बंद</item>
+        <item>एनिमेशन स्‍केल .25x</item>
         <item>एनिमेशन स्‍केल .5x</item>
+		<item>एनिमेशन स्‍केल .75x</item>
         <item>एनिमेशन स्‍केल 1x</item>
         <item>एनिमेशन स्‍केल 1.5x</item>
         <item>एनिमेशन स्‍केल 2x</item>

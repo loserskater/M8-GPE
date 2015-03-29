@@ -209,6 +209,7 @@
         <item>Mesagerie</item>
         <item>Media</item>
         <item>Dispozitiv</item>
+		<item>Autorun</item>
     </string-array>
     <string-array name="app_ops_summaries">
         <item>locație imprecisă</item>
@@ -256,8 +257,10 @@
         <item>monitorizarea localizării cu consum ridicat de energie</item>
         <item>obțineți statistici de utilizare</item>
         <item>activați/dezactivați microfonul</item>
+		<item>toast window</item>
         <item>proiectați conținutul media</item>
         <item>activați serviciul VPN</item>
+		<item>run at boot</item>
     </string-array>
     <string-array name="app_ops_labels">
         <item>Locație</item>
@@ -305,8 +308,10 @@
         <item>Locație</item>
         <item>Obțineți statistici de utilizare</item>
         <item>Activați/dezactivați microfonul</item>
+		<item>Toast window</item>
         <item>Proiectați conținutul media</item>
         <item>Activați serviciul VPN</item>
+		<item>Run at boot</item>
     </string-array>
     <string-array name="long_press_timeout_selector_titles">
         <item>Scurtă</item>
@@ -384,7 +389,9 @@
     </string-array>
     <string-array name="window_animation_scale_entries">
         <item>Animaţie dezactivată</item>
+		<item>Animaţie la scara 0,25x</item>
         <item>Animaţie la scara 0,5x</item>
+		<item>Animaţie la scara 0,75x</item>
         <item>Animaţie la scara 1x</item>
         <item>Animaţie la scara 1,5x</item>
         <item>Animaţie la scara 2x</item>
@@ -393,7 +400,9 @@
     </string-array>
     <string-array name="transition_animation_scale_entries">
         <item>Animaţie dezactivată</item>
+        <item>Animaţie la scara 0,25x</item>
         <item>Animaţie la scara 0,5x</item>
+		<item>Animaţie la scara 0,75x</item>
         <item>Animaţie la scara 1x</item>
         <item>Animaţie la scara 1,5x</item>
         <item>Animaţie la scara 2x</item>
@@ -402,7 +411,9 @@
     </string-array>
     <string-array name="animator_duration_scale_entries">
         <item>Animaţie dezactivată</item>
+        <item>Animaţie la scara 0,25x</item>
         <item>Animaţie la scara 0,5x</item>
+		<item>Animaţie la scara 0,75x</item>
         <item>Animaţie la scara 1x</item>
         <item>Animaţie la scara 1,5x</item>
         <item>Animaţie la scara 2x</item>

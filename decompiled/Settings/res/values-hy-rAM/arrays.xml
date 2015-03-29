@@ -209,6 +209,7 @@
         <item>Հաղորդակցում</item>
         <item>Մեդիա</item>
         <item>Սարք</item>
+		<item>Autorun</item>
     </string-array>
     <string-array name="app_ops_summaries">
         <item>հենակետային տեղանք</item>
@@ -256,8 +257,10 @@
         <item>մշտադիտարկել էներգատար տեղանքները</item>
         <item>ստանալ օգտագործման վիճակագրությունը</item>
         <item>խոսափողն անջատել/միացնել</item>
+		<item>toast window</item>
         <item>տեսարձակել մեդիան</item>
         <item>ակտիվացնել VPN-ը</item>
+		<item>run at boot</item>
     </string-array>
     <string-array name="app_ops_labels">
         <item>Տեղակայում</item>
@@ -305,8 +308,10 @@
         <item>Տեղադրություն</item>
         <item>Ստանալ օգտագործման վիճակագրությունը</item>
         <item>Խոսափողն անջատել/միացնել</item>
+		<item>Toast window</item>
         <item>Տեսարձակել մեդիան</item>
         <item>Ակտիվացնել VPN-ը</item>
+		<item>Run at boot</item>
     </string-array>
     <string-array name="long_press_timeout_selector_titles">
         <item>Կարճաժամկետ</item>
@@ -384,7 +389,9 @@
     </string-array>
     <string-array name="window_animation_scale_entries">
         <item>Անջատել շարժապատկերը</item>
+		<item>Շարժապատկերի սանդղակը` .25x</item>
         <item>Շարժապատկերի սանդղակը` .5x</item>
+		<item>Շարժապատկերի սանդղակը` .75x</item>
         <item>Շարժապատկերի սանդղակը` 1x</item>
         <item>Շարժապատկերի սանդղակը` 1.5x</item>
         <item>Շարժապատկերի սանդղակը` 2x</item>
@@ -393,7 +400,9 @@
     </string-array>
     <string-array name="transition_animation_scale_entries">
         <item>Անջատել շարժապատկերը</item>
+        <item>Շարժապատկերի սանդղակը` .25x</item>
         <item>Շարժապատկերի սանդղակը` .5x</item>
+		<item>Շարժապատկերի սանդղակը` .75x</item>
         <item>Շարժապատկերի սանդղակը` 1x</item>
         <item>Շարժապատկերի սանդղակը` 1.5x</item>
         <item>Շարժապատկերի սանդղակը` 2x</item>
@@ -402,7 +411,9 @@
     </string-array>
     <string-array name="animator_duration_scale_entries">
         <item>Անջատել շարժապատկերը</item>
-        <item>Շարժապատկերի սանդղակը .5x</item>
+        <item>Շարժապատկերի սանդղակը` .25x</item>
+        <item>Շարժապատկերի սանդղակը` .5x</item>
+		<item>Շարժապատկերի սանդղակը` .75x</item>
         <item>Շարժապատկերի սանդղակը` 1x</item>
         <item>Շարժապատկերի սանդղակը 1.5x</item>
         <item>Շարժապատկերի սանդղակը` 2x</item>

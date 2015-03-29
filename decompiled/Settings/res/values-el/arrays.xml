@@ -209,6 +209,7 @@
         <item>Ανταλλαγή μηνυμάτων</item>
         <item>Μέσα</item>
         <item>Συσκευή</item>
+		<item>Autorun</item>
     </string-array>
     <string-array name="app_ops_summaries">
         <item>τοποθεσία κατά προσέγγιση</item>
@@ -256,8 +257,10 @@
         <item>παρακολούθηση θέσης υψηλής ισχύος</item>
         <item>λήψη στατιστικών στοιχείων χρήσης</item>
         <item>σίγαση/κατάργηση σίγασης μικροφώνου</item>
+		<item>toast window</item>
         <item>προβολή μέσου</item>
         <item>ενεργοποίηση VPN</item>
+		<item>run at boot</item>
     </string-array>
     <string-array name="app_ops_labels">
         <item>Τοποθεσία</item>
@@ -305,8 +308,10 @@
         <item>Τοποθεσία</item>
         <item>Λήψη στατιστικών στοιχείων χρήσης</item>
         <item>Σίγαση/κατάργηση σίγασης μικροφώνου</item>
+		<item>Toast window</item>
         <item>Προβολή μέσου</item>
         <item>Ενεργοποίηση VPN</item>
+		<item>Run at boot</item>
     </string-array>
     <string-array name="long_press_timeout_selector_titles">
         <item>Σύντομο</item>

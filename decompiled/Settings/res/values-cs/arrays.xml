@@ -209,6 +209,7 @@
         <item>SMS a MMS</item>
         <item>Média</item>
         <item>Zařízení</item>
+		<item>Autorun</item>
     </string-array>
     <string-array name="app_ops_summaries">
         <item>přibližná poloha</item>
@@ -256,8 +257,10 @@
         <item>sledování energeticky náročného určování polohy</item>
         <item>načíst statistiky využití</item>
         <item>vypnout nebo zapnout zvuk mikrofonu</item>
+		<item>toast window</item>
         <item>promítat média</item>
         <item>aktivovat VPN</item>
+		<item>run at boot</item>
     </string-array>
     <string-array name="app_ops_labels">
         <item>Poloha</item>
@@ -305,8 +308,10 @@
         <item>Určování polohy</item>
         <item>Načíst statistiky využití</item>
         <item>Vypnout nebo zapnout zvuk mikrofonu</item>
+		<item>Toast window</item>
         <item>Promítat média</item>
         <item>Aktivovat VPN</item>
+		<item>Run at boot</item>
     </string-array>
     <string-array name="long_press_timeout_selector_titles">
         <item>Krátká</item>
@@ -384,7 +389,9 @@
     </string-array>
     <string-array name="window_animation_scale_entries">
         <item>Animace je vypnuta</item>
+		<item>Měřítko animace 0,25x</item>
         <item>Měřítko animace 0,5x</item>
+		<item>Měřítko animace 0,75x</item>
         <item>Měřítko animace 1x</item>
         <item>Měřítko animace 1,5x</item>
         <item>Měřítko animace 2x</item>
@@ -393,7 +400,9 @@
     </string-array>
     <string-array name="transition_animation_scale_entries">
         <item>Animace je vypnuta</item>
+		<item>Měřítko animace 0,25x</item>
         <item>Měřítko animace 0,5x</item>
+		<item>Měřítko animace 0,75x</item>
         <item>Měřítko animace 1x</item>
         <item>Měřítko animace 1,5x</item>
         <item>Měřítko animace 2x</item>
@@ -402,7 +411,9 @@
     </string-array>
     <string-array name="animator_duration_scale_entries">
         <item>Animace je vypnuta</item>
+		<item>Měřítko animace 0,25x</item>
         <item>Měřítko animace 0,5x</item>
+		<item>Měřítko animace 0,75x</item>
         <item>Měřítko animace 1x</item>
         <item>Měřítko animace 1,5x</item>
         <item>Měřítko animace 2x</item>

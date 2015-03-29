@@ -209,6 +209,7 @@
         <item>ຂໍ້ຄວາມ</item>
         <item>ມີເດຍ</item>
         <item>ອຸປະກອນ</item>
+		<item>Autorun</item>
     </string-array>
     <string-array name="app_ops_summaries">
         <item>ຕຳແໜ່ງໂດຍປະມານ</item>
@@ -256,8 +257,10 @@
         <item>ຕິດຕາມສະຖານທີ່ທີ່ມີພະລັງງານສູງ</item>
         <item>ໂຫຼດ​ສະ​ຖິ​ຕິ​ການ​ນຳ​ໃຊ້</item>
         <item>ປິດ/ເປີດ ​ໄມ​ໂຄຣ​ໂຟນ</item>
+		<item>toast window</item>
         <item>​ໂປ​ຣ​ເຈັກ​ມີ​ເດຍ</item>
         <item>​​ເປີດ​ນຳ​ໃຊ້ VPN</item>
+		<item>run at boot</item>
     </string-array>
     <string-array name="app_ops_labels">
         <item>ຕຳແໜ່ງ</item>
@@ -305,8 +308,10 @@
         <item>ສະຖານທີ່</item>
         <item>ໂຫຼດ​ສະ​ຖິ​ຕິ​ການ​ນຳ​ໃຊ້</item>
         <item>ປິດ/ເປີດ ​ໄມ​ໂຄຣ​ໂຟນ</item>
+		<item>Toast window</item>
         <item>​ໂປຣ​ເຈັກ​ມີ​ເດຍ</item>
         <item>​​ເປີດ​ນຳ​ໃຊ້ VPN</item>
+		<item>Run at boot</item>
     </string-array>
     <string-array name="long_press_timeout_selector_titles">
         <item>ສັ້ນ</item>
@@ -384,7 +389,9 @@
     </string-array>
     <string-array name="window_animation_scale_entries">
         <item>ປິດອະນິເມຊັນ</item>
+		<item>ຂະໜາດອະນິເມຊັນ .25x</item>
         <item>ຂະໜາດອະນິເມຊັນ .5x</item>
+		<item>ຂະໜາດອະນິເມຊັນ .75x</item>
         <item>ຂະໜາດອະນິເມຊັນ 1x</item>
         <item>ຂະໜາດອະນິເມຊັນ 1.5x</item>
         <item>ຂະໜາດອະນິເມຊັນ 2x</item>
@@ -393,7 +400,9 @@
     </string-array>
     <string-array name="transition_animation_scale_entries">
         <item>ປິດອະນິເມຊັນ</item>
+        <item>ຂະໜາດອະນິເມຊັນ .25x</item>
         <item>ຂະໜາດອະນິເມຊັນ .5x</item>
+		<item>ຂະໜາດອະນິເມຊັນ .75x</item>
         <item>ຂະໜາດອະນິເມຊັນ 1x</item>
         <item>ຂະໜາດອະນິເມຊັນ 1.5x</item>
         <item>ຂະໜາດອະນິເມຊັນ 2x</item>
@@ -402,7 +411,9 @@
     </string-array>
     <string-array name="animator_duration_scale_entries">
         <item>ປິດອະນິເມຊັນ</item>
+        <item>ຂະໜາດອະນິເມຊັນ .25x</item>
         <item>ຂະໜາດອະນິເມຊັນ .5x</item>
+		<item>ຂະໜາດອະນິເມຊັນ .75x</item>
         <item>ຂະໜາດອະນິເມຊັນ 1x</item>
         <item>ຂະໜາດອະນິເມຊັນ 1.5x</item>
         <item>ຂະໜາດອະນິເມຊັນ 2x</item>

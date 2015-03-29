@@ -209,6 +209,7 @@
         <item>SMS/MMS</item>
         <item>Media</item>
         <item>Enhet</item>
+		<item>Autorun</item>
     </string-array>
     <string-array name="app_ops_summaries">
         <item>ungefärlig plats</item>
@@ -256,8 +257,10 @@
         <item>övervaka batterikrävande plats</item>
         <item>få användningsstatistik</item>
         <item>stäng av/slå på mikrofonen</item>
+		<item>toast window</item>
         <item>projicera media</item>
         <item>aktivera VPN</item>
+		<item>run at boot</item>
     </string-array>
     <string-array name="app_ops_labels">
         <item>Plats</item>
@@ -305,8 +308,10 @@
         <item>Plats</item>
         <item>Få användningsstatistik</item>
         <item>Stäng av/slå på mikrofonen</item>
+		<item>Toast window</item>
         <item>Projicera media</item>
         <item>Aktivera VPN</item>
+		<item>Run at boot</item>
     </string-array>
     <string-array name="long_press_timeout_selector_titles">
         <item>Kort</item>
@@ -384,7 +389,9 @@
     </string-array>
     <string-array name="window_animation_scale_entries">
         <item>Animering avstängd</item>
+		<item>Animering i skala 0,25x</item>
         <item>Animering i skala 0,5x</item>
+		<item>Animering i skala 0,75x</item>
         <item>Animering i skala 1x</item>
         <item>Animering i skala 1,5x</item>
         <item>Animering i skala 2x</item>
@@ -393,7 +400,9 @@
     </string-array>
     <string-array name="transition_animation_scale_entries">
         <item>Animering avstängd</item>
+        <item>Animering i skala 0,25x</item>
         <item>Animering i skala 0,5x</item>
+		<item>Animering i skala 0,75x</item>
         <item>Animering i skala 1x</item>
         <item>Animering i skala 1,5x</item>
         <item>Animering i skala 2x</item>
@@ -402,7 +411,9 @@
     </string-array>
     <string-array name="animator_duration_scale_entries">
         <item>Animering avstängd</item>
+        <item>Animering i skala 0,25x</item>
         <item>Animering i skala 0,5x</item>
+		<item>Animering i skala 0,75x</item>
         <item>Animering i skala 1x</item>
         <item>Animering i skala 1,5x</item>
         <item>Animering i skala 2x</item>

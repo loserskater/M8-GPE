@@ -209,6 +209,7 @@
         <item>Üzenetváltás</item>
         <item>Média</item>
         <item>Eszköz</item>
+		<item>Autorun</item>
     </string-array>
     <string-array name="app_ops_summaries">
         <item>hozzávetőleges helymeghatározás</item>
@@ -256,8 +257,10 @@
         <item>magas energiaszintű helyek figyelése</item>
         <item>használati statisztikák lekérése</item>
         <item>mikrofon némítása és a némítás feloldása</item>
+		<item>toast window</item>
         <item>médiatartalom kivetítése</item>
         <item>VPN aktiválása</item>
+		<item>run at boot</item>
     </string-array>
     <string-array name="app_ops_labels">
         <item>Hely</item>
@@ -305,8 +308,10 @@
         <item>Tartózkodási hely</item>
         <item>Használati statisztikák lekérése</item>
         <item>Mikrofon némítása és a némítás feloldása</item>
+		<item>Toast window</item>
         <item>Médiatartalom kivetítése</item>
         <item>VPN aktiválása</item>
+		<item>Run at boot</item>
     </string-array>
     <string-array name="long_press_timeout_selector_titles">
         <item>Rövid</item>
@@ -384,7 +389,9 @@
     </string-array>
     <string-array name="window_animation_scale_entries">
         <item>Animáció ki</item>
+		<item>Animáció mérete: 0,25x</item>
         <item>Animáció mérete: 0,5x</item>
+		<item>Animáció mérete: 0,75x</item>
         <item>Animáció mérete: 1x</item>
         <item>Animáció mérete: 1,5x</item>
         <item>Animáció mérete: 2x</item>
@@ -393,7 +400,9 @@
     </string-array>
     <string-array name="transition_animation_scale_entries">
         <item>Animáció ki</item>
+        <item>Animáció mérete: 0,25x</item>
         <item>Animáció mérete: 0,5x</item>
+		<item>Animáció mérete: 0,75x</item>
         <item>Animáció mérete: 1x</item>
         <item>Animáció mérete: 1,5x</item>
         <item>Animáció mérete: 2x</item>
@@ -402,7 +411,9 @@
     </string-array>
     <string-array name="animator_duration_scale_entries">
         <item>Animáció ki</item>
-        <item>Animáció léptéke: 0,5x</item>
+        <item>Animáció mérete: 0,25x</item>
+        <item>Animáció mérete: 0,5x</item>
+		<item>Animáció mérete: 0,75x</item>
         <item>Animáció léptéke: 1x</item>
         <item>Animáció léptéke: 1,5x</item>
         <item>Animáció léptéke: 2x</item>

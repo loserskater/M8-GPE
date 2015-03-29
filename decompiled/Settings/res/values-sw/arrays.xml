@@ -209,6 +209,7 @@
         <item>Utumaji ujumbe</item>
         <item>Vyombo vya Habari</item>
         <item>Kifaa</item>
+		<item>Autorun</item>
     </string-array>
     <string-array name="app_ops_summaries">
         <item>eneo lisilo laini</item>
@@ -256,8 +257,10 @@
         <item>fuatilia eneo kuu</item>
         <item>pata takwimu za matumizi</item>
         <item>zima au uwashe sauti ya maikrofoni</item>
+		<item>toast window</item>
         <item>maudhui ya mradi</item>
         <item>anzisha VPN</item>
+		<item>run at boot</item>
     </string-array>
     <string-array name="app_ops_labels">
         <item>Eneo</item>
@@ -305,8 +308,10 @@
         <item>Eneo</item>
         <item>Pata takwimu za matumizi</item>
         <item>Zima ama uwashe sauti ya maikrofoni</item>
+		<item>Toast window</item>
         <item>Maudhui ya mradi</item>
         <item>Anzisha VPN</item>
+		<item>Run at boot</item>
     </string-array>
     <string-array name="long_press_timeout_selector_titles">
         <item>Fupi</item>
@@ -384,7 +389,9 @@
     </string-array>
     <string-array name="window_animation_scale_entries">
         <item>Haiwani imezimwa</item>
+		<item>Skeli .25x ya haiwani</item>
         <item>Skeli .5x ya haiwani</item>
+		<item>Skeli .75x ya haiwani</item>
         <item>Skeli 1x ya haiwani</item>
         <item>Skeli 1.5x ya haiwani</item>
         <item>Skeli 2x ya haiwani</item>
@@ -393,7 +400,9 @@
     </string-array>
     <string-array name="transition_animation_scale_entries">
         <item>Haiwani imezimwa</item>
+        <item>Skeli .25x ya haiwani</item>
         <item>Skeli .5x ya haiwani</item>
+		<item>Skeli .75x ya haiwani</item>
         <item>Skeli 1x ya haiwani</item>
         <item>Skeli 1.5x ya haiwani</item>
         <item>Skeli 2x ya haiwani</item>
@@ -402,7 +411,9 @@
     </string-array>
     <string-array name="animator_duration_scale_entries">
         <item>Uhuishaji umezimwa</item>
+		<item>Mizani .25x ya uhuishaji</item>
         <item>Mizani .5x ya uhuishaji</item>
+		<item>Mizani .75x ya uhuishaji</item>
         <item>Mizani 1x ya uhuishaji</item>
         <item>Mizani 1.5x ya uhuishaji</item>
         <item>Mizani 2x ya uhuishaji</item>

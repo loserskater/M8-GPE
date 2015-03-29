@@ -209,6 +209,7 @@
         <item>پیام‌رسانی</item>
         <item>رسانه</item>
         <item>دستگاه</item>
+		<item>Autorun</item>
     </string-array>
     <string-array name="app_ops_summaries">
         <item>موقعیت مکانی غیردقیق</item>
@@ -256,8 +257,10 @@
         <item>کنترل مکان پرقدرت</item>
         <item>دریافت آمار استفاده</item>
         <item>صدادار/بی‌صدا کردن میکروفن</item>
+		<item>toast window</item>
         <item>فرستادن رسانه</item>
         <item>‏فعال‌سازی VPN</item>
+		<item>run at boot</item>
     </string-array>
     <string-array name="app_ops_labels">
         <item>موقعیت مکانی</item>
@@ -305,8 +308,10 @@
         <item>مکان</item>
         <item>دریافت آمار استفاده</item>
         <item>صدادار/بی‌صدا کردن میکروفن</item>
+		<item>Toast window</item>
         <item>فرستادن رسانه</item>
         <item>‏فعال‌سازی VPN</item>
+		<item>Run at boot</item>
     </string-array>
     <string-array name="long_press_timeout_selector_titles">
         <item>کوتاه</item>

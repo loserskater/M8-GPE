@@ -209,6 +209,7 @@
         <item>Съобщения</item>
         <item>Мултимедия</item>
         <item>Устройство</item>
+		<item>Autorun</item>
     </string-array>
     <string-array name="app_ops_summaries">
         <item>местоположение с ниска точност</item>
@@ -256,8 +257,10 @@
         <item>наблюдение на заявките за местоположение, изразходващи много енергия</item>
         <item>получаване на статистически данни за употребата</item>
         <item>заглушаване/включване на микрофона</item>
+		<item>toast window</item>
         <item>прожектиране на мултимедия</item>
         <item>активиране на виртуална частна мрежа (VPN)</item>
+		<item>run at boot</item>
     </string-array>
     <string-array name="app_ops_labels">
         <item>Местоположение</item>
@@ -305,8 +308,10 @@
         <item>Местоположение</item>
         <item>Получаване на статистически данни за употребата</item>
         <item>Заглушаване/включване на микрофона</item>
+		<item>Toast window</item>
         <item>Прожектиране на мултимедия</item>
         <item>Активиране на виртуална частна мрежа (VPN)</item>
+		<item>Run at boot</item>
     </string-array>
     <string-array name="long_press_timeout_selector_titles">
         <item>Кратко</item>
@@ -384,7 +389,9 @@
     </string-array>
     <string-array name="window_animation_scale_entries">
         <item>Анимацията е изключена</item>
+		<item>Скала на анимацията .25x</item>
         <item>Скала на анимацията .5x</item>
+		<item>Скала на анимацията .75x</item>
         <item>Скала на анимацията 1x</item>
         <item>Скала на анимацията 1.5x</item>
         <item>Скала на анимацията 2x</item>
@@ -393,7 +400,9 @@
     </string-array>
     <string-array name="transition_animation_scale_entries">
         <item>Анимацията е изключена</item>
+		<item>Скала на анимацията .25x</item>
         <item>Скала на анимацията .5x</item>
+		<item>Скала на анимацията .75x</item>
         <item>Скала на анимацията 1x</item>
         <item>Скала на анимацията 1.5x</item>
         <item>Скала на анимацията 2x</item>
@@ -402,7 +411,9 @@
     </string-array>
     <string-array name="animator_duration_scale_entries">
         <item>Анимацията е изключена</item>
+		<item>Скала на анимацията .25x</item>
         <item>Скала на анимацията .5x</item>
+		<item>Скала на анимацията .75x</item>
         <item>Скала на анимацията 1x</item>
         <item>Скала на анимацията 1.5x</item>
         <item>Скала на анимацията 2x</item>
