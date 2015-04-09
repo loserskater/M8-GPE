@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="install_unknown_applications">Luba rakenduste installimine muudest allikatest peale Play poe</string>
+    <string name="backup_data_summary">"Varundage rakenduste andmed, WiFi paroolid ja muud seaded Google'i serverites"</string>
+</resources>

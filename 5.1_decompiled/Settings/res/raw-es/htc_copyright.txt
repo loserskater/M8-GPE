@@ -1,0 +1,153 @@
+﻿Información legal de HTC
+1. Derechos de autor
+2. Política de privacidad de HTC
+3. Acuerdo de licencia de usuario final de HTC 
+
+
+1. Derechos de autor
+
+Una parte del software incluido en este dispositivo ha sido proporcionado o desarrollado por HTC Corporation.
+
+Copyright © 2006-2013 HTC Corporation
+
+Reservados todos los derechos.
+
+El Material ("Material") del presente documento hace referencia al software desarrollado por o propiedad de HTC Corporation ("HTC") que no se ha facilitado por separado al amparo de las condiciones de licencia de software de fuente abierta. La información contenida en el Material es propiedad exclusiva de HTC. HTC garantiza al usuario legal de este dispositivo el derecho a utilizar el Material sólo en el ámbito de uso legítimo del dispositivo. Esta licencia no concede ningún otro derecho, incluyendo en forma enunciativa y no limitativa, la distribución, reproducción, modificación y transmisión. Cualquier otro uso del Material estará sujeto al consentimiento escrito por parte de HTC.
+El uso de la totalidad del software proporcionado con este dispositivo en el momento de su adquisición (el cual incluye los componentes facilitados por los proveedores y los cedentes de HTC), estará sujeto a los términos y condiciones de copyright de sus proveedores/cedentes.
+
+
+
+2. Política de privacidad de HTC
+
+Esta política de privacidad (“Política”) describe cómo HTC Corporation, HTC America, Inc. y sus empresas relacionadas (“HTC”, “nosotros/nuestro/a”) recopilamos, usamos y compartimos información personal que recogemos de usted como usuario de los sitios web, dispositivos, aplicaciones y servicios de HTC (en conjunto, los “Servicios”).
+Podemos agregar o modificar esta Política con otros avisos. También podemos publicar diferentes declaraciones de privacidad para algunos Servicios y cuando lo hagamos, esta política no aplicará. Por ejemplo, aplican políticas independientes a la información recopilada desde su dispositivo a través del uso de Tell HTC e informes de errores de Tell HTC.
+NOTA: Su operador de telefonía móvil, proveedor de sistema operativo móvil y/o aplicaciones de terceros, barras de herramientas, servicios y sitios web también pueden recopilar, usar y compartir información sobre usted y su dispositivo y el uso que hace de él. Las políticas de privacidad de HTC no cubren a terceros, sus productos, actos o servicios. HTC no puede controlar la forma en que terceros recopilan, usan u obtienen sus datos. Para obtener información sobre las prácticas de privacidad de terceros, consulte sus políticas de privacidad. Solo descargue aplicaciones de terceros que sean de confianza.
+
+1.	INFORMACIÓN QUE USTED NOS PROPORCIONA
+Cuando use nuestros Servicios, puede proporcionarnos información, tanto en línea como sin conexión, como, por ejemplo: su nombre, dirección de correo electrónico, dirección postal, números de teléfono, número de fax, fecha de nacimiento, identificadores de dispositivos, datos de ubicación, información de su operador, fotos, videos y datos demográficos (sexo, empresa o nombre de la organización, ocupación, preferencia de idioma, ciudad, país, código postal, código de área, zona horaria, etc.). Si compra mediante los Servicios, podemos retener sus números de tarjeta de crédito u otra información de pago. También podemos retener y asociar esta información de pago con información de otras fuentes, incluidas las cuentas sociales que elija asociar con los Servicios o con información de otras empresas.
+
+2.	INFORMACIÓN QUE RECOPILAMOS DE FORMA AUTOMÁTICA.
+Cuando usa los Servicios, recopilamos alguna información de forma automática. Podemos recopilar información sobre el uso que usted hace de los Servicios y su actividad en ellos. Cuando visita nuestros sitios web, la información que podemos registrar de forma automática incluye, por ejemplo, su sistema operativo, dirección de Protocolo de Internet (IP), horas de acceso, tipo de navegador e idioma y el sitio web que visitó antes del nuestro. Cuando use nuestros dispositivos, descargue y use nuestras aplicaciones, o acceda a los Servicios desde su dispositivo. También podemos registrar la información relativa a su dispositivo. Podemos registrar, por ejemplo, su ubicación, número de teléfono, tipo de dispositivo, número de serie, identificadores de dispositivo (por ejemplo, IMEI, MEID, número de serie, CID, MID y número de ID de eMCC o ID de tarjeta SIM), los tipos y versiones de sistemas operativos móviles, aplicaciones y software que use, contenido que vea o use y registros con fecha de los intercambios de datos.
+
+También podemos registrar información mediante el uso de balizas web, cookies, objetos compartidos locales (LSO) y métodos similares (definidos a continuación). Si no desea que usemos cookies, no use los Servicios a menos que primero desactive las cookies como se describe a continuación. Podemos vincular automáticamente cualquier parte de la información que recopilamos con su información personal.
+•	Balizas web. Las balizas web son imágenes electrónicas que podemos usar en nuestros sitios web o en nuestros correos electrónicos para entregar cookies, contar visitas y comprender el uso y la eficacia de campañas, como por ejemplo, si abrió y realizó una acción respecto de un correo electrónico que le enviamos.
+•	Cookies. Las cookies son pequeños archivos de datos que un sitio web almacena en su disco duro. Entre otras cosas, las cookies nos ayudan a mejorar nuestros sitios web y su experiencia. Usamos las cookies para ver cuáles áreas de nuestros sitios web y cuáles características son populares, y para contar las visitas a nuestros sitios web. También usamos información que recopilamos de las cookies para personalizar contenidos. Normalmente, puede eliminar y rechazar cookies de nuestros sitios web con la configuración de su navegador. Muchos navegadores están configurados para aceptar cookies hasta que usted cambia la configuración. Eliminar o rechazar nuestras cookies podría afectar la forma en que nuestros sitios web funcionan en su caso y es posible que no pueda experimentar los Servicios a cabalidad. Para obtener más información sobre cómo administrar la configuración de cookies de privacidad y almacenamiento, haga clic aquí: http://www.allaboutcookies.org (o en la UE http://www.youronlinechoices.com/ - Haga clic para conocer qué información de las cookies se recopila en htc.com y sus opciones).
+Objetos compartidos locales (“cookies de Flash”) Usamos objetos compartidos locales, también conocidos como “cookies de Flash”, para almacenar sus preferencias, como control de volumen o para mostrar contenido basado en lo que ve en nuestros sitios web para personalizar su visita. Los socios externos también pueden proporcionar ciertas funciones en nuestros sitios web y mostrar publicidad basada en su actividad de navegación web mediante cookies de Flash para recopilar y almacenar información. Las cookies de Flash se diferencian de otras cookies por la cantidad, tipo y forma en que almacenan los datos. Las herramientas de administración de cookies proporcionadas por su navegador no eliminarán las cookies de Flash. Para obtener información sobre cómo administrar la configuración de privacidad y almacenamiento de las cookies de Flash, haga clic aquí: http://www.macromedia.com/support/documentation/en/flashplayer/help/settings_manager.html#117118 (o en la UE http://www.youronlinechoices.com/).
+Informes de registro de la experiencia e informes de errores de Tell HTC Además de la información que recopilamos de forma automática descrita anteriormente, en dispositivos selectos, podemos recopilar datos más detallados sobre el uso que haga de nuestros dispositivos con su consentimiento si desea excluirse de los informes de Tell HTC o acepta compartir los datos de informes de errores. Para obtener más información, visite la Política de privacidad de la experiencia de Tell HTC y la Política de privacidad de informes de errores de Tell HTC a las que puede acceder desde su dispositivo en “Configuración”.
+3.	INFORMACIÓN RECOPILADA A TRAVÉS DE PUBLICIDAD
+ANUNCIOS DE TERCEROS EN LOS SERVICIOS.
+Podemos usar a terceros para publicar anuncios en nuestros Servicios. Algunos terceros pueden recopilar información de forma automática sobre el uso que usted hace de los Servicios, las visitas a nuestros sitios web y otros sitios web, su dirección IP, su ISP y el navegador que usa para visitar nuestro sitio web (pero no su nombre, dirección, dirección de correo electrónico o número de teléfono). Los terceros pueden recopilar información mediante el uso de cookies, gifs transparentes u otras tecnologías. Estos terceros pueden usar esta información para entregar publicidad dirigida a sus intereses y para comprender el uso y las visitas de los Servicios y los demás sitios web a los que estos terceros realizan seguimiento. Esta Política no aplica a cookies o gifs transparentes en anuncios de terceros, y no somos responsables por ellos. Le recomendamos que revise las políticas de privacidad de los anunciantes y/o los servicios de anuncios para obtener información sobre el uso que hacen de cookies y otra tecnología. Si desea obtener más información sobre esta práctica y sobre sus opciones para muchas de nuestras redes de anuncios, haga clic aquí. http://www.networkadvertising.org/choices/.
+ANUNCIOS DE HTC EN SITIOS WEB DE TERCEROS.
+Podemos usar información recopilada mediante el uso de cookies y balizas web de terceros en nuestros Servicios y en nuestros correos electrónicos para entregar publicidad con la marca HTC para mostrársela a usted en sitios web de terceros. También podemos usar información de cookies para saber cuándo vuelve a nuestro sitio web después de visitar sitios de terceros. Usamos esta y otra información sobre usted para intentar comprender sus intereses y mostrarle anuncios pertinentes acerca de productos y servicios que pueden interesarle.
+4.	USO DE SU INFORMACIÓN PERSONAL
+HTC puede usar su información personal para:
+•	operar y mejorar nuestros sitios web, productos, Servicios y marketing;
+•	proporcionarle una experiencia, contenidos, marketing y recomendaciones personalizados en todos nuestros Servicios;
+•	responder a sus comentarios y preguntas y proporcionar servicio al cliente;
+•	proporcionar y entregar productos y Servicios que usted solicite;
+•	enviarle información relativa a sus solicitudes y compras, incluidas las confirmaciones, facturas, avisos técnicos, actualizaciones, alertas de seguridad y mensajes administrativos y de soporte;
+•	comunicarse con usted acerca de concursos, promociones, premios, próximos eventos y novedades sobre productos y servicios ofrecidos por HTC y nuestros socios selectos (de acuerdo con sus elecciones más abajo) y procesar y entregar participaciones en concursos y premios;
+•	vincular o combinar su información personal con otra información que obtengamos sobre el uso que usted hace de otros Servicios de HTC y de terceros para poder comprenderlo a usted y sus necesidades y ofrecerle recomendaciones, un mejor servicio y marketing personalizado; y
+•	proteger, investigar y disuadir de realizar actividades fraudulentas, no autorizadas o ilegales.
+5.	MÁS ACERCA DE LOS DATOS DE UBICACIÓN
+•	Cuando usa ciertos Servicios, podemos recopilar, procesar, almacenar y compartir datos de ubicación precisos. Esta información de ubicación puede incluir ubicación geográfica en tiempo real de su dispositivo. También puede incluir nombres de lugares donde ha estado, donde se ha registrado, lugares que marca en un mapa, ubicación geográfica de donde ha tomado fotos, caminos por los que ha transitado y las fechas y horas en que estuvo en determinados lugares. HTC puede compartir sus datos de ubicación con proveedores de aplicaciones que demuestren poseer los permisos adecuados.
+•	HTC puede asociar los datos de ubicación con su ID de dispositivo y la información de su cuenta.
+•	Nuestros Servicios también pueden recopilar datos de ubicación precisos de forma que no se puedan identificar y podemos compartir estos datos con socios y operadores para mejorar las características y los servicios.
+6.	USO COMPARTIDO DE SU INFORMACIÓN PERSONAL
+INFORMACIÓN QUE USTED COMPARTE
+Los Servicios pueden permitirle conectarse y compartir sus acciones, comentarios, contenido e información públicamente con otras personas. También puede conectarse y compartir información en sitios web y servicios de terceros. Tenga presente sus propias necesidades de privacidad cuando elija con quién conectarse y qué compartir y hacer público. No podemos controlar la privacidad o seguridad de la información que elija hacer pública o compartir con otros.
+INFORMACIÓN QUE COMPARTIMOS
+Podemos compartir su información personal de la siguiente forma:
+•	Podemos compartir su información personal con su consentimiento. Por ejemplo, puede permitirnos compartir información personal con nuestros socios en un sitio web de marca compartida o puede usar los Servicios para conectarse con los servicios de nuestros socios o solicitar recibir información de ellos. El uso de nuestros socios de su información personal estará sujeto a sus políticas de privacidad.
+•	Podemos compartir su información personal para un acuerdo comercial (o negociación de un acuerdo comercial) relativo a la venta o transferencia de la totalidad o una parte de nuestros negocios o activos. Los acuerdos comerciales pueden incluir cualquier transacción o procedimiento de fusión, financiamiento, adquisición o quiebra.
+•	Podemos compartir información personal para efectos legales, de protección y seguridad, entre otros:
+o	para cumplir con los requisitos legales o reglamentarios y para responder a solicitudes legales y de procesos legales;
+o	para proteger los derechos y la propiedad de HTC, nuestros representantes, clientes y otras personas, incluido exigir el cumplimiento de nuestros acuerdos, políticas y términos de uso y protección de nuestra red y activos físicos; y/o
+o	en una emergencia, incluida proteger la seguridad de nuestros empleados y representantes, nuestros clientes o cualquier persona.
+•	Podemos compartir información con quienes usan la información para proporcionarnos servicios o realizar trabajos para nosotros.
+•	Podemos compartir su información con operadores. El uso que hagan de su información está sujeto a sus políticas de privacidad.
+•	Podemos compartir con otros datos agregados y que no se pueden identificar.
+7.	DÓNDE ALMACENAMOS SU INFORMACIÓN; TRANSFERENCIA DE SU INFORMACIÓN
+La información que recopilamos puede almacenarse en su teléfono o en nuestros servidores y transferirse, almacenarse y procesarse en Estados Unidos, Taiwán, Singapur, países miembro de la UE y cualquier otro país donde HTC o sus proveedores de servicios mantengan instalaciones incluidas las jurisdicciones que pueden no tener leyes sobre la privacidad de los datos y que ofrecen protecciones equivalentes a las de su país de origen. Protegeremos la información personal que transferimos de acuerdo con esta Política de privacidad. Al usar los Servicios, usted da su consentimiento a esta transferencia.
+8.	OPCIONES DE INFORMACIÓN Y CAMBIOS
+Nuestros correos electrónicos de marketing le indican cómo “excluirse” de recibir correos electrónicos de marketing. Si se excluye, igualmente podemos enviarle correos electrónicos que no sean de marketing. Los correos electrónicos que no son de marketing incluyen aquellos acerca de sus cuentas y nuestras transacciones comerciales con usted.
+Puede enviarnos solicitudes acerca de su información personal a través de nuestra información de contacto más abajo. Puede solicitar el cambio de las elecciones de contacto, las elecciones de marketing y actualizar el acceso o hacer otros cambios relativos a su información personal.
+Puede usar la configuración de su dispositivo y su navegador para cambiar la forma en que nosotros, y terceros, pueden recopilar determinada información sobre usted (por ejemplo, al bloquear determinadas cookies). Lea su manual del producto para obtener más información sobre la configuración del dispositivo y consulte la sección de cookies y la sección Información recopilada a través de publicidad, más arriba.
+9.	SEGURIDAD DE SU INFORMACIÓN PERSONAL
+Nos esforzamos por proteger la información de identificación personal que recibimos de usted a través de nuestros Servicios. Aunque adoptamos medidas para usar y mejorar resguardos, ninguna empresa puede prevenir todos los riesgos o perjuicios de seguridad. Si sabe de una vulnerabilidad que afecte a los Servicios de HTC, envíe un correo electrónico a security@htc.com o visite este sitio web para informarla.
+La cuenta de HTC le permite usar un único nombre de usuario y contraseña para iniciar sesión en HTCSense.com y otras aplicaciones y Servicios de HTC. Algunas aplicaciones y Servicios de HTC requieren un nombre de usuario y contraseña diferentes. Proteja sus nombres de usuario y contraseñas para ayudar a prevenir que alguien acceda a sus cuentas y Servicios.
+No somos responsables de la seguridad de las aplicaciones y los servicios de terceros ni de los datos que tales aplicaciones y servicios de terceros puedan recopilar sobre usted. Pregunte a esos terceros cómo mantienen la seguridad de sus datos.
+10.	INFORMACIÓN DE CONTACTO
+Agradecemos sus comentarios o preguntas acerca de esta Política. Envíenos un correo electrónico a global-privacy@htc.com. También puede comunicarse con nosotros a nuestra dirección:
+América:
+HTC America, Inc.
+13920 SE Eastgate Way, Suite 400
+Bellevue, WA 98005 USA
+Attention: Privacy Administrator
+Correo electrónico: privacy_na@htc.com
+
+APAC:
+HTC Corporation
+No 88, Section 3
+Zhongxing Road
+Xindian District
+New Taipei City
+Taiwan, 231
+Dirección de correo electrónico: Webmaster_NA@htc.com Número de registro de la empresa: 16003518
+
+UE:
+HTC Europe Co. Ltd
+Communications House Presley Way
+Crownhill Milton Keynes MK8 0ES UK
+Dirección de correo electrónico: Webmaster_NA@htc.com Número de registro de la empresa: 04826012
+Attention: Privacy Administrator
+
+(HTC Europe Co. Ltd es el representante designado de HTC Corporation para la UE).
+
+
+11.	CAMBIOS A ESTA POLÍTICA DE PRIVACIDAD
+Podemos cambiar esta Política de privacidad. Si realizamos cualquier cambio, cambiaremos la fecha de “Última actualización” más abajo.
+ESTA POLÍTICA DE PRIVACIDAD SE ACTUALIZÓ POR ÚLTIMA VEZ EL 10 DE ABRIL DE 2013.
+
+
+
+
+3. Acuerdo de licencia de usuario final de HTC
+
+Acuerdo de licencia de usuario final de HTC
+
+IMPORTANTE -- LEER DETENIDAMENTE ANTES DE UTILIZAR ESTE SOFTWARE: Este Acuerdo de licencia ("Acuerdo de licencia") para un producto concreto de HTC es un acuerdo legal entre usted (ya sea una persona física o una entidad) y HTC Corporation y los proveedores de terceros o cedentes (en conjunto "HTC") respecto a la totalidad del software (el cual incluye los componentes facilitados por los proveedores y los cedentes de HTC) proporcionado con el producto de HTC adquirido por usted ("Software").   
+
+AL ACEPTAR LA ACTIVACIÓN, EL USO, LA DESCARGA O LA INSTALACIÓN DE ESTE TELÉFONO Y/O DEL SOFTWARE, ACEPTA REGIRSE POR LAS CONDICIONES DE ESTE ACUERDO DE LICENCIA.
+
+Si, antes de aceptar la activación, el uso, la descarga o la instalación de este teléfono y/o del Software, determina que no quiere regirse por las condiciones de este Acuerdo de licencia, no tendrá derecho a utilizar el Software y en consiguiente: (i) deberá devolver de inmediato el Software a HTC o eliminarlo; o (ii) si ha adquirido el Producto de HTC en el cual se ha preinstalado el Software por o en representación de HTC, deberá devolver el Producto de HTC inmediatamente así como el Software que lo acompaña y los elementos (incluyendo la documentación y el embalaje) a HTC o al distribuidor autorizado de HTC donde adquirió dicho Producto.
+
+Software de fuente abierta 
+Una parte del Software incluye archivos de software sujetos a ciertos acuerdos de licencia de fuente abierta, por lo que dichos archivos de software de fuente abierta están sujetos a los avisos y a los términos y condiciones adicionales a los que se hace referencia en esta sección.  Dichos archivos de software de fuente abierta se facilitan "EN SU ESTADO ACTUAL", en la medida máxima permitida por la ley vigente.
+
+En lo referente a el/los archivo/s de fuente abierta incluidos en este documento, consulte la sección "Licencia de fuente abierta" en Configuración/Acerca del teléfono/Información legal del dispositivo para los derechos de copyright y los términos de la licencia relevantes.  Puede obtener una copia de la Licencia Apache, versión 2.0 en la siguiente dirección: http://www.apache.org/licenses/LICENSE-2.0.  También puede obtener una copia de la Licencia pública general de GNU, versión 2 en Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA (EE.UU.).  
+
+Durante un período de tres años desde la fecha de adquisición del Software, podrá obtener una copia del código fuente correspondiente a los binarios del archivo propiedad de la GPL si envía una solicitud al servicio de atención al cliente de HTC en: www.htc.com. HTC, por su parte, le enviará un enlace a dicho código fuente.
+
+
+CUALQUIER SOFTWARE DE TERCEROS QUE PUEDA FACILITARSE CON EL SOFTWARE SE INCLUYE PARA SU USO OPCIONAL. SI OPTA POR UTILIZAR DICHO SOFTWARE DE TERCEROS, EL USO QUE REALICE DEL MISMO ESTARÁ REGIDO POR EL ACUERDO DE LICENCIA DE TERCEROS. HTC NO SE RESPONSABILIZARÁ DEL SOFTWARE DE TERCEROS NI TAMPOCO ASUMIRÁ RESPONSABILIDAD ALGUNA RESPECTO AL USO QUE USTED HAGA DE DICHO SOFTWARE DE TERCEROS.
+
+1. CONCESIÓN DE LICENCIA.  HTC por la presente le garantiza una licencia no exclusiva, no transferible y restringida para utilizar el Software y toda documentación relacionada ("Documentación") sujeta a las siguientes condiciones: 
+
+Deberá utilizar el Software sólo con el dispositivo portátil en el que se instaló inicialmente el Software.  
+
+2. RESTRICCIONES DE LA LICENCIA.
+
+a) Con excepción de las restricciones que HTC haya autorizado por otro medio de manera expresa y de modo inequívoco o a excepción de que dichas restricciones se hayan prohibido de manera expresa por la legislación vigente, usted NO deberá:(i) permitir que otras personas utilicen el Software; (ii) modificar, traducir, rediseñar, descompilar, desmontar (a no ser que esta restricción se establezca de manera expresa en la legislación vigente) o crear material derivado de dicho Software o de su Documentación; (iii) copiar el Software o la Documentación (excepto para realizar copias de seguridad durante una reparación/sustitución, siempre que dicha copia de seguridad no se instale o utilice en otro ordenador, y deberá eliminarse/destruirse inmediatamente después de la reparación/ sustitución. Cualquier copia de otro tipo que usted realice del Software se considerará un incumplimiento del presente Acuerdo); (iv) alquilar, arrendar, transferir, emitir sublicencias o transferir de cualquier otro modo los derechos del Software o de la Documentación; (v) eliminar cualquier aviso o etiqueta que aparezca en el Software o en la Documentación referente a la marca registrada; o (vi) añadir, integrar o combinar cualquier otro software con el Software.    Un uso indebido pondrá término de manera inmediata a su licencia de Software. 
+
+b) Usted se compromete a utilizar el Software y la Documentación cumpliendo la legislación vigente en la jurisdicción en la cual utilice dicho Software y Documentación, incluyendo, sin sentido limitativo, las restricciones correspondientes al copyright pertinente y a otros derechos de propiedad intelectual y/o a la normativa sobre exportaciones. 
+    
+c) El Software debe utilizarse sólo para uso privado y no para uso comercial.  No deberá utilizarse para proporcionar en modo alguno, o en parte, un servicio o aplicación comercial.  El Software no debe utilizarse en un intento de o junto con otro dispositivo, programa o servicio diseñado para eludir las medidas tecnológicas empleadas en el control del acceso, o de los derechos de un archivo de contenido o de cualquier otro material protegido por la legislación referente al copyright en cualquier jurisdicción.
+
+3. TITULO.  El título, la propiedad, los derechos así como los derechos de propiedad intelectual del Software y de la Documentación permanecerán en poder de HTC (incluyendo los de sus proveedores/cedentes).  El Software está protegido mediante la legislación de copyright de los Estados Unidos así como por los tratados de copyright internacionales.  El título, los derechos de posesión y los derechos de propiedad intelectual referentes al contenido al que se accede mediante el Software incluyendo el contenido proporcionado por los archivos multimedia explicativos del Software, deben permanecer al amparo del propietario del Contenido pertinente y están protegidos por el copyright vigente o por cualquier otra legislación aplicable.  La presente Licencia NO le otorga derecho alguno sobre el Contenido mencionado.
+
+4. RENUNCIA Y LIMITE DE RESPONSABILIDAD.  EL SOFTWARE, LA DOCUMENTACIÓN, ASÍ COMO EL CONTENIDO CARECEN DE GARANTÍA.  HTC RENIEGA CUALQUIER GARANTÍA, INCLUYENDO A MODO ENUNCIATIVO TODA GARANTÍA IMPLÍCITA DE COMERCIALIZACIÓN, DE APTITUD PARA UN PROPÓSITO PARTICULAR Y DE INCUMPLIMIENTO.  USTED ASUME TODO RIESGO QUE SURJA DE LA UTILIZACIÓN O RENDIMIENTO DEL SOFTWARE, DE LA DOCUMENTACIÓN Y DEL CONTENIDO.  BAJO NINGUNA CIRCUNSTANCIA SE DECLARARÁ RESPONSABLE A HTC, A SUS EMPLEADOS, CEDENTES O FILIALES DE CUALQUIER DAÑO Y PERJUICIO IMPREVISTO, CONSIGUIENTE, INDIRECTO, ESPECIAL O EJEMPLAR O DE CUALQUIER OTRO TIPO (INCLUYENDO A MODO ENUNCIATIVO, DAÑOS Y PERJUICIOS POR PÉRDIDA DE BENEFICIOS, INTERRUPCIÓN DEL NEGOCIO, PERDIDA DE INFORMACIÓN O CUALQUIER OTRA PÉRDIDA ECONÓMICA) QUE SURJA DEL PRESENTE ACUERDO O DE LA UTILIZACIÓN O DE LA INCAPACIDAD DE UTILIZACIÓN DEL SOFTWARE, O DEL CONTENIDO, INCLUSO EN EL CASO DE QUE HTC HAYA RECIBIDO AVISO DE LA POSIBLE EXISTENCIA DE DICHOS DAÑOS. LA RESPONSABILIDAD TOTAL DE HTC ANTE CUALQUIER DAÑO O PERJUICIO SEGÚN EL PRESENTE ACUERDO NO EXCEDERÁ EN NINGÚN CASO EL PRECIO DE COMPRA ABONADO POR USTED EN EL MOMENTO DE ADQUISICIÓN DEL PRODUCTO DE HTC.
+  
+5. INDEMNIZACIÓN.  Usted se compromete a eximir de toda responsabilidad, a indemnizar y defender a HTC, a sus agentes, cargos directivos y empleados ante cualquier pérdida, daño, multa o gasto (incluyendo gastos y honorarios fiscales) producido o relativo a cualquier reclamación en la que (i) haya visto, descargado, codificado, comprimido, copiado o transmitido cualquier material (aparte del proporcionado por HTC) relativo al Software incumpliendo de este modo los derechos de la otra parte o incumpliendo la legislación, o que (ii) haya incumplido las condiciones del presente Acuerdo de licencia.  En el caso de que haya importado el Software de los Estados Unidos o de la Unión Europea, deberá indemnizar y librar de toda responsabilidad a HTC ante cualquier impuesto relativo a la exportación o importación del producto o cualquier otro reembolso que surja de dicha importación.  Usted se compromete a acatar la legislación del Estado de Washington, en los Estados Unidos (exceptuando conflictos de leyes y principios generales de derecho) en lo que concierne a todos y cada uno de los asuntos expuestos en el presente Acuerdo.
+
+6. FINALIZACIÓN.  El presente Acuerdo de licencia finalizará de manera automática en caso de incumplimiento de cualquiera de las condiciones expuestas anteriormente en el mismo.  No es necesario solicitar ningún aviso de HTC para llevar a cabo dicha finalización.

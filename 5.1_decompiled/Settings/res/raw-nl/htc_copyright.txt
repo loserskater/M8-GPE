@@ -1,0 +1,150 @@
+﻿HTC juridisch
+1. Auteursrecht
+2. HTC privacybeleid
+3. HTC Gebruiksrechtovereenkomst 
+
+
+1. Auteursrecht
+
+﻿Bepaalde software op dit toestel is gedeeltelijk of in zijn geheel ontwikkeld door HTC Corporation.
+
+Auteursrecht © 2006-2013 HTC Corporation
+
+Alle rechten voorbehouden.
+
+De werken (“Werken”) die hier worden genoemd, verwijzen naar de software die ontwikkeld is door of in bezit is van HTC Corporation (“HTC”) en niet is uitgegeven onder de voorwaarden van een open source softwarelicentie. De informatie in de Werken is het exclusieve eigendom van HTC. HTC biedt de gebruiker van dit toestel het recht de Werken te gebruiken voor zover dit binnen het bereik van het legitieme gebruik van toestel valt. Onder deze licentie wordt geen aanvullend recht verleend, inclusief maar niet beperkt tot distributie, reproductie, modificatie en overdracht.  Elk ander gebruik van de Werken moet schriftelijk door HTC worden goedgekeurd.
+Voor alle relevante software (dit geldt tevens voor onderdelen die door leveranciers en licentieverleners aan HTC zijn geleverd) die bij dit toestel, dat door u is aangeschaft, is geleverd, geldt dat uw gebruik van de betreffende relevante software gebonden is aan de auteursrechtelijke voorwaarden en condities van de betreffende leveranciers/licentieverleners.
+
+
+
+2. HTC privacybeleid
+
+Dit privacybeleid (“Beleid”) beschrijft hoe HTC Corporation, HTC America, Inc., en hun verwante bedrijven (“HTC”, “wij/we/ons/onze”) persoonlijke gegevens van u als gebruiker van HTC-websites, -apparaten, -applicaties en -services (samen de “Services”) verzamelen, gebruiken en delen.
+We kunnen zonder afzonderlijke kennisgeving toevoegingen of wijzigingen in dit Beleid aanbrengen. Mogelijk publiceren we afzonderlijke privacyverklaringen voor bepaalde Services. In dat geval is dit Beleid niet van toepassing. Er geldt bijvoorbeeld een afzonderlijk beleid voor informatie die van uw apparaat wordt verzameld door middel van Gebruiksrapportage HTC op de hoogte stellen en Foutrapportage HTC op de hoogte stellen.
+OPMERKING: uw mobiele provider, de leverancier van uw mobiele besturingssysteem en/of applicaties, werkbalken, services en websites van derden verzamelen, gebruiken en delen mogelijk eveneens informatie over u, uw apparaat en uw gebruik. Het privacybeleid van HTC is niet van toepassing op derden, hun producten, hun acties of hun services. HTC heeft geen zeggenschap over de wijze waarop derden uw gegevens verzamelen, gebruiken of beveiligen. Raadpleeg het privacybeleid van de betreffende derde partijen voor meer informatie over de wijze waarop zij omgaan met privacy. Download uitsluitend applicaties van betrouwbare derde partijen.
+
+1.	Informatie die u aan ons verstrekt
+Tijdens het gebruik van onze Services kan het voorkomen dat u informatie aan ons verstrekt, zowel online als offline. Voorbeelden hiervan zijn: uw naam, e-mailadres, postadres, telefoonnummers, faxnummer, geboortedatum, apparaat-id´s, locatiegegevens, informatie over uw mobiele provider, foto´s, video´s en demografische gegevens (geslacht, naam van uw bedrijf of organisatie, beroep, taalvoorkeur, woonplaats, land, postcode, netnummer, tijdzone, enzovoort). Als u een aankoop hebt gedaan door middel van de Services, bewaren we mogelijk ook uw creditcardnummers en andere betaalgegevens. Mogelijk koppelen we deze betaalgegevens ook aan informatie uit andere bronnen, zoals de sociale accounts die u koppelt aan de Services, of met informatie van andere bedrijven.
+
+2.	Informatie die automatisch wordt verzameld.
+Tijdens uw gebruik van de Services wordt bepaalde informatie automatisch door ons verzameld. Het kan zijn dat we informatie verzamelen over uw gebruik van en activiteiten binnen de Services. Tijdens uw bezoek aan onze websites wordt mogelijk onder andere de volgende informatie automatisch vastgelegd: uw besturingssysteem, IP-adres, toegangstijden, browsertype en -taal, en de website die u bezocht vóór het bezoek aan onze website. Wanneer u onze apparaten gebruikt, onze applicaties downloadt en gebruikt, of gebruik maakt van onze Services op uw apparaat, leggen we mogelijk ook informatie vast met betrekking tot uw apparaat. Het kan bijvoorbeeld zijn dat de volgende gegevens worden vastgelegd: uw locatie, telefoonnummer, apparaattype, serienummer, apparaat-id´s (bijvoorbeeld, IMEI, MEID, serienummer, CID, MID en eMCC ID-nummer of simkaart-ID), de typen en versies van de mobiele besturingssystemen, applicaties en software die u gebruikt, inhoud die u bekijkt of gebruikt en logboeken van gegevensuitwisseling met tijdsaanduidingen.
+
+Daarnaast kunnen we informatie vastleggen met behulp van web beacons, cookies, lokaal gedeelde objecten, en vergelijkbare methoden (hieronder beschreven). Als u het gebruik van cookies door ons niet wilt toestaan, moet u de Services pas gebruiken nadat u het gebruik van cookies hebt uitgeschakeld, zoals hieronder beschreven. De informatie die we verzamelen kan worden gekoppeld aan uw persoonlijke gegevens.
+Web beacons. Web beacons zijn elektronische afbeeldingen die we mogelijk op onze websites of in onze e-mailberichten gebruiken om cookies te bezorgen, het aantal bezoeken te tellen en inzicht te verkrijgen in het gebruik en de effectiviteit van campagnes, zoals de vraag of u een e-mail die we aan u toesturen, opent en of u er iets mee doet.
+Cookies. Cookies zijn kleine gegevensbestanden die door een website worden opgeslagen op uw vaste schijf. Cookies helpen ons onder andere onze websites en uw beleving te verbeteren. We gebruiken cookies om te zien welke onderdelen van onze website en welke functies populair zijn, en om het aantal bezoeken aan onze websites te tellen. We gebruiken de informatie die we verkrijgen met behulp van cookies ook voor aangepaste inhoud. U kunt de cookies van onze websites gewoonlijk verwijderen en weigeren door middel van uw browserinstellingen. Veel browsers zijn ingesteld om cookies te accepteren tenzij u de instellingen wijzigt. Het verwijderen of weigeren van cookies kan gevolgen hebben voor hoe onze websites voor u werken, en het is mogelijk dat u niet volledig gebruik kunt maken van de Services. Voor meer informatie over het beheren van privacy-instellingen en instellingen voor het opslaan van cookies kunt u klikken op http://www.allaboutcookies.org (of in de EU http://www.youronlinechoices.com/ - Klik hier voor meer informatie over welke cookie-informatie wordt verzameld op htc.com en uw keuzes).
+Lokaal gedeelde objecten (“flash cookies”) We gebruiken lokaal gedeelde objecten, ook wel aangeduid als “flash cookies,” om uw voorkeuren (bijvoorbeeld het volumeniveau) op te slaan of inhoud weer te geven op basis van wat u op onze websites bekijken om uw bezoek een persoonlijk tintje te geven. Daarnaast is het mogelijk dat externe partners flash cookies gebruiken om informatie te verzamelen en op te slaan om bepaalde functionaliteit aan te bieden op onze websites en advertenties weer te geven op basis van uw wat u doet op het web. Flash cookies verschillen in diverse opzichten van andere cookies: het aantal dat ervan wordt gebruikt, het type ervan, en de wijze waarop de gegevens worden opgeslagen. De hulpmiddelen voor cookiebeheer van uw browser verwijderen flash cookies doorgaans niet. Voor meer informatie over het beheren van privacy-instellingen en instellingen voor het opslaan van flash cookies kunt u klikken op: http://www.macromedia.com/support/documentation/en/flashplayer/help/settings_manager.html#117118 (of in de EU http://www.youronlinechoices.com/).
+Gebruikslogboeken en foutrapportage HTC op de hoogte stellen Naast de informatie die we automatisch verzamelen zoals hierboven beschreven, is het mogelijk dat we op bepaalde apparaten met uw instemming meer gedetailleerde gegevens verzamelen over uw gebruik van onze apparaten als u instemt met deelname aan rapportage voor HTC op de hoogte stellen of instemt met het delen van foutrapportagegegevens. Raadpleeg het privacybeleid voor Gebruiksrapportage HTC op de hoogte stellen en het privacybeleid voor Foutrapportage HTC op de hoogte stellen op uw apparaat, te vinden onder “Instellingen”.
+3.	Informatie verzameld door middel van advertenties
+Advertenties van derden in de Services.
+Het kan voorkomen dat we gebruik maken van de diensten van derden voor het weergeven van advertenties in onze Services. Sommige derde partijen verzamelen automatisch informatie over uw gebruik van de Services, bezoeken aan onze en andere websites, uw IP-adres, uw internetprovider en de browser waarmee u onze website bezoekt (maar niet uw naam, adres, e-mailadres of telefoonnummer). Derde partijen kunnen informatie verzamelen met behulp van cookies, onzichtbare afbeeldingen en andere technologieën. Deze derde partijen kunnen deze informatie gebruiken voor het weergeven van advertenties die zijn gericht op uw interesses, en om inzicht te krijgen in het gebruik van en bezoek aan de Services en de andere websites die door deze derde partijen worden gevolgd. Dit Beleid is niet van toepassing op, en wij zijn niet verantwoordelijk voor, cookies en onzichtbare afbeeldingen in advertenties van derden. Wij raden u aan het privacybeleid van adverteerders en/of advertentieservices te raadplegen voor meer informatie over het gebruik van cookies en andere technologie. Voor meer informatie over deze werkwijze van en uw opties voor veel van onze advertentienetwerken, kunt u klikken op: http://www.networkadvertising.org/choices/.
+Advertenties van HTC op websites van derden.
+We kunnen informatie die we hebben verzameld door middel van cookies en web beacons van derden in onze Services en in onze emails gebruiken om u HTC-advertenties te tonen op websites van derden. We kunnen cookiegegevens ook gebruiken om te weten te komen wanneer u terugkeert op onze website nadat u deze websites van derden hebt bezocht. We gebruiken deze en andere informatie over u om meer inzicht te verkrijgen in uw interesses en om u relevante advertenties te tonen over producten en diensten die voor u interessant zouden kunnen zijn .
+4.	Gebruik van uw persoonlijke gegevens
+HTC kan uw persoonlijke gegevens gebruiken om:
+onze websites, producten, Services en marketing te exploiteren en te verbeteren;
+u te voorzien van een persoonlijke en aan uw voorkeuren aangepaste beleving, inhoud, marketing en aanbevelingen binnen al onze Services;
+te reageren op uw opmerkingen en vragen en klantenservice te bieden;
+de door u gevraagde producten en Services te leveren;
+u informatie toe te zenden met betrekking tot uw verzoeken en aankopen, met inbegrip van bevestigingen, facturen, technische kennisgevingen, updates, veiligheidswaarschuwingen en ondersteunings- en administratieve berichten;
+met u te communiceren over prijsvragen, promoties, bonussen, aankomende evenementen en nieuws over producten en diensten van HTC en bepaalde partners (dit doen we aan de hand van uw keuzes hieronder) en het verwerken van prijsvraaginzendingen en toezenden van prijzen;
+uw persoonlijke gegevens te koppelen aan of te combineren met andere informatie die we verkrijgen omtrent uw gebruik van andere Services van HTC en derde partijen om inzicht te verkrijgen in u en uw behoeften, en u te voorzien van aanbevelingen, een betere dienstverlening en op uw voorkeuren toegesneden marketing; en
+bescherming te bieden tegen, onderzoek te doen naar en preventieve maatregelen te nemen tegen frauduleuze, nietgeautoriseerde of onwettige activiteiten.
+5.	Meer informatie over locatiegegevens
+Tijdens uw gebruik van bepaalde Services kunnen we nauwkeurige locatiegegevens verzamelen, verwerken en opslaan. Deze locatiegegevens omvat mogelijk de geografische locatie van uw apparaat in real-time. Daarnaast omvatten ze mogelijk namen van plaatsen waar u bent geweest, plaatsen waar u hebt ingecheckt, plaatsen die u hebt gemarkeerd op een plattegrond, de geografische locatie waar u foto´s hebt genomen, routes die u hebt afgelegd, en de datums en tijdstippen waarop u zich op bepaalde locaties bevond. HTC kan deze locatiegegevens delen met applicatieproviders die aantonen over de juiste bevoegdheden te beschikken.
+HTC kan uw locatiegegevens associëren met uw apparaat-ID en uw accountgegevens.
+Onze Services kunnen ook nauwkeurige locatiegegevens verzamelen in een vorm die niet aan uw identiteit is gekoppeld, en deze gegevens kunnen we delen met partners en mobiele telefonieproviders om de dienstverlening te verbeteren en uit te breiden.
+6.	Delen van persoonlijke gegevens
+Gegevens die u deelt
+De Services kunnen u in staat stellen uw doen en laten, opmerkingen, inhoud en informatie openlijk of met andere mensen te delen. Ook kunt u een verbinding maken met en uw gegevens delen op websites en diensten van derden. Houd rekening met uw eigen behoeften op privacygebied bij het nemen van een beslissing omtrent met wie u contact hebt en welke gegevens u wilt delen of openbaar wilt maken. Wij kunnen geen invloed uitoefenen op de privacy of beveiliging van informatie die u besluit openbaar te maken of te delen met anderen.
+Gegevens die wij delen
+Wij kunnen uw persoonlijke gegevens als volgt delen:
+Wij kunnen uw persoonlijke gegevens delen met uw instemming. U kunt ons bijvoorbeeld toestaan persoonlijke gegevens te delen met onze partners op een gezamenlijk geëxploiteerde website, of u kunt de Services gebruiken om een verbinding te maken met diensten van onze partners of om informatie aan te vragen of te ontvangen. Op het gebruik van uw persoonlijke gegevens door onze partners is het privacybeleid van deze partners van toepassing.
+Wij kunnen uw persoonlijke gegevens delen voor de totstandkoming van een zakelijke transactie (of in het kader van onderhandelingen omtrent een zakelijke transactie) waarbij (een deel van) ons bedrijf of onze bedrijfsmiddelen wordt verkocht of overgedragen. Bij deze zakelijke transacties kan het onder andere gaan om een fusie, financiële injectie, overname, of faillissementstransactie of -regeling.
+We kunnen persoonlijke gegevens delen voor gerechtelijke, beschermings- en veiligheidsdoeleinden, zoals:
+voor de naleving van wettelijke of regulatieve vereisten en om te voldoen aan wettelijke verzoeken en gerechtelijke processen;
+ter bescherming van de rechten en eigendommen van HTC, onze agenten, klanten en anderen, met inbegrip van het afdwingen van onze overeenkomsten, beleidsregels en gebruiksvoorwaarden en het beschermen van onze netwerken en materiële bedrijfsmiddelen; en/of
+in een noodgeval, zoals ter bescherming van de veiligheid van onze werknemers en agenten, onze klanten of andere personen.
+We kunnen informatie delen met personen die deze informatie gebruiken om ons diensten te verlenen of werkzaamheden voor ons uit te voeren.
+Wij kunnen uw persoonlijke gegevens delen met mobiele telefonieproviders. Op het gebruik van uw gegevens door hen is hun privacybeleid van toepassing.
+We kunnen verzamelde gegevens en informatie die is ontdaan van identiteitsgegevens delen met anderen.
+7.	Waar we uw gegevens opslaan; Overdracht van uw gegevens
+Informatie die we verzamelen kan worden opgeslagen op uw telefoon of op onze servers en worden overgebracht naar, opgeslagen in en verwerkt in de Verenigde Staten, Taiwan, Singapore, EU-lidstaten en andere landen waar HTC of haar serviceproviders vestigingen onderhouden, met inbegrip van rechtsgebieden die niet beschikken over privacywetgeving die gelijkwaardige bescherming biedt als uw eigen land. We zullen de persoonlijke gegevens die we overdragen beschermen in overeenstemming met dit Privacybeleid. Door gebruik te maken van de Services stemt u in met deze overdracht.
+8.	Informatiekeuzes en -wijzigingen
+In onze marketing-e-mails vindt u informatie over hoe u de toezending van marketing-e-mails kunt stopzetten. Als u de toezending van marketing-e-mails stopzet, kunnen we u nog wel andere e-mails toezenden. Hiertoe behoren e-mails met betrekking tot uw accounts en onze zakelijke transacties met u.
+U kunt vragen over persoonlijke gegevens aan ons richten via de onderstaande contactgegevens. U kunt ons vragen om wijziging van uw geselecteerde contactinstellingen, uw geselecteerde marketingkeuzes en het bijwerken, raadplegen of wijzigen van uw persoonlijke gegevens.
+U kunt instellingen op uw apparaat en in uw webbrowser gebruiken om te bepalen hoe wij, en anderen, informatie over u kunnen verzamelen (bijvoorbeeld door het blokkeren van bepaalde cookies). Raadpleeg de handleiding van uw apparaat voor meer informatie over de apparaatinstellingen en zie het gedeelte over cookies en de paragraaf Informatie verzameld door middel van advertenties hierboven.
+9.	Beveiliging van uw persoonlijke gegevens
+We streven ernaar de informatie op basis waarvan uw identiteit kan worden vastgesteld en die we door middel van onze Services verkrijgen, te beschermen. Hoewel we ons best doen om beschermende maatregelen te gebruiken en deze te verbeteren, kan geen bedrijf ooit elk beveiligingsrisico en elke vorm van beschadiging uitsluiten. Als u een kwetsbaar element ontdekt dat gevolgen kan hebben voor de Services van HTC, verzoeken we u een e-mail te sturen naar security@htc.com of dit op deze website te melden.
+Met een HTC-account kunt u zich met één gebruikersnaam en wachtwoord aanmelden bij HTCSense.com en andere applicaties en Services van HTC. Voor sommige applicaties en Services van HTC hebt u een andere gebruikersnaam en een ander wachtwoord nodig. Bescherm uw gebruikersnamen en wachtwoorden om te voorkomen dat anderen toegang kunnen verkrijgen tot uw accounts en Services.
+Wij zijn niet verantwoordelijk voor de beveiliging van applicaties en diensten van derde partijen of voor de gegevens die de applicaties en diensten van derde partijen met betrekking tot u verzamelen. Informeer bij de betreffende derde partijen wat zij doen om uw gegevens te beschermen.
+10.	Contactgegevens
+Als u opmerkingen of vragen hebt met betrekking tot dit Beleid, ontvangen we die graag. Stuur ons een e-mail op het volgende adres: global-privacy@htc.com. U kunt ook contact met ons opnemen op het volgende adres:
+Noord-, Midden- en Zuid-Amerika:
+HTC America, Inc.
+13920 SE Eastgate Way, Suite 400
+Bellevue, WA 98005 USA
+Attention: Privacy Administrator
+E-mail: privacy_na@htc.com
+
+Azië/Oceanië:
+HTC Corporation
+No 88, Section 3
+Zhongxing Road
+Xindian District
+New Taipei City
+Taiwan, 231
+E-mailadres: Webmaster_NA@htc.com Registratienummer bedrijf: 16003518
+
+EU:
+HTC Europe Co. Ltd
+Communications House Presley Way
+Crownhill Milton Keynes MK8 0ES UK
+E-mailadres: Webmaster_NA@htc.com Registratienummer bedrijf: 04826012
+Attention:  Privacy Administrator
+
+(HTC Europe Co. Ltd is de aangewezen vertegenwoordiger van HTC Corporation voor de EU.)
+
+11.	Wijziging van dit Privacybeleid.
+We kunnen wijzigingen aanbrengen in dit Privacybeleid. Als we wijzigingen aanbrengen, veranderen we de datum achter “voor het laatst bijgewerkt op” hieronder.
+Dit Privacybeleid werd voor het laatst bijgewerkt op 10 APRIL 2013.
+
+
+
+3. HTC Gebruiksrechtovereenkomst
+
+﻿HTC Gebruiksrechtovereenkomst
+
+BELANGRIJK -- AANDACHTIG DOORLEZEN VOORDAT U DEZE SOFTWARE GEBRUIKT: Deze Licentieovereenkomst (“Licentieovereenkomst”) voor een bepaald product van HTC, is een juridische overeenkomst tussen u (individu of een entiteit) en HTC Corporation en haar leveranciers en licentieverleners (gezamenlijk "HTC") voor alle relevante software (inclusief onderdelen die geleverd zijn door leveranciers en licentieverleners aan HTC), bij dit product, dat door u is aangeschaft, is geleverd ("Software”).
+
+HET ACTIVEREN, GEBRUIK, DOWNLOADEN OF INSTALLEREN VAN DEZE TELEFOON EN/OF DE SOFTWARE, GEEFT AAN DAT U AKKOORD GAAT MET DE VOORWAARDEN VAN DEZE LICENTIEOVEREENKOMST.
+
+Als u, alvorens het kenbaar maken van uw aanvaarding door het activeren, gebruik, downloaden of installeren van deze telefoon en/of Software, besluit dat u niet akkoord gaat met de voorwaarden van deze Licentieovereenkomst, heeft u niet het recht de Software te gebruiken en dient u: (i) de Software onmiddellijk retourneren aan HTC of het verwijderen; of (ii)als u het HTC Product heeft aangeschaft waarop de Software als is geïnstalleerd door of namens HTC, dient u het HTC Product en de bijgesloten Software en items (inclusief documentatie en verpakking) onmiddellijk te retourneren aan HTC of de door HTC geautoriseerde verkoper waar u het HTC Product hebt aangeschaft.
+
+Open source software 
+Onderdelen van de Software omvatten softwarebestanden die onderhevig zijn aan bepaalde open source licentieovereenkomsten; deze open source softwarebestanden zijn gebonden aan de verklaringen en extra voorwaarden en condities die in dit onderdeel worden vermeld.  Zulke open source softwarebestanden worden "ALS ZODANIG " geleverd voor zover maximaal toegestaan door de toepasselijke wetgeving.
+
+Voor de hier aanwezige open source bestanden, opent u het onderdeel “Open source licentie” in Instellingen\Info over telefoon\Juridische informatie op het toestel voor de betreffende voorwaarden m.b.t. auteursrecht en licenties.  U kunt een exemplaar van de Apache-licentie, versie 2.0 vinden op http://www.apache.org/licenses/LICENSE-2.0.  U kunt ook een exemplaar van de GNU General Public License, Version 2 krijgen bij de Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.  
+
+Tot drie jaar na aankoop van de Software, kunt u een exemplaar van de broncode van de zgn. binaries verkrijgen voor het bestand onder de GPL-licentie, door hiertoe een verzoek naar de Klantenservice van HTC te sturen op www.htc.com. HTC stuurt u dan een koppeling naar de broncode.
+ 
+ELKE SOFTWARE VAN DERDEN DIE EVENTUEEL BIJ DE SOFTWARE IS GELEVERD MAG U GEBRUIKEN. ALS U BESLUIT DEZE SOFTWARE VAN DERDEN TE GEBRUIKEN, IS HET GEBRUIK ERVAN GEBONDEN AAN DE LICENTIEOVEREENKOMST VAN DEZE ANDERE PARTIJ. HTC IS NIET VERANTWOORDELIJK VOOR SOFTWARE VAN DERDEN EN KAN NIET AANSPRAKELIJK WORDEN GESTELD VOOR UW GEBRUIK VAN SOFTWARE VAN DERDEN.
+
+1. LICENTIEVERLENING.  HTC verleent u hierbij een niet exclusieve, niet overdraagbare en beperkte licentie voor het gebruik van de Software en de gerelateerde documentatie (“Documentation”), onderhevig aan de volgende voorwaarden: 
+
+U mag de Software uitsluitend gebruiken op het handheldtoestel waarop de Software oorspronkelijk is geïnstalleerd. 
+
+2. LICENTIEBEPERKINGEN.
+
+a) Behalve voor zover op andere wijze expliciet is uitgedrukt en ondubbelzinnig is geautoriseerd door HTC of voor zover deze beperkingen uitdrukkelijk wettelijk zijn verboden, mag u NIET: (i) andere individuen toestaan de Software te gebruiken; (ii) de Software of Documentatie aanpassen, reverse engineeren, decompileren, ontmantelen (behalven voor zover dat deze beperking uitdrukkelijk wettelijk is verboden), of daarvan afgeleide werken maken; (iii) de Software of Documentatie kopiëren (behalve voor het maken van een back-up bij reparatie/vervanging, onder voorwaarde dat zo’n back-up niet op een andere computer wordt geïnstalleerd of gebruikt, en direct na reparatie/vervanging zal worden verwijderd/vernietigd. Alle andere kopieën die u van de Software maakt zijn een schending van deze Overeenkomst); (iv) de rechten voor de Software of Documentatie verhuren, leasen, overdragen, de licentie doorgeven of op andere wijze overdragen; (v) de eigendomsmeldingen of labels op de Software of Documentatie verwijderen; of (vi) andere software toevoegen aan, integreren met of combineren met de Software.  Elk verboden gebruik betekent een onmiddellijke nietigverklaring van uw licentie voor de Software. 
+
+b) U gaat ermee akkoord dat u de Software en Documentatie uitsluitend gebruikt op een wijze, die in overeenstemming is met alle van toepassing zijnde wetten in de jurisdicties waarin u de Software en Documentatie gebruikt, waaronder, maar niet beperkt tot, van toepassing zijn beperkingen met betrekking tot relevant auteursrecht en andere intellectuele eigendomsrechten en/of exportreguleringen. 
+    
+c) U mag de Software uitsluitend voor privégebruik en op niet-commerciële wijze gebruiken.  U mag de Software niet gebruiken voor het verlenen van enige commerciële dienst of toepassing, of als onderdeel daarvan.  U mag de Software niet gebruiken in een poging tot, of in samenwerking met, enig toestel, programma of dienst, ontworpen voor het omzeilen van technologische maatregelen, die als oogmerk hebben het beheer van toegang tot, of de rechten van een gegevensbestand of ander werk dat beveiligd is door auteurswetten van enige jurisdictie.
+
+3. EIGENDOM.  Eigendom, bezit, rechten en intellectuele eigendomsrechten in en voor de Software en Documentatie blijven in handen van HTC (inclusief alle relevante leveranciers/licentieverleners).  De Software wordt beschermd door auteurswetten van de Verenigde Staten en internationalen verdragen over auteursrechten.  Eigendom, bezit en intellectuele eigendomsrechten in en voor de gegevens die via de Software worden opgevraagd, inclusief de gegevens in de mediademonstratiebestanden van de Software, blijven bij de eigenaar van de betreffende gegevens en kunnen beschermd worden door de van toepassing zijnde auteurswet of andere wet.  Deze licentie verleent u GEEN rechten m.b.t. deze gegevens.
+
+4. AFWIJZING VAN GARANTIE &amp; BEPERKING VAN AANSPRAKELIJKHEID.  DE SOFTWARE, DOCUMENTATIE EN GEGEVENS WORDEN ALS ZODANIG ZONDER ENIGE GARANTIE GELEVERD.  HTC WIJST ALLE AANSPRAKEN OP GARANTIE AF, WAARONDER, ZONDER BEPERKING, ELKE IMPLICIETE GARANTIE VOOR VERKOOPBAARHEID, GESCHIKTHEID VOOR EEN BEPAALD DOEL EN NIET-INBREK.  HET GEHELE RISICO DAT VOORVLOEIT UIT HET GEBRUIK OF DE PRESTATIES VAN DE SOFTWARE, DOCUMENTATIE EN GEGEVENS BLIJFT BIJ U.  HTC EN HAAR WERKNEMERS OF LICENTIEVERLENERS OF FILIAALHOUDERS KUNNEN ONDER GEEN ENKEL GEVAL AANSPRAKELIJK WORDEN GESTELD VOOR GEVOLGSCHADE, INCIDENTELE, INDIRECTE EN SPECIALE SCHADE, SCHADE ALS GEVOLG VAN STRAF OF WELKE ANDERE SCHADE DAN OOK (WAARONDER, ZONDER BEPERKING, SCHADE DOOR WINSTDERVING, ONDERBREKING VAN ZAKEN, VERLIES VAN ZAKELIJKE INFORMATIE, OF ANDER FINANCIEEL VERLIES) VOORTVLOEIEND UIT DEZE OVEREENKOMST OF HET GEBRUIK VAN OF ONVERMOGEN TOT HET GEBRUIK VAN DE SOFTWARE, DE DOCUMENTATIE OF DE GEGEVENS, ZELFS ALS HTC OP DE HOOGTE IS GESTELD VAN DE MOGELIJKHEID VAN ZULKE SCHADE. HTC’s TOTALE AANSPRAKELIJKHEID VOOR SCHADE VOLGENS DEZE OVEREENKOMST, ZAL NOOIT DE DOOR U BETAALDE AANKOOPPRIJS VOOR HET DOOR U AANGESCHAFTE HTC PRODUCT OVERSCHRIJDEN.
+  
+5. VRIJWARING.  U stemt ermee in dat u HTC, haar agenten, haar werknemers en bedrijfsleiders vrijwaart van, niet verantwoordelijk houdt voor en verdedigt tegen enig verlies, schade, boete en kosten (inclusief kosten en honorarium voor advocaten), voortvloeiend uit of gerelateerd aan claims dat u (i) materiaal (anders dan materiaal dat door HTC is geleverd) hebt bekeken, gedownload, gecodeerd, gecomprimeerd, gekopieerd of overgedragen in verbinding met de Software in schending van de rechten van anderen of schending van wetten, of (ii) deze Licentieovereenkomst hebt geschonden.  Als u de Software importeert uit de Verenigde Staten of Europese Unie, dient u HTC vrij te waren en niet verantwoordelijk te houden voor import- en exportverplichtingen of andere claims die voortvloeien uit het importeren.  U stemt ermee in dat alle kwesties voortvloeiend uit deze Overeenkomst onder de wetten van de staat Washington van de Verenigde Staten vallen (conflicterende wetten uitgezonderd).
+
+6. BEËINDIGING.  Deze Licentieovereenkomst wordt automatisch beëindigd als u een van de genoemde voorwaarden schendt. HTC is niet verplicht u op de hoogte te stellen van zo’n beëindiging.
