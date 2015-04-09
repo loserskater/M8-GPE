@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.android.systemui.statusbar.SignalClusterView android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="fill_parent" android:paddingEnd="@dimen/signal_cluster_battery_padding"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/vpn" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/stat_sys_vpn_ic" android:paddingEnd="6.0dip" />
+    <FrameLayout android:id="@id/wifi_combo" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <ImageView android:id="@id/wifi_signal" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    </FrameLayout>
+    <View android:id="@id/wifi_signal_spacer" android:visibility="gone" android:layout_width="4.0dip" android:layout_height="4.0dip" />
+    <LinearLayout android:id="@id/mobile_signal_group" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    <ImageView android:id="@id/no_sims" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/stat_sys_no_sims" />
+    <View android:id="@id/wifi_airplane_spacer" android:visibility="gone" android:layout_width="4.0dip" android:layout_height="4.0dip" />
+    <ImageView android:id="@id/airplane" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+</com.android.systemui.statusbar.SignalClusterView>

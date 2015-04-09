@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="battery_margin_bottom">0.0dip</dimen>
+    <item type="dimen" name="APKTOOL_DUMMY_0124">false</item>
+    <item type="dimen" name="APKTOOL_DUMMY_0125">false</item>
+    <item type="dimen" name="APKTOOL_DUMMY_0126">false</item>
+    <item type="dimen" name="APKTOOL_DUMMY_0127">false</item>
+</resources>
