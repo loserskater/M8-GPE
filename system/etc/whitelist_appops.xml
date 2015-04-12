@@ -29,33 +29,4 @@
  */
 -->
 <whitelist-pkgs>
-<pkg name="android.process.acore"/>
-<pkg name="com.android.inputmethod.latin"/>
-<pkg name="com.google.process.location"/>
-<pkg name="com.qualcomm.services.location"/>
-<pkg name="com.android.launcher"/>
-<pkg name="com.google.process.gapps"/>
-<pkg name="com.google.android.apps.maps:GoogleLocationService"/>
-<pkg name="com.qualcomm.simcontacts"/>
-<pkg name="com.android.music"/>
-<pkg name="com.google.android.music:main"/>
-<pkg name="com.qualcomm.listen.voicewakeup"/>
-<pkg name="com.android.calendar"/>
-<pkg name="com.google.android.calendar"/>
-<pkg name="com.qualcomm.gesturetouchinjectionservice"/>
-<pkg name="com.android.vending"/>
-<pkg name="com.android.deskclock"/>
-<pkg name="com.android.providers.calendar"/>
-<pkg name="com.android.mms"/>
-<pkg name="android.process.media"/>
-<pkg name="com.quicinc.CrashLogger"/>
-<pkg name="com.android.musicfx"/>
-<pkg name="com.google.android.gallery3d"/>
-<pkg name="com.google.android.apps.uploader"/>
-<pkg name="com.google.android.apps.plus"/>
-<pkg name="com.google.android.youtube"/>
-<pkg name="com.qualcomm.timeservice"/>
-<pkg name="com.google.android.syncadapters.contacts"/>
-<pkg name="com.android.dialer"/>
-<pkg name="com.android.systemui"/>
 </whitelist-pkgs>
