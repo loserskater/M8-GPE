@@ -949,7 +949,7 @@
 
     if-ltz p1, :cond_0
 
-    const/16 v0, 0x30
+    const/16 v0, 0x31
 
     if-ge p1, v0, :cond_0
 
@@ -5029,7 +5029,7 @@
 
     if-nez v1, :cond_0
 
-    const/16 v3, 0x30
+    const/16 v3, 0x31
 
     new-array v1, v3, [Z
 

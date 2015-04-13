@@ -6565,6 +6565,8 @@
 
     const/4 v7, 0x0
 
+    return v7
+
     if-nez p0, :cond_1
 
     if-nez p1, :cond_0
