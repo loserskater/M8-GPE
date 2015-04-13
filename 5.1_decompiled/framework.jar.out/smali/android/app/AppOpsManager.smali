@@ -53,6 +53,8 @@
 
 .field public static final OP_AUDIO_VOICE_VOLUME:I = 0x22
 
+.field public static final OP_BOOT_COMPLETED:I = 0x30
+
 .field public static final OP_CALL_PHONE:I = 0xd
 
 .field public static final OP_CAMERA:I = 0x1a
@@ -133,7 +135,7 @@
 
 .field public static final OP_WRITE_SMS:I = 0xf
 
-.field public static final _NUM_OP:I = 0x30
+.field public static final _NUM_OP:I = 0x31
 
 .field private static sOpAllowSystemRestrictionBypass:[Z
 
@@ -194,7 +196,7 @@
 
     const/4 v6, 0x0
 
-    const/16 v5, 0x30
+    const/16 v5, 0x31
 
     const/4 v4, 0x0
 
@@ -403,6 +405,10 @@
     const-string v3, "android:activate_vpn"
 
     aput-object v3, v1, v2
+
+    const/16 v2, 0x30
+
+    aput-object v4, v1, v2
 
     sput-object v1, Landroid/app/AppOpsManager;->sOpToString:[Ljava/lang/String;
 
@@ -690,6 +696,12 @@
 
     aput-object v3, v1, v2
 
+    const/16 v2, 0x30
+
+    const-string v3, "BOOT_COMPLETED"
+
+    aput-object v3, v1, v2
+
     sput-object v1, Landroid/app/AppOpsManager;->sOpNames:[Ljava/lang/String;
 
     new-array v1, v5, [Ljava/lang/String;
@@ -934,6 +946,12 @@
 
     aput-object v4, v1, v2
 
+    const/16 v2, 0x30
+
+    const-string v3, "android.permission.RECEIVE_BOOT_COMPLETED"
+
+    aput-object v3, v1, v2
+
     sput-object v1, Landroid/app/AppOpsManager;->sOpPerms:[Ljava/lang/String;
 
     new-array v1, v5, [Ljava/lang/String;
@@ -1175,6 +1193,10 @@
     const-string/jumbo v3, "no_config_vpn"
 
     aput-object v3, v1, v2
+
+    const/16 v2, 0x30
+
+    aput-object v4, v1, v2
 
     sput-object v1, Landroid/app/AppOpsManager;->sOpRestrictions:[Ljava/lang/String;
 
@@ -1645,6 +1667,7 @@
         0x2d
         0x2e
         0x2f
+        0x30
     .end array-data
 
     :array_1
@@ -1697,7 +1720,10 @@
         0x1t
         0x0t
         0x0t
+        0x0t
     .end array-data
+
+    nop
 
     :array_2
     .array-data 4
@@ -1749,6 +1775,7 @@
         0x0
         0x1
         0x1
+        0x0
     .end array-data
 
     :array_3
@@ -1769,6 +1796,7 @@
         0x0t
         0x0t
         0x1t
+        0x0t
         0x0t
         0x0t
         0x0t
@@ -2052,61 +2080,6 @@
     aget v0, v0, p0
 
     return v0
-.end method
-
-.method public static strDebugOpToOp(Ljava/lang/String;)I
-    .locals 4
-
-    const/4 v0, 0x0
-
-    :goto_0
-    sget-object v1, Landroid/app/AppOpsManager;->sOpNames:[Ljava/lang/String;
-
-    array-length v1, v1
-
-    if-ge v0, v1, :cond_1
-
-    sget-object v1, Landroid/app/AppOpsManager;->sOpNames:[Ljava/lang/String;
-
-    aget-object v1, v1, v0
-
-    invoke-virtual {v1, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    return v0
-
-    :cond_0
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_0
-
-    :cond_1
-    new-instance v1, Ljava/lang/IllegalArgumentException;
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "Unknown operation string: "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-direct {v1, v2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v1
 .end method
 
 .method public static strOpToOp(Ljava/lang/String;)I
