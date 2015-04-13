@@ -167,6 +167,8 @@
     <protected-broadcast android:name="android.intent.action.CLEAR_DNS_CACHE"/>
     <protected-broadcast android:name="android.intent.action.PROXY_CHANGE"/>
     <protected-broadcast android:name="android.os.UpdateLock.UPDATE_LOCK_CHANGED"/>
+    <protected-broadcast android:name="android.intent.action.NAVBAR_EDIT"/>
+    <protected-broadcast android:name="android.intent.action.NAVBAR_RING_EDIT"/>
     <protected-broadcast android:name="android.intent.action.DREAMING_STARTED"/>
     <protected-broadcast android:name="android.intent.action.DREAMING_STOPPED"/>
     <protected-broadcast android:name="android.intent.action.ANY_DATA_STATE"/>
@@ -570,6 +572,7 @@
     <permission android:description="@string/permdesc_readInstallSessions" android:label="@string/permlab_readInstallSessions" android:name="android.permission.READ_INSTALL_SESSIONS"/>
     <permission android:description="@string/permdesc_removeDrmCertificates" android:label="@string/permlab_removeDrmCertificates" android:name="android.permission.REMOVE_DRM_CERTIFICATES" android:protectionLevel="system|signature"/>
     <permission android:description="@string/permdesc_bindCarrierMessagingService" android:label="@string/permlab_bindCarrierMessagingService" android:name="android.permission.BIND_CARRIER_MESSAGING_SERVICE" android:protectionLevel="system|signature"/>
+    <permission android:description="@string/permdesc_accessTorchService" android:label="@string/permlab_accessTorchService" android:name="android.permission.ACCESS_TORCH_SERVICE" android:protectionLevel="signature"/>
     <uses-permission android:name="android.permission.CONFIRM_FULL_BACKUP"/>
     <application android:allowClearUserData="false" android:backupAgent="com.android.server.backup.SystemBackupAgent" android:hasCode="false" android:icon="@drawable/ic_launcher_android" android:killAfterRestore="false" android:label="@string/android_system_label" android:persistent="true" android:process="system" android:supportsRtl="true">
         <activity android:documentLaunchMode="never" android:excludeFromRecents="true" android:finishOnCloseSystemDialogs="true" android:name="com.android.internal.app.ChooserActivity" android:process=":ui" android:relinquishTaskIdentity="true" android:theme="@style/Theme.DeviceDefault.Resolver">
