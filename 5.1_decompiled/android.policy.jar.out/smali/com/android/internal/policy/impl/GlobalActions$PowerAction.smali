@@ -27,7 +27,7 @@
 
     iput-object p1, p0, Lcom/android/internal/policy/impl/GlobalActions$PowerAction;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
 
-    const v0, 0x1080030
+    const v0, 0x1080760
 
     const v1, 0x1040102
 
