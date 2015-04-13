@@ -406,6 +406,8 @@
 
 .field mIsBackKeyInterceptedByLockTaskMode:Z
 
+.field mIsLongPress:Z
+
 .field mKeyboardTapVibePattern:[J
 
 .field mKeyguardDelegate:Lcom/android/internal/policy/impl/keyguard/KeyguardServiceDelegate;
@@ -675,6 +677,14 @@
 .field mVoiceContentRight:I
 
 .field mVoiceContentTop:I
+
+.field private mVolBtnMusicControls:I
+
+.field private mVolBtnTimeout:I
+
+.field private mVolBtnVolDown:I
+
+.field private mVolBtnVolUp:I
 
 .field private mVolumeDownConsumedByBugReportChord:Z
 
@@ -4534,7 +4544,7 @@
 
     iget-object v2, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mHandler:Landroid/os/Handler;
 
-    const/16 v3, 0xd
+    const/16 v3, 0xf
 
     invoke-virtual {v2, v3, v1}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
@@ -11351,7 +11361,7 @@
     :cond_3
     iget-object v7, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mHandler:Landroid/os/Handler;
 
-    const/16 v8, 0xd
+    const/16 v8, 0xf
 
     invoke-virtual {v7, v8}, Landroid/os/Handler;->removeMessages(I)V
 
@@ -11375,7 +11385,7 @@
 
     move-result-object v6
 	
-	invoke-virtual {v6, v3, v5}, Landroid/media/session/MediaSessionLegacyHelper;->sendVolumeKeyEvent(Landroid/view/KeyEvent;Z)V
+    invoke-virtual {v6, v3, v5}, Landroid/media/session/MediaSessionLegacyHelper;->sendVolumeKeyEvent(Landroid/view/KeyEvent;Z)V
 
     goto :goto_2
 
