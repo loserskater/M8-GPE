@@ -205,6 +205,7 @@
         <item>Slanje poruka</item>
         <item>Mediji</item>
         <item>Uređaj</item>
+        <item>Autorun</item>
     </string-array>
     <string-array name="app_ops_summaries">
         <item>približna lokacija</item>
@@ -252,8 +253,10 @@
         <item>praćenje lokacije s visokom potrošnjom energije</item>
         <item>dohvaćanje statistike o upotrebi</item>
         <item>isključivanje/uključivanje mikrofona</item>
+        <item>toast window</item>
         <item>projiciranje medija</item>
         <item>aktiviraj VPN</item>
+        <item>run at boot</item>
     </string-array>
     <string-array name="app_ops_labels">
         <item>Lokacija</item>
@@ -301,8 +304,10 @@
         <item>Lokacija</item>
         <item>Dohvaćanje statistike o upotrebi</item>
         <item>Isključivanje/uključivanje mikrofona</item>
+        <item>Toast window</item>
         <item>Projiciranje medija</item>
         <item>Aktiviraj VPN</item>
+        <item>Run at boot</item>
     </string-array>
     <string-array name="long_press_timeout_selector_titles">
         <item>Kratko</item>
@@ -380,7 +385,9 @@
     </string-array>
     <string-array name="window_animation_scale_entries">
         <item>Animacija isključena</item>
+        <item>Animacija razmjera 0,25 x</item>
         <item>Animacija razmjera 0,5 x</item>
+        <item>Animacija razmjera 0,75 x</item>
         <item>Animacija razmjera 1x</item>
         <item>Animacija razmjera 1,5 x</item>
         <item>Animacija razmjera 2x</item>
@@ -389,7 +396,9 @@
     </string-array>
     <string-array name="transition_animation_scale_entries">
         <item>Animacija isključena</item>
+        <item>Animacija razmjera 0,25 x</item>
         <item>Animacija razmjera 0,5 x</item>
+        <item>Animacija razmjera 0,75 x</item>
         <item>Animacija razmjera 1x</item>
         <item>Animacija razmjera 1,5 x</item>
         <item>Animacija razmjera 2x</item>
@@ -398,7 +407,9 @@
     </string-array>
     <string-array name="animator_duration_scale_entries">
         <item>Animacija isključena</item>
+        <item>Animacija razmjera 0,25 x</item>
         <item>Animacija razmjera 0,5 x</item>
+        <item>Animacija razmjera 0,75 x</item>
         <item>Animacija razmjera 1 x</item>
         <item>Animacija razmjera 1,5 x</item>
         <item>Animacija razmjera 2 x</item>

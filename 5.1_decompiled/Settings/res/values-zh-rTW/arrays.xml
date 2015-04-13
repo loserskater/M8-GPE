@@ -205,6 +205,7 @@
         <item>簡訊</item>
         <item>媒體</item>
         <item>裝置</item>
+        <item>Autorun</item>
     </string-array>
     <string-array name="app_ops_summaries">
         <item>約略位置</item>
@@ -252,8 +253,10 @@
         <item>監控高耗電定位功能</item>
         <item>取得使用統計資料</item>
         <item>關閉/開啟麥克風</item>
+        <item>toast window</item>
         <item>投影媒體</item>
         <item>啟用 VPN</item>
+        <item>run at boot</item>
     </string-array>
     <string-array name="app_ops_labels">
         <item>位置</item>
@@ -301,8 +304,10 @@
         <item>定位</item>
         <item>取得使用統計資料</item>
         <item>關閉/開啟麥克風</item>
+        <item>Toast window</item>
         <item>投影媒體</item>
         <item>啟用 VPN</item>
+        <item>Run at boot</item>
     </string-array>
     <string-array name="long_press_timeout_selector_titles">
         <item>短</item>
@@ -380,7 +385,9 @@
     </string-array>
     <string-array name="window_animation_scale_entries">
         <item>關閉動畫</item>
+        <item>動畫比例 0.25x</item>
         <item>動畫比例 0.5x</item>
+        <item>動畫比例 0.75x</item>
         <item>動畫比例 1x</item>
         <item>動畫比例 1.5x</item>
         <item>動畫比例 2x</item>
@@ -389,7 +396,9 @@
     </string-array>
     <string-array name="transition_animation_scale_entries">
         <item>關閉動畫</item>
+        <item>動畫比例 0.25x</item>
         <item>動畫比例 0.5x</item>
+        <item>動畫比例 0.75x</item>
         <item>動畫比例 1x</item>
         <item>動畫比例 1.5x</item>
         <item>動畫比例 2x</item>
@@ -398,7 +407,9 @@
     </string-array>
     <string-array name="animator_duration_scale_entries">
         <item>關閉動畫</item>
+        <item>動畫比例 0.25x</item>
         <item>動畫比例 0.5x</item>
+        <item>動畫比例 0.75x</item>
         <item>動畫比例 1x</item>
         <item>動畫比例 1.5x</item>
         <item>動畫比例 2x</item>

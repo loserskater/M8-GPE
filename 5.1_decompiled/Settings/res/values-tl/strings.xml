@@ -1408,8 +1408,8 @@ Maaaring hindi gumana ang ilang apps hanggang sa ma-update ng mga developer ng m
     <string name="accessibility_screen_magnification_summary">"Kapag naka-on ang tampok na ito, maaari kang mag-zoom in at out sa pamamagitan ng pag-tap sa screen nang tatlong beses.
 
 Habang naka-zoom in, maaari kang:
-"<ul><li>"Mag-pan: I-drag ang dalawa o higit pang mga daliri sa screen.
-"<li>Ayusin ang antas ng pag-zoom: I-pinch ang dalawa o higit pang daliri o paghiwalayin ang mga ito.</li></li></ul>"
+"<li><ul>"Mag-pan: I-drag ang dalawa o higit pang mga daliri sa screen.
+"<li>Ayusin ang antas ng pag-zoom: I-pinch ang dalawa o higit pang daliri o paghiwalayin ang mga ito.</li></ul></li>"
 
 Maaari mo ring pansamantalang i-magnify kung ano ang nasa ilalim ng iyong mga daliri sa pamamagitan ng pag-tap nang tatlong beses at pagpindot nang matagal. Sa antas na naka-magnify, maaari mong i-drag ang iyong daliri upang maggalugad sa iba't ibang mga bahagi ng screen. Angatin ang iyong daliri upang bumalik sa iyong nakaraang katayuan.
 

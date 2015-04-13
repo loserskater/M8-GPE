@@ -1408,8 +1408,8 @@ Beberapa aplikasi mungkin tidak berfungsi sebelum diperbarui oleh pengembangnya.
     <string name="accessibility_screen_magnification_summary">"Saat fitur ini diaktifkan, Anda dapat memperbesar dan memperkecil dengan mengetuk layar tiga kali.
 
 Saat memperbesar, Anda dapat:
-"<ul><li>"Menggeser: Seret dua jari atau lebih melintasi layar.
-"<li>Menyesuaikan tingkat pembesaran/pengecilan: Cubit dua jari atau lebih bersamaan atau rentangkan jari Anda.</li></li></ul>"
+"<li><ul>"Menggeser: Seret dua jari atau lebih melintasi layar.
+"<li>Menyesuaikan tingkat pembesaran/pengecilan: Cubit dua jari atau lebih bersamaan atau rentangkan jari Anda.</li></ul></li>"
 
 Anda juga dapat memperbesar yang ada di bawah jari Anda secara sementara dengan mengetuk tiga kali lalu tahan. Dalam keadaan yang diperbesar ini, Anda dapat menyeret jari untuk menjelajah bagian layar yang berbeda. Angkat jari Anda untuk mengembalikan ke keadaan sebelumnya.
 

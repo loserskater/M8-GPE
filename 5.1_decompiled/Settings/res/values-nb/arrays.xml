@@ -205,6 +205,7 @@
         <item>Meldinger</item>
         <item>Medier</item>
         <item>Enhet</item>
+        <item>Autorun</item>
     </string-array>
     <string-array name="app_ops_summaries">
         <item>anslått posisjon</item>
@@ -252,8 +253,10 @@
         <item>overvåk plassering med høyt strømforbruk</item>
         <item>få bruksstatistikk</item>
         <item>slå mikrofonen av eller på</item>
+        <item>toast window</item>
         <item>projiser media</item>
         <item>aktivér VPN</item>
+        <item>run at boot</item>
     </string-array>
     <string-array name="app_ops_labels">
         <item>Sted</item>
@@ -301,8 +304,10 @@
         <item>Sted</item>
         <item>Få bruksstatistikk</item>
         <item>Slå mikrofonen av eller på</item>
+        <item>Toast window</item>
         <item>Projiser media</item>
         <item>Aktivér VPN</item>
+        <item>Toast window</item>
     </string-array>
     <string-array name="long_press_timeout_selector_titles">
         <item>Kort</item>
@@ -380,7 +385,9 @@
     </string-array>
     <string-array name="window_animation_scale_entries">
         <item>Animasjon deaktivert</item>
+        <item>Animasjonsskala 0,25 x</item>
         <item>Animasjonsskala 0,5 x</item>
+        <item>Animasjonsskala 0,75 x</item>
         <item>Animasjonsskala 1 x</item>
         <item>Animasjonsskala 1,5 x</item>
         <item>Animasjonsskala 2 x</item>
@@ -389,7 +396,9 @@
     </string-array>
     <string-array name="transition_animation_scale_entries">
         <item>Animasjon deaktivert</item>
+        <item>Animasjonsskala 0,25 x</item>
         <item>Animasjonsskala 0,5 x</item>
+        <item>Animasjonsskala 0,75 x</item>
         <item>Animasjonsskala 1 x</item>
         <item>Animasjonsskala 1,5 x</item>
         <item>Animasjonsskala 2 x</item>
@@ -398,7 +407,9 @@
     </string-array>
     <string-array name="animator_duration_scale_entries">
         <item>Animasjon deaktivert</item>
+        <item>Animasjonsskala 0,25 x</item>
         <item>Animasjonsskala 0,5 x</item>
+        <item>Animasjonsskala 0,75 x</item>
         <item>Animasjonsskala 1 x</item>
         <item>Animasjonsskala 1,5 x</item>
         <item>Animasjonsskala 2 x</item>

@@ -1408,8 +1408,8 @@ Előfordulhat, hogy egyes alkalmazások nem működnek addig, amíg a fejlesztő
     <string name="accessibility_screen_magnification_summary">"Ha a funkció be van kapcsolva, úgy kicsinyíthet/nagyíthat, hogy háromszor rákoppint a képernyőre.
 
 Nagyított állapotban:
-"<ul><li>"Pásztázhat: Két vagy több ujját húzza végig a képernyőn.
-"<li>Módosíthatja a nagyítási szintet: Két ujját húzza össze vagy távolítsa el egymástól.</li></li></ul>"
+"<li><ul>"Pásztázhat: Két vagy több ujját húzza végig a képernyőn.
+"<li>Módosíthatja a nagyítási szintet: Két ujját húzza össze vagy távolítsa el egymástól.</li></ul></li>"
 
 Ideiglenesen felnagyíthatja az ujja alatt lévő részt is, úgy hogy hármat koppint és lenyomva hagyja ujját. A nagyított nézetben az ujját húzva fedezheti fel a képernyő más részeit is. Az ujja felemelésével visszatérhet az előző állapotra.
 

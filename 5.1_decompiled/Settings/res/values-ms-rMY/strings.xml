@@ -1408,8 +1408,8 @@ Sesetengah apl mungkin tidak berfungsi sehingga dikemas kini oleh pemaju apl itu
     <string name="accessibility_screen_magnification_summary">"Apabila ciri ini dihidupkan, anda boleh mengezum masuk dan keluar dengan mengetik skrin tiga kali.
 
 Semasa dizum masuk, anda boleh:
-"<ul><li>"Menyorot: Seret menggunakan dua atau lebih jari merentasi skrin.
-"<li>Melaraskan tahap zum: Rapatkan atau jarakkan dua atau lebih jari.</li></li></ul>"
+"<li><ul>"Menyorot: Seret menggunakan dua atau lebih jari merentasi skrin.
+"<li>Melaraskan tahap zum: Rapatkan atau jarakkan dua atau lebih jari.</li></ul></li>"
 
 Anda juga boleh membesarkan item di bawah jari anda untuk sementara waktu dengan mengetik tiga kali dan menahannya. Dalam keadaan zum besar ini, anda boleh menyeret jari anda untuk meneroka bahagian-bahagian lain pada skrin. Angkat jari anda untuk kembali kepada keadaan sebelumnya.
 

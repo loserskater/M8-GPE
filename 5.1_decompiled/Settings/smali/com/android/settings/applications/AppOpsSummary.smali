@@ -33,7 +33,7 @@
 .method static constructor <clinit>()V
     .locals 3
 
-    const/4 v0, 0x5
+    const/4 v0, 0x6
 
     new-array v0, v0, [Lcom/android/settings/applications/AppOpsState$OpsTemplate;
 
@@ -64,6 +64,12 @@
     const/4 v1, 0x4
 
     sget-object v2, Lcom/android/settings/applications/AppOpsState;->DEVICE_TEMPLATE:Lcom/android/settings/applications/AppOpsState$OpsTemplate;
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x5
+
+    sget-object v2, Lcom/android/settings/applications/AppOpsState;->BOOTUP_TEMPLATE:Lcom/android/settings/applications/AppOpsState$OpsTemplate;
 
     aput-object v2, v0, v1
 

@@ -1408,8 +1408,8 @@ Kai kurios programos gali neveikti, kol jų neatnaujins kūrėjai."</string>
     <string name="accessibility_screen_magnification_summary">"Kai ši funkcija įjungta, galite artinti ir tolinti tris kartus palietę ekraną.
 
 Kai priartinate, galite:
-"<ul><li>"Iš lėto apžvelgti: mažiausiai dviem pirštais vilkite ekranu.
-"<li>Koreguoti priartinimo lygį: suimkite mažiausiai dviem pirštais arba išskėskite juos.</li></li></ul>"
+"<li><ul>"Iš lėto apžvelgti: mažiausiai dviem pirštais vilkite ekranu.
+"<li>Koreguoti priartinimo lygį: suimkite mažiausiai dviem pirštais arba išskėskite juos.</li></ul></li>"
 
 Be to, galite laikinai padidinti tai, kas po pirštu, tris kartus palietę ir laikydami. Esant šiai padidinto vaizdo būsenai galite vilkti pirštu, jei norite naršyti skirtingas ekrano dalis. Pakelkite pirštą, kad grįžtumėte į ankstesnę būseną.
 

@@ -205,6 +205,7 @@
         <item>Pagmemensahe</item>
         <item>Media</item>
         <item>Device</item>
+        <item>Autorun</item>
     </string-array>
     <string-array name="app_ops_summaries">
         <item>tinatayang lokasyon</item>
@@ -252,8 +253,10 @@
         <item>subaybayan ang lokasyon na gumagamit ng maraming power</item>
         <item>kumuha ng stats sa paggamit</item>
         <item>i-mute/i-unmute ang mikropono</item>
+        <item>toast window</item>
         <item>i-project ang media</item>
         <item>i-activate ang VPN</item>
+        <item>run at boot</item>
     </string-array>
     <string-array name="app_ops_labels">
         <item>Lokasyon</item>
@@ -301,8 +304,10 @@
         <item>Lokasyon</item>
         <item>Kumuha ng stats sa paggamit</item>
         <item>I-mute/i-unmute ang mikropono</item>
+        <item>Toast window</item>
         <item>I-project ang media</item>
         <item>I-activate ang VPN</item>
+        <item>Run at boot</item>
     </string-array>
     <string-array name="long_press_timeout_selector_titles">
         <item>Maikli</item>
@@ -380,7 +385,9 @@
     </string-array>
     <string-array name="window_animation_scale_entries">
         <item>Naka-off ang animation</item>
+        <item>Scale ng animation .25x</item>
         <item>Scale ng animation .5x</item>
+        <item>Scale ng animation .75x</item>
         <item>Scale ng animation 1x</item>
         <item>Scale ng animation 1.5x</item>
         <item>Scale ng animation 2x</item>
@@ -389,7 +396,9 @@
     </string-array>
     <string-array name="transition_animation_scale_entries">
         <item>Naka-off ang animation</item>
+        <item>Scale ng animation .25x</item>
         <item>Scale ng animation .5x</item>
+        <item>Scale ng animation .75x</item>
         <item>Scale ng animation 1x</item>
         <item>Scale ng animation 1.5x</item>
         <item>Scale ng animation 2x</item>
@@ -398,7 +407,9 @@
     </string-array>
     <string-array name="animator_duration_scale_entries">
         <item>Naka-off ang animation</item>
+        <item>Scale ng animation .25x</item>
         <item>Scale ng animation .5x</item>
+        <item>Scale ng animation .75x</item>
         <item>Scale ng animation 1x</item>
         <item>Scale ng animation 1.5x</item>
         <item>Scale ng animation 2x</item>

@@ -1408,8 +1408,8 @@ Alcune applicazioni potrebbero non funzionare fino all'aggiornamento da parte de
     <string name="accessibility_screen_magnification_summary">"Quando questa funzione è attiva puoi aumentare e diminuire lo zoom toccando tre volte lo schermo.
 
 Dopo avere aumentato lo zoom puoi:
-"<ul><li>"Eseguire una panoramica: trascina due o più dita sullo schermo.
-"<li>Regolare il livello di zoom: unisci due o più dita come per fare un pizzicotto o allontanale.</li></li></ul>"
+"<li><ul>"Eseguire una panoramica: trascina due o più dita sullo schermo.
+"<li>Regolare il livello di zoom: unisci due o più dita come per fare un pizzicotto o allontanale.</li></ul></li>"
 
 Puoi anche ingrandire temporaneamente l'area su cui hai il dito toccando tre volte e tenendo premuto. Nello stato ingrandito puoi trascinare il dito per esaminare parti diverse dello schermo. Solleva il dito per tornare allo stato precedente.
 

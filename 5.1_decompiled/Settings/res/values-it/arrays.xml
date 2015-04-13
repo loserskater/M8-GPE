@@ -205,6 +205,7 @@
         <item>Messaggi</item>
         <item>Contenuti multimediali</item>
         <item>Dispositivo</item>
+        <item>Autorun</item>
     </string-array>
     <string-array name="app_ops_summaries">
         <item>posizione approssimativa</item>
@@ -252,8 +253,10 @@
         <item>monitora localizzazione a consumo elevato</item>
         <item>"ricevi statistiche sull'utilizzo"</item>
         <item>attiva/disattiva microfono</item>
+        <item>toast window</item>
         <item>elementi multimediali dei progetti</item>
         <item>attiva VPN</item>
+        <item>run at boot</item>
     </string-array>
     <string-array name="app_ops_labels">
         <item>Posizione</item>
@@ -301,8 +304,10 @@
         <item>Geolocalizzazione</item>
         <item>"Ricevi statistiche sull'utilizzo"</item>
         <item>Attiva/disattiva microfono</item>
+        <item>Toast window</item>
         <item>Elementi multimediali dei progetti</item>
         <item>Attiva VPN</item>
+        <item>Run at boot</item>
     </string-array>
     <string-array name="long_press_timeout_selector_titles">
         <item>Breve</item>
@@ -380,7 +385,9 @@
     </string-array>
     <string-array name="window_animation_scale_entries">
         <item>Animazione disattivata</item>
+        <item>Scala animazione 0,25x</item>
         <item>Scala animazione 0,5x</item>
+        <item>Scala animazione 0,75x</item>
         <item>Scala animazione 1x</item>
         <item>Scala animazione 1,5x</item>
         <item>Scala animazione 2x</item>
@@ -389,7 +396,9 @@
     </string-array>
     <string-array name="transition_animation_scale_entries">
         <item>Animazione disattivata</item>
+        <item>Scala animazione 0,25x</item>
         <item>Scala animazione 0,5x</item>
+        <item>Scala animazione 0,75x</item>
         <item>Scala animazione 1x</item>
         <item>Scala animazione 1,5x</item>
         <item>Scala animazione 2x</item>
@@ -398,7 +407,9 @@
     </string-array>
     <string-array name="animator_duration_scale_entries">
         <item>Animazione disattivata</item>
+        <item>Scala animazione 0,25x</item>
         <item>Scala animazione 0,5x</item>
+        <item>Scala animazione 0,75x</item>
         <item>Scala animazione 1x</item>
         <item>Scala animazione 1,5x</item>
         <item>Scala animazione 2x</item>

@@ -1408,8 +1408,8 @@ Alguns apps podem não funcionar até que sejam atualizados por seus desenvolved
     <string name="accessibility_screen_magnification_summary">"Quando este recurso está ativado, você pode aumentar e diminuir o zoom com um toque triplo na tela.
 
 Quando o zoom é aplicado, você pode:
-"<ul><li>"Deslocar: arraste dois ou mais dedos pela tela.
-"<li>Ajustar o nível de zoom: use o gesto de pinçagem ou expanda usando dois ou mais dedos.</li></li></ul>"
+"<li><ul>"Deslocar: arraste dois ou mais dedos pela tela.
+"<li>Ajustar o nível de zoom: use o gesto de pinçagem ou expanda usando dois ou mais dedos.</li></ul></li>"
 
 Você também pode ampliar temporariamente o que estiver sob seu dedo dando um toque triplo e segurando. No estado ampliado, arraste o dedo para explorar as diferentes partes da tela. Levante o dedo para voltar ao estado anterior.
 

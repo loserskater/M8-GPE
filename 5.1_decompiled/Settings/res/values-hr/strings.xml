@@ -1408,8 +1408,8 @@ Neke aplikacije možda neće raditi dok ih razvojni programeri ne ažuriraju."</
     <string name="accessibility_screen_magnification_summary">"Ako je ova značajka uključena, možete povećati ili smanjiti prikaz ako triput dodirnete zaslon.
 
 Nakon povećanja prikaza možete sljedeće:
-"<ul><li>"Pomicati: pomoću dva prsta ili više prstiju povlačite prikaz na zaslonu.
-"<li>Podesiti razinu zumiranja: stisnite dva prsta ili više prstiju ili ih raširite.</li></li></ul>"
+"<li><ul>"Pomicati: pomoću dva prsta ili više prstiju povlačite prikaz na zaslonu.
+"<li>Podesiti razinu zumiranja: stisnite dva prsta ili više prstiju ili ih raširite.</li></ul></li>"
 
 Također možete privremeno povećati stavku ispod prsta ako je triput dodirnete i držite. U tom slučaju možete povlačiti prst kako biste istražili različite dijelove zaslona. Podignite prst kako biste se vratili na prijašnje stanje.
 

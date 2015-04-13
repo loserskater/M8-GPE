@@ -205,6 +205,7 @@
         <item>المراسلة</item>
         <item>الوسائط</item>
         <item>الجهاز</item>
+        <item>Autorun</item>
     </string-array>
     <string-array name="app_ops_summaries">
         <item>الموقع التقريبي</item>
@@ -252,8 +253,10 @@
         <item>مراقبة موقع متميز</item>
         <item>الحصول على إحصاءات الاستخدام</item>
         <item>كتم صوت/إلغاء كتم صوت الميكروفون</item>
+        <item>toast window</item>
         <item>وسائط المشروع</item>
         <item>تنشيط الشبكة الظاهرية الخاصة</item>
+        <item>run at boot</item>
     </string-array>
     <string-array name="app_ops_labels">
         <item>الموقع</item>
@@ -301,8 +304,10 @@
         <item>الموقع</item>
         <item>الحصول على إحصاءات الاستخدام</item>
         <item>كتم صوت/إلغاء كتم صوت الميكروفون</item>
+        <item>Toast window</item>
         <item>وسائط المشروع</item>
         <item>تنشيط الشبكة الظاهرية الخاصة</item>
+        <item>Run at boot</item>
     </string-array>
     <string-array name="long_press_timeout_selector_titles">
         <item>قصيرة</item>

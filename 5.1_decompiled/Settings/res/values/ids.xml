@@ -626,4 +626,13 @@
     <item type="id" name="vpn_create">false</item>
     <item type="id" name="vpn_lockdown">false</item>
     <item type="id" name="wifi_wps">false</item>
+    <item type="id" name="pattern_lock_header">false</item>
+    <item type="id" name="pattern_lock_btn_cancel">false</item>
+    <item type="id" name="pattern_lock_btn_continue">false</item>
+    <item type="id" name="lock_pattern_view">false</item>
+    <item type="id" name="lock_account_view">false</item>
+    <item type="id" name="protected_apps_list">false</item>
+    <item type="id" name="app_item">false</item>
+    <item type="id" name="launch_app">false</item>
+    <item type="id" name="pa_account_view">false</item>
 </resources>

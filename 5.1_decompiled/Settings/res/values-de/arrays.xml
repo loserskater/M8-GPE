@@ -205,6 +205,7 @@
         <item>SMS/MMS</item>
         <item>Medien</item>
         <item>Gerät</item>
+        <item>Autorun</item>
     </string-array>
     <string-array name="app_ops_summaries">
         <item>Ungefährer Standort</item>
@@ -252,8 +253,10 @@
         <item>Orte mit hohem Stromverbrauch überwachen</item>
         <item>Nutzungsstatistiken abrufen</item>
         <item>Mikrofon aus- oder einschalten</item>
+        <item>toast window</item>
         <item>Projektion von Medieninhalten</item>
         <item>VPN aktivieren</item>
+        <item>run at boot</item>
     </string-array>
     <string-array name="app_ops_labels">
         <item>Standort</item>
@@ -301,8 +304,10 @@
         <item>Ort</item>
         <item>Nutzungsstatistiken abrufen</item>
         <item>Mikrofon aus- oder einschalten</item>
+        <item>Toast window</item>
         <item>Projektion von Medieninhalten</item>
         <item>VPN aktivieren</item>
+        <item>Run at boot</item>
     </string-array>
     <string-array name="long_press_timeout_selector_titles">
         <item>Kurz</item>
@@ -380,7 +385,9 @@
     </string-array>
     <string-array name="window_animation_scale_entries">
         <item>Animation aus</item>
+        <item>Animationsmaßstab: 0,25x</item>
         <item>Animationsmaßstab: 0,5x</item>
+        <item>Animationsmaßstab: 0,75x</item>
         <item>Animationsmaßstab: 1x</item>
         <item>Animationsmaßstab: 1,5x</item>
         <item>Animationsmaßstab: 2x</item>
@@ -389,7 +396,9 @@
     </string-array>
     <string-array name="transition_animation_scale_entries">
         <item>Animation aus</item>
+        <item>Animationsmaßstab: 0,25x</item>
         <item>Animationsmaßstab: 0,5x</item>
+        <item>Animationsmaßstab: 0,75x</item>
         <item>Animationsmaßstab: 1x</item>
         <item>Animationsmaßstab: 1,5x</item>
         <item>Animationsmaßstab: 2x</item>
@@ -398,7 +407,9 @@
     </string-array>
     <string-array name="animator_duration_scale_entries">
         <item>Animation aus</item>
+        <item>Animationsmaßstab: 0,25x</item>
         <item>Animationsmaßstab: 0,5x</item>
+        <item>Animationsmaßstab: 0,75x</item>
         <item>Animationsmaßstab: 1x</item>
         <item>Animationsmaßstab: 1,5x</item>
         <item>Animationsmaßstab: 2x</item>

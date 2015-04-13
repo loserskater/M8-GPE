@@ -1407,8 +1407,8 @@ Einige Apps funktionieren eventuell erst nach der Aktualisierung durch ihre Entw
     <string name="accessibility_screen_magnification_summary">"Wenn diese Funktion aktiviert ist, können Sie heranzoomen und herauszoomen, indem Sie drei Mal auf den Bildschirm tippen.
 
 Wenn Sie herangezoomt haben, können Sie:
-"<ul><li>"Schwenken: mindestens 2 Finger über den Bildschirm ziehen
-"<li>Zoomstufe anpassen: mindestens 2 Finger zusammen- oder auseinanderziehen</li></li></ul>"
+"<li><ul>"Schwenken: mindestens 2 Finger über den Bildschirm ziehen
+"<li>Zoomstufe anpassen: mindestens 2 Finger zusammen- oder auseinanderziehen</li></ul></li>"
 
 Sie können auch das, was sich unter Ihrem Finger befindet, vorübergehend vergrößern, indem Sie drei Mal tippen und halten. In diesem vergrößerten Zustand können Sie Ihren Finger ziehen, um verschiedene Bereiche des Bildschirms zu erkunden. Heben Sie Ihren Finger an, um zum vorherigen Zustand zurückzukehren.
 

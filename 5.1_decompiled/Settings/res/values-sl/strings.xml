@@ -1408,8 +1408,8 @@ Nekatere aplikacije morda ne bodo delovale, dokler jih njihovi razvijalci ne pos
     <string name="accessibility_screen_magnification_summary">"Če je ta funkcija vklopljena, lahko vsebino na zaslonu povečate ali pomanjšate tako, da se trikrat dotaknete zaslona.
 
 Pri povečavi lahko:
-"<ul><li>"Pomikate vsebino na zaslonu: Dva prsta ali več povlecite po zaslonu.
-"<li>Prilagodite stopnjo povečave/pomanjšave: Najmanj dva prsta približajte ali razširite.</li></li></ul>"
+"<li><ul>"Pomikate vsebino na zaslonu: Dva prsta ali več povlecite po zaslonu.
+"<li>Prilagodite stopnjo povečave/pomanjšave: Najmanj dva prsta približajte ali razširite.</li></ul></li>"
 
 Začasno lahko tisto, kar je pod vašim prstom, povečate tudi tako, da se zaslona trikrat dotaknete in ga pridržite. V tem načinu povečave lahko povlečete s prstom in raziščete različne dele zaslona. Dvignite prst, če se želite vrniti v prejšnje stanje.
 

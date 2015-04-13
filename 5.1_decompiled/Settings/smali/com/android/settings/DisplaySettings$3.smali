@@ -95,7 +95,7 @@
 
     if-nez v1, :cond_3
 
-    const-string v1, "doze"
+    const-string v1, "doze_fragment"
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 

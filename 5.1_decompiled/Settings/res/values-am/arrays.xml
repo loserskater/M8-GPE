@@ -205,6 +205,7 @@
         <item>መልዕክት መላኪያ</item>
         <item>ማህደረ መረጃ</item>
         <item>መሣሪያ</item>
+        <item>Autorun</item>
     </string-array>
     <string-array name="app_ops_summaries">
         <item>ግምታዊ አካባቢ</item>
@@ -252,8 +253,10 @@
         <item>የከፍተኛ ኃይል አካባቢ ተከታተል</item>
         <item>የአጠቃቀም ስታቲስቲክስ ያግኙ</item>
         <item>ማይክሮፎን ድምፅ-ከል አድርግ/አንሳ</item>
+        <item>toast window</item>
         <item>ፕሮጀክት ሚዲያ</item>
         <item>VPN አግብር</item>
+        <item>run at boot</item>
     </string-array>
     <string-array name="app_ops_labels">
         <item>አካባቢ</item>
@@ -301,8 +304,10 @@
         <item>አካባቢ</item>
         <item>የአጠቃቀም ስታቲስቲክሶችን ያግኙ</item>
         <item>ማይክሮፎን ድምፅ-ከል አድርግ/አንሳ</item>
+        <item>Toast window</item>
         <item>ፕሮጀክት ሚዲያ</item>
         <item>VPN አግብር</item>
+        <item>Run at boot</item>
     </string-array>
     <string-array name="long_press_timeout_selector_titles">
         <item>አጭር</item>
@@ -380,7 +385,9 @@
     </string-array>
     <string-array name="window_animation_scale_entries">
         <item>እነማ ጠፍቷል</item>
+        <item>የእነማ ልኬት ለውጥ.25x</item>
         <item>የእነማ ልኬት ለውጥ.5x</item>
+        <item>የእነማ ልኬት ለውጥ7.5x</item>
         <item>የእነማ ልኬት ለውጥ1x</item>
         <item>የእነማ ልኬት ለውጥ1.5x</item>
         <item>የእነማ ልኬት ለውጥ2x</item>
@@ -389,7 +396,9 @@
     </string-array>
     <string-array name="transition_animation_scale_entries">
         <item>እነማ ጠፍቷል</item>
+        <item>የእነማ ልኬት ለውጥ.25x</item>
         <item>የእነማ ልኬት ለውጥ.5x</item>
+        <item>የእነማ ልኬት ለውጥ.75x</item>
         <item>የእነማ ልኬት ለውጥ1x</item>
         <item>"የእነማ  ልኬት ለውጥ1.5x"</item>
         <item>የእነማ ልኬት ለውጥ2x</item>
@@ -398,7 +407,9 @@
     </string-array>
     <string-array name="animator_duration_scale_entries">
         <item>እነማ ጠፍቷል</item>
+        <item>የእነማ ልኬት ለውጥ .25x</item>
         <item>የእነማ ልኬት ለውጥ .5x</item>
+        <item>የእነማ ልኬት ለውጥ .75x</item>
         <item>የእነማ ልኬት ለውጥ 1x</item>
         <item>የእነማ ልኬት ለውጥ 1.5x</item>
         <item>የእነማ ልኬት ለውጥ 2x</item>

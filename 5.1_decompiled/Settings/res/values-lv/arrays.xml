@@ -205,6 +205,7 @@
         <item>Ziņojumapmaiņa</item>
         <item>Multivide</item>
         <item>Ierīce</item>
+        <item>Autorun</item>
     </string-array>
     <string-array name="app_ops_summaries">
         <item>aptuvena atrašanās vieta</item>
@@ -252,8 +253,10 @@
         <item>pārraudzīt lieljaudas atrašanās vietu</item>
         <item>iegūt lietojuma statistiku</item>
         <item>izslēgt/ieslēgt mikrofonu</item>
+        <item>toast window</item>
         <item>projicēt saturu</item>
         <item>aktivizēt VPN</item>
+        <item>run at boot</item>
     </string-array>
     <string-array name="app_ops_labels">
         <item>Atrašanās vieta</item>
@@ -301,8 +304,10 @@
         <item>Atrašanās vieta</item>
         <item>Iegūt lietojuma statistiku</item>
         <item>Izslēgt/ieslēgt mikrofonu</item>
+        <item>Toast window</item>
         <item>Projicēt saturu</item>
         <item>Aktivizēt VPN</item>
+        <item>Run at boot</item>
     </string-array>
     <string-array name="long_press_timeout_selector_titles">
         <item>Īss</item>
@@ -380,7 +385,9 @@
     </string-array>
     <string-array name="window_animation_scale_entries">
         <item>Animācija ir izslēgta</item>
+        <item>Animācijas mērogs: 0,25x</item>
         <item>Animācijas mērogs: 0,5x</item>
+        <item>Animācijas mērogs: 0,75x</item>
         <item>Animācijas mērogs: 1x</item>
         <item>Animācijas mērogs: 1,5x</item>
         <item>Animācijas mērogs: 2x</item>
@@ -389,7 +396,9 @@
     </string-array>
     <string-array name="transition_animation_scale_entries">
         <item>Animācija ir izslēgta</item>
+        <item>Animācijas mērogs: 0,25x</item>
         <item>Animācijas mērogs: 0,5x</item>
+        <item>Animācijas mērogs: 0,75x</item>
         <item>Animācijas mērogs: 1x</item>
         <item>Animācijas mērogs: 1,5x</item>
         <item>Animācijas mērogs: 2x</item>
@@ -398,7 +407,9 @@
     </string-array>
     <string-array name="animator_duration_scale_entries">
         <item>Animācija izslēgta</item>
+        <item>Animācijas mērogs: 0,25x</item>
         <item>Animācijas mērogs: 0,5x</item>
+        <item>Animācijas mērogs: 0,75x</item>
         <item>Animācijas mērogs: 1x</item>
         <item>Animācijas mērogs: 1,5x</item>
         <item>Animācijas mērogs: 2x</item>

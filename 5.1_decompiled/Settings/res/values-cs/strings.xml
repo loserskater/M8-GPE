@@ -1408,8 +1408,8 @@ Některé aplikace nemusejí fungovat, dokud je vývojáři neaktualizují."</st
     <string name="accessibility_screen_magnification_summary">"Je-li tato funkce zapnutá, můžete zobrazení přibližovat a oddalovat tak, že třikrát klepnete na obrazovku.
 
 Při přiblížení můžete provádět tyto činnosti:
-"<ul><li>"Posunutí: táhněte po obrazovce minimálně dvěma prsty.
-"<li>Změna úrovně přiblížení: alespoň dva prsty stáhněte k sobě, nebo roztáhněte od sebe.</li></li></ul>"
+"<li><ul>"Posunutí: táhněte po obrazovce minimálně dvěma prsty.
+"<li>Změna úrovně přiblížení: alespoň dva prsty stáhněte k sobě, nebo roztáhněte od sebe.</li></ul></li>"
 
 Také je možné dočasně zvětšit oblast pod prstem. Stačí na ni třikrát klepnout a podržet ji. V takto zvětšeném náhledu můžete přetáhnutím prstu prohlížet libovolné části obrazovky. Do předchozího zobrazení se vrátíte zdvihnutím prstu.
 

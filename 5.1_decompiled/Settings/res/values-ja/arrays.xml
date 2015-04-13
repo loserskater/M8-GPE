@@ -205,6 +205,7 @@
         <item>メッセージ</item>
         <item>メディア</item>
         <item>端末</item>
+        <item>Autorun</item>
     </string-array>
     <string-array name="app_ops_summaries">
         <item>おおよその位置情報</item>
@@ -252,8 +253,10 @@
         <item>高精度の現在地情報を監視</item>
         <item>使用統計情報を取得</item>
         <item>マイクをミュート/ミュート解除</item>
+        <item>toast window</item>
         <item>メディアプロジェクション</item>
         <item>VPNの有効化</item>
+        <item>run at boot</item>
     </string-array>
     <string-array name="app_ops_labels">
         <item>位置情報</item>
@@ -301,8 +304,10 @@
         <item>現在地</item>
         <item>使用統計情報を取得</item>
         <item>マイクをミュート/ミュート解除</item>
+        <item>Toast window</item>
         <item>メディアプロジェクション</item>
         <item>VPNの有効化</item>
+        <item>Run at boot</item>
     </string-array>
     <string-array name="long_press_timeout_selector_titles">
         <item>短め</item>
@@ -380,7 +385,9 @@
     </string-array>
     <string-array name="window_animation_scale_entries">
         <item>アニメーションオフ</item>
+        <item>アニメーションスケール.25x</item>
         <item>アニメーションスケール.5x</item>
+        <item>アニメーションスケール.75x</item>
         <item>アニメーションスケール1x</item>
         <item>アニメーションスケール1.5x</item>
         <item>アニメーションスケール2x</item>
@@ -389,7 +396,9 @@
     </string-array>
     <string-array name="transition_animation_scale_entries">
         <item>アニメーションオフ</item>
+        <item>アニメーションスケール.25x</item>
         <item>アニメーションスケール.5x</item>
+        <item>アニメーションスケール.75x</item>
         <item>アニメーションスケール1x</item>
         <item>アニメーションスケール1.5x</item>
         <item>アニメーションスケール2x</item>
@@ -398,7 +407,9 @@
     </string-array>
     <string-array name="animator_duration_scale_entries">
         <item>アニメーションオフ</item>
+        <item>アニメーションスケール.25x</item>
         <item>アニメーションスケール.5x</item>
+        <item>アニメーションスケール.75x</item>
         <item>アニメーションスケール1x</item>
         <item>アニメーションスケール1.5x</item>
         <item>アニメーションスケール2x</item>

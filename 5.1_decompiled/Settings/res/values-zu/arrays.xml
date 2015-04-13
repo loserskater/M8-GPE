@@ -205,6 +205,7 @@
         <item>Imilayezo</item>
         <item>Abezindaba</item>
         <item>Idivayisi</item>
+        <item>Autorun</item>
     </string-array>
     <string-array name="app_ops_summaries">
         <item>indawo emaholoholo</item>
@@ -252,8 +253,10 @@
         <item>yongamela indawo yamandla aphezulu</item>
         <item>thola izibalo zokusebenzisa</item>
         <item>thulisa/yekisa ukuthulisa imakrofoni</item>
+        <item>toast window</item>
         <item>imidiya yephrojekthi</item>
         <item>sebenzisa i-VPN</item>
+        <item>run at boot</item>
     </string-array>
     <string-array name="app_ops_labels">
         <item>Indawo</item>
@@ -301,8 +304,10 @@
         <item>Indawo</item>
         <item>Thola izibalo zokusebenzisa</item>
         <item>Thulisa/yekisa ukuthulisa imakrofoni</item>
+        <item>Toast window</item>
         <item>Imidiya yephrojekthi</item>
         <item>Sebenzisa i-VPN</item>
+        <item>Run at boot</item>
     </string-array>
     <string-array name="long_press_timeout_selector_titles">
         <item>Kufushane</item>

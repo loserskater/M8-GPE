@@ -1408,8 +1408,8 @@ Jotkin sovellukset toimivat vasta, kun kehittäjät päivittävät ne."</string>
     <string name="accessibility_screen_magnification_summary">"Kun tämä ominaisuus on käytössä, voit lähentää ja loitontaa kolmoisnapauttamalla näyttöä.
 
 Lähennetyssä tilassa voit
-"<ul><li>"panoroida vetämällä vähintään kahta sormea näytön poikki
-"<li>säätää lähennyksen tasoa nipistämällä vähintään kaksi sormea yhteen tai levittämällä ne erilleen.</li></li></ul>"
+"<li><ul>"panoroida vetämällä vähintään kahta sormea näytön poikki
+"<li>säätää lähennyksen tasoa nipistämällä vähintään kaksi sormea yhteen tai levittämällä ne erilleen.</li></ul></li>"
 
 Voit myös suurentaa sormesi alla olevan kohteen väliaikaisesti kolmoisnapauttamalla ja pitämällä viimeisen napautuksen näytöllä. Suurennetussa tilassa voit tutkia näytön eri osia sormella vetämällä. Nostamalla sormen pääset takaisin edelliseen tilaan.
 

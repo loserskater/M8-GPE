@@ -205,6 +205,7 @@
         <item>การรับส่งข้อความ</item>
         <item>สื่อ</item>
         <item>อุปกรณ์</item>
+        <item>Autorun</item>
     </string-array>
     <string-array name="app_ops_summaries">
         <item>ตำแหน่งคร่าวๆ</item>
@@ -252,8 +253,10 @@
         <item>ติดตามตำแหน่งโดยใช้พลังงานมาก</item>
         <item>ดูสถิติการใช้งาน</item>
         <item>ปิด/เปิดเสียงไมโครโฟน</item>
+        <item>toast window</item>
         <item>สื่อของโครงการ</item>
         <item>เปิดใช้งาน VPN</item>
+        <item>run at boot</item>
     </string-array>
     <string-array name="app_ops_labels">
         <item>ตำแหน่ง</item>
@@ -301,8 +304,10 @@
         <item>ตำแหน่ง</item>
         <item>ดูสถิติการใช้งาน</item>
         <item>ปิด/เปิดเสียงไมโครโฟน</item>
+        <item>Toast window</item>
         <item>สื่อของโครงการ</item>
         <item>เปิดใช้งาน VPN</item>
+        <item>Run at boot</item>
     </string-array>
     <string-array name="long_press_timeout_selector_titles">
         <item>สั้น</item>
@@ -380,7 +385,9 @@
     </string-array>
     <string-array name="window_animation_scale_entries">
         <item>ปิดภาพเคลื่อนไหว</item>
+        <item>ภาพเคลื่อนไหวขนาด .25 เท่า</item>
         <item>ภาพเคลื่อนไหวขนาด .5 เท่า</item>
+        <item>ภาพเคลื่อนไหวขนาด .75 เท่า</item>
         <item>ภาพเคลื่อนไหวขนาด 1 เท่า</item>
         <item>ภาพเคลื่อนไหวขนาด 1.5 เท่า</item>
         <item>ภาพเคลื่อนไหวขนาด 2 เท่า</item>
@@ -389,7 +396,9 @@
     </string-array>
     <string-array name="transition_animation_scale_entries">
         <item>ปิดภาพเคลื่อนไหว</item>
+        <item>ภาพเคลื่อนไหวขนาด .25 เท่า</item>
         <item>ภาพเคลื่อนไหวขนาด .5 เท่า</item>
+        <item>ภาพเคลื่อนไหวขนาด .75 เท่า</item>
         <item>ภาพเคลื่อนไหวขนาด 1 เท่า</item>
         <item>ภาพเคลื่อนไหวขนาด 1.5 เท่า</item>
         <item>ภาพเคลื่อนไหวขนาด 2 เท่า</item>
@@ -398,7 +407,9 @@
     </string-array>
     <string-array name="animator_duration_scale_entries">
         <item>ปิดภาพเคลื่อนไหว</item>
-        <item>ความเร็วภาพเคลื่อนไหว .5 เท่า</item>
+        <item>ภาพเคลื่อนไหวขนาด .25 เท่า</item>
+        <item>ภาพเคลื่อนไหวขนาด .5 เท่า</item>
+        <item>ภาพเคลื่อนไหวขนาด .75 เท่า</item>
         <item>ความเร็วภาพเคลื่อนไหว 1 เท่า</item>
         <item>ความเร็วภาพเคลื่อนไหว 1.5 เท่า</item>
         <item>ความเร็วภาพเคลื่อนไหว 2 เท่า</item>

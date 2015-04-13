@@ -1408,8 +1408,8 @@ Si vols suprimir música, imatges i altres dades de l'usuari, cal que esborris l
     <string name="accessibility_screen_magnification_summary">"Quan aquesta funció està activada, pots ampliar o allunyar la imatge fent tres tocs a la pantalla.
 
 Amb la imatge ampliada, pots fer les accions següents.
-"<ul><li>"Desplaçar la imatge: arrossega dos dits o més per la pantalla.
-"<li>"Ajustar el nivell de zoom: ajunta dos o més dits o bé separa'ls."</li></li></ul>"
+"<li><ul>"Desplaçar la imatge: arrossega dos dits o més per la pantalla.
+"<li>"Ajustar el nivell de zoom: ajunta dos o més dits o bé separa'ls."</li></ul></li>"
 
 També pots ampliar el contingut seleccionat de manera temporal fent tres tocs cops a la pantalla i mantenint-la premuda. Amb el contingut ampliat, pots arrossegar el dit per explorar diverses parts de la pantalla. Aixeca el dit per tornar a l'estat anterior.
 

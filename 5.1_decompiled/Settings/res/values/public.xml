@@ -93,6 +93,14 @@
     <public type="drawable" name="wifi_signal_open_light" id="0x7f0200e2" />
     <public type="drawable" name="wifi_signal_open_teal" id="0x7f0200e3" />
     <public type="drawable" name="wifi_signal_teal" id="0x7f0200e4" />
+    <public type="drawable" name="ic_audio_alarm_24dp" id="0x7f0200e5" />
+    <public type="drawable" name="ic_audio_vol_24dp" id="0x7f0200e7" />
+    <public type="drawable" name="ic_launch_app" id="0x7f0200e9" />
+    <public type="drawable" name="launch_app" id="0x7f0200ea" />
+    <public type="drawable" name="ring_notif" id="0x7f0200eb" />
+    <public type="drawable" name="ring_notif_mute" id="0x7f0200ec" />
+    <public type="drawable" name="ring_notif_vibrate" id="0x7f0200ed" />
+    <public type="drawable" name="ic_audio_ring_24dp" id="0x7f0200e6" />
     <public type="drawable" name="dotted_line_480px" id="0x7f020021" />
     <public type="drawable" name="encroid_progress" id="0x7f020023" />
     <public type="drawable" name="encroid_resignin" id="0x7f020024" />
@@ -269,6 +277,7 @@
     <public type="drawable" name="setup_illustration_wifi" id="0x7f0200d0" />
     <public type="drawable" name="spinner_default_holo_dark_am_no_underline" id="0x7f0200d6" />
     <public type="drawable" name="transparency" id="0x7f0200d9" />
+    <public type="drawable" name="ic_extra_settings" id="0x7f0200e8" />
     <public type="mipmap" name="ic_launcher_settings" id="0x7f030000" />
     <public type="layout" name="account_preference" id="0x7f040000" />
     <public type="layout" name="account_sync_screen" id="0x7f040001" />
@@ -492,6 +501,10 @@
     <public type="layout" name="write_wifi_config_to_nfc" id="0x7f0400de" />
     <public type="layout" name="zen_downtime_day" id="0x7f0400df" />
     <public type="layout" name="notification_app_section" id="0x7f0400e0" />
+    <public type="layout" name="hidden_apps_list" id="0x7f0400e1" />
+    <public type="layout" name="hidden_apps_list_item" id="0x7f0400e2" />
+    <public type="layout" name="patternlock" id="0x7f0400e3" />
+    <public type="layout" name="protected_account_view" id="0x7f0400e4" />
     <public type="layout" name="preference_inputmethod" id="0x7f04007f" />
     <public type="layout" name="settings_top_level" id="0x7f0400af" />
     <public type="layout" name="wifi_settings_for_setup_wizard_xl" id="0x7f0400da" />
@@ -580,6 +593,7 @@
     <public type="xml" name="wifi_settings" id="0x7f06004e" />
     <public type="xml" name="wireless_settings" id="0x7f06004f" />
     <public type="xml" name="zen_mode_settings" id="0x7f060050" />
+    <public type="xml" name="bliss_ambient_settings" id="0x7f060051" />
     <public type="raw" name="htc_copyright" id="0x7f070000" />
     <public type="raw" name="media_volume" id="0x7f070001" />
     <public type="raw" name="sprint_copyright" id="0x7f070002" />
@@ -639,6 +653,7 @@
     <public type="color" name="switch_accent_color" id="0x7f080035" />
     <public type="color" name="wifi_divider" id="0x7f080036" />
     <public type="color" name="sim_noitification" id="0x7f080037" />
+    <public type="color" name="background_color_darker_gray" id="0x7f080038" />
     <public type="string" name="setup_wizard_next_button_label" id="0x7f090000" />
     <public type="string" name="setup_wizard_back_button_label" id="0x7f090001" />
     <public type="string" name="additional_system_update" id="0x7f090002" />
@@ -3110,6 +3125,69 @@
     <public type="string" name="encrypt_talkback_dialog_message_password" id="0x7f0909a4" />
     <public type="string" name="imei_information_summary" id="0x7f0909a5" />
     <public type="string" name="slot_number" id="0x7f0909a6" />
+    <public type="string" name="extra_settings" id="0x7f0909d5" />
+    <public type="string" name="app_ops_settings_summary" id="0x7f0909d6" />
+    <public type="string" name="lockpattern_reset_button" id="0x7f0909d7" />
+    <public type="string" name="lockpattern_settings_reset_summary" id="0x7f0909d8" />
+    <public type="string" name="protected_apps" id="0x7f0909d9" />
+    <public type="string" name="menu_hidden_apps_delete" id="0x7f0909da" />
+    <public type="string" name="menu_hidden_apps_reset_lock" id="0x7f0909db" />
+    <public type="string" name="saving_protected_components" id="0x7f0909dc" />
+    <public type="string" name="pa_login_username_hint" id="0x7f0909dd" />
+    <public type="string" name="pa_login_password_hint" id="0x7f0909de" />
+    <public type="string" name="pa_login_submit_button" id="0x7f0909df" />
+    <public type="string" name="pa_login_checking_password" id="0x7f0909e0" />
+    <public type="string" name="pa_login_incorrect_login" id="0x7f0909e1" />
+    <public type="string" name="link_volume_option_title" id="0x7f0909e2" />
+    <public type="string" name="doze_overwrite_value_title" id="0x7f0909e3" />
+    <public type="string" name="doze_overwrite_value_summary" id="0x7f0909e4" />
+    <public type="string" name="doze_list_mode_title" id="0x7f0909e5" />
+    <public type="string" name="doze_list_mode_summary" id="0x7f0909e6" />
+    <public type="string" name="doze_pulse_title" id="0x7f0909e7" />
+    <public type="string" name="doze_pulse_duration_in_title" id="0x7f0909e8" />
+    <public type="string" name="doze_pulse_duration_in_summary" id="0x7f0909e9" />
+    <public type="string" name="doze_pulse_duration_visible_title" id="0x7f0909ea" />
+    <public type="string" name="doze_pulse_duration_visible_summary" id="0x7f0909eb" />
+    <public type="string" name="doze_pulse_duration_out_title" id="0x7f0909ec" />
+    <public type="string" name="doze_pulse_duration_out_summary" id="0x7f0909ed" />
+    <public type="string" name="doze_pulse_on_notifications_title" id="0x7f0909ee" />
+    <public type="string" name="doze_pulse_on_notifications_summary" id="0x7f0909ef" />
+    <public type="string" name="doze_shake_title" id="0x7f0909f0" />
+    <public type="string" name="doze_shake_mode_title" id="0x7f0909f1" />
+    <public type="string" name="doze_shake_mode_summary" id="0x7f0909f2" />
+    <public type="string" name="doze_shake_mode_test_summary" id="0x7f0909f3" />
+    <public type="string" name="doze_shake_mode_test_result" id="0x7f0909f4" />
+    <public type="string" name="doze_shake_test" id="0x7f0909f5" />
+    <public type="string" name="doze_shake_it" id="0x7f0909f6" />
+    <public type="string" name="doze_shake_acc_threshold_title" id="0x7f0909f7" />
+    <public type="string" name="doze_shake_acc_threshold_summary" id="0x7f0909f8" />
+    <public type="string" name="doze_time_mode_title" id="0x7f0909f9" />
+    <public type="string" name="doze_time_mode_summary" id="0x7f0909fa" />
+    <public type="string" name="twohundred_ms" id="0x7f0909fb" />
+    <public type="string" name="fivehundred_ms" id="0x7f0909fc" />
+    <public type="string" name="one_second" id="0x7f0909fd" />
+    <public type="string" name="one_second_default" id="0x7f0909fe" />
+    <public type="string" name="onehalf_second" id="0x7f0909ff" />
+    <public type="string" name="two_second" id="0x7f090a00" />
+    <public type="string" name="twohalf_second" id="0x7f090a01" />
+    <public type="string" name="three_second" id="0x7f090a02" />
+    <public type="string" name="three_second_default" id="0x7f090a03" />
+    <public type="string" name="threehalf_second" id="0x7f090a04" />
+    <public type="string" name="four_second" id="0x7f090a05" />
+    <public type="string" name="fourhalf_second" id="0x7f090a06" />
+    <public type="string" name="five_second" id="0x7f090a07" />
+    <public type="string" name="veryeasy_shake" id="0x7f090a08" />
+    <public type="string" name="easy_shake" id="0x7f090a09" />
+    <public type="string" name="medium_shake" id="0x7f090a0a" />
+    <public type="string" name="hard_shake" id="0x7f090a0b" />
+    <public type="string" name="veryhard_shake" id="0x7f090a0c" />
+    <public type="string" name="strong_shake" id="0x7f090a0d" />
+    <public type="string" name="fully_mode" id="0x7f090a0e" />
+    <public type="string" name="pocket_shake_mode" id="0x7f090a0f" />
+    <public type="string" name="pocket_pulse_mode" id="0x7f090a10" />
+    <public type="string" name="pocket_only_mode" id="0x7f090a11" />
+    <public type="string" name="shake_pulse_mode" id="0x7f090a12" />
+    <public type="string" name="pulse_only_mode" id="0x7f090a13" />
     <public type="string" name="APKTOOL_DUMMY_09a7" id="0x7f0909a7" />
     <public type="string" name="APKTOOL_DUMMY_09a8" id="0x7f0909a8" />
     <public type="string" name="APKTOOL_DUMMY_09a9" id="0x7f0909a9" />
@@ -3342,6 +3420,14 @@
     <public type="array" name="color_picker" id="0x7f0b0069" />
     <public type="array" name="input_method_selector_titles" id="0x7f0b006d" />
     <public type="array" name="input_method_selector_values" id="0x7f0b006e" />
+    <public type="array" name="doze_pulse_duration_in_entries" id="0x7f0b006f" />
+    <public type="array" name="doze_pulse_duration_in_values" id="0x7f0b0070" />
+    <public type="array" name="doze_pulse_duration_visible_entries" id="0x7f0b0071" />
+    <public type="array" name="doze_pulse_duration_visible_values" id="0x7f0b0072" />
+    <public type="array" name="doze_shake_acc_threshold_entries" id="0x7f0b0073" />
+    <public type="array" name="doze_shake_acc_threshold_values" id="0x7f0b0074" />
+    <public type="array" name="doze_list_mode_entries" id="0x7f0b0075" />
+    <public type="array" name="doze_list_mode_values" id="0x7f0b0076" />
     <public type="array" name="APKTOOL_DUMMY_006a" id="0x7f0b006a" />
     <public type="array" name="APKTOOL_DUMMY_006b" id="0x7f0b006b" />
     <public type="array" name="APKTOOL_DUMMY_006c" id="0x7f0b006c" />
@@ -4119,6 +4205,15 @@
     <public type="id" name="vpn_create" id="0x7f0f0271" />
     <public type="id" name="vpn_lockdown" id="0x7f0f0272" />
     <public type="id" name="wifi_wps" id="0x7f0f0273" />
+    <public type="id" name="pattern_lock_header" id="0x7f0f0274" />
+    <public type="id" name="pattern_lock_btn_cancel" id="0x7f0f0275" />
+    <public type="id" name="pattern_lock_btn_continue" id="0x7f0f0276" />
+    <public type="id" name="lock_pattern_view" id="0x7f0f0277" />
+    <public type="id" name="lock_account_view" id="0x7f0f0278" />
+    <public type="id" name="protected_apps_list" id="0x7f0f0279" />
+    <public type="id" name="app_item" id="0x7f0f027a" />
+    <public type="id" name="launch_app" id="0x7f0f027b" />
+    <public type="id" name="pa_account_view" id="0x7f0f027c" />
     <public type="plurals" name="show_dev_countdown" id="0x7f100000" />
     <public type="plurals" name="lockpassword_password_requires_letters" id="0x7f100001" />
     <public type="plurals" name="lockpassword_password_requires_lowercase" id="0x7f100002" />

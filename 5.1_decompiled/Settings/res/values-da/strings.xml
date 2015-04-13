@@ -1408,8 +1408,8 @@ Nogle apps fungerer muligvis ikke, før de opdateres af deres udviklere."</strin
     <string name="accessibility_screen_magnification_summary">"Når denne funktion er slået til, kan du zoome ind og ud ved at trykke tre gange på skærmen.
 
 Mens der er zoomet ind, kan du:
-"<ul><li>"panorere: Træk to eller flere fingre hen over skærmen.
-"<li>justere zoomniveauet: Knib to eller flere fingre sammen, eller spred dem fra hinanden.</li></li></ul>"
+"<li><ul>"panorere: Træk to eller flere fingre hen over skærmen.
+"<li>justere zoomniveauet: Knib to eller flere fingre sammen, eller spred dem fra hinanden.</li></ul></li>"
 
 Du kan også midlertidigt forstørre det, du trykker på, ved at trykke tre gange og holde fingeren nede. I denne forstørrede tilstand kan du trække fingeren for at udforske forskellige dele af skærmen. Løft fingeren for at vende tilbage til din forrige tilstand.
 

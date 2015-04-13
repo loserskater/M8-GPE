@@ -205,6 +205,7 @@
         <item>Wiadomości</item>
         <item>Multimedia</item>
         <item>Urządzenie</item>
+        <item>Autorun</item>
     </string-array>
     <string-array name="app_ops_summaries">
         <item>przybliżona lokalizacja</item>
@@ -252,8 +253,10 @@
         <item>monitor wysoki zasilanie lokalizacja</item>
         <item>pobierz statystyki użycia</item>
         <item>wycisz mikrofon/wyłącz wyciszenie</item>
+        <item>toast window</item>
         <item>wyświetl multimedia</item>
         <item>aktywuj VPN</item>
+        <item>run at boot</item>
     </string-array>
     <string-array name="app_ops_labels">
         <item>Lokalizacja</item>
@@ -301,8 +304,10 @@
         <item>Lokalizacja</item>
         <item>Pobierz statystyki użycia</item>
         <item>Wycisz mikrofon/wyłącz wyciszenie</item>
+        <item>Toast window</item>
         <item>Wyświetl multimedia</item>
         <item>Aktywuj VPN</item>
+        <item>Run at boot</item>
     </string-array>
     <string-array name="long_press_timeout_selector_titles">
         <item>Krótkie</item>
@@ -380,7 +385,9 @@
     </string-array>
     <string-array name="window_animation_scale_entries">
         <item>Animacja wyłączona</item>
+        <item>Skala animacji 0,25x</item>
         <item>Skala animacji 0,5x</item>
+        <item>Skala animacji 0,75x</item>
         <item>Skala animacji 1x</item>
         <item>Skala animacji 1,5x</item>
         <item>Skala animacji 2x</item>
@@ -389,7 +396,9 @@
     </string-array>
     <string-array name="transition_animation_scale_entries">
         <item>Animacja wyłączona</item>
+        <item>Skala animacji 0,25x</item>
         <item>Skala animacji 0,5x</item>
+        <item>Skala animacji 0,75x</item>
         <item>Skala animacji 1x</item>
         <item>Skala animacji 1,5x</item>
         <item>Skala animacji 2x</item>
@@ -398,7 +407,9 @@
     </string-array>
     <string-array name="animator_duration_scale_entries">
         <item>Animacja wyłączona</item>
+        <item>Skala animacji 0,25x</item>
         <item>Skala animacji 0,5x</item>
+        <item>Skala animacji 0,75x</item>
         <item>Skala animacji 1x</item>
         <item>Skala animacji 1,5x</item>
         <item>Skala animacji 2x</item>

@@ -327,6 +327,7 @@
         <item>Messaging</item>
         <item>Media</item>
         <item>Device</item>
+        <item>Autorun</item>
     </string-array>
     <string-array name="app_ops_summaries">
         <item>coarse location</item>
@@ -374,8 +375,10 @@
         <item>monitor high power location</item>
         <item>get usage stats</item>
         <item>mute/unmute microphone</item>
+        <item>toast window</item>
         <item>project media</item>
         <item>activate VPN</item>
+        <item>run at boot</item>
     </string-array>
     <string-array name="app_ops_labels">
         <item>Location</item>
@@ -423,8 +426,10 @@
         <item>Location</item>
         <item>Get usage stats</item>
         <item>Mute/unmute microphone</item>
+        <item>Toast window</item>
         <item>Project media</item>
         <item>Activate VPN</item>
+        <item>Run at boot</item>
     </string-array>
     <string-array name="long_press_timeout_selector_titles">
         <item>Short</item>
@@ -637,7 +642,9 @@
     </string-array>
     <string-array name="window_animation_scale_entries">
         <item>Animation off</item>
+        <item>Animation scale .25x</item>
         <item>Animation scale .5x</item>
+        <item>Animation scale .75x</item>
         <item>Animation scale 1x</item>
         <item>Animation scale 1.5x</item>
         <item>Animation scale 2x</item>
@@ -646,7 +653,9 @@
     </string-array>
     <string-array name="window_animation_scale_values">
         <item>0</item>
+        <item>.25</item>
         <item>.5</item>
+        <item>.75</item>
         <item>1</item>
         <item>1.5</item>
         <item>2</item>
@@ -655,7 +664,9 @@
     </string-array>
     <string-array name="transition_animation_scale_entries">
         <item>Animation off</item>
+        <item>Animation scale .25x</item>
         <item>Animation scale .5x</item>
+        <item>Animation scale .75x</item>
         <item>Animation scale 1x</item>
         <item>Animation scale 1.5x</item>
         <item>Animation scale 2x</item>
@@ -664,7 +675,9 @@
     </string-array>
     <string-array name="transition_animation_scale_values">
         <item>0</item>
+        <item>.25</item>
         <item>.5</item>
+        <item>.75</item>
         <item>1</item>
         <item>1.5</item>
         <item>2</item>
@@ -673,7 +686,9 @@
     </string-array>
     <string-array name="animator_duration_scale_entries">
         <item>Animation off</item>
+        <item>Animation scale .25x</item>
         <item>Animation scale .5x</item>
+        <item>Animation scale .75x</item>
         <item>Animation scale 1x</item>
         <item>Animation scale 1.5x</item>
         <item>Animation scale 2x</item>
@@ -682,7 +697,9 @@
     </string-array>
     <string-array name="animator_duration_scale_values">
         <item>0</item>
+        <item>.25</item>
         <item>.5</item>
+        <item>.75</item>
         <item>1</item>
         <item>1.5</item>
         <item>2</item>
@@ -894,5 +911,73 @@
         <item>@string/input_method_selector_show_automatically_value</item>
         <item>@string/input_method_selector_always_show_value</item>
         <item>@string/input_method_selector_always_hide_value</item>
+    </string-array>
+    <string-array name="doze_pulse_duration_in_entries">
+        <item>@string/twohundred_ms</item>
+        <item>@string/fivehundred_ms</item>
+        <item>@string/one_second_default</item>
+        <item>@string/onehalf_second</item>
+        <item>@string/two_second</item>
+    </string-array>
+    <string-array name="doze_pulse_duration_in_values">
+        <item>200</item>
+        <item>500</item>
+        <item>1000</item>
+        <item>1500</item>
+        <item>2000</item>
+    </string-array>
+    <string-array name="doze_pulse_duration_visible_entries">
+        <item>@string/one_second</item>
+        <item>@string/onehalf_second</item>
+        <item>@string/two_second</item>
+        <item>@string/twohalf_second</item>
+        <item>@string/three_second_default</item>
+        <item>@string/threehalf_second</item>
+        <item>@string/four_second</item>
+        <item>@string/fourhalf_second</item>
+        <item>@string/five_second</item>
+    </string-array>
+    <string-array name="doze_pulse_duration_visible_values">
+        <item>1000</item>
+        <item>1500</item>
+        <item>2000</item>
+        <item>2500</item>
+        <item>3000</item>
+        <item>3500</item>
+        <item>4000</item>
+        <item>4500</item>
+        <item>5000</item>
+    </string-array>
+    <string-array name="doze_shake_acc_threshold_entries">
+        <item>@string/veryeasy_shake</item>
+        <item>@string/easy_shake</item>
+        <item>@string/medium_shake</item>
+        <item>@string/hard_shake</item>
+        <item>@string/veryhard_shake</item>
+        <item>@string/strong_shake</item>
+    </string-array>
+    <string-array name="doze_shake_acc_threshold_values">
+        <item>2</item>
+        <item>5</item>
+        <item>10</item>
+        <item>13</item>
+        <item>16</item>
+        <item>20</item>
+    </string-array>
+    <string-array name="doze_list_mode_entries">
+        <item>@string/fully_mode</item>
+        <item>@string/pocket_shake_mode</item>
+        <item>@string/pocket_pulse_mode</item>
+        <item>@string/pocket_only_mode</item>
+        <item>@string/shake_pulse_mode</item>
+        <item>@string/pulse_only_mode</item>
+    </string-array>
+    <string-array name="doze_list_mode_values">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
     </string-array>
 </resources>

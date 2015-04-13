@@ -1408,8 +1408,8 @@ Bazı uygulamalar, geliştiricileri tarafından güncellenene kadar çalışmaya
     <string name="accessibility_screen_magnification_summary">"Bu özellik açıldığında ekrana üç kez hafifçe dokunarak görüntüyü yakınlaştırabilir ve uzaklaştırabilirsiniz.
 
 Yakınlaştırdığınızda şunları yapabilirsiniz
-"<ul><li>"Kaydırma: İki veya daha fazla parmağınızı ekranda sürükleyin.
-"<li>Yakınlaştırrma düzeyini ayarlama: İki veya daha fazla parmağınızı birbirine yaklaştırın veya uzaklaştırın.</li></li></ul>"
+"<li><ul>"Kaydırma: İki veya daha fazla parmağınızı ekranda sürükleyin.
+"<li>Yakınlaştırrma düzeyini ayarlama: İki veya daha fazla parmağınızı birbirine yaklaştırın veya uzaklaştırın.</li></ul></li>"
 
 Ayrıca, üç kez hafifçe vurup parmağınızı basılı tutarak parmağınızın altındakini geçici olarak büyütebilirsiniz. Önceki duruma dönmek için parmağınızı kaldırın.
 

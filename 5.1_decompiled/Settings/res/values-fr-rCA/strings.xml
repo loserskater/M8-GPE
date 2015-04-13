@@ -1408,8 +1408,8 @@ Certaines applications peuvent ne pas fonctionner jusqu'à ce que leurs dévelop
     <string name="accessibility_screen_magnification_summary">"Lorsque cette fonctionnalité est activée, vous pouvez effectuer des zooms avant et arrière en appuyant trois fois sur l'écran.
 
 Lorsque vous effectuez un zoom avant, vous pouvez :
-"<ul><li>"Effectuer un panoramique : faites glisser deux doigts ou plus sur l'écran.
-"<li>Régler le niveau de zoom : pincez deux doigts ou plus, ou écartez-les.</li></li></ul>"
+"<li><ul>"Effectuer un panoramique : faites glisser deux doigts ou plus sur l'écran.
+"<li>Régler le niveau de zoom : pincez deux doigts ou plus, ou écartez-les.</li></ul></li>"
 
 Vous pouvez également agrandir le contenu se trouvant sous votre doigt en appuyant trois fois sur l'écran et en prolongeant la troisième pression. Lorsque la loupe est activée, vous pouvez faire glisser votre doigt sur l'écran pour en explorer les différentes parties. Relevez votre doigt pour revenir à l'état précédent.
 

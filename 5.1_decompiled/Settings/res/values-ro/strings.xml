@@ -1407,8 +1407,8 @@ Este posibil ca unele aplicaţii să nu funcţioneze înainte de a fi actualizat
     <string name="accessibility_screen_magnification_summary">"După activarea acestei funcţii, puteţi mări şi micşora atingând de trei ori ecranul.
 
 În timp ce măriţi, puteţi:
-"<ul><li>"să deplasaţi: deplasaţi două sau mai multe degete pe ecran;
-"<li>să ajustaţi nivelul de zoom: ciupiţi cu două sau mai multe degete ori îndepărtați-le.</li></li></ul>"
+"<li><ul>"să deplasaţi: deplasaţi două sau mai multe degete pe ecran;
+"<li>să ajustaţi nivelul de zoom: ciupiţi cu două sau mai multe degete ori îndepărtați-le.</li></ul></li>"
 
 De asemenea, puteţi să măriţi temporar ce se află sub degetul dvs. atingând ecranul de trei ori şi menţinând degetul pe ecran. În imaginea mărită, puteţi să glisaţi degetul pentru a explora diferite părţi ale ecranului. Ridicaţi degetul pentru a reveni la starea anterioară.
 

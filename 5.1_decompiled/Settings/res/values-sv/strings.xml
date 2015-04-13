@@ -1408,8 +1408,8 @@ En del appar måste eventuellt uppdateras av utvecklaren för att fungera."</str
     <string name="accessibility_screen_magnification_summary">"När den här funktionen är aktiverad kan du zooma in och ut genom att trycka tre gånger på skärmen.
 
 När du har zoomat in kan du göra följande saker:
-"<ul><li>"Panorera: Dra minst två fingrar över skärmen.
-"<li>Justera zoomen: Nyp eller dra isär med minst två fingrar.</li></li></ul>"
+"<li><ul>"Panorera: Dra minst två fingrar över skärmen.
+"<li>Justera zoomen: Nyp eller dra isär med minst två fingrar.</li></ul></li>"
 
 Du kan också förstora något tillfälligt genom att trycka tre gånger på det och hålla kvar. I det förstorade läget kan du utforska olika delar av skärmen genom att dra med fingret. Återgå till föregående läge genom att släppa fingret.
 

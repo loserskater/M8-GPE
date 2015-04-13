@@ -1408,8 +1408,8 @@ Pri niektorých aplikáciách platí, že budú fungovať až vtedy, keď ich v�
     <string name="accessibility_screen_magnification_summary">"Keď je táto funkcia zapnutá, môžete približovať alebo odďalovať trojitým klepnutím na obrazovku.
 
 Počas priblíženia môžete:
-"<ul><li>"Posúvať: Ťahajte dvoma alebo viacerými prstami po obrazovke.
-"<li>Prispôsobiť úroveň priblíženia: Priblížte dva alebo viacero prstov k sebe alebo ich od seba odtiahnite.</li></li></ul>"
+"<li><ul>"Posúvať: Ťahajte dvoma alebo viacerými prstami po obrazovke.
+"<li>Prispôsobiť úroveň priblíženia: Priblížte dva alebo viacero prstov k sebe alebo ich od seba odtiahnite.</li></ul></li>"
 
 Obsah pod prstom môžete tiež dočasne priblížiť trojitým klepnutím a podržaním. V stave priblíženia môžete posúvaním prsta preskúmavať rôzne časti obrazovky. Odtiahnutím prsta sa vrátite do predchádzajúceho stavu.
 

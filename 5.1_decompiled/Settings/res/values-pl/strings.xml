@@ -1408,8 +1408,8 @@ Niektóre aplikacje mogą przestać działać i wymagać aktualizacji przez prog
     <string name="accessibility_screen_magnification_summary">"Kiedy ta funkcja jest włączona, możesz powiększyć i pomniejszyć obraz, trzykrotnie klikając ekran.
 
 W trybie powiększenia możesz:
-"<ul><li>"Przesuwać: przeciągnij palcami po ekranie.
-"<li>Regulować powiększenie: ściągnij lub rozsuń palce.</li></li></ul>"
+"<li><ul>"Przesuwać: przeciągnij palcami po ekranie.
+"<li>Regulować powiększenie: ściągnij lub rozsuń palce.</li></ul></li>"
 
 Możesz też tymczasowo powiększyć miejsce pod palcem, klikając trzykrotnie i przytrzymując palec na ekranie. W takim widoku „lupy” możesz przesuwać palcem po ekranie i powiększać różne miejsca. Podniesienie palca spowoduje powrót do poprzedniego widoku.
 

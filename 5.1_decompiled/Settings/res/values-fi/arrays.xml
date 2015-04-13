@@ -205,6 +205,7 @@
         <item>Viestit</item>
         <item>Media</item>
         <item>Laite</item>
+        <item>Autorun</item>
     </string-array>
     <string-array name="app_ops_summaries">
         <item>karkea sijainti</item>
@@ -252,8 +253,10 @@
         <item>seuraa suuritehoista sijaintia</item>
         <item>hae käyttötilastot</item>
         <item>mykistä mikrofoni / poista mykistys</item>
+        <item>toast window</item>
         <item>lähetä media</item>
         <item>aktivoi VPN</item>
+        <item>run at boot</item>
     </string-array>
     <string-array name="app_ops_labels">
         <item>Sijainti</item>
@@ -301,8 +304,10 @@
         <item>Sijainti</item>
         <item>Hae käyttötilastot</item>
         <item>Mykistä mikrofoni / poista mykistys</item>
+        <item>Toast window</item>
         <item>Lähetä media</item>
         <item>Aktivoi VPN</item>
+        <item>Run at boot</item>
     </string-array>
     <string-array name="long_press_timeout_selector_titles">
         <item>Lyhyt</item>
@@ -380,7 +385,9 @@
     </string-array>
     <string-array name="window_animation_scale_entries">
         <item>Animaatio pois käytöstä</item>
+        <item>Animaation mittakaava 0,25-kertainen</item>
         <item>Animaation mittakaava 0,5-kertainen</item>
+        <item>Animaation mittakaava 0,75-kertainen</item>
         <item>Animaation mittakaava 1-kertainen</item>
         <item>Animaation mittakaava 1,5-kertainen</item>
         <item>Animaation mittakaava 2-kertainen</item>
@@ -389,7 +396,9 @@
     </string-array>
     <string-array name="transition_animation_scale_entries">
         <item>Animaatio pois käytöstä</item>
+        <item>Animaation mittakaava 0,25-kertainen</item>
         <item>Animaation mittakaava 0,5-kertainen</item>
+        <item>Animaation mittakaava 0,75-kertainen</item>
         <item>Animaation mittakaava 1-kertainen</item>
         <item>Animaation mittakaava 0,5-kertainen</item>
         <item>Animaation mittakaava 2-kertainen</item>
@@ -398,7 +407,9 @@
     </string-array>
     <string-array name="animator_duration_scale_entries">
         <item>Animaatio pois käytöstä</item>
+        <item>Animaation mittakaava 0,25-kertainen</item>
         <item>Animaation mittakaava 0,5-kertainen</item>
+        <item>Animaation mittakaava 0,75-kertainen</item>
         <item>Animaation mittakaava 1-kertainen</item>
         <item>Animaation mittakaava 1,5-kertainen</item>
         <item>Animaation mittakaava 2-kertainen</item>

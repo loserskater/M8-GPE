@@ -205,6 +205,7 @@
         <item>העברת הודעות</item>
         <item>מדיה</item>
         <item>מכשיר</item>
+        <item>Autorun</item>
     </string-array>
     <string-array name="app_ops_summaries">
         <item>מיקום משוער</item>
@@ -252,8 +253,10 @@
         <item>מעקב אחר מיקום עם צריכת סוללה גבוהה</item>
         <item>קבל סטטיסטיקת שימוש</item>
         <item>השתק/בטל השתקה של המיקרופון</item>
+        <item>toast window</item>
         <item>הקרן מדיה</item>
         <item>‏הפעל VPN</item>
+        <item>run at boot</item>
     </string-array>
     <string-array name="app_ops_labels">
         <item>מיקום</item>
@@ -301,8 +304,10 @@
         <item>מיקום</item>
         <item>קבל סטטיסטיקת שימוש</item>
         <item>השתק/בטל השתקה של המיקרופון</item>
+        <item>Toast window</item>
         <item>הקרן מדיה</item>
         <item>‏הפעל VPN</item>
+        <item>Run at boot</item>
     </string-array>
     <string-array name="long_press_timeout_selector_titles">
         <item>קצר</item>

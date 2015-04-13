@@ -205,6 +205,7 @@
         <item>ការ​ផ្ញើ​សារ</item>
         <item>មេឌៀ</item>
         <item>ឧបករណ៍</item>
+        <item>Autorun</item>
     </string-array>
     <string-array name="app_ops_summaries">
         <item>ទីតាំង​មិន​ល្អ</item>
@@ -252,8 +253,10 @@
         <item>​ពិនិត្យ​ទីតាំង​ថាមពល​​ខ្ពស់</item>
         <item>ទទួល​​ស្ថិតិ​​ប្រើប្រាស់</item>
         <item>បិទ/បើក​សំឡេង​មីក្រូហ្វូន</item>
+        <item>toast window</item>
         <item>មេឌៀ​គម្រោង</item>
         <item>ធ្វើឲ្យ VPN សកម្ម</item>
+        <item>run at boot</item>
     </string-array>
     <string-array name="app_ops_labels">
         <item>ទី​តាំង​</item>
@@ -301,8 +304,10 @@
         <item>ទី​តាំង​</item>
         <item>ទទួល​​ស្ថិតិ​​ប្រើប្រាស់</item>
         <item>បិទ/បើក​សំឡេង​មីក្រូហ្វូន</item>
+        <item>Toast window</item>
         <item>មេឌៀ​គម្រោង</item>
         <item>ធ្វើឲ្យ VPN សកម្ម</item>
+        <item>Run at boot</item>
     </string-array>
     <string-array name="long_press_timeout_selector_titles">
         <item>ខ្លី</item>
@@ -380,7 +385,9 @@
     </string-array>
     <string-array name="window_animation_scale_entries">
         <item>បិទ​ចលនា</item>
+        <item>មាត្រដ្ឋាន​ចលនា .25x</item>
         <item>មាត្រដ្ឋាន​ចលនា .5x</item>
+        <item>មាត្រដ្ឋាន​ចលនា .75x</item>
         <item>មាត្រដ្ឋាន​ចលនា 1x</item>
         <item>មាត្រដ្ឋាន​ចលនា 1.5x</item>
         <item>មាត្រដ្ឋាន​ចលនា 2x</item>
@@ -389,7 +396,9 @@
     </string-array>
     <string-array name="transition_animation_scale_entries">
         <item>បិទ​ចលនា</item>
+        <item>មាត្រដ្ឋាន​ចលនា .25x</item>
         <item>មាត្រដ្ឋាន​ចលនា .5x</item>
+        <item>មាត្រដ្ឋាន​ចលនា .75x</item>
         <item>មាត្រដ្ឋាន​ចលនា 1x</item>
         <item>មាត្រដ្ឋាន​ចលនា 1.5x</item>
         <item>មាត្រដ្ឋាន​ចលនា 2x</item>
@@ -398,7 +407,9 @@
     </string-array>
     <string-array name="animator_duration_scale_entries">
         <item>បិទ​ចលនា</item>
+        <item>មាត្រដ្ឋាន​ចលនា .25x</item>
         <item>មាត្រដ្ឋាន​ចលនា .5x</item>
+        <item>មាត្រដ្ឋាន​ចលនា .75x</item>
         <item>មាត្រដ្ឋាន​ចលនា 1x</item>
         <item>មាត្រដ្ឋាន​ចលនា 1.5x</item>
         <item>មាត្រដ្ឋាន​ចលនា 2x</item>

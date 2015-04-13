@@ -1408,8 +1408,8 @@ Algumas aplicações podem não funcionar até serem atualizadas pelos respetivo
     <string name="accessibility_screen_magnification_summary">"Quando esta funcionalidade está ativada, pode aumentar ou diminuir o zoom ao tocar três vezes no ecrã.
 
 Enquanto estiver a aumentar o zoom, pode:
-"<ul><li>"Deslocar: arraste dois ou mais dedos no ecrã.
-"<li>Ajustar o nível de zoom: junte dois ou mais dedos ou afaste-os.</li></li></ul>"
+"<li><ul>"Deslocar: arraste dois ou mais dedos no ecrã.
+"<li>Ajustar o nível de zoom: junte dois ou mais dedos ou afaste-os.</li></ul></li>"
 
 Também pode aumentar temporariamente o que estiver por baixo do seu dedo ao tocar três vezes sem soltar. Neste estado aumentado, pode arrastar o dedo para explorar diferentes partes do ecrã. Levante o dedo para voltar ao estado anterior.
 

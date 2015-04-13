@@ -1408,8 +1408,8 @@ Mõned rakendused ei pruugi töötada enne, kui arendaja on need värskendanud."
     <string name="accessibility_screen_magnification_summary">"Kui see funktsioon on sisse lülitatud, saate suurendada ja vähendada, kolmikpuudutades ekraani.
 
 Suurendatult saab teha järgmist.
-"<ul><li>"Paanida: lohistage kahe või enama sõrmega üle ekraani.
-"<li>Korrigeerida suumitaset: liigutage kahte või enamat sõrme kokku või lahku.</li></li></ul>"
+"<li><ul>"Paanida: lohistage kahe või enama sõrmega üle ekraani.
+"<li>Korrigeerida suumitaset: liigutage kahte või enamat sõrme kokku või lahku.</li></ul></li>"
 
 Saate ka ajutiselt suurendada sõrme all olevat kujutist, kolmikpuudutades ekraani ja hoides sõrme ekraanil. Selles suurendatud olekus saate sõrme ekraanil lohistada, et vaadata kuva erinevaid osi. Eelmisesse olekusse naasmiseks tõstke sõrm ekraanilt.
 

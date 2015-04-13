@@ -1408,8 +1408,8 @@ Dažas lietotnes, iespējams, nedarbosies, kamēr tās neatjauninās izstrādāt
     <string name="accessibility_screen_magnification_summary">"Ja šī funkcija ir ieslēgta, varat tuvināt un tālināt, trīs reizes pieskaroties ekrānam.
 
 Ja veicāt tuvināšanu, varat veikt arī tālāk norādītās darbības.
-"<ul><li>"Panoramēt — velciet divus pirkstus vai vairāk pāri ekrānam.
-"<li>Pielāgot tālummaiņas līmeni — savelciet kopā divus pirkstus vai vairāk vai izpletiet tos.</li></li></ul>"
+"<li><ul>"Panoramēt — velciet divus pirkstus vai vairāk pāri ekrānam.
+"<li>Pielāgot tālummaiņas līmeni — savelciet kopā divus pirkstus vai vairāk vai izpletiet tos.</li></ul></li>"
 
 Varat arī uz brīdi palielināt zem pirksta redzamo vienumu, trīs reizes pieskaroties ekrānam un turot. Šādā palielinājumā varat pārvilkt pirkstu, lai izvērstu citas ekrāna daļas. Paceliet pirkstu, lai atgrieztu iepriekšējo ekrāna stāvokli.
 
