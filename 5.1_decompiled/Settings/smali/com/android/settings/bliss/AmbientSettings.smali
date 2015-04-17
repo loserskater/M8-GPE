@@ -117,7 +117,7 @@
 
     iget v3, p0, Lcom/android/settings/bliss/AmbientSettings;->mAccValue:I
 
-    invoke-static {v1, v2, v3}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
+    invoke-static {v1, v2, v3}, Landroid/provider/Settings$Secure;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
     iget-object v1, p0, Lcom/android/settings/bliss/AmbientSettings;->mDozeShakeThreshold:Landroid/preference/ListPreference;
 
@@ -174,7 +174,7 @@
 
     const-string v4, "doze_overwrite_value"
 
-    invoke-static {v3, v4, v2}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+    invoke-static {v3, v4, v2}, Landroid/provider/Settings$Secure;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
 
     move-result v3
 
@@ -460,7 +460,7 @@
 
     const-string v8, "doze_pocket_mode"
 
-    invoke-static {v7, v8, v6}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+    invoke-static {v7, v8, v6}, Landroid/provider/Settings$Secure;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
 
     move-result v7
 
@@ -475,7 +475,7 @@
 
     const-string v8, "doze_shake_mode"
 
-    invoke-static {v7, v8, v6}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+    invoke-static {v7, v8, v6}, Landroid/provider/Settings$Secure;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
 
     move-result v7
 
@@ -490,7 +490,7 @@
 
     const-string v8, "doze_pulse_on_notifications"
 
-    invoke-static {v7, v8, v5}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+    invoke-static {v7, v8, v5}, Landroid/provider/Settings$Secure;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
 
     move-result v7
 
@@ -656,7 +656,7 @@
 
     const-string v1, "doze_pocket_mode"
 
-    invoke-static {v0, v1, v2}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
+    invoke-static {v0, v1, v2}, Landroid/provider/Settings$Secure;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
     invoke-virtual {p0}, Lcom/android/settings/bliss/AmbientSettings;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -664,7 +664,7 @@
 
     const-string v1, "doze_shake_mode"
 
-    invoke-static {v0, v1, v2}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
+    invoke-static {v0, v1, v2}, Landroid/provider/Settings$Secure;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
     invoke-virtual {p0}, Lcom/android/settings/bliss/AmbientSettings;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -672,7 +672,7 @@
 
     const-string v1, "doze_pulse_on_notifications"
 
-    invoke-static {v0, v1, v2}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
+    invoke-static {v0, v1, v2}, Landroid/provider/Settings$Secure;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
     :cond_0
     :goto_0
@@ -693,7 +693,7 @@
 
     const-string v1, "doze_pocket_mode"
 
-    invoke-static {v0, v1, v2}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
+    invoke-static {v0, v1, v2}, Landroid/provider/Settings$Secure;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
     invoke-virtual {p0}, Lcom/android/settings/bliss/AmbientSettings;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -701,7 +701,7 @@
 
     const-string v1, "doze_shake_mode"
 
-    invoke-static {v0, v1, v2}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
+    invoke-static {v0, v1, v2}, Landroid/provider/Settings$Secure;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
     invoke-virtual {p0}, Lcom/android/settings/bliss/AmbientSettings;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -709,7 +709,7 @@
 
     const-string v1, "doze_pulse_on_notifications"
 
-    invoke-static {v0, v1, v3}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
+    invoke-static {v0, v1, v3}, Landroid/provider/Settings$Secure;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
     goto :goto_0
 
@@ -728,7 +728,7 @@
 
     const-string v1, "doze_pocket_mode"
 
-    invoke-static {v0, v1, v2}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
+    invoke-static {v0, v1, v2}, Landroid/provider/Settings$Secure;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
     invoke-virtual {p0}, Lcom/android/settings/bliss/AmbientSettings;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -736,7 +736,7 @@
 
     const-string v1, "doze_shake_mode"
 
-    invoke-static {v0, v1, v3}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
+    invoke-static {v0, v1, v3}, Landroid/provider/Settings$Secure;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
     invoke-virtual {p0}, Lcom/android/settings/bliss/AmbientSettings;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -744,7 +744,7 @@
 
     const-string v1, "doze_pulse_on_notifications"
 
-    invoke-static {v0, v1, v2}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
+    invoke-static {v0, v1, v2}, Landroid/provider/Settings$Secure;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
     goto :goto_0
 
@@ -763,7 +763,7 @@
 
     const-string v1, "doze_pocket_mode"
 
-    invoke-static {v0, v1, v2}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
+    invoke-static {v0, v1, v2}, Landroid/provider/Settings$Secure;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
     invoke-virtual {p0}, Lcom/android/settings/bliss/AmbientSettings;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -771,7 +771,7 @@
 
     const-string v1, "doze_shake_mode"
 
-    invoke-static {v0, v1, v3}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
+    invoke-static {v0, v1, v3}, Landroid/provider/Settings$Secure;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
     invoke-virtual {p0}, Lcom/android/settings/bliss/AmbientSettings;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -779,7 +779,7 @@
 
     const-string v1, "doze_pulse_on_notifications"
 
-    invoke-static {v0, v1, v3}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
+    invoke-static {v0, v1, v3}, Landroid/provider/Settings$Secure;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
     goto :goto_0
 
@@ -798,7 +798,7 @@
 
     const-string v1, "doze_pocket_mode"
 
-    invoke-static {v0, v1, v3}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
+    invoke-static {v0, v1, v3}, Landroid/provider/Settings$Secure;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
     invoke-virtual {p0}, Lcom/android/settings/bliss/AmbientSettings;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -806,7 +806,7 @@
 
     const-string v1, "doze_shake_mode"
 
-    invoke-static {v0, v1, v2}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
+    invoke-static {v0, v1, v2}, Landroid/provider/Settings$Secure;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
     invoke-virtual {p0}, Lcom/android/settings/bliss/AmbientSettings;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -814,7 +814,7 @@
 
     const-string v1, "doze_pulse_on_notifications"
 
-    invoke-static {v0, v1, v2}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
+    invoke-static {v0, v1, v2}, Landroid/provider/Settings$Secure;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
     goto/16 :goto_0
 
@@ -833,7 +833,7 @@
 
     const-string v1, "doze_pocket_mode"
 
-    invoke-static {v0, v1, v3}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
+    invoke-static {v0, v1, v3}, Landroid/provider/Settings$Secure;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
     invoke-virtual {p0}, Lcom/android/settings/bliss/AmbientSettings;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -841,7 +841,7 @@
 
     const-string v1, "doze_shake_mode"
 
-    invoke-static {v0, v1, v3}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
+    invoke-static {v0, v1, v3}, Landroid/provider/Settings$Secure;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
     invoke-virtual {p0}, Lcom/android/settings/bliss/AmbientSettings;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -849,7 +849,7 @@
 
     const-string v1, "doze_pulse_on_notifications"
 
-    invoke-static {v0, v1, v2}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
+    invoke-static {v0, v1, v2}, Landroid/provider/Settings$Secure;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
     goto/16 :goto_0
 .end method
@@ -871,7 +871,7 @@
 
     const-string v5, "doze_pulse_duration_in"
 
-    invoke-static {v4, v5, v8}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+    invoke-static {v4, v5, v8}, Landroid/provider/Settings$Secure;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
 
     move-result v1
 
@@ -920,7 +920,7 @@
 
     const/16 v6, 0xbb8
 
-    invoke-static {v4, v5, v6}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+    invoke-static {v4, v5, v6}, Landroid/provider/Settings$Secure;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
 
     move-result v3
 
@@ -967,7 +967,7 @@
 
     const-string v5, "doze_pulse_duration_out"
 
-    invoke-static {v4, v5, v8}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+    invoke-static {v4, v5, v8}, Landroid/provider/Settings$Secure;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
 
     move-result v2
 
@@ -1016,7 +1016,7 @@
 
     const/16 v6, 0xa
 
-    invoke-static {v4, v5, v6}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+    invoke-static {v4, v5, v6}, Landroid/provider/Settings$Secure;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
 
     move-result v4
 
@@ -1079,7 +1079,7 @@
 
     const-string v4, "doze_enabled"
 
-    invoke-static {v1, v4, v2}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+    invoke-static {v1, v4, v2}, Landroid/provider/Settings$Secure;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
 
     move-result v0
 
@@ -1103,7 +1103,7 @@
 
     const-string v4, "doze_time_mode"
 
-    invoke-static {v1, v4, v3}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+    invoke-static {v1, v4, v3}, Landroid/provider/Settings$Secure;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
 
     move-result v0
 
@@ -1127,7 +1127,7 @@
 
     const-string v4, "doze_overwrite_value"
 
-    invoke-static {v1, v4, v3}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+    invoke-static {v1, v4, v3}, Landroid/provider/Settings$Secure;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
 
     move-result v0
 
@@ -1419,7 +1419,7 @@
 
     const-string v10, "doze_pulse_duration_in"
 
-    invoke-static {v8, v10, v2}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
+    invoke-static {v8, v10, v2}, Landroid/provider/Settings$Secure;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
     :cond_1
     iget-object v8, p0, Lcom/android/settings/bliss/AmbientSettings;->mDozePulseVisible:Landroid/preference/ListPreference;
@@ -1462,7 +1462,7 @@
 
     const-string v10, "doze_pulse_duration_visible"
 
-    invoke-static {v8, v10, v4}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
+    invoke-static {v8, v10, v4}, Landroid/provider/Settings$Secure;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
     :cond_2
     iget-object v8, p0, Lcom/android/settings/bliss/AmbientSettings;->mDozePulseOut:Landroid/preference/ListPreference;
@@ -1505,7 +1505,7 @@
 
     const-string v10, "doze_pulse_duration_out"
 
-    invoke-static {v8, v10, v3}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
+    invoke-static {v8, v10, v3}, Landroid/provider/Settings$Secure;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
     :cond_3
     iget-object v8, p0, Lcom/android/settings/bliss/AmbientSettings;->mDozeShakeThreshold:Landroid/preference/ListPreference;

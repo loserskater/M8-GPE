@@ -71,7 +71,7 @@
     iget-object v6, p0, Lcom/android/settings/applications/ProtectedAppsActivity$2;->this$0:Lcom/android/settings/applications/ProtectedAppsActivity;
 
     # invokes: Lcom/android/settings/applications/ProtectedAppsActivity;->getProtectedStateFromComponentName(Landroid/content/ComponentName;)Z
-    invoke-static {v6, v0}, Lcom/android/settings/applications/ProtectedAppsActivity;->access$300(Lcom/android/settings/applications/ProtectedAppsActivity;Landroid/content/ComponentName;)Z
+    invoke-static {v6, v0}, Lcom/android/settings/applications/ProtectedAppsActivity;->access$400(Lcom/android/settings/applications/ProtectedAppsActivity;Landroid/content/ComponentName;)Z
 
     move-result v4
 
