@@ -95,11 +95,6 @@
     goto :goto_0
 
     :cond_0
-    iget-object v4, p0, Lcom/android/settings/applications/ProtectedAppsActivity$StoreComponentProtectedStatus;->this$0:Lcom/android/settings/applications/ProtectedAppsActivity;
-
-    # invokes: Lcom/android/settings/applications/ProtectedAppsActivity;->updateProtectedComponentsList()V
-    invoke-static {v4}, Lcom/android/settings/applications/ProtectedAppsActivity;->access$300(Lcom/android/settings/applications/ProtectedAppsActivity;)V
-
     const/4 v4, 0x0
 
     return-object v4

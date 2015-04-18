@@ -101,7 +101,7 @@
     return-void
 .end method
 
-.method static synthetic access$700(Lcom/android/settings/applications/ProtectedAppsActivity$AppsAdapter;)Ljava/util/concurrent/ConcurrentHashMap;
+.method static synthetic access$600(Lcom/android/settings/applications/ProtectedAppsActivity$AppsAdapter;)Ljava/util/concurrent/ConcurrentHashMap;
     .locals 1
 
     iget-object v0, p0, Lcom/android/settings/applications/ProtectedAppsActivity$AppsAdapter;->mIcons:Ljava/util/concurrent/ConcurrentHashMap;
@@ -171,7 +171,7 @@
     iget-object v5, v0, Lcom/android/settings/applications/ProtectedAppsActivity$AppEntry;->componentName:Landroid/content/ComponentName;
 
     # invokes: Lcom/android/settings/applications/ProtectedAppsActivity;->getProtectedStateFromComponentName(Landroid/content/ComponentName;)Z
-    invoke-static {v4, v5}, Lcom/android/settings/applications/ProtectedAppsActivity;->access$400(Lcom/android/settings/applications/ProtectedAppsActivity;Landroid/content/ComponentName;)Z
+    invoke-static {v4, v5}, Lcom/android/settings/applications/ProtectedAppsActivity;->access$300(Lcom/android/settings/applications/ProtectedAppsActivity;Landroid/content/ComponentName;)Z
 
     move-result v2
 
@@ -211,7 +211,7 @@
     iget-object v5, p0, Lcom/android/settings/applications/ProtectedAppsActivity$AppsAdapter;->this$0:Lcom/android/settings/applications/ProtectedAppsActivity;
 
     # getter for: Lcom/android/settings/applications/ProtectedAppsActivity;->mAppClickListener:Landroid/view/View$OnClickListener;
-    invoke-static {v5}, Lcom/android/settings/applications/ProtectedAppsActivity;->access$500(Lcom/android/settings/applications/ProtectedAppsActivity;)Landroid/view/View$OnClickListener;
+    invoke-static {v5}, Lcom/android/settings/applications/ProtectedAppsActivity;->access$400(Lcom/android/settings/applications/ProtectedAppsActivity;)Landroid/view/View$OnClickListener;
 
     move-result-object v5
 

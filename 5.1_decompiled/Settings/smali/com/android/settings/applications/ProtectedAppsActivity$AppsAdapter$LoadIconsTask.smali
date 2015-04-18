@@ -86,7 +86,7 @@
     iget-object v6, p0, Lcom/android/settings/applications/ProtectedAppsActivity$AppsAdapter$LoadIconsTask;->this$1:Lcom/android/settings/applications/ProtectedAppsActivity$AppsAdapter;
 
     # getter for: Lcom/android/settings/applications/ProtectedAppsActivity$AppsAdapter;->mIcons:Ljava/util/concurrent/ConcurrentHashMap;
-    invoke-static {v6}, Lcom/android/settings/applications/ProtectedAppsActivity$AppsAdapter;->access$700(Lcom/android/settings/applications/ProtectedAppsActivity$AppsAdapter;)Ljava/util/concurrent/ConcurrentHashMap;
+    invoke-static {v6}, Lcom/android/settings/applications/ProtectedAppsActivity$AppsAdapter;->access$600(Lcom/android/settings/applications/ProtectedAppsActivity$AppsAdapter;)Ljava/util/concurrent/ConcurrentHashMap;
 
     move-result-object v6
 
@@ -118,7 +118,7 @@
     iget-object v6, p0, Lcom/android/settings/applications/ProtectedAppsActivity$AppsAdapter$LoadIconsTask;->this$1:Lcom/android/settings/applications/ProtectedAppsActivity$AppsAdapter;
 
     # getter for: Lcom/android/settings/applications/ProtectedAppsActivity$AppsAdapter;->mIcons:Ljava/util/concurrent/ConcurrentHashMap;
-    invoke-static {v6}, Lcom/android/settings/applications/ProtectedAppsActivity$AppsAdapter;->access$700(Lcom/android/settings/applications/ProtectedAppsActivity$AppsAdapter;)Ljava/util/concurrent/ConcurrentHashMap;
+    invoke-static {v6}, Lcom/android/settings/applications/ProtectedAppsActivity$AppsAdapter;->access$600(Lcom/android/settings/applications/ProtectedAppsActivity$AppsAdapter;)Ljava/util/concurrent/ConcurrentHashMap;
 
     move-result-object v6
 
