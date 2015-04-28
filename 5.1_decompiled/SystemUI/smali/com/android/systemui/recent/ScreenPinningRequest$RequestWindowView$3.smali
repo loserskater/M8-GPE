@@ -51,7 +51,7 @@
     iget-object v1, p0, Lcom/android/systemui/recent/ScreenPinningRequest$RequestWindowView$3;->this$1:Lcom/android/systemui/recent/ScreenPinningRequest$RequestWindowView;
 
     # getter for: Lcom/android/systemui/recent/ScreenPinningRequest$RequestWindowView;->mUpdateLayoutRunnable:Ljava/lang/Runnable;
-    invoke-static {v1}, Lcom/android/systemui/recent/ScreenPinningRequest$RequestWindowView;->access$700(Lcom/android/systemui/recent/ScreenPinningRequest$RequestWindowView;)Ljava/lang/Runnable;
+    invoke-static {v1}, Lcom/android/systemui/recent/ScreenPinningRequest$RequestWindowView;->access$600(Lcom/android/systemui/recent/ScreenPinningRequest$RequestWindowView;)Ljava/lang/Runnable;
 
     move-result-object v1
 

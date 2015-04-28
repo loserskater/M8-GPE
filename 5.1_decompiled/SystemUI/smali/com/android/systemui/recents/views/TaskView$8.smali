@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/systemui/recents/views/TaskView;->dismissTask()V
+    value = Lcom/android/systemui/recents/views/TaskView;->dismissTask(J)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;

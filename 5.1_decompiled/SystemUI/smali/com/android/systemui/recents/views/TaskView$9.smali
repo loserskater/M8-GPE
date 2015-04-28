@@ -43,7 +43,7 @@
 
 # virtual methods
 .method public run()V
-    .locals 2
+    .locals 4
 
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView$9;->val$v:Landroid/view/View;
 
@@ -57,7 +57,9 @@
 
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView$9;->this$0:Lcom/android/systemui/recents/views/TaskView;
 
-    invoke-virtual {v0}, Lcom/android/systemui/recents/views/TaskView;->dismissTask()V
+    const-wide/16 v2, 0x0
+
+    invoke-virtual {v0, v2, v3}, Lcom/android/systemui/recents/views/TaskView;->dismissTask(J)V
 
     :cond_0
     return-void

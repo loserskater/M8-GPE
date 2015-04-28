@@ -1050,12 +1050,6 @@
 
     iget-object v4, p0, Lcom/android/systemui/recents/AlternateRecentsComponent;->mConfig:Lcom/android/systemui/recents/RecentsConfiguration;
 
-    iget-boolean v4, v4, Lcom/android/systemui/recents/RecentsConfiguration;->hasNavigationBar:Z
-
-    if-eqz v4, :cond_1
-
-    iget-object v4, p0, Lcom/android/systemui/recents/AlternateRecentsComponent;->mConfig:Lcom/android/systemui/recents/RecentsConfiguration;
-
     iget-boolean v4, v4, Lcom/android/systemui/recents/RecentsConfiguration;->hasTransposedNavBar:Z
 
     if-eqz v4, :cond_1

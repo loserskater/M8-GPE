@@ -305,7 +305,7 @@
 
     const-string v4, "appWidgetCategory"
 
-    const/4 v5, 0x4
+    const/4 v5, 0x1
 
     invoke-virtual {v0, v4, v5}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
@@ -543,7 +543,7 @@
 .end method
 
 .method public getRecentTasks(IIZ)Ljava/util/List;
-    .locals 11
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(IIZ)",
@@ -554,108 +554,52 @@
         }
     .end annotation
 
-    const/high16 v10, 0x800000
+    iget-object v3, p0, Lcom/android/systemui/recents/misc/SystemServicesProxy;->mAm:Landroid/app/ActivityManager;
 
-    const/4 v7, 0x0
+    if-nez v3, :cond_0
 
-    iget-object v8, p0, Lcom/android/systemui/recents/misc/SystemServicesProxy;->mAm:Landroid/app/ActivityManager;
-
-    if-nez v8, :cond_0
-
-    const/4 v7, 0x0
+    const/4 v3, 0x0
 
     :goto_0
-    return-object v7
+    return-object v3
 
     :cond_0
-    const/16 v3, 0xa
+    const/16 v0, 0xa
 
-    invoke-static {v3, p1}, Ljava/lang/Math;->max(II)I
+    invoke-static {v0, p1}, Ljava/lang/Math;->max(II)I
 
-    move-result v4
+    move-result v1
 
-    iget-object v8, p0, Lcom/android/systemui/recents/misc/SystemServicesProxy;->mAm:Landroid/app/ActivityManager;
+    iget-object v3, p0, Lcom/android/systemui/recents/misc/SystemServicesProxy;->mAm:Landroid/app/ActivityManager;
 
-    const/16 v9, 0xf
+    const/16 v4, 0xe
 
-    invoke-virtual {v8, v4, v9, p2}, Landroid/app/ActivityManager;->getRecentTasksForUser(III)Ljava/util/List;
+    invoke-virtual {v3, v1, v4, p2}, Landroid/app/ActivityManager;->getRecentTasksForUser(III)Ljava/util/List;
 
-    move-result-object v6
+    move-result-object v2
 
-    if-nez v6, :cond_1
+    if-nez v2, :cond_1
 
-    new-instance v7, Ljava/util/ArrayList;
+    new-instance v3, Ljava/util/ArrayList;
 
-    invoke-direct {v7}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
 
     goto :goto_0
 
     :cond_1
-    const/4 v1, 0x1
+    const/4 v3, 0x0
 
-    invoke-interface {v6}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    invoke-interface {v2}, Ljava/util/List;->size()I
 
-    move-result-object v2
+    move-result v4
 
-    :goto_1
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+    invoke-static {v4, p1}, Ljava/lang/Math;->min(II)I
 
-    move-result v8
+    move-result v4
 
-    if-eqz v8, :cond_5
+    invoke-interface {v2, v3, v4}, Ljava/util/List;->subList(II)Ljava/util/List;
 
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v5
-
-    check-cast v5, Landroid/app/ActivityManager$RecentTaskInfo;
-
-    iget-object v8, v5, Landroid/app/ActivityManager$RecentTaskInfo;->baseIntent:Landroid/content/Intent;
-
-    invoke-virtual {v8}, Landroid/content/Intent;->getFlags()I
-
-    move-result v8
-
-    and-int/2addr v8, v10
-
-    if-ne v8, v10, :cond_3
-
-    const/4 v0, 0x1
-
-    :goto_2
-    if-eqz v0, :cond_4
-
-    if-nez p3, :cond_2
-
-    if-nez v1, :cond_4
-
-    :cond_2
-    invoke-interface {v2}, Ljava/util/Iterator;->remove()V
-
-    goto :goto_1
-
-    :cond_3
-    move v0, v7
-
-    goto :goto_2
-
-    :cond_4
-    const/4 v1, 0x0
-
-    goto :goto_1
-
-    :cond_5
-    invoke-interface {v6}, Ljava/util/List;->size()I
-
-    move-result v8
-
-    invoke-static {v8, p1}, Ljava/lang/Math;->min(II)I
-
-    move-result v8
-
-    invoke-interface {v6, v7, v8}, Ljava/util/List;->subList(II)Ljava/util/List;
-
-    move-result-object v7
+    move-result-object v3
 
     goto :goto_0
 .end method
@@ -1053,6 +997,56 @@
     move-exception v0
 
     invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
+
+    goto :goto_0
+.end method
+
+.method public removeAllUserTask(I)V
+    .locals 6
+
+    iget-object v3, p0, Lcom/android/systemui/recents/misc/SystemServicesProxy;->mAm:Landroid/app/ActivityManager;
+
+    invoke-static {}, Landroid/app/ActivityManager;->getMaxRecentTasksStatic()I
+
+    move-result v4
+
+    const/16 v5, 0xf
+
+    invoke-virtual {v3, v4, v5, p1}, Landroid/app/ActivityManager;->getRecentTasksForUser(III)Ljava/util/List;
+
+    move-result-object v2
+
+    if-nez v2, :cond_1
+
+    :cond_0
+    return-void
+
+    :cond_1
+    invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    :cond_2
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_0
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/app/ActivityManager$RecentTaskInfo;
+
+    iget v3, v1, Landroid/app/ActivityManager$RecentTaskInfo;->persistentId:I
+
+    if-lez v3, :cond_2
+
+    iget v3, v1, Landroid/app/ActivityManager$RecentTaskInfo;->persistentId:I
+
+    invoke-virtual {p0, v3}, Lcom/android/systemui/recents/misc/SystemServicesProxy;->removeTask(I)V
 
     goto :goto_0
 .end method

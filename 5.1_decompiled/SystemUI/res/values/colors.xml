@@ -72,4 +72,14 @@
     <color name="facelock_spotlight_mask">#cc000000</color>
     <color name="clock_white">#ffffffff</color>
     <color name="clock_gray">#99ffffff</color>
+    <color name="fab_color">#ffdc4c3c</color>
+    <color name="floating_action_button_icon_color">#ffffffff</color>
+    <color name="visualizer_fill_color">#96ffffff</color>
+    <color name="navigation_bar_background_opaque">@color/system_bar_background_opaque</color>
+    <color name="navigation_bar_background_semi_transparent">@color/system_bar_background_semi_transparent</color>
+    <color name="navigation_bar_background_transparent">@color/system_bar_background_transparent</color>
+    <color name="navring_check_tint">@android:color/white</color>
+    <color name="navring_edit_fill">#ff558b2f</color>
+    <color name="navring_edit_tint">#ff689f38</color>
+    <color name="equalizer_fill_color">#32ffffff</color>
 </resources>

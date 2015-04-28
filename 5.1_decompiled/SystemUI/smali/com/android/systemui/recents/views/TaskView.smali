@@ -244,8 +244,8 @@
     return-void
 .end method
 
-.method dismissTask()V
-    .locals 2
+.method dismissTask(J)V
+    .locals 3
 
     move-object v0, p0
 
@@ -253,7 +253,7 @@
 
     invoke-direct {v1, p0, v0}, Lcom/android/systemui/recents/views/TaskView$8;-><init>(Lcom/android/systemui/recents/views/TaskView;Lcom/android/systemui/recents/views/TaskView;)V
 
-    invoke-virtual {p0, v1}, Lcom/android/systemui/recents/views/TaskView;->startDeleteTaskAnimation(Ljava/lang/Runnable;)V
+    invoke-virtual {p0, v1, p1, p2}, Lcom/android/systemui/recents/views/TaskView;->startDeleteTaskAnimation(Ljava/lang/Runnable;J)V
 
     return-void
 .end method
@@ -566,31 +566,66 @@
 .end method
 
 .method public onLongClick(Landroid/view/View;)Z
-    .locals 1
+    .locals 5
 
-    iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView;->mHeaderView:Lcom/android/systemui/recents/views/TaskViewHeader;
+    const/4 v1, 0x1
 
-    iget-object v0, v0, Lcom/android/systemui/recents/views/TaskViewHeader;->mApplicationIcon:Landroid/widget/ImageView;
+    const/4 v2, 0x0
 
-    if-ne p1, v0, :cond_0
+    iget-object v3, p0, Lcom/android/systemui/recents/views/TaskView;->mHeaderView:Lcom/android/systemui/recents/views/TaskViewHeader;
 
-    iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView;->mCb:Lcom/android/systemui/recents/views/TaskView$TaskViewCallbacks;
+    iget-object v3, v3, Lcom/android/systemui/recents/views/TaskViewHeader;->mApplicationIcon:Landroid/widget/ImageView;
 
-    if-eqz v0, :cond_0
+    if-ne p1, v3, :cond_2
 
-    iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView;->mCb:Lcom/android/systemui/recents/views/TaskView$TaskViewCallbacks;
+    iget-object v3, p0, Lcom/android/systemui/recents/views/TaskView;->mCb:Lcom/android/systemui/recents/views/TaskView$TaskViewCallbacks;
 
-    invoke-interface {v0, p0}, Lcom/android/systemui/recents/views/TaskView$TaskViewCallbacks;->onTaskViewAppInfoClicked(Lcom/android/systemui/recents/views/TaskView;)V
+    if-eqz v3, :cond_2
 
-    const/4 v0, 0x1
+    invoke-virtual {p1}, Landroid/view/View;->getContext()Landroid/content/Context;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v3
+
+    const-string v4, "development_shortcut"
+
+    invoke-static {v3, v4, v2}, Landroid/provider/Settings$Secure;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+
+    move-result v3
+
+    if-eqz v3, :cond_0
+
+    move v0, v1
 
     :goto_0
-    return v0
+    if-eqz v0, :cond_1
+
+    iget-object v2, p0, Lcom/android/systemui/recents/views/TaskView;->mCb:Lcom/android/systemui/recents/views/TaskView$TaskViewCallbacks;
+
+    invoke-interface {v2, p0}, Lcom/android/systemui/recents/views/TaskView$TaskViewCallbacks;->onTaskViewLongClicked(Lcom/android/systemui/recents/views/TaskView;)V
+
+    :goto_1
+    return v1
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v2
 
     goto :goto_0
+
+    :cond_1
+    iget-object v2, p0, Lcom/android/systemui/recents/views/TaskView;->mCb:Lcom/android/systemui/recents/views/TaskView$TaskViewCallbacks;
+
+    invoke-interface {v2, p0}, Lcom/android/systemui/recents/views/TaskView$TaskViewCallbacks;->onTaskViewAppInfoClicked(Lcom/android/systemui/recents/views/TaskView;)V
+
+    goto :goto_1
+
+    :cond_2
+    move v1, v2
+
+    goto :goto_1
 .end method
 
 .method protected onMeasure(II)V
@@ -1202,7 +1237,7 @@
     goto :goto_0
 .end method
 
-.method startDeleteTaskAnimation(Ljava/lang/Runnable;)V
+.method startDeleteTaskAnimation(Ljava/lang/Runnable;J)V
     .locals 4
 
     const/4 v0, 0x0
@@ -1229,9 +1264,7 @@
 
     move-result-object v0
 
-    const-wide/16 v2, 0x0
-
-    invoke-virtual {v0, v2, v3}, Landroid/view/ViewPropertyAnimator;->setStartDelay(J)Landroid/view/ViewPropertyAnimator;
+    invoke-virtual {v0, p2, p3}, Landroid/view/ViewPropertyAnimator;->setStartDelay(J)Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
 
@@ -1254,6 +1287,8 @@
     iget v1, v1, Lcom/android/systemui/recents/RecentsConfiguration;->taskViewRemoveAnimDuration:I
 
     int-to-long v2, v1
+
+    sub-long/2addr v2, p2
 
     invoke-virtual {v0, v2, v3}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
 

@@ -297,6 +297,12 @@
     <public type="drawable" name="ic_media_pause" id="0x7f020162" />
     <public type="drawable" name="ic_media_stop" id="0x7f020163" />
     <public type="drawable" name="ic_contact_picture" id="0x7f020164" />
+    <public type="drawable" name="fab" id="0x7f020165" />
+    <public type="drawable" name="floating_action_button" id="0x7f020166" />
+    <public type="drawable" name="stat_sys_signal_in" id="0x7f02016a" />
+    <public type="drawable" name="stat_sys_signal_inout" id="0x7f02016b" />
+    <public type="drawable" name="stat_sys_signal_none" id="0x7f02016c" />
+    <public type="drawable" name="stat_sys_signal_out" id="0x7f02016d" />
     <public type="drawable" name="ic_input_delete" id="0x7f020035" />
     <public type="drawable" name="ic_lockscreen_search_activated" id="0x7f020052" />
     <public type="drawable" name="ic_lockscreen_search_normal" id="0x7f020053" />
@@ -394,6 +400,9 @@
     <public type="drawable" name="status_background" id="0x7f02014e" />
     <public type="drawable" name="status_bar_close_off" id="0x7f020150" />
     <public type="drawable" name="status_bar_close_on" id="0x7f020151" />
+    <public type="drawable" name="stat_sys_network_traffic_down" id="0x7f020167" />
+    <public type="drawable" name="stat_sys_network_traffic_up" id="0x7f020168" />
+    <public type="drawable" name="stat_sys_network_traffic_updown" id="0x7f020169" />
     <public type="drawable" name="ic_qs_default_user" id="0x7f02007e" />
     <public type="mipmap" name="ic_daydreams" id="0x7f030000" />
     <public type="mipmap" name="ic_launcher_dreams" id="0x7f030001" />
@@ -481,6 +490,8 @@
     <public type="layout" name="zen_mode_condition" id="0x7f040053" />
     <public type="layout" name="zen_mode_panel" id="0x7f040054" />
     <public type="layout" name="keyguard_eca" id="0x7f040055" />
+    <public type="layout" name="floating_action_button" id="0x7f040056" />
+    <public type="layout" name="recents_membar" id="0x7f040057" />
     <public type="layout" name="keyguard_host_view" id="0x7f04000d" />
     <public type="layout" name="keyguard_widget_pager" id="0x7f040021" />
     <public type="anim" name="dismiss_all_shape_animation_1" id="0x7f050000" />
@@ -689,6 +700,16 @@
     <public type="color" name="clock_gray" id="0x7f080047" />
     <public type="color" name="qs_user_detail_name" id="0x7f080048" />
     <public type="color" name="segmented_button_text_selector" id="0x7f080049" />
+    <public type="color" name="fab_color" id="0x7f08004a" />
+    <public type="color" name="floating_action_button_icon_color" id="0x7f08004b" />
+    <public type="color" name="visualizer_fill_color" id="0x7f08004c" />
+    <public type="color" name="navigation_bar_background_opaque" id="0x7f08004d" />
+    <public type="color" name="navigation_bar_background_semi_transparent" id="0x7f08004e" />
+    <public type="color" name="navigation_bar_background_transparent" id="0x7f08004f" />
+    <public type="color" name="navring_check_tint" id="0x7f080050" />
+    <public type="color" name="navring_edit_fill" id="0x7f080051" />
+    <public type="color" name="navring_edit_tint" id="0x7f080052" />
+    <public type="color" name="equalizer_fill_color" id="0x7f080053" />
     <public type="bool" name="config_recents_interface_for_tablets" id="0x7f090000" />
     <public type="bool" name="config_recents_thumbnail_image_fits_to_xy" id="0x7f090001" />
     <public type="bool" name="config_recents_use_hardware_layers" id="0x7f090002" />
@@ -1644,6 +1665,24 @@
     <public type="dimen" name="password_char_padding" id="0x7f0d0121" />
     <public type="dimen" name="date_owner_info_margin" id="0x7f0d0122" />
     <public type="dimen" name="disappear_y_translation" id="0x7f0d0123" />
+    <public type="dimen" name="qs_tile_icon_size_visualizer_width" id="0x7f0d012a" />
+    <public type="dimen" name="qs_tile_icon_size_visualizer_height" id="0x7f0d012b" />
+    <public type="dimen" name="kg_visualizer_path_effect_1" id="0x7f0d012c" />
+    <public type="dimen" name="kg_visualizer_path_effect_2" id="0x7f0d012d" />
+    <public type="dimen" name="floating_action_button_height" id="0x7f0d012e" />
+    <public type="dimen" name="floating_action_button_width" id="0x7f0d012f" />
+    <public type="dimen" name="floating_action_button_translation_z" id="0x7f0d0130" />
+    <public type="dimen" name="floating_action_button_margin_side" id="0x7f0d0131" />
+    <public type="dimen" name="floating_action_button_margin_bottom" id="0x7f0d0132" />
+    <public type="dimen" name="detail_radio_group_padding_left" id="0x7f0d0133" />
+    <public type="dimen" name="detail_radio_group_padding" id="0x7f0d0134" />
+    <public type="dimen" name="net_traffic_single_text_size" id="0x7f0d0135" />
+    <public type="dimen" name="net_traffic_multi_text_size" id="0x7f0d0136" />
+    <public type="dimen" name="kg_visualizer_path_stroke_width" id="0x7f0d0137" />
+    <public type="dimen" name="visualizer_path_effect_1" id="0x7f0d0138" />
+    <public type="dimen" name="visualizer_path_effect_2" id="0x7f0d0139" />
+    <public type="dimen" name="visualizer_path_stroke_width" id="0x7f0d013a" />
+    <public type="dimen" name="weather_text_size" id="0x7f0d013b" />
     <public type="dimen" name="peek_height" id="0x7f0d00cc" />
     <public type="dimen" name="keyguard_pattern_unlock_status_line_font_size" id="0x7f0d0129" />
     <public type="dimen" name="notification_panel_min_height" id="0x7f0d00cd" />
@@ -1976,6 +2015,44 @@
     <public type="id" name="zen_conditions" id="0x7f0f0139" />
     <public type="id" name="recent_remove_item" id="0x7f0f013a" />
     <public type="id" name="recent_inspect_item" id="0x7f0f013b" />
+    <public type="id" name="floating_action_button" id="0x7f0f013c" />
+    <public type="id" name="clear_recents" id="0x7f0f013d" />
+    <public type="id" name="recent_force_stop" id="0x7f0f013e" />
+    <public type="id" name="recent_wipe_app" id="0x7f0f013f" />
+    <public type="id" name="recent_uninstall" id="0x7f0f0140" />
+    <public type="id" name="recents_membar" id="0x7f0f0141" />
+    <public type="id" name="recents_memory_bar" id="0x7f0f0142" />
+    <public type="id" name="recents_memory_text" id="0x7f0f0143" />
+    <public type="id" name="center_clock" id="0x7f0f0144" />
+    <public type="id" name="left_clock" id="0x7f0f0145" />
+    <public type="id" name="center_clock_layout" id="0x7f0f0146" />
+    <public type="id" name="radiogroup_location" id="0x7f0f0147" />
+    <public type="id" name="radio_high_accuracy" id="0x7f0f0148" />
+    <public type="id" name="radio_battery_saving" id="0x7f0f0149" />
+    <public type="id" name="radio_sensors_only" id="0x7f0f014a" />
+    <public type="id" name="networkTraffic" id="0x7f0f014b" />
+    <public type="id" name="weather_container" id="0x7f0f014c" />
+    <public type="id" name="weather_line_1" id="0x7f0f014d" />
+    <public type="id" name="weather_line_2" id="0x7f0f014e" />
+    <public type="id" name="one" id="0x7f0f014f" />
+    <public type="id" name="dpad_left" id="0x7f0f0150" />
+    <public type="id" name="mid_nav_buttons" id="0x7f0f0151" />
+    <public type="id" name="two" id="0x7f0f0152" />
+    <public type="id" name="three" id="0x7f0f0153" />
+    <public type="id" name="four" id="0x7f0f0154" />
+    <public type="id" name="five" id="0x7f0f0155" />
+    <public type="id" name="dpad_right" id="0x7f0f0156" />
+    <public type="id" name="six" id="0x7f0f0157" />
+    <public type="id" name="container" id="0x7f0f0158" />
+    <public type="id" name="key_icon" id="0x7f0f0159" />
+    <public type="id" name="key_text" id="0x7f0f015a" />
+    <public type="id" name="nav_ring_edit" id="0x7f0f015b" />
+    <public type="id" name="one_parent" id="0x7f0f015c" />
+    <public type="id" name="search_logo1" id="0x7f0f015d" />
+    <public type="id" name="two_parent" id="0x7f0f015e" />
+    <public type="id" name="search_logo2" id="0x7f0f015f" />
+    <public type="id" name="further_options" id="0x7f0f0160" />
+    <public type="id" name="visualizerView" id="0x7f0f0161" />
     <public type="plurals" name="status_bar_accessibility_recent_apps" id="0x7f100000" />
     <public type="plurals" name="kg_password_wrong_pin_code" id="0x7f100001" />
     <public type="plurals" name="kg_password_wrong_puk_code" id="0x7f100002" />

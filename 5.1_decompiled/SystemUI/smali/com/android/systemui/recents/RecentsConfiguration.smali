@@ -8,6 +8,8 @@
 
 .field static sPrevConfigurationHashCode:I
 
+.field public static searchBarSpaceHeightPx:I
+
 
 # instance fields
 .field public altTabKeyDelay:I
@@ -29,8 +31,6 @@
 .field public filteringCurrentViewsAnimDuration:I
 
 .field public filteringNewViewsAnimDuration:I
-
-.field hasNavigationBar:Z
 
 .field hasTransposedNavBar:Z
 
@@ -69,8 +69,6 @@
 .field public quintOutInterpolator:Landroid/view/animation/Interpolator;
 
 .field searchBarAppWidgetId:I
-
-.field public searchBarSpaceHeightPx:I
 
 .field public svelteLevel:I
 
@@ -135,78 +133,59 @@
 
 # direct methods
 .method private constructor <init>(Landroid/content/Context;)V
-    .locals 2
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v1, Landroid/graphics/Rect;
+    new-instance v0, Landroid/graphics/Rect;
 
-    invoke-direct {v1}, Landroid/graphics/Rect;-><init>()V
+    invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
-    iput-object v1, p0, Lcom/android/systemui/recents/RecentsConfiguration;->systemInsets:Landroid/graphics/Rect;
+    iput-object v0, p0, Lcom/android/systemui/recents/RecentsConfiguration;->systemInsets:Landroid/graphics/Rect;
 
-    new-instance v1, Landroid/graphics/Rect;
+    new-instance v0, Landroid/graphics/Rect;
 
-    invoke-direct {v1}, Landroid/graphics/Rect;-><init>()V
+    invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
-    iput-object v1, p0, Lcom/android/systemui/recents/RecentsConfiguration;->displayRect:Landroid/graphics/Rect;
+    iput-object v0, p0, Lcom/android/systemui/recents/RecentsConfiguration;->displayRect:Landroid/graphics/Rect;
 
-    const/4 v1, -0x1
+    const/4 v0, -0x1
 
-    iput v1, p0, Lcom/android/systemui/recents/RecentsConfiguration;->searchBarAppWidgetId:I
+    iput v0, p0, Lcom/android/systemui/recents/RecentsConfiguration;->searchBarAppWidgetId:I
 
-    invoke-static {}, Landroid/view/WindowManagerGlobal;->getWindowManagerService()Landroid/view/IWindowManager;
+    const v0, 0x10c000d
+
+    invoke-static {p1, v0}, Landroid/view/animation/AnimationUtils;->loadInterpolator(Landroid/content/Context;I)Landroid/view/animation/Interpolator;
 
     move-result-object v0
 
-    :try_start_0
-    invoke-interface {v0}, Landroid/view/IWindowManager;->hasNavigationBar()Z
+    iput-object v0, p0, Lcom/android/systemui/recents/RecentsConfiguration;->fastOutSlowInInterpolator:Landroid/view/animation/Interpolator;
 
-    move-result v1
+    const v0, 0x10c000f
 
-    iput-boolean v1, p0, Lcom/android/systemui/recents/RecentsConfiguration;->hasNavigationBar:Z
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+    invoke-static {p1, v0}, Landroid/view/animation/AnimationUtils;->loadInterpolator(Landroid/content/Context;I)Landroid/view/animation/Interpolator;
 
-    :goto_0
-    const v1, 0x10c000d
+    move-result-object v0
 
-    invoke-static {p1, v1}, Landroid/view/animation/AnimationUtils;->loadInterpolator(Landroid/content/Context;I)Landroid/view/animation/Interpolator;
+    iput-object v0, p0, Lcom/android/systemui/recents/RecentsConfiguration;->fastOutLinearInInterpolator:Landroid/view/animation/Interpolator;
 
-    move-result-object v1
+    const v0, 0x10c000e
 
-    iput-object v1, p0, Lcom/android/systemui/recents/RecentsConfiguration;->fastOutSlowInInterpolator:Landroid/view/animation/Interpolator;
+    invoke-static {p1, v0}, Landroid/view/animation/AnimationUtils;->loadInterpolator(Landroid/content/Context;I)Landroid/view/animation/Interpolator;
 
-    const v1, 0x10c000f
+    move-result-object v0
 
-    invoke-static {p1, v1}, Landroid/view/animation/AnimationUtils;->loadInterpolator(Landroid/content/Context;I)Landroid/view/animation/Interpolator;
+    iput-object v0, p0, Lcom/android/systemui/recents/RecentsConfiguration;->linearOutSlowInInterpolator:Landroid/view/animation/Interpolator;
 
-    move-result-object v1
+    const v0, 0x10c0005
 
-    iput-object v1, p0, Lcom/android/systemui/recents/RecentsConfiguration;->fastOutLinearInInterpolator:Landroid/view/animation/Interpolator;
+    invoke-static {p1, v0}, Landroid/view/animation/AnimationUtils;->loadInterpolator(Landroid/content/Context;I)Landroid/view/animation/Interpolator;
 
-    const v1, 0x10c000e
+    move-result-object v0
 
-    invoke-static {p1, v1}, Landroid/view/animation/AnimationUtils;->loadInterpolator(Landroid/content/Context;I)Landroid/view/animation/Interpolator;
-
-    move-result-object v1
-
-    iput-object v1, p0, Lcom/android/systemui/recents/RecentsConfiguration;->linearOutSlowInInterpolator:Landroid/view/animation/Interpolator;
-
-    const v1, 0x10c0005
-
-    invoke-static {p1, v1}, Landroid/view/animation/AnimationUtils;->loadInterpolator(Landroid/content/Context;I)Landroid/view/animation/Interpolator;
-
-    move-result-object v1
-
-    iput-object v1, p0, Lcom/android/systemui/recents/RecentsConfiguration;->quintOutInterpolator:Landroid/view/animation/Interpolator;
+    iput-object v0, p0, Lcom/android/systemui/recents/RecentsConfiguration;->quintOutInterpolator:Landroid/view/animation/Interpolator;
 
     return-void
-
-    :catch_0
-    move-exception v1
-
-    goto :goto_0
 .end method
 
 .method public static getInstance()Lcom/android/systemui/recents/RecentsConfiguration;
@@ -270,7 +249,7 @@
 
     const/4 v2, 0x0
 
-    iget v0, p0, Lcom/android/systemui/recents/RecentsConfiguration;->searchBarSpaceHeightPx:I
+    sget v0, Lcom/android/systemui/recents/RecentsConfiguration;->searchBarSpaceHeightPx:I
 
     invoke-virtual {p0}, Lcom/android/systemui/recents/RecentsConfiguration;->hasSearchBarAppWidget()Z
 
@@ -523,14 +502,6 @@
     move-result v7
 
     iput v7, p0, Lcom/android/systemui/recents/RecentsConfiguration;->maxNumTasksToLoad:I
-
-    const v7, 0x7f0d0062
-
-    invoke-virtual {v2, v7}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
-
-    move-result v7
-
-    iput v7, p0, Lcom/android/systemui/recents/RecentsConfiguration;->searchBarSpaceHeightPx:I
 
     sget-object v7, Lcom/android/systemui/recents/Constants$Values$App;->Key_SearchAppWidgetId:Ljava/lang/String;
 

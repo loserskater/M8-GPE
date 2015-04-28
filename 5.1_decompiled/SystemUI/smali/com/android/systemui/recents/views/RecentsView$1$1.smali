@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/systemui/recents/views/RecentsView$1;->onAnimationStarted()V
+    value = Lcom/android/systemui/recents/views/RecentsView$1;->onClick(Landroid/view/View;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -35,15 +35,27 @@
 
 # virtual methods
 .method public run()V
-    .locals 1
+    .locals 2
 
     iget-object v0, p0, Lcom/android/systemui/recents/views/RecentsView$1$1;->this$1:Lcom/android/systemui/recents/views/RecentsView$1;
 
     iget-object v0, v0, Lcom/android/systemui/recents/views/RecentsView$1;->this$0:Lcom/android/systemui/recents/views/RecentsView;
 
-    iget-object v0, v0, Lcom/android/systemui/recents/views/RecentsView;->mCb:Lcom/android/systemui/recents/views/RecentsView$RecentsViewCallbacks;
+    iget-object v0, v0, Lcom/android/systemui/recents/views/RecentsView;->mFloatingButton:Landroid/view/View;
 
-    invoke-interface {v0}, Lcom/android/systemui/recents/views/RecentsView$RecentsViewCallbacks;->onScreenPinningRequest()V
+    const/16 v1, 0x8
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
+
+    iget-object v0, p0, Lcom/android/systemui/recents/views/RecentsView$1$1;->this$1:Lcom/android/systemui/recents/views/RecentsView$1;
+
+    iget-object v0, v0, Lcom/android/systemui/recents/views/RecentsView$1;->this$0:Lcom/android/systemui/recents/views/RecentsView;
+
+    iget-object v0, v0, Lcom/android/systemui/recents/views/RecentsView;->mFloatingButton:Landroid/view/View;
+
+    const/high16 v1, 0x3f800000    # 1.0f
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->setAlpha(F)V
 
     return-void
 .end method

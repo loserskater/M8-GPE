@@ -271,13 +271,13 @@
 
     long-to-int v10, v14
 
-    const/16 v8, 0x96
+    const/16 v8, 0x4b
 
     const/4 v13, 0x0
 
-    rsub-int v14, v10, 0x96
+    rsub-int/lit8 v14, v10, 0x4b
 
-    const/16 v15, 0x96
+    const/16 v15, 0x4b
 
     invoke-static {v14, v15}, Ljava/lang/Math;->min(II)I
 
@@ -287,7 +287,7 @@
 
     move-result v9
 
-    const/16 v4, 0xfa
+    const/16 v4, 0x96
 
     move-object/from16 v0, p0
 
@@ -364,7 +364,7 @@
 
     move-result-object v13
 
-    const-wide/16 v14, 0xfa
+    const-wide/16 v14, 0x96
 
     invoke-virtual {v13, v14, v15}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
 
@@ -403,7 +403,7 @@
 .method private createCustomAnimations(Landroid/animation/LayoutTransition;)V
     .locals 4
 
-    const-wide/16 v0, 0xc8
+    const-wide/16 v0, 0x64
 
     invoke-virtual {p1, v0, v1}, Landroid/animation/LayoutTransition;->setDuration(J)V
 

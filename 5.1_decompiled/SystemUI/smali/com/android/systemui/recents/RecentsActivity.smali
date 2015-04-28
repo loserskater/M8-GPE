@@ -110,7 +110,7 @@
 
     const-string v2, "appWidgetCategory"
 
-    const/4 v3, 0x4
+    const/4 v3, 0x1
 
     invoke-virtual {v1, v2, v3}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
@@ -189,7 +189,7 @@
 
     move-result-object v2
 
-    if-eqz v2, :cond_1
+    if-eqz v2, :cond_2
 
     iget-object v4, p0, Lcom/android/systemui/recents/RecentsActivity;->mConfig:Lcom/android/systemui/recents/RecentsConfiguration;
 
@@ -210,7 +210,17 @@
     iput-object v3, p0, Lcom/android/systemui/recents/RecentsActivity;->mSearchAppWidgetInfo:Landroid/appwidget/AppWidgetProviderInfo;
 
     :cond_1
+    :goto_0
     return-void
+
+    :cond_2
+    iget-object v3, p0, Lcom/android/systemui/recents/RecentsActivity;->mConfig:Lcom/android/systemui/recents/RecentsConfiguration;
+
+    const/4 v4, -0x1
+
+    invoke-virtual {v3, p0, v4}, Lcom/android/systemui/recents/RecentsConfiguration;->updateSearchBarAppWidgetId(Landroid/content/Context;I)V
+
+    goto :goto_0
 .end method
 
 .method dismissRecentsToFocusedTaskOrHome(Z)Z
@@ -1058,7 +1068,7 @@
 .end method
 
 .method updateRecentsTasks(Landroid/content/Intent;)V
-    .locals 20
+    .locals 21
 
     invoke-static {}, Lcom/android/systemui/recents/model/RecentsTaskLoader;->getInstance()Lcom/android/systemui/recents/model/RecentsTaskLoader;
 
@@ -1079,23 +1089,23 @@
     :cond_0
     invoke-virtual {v9}, Lcom/android/systemui/recents/model/RecentsTaskLoadPlan;->getTaskStack()Lcom/android/systemui/recents/model/TaskStack;
 
-    move-result-object v17
+    move-result-object v18
 
-    if-nez v17, :cond_1
+    if-nez v18, :cond_1
 
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/systemui/recents/RecentsActivity;->mConfig:Lcom/android/systemui/recents/RecentsConfiguration;
 
-    move-object/from16 v17, v0
+    move-object/from16 v18, v0
 
-    move-object/from16 v0, v17
+    move-object/from16 v0, v18
 
     iget-boolean v0, v0, Lcom/android/systemui/recents/RecentsConfiguration;->launchedFromHome:Z
 
-    move/from16 v17, v0
+    move/from16 v18, v0
 
-    move/from16 v0, v17
+    move/from16 v0, v18
 
     invoke-virtual {v8, v9, v0}, Lcom/android/systemui/recents/model/RecentsTaskLoader;->preloadTasks(Lcom/android/systemui/recents/model/RecentsTaskLoadPlan;Z)V
 
@@ -1108,15 +1118,15 @@
 
     iget-object v0, v0, Lcom/android/systemui/recents/RecentsActivity;->mConfig:Lcom/android/systemui/recents/RecentsConfiguration;
 
-    move-object/from16 v17, v0
+    move-object/from16 v18, v0
 
-    move-object/from16 v0, v17
+    move-object/from16 v0, v18
 
     iget v0, v0, Lcom/android/systemui/recents/RecentsConfiguration;->launchedToTaskId:I
 
-    move/from16 v17, v0
+    move/from16 v18, v0
 
-    move/from16 v0, v17
+    move/from16 v0, v18
 
     iput v0, v7, Lcom/android/systemui/recents/model/RecentsTaskLoadPlan$Options;->runningTaskId:I
 
@@ -1124,15 +1134,15 @@
 
     iget-object v0, v0, Lcom/android/systemui/recents/RecentsActivity;->mConfig:Lcom/android/systemui/recents/RecentsConfiguration;
 
-    move-object/from16 v17, v0
+    move-object/from16 v18, v0
 
-    move-object/from16 v0, v17
+    move-object/from16 v0, v18
 
     iget v0, v0, Lcom/android/systemui/recents/RecentsConfiguration;->launchedNumVisibleTasks:I
 
-    move/from16 v17, v0
+    move/from16 v18, v0
 
-    move/from16 v0, v17
+    move/from16 v0, v18
 
     iput v0, v7, Lcom/android/systemui/recents/model/RecentsTaskLoadPlan$Options;->numVisibleTasks:I
 
@@ -1140,15 +1150,15 @@
 
     iget-object v0, v0, Lcom/android/systemui/recents/RecentsActivity;->mConfig:Lcom/android/systemui/recents/RecentsConfiguration;
 
-    move-object/from16 v17, v0
+    move-object/from16 v18, v0
 
-    move-object/from16 v0, v17
+    move-object/from16 v0, v18
 
     iget v0, v0, Lcom/android/systemui/recents/RecentsConfiguration;->launchedNumVisibleThumbnails:I
 
-    move/from16 v17, v0
+    move/from16 v18, v0
 
-    move/from16 v0, v17
+    move/from16 v0, v18
 
     iput v0, v7, Lcom/android/systemui/recents/model/RecentsTaskLoadPlan$Options;->numVisibleTaskThumbnails:I
 
@@ -1162,7 +1172,7 @@
 
     invoke-virtual {v10}, Lcom/android/systemui/recents/model/SpaceNode;->getStacks()Ljava/util/ArrayList;
 
-    move-result-object v12
+    move-result-object v13
 
     invoke-virtual {v10}, Lcom/android/systemui/recents/model/SpaceNode;->hasTasks()Z
 
@@ -1174,203 +1184,205 @@
 
     iget-object v0, v0, Lcom/android/systemui/recents/RecentsActivity;->mRecentsView:Lcom/android/systemui/recents/views/RecentsView;
 
-    move-object/from16 v17, v0
+    move-object/from16 v18, v0
 
-    move-object/from16 v0, v17
+    move-object/from16 v0, v18
 
-    invoke-virtual {v0, v12}, Lcom/android/systemui/recents/views/RecentsView;->setTaskStacks(Ljava/util/ArrayList;)V
+    invoke-virtual {v0, v13}, Lcom/android/systemui/recents/views/RecentsView;->setTaskStacks(Ljava/util/ArrayList;)V
 
     :cond_2
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/systemui/recents/RecentsActivity;->mConfig:Lcom/android/systemui/recents/RecentsConfiguration;
 
-    move-object/from16 v18, v0
+    move-object/from16 v19, v0
 
     if-nez v3, :cond_4
 
-    const/16 v17, 0x1
+    const/16 v18, 0x1
 
     :goto_0
-    move/from16 v0, v17
+    move/from16 v0, v18
 
-    move-object/from16 v1, v18
+    move-object/from16 v1, v19
 
     iput-boolean v0, v1, Lcom/android/systemui/recents/RecentsConfiguration;->launchedWithNoRecentTasks:Z
 
     new-instance v4, Landroid/content/Intent;
 
-    const-string v17, "android.intent.action.MAIN"
+    const-string v18, "android.intent.action.MAIN"
 
-    const/16 v18, 0x0
+    const/16 v19, 0x0
 
-    move-object/from16 v0, v17
+    move-object/from16 v0, v18
 
-    move-object/from16 v1, v18
+    move-object/from16 v1, v19
 
     invoke-direct {v4, v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
 
-    const-string v17, "android.intent.category.HOME"
+    const-string v18, "android.intent.category.HOME"
 
-    move-object/from16 v0, v17
+    move-object/from16 v0, v18
 
     invoke-virtual {v4, v0}, Landroid/content/Intent;->addCategory(Ljava/lang/String;)Landroid/content/Intent;
 
-    const/high16 v17, 0x10200000
+    const/high16 v18, 0x10200000
 
-    move/from16 v0, v17
+    move/from16 v0, v18
 
     invoke-virtual {v4, v0}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    new-instance v19, Lcom/android/systemui/recents/RecentsActivity$FinishRecentsRunnable;
+    new-instance v20, Lcom/android/systemui/recents/RecentsActivity$FinishRecentsRunnable;
 
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/systemui/recents/RecentsActivity;->mConfig:Lcom/android/systemui/recents/RecentsConfiguration;
 
-    move-object/from16 v17, v0
+    move-object/from16 v18, v0
 
-    move-object/from16 v0, v17
+    move-object/from16 v0, v18
 
     iget-boolean v0, v0, Lcom/android/systemui/recents/RecentsConfiguration;->launchedFromSearchHome:Z
 
-    move/from16 v17, v0
+    move/from16 v18, v0
 
-    if-eqz v17, :cond_5
+    if-eqz v18, :cond_5
 
-    const v17, 0x7f050063
+    const v18, 0x7f050058
 
     :goto_1
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/systemui/recents/RecentsActivity;->mConfig:Lcom/android/systemui/recents/RecentsConfiguration;
 
-    move-object/from16 v18, v0
+    move-object/from16 v19, v0
 
-    move-object/from16 v0, v18
+    move-object/from16 v0, v19
 
     iget-boolean v0, v0, Lcom/android/systemui/recents/RecentsConfiguration;->launchedFromSearchHome:Z
 
-    move/from16 v18, v0
+    move/from16 v19, v0
 
-    if-eqz v18, :cond_6
+    if-eqz v19, :cond_6
 
-    const v18, 0x7f050064
+    const v19, 0x7f050059
 
     :goto_2
     move-object/from16 v0, p0
 
-    move/from16 v1, v17
+    move/from16 v1, v18
 
-    move/from16 v2, v18
+    move/from16 v2, v19
 
     invoke-static {v0, v1, v2}, Landroid/app/ActivityOptions;->makeCustomAnimation(Landroid/content/Context;II)Landroid/app/ActivityOptions;
 
-    move-result-object v17
+    move-result-object v18
 
-    move-object/from16 v0, v19
+    move-object/from16 v0, v20
 
     move-object/from16 v1, p0
 
-    move-object/from16 v2, v17
+    move-object/from16 v2, v18
 
     invoke-direct {v0, v1, v4, v2}, Lcom/android/systemui/recents/RecentsActivity$FinishRecentsRunnable;-><init>(Lcom/android/systemui/recents/RecentsActivity;Landroid/content/Intent;Landroid/app/ActivityOptions;)V
 
-    move-object/from16 v0, v19
+    move-object/from16 v0, v20
 
     move-object/from16 v1, p0
 
     iput-object v0, v1, Lcom/android/systemui/recents/RecentsActivity;->mFinishLaunchHomeRunnable:Lcom/android/systemui/recents/RecentsActivity$FinishRecentsRunnable;
 
-    invoke-virtual {v12}, Ljava/util/ArrayList;->size()I
+    invoke-virtual {v13}, Ljava/util/ArrayList;->size()I
 
-    move-result v15
+    move-result v16
 
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/systemui/recents/RecentsActivity;->mConfig:Lcom/android/systemui/recents/RecentsConfiguration;
 
-    move-object/from16 v17, v0
+    move-object/from16 v18, v0
 
-    move-object/from16 v0, v17
+    move-object/from16 v0, v18
 
     iget v0, v0, Lcom/android/systemui/recents/RecentsConfiguration;->launchedToTaskId:I
 
-    move/from16 v17, v0
+    move/from16 v18, v0
 
-    const/16 v18, -0x1
+    const/16 v19, -0x1
 
-    move/from16 v0, v17
+    move/from16 v0, v18
 
-    move/from16 v1, v18
+    move/from16 v1, v19
 
     if-eq v0, v1, :cond_8
 
     const/4 v5, 0x0
 
     :goto_3
-    if-ge v5, v15, :cond_8
+    move/from16 v0, v16
 
-    invoke-virtual {v12, v5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    if-ge v5, v0, :cond_8
 
-    move-result-object v11
+    invoke-virtual {v13, v5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    check-cast v11, Lcom/android/systemui/recents/model/TaskStack;
+    move-result-object v12
 
-    invoke-virtual {v11}, Lcom/android/systemui/recents/model/TaskStack;->getTasks()Ljava/util/ArrayList;
+    check-cast v12, Lcom/android/systemui/recents/model/TaskStack;
 
-    move-result-object v16
+    invoke-virtual {v12}, Lcom/android/systemui/recents/model/TaskStack;->getTasks()Ljava/util/ArrayList;
 
-    invoke-virtual/range {v16 .. v16}, Ljava/util/ArrayList;->size()I
+    move-result-object v17
 
-    move-result v14
+    invoke-virtual/range {v17 .. v17}, Ljava/util/ArrayList;->size()I
+
+    move-result v15
 
     const/4 v6, 0x0
 
     :goto_4
-    if-ge v6, v14, :cond_3
-
-    move-object/from16 v0, v16
-
-    invoke-virtual {v0, v6}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v13
-
-    check-cast v13, Lcom/android/systemui/recents/model/Task;
-
-    iget-object v0, v13, Lcom/android/systemui/recents/model/Task;->key:Lcom/android/systemui/recents/model/Task$TaskKey;
-
-    move-object/from16 v17, v0
+    if-ge v6, v15, :cond_3
 
     move-object/from16 v0, v17
 
-    iget v0, v0, Lcom/android/systemui/recents/model/Task$TaskKey;->id:I
+    invoke-virtual {v0, v6}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move/from16 v17, v0
+    move-result-object v14
 
-    move-object/from16 v0, p0
+    check-cast v14, Lcom/android/systemui/recents/model/Task;
 
-    iget-object v0, v0, Lcom/android/systemui/recents/RecentsActivity;->mConfig:Lcom/android/systemui/recents/RecentsConfiguration;
+    iget-object v0, v14, Lcom/android/systemui/recents/model/Task;->key:Lcom/android/systemui/recents/model/Task$TaskKey;
 
     move-object/from16 v18, v0
 
     move-object/from16 v0, v18
 
-    iget v0, v0, Lcom/android/systemui/recents/RecentsConfiguration;->launchedToTaskId:I
+    iget v0, v0, Lcom/android/systemui/recents/model/Task$TaskKey;->id:I
 
     move/from16 v18, v0
 
-    move/from16 v0, v17
+    move-object/from16 v0, p0
 
-    move/from16 v1, v18
+    iget-object v0, v0, Lcom/android/systemui/recents/RecentsActivity;->mConfig:Lcom/android/systemui/recents/RecentsConfiguration;
+
+    move-object/from16 v19, v0
+
+    move-object/from16 v0, v19
+
+    iget v0, v0, Lcom/android/systemui/recents/RecentsConfiguration;->launchedToTaskId:I
+
+    move/from16 v19, v0
+
+    move/from16 v0, v18
+
+    move/from16 v1, v19
 
     if-ne v0, v1, :cond_7
 
-    const/16 v17, 0x1
+    const/16 v18, 0x1
 
-    move/from16 v0, v17
+    move/from16 v0, v18
 
-    iput-boolean v0, v13, Lcom/android/systemui/recents/model/Task;->isLaunchTarget:Z
+    iput-boolean v0, v14, Lcom/android/systemui/recents/model/Task;->isLaunchTarget:Z
 
     :cond_3
     add-int/lit8 v5, v5, 0x1
@@ -1378,17 +1390,17 @@
     goto :goto_3
 
     :cond_4
-    const/16 v17, 0x0
+    const/16 v18, 0x0
 
     goto/16 :goto_0
 
     :cond_5
-    const v17, 0x7f050061
+    const v18, 0x7f050056
 
     goto/16 :goto_1
 
     :cond_6
-    const v18, 0x7f050062
+    const v19, 0x7f050057
 
     goto :goto_2
 
@@ -1402,35 +1414,35 @@
 
     iget-object v0, v0, Lcom/android/systemui/recents/RecentsActivity;->mConfig:Lcom/android/systemui/recents/RecentsConfiguration;
 
-    move-object/from16 v17, v0
+    move-object/from16 v18, v0
 
-    move-object/from16 v0, v17
+    move-object/from16 v0, v18
 
     iget-boolean v0, v0, Lcom/android/systemui/recents/RecentsConfiguration;->launchedWithNoRecentTasks:Z
 
-    move/from16 v17, v0
+    move/from16 v18, v0
 
-    if-eqz v17, :cond_a
+    if-eqz v18, :cond_a
 
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/systemui/recents/RecentsActivity;->mEmptyView:Landroid/view/View;
 
-    move-object/from16 v17, v0
+    move-object/from16 v18, v0
 
-    if-nez v17, :cond_9
+    if-nez v18, :cond_9
 
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/systemui/recents/RecentsActivity;->mEmptyViewStub:Landroid/view/ViewStub;
 
-    move-object/from16 v17, v0
+    move-object/from16 v18, v0
 
-    invoke-virtual/range {v17 .. v17}, Landroid/view/ViewStub;->inflate()Landroid/view/View;
+    invoke-virtual/range {v18 .. v18}, Landroid/view/ViewStub;->inflate()Landroid/view/View;
 
-    move-result-object v17
+    move-result-object v18
 
-    move-object/from16 v0, v17
+    move-object/from16 v0, v18
 
     move-object/from16 v1, p0
 
@@ -1441,30 +1453,44 @@
 
     iget-object v0, v0, Lcom/android/systemui/recents/RecentsActivity;->mEmptyView:Landroid/view/View;
 
-    move-object/from16 v17, v0
+    move-object/from16 v18, v0
 
-    const/16 v18, 0x0
+    const/16 v19, 0x0
 
-    invoke-virtual/range {v17 .. v18}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual/range {v18 .. v19}, Landroid/view/View;->setVisibility(I)V
 
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/systemui/recents/RecentsActivity;->mRecentsView:Lcom/android/systemui/recents/views/RecentsView;
 
-    move-object/from16 v17, v0
+    move-object/from16 v18, v0
 
-    const/16 v18, 0x8
+    const/16 v19, 0x8
 
-    invoke-virtual/range {v17 .. v18}, Lcom/android/systemui/recents/views/RecentsView;->setSearchBarVisibility(I)V
+    invoke-virtual/range {v18 .. v19}, Lcom/android/systemui/recents/views/RecentsView;->setSearchBarVisibility(I)V
+
+    const v18, 0x7f0f013c
+
+    move-object/from16 v0, p0
+
+    move/from16 v1, v18
+
+    invoke-virtual {v0, v1}, Lcom/android/systemui/recents/RecentsActivity;->findViewById(I)Landroid/view/View;
+
+    move-result-object v18
+
+    const/16 v19, 0x8
+
+    invoke-virtual/range {v18 .. v19}, Landroid/view/View;->setVisibility(I)V
 
     :goto_5
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/systemui/recents/RecentsActivity;->mScrimViews:Lcom/android/systemui/recents/views/SystemBarScrimViews;
 
-    move-object/from16 v17, v0
+    move-object/from16 v18, v0
 
-    invoke-virtual/range {v17 .. v17}, Lcom/android/systemui/recents/views/SystemBarScrimViews;->prepareEnterRecentsAnimation()V
+    invoke-virtual/range {v18 .. v18}, Lcom/android/systemui/recents/views/SystemBarScrimViews;->prepareEnterRecentsAnimation()V
 
     return-void
 
@@ -1473,47 +1499,129 @@
 
     iget-object v0, v0, Lcom/android/systemui/recents/RecentsActivity;->mEmptyView:Landroid/view/View;
 
-    move-object/from16 v17, v0
+    move-object/from16 v18, v0
 
-    if-eqz v17, :cond_b
+    if-eqz v18, :cond_b
 
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/systemui/recents/RecentsActivity;->mEmptyView:Landroid/view/View;
 
-    move-object/from16 v17, v0
+    move-object/from16 v18, v0
 
-    const/16 v18, 0x8
+    const/16 v19, 0x8
 
-    invoke-virtual/range {v17 .. v18}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual/range {v18 .. v19}, Landroid/view/View;->setVisibility(I)V
 
     :cond_b
+    const v18, 0x7f0f013c
+
+    move-object/from16 v0, p0
+
+    move/from16 v1, v18
+
+    invoke-virtual {v0, v1}, Lcom/android/systemui/recents/RecentsActivity;->findViewById(I)Landroid/view/View;
+
+    move-result-object v18
+
+    const/16 v19, 0x0
+
+    invoke-virtual/range {v18 .. v19}, Landroid/view/View;->setVisibility(I)V
+
+    invoke-virtual/range {p0 .. p0}, Lcom/android/systemui/recents/RecentsActivity;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v18
+
+    const-string v19, "recents_show_search_bar"
+
+    const/16 v20, 0x1
+
+    invoke-static/range {v18 .. v20}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+
+    move-result v18
+
+    const/16 v19, 0x1
+
+    move/from16 v0, v18
+
+    move/from16 v1, v19
+
+    if-ne v0, v1, :cond_d
+
+    const/4 v11, 0x1
+
+    :goto_6
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/systemui/recents/RecentsActivity;->mRecentsView:Lcom/android/systemui/recents/views/RecentsView;
 
-    move-object/from16 v17, v0
+    move-object/from16 v18, v0
 
-    invoke-virtual/range {v17 .. v17}, Lcom/android/systemui/recents/views/RecentsView;->hasSearchBar()Z
+    invoke-virtual/range {v18 .. v18}, Lcom/android/systemui/recents/views/RecentsView;->hasSearchBar()Z
 
-    move-result v17
+    move-result v18
 
-    if-eqz v17, :cond_c
+    if-eqz v18, :cond_f
+
+    if-eqz v11, :cond_e
 
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/systemui/recents/RecentsActivity;->mRecentsView:Lcom/android/systemui/recents/views/RecentsView;
 
-    move-object/from16 v17, v0
+    move-object/from16 v18, v0
 
-    const/16 v18, 0x0
+    const/16 v19, 0x0
 
-    invoke-virtual/range {v17 .. v18}, Lcom/android/systemui/recents/views/RecentsView;->setSearchBarVisibility(I)V
-
-    goto :goto_5
+    invoke-virtual/range {v18 .. v19}, Lcom/android/systemui/recents/views/RecentsView;->setSearchBarVisibility(I)V
 
     :cond_c
-    invoke-virtual/range {p0 .. p0}, Lcom/android/systemui/recents/RecentsActivity;->addSearchBarAppWidgetView()V
+    :goto_7
+    if-eqz v11, :cond_10
+
+    invoke-virtual/range {p0 .. p0}, Lcom/android/systemui/recents/RecentsActivity;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v18
+
+    const v19, 0x7f0d0062
+
+    invoke-virtual/range {v18 .. v19}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+
+    move-result v18
+
+    sput v18, Lcom/android/systemui/recents/RecentsConfiguration;->searchBarSpaceHeightPx:I
 
     goto :goto_5
+
+    :cond_d
+    const/4 v11, 0x0
+
+    goto :goto_6
+
+    :cond_e
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/systemui/recents/RecentsActivity;->mRecentsView:Lcom/android/systemui/recents/views/RecentsView;
+
+    move-object/from16 v18, v0
+
+    const/16 v19, 0x8
+
+    invoke-virtual/range {v18 .. v19}, Lcom/android/systemui/recents/views/RecentsView;->setSearchBarVisibility(I)V
+
+    goto :goto_7
+
+    :cond_f
+    if-eqz v11, :cond_c
+
+    invoke-virtual/range {p0 .. p0}, Lcom/android/systemui/recents/RecentsActivity;->addSearchBarAppWidgetView()V
+
+    goto :goto_7
+
+    :cond_10
+    const/16 v18, 0x0
+
+    sput v18, Lcom/android/systemui/recents/RecentsConfiguration;->searchBarSpaceHeightPx:I
+
+    goto/16 :goto_5
 .end method

@@ -289,4 +289,42 @@
     <item type="id" name="zen_conditions">false</item>
     <item type="id" name="recent_remove_item">false</item>
     <item type="id" name="recent_inspect_item">false</item>
+    <item type="id" name="floating_action_button">false</item>
+    <item type="id" name="clear_recents">false</item>
+    <item type="id" name="recent_force_stop">false</item>
+    <item type="id" name="recent_wipe_app">false</item>
+    <item type="id" name="recent_uninstall">false</item>
+    <item type="id" name="recents_membar">false</item>
+    <item type="id" name="recents_memory_bar">false</item>
+    <item type="id" name="recents_memory_text">false</item>
+    <item type="id" name="center_clock">false</item>
+    <item type="id" name="left_clock">false</item>
+    <item type="id" name="center_clock_layout">false</item>
+    <item type="id" name="radiogroup_location">false</item>
+    <item type="id" name="radio_high_accuracy">false</item>
+    <item type="id" name="radio_battery_saving">false</item>
+    <item type="id" name="radio_sensors_only">false</item>
+    <item type="id" name="networkTraffic">false</item>
+    <item type="id" name="weather_container">false</item>
+    <item type="id" name="weather_line_1">false</item>
+    <item type="id" name="weather_line_2">false</item>
+    <item type="id" name="one">false</item>
+    <item type="id" name="dpad_left">false</item>
+    <item type="id" name="mid_nav_buttons">false</item>
+    <item type="id" name="two">false</item>
+    <item type="id" name="three">false</item>
+    <item type="id" name="four">false</item>
+    <item type="id" name="five">false</item>
+    <item type="id" name="dpad_right">false</item>
+    <item type="id" name="six">false</item>
+    <item type="id" name="container">false</item>
+    <item type="id" name="key_icon">false</item>
+    <item type="id" name="key_text">false</item>
+    <item type="id" name="nav_ring_edit">false</item>
+    <item type="id" name="one_parent">false</item>
+    <item type="id" name="search_logo1">false</item>
+    <item type="id" name="two_parent">false</item>
+    <item type="id" name="search_logo2">false</item>
+    <item type="id" name="further_options">false</item>
+    <item type="id" name="visualizerView">false</item>
 </resources>

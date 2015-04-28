@@ -29,3 +29,6 @@
 
 .method public abstract onTaskViewFocusChanged(Lcom/android/systemui/recents/views/TaskView;Z)V
 .end method
+
+.method public abstract onTaskViewLongClicked(Lcom/android/systemui/recents/views/TaskView;)V
+.end method
