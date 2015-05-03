@@ -40,7 +40,7 @@
     iget-object v0, p0, Lcom/android/systemui/recent/ScreenPinningRequest$RequestWindowView$2;->this$1:Lcom/android/systemui/recent/ScreenPinningRequest$RequestWindowView;
 
     # getter for: Lcom/android/systemui/recent/ScreenPinningRequest$RequestWindowView;->mLayout:Landroid/view/ViewGroup;
-    invoke-static {v0}, Lcom/android/systemui/recent/ScreenPinningRequest$RequestWindowView;->access$300(Lcom/android/systemui/recent/ScreenPinningRequest$RequestWindowView;)Landroid/view/ViewGroup;
+    invoke-static {v0}, Lcom/android/systemui/recent/ScreenPinningRequest$RequestWindowView;->access$400(Lcom/android/systemui/recent/ScreenPinningRequest$RequestWindowView;)Landroid/view/ViewGroup;
 
     move-result-object v0
 
@@ -49,7 +49,7 @@
     iget-object v0, p0, Lcom/android/systemui/recent/ScreenPinningRequest$RequestWindowView$2;->this$1:Lcom/android/systemui/recent/ScreenPinningRequest$RequestWindowView;
 
     # getter for: Lcom/android/systemui/recent/ScreenPinningRequest$RequestWindowView;->mLayout:Landroid/view/ViewGroup;
-    invoke-static {v0}, Lcom/android/systemui/recent/ScreenPinningRequest$RequestWindowView;->access$300(Lcom/android/systemui/recent/ScreenPinningRequest$RequestWindowView;)Landroid/view/ViewGroup;
+    invoke-static {v0}, Lcom/android/systemui/recent/ScreenPinningRequest$RequestWindowView;->access$400(Lcom/android/systemui/recent/ScreenPinningRequest$RequestWindowView;)Landroid/view/ViewGroup;
 
     move-result-object v0
 
@@ -62,7 +62,7 @@
     iget-object v0, p0, Lcom/android/systemui/recent/ScreenPinningRequest$RequestWindowView$2;->this$1:Lcom/android/systemui/recent/ScreenPinningRequest$RequestWindowView;
 
     # getter for: Lcom/android/systemui/recent/ScreenPinningRequest$RequestWindowView;->mLayout:Landroid/view/ViewGroup;
-    invoke-static {v0}, Lcom/android/systemui/recent/ScreenPinningRequest$RequestWindowView;->access$300(Lcom/android/systemui/recent/ScreenPinningRequest$RequestWindowView;)Landroid/view/ViewGroup;
+    invoke-static {v0}, Lcom/android/systemui/recent/ScreenPinningRequest$RequestWindowView;->access$400(Lcom/android/systemui/recent/ScreenPinningRequest$RequestWindowView;)Landroid/view/ViewGroup;
 
     move-result-object v0
 
@@ -75,12 +75,12 @@
     iget-object v3, p0, Lcom/android/systemui/recent/ScreenPinningRequest$RequestWindowView$2;->this$1:Lcom/android/systemui/recent/ScreenPinningRequest$RequestWindowView;
 
     # getter for: Lcom/android/systemui/recent/ScreenPinningRequest$RequestWindowView;->mContext:Landroid/content/Context;
-    invoke-static {v3}, Lcom/android/systemui/recent/ScreenPinningRequest$RequestWindowView;->access$400(Lcom/android/systemui/recent/ScreenPinningRequest$RequestWindowView;)Landroid/content/Context;
+    invoke-static {v3}, Lcom/android/systemui/recent/ScreenPinningRequest$RequestWindowView;->access$500(Lcom/android/systemui/recent/ScreenPinningRequest$RequestWindowView;)Landroid/content/Context;
 
     move-result-object v3
 
     # invokes: Lcom/android/systemui/recent/ScreenPinningRequest$RequestWindowView;->isLandscapePhone(Landroid/content/Context;)Z
-    invoke-static {v2, v3}, Lcom/android/systemui/recent/ScreenPinningRequest$RequestWindowView;->access$500(Lcom/android/systemui/recent/ScreenPinningRequest$RequestWindowView;Landroid/content/Context;)Z
+    invoke-static {v2, v3}, Lcom/android/systemui/recent/ScreenPinningRequest$RequestWindowView;->access$600(Lcom/android/systemui/recent/ScreenPinningRequest$RequestWindowView;Landroid/content/Context;)Z
 
     move-result v2
 

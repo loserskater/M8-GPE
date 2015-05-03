@@ -81,7 +81,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$300(Lcom/android/systemui/recent/ScreenPinningRequest$RequestWindowView;)Landroid/view/ViewGroup;
+.method static synthetic access$400(Lcom/android/systemui/recent/ScreenPinningRequest$RequestWindowView;)Landroid/view/ViewGroup;
     .locals 1
 
     iget-object v0, p0, Lcom/android/systemui/recent/ScreenPinningRequest$RequestWindowView;->mLayout:Landroid/view/ViewGroup;
@@ -89,7 +89,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$400(Lcom/android/systemui/recent/ScreenPinningRequest$RequestWindowView;)Landroid/content/Context;
+.method static synthetic access$500(Lcom/android/systemui/recent/ScreenPinningRequest$RequestWindowView;)Landroid/content/Context;
     .locals 1
 
     iget-object v0, p0, Lcom/android/systemui/recent/ScreenPinningRequest$RequestWindowView;->mContext:Landroid/content/Context;
@@ -97,7 +97,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$500(Lcom/android/systemui/recent/ScreenPinningRequest$RequestWindowView;Landroid/content/Context;)Z
+.method static synthetic access$600(Lcom/android/systemui/recent/ScreenPinningRequest$RequestWindowView;Landroid/content/Context;)Z
     .locals 1
 
     invoke-direct {p0, p1}, Lcom/android/systemui/recent/ScreenPinningRequest$RequestWindowView;->isLandscapePhone(Landroid/content/Context;)Z
@@ -107,12 +107,40 @@
     return v0
 .end method
 
-.method static synthetic access$600(Lcom/android/systemui/recent/ScreenPinningRequest$RequestWindowView;)Ljava/lang/Runnable;
+.method static synthetic access$700(Lcom/android/systemui/recent/ScreenPinningRequest$RequestWindowView;)Ljava/lang/Runnable;
     .locals 1
 
     iget-object v0, p0, Lcom/android/systemui/recent/ScreenPinningRequest$RequestWindowView;->mUpdateLayoutRunnable:Ljava/lang/Runnable;
 
     return-object v0
+.end method
+
+.method private hasNavigationBar()Z
+    .locals 1
+
+    :try_start_0
+    iget-object v0, p0, Lcom/android/systemui/recent/ScreenPinningRequest$RequestWindowView;->this$0:Lcom/android/systemui/recent/ScreenPinningRequest;
+
+    # getter for: Lcom/android/systemui/recent/ScreenPinningRequest;->mWindowManagerService:Landroid/view/IWindowManager;
+    invoke-static {v0}, Lcom/android/systemui/recent/ScreenPinningRequest;->access$300(Lcom/android/systemui/recent/ScreenPinningRequest;)Landroid/view/IWindowManager;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Landroid/view/IWindowManager;->hasNavigationBar()Z
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-result v0
+
+    :goto_0
+    return v0
+
+    :catch_0
+    move-exception v0
+
+    const/4 v0, 0x0
+
+    goto :goto_0
 .end method
 
 .method private inflateView(Z)V
@@ -208,6 +236,12 @@
     invoke-virtual {v3, v5}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     :goto_1
+    invoke-direct {p0}, Lcom/android/systemui/recent/ScreenPinningRequest$RequestWindowView;->hasNavigationBar()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_4
+
     iget-object v3, p0, Lcom/android/systemui/recent/ScreenPinningRequest$RequestWindowView;->this$0:Lcom/android/systemui/recent/ScreenPinningRequest;
 
     # getter for: Lcom/android/systemui/recent/ScreenPinningRequest;->mAccessibilityService:Landroid/view/accessibility/AccessibilityManager;
@@ -224,18 +258,6 @@
     const v2, 0x7f0c0155
 
     :goto_2
-    iget-object v3, p0, Lcom/android/systemui/recent/ScreenPinningRequest$RequestWindowView;->mLayout:Landroid/view/ViewGroup;
-
-    const v5, 0x7f0f00d6
-
-    invoke-virtual {v3, v5}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
-
-    move-result-object v3
-
-    check-cast v3, Landroid/widget/TextView;
-
-    invoke-virtual {v3, v2}, Landroid/widget/TextView;->setText(I)V
-
     iget-object v3, p0, Lcom/android/systemui/recent/ScreenPinningRequest$RequestWindowView;->this$0:Lcom/android/systemui/recent/ScreenPinningRequest;
 
     # getter for: Lcom/android/systemui/recent/ScreenPinningRequest;->mAccessibilityService:Landroid/view/accessibility/AccessibilityManager;
@@ -270,6 +292,19 @@
 
     invoke-virtual {v3, v0}, Landroid/view/View;->setVisibility(I)V
 
+    :goto_4
+    iget-object v3, p0, Lcom/android/systemui/recent/ScreenPinningRequest$RequestWindowView;->mLayout:Landroid/view/ViewGroup;
+
+    const v4, 0x7f0f00d6
+
+    invoke-virtual {v3, v4}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
+
+    move-result-object v3
+
+    check-cast v3, Landroid/widget/TextView;
+
+    invoke-virtual {v3, v2}, Landroid/widget/TextView;->setText(I)V
+
     iget-object v3, p0, Lcom/android/systemui/recent/ScreenPinningRequest$RequestWindowView;->mLayout:Landroid/view/ViewGroup;
 
     iget-object v4, p0, Lcom/android/systemui/recent/ScreenPinningRequest$RequestWindowView;->this$0:Lcom/android/systemui/recent/ScreenPinningRequest;
@@ -301,7 +336,7 @@
     goto :goto_1
 
     :cond_2
-    const v2, 0x7f0c0154
+    const v2, 0x7f0c0159
 
     goto :goto_2
 
@@ -309,6 +344,19 @@
     move v0, v4
 
     goto :goto_3
+
+    :cond_4
+    const v2, 0x7f0c0154
+
+    invoke-virtual {v1}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
+
+    move-result-object v3
+
+    check-cast v3, Landroid/view/ViewGroup;
+
+    invoke-virtual {v3, v1}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
+
+    goto :goto_4
 .end method
 
 .method private isLandscapePhone(Landroid/content/Context;)Z

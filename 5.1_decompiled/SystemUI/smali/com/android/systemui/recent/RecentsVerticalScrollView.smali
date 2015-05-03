@@ -988,7 +988,7 @@
 .end method
 
 .method public setAdapter(Lcom/android/systemui/recent/RecentsPanelView$TaskDescriptionAdapter;)V
-    .locals 10
+    .locals 8
 
     const/high16 v7, -0x80000000
 
@@ -1034,21 +1034,21 @@
 
     iget v5, v3, Landroid/util/DisplayMetrics;->heightPixels:I
 
-    int-to-double v6, v5
+    int-to-float v5, v5
 
     invoke-virtual {v0}, Landroid/view/View;->getMeasuredHeight()I
 
+    move-result v6
+
+    int-to-float v6, v6
+
+    div-float/2addr v5, v6
+
+    invoke-static {v5}, Landroid/util/FloatMath;->ceil(F)F
+
     move-result v5
 
-    int-to-double v8, v5
-
-    div-double/2addr v6, v8
-
-    invoke-static {v6, v7}, Ljava/lang/Math;->ceil(D)D
-
-    move-result-wide v6
-
-    double-to-int v5, v6
+    float-to-int v5, v5
 
     iput v5, p0, Lcom/android/systemui/recent/RecentsVerticalScrollView;->mNumItemsInOneScreenful:I
 

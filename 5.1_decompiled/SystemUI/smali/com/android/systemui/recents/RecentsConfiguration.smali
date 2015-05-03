@@ -302,15 +302,13 @@
 
     sub-int v1, p1, p4
 
-    invoke-virtual {p5, v2, p3, v1, p2}, Landroid/graphics/Rect;->set(IIII)V
+    invoke-virtual {p5, v2, v2, v1, p2}, Landroid/graphics/Rect;->set(IIII)V
 
     :goto_0
     return-void
 
     :cond_0
-    iget v1, v0, Landroid/graphics/Rect;->bottom:I
-
-    invoke-virtual {p5, v2, v1, p1, p2}, Landroid/graphics/Rect;->set(IIII)V
+    invoke-virtual {p5, v2, v2, p1, p2}, Landroid/graphics/Rect;->set(IIII)V
 
     goto :goto_0
 .end method

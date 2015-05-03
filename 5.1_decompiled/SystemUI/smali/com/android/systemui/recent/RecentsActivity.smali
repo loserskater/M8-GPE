@@ -75,12 +75,6 @@
 
     if-eqz v0, :cond_0
 
-    invoke-static {}, Landroid/app/ActivityManager;->isHighEndGfx()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
     const/4 v0, 0x1
 
     :goto_0
@@ -336,11 +330,11 @@
 
     invoke-virtual {v1, v2}, Landroid/view/Window;->addPrivateFlags(I)V
 
-    const v1, 0x7f040036
+    const v1, 0x7f04004a
 
     invoke-virtual {p0, v1}, Lcom/android/systemui/recent/RecentsActivity;->setContentView(I)V
 
-    const v1, 0x7f0f0127
+    const v1, 0x7f0f0113
 
     invoke-virtual {p0, v1}, Lcom/android/systemui/recent/RecentsActivity;->findViewById(I)Landroid/view/View;
 
@@ -488,9 +482,9 @@
 .method public onPause()V
     .locals 2
 
-    const v0, 0x7f050054
+    const v0, 0x7f05005f
 
-    const v1, 0x7f050055
+    const v1, 0x7f050060
 
     invoke-virtual {p0, v0, v1}, Lcom/android/systemui/recent/RecentsActivity;->overridePendingTransition(II)V
 

@@ -721,9 +721,9 @@
 
     iget-object v0, p0, Lcom/android/systemui/recents/views/RecentsView;->mClearRecents:Landroid/view/View;
 
-    new-instance v1, Lcom/android/systemui/recents/views/RecentsView$1;
+    new-instance v1, Lcom/android/systemui/recents/views/RecentsView$2;
 
-    invoke-direct {v1, p0}, Lcom/android/systemui/recents/views/RecentsView$1;-><init>(Lcom/android/systemui/recents/views/RecentsView;)V
+    invoke-direct {v1, p0}, Lcom/android/systemui/recents/views/RecentsView$2;-><init>(Lcom/android/systemui/recents/views/RecentsView;)V
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
@@ -853,7 +853,7 @@
 .end method
 
 .method protected onMeasure(II)V
-    .locals 21
+    .locals 22
 
     move-object/from16 v0, p0
 
@@ -861,7 +861,7 @@
 
     invoke-virtual {v3}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
-    move-result-object v16
+    move-result-object v17
 
     invoke-static/range {p1 .. p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
@@ -871,15 +871,15 @@
 
     move-result v5
 
+    new-instance v18, Landroid/graphics/Rect;
+
+    invoke-direct/range {v18 .. v18}, Landroid/graphics/Rect;-><init>()V
+
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/systemui/recents/views/RecentsView;->mSearchBar:Landroid/view/View;
 
     if-eqz v3, :cond_0
-
-    new-instance v17, Landroid/graphics/Rect;
-
-    invoke-direct/range {v17 .. v17}, Landroid/graphics/Rect;-><init>()V
 
     move-object/from16 v0, p0
 
@@ -893,7 +893,7 @@
 
     iget v6, v6, Landroid/graphics/Rect;->top:I
 
-    move-object/from16 v0, v17
+    move-object/from16 v0, v18
 
     invoke-virtual {v3, v4, v5, v6, v0}, Lcom/android/systemui/recents/RecentsConfiguration;->getSearchBarBounds(IIILandroid/graphics/Rect;)V
 
@@ -901,7 +901,7 @@
 
     iget-object v3, v0, Lcom/android/systemui/recents/views/RecentsView;->mSearchBar:Landroid/view/View;
 
-    invoke-virtual/range {v17 .. v17}, Landroid/graphics/Rect;->width()I
+    invoke-virtual/range {v18 .. v18}, Landroid/graphics/Rect;->width()I
 
     move-result v6
 
@@ -911,13 +911,13 @@
 
     move-result v6
 
-    invoke-virtual/range {v17 .. v17}, Landroid/graphics/Rect;->height()I
+    invoke-virtual/range {v18 .. v18}, Landroid/graphics/Rect;->height()I
 
     move-result v7
 
-    const/high16 v20, 0x40000000    # 2.0f
+    const/high16 v21, 0x40000000    # 2.0f
 
-    move/from16 v0, v20
+    move/from16 v0, v21
 
     invoke-static {v7, v0}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
@@ -925,30 +925,36 @@
 
     invoke-virtual {v3, v6, v7}, Landroid/view/View;->measure(II)V
 
-    const-string v3, "systemui_recents_mem_display"
+    move-object/from16 v0, p0
 
-    const/4 v6, 0x1
+    iget-object v3, v0, Lcom/android/systemui/recents/views/RecentsView;->mContext:Landroid/content/Context;
 
-    move-object/from16 v0, v16
+    invoke-virtual {v3}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
-    invoke-static {v0, v3, v6}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+    move-result-object v3
+
+    const-string v6, "systemui_recents_mem_display"
+
+    const/4 v7, 0x1
+
+    invoke-static {v3, v6, v7}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
 
     move-result v3
 
     const/4 v6, 0x1
 
-    if-ne v3, v6, :cond_2
+    if-ne v3, v6, :cond_3
 
     const/4 v12, 0x1
 
     :goto_0
-    if-eqz v12, :cond_3
+    if-eqz v12, :cond_4
 
-    invoke-virtual/range {v17 .. v17}, Landroid/graphics/Rect;->height()I
+    invoke-virtual/range {v18 .. v18}, Landroid/graphics/Rect;->height()I
 
     move-result v3
 
-    add-int/lit8 v14, v3, 0x19
+    add-int/lit8 v15, v3, 0x19
 
     :goto_1
     move-object/from16 v0, p0
@@ -959,30 +965,38 @@
 
     const/4 v7, 0x0
 
-    const/16 v20, 0x0
+    const/16 v21, 0x0
 
-    move/from16 v0, v20
+    move/from16 v0, v21
 
-    invoke-virtual {v3, v6, v14, v7, v0}, Landroid/widget/ProgressBar;->setPadding(IIII)V
+    invoke-virtual {v3, v6, v15, v7, v0}, Landroid/widget/ProgressBar;->setPadding(IIII)V
 
     :cond_0
     invoke-direct/range {p0 .. p0}, Lcom/android/systemui/recents/views/RecentsView;->showMemDisplay()Z
 
-    const-string v3, "show_clear_all_recents"
+    move-object/from16 v0, p0
 
-    const/4 v6, 0x1
+    iget-object v3, v0, Lcom/android/systemui/recents/views/RecentsView;->mContext:Landroid/content/Context;
 
-    move-object/from16 v0, v16
+    invoke-virtual {v3}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
-    invoke-static {v0, v3, v6}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+    move-result-object v3
+
+    const-string v6, "show_clear_all_recents"
+
+    const/4 v7, 0x1
+
+    const/16 v21, -0x2
+
+    move/from16 v0, v21
+
+    invoke-static {v3, v6, v7, v0}, Landroid/provider/Settings$System;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
 
     move-result v3
 
-    const/4 v6, 0x1
+    if-eqz v3, :cond_5
 
-    if-ne v3, v6, :cond_4
-
-    const/16 v18, 0x1
+    const/16 v19, 0x1
 
     :goto_2
     new-instance v8, Landroid/graphics/Rect;
@@ -1015,17 +1029,27 @@
 
     iget-object v3, v0, Lcom/android/systemui/recents/views/RecentsView;->mFloatingButton:Landroid/view/View;
 
-    if-eqz v3, :cond_5
+    if-eqz v3, :cond_8
 
-    if-eqz v18, :cond_5
+    if-eqz v19, :cond_8
 
-    const-string v3, "recents_clear_all_location"
+    move-object/from16 v0, p0
 
-    const/4 v6, 0x3
+    iget-object v3, v0, Lcom/android/systemui/recents/views/RecentsView;->mContext:Landroid/content/Context;
 
-    move-object/from16 v0, v16
+    invoke-virtual {v3}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
-    invoke-static {v0, v3, v6}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+    move-result-object v3
+
+    const-string v6, "recents_clear_all_location"
+
+    const/4 v7, 0x5
+
+    const/16 v21, -0x2
+
+    move/from16 v0, v21
+
+    invoke-static {v3, v6, v7, v0}, Landroid/provider/Settings$System;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
 
     move-result v11
 
@@ -1035,37 +1059,85 @@
 
     invoke-virtual {v3}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
-    move-result-object v15
+    move-result-object v16
 
-    check-cast v15, Landroid/widget/FrameLayout$LayoutParams;
+    check-cast v16, Landroid/widget/FrameLayout$LayoutParams;
 
-    iget v3, v8, Landroid/graphics/Rect;->top:I
+    move-object/from16 v0, p0
 
-    iput v3, v15, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
+    iget-object v3, v0, Lcom/android/systemui/recents/views/RecentsView;->mContext:Landroid/content/Context;
 
-    packed-switch v11, :pswitch_data_0
+    invoke-virtual {v3}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-    :pswitch_0
-    const/16 v3, 0x55
+    move-result-object v3
 
-    iput v3, v15, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
+    invoke-virtual {v3}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
+
+    move-result-object v3
+
+    iget v3, v3, Landroid/content/res/Configuration;->orientation:I
+
+    const/4 v6, 0x2
+
+    if-ne v3, v6, :cond_6
+
+    const/4 v14, 0x1
 
     :goto_3
     move-object/from16 v0, p0
 
-    iget-object v3, v0, Lcom/android/systemui/recents/views/RecentsView;->mFloatingButton:Landroid/view/View;
+    iget-object v3, v0, Lcom/android/systemui/recents/views/RecentsView;->mSearchBar:Landroid/view/View;
 
-    invoke-virtual {v3, v15}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+    if-eqz v3, :cond_1
+
+    if-eqz v14, :cond_7
+
+    :cond_1
+    move-object/from16 v0, p0
+
+    iget-object v3, v0, Lcom/android/systemui/recents/views/RecentsView;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v3}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v3
+
+    const v6, 0x1050011
+
+    invoke-virtual {v3, v6}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+
+    move-result v3
+
+    move-object/from16 v0, v16
+
+    iput v3, v0, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
     :goto_4
+    packed-switch v11, :pswitch_data_0
+
+    const/16 v3, 0x51
+
+    move-object/from16 v0, v16
+
+    iput v3, v0, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
+
+    :goto_5
+    move-object/from16 v0, p0
+
+    iget-object v3, v0, Lcom/android/systemui/recents/views/RecentsView;->mFloatingButton:Landroid/view/View;
+
+    move-object/from16 v0, v16
+
+    invoke-virtual {v3, v0}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+
+    :goto_6
     invoke-virtual/range {p0 .. p0}, Lcom/android/systemui/recents/views/RecentsView;->getChildCount()I
 
     move-result v10
 
     const/4 v13, 0x0
 
-    :goto_5
-    if-ge v13, v10, :cond_6
+    :goto_7
+    if-ge v13, v10, :cond_9
 
     move-object/from16 v0, p0
 
@@ -1077,7 +1149,7 @@
 
     iget-object v3, v0, Lcom/android/systemui/recents/views/RecentsView;->mSearchBar:Landroid/view/View;
 
-    if-eq v9, v3, :cond_1
+    if-eq v9, v3, :cond_2
 
     invoke-virtual {v9}, Landroid/view/View;->getVisibility()I
 
@@ -1085,17 +1157,17 @@
 
     const/16 v6, 0x8
 
-    if-eq v3, v6, :cond_1
+    if-eq v3, v6, :cond_2
 
-    move-object/from16 v19, v9
+    move-object/from16 v20, v9
 
-    check-cast v19, Lcom/android/systemui/recents/views/TaskStackView;
+    check-cast v20, Lcom/android/systemui/recents/views/TaskStackView;
 
-    move-object/from16 v0, v19
+    move-object/from16 v0, v20
 
     invoke-virtual {v0, v8}, Lcom/android/systemui/recents/views/TaskStackView;->setStackInsetRect(Landroid/graphics/Rect;)V
 
-    move-object/from16 v0, v19
+    move-object/from16 v0, v20
 
     move/from16 v1, p1
 
@@ -1103,17 +1175,17 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/android/systemui/recents/views/TaskStackView;->measure(II)V
 
-    :cond_1
+    :cond_2
     add-int/lit8 v13, v13, 0x1
 
-    goto :goto_5
+    goto :goto_7
 
-    :cond_2
+    :cond_3
     const/4 v12, 0x0
 
     goto/16 :goto_0
 
-    :cond_3
+    :cond_4
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/systemui/recents/views/RecentsView;->mContext:Landroid/content/Context;
@@ -1126,51 +1198,93 @@
 
     invoke-virtual {v3, v6}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
-    move-result v14
+    move-result v15
 
     goto/16 :goto_1
 
-    :cond_4
-    const/16 v18, 0x0
+    :cond_5
+    const/16 v19, 0x0
 
     goto/16 :goto_2
 
-    :pswitch_1
+    :cond_6
+    const/4 v14, 0x0
+
+    goto :goto_3
+
+    :cond_7
+    move-object/from16 v0, p0
+
+    iget-object v3, v0, Lcom/android/systemui/recents/views/RecentsView;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v3}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v3
+
+    const v6, 0x1050011
+
+    invoke-virtual {v3, v6}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+
+    move-result v3
+
+    invoke-virtual/range {v18 .. v18}, Landroid/graphics/Rect;->height()I
+
+    move-result v6
+
+    add-int/2addr v3, v6
+
+    move-object/from16 v0, v16
+
+    iput v3, v0, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
+
+    goto :goto_4
+
+    :pswitch_0
     const/16 v3, 0x33
 
-    iput v3, v15, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
+    move-object/from16 v0, v16
 
-    goto :goto_3
+    iput v3, v0, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    :pswitch_2
+    goto :goto_5
+
+    :pswitch_1
     const/16 v3, 0x35
 
-    iput v3, v15, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
+    move-object/from16 v0, v16
 
-    goto :goto_3
+    iput v3, v0, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    :pswitch_3
+    goto :goto_5
+
+    :pswitch_2
     const/16 v3, 0x31
 
-    iput v3, v15, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
+    move-object/from16 v0, v16
 
-    goto :goto_3
+    iput v3, v0, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    :pswitch_4
+    goto :goto_5
+
+    :pswitch_3
     const/16 v3, 0x53
 
-    iput v3, v15, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
+    move-object/from16 v0, v16
 
-    goto :goto_3
+    iput v3, v0, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    :pswitch_5
-    const/16 v3, 0x51
+    goto/16 :goto_5
 
-    iput v3, v15, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
+    :pswitch_4
+    const/16 v3, 0x55
 
-    goto :goto_3
+    move-object/from16 v0, v16
 
-    :cond_5
+    iput v3, v0, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
+
+    goto/16 :goto_5
+
+    :cond_8
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/systemui/recents/views/RecentsView;->mFloatingButton:Landroid/view/View;
@@ -1179,9 +1293,9 @@
 
     invoke-virtual {v3, v6}, Landroid/view/View;->setVisibility(I)V
 
-    goto :goto_4
+    goto/16 :goto_6
 
-    :cond_6
+    :cond_9
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v4, v5}, Lcom/android/systemui/recents/views/RecentsView;->setMeasuredDimension(II)V
@@ -1190,12 +1304,11 @@
 
     :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_2
         :pswitch_1
-        :pswitch_3
         :pswitch_0
+        :pswitch_2
         :pswitch_4
-        :pswitch_5
+        :pswitch_3
     .end packed-switch
 .end method
 
@@ -1536,11 +1649,11 @@
 
     if-eqz p5, :cond_2
 
-    new-instance v10, Lcom/android/systemui/recents/views/RecentsView$2;
+    new-instance v10, Lcom/android/systemui/recents/views/RecentsView$3;
 
     move-object/from16 v0, p0
 
-    invoke-direct {v10, v0}, Lcom/android/systemui/recents/views/RecentsView$2;-><init>(Lcom/android/systemui/recents/views/RecentsView;)V
+    invoke-direct {v10, v0}, Lcom/android/systemui/recents/views/RecentsView$3;-><init>(Lcom/android/systemui/recents/views/RecentsView;)V
 
     :cond_2
     move-object/from16 v0, v23
@@ -1570,7 +1683,7 @@
     :cond_3
     move-object/from16 v15, v20
 
-    new-instance v11, Lcom/android/systemui/recents/views/RecentsView$3;
+    new-instance v11, Lcom/android/systemui/recents/views/RecentsView$4;
 
     move-object/from16 v12, p0
 
@@ -1578,7 +1691,7 @@
 
     move/from16 v16, p5
 
-    invoke-direct/range {v11 .. v16}, Lcom/android/systemui/recents/views/RecentsView$3;-><init>(Lcom/android/systemui/recents/views/RecentsView;Lcom/android/systemui/recents/model/Task;Lcom/android/systemui/recents/misc/SystemServicesProxy;Landroid/app/ActivityOptions;Z)V
+    invoke-direct/range {v11 .. v16}, Lcom/android/systemui/recents/views/RecentsView$4;-><init>(Lcom/android/systemui/recents/views/RecentsView;Lcom/android/systemui/recents/model/Task;Lcom/android/systemui/recents/misc/SystemServicesProxy;Landroid/app/ActivityOptions;Z)V
 
     if-nez p2, :cond_6
 
@@ -2020,6 +2133,8 @@
 
     invoke-virtual {v4}, Lcom/android/systemui/recents/misc/ReferenceCountedTrigger;->increment()V
 
+    invoke-virtual {p0}, Lcom/android/systemui/recents/views/RecentsView;->startHideClearRecentsButtonAnimation()V
+
     invoke-virtual {p0}, Lcom/android/systemui/recents/views/RecentsView;->getChildCount()I
 
     move-result v1
@@ -2057,6 +2172,69 @@
 
     invoke-interface {v4}, Lcom/android/systemui/recents/views/RecentsView$RecentsViewCallbacks;->onExitToHomeAnimationTriggered()V
 
+    return-void
+.end method
+
+.method public startHideClearRecentsButtonAnimation()V
+    .locals 4
+
+    iget-object v0, p0, Lcom/android/systemui/recents/views/RecentsView;->mFloatingButton:Landroid/view/View;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/android/systemui/recents/views/RecentsView;->mFloatingButton:Landroid/view/View;
+
+    invoke-virtual {v0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
+
+    move-result-object v0
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
+
+    move-result-object v0
+
+    const-wide/16 v2, 0x0
+
+    invoke-virtual {v0, v2, v3}, Landroid/view/ViewPropertyAnimator;->setStartDelay(J)Landroid/view/ViewPropertyAnimator;
+
+    move-result-object v0
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->setUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)Landroid/view/ViewPropertyAnimator;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/android/systemui/recents/views/RecentsView;->mConfig:Lcom/android/systemui/recents/RecentsConfiguration;
+
+    iget-object v1, v1, Lcom/android/systemui/recents/RecentsConfiguration;->fastOutSlowInInterpolator:Landroid/view/animation/Interpolator;
+
+    invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)Landroid/view/ViewPropertyAnimator;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/android/systemui/recents/views/RecentsView;->mConfig:Lcom/android/systemui/recents/RecentsConfiguration;
+
+    iget v1, v1, Lcom/android/systemui/recents/RecentsConfiguration;->taskViewRemoveAnimDuration:I
+
+    int-to-long v2, v1
+
+    invoke-virtual {v0, v2, v3}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
+
+    move-result-object v0
+
+    new-instance v1, Lcom/android/systemui/recents/views/RecentsView$1;
+
+    invoke-direct {v1, p0}, Lcom/android/systemui/recents/views/RecentsView$1;-><init>(Lcom/android/systemui/recents/views/RecentsView;)V
+
+    invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->withEndAction(Ljava/lang/Runnable;)Landroid/view/ViewPropertyAnimator;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->start()V
+
+    :cond_0
     return-void
 .end method
 

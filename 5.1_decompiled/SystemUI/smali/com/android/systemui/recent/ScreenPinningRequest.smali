@@ -23,6 +23,8 @@
 
 .field private final mWindowManager:Landroid/view/WindowManager;
 
+.field private final mWindowManagerService:Landroid/view/IWindowManager;
+
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
@@ -56,6 +58,12 @@
 
     iput-object v0, p0, Lcom/android/systemui/recent/ScreenPinningRequest;->mWindowManager:Landroid/view/WindowManager;
 
+    invoke-static {}, Landroid/view/WindowManagerGlobal;->getWindowManagerService()Landroid/view/IWindowManager;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/android/systemui/recent/ScreenPinningRequest;->mWindowManagerService:Landroid/view/IWindowManager;
+
     return-void
 .end method
 
@@ -71,6 +79,14 @@
     .locals 1
 
     iget-object v0, p0, Lcom/android/systemui/recent/ScreenPinningRequest;->mAccessibilityService:Landroid/view/accessibility/AccessibilityManager;
+
+    return-object v0
+.end method
+
+.method static synthetic access$300(Lcom/android/systemui/recent/ScreenPinningRequest;)Landroid/view/IWindowManager;
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/systemui/recent/ScreenPinningRequest;->mWindowManagerService:Landroid/view/IWindowManager;
 
     return-object v0
 .end method
