@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:layout_gravity="top" android:orientation="vertical" android:id="@id/recents_membar" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:elevation="@dimen/floating_action_button_translation_z"
+<LinearLayout android:layout_gravity="top" android:layout_marginTop="7.0dip" android:orientation="vertical" android:id="@id/recents_membar" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:elevation="@dimen/floating_action_button_translation_z"
   xmlns:android="http://schemas.android.com/apk/res/android">
     <ProgressBar android:layout_gravity="center|left|top" android:id="@id/recents_memory_bar" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="25.0dip" android:layout_marginTop="7.0dip" android:layout_marginRight="25.0dip" style="?android:attr/progressBarStyleHorizontal" />
-    <TextView android:layout_gravity="center|left|top" android:id="@id/recents_memory_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="25.0dip" android:layout_marginTop="5.0dip" android:layout_marginRight="5.0dip" />
+    <TextView android:layout_gravity="center|left|top" android:id="@id/recents_memory_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="#ffffffff" android:shadowColor="#ff000000" android:shadowDx="-2" android:shadowDy="-2" android:shadowRadius="1" android:layout_marginLeft="25.0dip" android:layout_marginTop="5.0dip" android:layout_marginRight="5.0dip" />
 </LinearLayout>
