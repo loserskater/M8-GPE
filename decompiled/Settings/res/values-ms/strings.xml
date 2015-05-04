@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="install_unknown_applications">Benarkan pemasangan apl dari sumber selain dari Gedung Play</string>
-    <string name="backup_data_summary">Sandarkan data aplikasi, kata laluan Wi-Fi dan tetapan lain ke pelayan Google</string>
-</resources>
