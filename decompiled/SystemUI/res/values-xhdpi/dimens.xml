@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <dimen name="battery_margin_bottom">0.0dip</dimen>
-    <dimen name="kg_visualizer_path_effect_1">8.0dip</dimen>
-    <dimen name="kg_visualizer_path_effect_2">1.0dip</dimen>
-    <dimen name="kg_visualizer_path_stroke_width">22.0dip</dimen>
-    <dimen name="weather_text_size">12.0sp</dimen>
-</resources>

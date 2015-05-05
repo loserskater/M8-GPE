@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<com.android.systemui.statusbar.phone.FloatingMenuButtonView android:background="@drawable/ripple_drawable" android:visibility="invisible" android:layout_width="@dimen/floating_menu_size" android:layout_height="@dimen/floating_menu_size" android:src="@drawable/ic_sysbar_menu" android:scaleType="centerInside" android:contentDescription="@string/accessibility_menu"
-  xmlns:android="http://schemas.android.com/apk/res/android"
-  xmlns:systemui="http://schemas.android.com/apk/res/com.android.systemui" />

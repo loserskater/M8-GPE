@@ -384,12 +384,6 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "2" || file_getprop("/tmp/
   else
     delete_recursive("/system/priv-app/Messenger");
   endif;
-  if file_getprop("/tmp/aroma/mms.prop","item.0.2") == "1" then
-    ui_print("Adding CM Messaging");
-    package_extract_dir("aroma/mms/cm", "/system");
-  else
-    delete_recursive("/system/priv-app/Mms");
-  endif;
   #
   #Email
   #
@@ -841,8 +835,6 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "2" || file_getprop("/tmp/
   if file_getprop("/tmp/aroma/audio.prop","item.0.3") == "1" then
     ui_print("Adding Viper4Android");
     package_extract_dir("aroma/audio/viper", "/system");
-	delete_recursive("/system/priv-app/AudioFX");
-	delete_recursive("/system/priv-app/MusicFX");
   else
     delete_recursive("/system/priv-app/ViPER4Android_FX_A4.x");
 	delete("/system/lib/libV4AJniUtils.so");
@@ -920,6 +912,16 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "2" || file_getprop("/tmp/
 	endif;
     run_program("/tmp/patch_apk.sh", "/system/framework/framework-res.apk");
     set_perm(0, 0, 0644, "/system/framework/framework-res.apk");
+  endif;
+  #
+  #Xposed
+  #
+  if file_getprop("/tmp/aroma/xposed.prop","item.0.1") == "1" then
+    ui_print("@Installing Xposed");
+	package_extract_dir("aroma/xposed/system", "/system");
+    package_extract_dir("aroma/xposed/zip", "/tmp/xposed");
+    run_program("/sbin/busybox", "unzip", "/tmp/xposed/xposed.zip", "META-INF/com/google/android/*", "-d", "/tmp/xposed");
+    run_program("/sbin/busybox", "sh", "/tmp/xposed/META-INF/com/google/android/update-binary", "dummy", "1", "/tmp/xposed/xposed.zip");
   endif;
 endif;
 ui_print("@Finishing up");
@@ -1115,10 +1117,7 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "1" || file_getprop("/tmp/
   set_metadata_recursive("/system/vendor/pittpatt/models/recognition", "uid", 0, "gid", 2000, "dmode", 0755, "fmode", 0644, "capabilities", 0x0, "selabel", "u:object_r:system_file:s0");
   set_metadata("/system/vendor/pittpatt/models/recognition/face.face.y0-y0-71-N-tree_7-wmd.bin", "uid", 0, "gid", 0, "mode", 0644, "capabilities", 0x0, "selabel", "u:object_r:system_file:s0");
   set_metadata_recursive("/system/xbin", "uid", 0, "gid", 2000, "dmode", 0755, "fmode", 0755, "capabilities", 0x0, "selabel", "u:object_r:system_file:s0");
-  set_metadata("/system/xbin/librank", "uid", 0, "gid", 0, "mode", 06755, "capabilities", 0x0, "selabel", "u:object_r:system_file:s0");
-  set_metadata("/system/xbin/procmem", "uid", 0, "gid", 0, "mode", 06755, "capabilities", 0x0, "selabel", "u:object_r:system_file:s0");
-  set_metadata("/system/xbin/procrank", "uid", 0, "gid", 0, "mode", 06755, "capabilities", 0x0, "selabel", "u:object_r:system_file:s0");
-  set_metadata("/system/su.d", "uid", 0, "gid", 0, "mode", 0755, "capabilities", 0x0, "selabel", "u:object_r:system_file:s0");
+  set_metadata_recursive("/system/su.d", "uid", 0, "gid", 0, "dmode", 0700, "fmode", 0755, "capabilities", 0x0, "selabel", "u:object_r:system_file:s0");
   set_progress(0.97);
   ui_print("@Installing SuperSu");
   package_extract_dir("supersu", "/tmp/supersu");

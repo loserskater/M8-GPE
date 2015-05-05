@@ -1,0 +1,1961 @@
+Signature-Version: 1.0
+SHA1-Digest-Manifest: zFoMkZIe2YSq6wz+RWOI0CR0Ayk=
+Created-By: 1.0 (Android SignApk)
+
+Name: res/layout/display.xml
+SHA1-Digest: +DP1ilwy3xRmBemZsGcVB2QaODo=
+
+Name: res/xml/appwidget_info.xml
+SHA1-Digest: gOAwRS1IGwROng6bEDccVp7JXOE=
+
+Name: res/drawable/ring_notif.xml
+SHA1-Digest: M/Z9lBLerfwyRsGsVO+DwGmOUuA=
+
+Name: res/drawable-xhdpi/ic_network_signal_1.png
+SHA1-Digest: EygFTrJJqZE4BJ5VRHYlz1Sq54U=
+
+Name: res/drawable-xxhdpi/appwidget_settings_ind_off_c_holo.9.png
+SHA1-Digest: XmsZ4Ex31jNbYlZT9VQ2rk78pT8=
+
+Name: res/raw-it/htc_copyright.txt
+SHA1-Digest: C5RBOus5Tu9OEgDckcRb9E1IX70=
+
+Name: res/xml/screen_pinning_settings.xml
+SHA1-Digest: fDm4F/NbM59MG1amhbK1zrUSFaM=
+
+Name: res/layout-land/confirm_lock_password.xml
+SHA1-Digest: e2Wl1lVQiIToYNVPVJrb364waAE=
+
+Name: res/xml/device_info_memory.xml
+SHA1-Digest: 1KLV0U/Qr8keoP+9l4qRiR07ZG8=
+
+Name: res/menu/storage.xml
+SHA1-Digest: rPb/6uTx8gKqe7iGJsadkn1Km8I=
+
+Name: res/layout/nfc_payment_option.xml
+SHA1-Digest: fREtkOCe1/rfLxyD2ojrsYd8VUw=
+
+Name: res/layout/locale_picker.xml
+SHA1-Digest: piJ5euPdmylrE5v5Y+8X7GJBWw8=
+
+Name: res/layout/select_account_list_item.xml
+SHA1-Digest: QLHTDMlVpmttch6HJF27a/oYLVQ=
+
+Name: res/layout/credentials_dialog.xml
+SHA1-Digest: TmNx89VTPS7NLPKWERxMt9FMUvs=
+
+Name: res/xml/print_settings.xml
+SHA1-Digest: I0d83wnWpyZDwAdOBc3QD/WEQGQ=
+
+Name: res/drawable-ldrtl-xhdpi/ic_network_signal_1.png
+SHA1-Digest: 86GW7biR8vfDehgXt5aHPqsWVww=
+
+Name: res/drawable-xxhdpi/ic_network_signal_4.png
+SHA1-Digest: bdbk6U0bOn5SHRdz5eHJo8Otzv0=
+
+Name: res/raw-nb/htc_copyright.txt
+SHA1-Digest: gXqF0Vbmyk9Z200XwRiFHZFtK0c=
+
+Name: res/drawable-xxhdpi/ic_settings_sound.png
+SHA1-Digest: oTJUz/LIX2yWDc1N106S3AzYM2U=
+
+Name: res/drawable-xxhdpi/ic_appwidget_settings_brightness_auto_holo.p
+ ng
+SHA1-Digest: hYpGPpv9ydUrQFnGZe5itOnxrRc=
+
+Name: res/drawable-xhdpi/lock_anim_14.png
+SHA1-Digest: Q5qmHVWBlA18F5DhiJkfpSBtSvs=
+
+Name: res/drawable-xxhdpi/ic_appwidget_settings_brightness_half_holo.p
+ ng
+SHA1-Digest: INJyNYH5W4omEaUhg429SAMO55I=
+
+Name: res/xml/security_settings_unencrypted.xml
+SHA1-Digest: yAgy6xQp3Ez1ifJbq+7D/5lKnGg=
+
+Name: res/layout/preference_icon.xml
+SHA1-Digest: Oi6UER+cQe0VjOtdC0ymjKbCmmY=
+
+Name: res/layout/preference.xml
+SHA1-Digest: ye7PPFdr9QZLzZfdsDAFp24r4UQ=
+
+Name: res/xml/account_settings.xml
+SHA1-Digest: XyxY9btRlFZ+SfGbMVvmAzt3cbE=
+
+Name: res/layout/data_usage_cycles.xml
+SHA1-Digest: GSm3qPBx4EgCqkn0VuUBOZAuGIY=
+
+Name: res/layout/preference_volume_slider.xml
+SHA1-Digest: s55CrQziu1pD2DREm8nenEQLdhc=
+
+Name: res/drawable-xxhdpi/data_grid_border.9.png
+SHA1-Digest: GdjUfnsyXUh4rAfh3h6BdkTBu+w=
+
+Name: res/layout/media_format_final.xml
+SHA1-Digest: x86kVcGq6rdjk2b+kzDCw/uy7A8=
+
+Name: res/xml/trust_agent_settings.xml
+SHA1-Digest: GPQCY2uFsjkGiY8xMQmXtGR30gI=
+
+Name: res/xml/security_settings_password.xml
+SHA1-Digest: E4YPfIYqnfVOmW9oaJimaeEGkQk=
+
+Name: res/drawable/preference_background.xml
+SHA1-Digest: wCLXYxZPDtOK0B/p7X2U37TaT0Q=
+
+Name: res/drawable-nodpi/preview.png
+SHA1-Digest: a+UxrqRcnq+xG4DIoLV3GSK08b0=
+
+Name: resources.arsc
+SHA1-Digest: d7/9uINOmOIqbjPiQGRoX180Ays=
+
+Name: res/layout/ownerinfo.xml
+SHA1-Digest: zXZyou3ITrgxKh3VnY7X6l6emxQ=
+
+Name: res/layout/wifi_config_info.xml
+SHA1-Digest: gEzXP7pOdK96PkJ+rzcP5aYvYyw=
+
+Name: res/layout-sw600dp/choose_lock_pattern.xml
+SHA1-Digest: O1DHRyiHgCfsb43YnNo1rbeGPL8=
+
+Name: res/layout/location_list_no_item.xml
+SHA1-Digest: 018Ak6ppORjelklsfcMEbB0ek48=
+
+Name: res/layout/installed_app_details.xml
+SHA1-Digest: UfgzgnkrCiU888ibqLJVK+FjwP8=
+
+Name: res/drawable-xxhdpi/appwidget_inner_focused_l_holo.9.png
+SHA1-Digest: lEN/8D+64UraK4gb3XOXPXluC8U=
+
+Name: res/layout-sw600dp/setup_template.xml
+SHA1-Digest: ycLAgls+zHtDQYmOSK8vAAdsrpA=
+
+Name: res/layout/dashboard.xml
+SHA1-Digest: 7l+OxNOOhNze52LF9F7L86gC/CI=
+
+Name: res/layout/printer_dropdown_item.xml
+SHA1-Digest: c7EDXevJYVxhxCCqUqXNO6MLNAU=
+
+Name: res/drawable-xxhdpi/ic_search_history_am.png
+SHA1-Digest: m7jyv0E6PjogTNrZRaHa4vChcAU=
+
+Name: res/layout-sw600dp/wifi_settings_for_setup_wizard_xl.xml
+SHA1-Digest: K9tiQ0Nd1IsHT/tm/7wAFi7guHE=
+
+Name: res/layout/vpn_dialog.xml
+SHA1-Digest: r629CLmghDv+kAsFTupY/3rGoeU=
+
+Name: res/xml/power_usage_summary.xml
+SHA1-Digest: xaQIpMiakYwEmKks3Kt5rTHEidM=
+
+Name: res/layout/app_ops_item.xml
+SHA1-Digest: U5toTu2RypiLGGqtHzo9sHirp6Y=
+
+Name: res/layout/crypt_keeper_password_field.xml
+SHA1-Digest: V+BGK7xHcmwd9jJ6S8wUcFEgJe8=
+
+Name: res/drawable-ldrtl-xhdpi/ic_tab_unselected_running.png
+SHA1-Digest: alND8bNbdOh5jKasjryFVapM9j0=
+
+Name: res/drawable-xxhdpi/ic_wifi_signal_3_dark.png
+SHA1-Digest: 9Xizsm7b1WGsmHo+qDyNHXah5no=
+
+Name: res/layout/manage_applications_running.xml
+SHA1-Digest: L/fR4gJPC8caosEr48ZAz7xYfEw=
+
+Name: res/drawable-xxhdpi/ic_wifi_signal_4_teal.png
+SHA1-Digest: pkM5P1HikIx9Di7kjRhXdF9NlKg=
+
+Name: res/drawable-xhdpi/ic_menu_refresh_holo_dark.png
+SHA1-Digest: WhPCHd4v+GjZ462ijNmQLFiWmUQ=
+
+Name: res/layout/wifi_notify_scan_mode.xml
+SHA1-Digest: nzLVVdbGS/fjH8bnUHgHF5M03fc=
+
+Name: res/layout-sw600dp/confirm_lock_password.xml
+SHA1-Digest: kIOj4ROZN19CptfANlFtLzOv6yk=
+
+Name: res/layout/trust_agent_item.xml
+SHA1-Digest: /R3vBJFu1sUtTS/uK9Xh6Ce1HbI=
+
+Name: res/drawable-nodpi/caption_background.jpg
+SHA1-Digest: nIrno4WDRJobmCC7Pkvz3OXVshI=
+
+Name: res/drawable/ic_settings_32dp.xml
+SHA1-Digest: LZ24jU+mkZBfExJ4ujUuDToStqI=
+
+Name: res/xml/process_stats_summary.xml
+SHA1-Digest: dQKI0V9SncWhizRuqUi01CM7SQY=
+
+Name: res/drawable-xxhdpi/appwidget_item_bg_pressed.9.png
+SHA1-Digest: xf1jJvDe8/z+2WqpscGgQayDwwU=
+
+Name: res/layout/data_usage_app_title.xml
+SHA1-Digest: ItKjcAGdvrutoMD8ZHTeMFp9leU=
+
+Name: res/drawable-xxhdpi/ic_extra_settings.png
+SHA1-Digest: wDG/W0UX85TtxwrYfSSKWXrVCq0=
+
+Name: res/raw-pt-PT/htc_copyright.txt
+SHA1-Digest: SbxJ7hcBkdLlAbfzs3qNfjMg2f4=
+
+Name: res/xml/device_info_settings.xml
+SHA1-Digest: WTJBZ7LofCWqw9p0PkBsUU8lrew=
+
+Name: res/layout/switch_bar.xml
+SHA1-Digest: p6YgAA9zDBVQ2GfWaUVmo6/4Wdc=
+
+Name: res/drawable-xxhdpi/ic_settings_language.png
+SHA1-Digest: aYuE3fBwO8HfMIlS/lcddBslvnI=
+
+Name: res/drawable-xxhdpi/setup_illustration_wifi.jpg
+SHA1-Digest: mWQFeR/VaH7NWwKG+7kjaFZvS1k=
+
+Name: res/layout/regulatory_info.xml
+SHA1-Digest: rJBYDiDWDXuMvrSmJf9xjzjGnvM=
+
+Name: res/xml/apn_settings.xml
+SHA1-Digest: 4oZ3AN4Ta/gLL9aVzwHSeXMoUxY=
+
+Name: res/xml/other_sound_settings.xml
+SHA1-Digest: qgHHdmgv7ty21wrwinHibfyt/WM=
+
+Name: res/layout/bluetooth_preference_category.xml
+SHA1-Digest: PlpNJqX/QydPiLLARRMheIw4zt8=
+
+Name: res/drawable-hdpi/ic_audio_ring_24dp.png
+SHA1-Digest: ffMRWjY3Nf5vOkTBAeFKHpv/m0E=
+
+Name: res/drawable-xhdpi/lock_anim_9.png
+SHA1-Digest: KvpRi5SyZXu1Ss4++6hn2j3+3NM=
+
+Name: res/drawable-xxhdpi/ic_settings_location.png
+SHA1-Digest: zWo2o3iHUPWaoQjlLmqNK0FwAbQ=
+
+Name: res/drawable-xxhdpi/ic_wifi_signal_2_dark.png
+SHA1-Digest: +v15aXfd9I+kssK+gUYaz3SGVcE=
+
+Name: res/drawable/launch_app.xml
+SHA1-Digest: NLmcEYhwDTI2lPoAeWNGO+cOpx8=
+
+Name: res/drawable-xxhdpi/ic_wifi_signal_3_teal.png
+SHA1-Digest: z9+2iX0BBJzy9FxIMV9cERgcpmI=
+
+Name: res/layout/master_clear.xml
+SHA1-Digest: L7dI01HdycOHumzV4aN42A4hVzk=
+
+Name: res/xml/usage_access_settings.xml
+SHA1-Digest: j3LnBKQdVt2pTSZdzIunhNye6Y8=
+
+Name: res/drawable-ldrtl-xhdpi/ic_network_signal_0.png
+SHA1-Digest: FbBEnmNreH4h1qYHNaGcpnWyvno=
+
+Name: res/raw-es/sprint_copyright.txt
+SHA1-Digest: MeVQ6bfonRzvYw5PSs53U96e2+w=
+
+Name: res/drawable-xhdpi/ic_menu_scan_network.png
+SHA1-Digest: r/SW7YZfcHrnEIhr+i6ce8YLuUQ=
+
+Name: res/layout/search_suggestion_item.xml
+SHA1-Digest: 293d6hG4Ty17tHmz2H/GPzi5ZeU=
+
+Name: res/drawable-xxhdpi/ic_bt_cellphone.png
+SHA1-Digest: KpV6UPoXbEN2pWTQAbPVzpA5oYo=
+
+Name: res/drawable-ldrtl-xhdpi/ic_emergency.png
+SHA1-Digest: bXbD+91lRuoZZ3kh5YZXl/IYgio=
+
+Name: res/anim-ldrtl/slide_next_in.xml
+SHA1-Digest: hdGliuTmsF7IrqxU5XFwBXyYqhM=
+
+Name: res/drawable-xxhdpi/setup_illustration_horizontal_tile.jpg
+SHA1-Digest: +/a/kHtu9sFlsZnBEgtrhyo+2UQ=
+
+Name: res/raw-in/htc_copyright.txt
+SHA1-Digest: +eHmfcULHz8QN2DjYV9EWkjcees=
+
+Name: res/drawable-xhdpi/lock_anim_2.png
+SHA1-Digest: VHSa7ZEKvVoXAUc4QV2PpMYOQr4=
+
+Name: res/layout/keyboard_layout_dialog_switch_hint.xml
+SHA1-Digest: oSHQzQJNKjpFeB+MNkEY/Xmxi1o=
+
+Name: res/xml/testing_settings.xml
+SHA1-Digest: tyP2cn/oNBJ3JVJy7tvtJyFUAWw=
+
+Name: res/drawable-xhdpi/ic_network_signal_2.png
+SHA1-Digest: aJF0YMkmGdlFY9GiQgNJlrnYc00=
+
+Name: res/layout-sw600dp/preference_inputmethod.xml
+SHA1-Digest: gcC6u+UPA77UkrC92z5y0+kgTE4=
+
+Name: res/layout/app_preference_item.xml
+SHA1-Digest: tY0SG0cbqINQ/zTYl489RW0K1Fk=
+
+Name: res/layout/separator_label.xml
+SHA1-Digest: GCm+P9ETy7aMfJHmKoE4CTwBJ2s=
+
+Name: res/layout/wifi_setup_custom_list_item_1.xml
+SHA1-Digest: Z9Eb9HmZtetE47hKYUByx8LoCoQ=
+
+Name: res/xml/user_details_settings.xml
+SHA1-Digest: eX2fBED6qLEg1m2ryYpfArhQcno=
+
+Name: res/mipmap-xhdpi/ic_launcher_settings.png
+SHA1-Digest: bQP8KiLenvAPSSJ5DBr8hPuOa28=
+
+Name: res/layout/dock_audio_media_enable_dialog.xml
+SHA1-Digest: oDxxwinCmv6Ku2w9aLuF/d9oz88=
+
+Name: res/drawable/wifi_signal_open_dark.xml
+SHA1-Digest: pXTKGMVqyFiDdXimgwXO+Tqv5/U=
+
+Name: res/layout-sw720dp/tab_widget.xml
+SHA1-Digest: 5tihHfmKX3ykOBW7js6qzmk3XpQ=
+
+Name: res/drawable-xxhdpi/ic_settings_accessibility.png
+SHA1-Digest: VLwRblYXWISKVYpN6AyFuex2bLI=
+
+Name: res/layout/crypt_keeper_password_entry.xml
+SHA1-Digest: BeKzE+wG3K4cZ375DVO98MYAfjg=
+
+Name: res/menu/data_usage.xml
+SHA1-Digest: Uo+BnASsrxWw+1VgEsbFG+jkW0c=
+
+Name: res/drawable/wifi_signal_light.xml
+SHA1-Digest: phvU20KZ2gYSWrSFP8a8cvlp/yI=
+
+Name: res/drawable-xhdpi/ic_sync_red.png
+SHA1-Digest: pTcfkXK9deqXnycvgDUv7Xp3DE4=
+
+Name: res/layout/choose_lock_password.xml
+SHA1-Digest: iqMZrEpjwVYp2gNqmJNWXIU02wk=
+
+Name: res/xml/wifi_display_settings.xml
+SHA1-Digest: LK4NcyJsutac0zH2UQiXvJKVFfM=
+
+Name: res/layout/power_usage_details.xml
+SHA1-Digest: Owk6cq3aqiDX/p1NeDld83Cwpd4=
+
+Name: res/layout/data_usage_chart.xml
+SHA1-Digest: Ryc/nhXp4ZVbwm+wqWQWv0oOF2w=
+
+Name: res/raw-bg/htc_copyright.txt
+SHA1-Digest: ipbe0jFM9qVPKXPoOoUNKJH1KZc=
+
+Name: res/menu/account_settings.xml
+SHA1-Digest: xvM7UDpUmQMHJWWoXlxhlw5LPms=
+
+Name: res/layout/master_clear_confirm.xml
+SHA1-Digest: Xzh+Yb0u6ThClGspHywRlfUaYpw=
+
+Name: res/xml/file_paths.xml
+SHA1-Digest: P8zQQyNcIELQjDeMWuaXoIkCdBw=
+
+Name: res/layout/add_account_screen.xml
+SHA1-Digest: DfceQ6Eqw3zhVvUXozAlCKULFJ0=
+
+Name: res/layout/setup_wizard_header.xml
+SHA1-Digest: kAZpf5/m8RWHum+Y8iIRQHSMkK4=
+
+Name: res/drawable-xxhdpi/ic_menu_add_white.png
+SHA1-Digest: 1m/JZNHbOva3omEOS2t/figAI8s=
+
+Name: res/drawable-xxhdpi/ic_settings_phone_idle.png
+SHA1-Digest: FObYMwFWEqjiwT+OVGuiQEkLgqk=
+
+Name: res/xml/development_prefs.xml
+SHA1-Digest: BNVQUccG5lf5Jq6AEtkMsy7HoE8=
+
+Name: res/drawable-xxhdpi/appwidget_item_bg_normal.9.png
+SHA1-Digest: q+O4qkMDbl85HpDO3FBr2YvT1r8=
+
+Name: res/layout/app_percentage_item.xml
+SHA1-Digest: 9Bok9LVTe+w3zV8IwrWv+tGeBL0=
+
+Name: res/layout/hidden_apps_list_item.xml
+SHA1-Digest: BkZvV2Wd6rpGJMkOzH6WrXnm4Kg=
+
+Name: res/drawable-xxhdpi/ic_settings_battery.png
+SHA1-Digest: SSNbaY9tQ3xRC5tjgr6r+ti8TGk=
+
+Name: res/drawable-xxhdpi/ic_sysbar_quicksettings.png
+SHA1-Digest: 8iq4whXzjWIpl0UY9jGCVEVgmmY=
+
+Name: res/layout-sw600dp/confirm_lock_pattern.xml
+SHA1-Digest: AjEolEOlkmelWay8uiZL+ur8OtM=
+
+Name: res/drawable-xxhdpi/ic_sync_grey_holo.png
+SHA1-Digest: +lma4L5z3WOGg7KjOAllFK8Tucg=
+
+Name: res/drawable/wifi_signal_lock_dark.xml
+SHA1-Digest: sMRAc2o8aZwaAEIH5VBVL4t9Eaw=
+
+Name: res/layout/confirm_lock_password.xml
+SHA1-Digest: 0u5+rcVdGWItm6H6TgHrsCWSZaQ=
+
+Name: res/drawable-xxhdpi/appwidget_settings_ind_on_r_holo.9.png
+SHA1-Digest: O7R3ybmdR5WGJLC0Oz9ZzPaSW2Q=
+
+Name: res/drawable/data_sweep_limit.xml
+SHA1-Digest: Cn96V5Hc12QKfBGLPOAj7KUZbtM=
+
+Name: res/drawable-xhdpi/ic_tab_unselected_running.png
+SHA1-Digest: Q+Q/hqsWeCLg2bjKH4yQ646Alig=
+
+Name: res/xml/zen_mode_settings.xml
+SHA1-Digest: PqilG3sP5F8cIf/mmcly/Nt1HyY=
+
+Name: res/drawable-xxhdpi/ic_wifi_lock_signal_0_dark.png
+SHA1-Digest: DtJoMduCJDhT642zAwBgix2s9iM=
+
+Name: res/menu/print_service_settings.xml
+SHA1-Digest: 3058ZLLcL1H+zDDRh26aaoE0iOk=
+
+Name: res/mipmap-hdpi/ic_launcher_settings.png
+SHA1-Digest: 6NLVfABW6RZvxsPERJ/oeUHwGD0=
+
+Name: res/xml/sim_settings.xml
+SHA1-Digest: bawM51WGtkSe403en9BhupR/LiM=
+
+Name: res/drawable/appwidget_button_left.xml
+SHA1-Digest: lHVpsFCjT0CWlQBIUfS3B/T7yTw=
+
+Name: res/layout/process_stats_mem_details.xml
+SHA1-Digest: daeMtJIVqPLaagcCoQ/T4xNO2QY=
+
+Name: res/drawable-xxhdpi/ic_wifi_lock_signal_1_teal.png
+SHA1-Digest: Yu/hJTjh6Z9bruGLTfDV0H0O2Dg=
+
+Name: res/layout/preference_bluetooth_profile.xml
+SHA1-Digest: 6y+uikgWlhv9OxR9CLz9lxrPgOg=
+
+Name: res/drawable-xxhdpi/ic_bt_headphones_a2dp.png
+SHA1-Digest: xM8xToEmPcBoZ9MCjUarBEPbY8A=
+
+Name: res/drawable-xxhdpi/ic_settings_data_usage.png
+SHA1-Digest: JH+8SxwjUzWM3LXIF9I+Sf8ZQuw=
+
+Name: res/drawable-xxhdpi/appwidget_settings_ind_mid_l_holo.9.png
+SHA1-Digest: QzUSgX1a3q4zplNqdEkNjlf8RlQ=
+
+Name: res/drawable/wifi_signal_colored.xml
+SHA1-Digest: ERL7Rl+2YaIqxErIndGyUOOepHQ=
+
+Name: res/layout/settings_storage_miscfiles_list.xml
+SHA1-Digest: 7ZqykH0GzpI9xaCnKNoD8icQvC8=
+
+Name: res/drawable-xhdpi/encroid_progress.png
+SHA1-Digest: lxqEHjYhMOcoZ/Gk60SPpY9mvQ0=
+
+Name: res/drawable/regulatory_info_m7.png
+SHA1-Digest: TCeFijUhfVh5+ZsZqodwTrzipXQ=
+
+Name: res/layout-sw600dp-land/setup_preference.xml
+SHA1-Digest: T1EWTMBM6QMkan0S+Yrhx/I5nZ4=
+
+Name: res/menu/vpn.xml
+SHA1-Digest: 3p/kZTjvdFpWrSc3hOevKoJa2as=
+
+Name: res/layout/running_service_details_service.xml
+SHA1-Digest: nfq02HeSdTAyzy/AqaRU/4CC2/w=
+
+Name: res/layout/preference_spellchecker_widget.xml
+SHA1-Digest: A/MG8gR6zm7Hy/Ch4pF4gxNlMuo=
+
+Name: res/layout/preference_color.xml
+SHA1-Digest: vyh+h4Jvd1dRrxq5BFN1ze/7qv4=
+
+Name: res/layout/preference_header_item.xml
+SHA1-Digest: NqNXEa6E0XEBTKwaPtXn7+e0Yu8=
+
+Name: res/drawable-xhdpi/lock_anim_1.png
+SHA1-Digest: 7AX/zhAWAdbP42XBBLUh09MG0nw=
+
+Name: res/layout/wifi_ap_dialog.xml
+SHA1-Digest: DuZ1sfzctIlVzoog22+xSe9MrrA=
+
+Name: res/drawable-sw600dp-xxhdpi/setup_illustration_lock_screen.jpg
+SHA1-Digest: KIv/23u7oLuCb/60ozd2nBgost8=
+
+Name: res/xml/voice_input_settings.xml
+SHA1-Digest: +7OOOFZqpw4EPhOj4GeMKVJ0PHw=
+
+Name: res/layout/apps_spinner_dropdown_item.xml
+SHA1-Digest: T88hQRoND5p5mHsqoswEQfIngQg=
+
+Name: res/drawable-xxhdpi/ic_settings_nfc_payment_am.png
+SHA1-Digest: AtiSoZ8nqel5wdiwjMr4VpVvZrY=
+
+Name: res/drawable-xxhdpi/ic_power_system.png
+SHA1-Digest: gNAB4Q8hpe2F6iR2m9uKiMzQuH8=
+
+Name: res/drawable/preference_highlight.xml
+SHA1-Digest: 6lfmIB0Hme9sPnVjzlb60f7w/T4=
+
+Name: res/drawable/data_usage_bar.xml
+SHA1-Digest: qjtSDke9ZifzzC412jewmYTK+bo=
+
+Name: res/drawable-xxhdpi/ic_bt_network_pan.png
+SHA1-Digest: COgr6pR/9utAQMgpIozwR1jqCXM=
+
+Name: res/drawable-xhdpi/encroid_waiting.png
+SHA1-Digest: bFl1s/4Zz7ndMUpH8ztpb5cFyr0=
+
+Name: res/layout/preference_start_widget.xml
+SHA1-Digest: TzK5b7zHa+io50Go0xkXvTKdTQw=
+
+Name: res/drawable-ldrtl-xhdpi/stat_sys_phone_call.png
+SHA1-Digest: z2m4DEN3kTL5fKb7nid8pY3OoOU=
+
+Name: res/layout/encryption_interstitial.xml
+SHA1-Digest: EIzg6Yfdul2nlanzOJs1ju+Ln/E=
+
+Name: res/menu/wifi_setup.xml
+SHA1-Digest: zIo2vmlvVDGBBtpP6bR0GehrFo0=
+
+Name: res/xml/testing_wifi_settings.xml
+SHA1-Digest: vBf/7RzdQC5goSkxweTJ0yU/hcU=
+
+Name: res/drawable-xxhdpi/ic_sim_sd.png
+SHA1-Digest: l/1h6AkoewyMaIt18uq3S889CTE=
+
+Name: res/drawable-xxhdpi/ic_settings_cell_standby.png
+SHA1-Digest: zcOgR1q1tRSOOErYh1F1g3nV5fI=
+
+Name: res/drawable-xxhdpi/setup_illustration_tile.jpg
+SHA1-Digest: So8QO/9f2k/6JD2KQYtDyt2zOUQ=
+
+Name: res/layout/settings_main_dashboard.xml
+SHA1-Digest: 7xs1nVa7pSeFCunJSO7tPlhrz7E=
+
+Name: res/drawable-xxhdpi/ic_wifi_lock_signal_4_light.png
+SHA1-Digest: ZUqPKntvrXGz9OhZreXjszCe9mI=
+
+Name: res/layout/patternlock.xml
+SHA1-Digest: lR+KPekJot9ELGAUSKj1OWLfPWw=
+
+Name: res/layout/device_admin_add.xml
+SHA1-Digest: z7AHWXcyeQfOgQndRrm6bEefuzI=
+
+Name: res/raw-nl/htc_copyright.txt
+SHA1-Digest: 4QLilxDGJyNel2JEVSIOpqMMG2Q=
+
+Name: res/drawable-xxhdpi/ic_settings_display_am.png
+SHA1-Digest: MR5yb3lt0xawap/jl6J9wX/y2pA=
+
+Name: res/raw-ko/htc_copyright.txt
+SHA1-Digest: O7N+vXYG7yEj8bdPsZ0y92favX0=
+
+Name: res/xml/device_picker.xml
+SHA1-Digest: ZsHM6jBmRnSVl9ejdIIgIr26aw8=
+
+Name: res/anim-ldrtl/slide_back_out.xml
+SHA1-Digest: /zFXLNThaVOKhTEBmye3okH9jYw=
+
+Name: res/layout/redaction_interstitial.xml
+SHA1-Digest: 8RUBCLl/Z3G3n+bDcBZMgw6yNYs=
+
+Name: res/drawable-xxhdpi/ic_settings_sync.png
+SHA1-Digest: JXVBj1yFSeQs0F9sMMif2L49mjo=
+
+Name: res/drawable-xxhdpi/appwidget_settings_ind_off_l_holo.9.png
+SHA1-Digest: IoTAX9feAoNBnyoqEmrdsP+LWBg=
+
+Name: res/raw-hr/htc_copyright.txt
+SHA1-Digest: THjqBKHLrAxJCga/X+2YUWBot1E=
+
+Name: res/layout/preference_batteryhistory.xml
+SHA1-Digest: HAnlJ0dUVgA3pek/KAoSvhV9BI0=
+
+Name: res/xml/input_methods_prefs.xml
+SHA1-Digest: vUyWvxqlJ35tW3cmi3krEmrQ7ow=
+
+Name: res/raw-de/htc_copyright.txt
+SHA1-Digest: 8K1Zorsq34nPlp0a9muUKyCwlYo=
+
+Name: res/layout/bluetooth_device_picker.xml
+SHA1-Digest: UL5WDzxuQT/MuGIIS8IMHMoahA4=
+
+Name: res/drawable-xxhdpi/nfc_payment_empty_state.png
+SHA1-Digest: 9+c9Mq3tOC56pt7R7jRm+OcZKZc=
+
+Name: res/layout/bluetooth_pin_entry.xml
+SHA1-Digest: 2M08O7PBpUlHC21brwoYiU2Refo=
+
+Name: res/menu/options_menu.xml
+SHA1-Digest: hVZWpO94JyVHVFuUzmE8BfcZkJc=
+
+Name: res/anim/slide_next_out.xml
+SHA1-Digest: 2NMNvgG5c49ACuih8oYTJLgyCy0=
+
+Name: res/layout/settings_main_prefs.xml
+SHA1-Digest: hpcyn60aK2Kdfv5b4CkFpK7PvpI=
+
+Name: res/layout/account_sync_screen.xml
+SHA1-Digest: MP0jL64cz2h6sBIcCSUYUSiKJyQ=
+
+Name: res/drawable-xxhdpi/ic_wifi_signal_4_light.png
+SHA1-Digest: TvZmrALhBBr//u+MRe35jiU5wp0=
+
+Name: res/layout/preference_dialog_ringervolume.xml
+SHA1-Digest: mf0XKGMHopjPCO/sgFxYTRTY8+4=
+
+Name: res/layout/crypt_keeper_settings.xml
+SHA1-Digest: JpJV4M4SkoZwg22RXHitAv6RLdo=
+
+Name: res/layout/data_usage_item.xml
+SHA1-Digest: 1i34zqQi575+CfzhfGHoDqFJFGI=
+
+Name: res/layout/app_ops_summary.xml
+SHA1-Digest: zBdWQKG4OajeanZdXjC80hRTpLo=
+
+Name: res/layout/usage_stats.xml
+SHA1-Digest: O1NZAoWvq0lhY4jo3+l4VkVXiu8=
+
+Name: res/raw-zh-CN/htc_copyright.txt
+SHA1-Digest: xVwy/AaHEVnnHfBk4YGr46gr7Ao=
+
+Name: res/drawable-xxhdpi/ic_bt_misc_hid.png
+SHA1-Digest: fysdF//6KhlC5rgqbNqgGKciqew=
+
+Name: res/drawable-xhdpi/encroid_resignin.png
+SHA1-Digest: o48mv6LWg5szIkzlCN/Uf59XqZs=
+
+Name: res/xml/security_settings_pin.xml
+SHA1-Digest: +zcjuzxmpaLTK3rghT0lpcOmSNI=
+
+Name: res/drawable-xxhdpi/appwidget_settings_ind_on_c_holo.9.png
+SHA1-Digest: VgSX65WqP7svZ4R6cMjJshr6Ktg=
+
+Name: res/layout/profile_icon_small.xml
+SHA1-Digest: frM72wE7R0WJCCDQQQLxI3dZZTg=
+
+Name: res/drawable/wifi_signal_open_light.xml
+SHA1-Digest: ny/AXp0EGPy6VxTBMPOX3EApzMg=
+
+Name: res/layout/nfc_payment.xml
+SHA1-Digest: rq+JovfIgFkdDW9M/RPmiLtS7Fk=
+
+Name: res/raw-pt/htc_copyright.txt
+SHA1-Digest: QxbSHZMXgIgYg+xnxWNOZKTrdvY=
+
+Name: res/drawable-xhdpi/stat_sys_phone_call.png
+SHA1-Digest: 55XXolXj1FOyTShdZK+xdtv6j9E=
+
+Name: res/drawable/wifi_signal_lock_light.xml
+SHA1-Digest: 7/7SXq8ua94PMCAkIVtSmEsFNug=
+
+Name: res/layout/search_result_item.xml
+SHA1-Digest: xYrjUbc9+70pEBTeeKGLDOXWGGs=
+
+Name: res/drawable-xxhdpi/ic_settings_storage.png
+SHA1-Digest: UTgcklPVB24Bekp/LoDTthAiiSc=
+
+Name: res/xml/battery_saver_settings.xml
+SHA1-Digest: 8eTc73SCgjdlMEj9WgJJEaZMxkw=
+
+Name: res/layout/setup_choose_lock_password.xml
+SHA1-Digest: qQn0ogunlxkWR9iABWW01CcG3CI=
+
+Name: res/drawable-xxhdpi/ic_wifi_signal_4_dark.png
+SHA1-Digest: FrfhM/V/TxGobeAJQRBq+TO+kZ4=
+
+Name: res/layout/running_service_details.xml
+SHA1-Digest: t94gMptZAxeB6RcI5kv/5BCr8N0=
+
+Name: res/drawable/dashboard_tile_background.xml
+SHA1-Digest: 1yTRDRlNl20E3byvyNnP6eNRIv0=
+
+Name: res/layout/manage_applications_content.xml
+SHA1-Digest: 8mWTTJxsrEJR1VL/UoIq4tHmHt8=
+
+Name: res/layout/manage_accounts_screen.xml
+SHA1-Digest: 1gE0zPfe1c9zp0U9eM9pg4lC+uA=
+
+Name: res/layout/device_admin_settings.xml
+SHA1-Digest: eMeGfMbGsQ6fFXu4GTITKi5d7ec=
+
+Name: res/layout-sw600dp/dashboard_tile.xml
+SHA1-Digest: Mtxju30yF6TtvFZHDO00I7HmhC4=
+
+Name: res/layout/preference_bluetooth.xml
+SHA1-Digest: 7KUN5pJMKa9Nr26cl74QG9rpuvA=
+
+Name: res/drawable/ic_drawer.xml
+SHA1-Digest: XJVLRVYPo/vIpiyqvYnpjbepCNQ=
+
+Name: res/drawable/regulatory_info_htc_m8.png
+SHA1-Digest: 9u/5Y8U7fpjjE3fMnMQTVbmfpkU=
+
+Name: res/layout/preference_memoryusage.xml
+SHA1-Digest: eoFxyurU4qNfMll/uqFHC/v9y6U=
+
+Name: res/drawable-xhdpi/lock_anim_7.png
+SHA1-Digest: e6sHeuT3LNRQ/I27eTFukvqfsFc=
+
+Name: res/layout/running_service_details_process.xml
+SHA1-Digest: RGQNspSGD3xUDoNNSTIjuZe/k7U=
+
+Name: res/layout-land/setup_preference.xml
+SHA1-Digest: 9Mm9hRol2vwOC4HhmYY2DwATk4s=
+
+Name: res/xml/nfc_payment_settings.xml
+SHA1-Digest: fIk27waSGgO0n3EBiF+SbpAVcwM=
+
+Name: res/layout/two_line_list_item.xml
+SHA1-Digest: VjGLNBzino0A5jAWGcMPWIWqOak=
+
+Name: res/layout/setup_wizard_navbar_layout.xml
+SHA1-Digest: x14Wa1NV1q4jqo79Q42QMMmJAFk=
+
+Name: res/drawable-xhdpi/lock_anim_0.png
+SHA1-Digest: doEm6g/nf3mkor1yGsPvDKgPlmM=
+
+Name: res/layout/preference_widget_shortcut.xml
+SHA1-Digest: 8s63QvDtNH2onYydvyLyYf5cOoI=
+
+Name: res/drawable/ic_settings_weather.xml
+SHA1-Digest: tQcFDJMFY1WcaAbyigMDZ2u77IM=
+
+Name: res/layout/preference_app_percentage.xml
+SHA1-Digest: /QbVweOZhhwqX/RSP50gW0PCvx0=
+
+Name: res/drawable-xxhdpi/ic_appwidget_settings_wifi_off_holo.png
+SHA1-Digest: wLJGbDtOpZydC3Ga7GCD5mrJRmI=
+
+Name: res/xml/wifi_access_points_for_wifi_setup_xl.xml
+SHA1-Digest: UIvbNFMGfbW+5hxW//wHU7hZOxM=
+
+Name: res/drawable-xxhdpi/ic_wifi_signal_1_dark.png
+SHA1-Digest: 3h1ipfk/w81U4UetMo74pHNfJKc=
+
+Name: res/layout/preference_tts_engine.xml
+SHA1-Digest: uwQciDwaFzNpP9GXYjRB9i18XLI=
+
+Name: res/xml/application_settings.xml
+SHA1-Digest: ssjdQ81jOZEv42IZnApeZ7lKJNo=
+
+Name: res/raw-zh-TW/htc_copyright.txt
+SHA1-Digest: XaWumKuU3FxTWbQGyyigEsfjg4c=
+
+Name: res/xml/security_settings_lockscreen.xml
+SHA1-Digest: pjCwjJ6LhFhmwMYRsmwry5ssa9k=
+
+Name: res/layout/managed_service_settings.xml
+SHA1-Digest: eGOIZQJPyrBTYiP36Uf+S7gdoP0=
+
+Name: res/layout/user_limits.xml
+SHA1-Digest: DH5itiHrO/t7Ca3Y+zFFZ2WTyik=
+
+Name: res/layout/data_usage_cycle_editor.xml
+SHA1-Digest: fYH3Ow3zIEidL4dgyp6R4i22fiU=
+
+Name: res/drawable-xhdpi/ic_network_signal_0.png
+SHA1-Digest: ZLG68nF0swMaop0HsEfShJBw80w=
+
+Name: res/drawable-xxhdpi/ic_tab_selected_download.png
+SHA1-Digest: 9iqSbeMRodvJ6lILII8hHFPpdr4=
+
+Name: res/drawable-ldrtl-xhdpi/ic_appwidget_settings_brightness_half_h
+ olo.png
+SHA1-Digest: yRtlogJhkbEO8b3WMHIsxa9LeKE=
+
+Name: res/layout-sw600dp/settings_top_level.xml
+SHA1-Digest: kd+c92+VK7eeCs/KRulqZsPKf48=
+
+Name: res/layout/wifi_display_options.xml
+SHA1-Digest: TJl0gZMHHkhr0QF15Gf/F+215o8=
+
+Name: res/raw-pl/htc_copyright.txt
+SHA1-Digest: rLaCp4Sgr/KpGDvDlE9SJ4sPLUM=
+
+Name: res/drawable/wifi_signal_teal.xml
+SHA1-Digest: DhR++vStFMVJ41xhxd2YpvnPbpM=
+
+Name: res/layout/preference_app_restrictions.xml
+SHA1-Digest: ktvqKA6bjgtUBKlmpIsQX3xPz98=
+
+Name: res/layout/icc_lock_tabs.xml
+SHA1-Digest: /mRuV+8umD0AwZ2xe5g5uaq87yE=
+
+Name: res/drawable-xhdpi/ic_grayedout_printer.png
+SHA1-Digest: yUoYf9nFIpalfvcenesnrNhQG+c=
+
+Name: res/drawable-xxhdpi/ic_settings_development.png
+SHA1-Digest: Oay92I9nv8Xdznv/emIB3nC3o6U=
+
+Name: res/drawable/search_panel_list_background.xml
+SHA1-Digest: PQnlXfFCcdO+ZOW+tgURP9I406U=
+
+Name: res/layout/preference_linearcolor.xml
+SHA1-Digest: uBWIT7JCb73tuvAWzAB7sTwN+8Q=
+
+Name: res/layout/intent_sender.xml
+SHA1-Digest: 7MvT0HpUi6f+gd5zIlIrhYFwa/I=
+
+Name: res/layout/confirm_lock_pattern.xml
+SHA1-Digest: gP4XWujlTquKYcEFW/9IuYs5nSY=
+
+Name: res/xml/security_settings.xml
+SHA1-Digest: fxb5fPPi1PZ6XjZWI821OajNFjU=
+
+Name: res/drawable-xxhdpi/ic_wifi_lock_signal_2_dark.png
+SHA1-Digest: D61Kez3CJaIabaggbrbyVCff3VE=
+
+Name: res/layout/app_notification_header.xml
+SHA1-Digest: kIuqXJvTN6OQ/25cDzAUlAuzRcA=
+
+Name: res/layout/text_description_preference.xml
+SHA1-Digest: un37sWqzSTz3HHn9N6rsSh209yM=
+
+Name: res/layout/app_ops_details_item.xml
+SHA1-Digest: e/ECdHAHY9xdyhDqKeTJoDnu6Gg=
+
+Name: res/anim-ldrtl/slide_back_in.xml
+SHA1-Digest: x5iCKqzlQZZCT75D5hpN9PUKGlQ=
+
+Name: res/drawable/setup_illustration_bg.xml
+SHA1-Digest: /g7cp2rQbKyGDdOyBDJVZcJQVF4=
+
+Name: res/drawable-xhdpi/ic_settings_wifi.png
+SHA1-Digest: qdHcDmfPiDCV747WYrLlnjqrnCE=
+
+Name: res/layout/sim_information.xml
+SHA1-Digest: DqmimpHFHi3Btrg1T/ijaO31ay8=
+
+Name: res/layout/trusted_credentials.xml
+SHA1-Digest: 8zvRCaJ9fV7qhLNZ/2r7EUCuNbs=
+
+Name: res/raw-fr/htc_copyright.txt
+SHA1-Digest: UQb0fjBWT3d3zMpoWgYOmE75wn0=
+
+Name: res/layout/search_panel_results_header.xml
+SHA1-Digest: Ko/urHctIW8b300HB+OZIfAo85s=
+
+Name: res/xml/print_job_settings.xml
+SHA1-Digest: tFP/Cs2235XEL67joJrNH+5Thos=
+
+Name: res/drawable-xxhdpi/transparency.png
+SHA1-Digest: dCLMJHFe1+lbD/kwIoaXTcSerwM=
+
+Name: res/drawable-xhdpi/lock_anim_13.png
+SHA1-Digest: Q2CG53zaKYwn6pjg2VbZUH2yBVU=
+
+Name: res/xml/vpn_settings2.xml
+SHA1-Digest: m/E3fLbd6k+7u0vsNXjKeCVzCR0=
+
+Name: res/drawable-xxhdpi/ic_live_help.png
+SHA1-Digest: 0PIGzIHd0Eye7eP3LFlsXLlhO5Y=
+
+Name: res/layout/preference_rename_widget.xml
+SHA1-Digest: HojocAdKorwpVOIWjyLgXFjTBn0=
+
+Name: res/xml/bliss_ambient_settings.xml
+SHA1-Digest: KfxCEcbq/0V1/HWO6HJqwkpt5sQ=
+
+Name: res/layout/running_processes_view.xml
+SHA1-Digest: 3e34/LORVaWtQHct412RIjeW5cI=
+
+Name: res/drawable-xxhdpi/ic_wifi_lock_signal_2_teal.png
+SHA1-Digest: govjR4bYSHDorCp872QwfFoQARA=
+
+Name: res/drawable/data_sweep_warning.xml
+SHA1-Digest: NYtD0zxeUy1sjzmVAAB4r1gRDc0=
+
+Name: res/drawable-xxhdpi/ic_tab_selected_running.png
+SHA1-Digest: mv203SJ5DYef0i2vBRF93UhhpvQ=
+
+Name: res/drawable-xxhdpi/ic_appwidget_settings_sync_off_holo.png
+SHA1-Digest: y0Mk7uj/fBQ/RBh1fsT6+SatPUM=
+
+Name: res/layout/settings_color_picker_item.xml
+SHA1-Digest: rXjhE1dyTMz6oH4I3szZb4CZ3/Q=
+
+Name: res/drawable-xhdpi/lock_anim_12.png
+SHA1-Digest: +crW48XGtOLsCZpaSIAqBmQOuPY=
+
+Name: res/drawable-xhdpi/ic_btn_next.png
+SHA1-Digest: eB8otNlmikUL8vtK/9h0dpUxQdw=
+
+Name: res/layout/power_usage_package_item.xml
+SHA1-Digest: DCWbVV4v1lpgGHFo0/l/o5Qvk/w=
+
+Name: res/drawable-xhdpi/lock_anim_8.png
+SHA1-Digest: 88m2zlXZEDZs6+ada7t2p2FfrcI=
+
+Name: res/layout/notification_log_row.xml
+SHA1-Digest: T6oHvmBe9YI1A9x1uQI+IIMo1J0=
+
+Name: res/layout/print_job_summary.xml
+SHA1-Digest: 9hHkIIaoA5XLmTMim7ADbeDfYBc=
+
+Name: res/layout/wifi_dialog_row.xml
+SHA1-Digest: MvS3r+NESz611XnFMfILGfO3bP8=
+
+Name: res/drawable-xxhdpi/appwidget_inner_pressed_l_holo.9.png
+SHA1-Digest: BrCgaJCJ13b94nPIWVK7vFFEpmg=
+
+Name: res/drawable-xxhdpi/ic_wifi_signal_1_teal.png
+SHA1-Digest: epn6U42Gzj7TmPfNI6NzsbpTnN4=
+
+Name: res/layout/power_usage_action_item.xml
+SHA1-Digest: Q2v0yG1HW4IkIueLZw8bUQHxJV8=
+
+Name: res/drawable-xxhdpi/ic_sync_error_holo.png
+SHA1-Digest: lYLDjxZ5Zg0MZLmQ8WQHs0MbiQI=
+
+Name: res/layout/data_usage_summary.xml
+SHA1-Digest: ANKi67SJidKIXcNNWSls4zXW9gI=
+
+Name: res/xml/security_settings_biometric_weak.xml
+SHA1-Digest: uvw0bKwv+bCgUExobZ1e9+79lJk=
+
+Name: res/drawable-xxhdpi/ic_settings_weather.png
+SHA1-Digest: bDUuxjoIXp/WX+NUcZuuifdZs3o=
+
+Name: res/xml/device_info_phone_status.xml
+SHA1-Digest: aAUptbJVpINtGIIIhSCL9kqdLds=
+
+Name: res/layout/crypt_keeper_progress.xml
+SHA1-Digest: C645h6LqFy58nGDsercaTgWkuas=
+
+Name: res/layout/wifi_wps_dialog.xml
+SHA1-Digest: UlXOxgaEjj5vDZBD90VCRnUvEl8=
+
+Name: res/drawable/ic_launch_app.xml
+SHA1-Digest: Ww6W+l7PiSb1K2BGaCVm01zCkQc=
+
+Name: res/layout-sw600dp-land/confirm_lock_pattern.xml
+SHA1-Digest: poZ84I4Q7VgSevfu+bKrvQcFlLk=
+
+Name: res/drawable/setup_wizard_card_bg.xml
+SHA1-Digest: dxPWUGPtFnUuxuVTscR+Ra9rG2A=
+
+Name: res/drawable-xxhdpi/appwidget_inner_focused_r_holo.9.png
+SHA1-Digest: n1N3DTfAf/6PzFyVZrPtP2Wa9Yc=
+
+Name: res/drawable-xxhdpi/ic_settings_wireless.png
+SHA1-Digest: UME6tfB6ZemSc3APanC/5eM4OcE=
+
+Name: res/drawable-xhdpi/ic_tab_selected_all.png
+SHA1-Digest: 5Txgr1gdauTolkyx8wnX/xd9paM=
+
+Name: res/layout/crypt_keeper_pattern_field.xml
+SHA1-Digest: MgSIHBS/2SxqB5Qed2v4mNaa0/g=
+
+Name: res/drawable-xxhdpi/appwidget_inner_focused_c_holo.9.png
+SHA1-Digest: JKoEk/QSXI8cvTzL6WnWmPUEzkk=
+
+Name: res/drawable/appwidget_item_bg.xml
+SHA1-Digest: mftizJzX4kCqfpdSndUUuyo8Dww=
+
+Name: res/raw-sv/htc_copyright.txt
+SHA1-Digest: axj9FG7WnabunT4Zjz9bfby0gms=
+
+Name: res/drawable-xxhdpi/appwidget_bg_holo.9.png
+SHA1-Digest: Ujj0Lb1pvC6Yy4JGYvAPQCLLrJw=
+
+Name: res/layout/managed_service_item.xml
+SHA1-Digest: NhuVo6fS02sxlNQ2bUq45gAhFkc=
+
+Name: res/layout/setup_choose_lock_pattern.xml
+SHA1-Digest: rw19uJ5pKdr+lBZ8etheoPXbj5g=
+
+Name: res/layout-sw600dp-land/setup_template.xml
+SHA1-Digest: Ryp4f1cygYWA0rVWgIPGM4T1C/8=
+
+Name: res/layout/trusted_credential.xml
+SHA1-Digest: oN3JLondr8vUT8Cl6qHoNjuXDNA=
+
+Name: res/drawable-xhdpi/ic_sync_green.png
+SHA1-Digest: 0VYisZSs87fN8QCQ9ShCs73FSmI=
+
+Name: res/drawable-xxhdpi/ic_tab_unselected_download.png
+SHA1-Digest: sgwSty3cs4m9GdSq6u11Q8QrH3g=
+
+Name: res/drawable-xxhdpi/ic_wps_light.png
+SHA1-Digest: r9oYqtJf3u+H8H+KOxwmkjle/1U=
+
+Name: res/layout-sw600dp/setup_preference.xml
+SHA1-Digest: lJPlCvBZPEvvjf8HvPmM0uxI4xE=
+
+Name: res/layout/crypt_keeper_confirm.xml
+SHA1-Digest: PQxWwtmSx/nG7xESG73GjijVn4M=
+
+Name: res/layout/preference_spellchecker.xml
+SHA1-Digest: HiTLAdjaCLR0zTprHFK13eoDGm8=
+
+Name: res/drawable-xxhdpi/spinner_default_holo_dark_am_no_underline.9.
+ png
+SHA1-Digest: 8IA4IBHzsERkblnvdZ0qmAVBqu8=
+
+Name: res/drawable/ic_settings_gesture.xml
+SHA1-Digest: U5VE0vl35AqpqmkhNCxoA0uYPzE=
+
+Name: res/xml/device_info_status.xml
+SHA1-Digest: eKjJcMzBmz9d9ZFduW/NdDrVons=
+
+Name: res/drawable-xxhdpi/ic_appwidget_settings_bluetooth_on_holo.png
+SHA1-Digest: OgkyBJQveDOzscYJZulUSRXRyFY=
+
+Name: res/drawable-xxhdpi/ic_settings_date_time.png
+SHA1-Digest: Echo1XudvpkOpwjLkrAawEJqMCE=
+
+Name: res/drawable-xxhdpi/ic_sync_anim_holo.png
+SHA1-Digest: EyR8cG+FehxE/6OTg4fBcdrw91Q=
+
+Name: res/layout/data_usage_cycle_item_dropdown.xml
+SHA1-Digest: r3KdnAByU1i4cgp2it3x+dBIWoY=
+
+Name: res/drawable/lock_anim.xml
+SHA1-Digest: Q+kIxM/QfY+ENfCo8Idu7nE4+g8=
+
+Name: res/xml/data_usage_metered_prefs.xml
+SHA1-Digest: 5UtKLn182E4pNO4tzH43SevZpWg=
+
+Name: res/layout/crypt_keeper_pin_field.xml
+SHA1-Digest: f5fIa+ErK/4ZgMw1WA7QsWTSWzU=
+
+Name: res/raw-tr/htc_copyright.txt
+SHA1-Digest: XyE/hg20DC8Qh7NrUbxC28FlmGc=
+
+Name: res/xml/accessibility_daltonizer_settings.xml
+SHA1-Digest: W3OwKMcCaORB3IXgHPWXJZwLu0A=
+
+Name: res/layout/crypt_keeper_blank.xml
+SHA1-Digest: hkcbKsezbFeXW9oPHch5ahk83GY=
+
+Name: res/layout-land/dashboard_tile.xml
+SHA1-Digest: Ad6fig0hVO2S1QK/0iRhZSyxukA=
+
+Name: res/drawable-xxhdpi/ic_settings_dock.png
+SHA1-Digest: hkRFF4tWmlSNPCbbjjj0j3BWfn0=
+
+Name: res/drawable/ic_settings_display.xml
+SHA1-Digest: dIJGVG5FMybZGgiyPbYOh3IodlA=
+
+Name: res/layout/preference_settings_checkbox_widget.xml
+SHA1-Digest: kAAq+u8oLtEKYzxpYmegHh0fyns=
+
+Name: res/layout/two_buttons_panel.xml
+SHA1-Digest: cpFevWniNtfdppf7rELfz4/2DNU=
+
+Name: res/drawable-xhdpi/ic_tab_unselected_all.png
+SHA1-Digest: RSw3yjAbrGXRKzEBXFGdYePxftE=
+
+Name: res/layout/write_wifi_config_to_nfc.xml
+SHA1-Digest: OZViKiXdmuodOJTB0WyTOOny0BI=
+
+Name: res/layout/user_preference.xml
+SHA1-Digest: Lhdt/Em8czGdgybY/UCOxDJFwBs=
+
+Name: res/xml/sync_settings.xml
+SHA1-Digest: u6bHu/7Hb8e64rxdSD1nzQWQ2m8=
+
+Name: res/layout-sw600dp-land/choose_lock_password.xml
+SHA1-Digest: z35CvpqgzOE/VfGRev6bZXYWaE0=
+
+Name: res/drawable/setup_wizard_navbar_ic_back.xml
+SHA1-Digest: XFV7hGG2YEOpxs6cYrmV1oNH6cQ=
+
+Name: res/xml/security_settings_chooser.xml
+SHA1-Digest: hOBtnr0M3UB8oz2tbLpXFrvqVtY=
+
+Name: res/xml/tts_engine_settings.xml
+SHA1-Digest: ZfAdxS4KpZyT2iV7bJ2CIKK2USM=
+
+Name: res/drawable-sw600dp-xxhdpi/setup_illustration_wifi.jpg
+SHA1-Digest: wL6C1NW1d0ZAC0UhImgJI3FeJvM=
+
+Name: res/xml/captioning_settings.xml
+SHA1-Digest: tU921AsYdr7gnU0xJA4Kb/a+V0I=
+
+Name: res/xml/location_mode.xml
+SHA1-Digest: 3hnqVQT3ls8hbhwnZ/Kuini2RE8=
+
+Name: res/drawable-xxhdpi/appwidget_settings_ind_on_l_holo.9.png
+SHA1-Digest: EBm+gU3QdmEZaGC6boS72TrIzKo=
+
+Name: res/drawable-xxhdpi/appwidget_settings_ind_mid_r_holo.9.png
+SHA1-Digest: NRtktvpVmzpbypoGelkOV/ZM5es=
+
+Name: res/xml/security_settings_pattern.xml
+SHA1-Digest: PqqJ60VB3rJh2uArU4vFixggLt4=
+
+Name: res/drawable-xxhdpi/ic_menu_delete.png
+SHA1-Digest: +x26wSDqenFXWaH2vdowpgBhRYM=
+
+Name: res/xml/add_account_settings.xml
+SHA1-Digest: DbLyOn08tK2uhPPM8A0hD32PKxA=
+
+Name: res/drawable-xxhdpi/appwidget_inner_pressed_r_holo.9.png
+SHA1-Digest: vvqgFoEgxJFuFTm0mT6hCwSlqz4=
+
+Name: res/drawable/appwidget_button_center.xml
+SHA1-Digest: aCwkxc2mCKmbycEAwmTrn3bnWS4=
+
+Name: res/layout/wifi_status_test.xml
+SHA1-Digest: uuziJ4wF6RZ75GRqkf3o/v0VRD8=
+
+Name: res/drawable-xhdpi/lock_anim_5.png
+SHA1-Digest: uigh450zfxa1H10DnXHtv2EihKU=
+
+Name: res/layout/bookmark_picker_item.xml
+SHA1-Digest: hxHQsgRiIHW8mHs3Kcc2H6qnznk=
+
+Name: res/layout/date_time_setup_custom_list_item_2.xml
+SHA1-Digest: j9MUxVXEJdTGniuU3M7mOW+IJ20=
+
+Name: res/layout/spinner_view.xml
+SHA1-Digest: BoP4ekilQxTKnFXUplHvm6wfR9A=
+
+Name: res/layout/trusted_credential_details.xml
+SHA1-Digest: y6/UqoL+cqPwK9Chka5O/bjC58o=
+
+Name: res/layout/date_time_settings_setupwizard.xml
+SHA1-Digest: ZEopTYY4VVxwzYMRhQNAvpIuaGY=
+
+Name: res/layout/media_format_primary.xml
+SHA1-Digest: X6ryqKeAI9o1CExzrTrujyhjCz4=
+
+Name: AndroidManifest.xml
+SHA1-Digest: SlZo2SUm8m5QWmOmwuFbCrt18jo=
+
+Name: res/xml/device_info_sim_status.xml
+SHA1-Digest: QS4MUOQYEbs7iHebvEKE0TsbX6s=
+
+Name: res/drawable/ring_notif_mute.xml
+SHA1-Digest: TswxwwGoY2fOabDo7cQs+5ztyiI=
+
+Name: res/drawable-xxhdpi/ic_settings_print.png
+SHA1-Digest: /nKjAWlNgohG5IOODchFgNlett8=
+
+Name: res/drawable-xhdpi/lock_anim_11.png
+SHA1-Digest: FoGM9paTl7OJgAfYQpYfq5xXWEQ=
+
+Name: res/layout/crypt_keeper_pattern_entry.xml
+SHA1-Digest: lvfAylbeQAmnMPFB82jyFNLCGxY=
+
+Name: res/layout/multi_sim_dialog.xml
+SHA1-Digest: /+McWBBs/7aIQyJaQSPY0yn5YPA=
+
+Name: res/layout/preference_widget_wifi_signal.xml
+SHA1-Digest: GssTmlckzBK38fV27A+R5d3UBbA=
+
+Name: res/layout-land/choose_lock_pattern.xml
+SHA1-Digest: 01/YhNEFRFEQFK0wBFgfV4+k9ZE=
+
+Name: res/layout/running_processes_item.xml
+SHA1-Digest: ZpuFmPCT3nf6YGzze3iYnNb5AYw=
+
+Name: res/layout/wifi_dialog.xml
+SHA1-Digest: 8teQrZFgSb9oEUyeh7+OCUP6b0k=
+
+Name: res/layout-sw600dp/crypt_keeper_progress.xml
+SHA1-Digest: ps7XFjIV0MFDYHbhTIdxIJHnHgc=
+
+Name: res/drawable-xxhdpi/ic_bt_laptop.png
+SHA1-Digest: sEuHDXcxt4lv8LfS0OTw9e2uxLg=
+
+Name: res/xml/home_selection.xml
+SHA1-Digest: mLN6Mni1ZMHKg2YmhkFpgCQ93bU=
+
+Name: res/drawable-xxhdpi/ic_settings_bluetooth2.png
+SHA1-Digest: wb9QynErR7sjHoYXDKZOEVflQ+c=
+
+Name: res/drawable-xxhdpi/ic_settings_gesture.png
+SHA1-Digest: e/u/c67K4tiWKYRvyAdGpIKN3yY=
+
+Name: res/xml/wifi_settings.xml
+SHA1-Digest: +3NaZHILF6Gdmrq1eYYbvI8xoXo=
+
+Name: res/menu/misc_files_menu.xml
+SHA1-Digest: dhTzWqS3MU8mCjEumOMdLQNnIGA=
+
+Name: res/layout/dialog_edittext.xml
+SHA1-Digest: 8sUpJ96ByGXto2iadSZzZwlaL8g=
+
+Name: res/drawable-xxhdpi/ic_settings_applications.png
+SHA1-Digest: reMOfywrrMfbXNcinTO6/e0swyU=
+
+Name: res/layout/edit_user_info_dialog_content.xml
+SHA1-Digest: ji8qr8Vqjv/fHqb8UX37+CogtnU=
+
+Name: res/drawable-xhdpi/nav_divider.png
+SHA1-Digest: V5ioQU19AsrXGdPpKXxjOUQQyQ4=
+
+Name: res/layout/user_dictionary_add_word.xml
+SHA1-Digest: 5mQiOmLUSnhc6p7iXudwK8Wkvb0=
+
+Name: res/drawable/appwidget_button_right.xml
+SHA1-Digest: /n4mkSzvqTUS88utH27enJcNfwM=
+
+Name: res/drawable/ic_audio_vol_24dp.xml
+SHA1-Digest: bK+nknXUjHyHDDhmFZFBZdTwBo4=
+
+Name: res/layout/apps_spinner_item.xml
+SHA1-Digest: jLZzCQqnKfdnj2HpHsiPCno9pKI=
+
+Name: res/xml/display_settings.xml
+SHA1-Digest: p42woIO7yunnLxWsWC25vMch4dg=
+
+Name: res/mipmap-xxhdpi/ic_launcher_settings.png
+SHA1-Digest: Scx9GWl6W6qTV8j8WpE7mKnDw+o=
+
+Name: res/xml/app_notification_settings.xml
+SHA1-Digest: 5/QkNKs/rnuV2p2gvs2riPUySV4=
+
+Name: res/xml/wifi_advanced_settings.xml
+SHA1-Digest: b0OVj3o/5CXZowvwpW9YZoJFjgw=
+
+Name: res/xml/app_restrictions.xml
+SHA1-Digest: Jy9VCeom+ReRJjuNKiC2y+RaF74=
+
+Name: res/drawable/empty_icon.xml
+SHA1-Digest: GC7Nwu9EkjgMrWNy/i35i10rpBw=
+
+Name: res/drawable/ic_list_sync_anim.xml
+SHA1-Digest: wLCjg1IbE7wffKiHnCnP5wuTBo4=
+
+Name: res/drawable-xxhdpi/ic_bt_pointing_hid.png
+SHA1-Digest: fXlgS2AmnpTuqme02zVnmyDcIiU=
+
+Name: res/layout/preference_header_button_item.xml
+SHA1-Digest: AgnPVoFGOc5oFUpKG9aE51VjXUY=
+
+Name: res/xml/tts_settings.xml
+SHA1-Digest: mxNLPFfVwKNY65G/cCqKSVS06Ro=
+
+Name: res/layout/pick_item.xml
+SHA1-Digest: MPpgisEHzfpPyLK3CG0SkS5tGy8=
+
+Name: res/layout/master_clear_account.xml
+SHA1-Digest: m7PjXGwDpkSsaY0h2SEpeLFAfpM=
+
+Name: res/layout/empty_printers_list_service_enabled.xml
+SHA1-Digest: 8PVB4jVEOUApBmriVJ43h8mu8MQ=
+
+Name: res/layout/user_dictionary_item.xml
+SHA1-Digest: nA0X/4eS8ASp/F0M8O0deKmJxPw=
+
+Name: res/raw/htc_copyright.txt
+SHA1-Digest: qvFgqyntJgsEgwqMASJBTG73zCQ=
+
+Name: res/drawable/signal.xml
+SHA1-Digest: 5ndV7PJvWmzKJ2//hHyvBBL+E9k=
+
+Name: res/drawable-xxhdpi/ic_settings_home.png
+SHA1-Digest: re4mQyl0aCaetjAk/EQBNcc9/Xc=
+
+Name: res/layout/crypt_keeper_pin_entry.xml
+SHA1-Digest: 4mUiZl191y+LNoJ29xqsB8xOfxs=
+
+Name: res/drawable-xxhdpi/setup_illustration_lock_screen.jpg
+SHA1-Digest: rx3d3BAC+vZWbYER3xu687LvFI8=
+
+Name: res/layout/protected_account_view.xml
+SHA1-Digest: kSHs/9e/J8ZOeWdXkTHYXjcy+1Y=
+
+Name: res/drawable/ic_search_history.xml
+SHA1-Digest: nZgLlqXt4i+M5+aTK8HMmRTfoqM=
+
+Name: res/xml/sim_lock_settings.xml
+SHA1-Digest: cxbMqkhQZHpNQIyNrcLjL53OE/Y=
+
+Name: res/drawable-xxhdpi/ic_menu_add_light.png
+SHA1-Digest: +Wty2Hxs7WwlA/Rtlgu1wFlLa98=
+
+Name: res/drawable/setup_illustration.xml
+SHA1-Digest: dfiFeCPscAG5RkR5bDdlQdOzvXg=
+
+Name: res/drawable-xxhdpi/ic_appwidget_settings_sync_on_holo.png
+SHA1-Digest: FahTZxSdg4lRtQ2sg0HQYU1EHDY=
+
+Name: res/drawable-xxhdpi/ic_menu_add_dark.png
+SHA1-Digest: owxpqnNo/pTbJ8qE3IKO3ctFUis=
+
+Name: res/drawable-xhdpi/ic_drawer_am.png
+SHA1-Digest: 17w4OCbF/F/D1NbBYIUsnXYP9Lc=
+
+Name: res/drawable/wifi_signal_dark.xml
+SHA1-Digest: 9Fzm9WR1w1/CoX5a2KahHwF3BtU=
+
+Name: res/drawable-xxhdpi/ic_settings_accounts.png
+SHA1-Digest: Vex6DQTbQx8cAyCf9UnRchmjKQg=
+
+Name: res/layout/preference_user_delete_widget.xml
+SHA1-Digest: eIB1vhjpVUrVL8VLoqQ1IMjmPfU=
+
+Name: res/layout/device_admin_item.xml
+SHA1-Digest: XWNQpmH/zCZ9VQ76zaT/61gdXKE=
+
+Name: res/layout/search_panel_suggestions_header.xml
+SHA1-Digest: fe/FaU1QpVzwRPpt12EJ7BFvZ50=
+
+Name: res/drawable-xhdpi/lock_anim_6.png
+SHA1-Digest: n7cPALcT28oT3HaAT4kYUXRObhg=
+
+Name: res/drawable-xxhdpi/ic_settings_security.png
+SHA1-Digest: AQ2BDTHfajWoQWpL7+Y3/Pt53yc=
+
+Name: res/drawable-xxhdpi/ic_appwidget_settings_wifi_on_holo.png
+SHA1-Digest: ivJnmh8n6RawTX/g+FNbFwmuNzA=
+
+Name: res/layout/running_processes_header.xml
+SHA1-Digest: 1O7lrLqYcy3NEa6HZJAyYnh0DPY=
+
+Name: res/layout/power_usage_detail_item_text.xml
+SHA1-Digest: Guoqsqi4AO5IHNE91NHmIr8QIR8=
+
+Name: res/layout/data_usage_bytes_editor.xml
+SHA1-Digest: wDPleCYPdME8P4uLEjgdhwhxmow=
+
+Name: res/drawable-xhdpi/ic_settings_bluetooth.png
+SHA1-Digest: qUKemtaJjrkFZ28vts9JOqf1EkU=
+
+Name: res/layout/user_info_header.xml
+SHA1-Digest: xqGJoKBavv7lzCLCIAQZatVyQeo=
+
+Name: res/layout/twelve_key_entry.xml
+SHA1-Digest: kygGThuOAflpe8gU5gcm0gr6ivY=
+
+Name: res/xml/notification_settings.xml
+SHA1-Digest: 6alkk49ueSWbOGTTetiI9YNfE0M=
+
+Name: res/xml/usb_settings.xml
+SHA1-Digest: CzGYggfaQ1SgJJ9kZr230ReMmxI=
+
+Name: res/drawable/ic_tab_sdcard.xml
+SHA1-Digest: tOebiP16qcgP3H0unLCaVptJ9mw=
+
+Name: res/layout/zen_downtime_day.xml
+SHA1-Digest: 4vJU6SeXxp/S1/IUiA68gagce7U=
+
+Name: res/xml/wifi_p2p_settings.xml
+SHA1-Digest: nt2qXYJ5glqfRPzSzvfTxVDgdN4=
+
+Name: res/drawable-xxhdpi/ic_settings_backup.png
+SHA1-Digest: Z5NGk5rjw0+nUuS5fO9r/k2X7JE=
+
+Name: res/xml/manage_accounts_settings.xml
+SHA1-Digest: fs1UD10IDZNa/a25VUUjEpMymks=
+
+Name: res/drawable-xxhdpi/ic_audio_ring_24dp.png
+SHA1-Digest: fBFUlGUyYtM0KGno5+DuuFKGA7s=
+
+Name: res/drawable-xxhdpi/ic_settings_voice_calls.png
+SHA1-Digest: qrFv6HaTAhL/r7facrV+BCtp9HQ=
+
+Name: res/drawable-xxhdpi/ic_wifi_lock_signal_4_teal.png
+SHA1-Digest: BoraVCjOXLeuaCZDJMHXLeikkeY=
+
+Name: res/layout/setup_wifi_add_network.xml
+SHA1-Digest: hGV7REfVJ+yCv0TGrqRtaPzPnZE=
+
+Name: res/xml/timezones.xml
+SHA1-Digest: 85c39t24WlODI/fg5ztX76YHlVg=
+
+Name: res/drawable-xxhdpi/ic_appwidget_settings_bluetooth_off_holo.png
+SHA1-Digest: us0s8/J0AP/7TaHfzXAJt8dBNMQ=
+
+Name: res/layout/custom_preference.xml
+SHA1-Digest: WBLxjjj+W0olmNZ0PSe7MBFxn/g=
+
+Name: res/drawable-xxhdpi/ic_settings_notifications.png
+SHA1-Digest: uAzF5MEYKIs7gGf+5TqvUVcrRus=
+
+Name: res/drawable-xxhdpi/ic_appwidget_settings_location_off_holo.png
+SHA1-Digest: Fs2o5mUVPFCWIuouTnX4p0GlJZE=
+
+Name: res/drawable-xhdpi/lock_anim_10.png
+SHA1-Digest: W/AXGFi6elNJb4onzDGDD/rhEmE=
+
+Name: res/layout/settings_storage_miscfiles.xml
+SHA1-Digest: BK+Pa386JgMqRdkKjBWLgV1k9I4=
+
+Name: res/layout/widget.xml
+SHA1-Digest: ljAL7WdGrW++GEUFn1VlPehQvdo=
+
+Name: res/xml/date_time_prefs.xml
+SHA1-Digest: pnJZhl1BuZk7T8TE1h35SkrlX0s=
+
+Name: res/drawable/regulatory_info.png
+SHA1-Digest: 40bjMVberNvnhdFWbqrORDJHCik=
+
+Name: res/xml/wallpaper_settings.xml
+SHA1-Digest: EIkF2Z+GGv19Exs8LVLlRWseg4g=
+
+Name: res/drawable-ldrtl-xhdpi/ic_settings_sound.png
+SHA1-Digest: i70ft9dRkl2nTDm3QpVDPvkLMKI=
+
+Name: res/layout/android_beam.xml
+SHA1-Digest: qSEE56pJfagmHMlhWTB47UFhO2k=
+
+Name: res/drawable-xxhdpi/ic_wifi_lock_signal_3_light.png
+SHA1-Digest: gI98Bj1MgDTWmoC1SH33GvVrhx8=
+
+Name: res/xml/apn_editor.xml
+SHA1-Digest: 4fQ58IWyDl7/Hfq3nglXMKVxl2Y=
+
+Name: res/layout/setup_preference.xml
+SHA1-Digest: tA81jygUrrbM23YsnGa4yquj+xw=
+
+Name: res/xml/bluetooth_device_advanced.xml
+SHA1-Digest: 5TPqzdbroj9NV99p0PpEoXogkAU=
+
+Name: res/drawable/data_usage_sweep_background.xml
+SHA1-Digest: FL4iQJl3/l7vnEEem0Ug89gzDcU=
+
+Name: res/layout/setup_template.xml
+SHA1-Digest: dWV0vXv6U9wFLOa5kk1RtdqgBow=
+
+Name: res/layout/wifi_display_preference.xml
+SHA1-Digest: 6rohmAw1JxcZYb1XRYiaCkWtB7s=
+
+Name: res/drawable-xxhdpi/ic_bt_config.png
+SHA1-Digest: ZEsAt8YvBgDmYMb9THjrDldaZMU=
+
+Name: res/layout/credentials_disallowed_preference_screen.xml
+SHA1-Digest: zaUHzkv908ZN4PxKn5Cl1yxXDSg=
+
+Name: res/layout/data_usage_cycle_item.xml
+SHA1-Digest: mJIgomThm03QBnw+6UD8F5KUJdo=
+
+Name: res/drawable/ic_settings_nfc_payment.xml
+SHA1-Digest: EcKHwjavbnZl81fl6qKgXrh5s5M=
+
+Name: res/layout-land/crypt_keeper_progress.xml
+SHA1-Digest: 0S7GZSgrR9LoQWeYrnmgoWBSCbk=
+
+Name: res/drawable-ldrtl-xhdpi/ic_network_signal_4.png
+SHA1-Digest: ueCK5F3ulOp1Jxqv7A8SOBqn928=
+
+Name: res/drawable-xxhdpi/ic_appwidget_settings_brightness_full_holo.p
+ ng
+SHA1-Digest: 02ly6XuMJjjyuuFSqleRZcMpjc4=
+
+Name: res/drawable-xxhdpi/ic_wifi_lock_signal_3_dark.png
+SHA1-Digest: oixPyGedcsvaJcSA/oicCr1pZb4=
+
+Name: res/layout/preset_picker_item.xml
+SHA1-Digest: uRHBjWSfEUGwQh3JJo3fdxyqlFQ=
+
+Name: res/drawable-xxhdpi/ic_appwidget_settings_location_saving_holo.p
+ ng
+SHA1-Digest: zkKl9TQ/NzGnvNRVEPmpS2ZqzqA=
+
+Name: res/xml/security_settings_misc.xml
+SHA1-Digest: FnzX6nOU7NDrNyp827QR0zFaTs4=
+
+Name: res/drawable/ic_print_error.xml
+SHA1-Digest: oBXfeT7FBsOKhyCDJBW0JVTEKLk=
+
+Name: res/layout/process_stats_details.xml
+SHA1-Digest: 0ytwZsjE6QQVRzme8lwzjbzSgKQ=
+
+Name: res/drawable-xhdpi/lock_anim_3.png
+SHA1-Digest: TbuRfLO2PUKyYtIjScG+0jsRFus=
+
+Name: res/drawable-xxhdpi/ic_wifi_signal_0_teal.png
+SHA1-Digest: xWRA8g7HFnaSP96HLJE8fvZjdOw=
+
+Name: res/drawable-xxhdpi/appwidget_settings_divider_holo.9.png
+SHA1-Digest: Brixf5dFQlos6EmZvePwzWTKQUc=
+
+Name: res/layout/wifi_config_ui_for_setup_wizard.xml
+SHA1-Digest: bWVu6odtsQxElJZZg/qaS8Q09dE=
+
+Name: res/xml/spellchecker_prefs.xml
+SHA1-Digest: aOAYS+zV1Nw6oZbOvs8yQ0Q/rwE=
+
+Name: res/raw-ja/htc_copyright.txt
+SHA1-Digest: c+PHyyGPO6rNxGmRx/WDh9zdALI=
+
+Name: res/drawable-xxhdpi/ic_wifi_lock_signal_4_dark.png
+SHA1-Digest: QQ2PQqKn61VtQ5vjm9OeliljFdI=
+
+Name: res/layout/radio_info.xml
+SHA1-Digest: Qz3+Q1MVQS0FINqEOGNwGXUbEDg=
+
+Name: res/drawable-xxhdpi/data_sweep_warning_activated.9.png
+SHA1-Digest: JpAb4L6wYThKGJV49hFI5sO/UGk=
+
+Name: res/drawable/default_preference_background.xml
+SHA1-Digest: uGSIGr9RHhX2U0OfqhsOz+u1enI=
+
+Name: res/layout/preference_widget_radiobutton.xml
+SHA1-Digest: LyWT4BvKIvoBVLdV9EPNwV2Fpa0=
+
+Name: res/drawable/wifi_signal_lock_teal.xml
+SHA1-Digest: mCBYk5473wwGmneX4xN6y8yPXkA=
+
+Name: res/layout-land/setup_template.xml
+SHA1-Digest: jhBO4CLnr5sQd7QeKZUpiBBodgI=
+
+Name: res/raw-th/htc_copyright.txt
+SHA1-Digest: 9EUI8TzbmnXiR1/T9LTR1ewAoFY=
+
+Name: res/drawable-xxhdpi/ic_sync_green_holo.png
+SHA1-Digest: cosjnq9m7CszsGPJIEClPId38gk=
+
+Name: res/layout-sw600dp/date_time_settings_setupwizard.xml
+SHA1-Digest: cqJFNLKvlrKMc302zypb47rO0e4=
+
+Name: res/layout/bluetooth_device_settings_header.xml
+SHA1-Digest: Y/Z1Da2fX8vL2SewFEaIfS84/x0=
+
+Name: res/layout/screen_pinning_instructions.xml
+SHA1-Digest: irMxFWyLnr4C0VTfCw4DHYuJZQ4=
+
+Name: res/drawable-xhdpi/ic_network_signal_3.png
+SHA1-Digest: 2wVDwX2GZRrbYrxh7M4M6bcZO8I=
+
+Name: res/drawable-xxhdpi/appwidget_settings_ind_off_r_holo.9.png
+SHA1-Digest: CoQ3tqplOnqoErU5QzHPBvUnTok=
+
+Name: res/layout/keyguard_appwidget_item.xml
+SHA1-Digest: z8wHTswQKueruzQ4Tkw3qe9dGNA=
+
+Name: res/layout-sw600dp/crypt_keeper_pattern_entry.xml
+SHA1-Digest: b+hecixnwbd8Ikav00svKvi8w84=
+
+Name: res/drawable-xhdpi/ic_tab_selected_sdcard.png
+SHA1-Digest: Hwkg+uStlJltYIjVJC7tSyQoP34=
+
+Name: res/drawable-xxhdpi/ic_wifi_signal_3_light.png
+SHA1-Digest: UOkswKtyKJhLNTK0ttZ7SU73BQo=
+
+Name: res/xml/accessibility_settings.xml
+SHA1-Digest: bAZm07gbbCuIFrLmyEL0X/YN2Yw=
+
+Name: res/layout/title.xml
+SHA1-Digest: mxB486i2mR89muZ3GUfBm/SRsIQ=
+
+Name: res/layout/grid_picker_dialog.xml
+SHA1-Digest: /gGY4pFuqDyPgzo2WBuS+dMJWso=
+
+Name: res/anim/slide_next_in.xml
+SHA1-Digest: LPpYknsS8+7EUk3XKwu0bcob6KU=
+
+Name: res/drawable/ic_tab_all.xml
+SHA1-Digest: nyV8UHSRsA6dia00F0/ANQAnPrs=
+
+Name: res/layout/bluetooth_access.xml
+SHA1-Digest: eSlDRIe27/Qv9CKK7EKTyKHF1Oc=
+
+Name: res/layout/set_backup_pw.xml
+SHA1-Digest: BOBC+jrk1AxCyWHNC5VMPf0cjXo=
+
+Name: res/raw-es/htc_copyright.txt
+SHA1-Digest: 4kG9EXM7g6L5obdgvbpO26QJ2fY=
+
+Name: res/drawable-xhdpi/ic_sync_grey.png
+SHA1-Digest: kmCjgv+s71sG0DF0nAPlBKcVfeE=
+
+Name: res/layout/mac_preference.xml
+SHA1-Digest: QvB5TDjDBOrDV//KLi1HlUSVjNU=
+
+Name: res/drawable-xxhdpi/appwidget_settings_ind_mid_c_holo.9.png
+SHA1-Digest: REcBVl9WUdQxPAsqhOjJ2Cv1mXY=
+
+Name: res/drawable/wifi_signal_open_teal.xml
+SHA1-Digest: bZxq6k2Hlfj66Umwdbw952lOP+Q=
+
+Name: res/anim/slide_back_out.xml
+SHA1-Digest: nj93pDVcSVlFXHrJZeGkF2B4Rd8=
+
+Name: res/layout/color_picker_item.xml
+SHA1-Digest: e4MmKN+E/85U+3kUxi2n2UFWcT4=
+
+Name: res/layout-sw600dp-land/choose_lock_pattern.xml
+SHA1-Digest: A2GwKRwNtUcHpKKYd8pWv/Uc3C8=
+
+Name: res/drawable-xxhdpi/appwidget_inner_pressed_c_holo.9.png
+SHA1-Digest: z20e/Zj98rQc38qOEnH2aJ7qGgE=
+
+Name: res/layout/data_usage_header.xml
+SHA1-Digest: PmzumF+lmwtvK9R50/SJnTj5NKw=
+
+Name: res/drawable-xxhdpi/ic_wifi_signal_2_light.png
+SHA1-Digest: C0bmPSWGHvDgYzwolfxSiuHEA3g=
+
+Name: res/layout/battery_history_chart.xml
+SHA1-Digest: +gfDob0pk7CC1dgZLWwsOmaocT0=
+
+Name: res/layout/preference_home_app.xml
+SHA1-Digest: phxT6KMIWNglO4igUiI7C5bRkt0=
+
+Name: res/raw-fi/htc_copyright.txt
+SHA1-Digest: r54WTRnJIX7wRJAzKxfoajxwbBE=
+
+Name: res/xml/account_sync_settings.xml
+SHA1-Digest: 7v/MX8wqZn9LQytOJrS8TfwrPtQ=
+
+Name: res/layout/notification_app_list.xml
+SHA1-Digest: W8ckJAitbtgqWrtU9WGy2jcrMtw=
+
+Name: res/layout/bluetooth_device_settings.xml
+SHA1-Digest: BiZSgPDf00oigzu3kvvwB/1P52o=
+
+Name: res/drawable-xhdpi/ic_menu_3d_globe.png
+SHA1-Digest: KVYb+WvGH+PnNV5hcxpCQ4GKl2g=
+
+Name: res/layout-land/choose_lock_password.xml
+SHA1-Digest: vizV9Azh51rqXILoludTAmuGte4=
+
+Name: res/layout-land/confirm_lock_pattern.xml
+SHA1-Digest: sbcmR9k5iC5RCDdkIPiVKDbgA6E=
+
+Name: res/raw-sr/htc_copyright.txt
+SHA1-Digest: myMTIxrcamVUWclpP+9KasLeU7I=
+
+Name: res/xml/language_settings.xml
+SHA1-Digest: vJT8apXIlWb1g6RekXbMwGQAqEE=
+
+Name: res/raw-hu/htc_copyright.txt
+SHA1-Digest: e7wISX9Rk5DlSSTmlDqvwjY6B/I=
+
+Name: res/xml/tether_prefs.xml
+SHA1-Digest: 3732Sp45IZkxJxSVOPLnqygnzCQ=
+
+Name: res/drawable-sw600dp/setup_illustration.xml
+SHA1-Digest: dxp90cooupzxd8UMtA9SqbgFM7Y=
+
+Name: res/layout/preference_empty_list.xml
+SHA1-Digest: 2W0WQDoEOBUFE3oT/EN/+Je4p7o=
+
+Name: res/layout/enable_accessibility_service_dialog_content.xml
+SHA1-Digest: AEM08VHa6xD2kKDa9V8hJCa6fHM=
+
+Name: res/raw-ru/htc_copyright.txt
+SHA1-Digest: Quql7EsJB+ZslG6lAALBeJ4O324=
+
+Name: res/layout/edit_user_photo_popup_item.xml
+SHA1-Digest: kIGHso6qwyz54rRaio+IQ18u9OM=
+
+Name: res/drawable/switchbar_background.xml
+SHA1-Digest: 7PmF6P/akuIrY7QRKzBSujCKz6M=
+
+Name: res/layout/dream_info_row.xml
+SHA1-Digest: Qfyk3Bpk7ZeW/5uOE6XHWvdpL9s=
+
+Name: res/drawable-ldrtl-xhdpi/ic_network_signal_3.png
+SHA1-Digest: JYO/7atbelDehRkDxq9c3ZViXEg=
+
+Name: res/xml/dashboard_categories.xml
+SHA1-Digest: 6oANrZUMTy09uy2tKuvTU2G+3uM=
+
+Name: res/drawable-xhdpi/ic_emergency.png
+SHA1-Digest: lZUWHOoQFVaiiN6pZUlMuyYHFAE=
+
+Name: res/drawable-xxhdpi/ic_settings_about.png
+SHA1-Digest: EG5l624Z1zzBDr8wgEgpO/YFaAc=
+
+Name: res/raw-vi/htc_copyright.txt
+SHA1-Digest: n52Gc9pI/kNOLwdHOGAQMSyGJb4=
+
+Name: res/drawable/ic_tab_running.xml
+SHA1-Digest: eN6QCijzmzG9xp3SEBRQHTJsUR8=
+
+Name: res/drawable/ring_notif_vibrate.xml
+SHA1-Digest: P3RxJe4og7HbM2jy5kEaavqHGYs=
+
+Name: res/layout-sw600dp-land/wifi_settings_for_setup_wizard_xl.xml
+SHA1-Digest: iVFEXVRAihmBy03CySfmxfQ69o4=
+
+Name: res/layout/usage_stats_item.xml
+SHA1-Digest: hLcsVhpueIdBfX246PzSdyu8a/Q=
+
+Name: res/drawable-xxhdpi/ic_wifi_lock_signal_0_teal.png
+SHA1-Digest: 8HUcuCz5N9ob9vHIJWi9zxWSkJY=
+
+Name: res/drawable-xxhdpi/ic_wifi_signal_2_teal.png
+SHA1-Digest: Xna35vN1WwQhn5w64yz5Er06kaw=
+
+Name: res/drawable-xxhdpi/ic_wifi_lock_signal_2_light.png
+SHA1-Digest: RwZyk2pIcGE7ZONv1o9qGbXs1uU=
+
+Name: res/layout/band_mode.xml
+SHA1-Digest: dIZBSvOCldne0xHIW4goTqiWMDk=
+
+Name: res/drawable-xhdpi/ic_tab_unselected_sdcard.png
+SHA1-Digest: QO5nWVx/uwmQ8CNEviybry/QqfI=
+
+Name: res/drawable-xxhdpi/ic_bt_imaging.png
+SHA1-Digest: kqutG7xmZf6H/T6kK4M4MjO/kPw=
+
+Name: res/drawable-xxhdpi/ic_appwidget_settings_location_on_holo.png
+SHA1-Digest: SM6QhnMOKSOQShB1tGqPf48Wv4s=
+
+Name: res/drawable-ldrtl-xhdpi/ic_bt_cellphone.png
+SHA1-Digest: 5ahjPhJwbE0MD84NnyvUvNi1iik=
+
+Name: res/layout/account_type_preference.xml
+SHA1-Digest: 3gpNZVG5jmLnL9CFhHf6WIJ1xCM=
+
+Name: res/layout/master_clear_disallowed_screen.xml
+SHA1-Digest: QzJWEyt3FtVUtyXShimLlEf1N5Y=
+
+Name: res/drawable-xhdpi/dotted_line_480px.png
+SHA1-Digest: BrcLRoUk4Vu+f9HFLaOFTifmvmQ=
+
+Name: res/xml/user_settings.xml
+SHA1-Digest: zNdzqwc/vzo6QdIEi42bxtgOS68=
+
+Name: res/drawable-xxhdpi/ic_settings_multiuser.png
+SHA1-Digest: v/JjvALUdlBT12Y/u/6UI/Eez9E=
+
+Name: res/layout/app_ops_details.xml
+SHA1-Digest: LNBttePJ0pDm/p4JQVRNl5VSCJA=
+
+Name: res/layout/hidden_apps_list.xml
+SHA1-Digest: 4qLBcSCnoLWGeL49+boxfpxp96A=
+
+Name: res/layout/preference_list_fragment.xml
+SHA1-Digest: 7k/nkToIlfKQYnNzXePzk3WWx8o=
+
+Name: res/xml/quick_launch_settings.xml
+SHA1-Digest: pyHiTTgfmNp9WGs0Bfq76x6LeWY=
+
+Name: res/layout/apn_preference_layout.xml
+SHA1-Digest: psJqy9lEt6zkW0vvdtgVlqZ4jv0=
+
+Name: res/xml/security_settings_picker.xml
+SHA1-Digest: eQ+rzoPrk4tWKhuNTKuwzJCBls0=
+
+Name: res/xml/wifi_access_points.xml
+SHA1-Digest: MtWH9YzjhmD/xmjrTd8euRxLXiQ=
+
+Name: res/layout/crypt_keeper_status.xml
+SHA1-Digest: OOoGCLgR4Lcj2GRIpMUrGXbtr0A=
+
+Name: res/layout/tab_widget.xml
+SHA1-Digest: 4/tF9dL7guejERsEgX6aYCAVFeY=
+
+Name: res/drawable-xxhdpi/ic_wifi_lock_signal_1_light.png
+SHA1-Digest: 8lAVe9jy8eswYcjPmtJjBxTn384=
+
+Name: res/raw-sk/htc_copyright.txt
+SHA1-Digest: f1BpZk91IuYTBf3QlNYaV/EJ634=
+
+Name: res/layout/keyguard_appwidget_picker_layout.xml
+SHA1-Digest: NQiRqcL/0DWq2JLarAllkL75wfs=
+
+Name: res/drawable-xxhdpi/ic_sync_red_holo.png
+SHA1-Digest: Ou+C96hpU9Sql3ubAvbrdwT4++w=
+
+Name: res/drawable/setup_wizard_navbar_ic_next.xml
+SHA1-Digest: cXtLfYHde9Eysqr2HhEEbCCqGzI=
+
+Name: res/drawable-xxhdpi/ic_bt_keyboard_hid.png
+SHA1-Digest: gl/zZ6Ljxf7oc+meMe7FJIZwznM=
+
+Name: res/layout/power_usage_message_item.xml
+SHA1-Digest: 03Ij4HK4+jAjCLg2f1zP8zEDxm0=
+
+Name: res/drawable/transparency_tileable.xml
+SHA1-Digest: RSjcroW7Mp/gQxhD/d8XVlU2U64=
+
+Name: res/layout/empty_print_state.xml
+SHA1-Digest: pMsf9GKdCzFZX5pDUGED9HIImJo=
+
+Name: res/drawable-xxhdpi/data_sweep_limit_activated.9.png
+SHA1-Digest: qHmKPxrygOuuclMXfpFKohtv5CQ=
+
+Name: res/layout/crypt_keeper_emergency_button.xml
+SHA1-Digest: LaPPM7F/VhK4p2tFU1Nlj/AxoCY=
+
+Name: res/drawable-xxhdpi/ic_wifi_lock_signal_3_teal.png
+SHA1-Digest: LqpRwx/5aardfkVXl1vOr8Hu7gM=
+
+Name: res/raw/media_volume.ogg
+SHA1-Digest: s2YgI4t7cTXDv9Is9JFzRj5MYJI=
+
+Name: res/raw-sl/htc_copyright.txt
+SHA1-Digest: 5J+kgYtko5J6IjbEvtCayf1fRxA=
+
+Name: res/raw-da/htc_copyright.txt
+SHA1-Digest: T8c4aGrzRF1RktDKm4+4BAu8UQ4=
+
+Name: res/drawable/ic_audio_alarm_24dp.xml
+SHA1-Digest: ZQaTO/gZlXsmqHchvu1CWBcoxAc=
+
+Name: res/drawable-xxhdpi/ic_wifi_lock_signal_0_light.png
+SHA1-Digest: VTpidh8ZTJXCc/mBp0rLQpZ4Xak=
+
+Name: res/layout/notification_app.xml
+SHA1-Digest: dJoTY+P8egsugbBSsSfNbGLKZ7o=
+
+Name: res/layout/dashboard_category.xml
+SHA1-Digest: WS4asqShU8ciJxX5IZongIiTX/g=
+
+Name: res/raw-el/htc_copyright.txt
+SHA1-Digest: aV0KE1FubO+u6MsXqOdmHNvbdwE=
+
+Name: res/layout/proxy.xml
+SHA1-Digest: K5L5uYutEjxzTOCrw89kFPoxkK8=
+
+Name: res/drawable-xhdpi/lock_anim_4.png
+SHA1-Digest: gKvLC8TRZctm06DJ/Zu/3qWU9Y8=
+
+Name: res/layout/captioning_preview.xml
+SHA1-Digest: 9H8MfSWWWMqxdIOzesCZfYR0lmA=
+
+Name: res/mipmap-xxxhdpi/ic_launcher_settings.png
+SHA1-Digest: a5P3qr+wQ/5QW5PTRBaE3XxGJRk=
+
+Name: res/raw-cs/htc_copyright.txt
+SHA1-Digest: MQk8FTZ7br4iEIWetUCpNmCzFN4=
+
+Name: res/drawable-xxhdpi/ic_wifi_signal_0_light.png
+SHA1-Digest: 0R9o2gF+9rsu3GZOsuMh+FNMIMA=
+
+Name: res/layout/vpn_lockdown_editor.xml
+SHA1-Digest: zO/DwWl/y34Rn676sCawLwVNudU=
+
+Name: res/drawable-xxhdpi/ic_wifi_lock_signal_1_dark.png
+SHA1-Digest: j4kT+7MhONHlkh82wSSDdkfKTEA=
+
+Name: res/xml/bluetooth_settings.xml
+SHA1-Digest: pks9ffAU0Abj+68ZsFnGby2OcCU=
+
+Name: res/layout/data_usage_detail.xml
+SHA1-Digest: /2rV5jGWXiueysG3MV/HhFJX2Ck=
+
+Name: res/xml/privacy_settings.xml
+SHA1-Digest: KVRfbjHvaLm+C74DRa6z09DA8v0=
+
+Name: res/layout/account_preference.xml
+SHA1-Digest: c+mX+/6JI/HoJzc2GbGvyldGSvw=
+
+Name: res/layout/bluetooth_pin_confirm.xml
+SHA1-Digest: p+BfrXiLT+aquu5vlSv3Y8wY+6g=
+
+Name: res/xml/security_settings_encrypted.xml
+SHA1-Digest: BNQ3hR23QxmYlbSy54UXqHi7FnQ=
+
+Name: res/drawable/setup_wizard_navbar_btn_bg.xml
+SHA1-Digest: 4X13Y6lwX2XkdkxGGlO+tM+qZac=
+
+Name: res/layout/remember_dock_setting.xml
+SHA1-Digest: X/MNFw3sMGtLx1MwarSmoyN6ZjE=
+
+Name: res/drawable/ic_print.xml
+SHA1-Digest: w9/AD6S5wucp2/siNvrEQJwpfbg=
+
+Name: res/layout/preference_bt_icon.xml
+SHA1-Digest: SEaFo6QzhXZMadzIzeekLy2c2/A=
+
+Name: res/layout-sw600dp/choose_lock_password.xml
+SHA1-Digest: kzLCfKGokCisVgQ1AofFCgbhi9w=
+
+Name: res/layout/manage_applications_apps.xml
+SHA1-Digest: sYzcvMK0VhCnxIjRZkkbAF4OI7s=
+
+Name: res/xml/location_settings.xml
+SHA1-Digest: CXMgqRI/55+YutS8449Ffln9IrY=
+
+Name: res/anim-ldrtl/slide_next_out.xml
+SHA1-Digest: SWR5IhNl9OA4ZwVlLkiZqOxfqbA=
+
+Name: res/drawable-ldrtl-xhdpi/ic_tab_selected_running.png
+SHA1-Digest: iFAwAM/+F+RBWJOr+fbMWBxX+pU=
+
+Name: res/layout-sw600dp-land/confirm_lock_password.xml
+SHA1-Digest: NoJAbaF05tWsX0boF1QWyoyusc8=
+
+Name: res/layout/manage_applications_item.xml
+SHA1-Digest: o4VCJVlvJLLvf7rQ74zMHZo9DgM=
+
+Name: res/layout/wifi_api_test.xml
+SHA1-Digest: 1nzw4Pu/9+xl/ji5HZ9TQKbIFvI=
+
+Name: res/raw-ro/htc_copyright.txt
+SHA1-Digest: W9yz8y+yTIIGfzoNpjUnxc10iYE=
+
+Name: res/layout/search_panel.xml
+SHA1-Digest: huE9dijqrYNGliUDHlY9E6FW2NU=
+
+Name: res/layout/choose_lock_pattern.xml
+SHA1-Digest: V/Di4CZuH91psjfTUg3AtuGidz4=
+
+Name: res/layout-sw720dp/date_time_settings_setupwizard.xml
+SHA1-Digest: r0N/L2RZf56UCEDBh+ncFLo/Mx0=
+
+Name: res/drawable-xxhdpi/ic_wifi_signal_0_dark.png
+SHA1-Digest: tPs/gvyWeaKlQbK1+v70ogmhyOU=
+
+Name: res/drawable-xxhdpi/ic_appwidget_settings_brightness_off_holo.pn
+ g
+SHA1-Digest: nbBmfNGzgbKfWADH2uyVFlSrS7g=
+
+Name: res/layout/dashboard_tile.xml
+SHA1-Digest: HktYbBSmV2dX9oztIuNYMy5sigU=
+
+Name: res/xml/wifi_display_saved_access_points.xml
+SHA1-Digest: Nfy+0E2UE88LOvzmhVufZlxVqs8=
+
+Name: res/layout/weak_biometric_fallback_header.xml
+SHA1-Digest: uLGuox1Pm+hLesp6RozSVN2XNEQ=
+
+Name: res/anim/slide_back_in.xml
+SHA1-Digest: Ys3Z+/BmA/M9FBlnhLd62efoCUk=
+
+Name: res/layout/battery_info.xml
+SHA1-Digest: uc45tIFjx2flzGPHqbW6dH64Ac8=
+
+Name: res/layout/user_dictionary_add_word_fullscreen.xml
+SHA1-Digest: IY/tLb6iP/UWDzSMr5RglIkW6vc=
+
+Name: res/drawable-xxhdpi/ic_wps_dark.png
+SHA1-Digest: AGY9ZcZ5B1mJdxFbnvuhjBB85aI=
+
+Name: res/drawable-ldrtl-xhdpi/ic_network_signal_2.png
+SHA1-Digest: iBht8FJn2QiLRDpJl3NaWDVYsF0=
+
+Name: res/layout/preference_progress_category.xml
+SHA1-Digest: zl8AFbcEWtlo+cpVQVoF0k8Ft0c=
+
+Name: res/layout/preference_widget_sync_toggle.xml
+SHA1-Digest: 5Wcq4uOLr+Prre7NHYlrYY3hdKI=
+
+Name: res/layout/wifi_advance_layout.xml
+SHA1-Digest: WpUP7nm8hhTXTXFXiftwkGGQfjE=
+
+Name: res/drawable-xxhdpi/ic_wifi_signal_1_light.png
+SHA1-Digest: KoKjomZiAkQhVGRpj3jUyW0VUi0=
+
+Name: res/drawable-xxhdpi/ic_item_delete.png
+SHA1-Digest: RbtWQvSH2DVDvFYWbB2nFsjyZwc=
+
+Name: res/drawable-xxhdpi/ic_sim_card_alert_white_48dp.png
+SHA1-Digest: bck0Q/HXmHkG9z5C47yZQAmNxGo=
+
+Name: res/drawable/ic_tab_download.xml
+SHA1-Digest: WihqE/1mYcbonw99mF1YjxGk8AQ=
+
+Name: res/drawable-xxhdpi/ic_settings_more.png
+SHA1-Digest: tfO81nP3HvY+EP1Ycc8qNyobK8w=
+
+Name: res/drawable-xxhdpi/ic_lockscreen_ime.png
+SHA1-Digest: m6+QDqyyYtmyBb/pUzFb6u7vqMw=
+
+Name: res/layout/preference_header_switch_item.xml
+SHA1-Digest: 59MZo5y1YvcQyJe/Wo0B3GknMsI=
+
+Name: res/xml/wireless_settings.xml
+SHA1-Digest: q8/K0sBZTf6jh7U2iHWykcZO0es=
+
+Name: classes.dex
+SHA1-Digest: cDLSehxa9QT/w0OoLPsEKugvdoA=
+
+Name: res/drawable-xxhdpi/ic_wifi_emptystate.png
+SHA1-Digest: NhxttOqOE4BtfrOZyKTXH1VDG1Q=
+
+Name: res/mipmap-mdpi/ic_launcher_settings.png
+SHA1-Digest: gsFxN7HqHv+wPV1IKE0PUzeyjuY=
+
+Name: res/drawable-xxhdpi/ic_bt_headset_hfp.png
+SHA1-Digest: nZ/M00f/FTDT0oGkuqKkzde0Xfg=
+

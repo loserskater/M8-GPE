@@ -1,7 +1,7 @@
 @echo off
-cd decompiled
+cd 5.1_decompiled
 for /f %%D in ('dir /a:d /b') do (
-  java -jar ..\tools\apktool.jar b %%~fD
+  java -jar ..\tools\apktool.jar b -c %%~fD
 echo %%~fD
 cd %%~fD\dist
   for /f %%A in ('dir /b') do (

@@ -1,11 +1,8 @@
 system\build.prop
-system\app\LockClock\LockClock.apk
-system\etc\apns-conf.xml
 system\framework\android.policy.jar
 system\framework\framework-res.apk
 system\framework\framework.jar
 system\framework\services.jar
-system\lib\libhtcflag-jni.so
 system\priv-app\ExtraSettings\ExtraSettings.apk
 system\priv-app\OTAUpdates\base.apk
 system\priv-app\OTAUpdates\lib\arm\libbypass.so

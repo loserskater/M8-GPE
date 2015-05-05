@@ -459,7 +459,7 @@ if prop("type.prop","selected")=="2"||prop("type.prop","selected")=="3" then
 										  
 	    "Volume Boost",           "System wide volume boost",                  0,      #-- item.0.1
         "CyanogenMod Ringtones",  "15.7Mb ringtones, notifications, alarms",   0,      #-- item.0.2
-		"Viper4Android",          "Will remove MusicFX and AudioFX",           0       #-- item.0.3
+		"Viper4Android",          "",                                          0       #-- item.0.3
     
 	);
     write("/data/media/0/aroma/Audio.prop", readtmpfile("audio.prop"));
@@ -481,10 +481,31 @@ if prop("type.prop","selected")=="2"||prop("type.prop","selected")=="3" then
       #-- Will be saved in /tmp/aroma/other
         "navbar.prop",
 										  
-	    "NavBar theme",       "NavBar will change colors in certain app just like the status bar.",         0      #-- item.0.1
+	    "NavBar theme",       "NavBar will change color in certain apps just like the status bar.",         0      #-- item.0.1
 		
 	);
     write("/data/media/0/aroma/NavBar.prop", readtmpfile("navbar.prop"));
+	setvar("xposed_prop", read("/data/media/0/aroma/Xposed.prop"));
+    if (getvar("xposed_prop")!="") then
+      writetmpfile("xposed.prop",getvar("xposed_prop"));
+    endif;
+    checkbox(
+      #-- Title
+        "Xposed Framework",
+      
+      #-- Sub Title
+        "",
+      
+      #-- Icon:
+        "@apps",
+      
+      #-- Will be saved in /tmp/aroma/other
+        "xposed.prop",
+										  
+	    "Xposed", "Uses modules to control rom & app functionality without actually modifying the apk",   0      #-- item.0.1
+		
+	);
+    write("/data/media/0/aroma/Xposed.prop", readtmpfile("xposed.prop"));
 	selectbox(
       #-- Title
         "System De-Bloat",
@@ -531,7 +552,7 @@ if prop("debloat.prop","selected.1")=="1" then
 		  "HPPrintPlugin",   "3.23Mb",                    0,      #-- item.1.8
 		  "iWnnIME",         "14Mb foreign keyboard",     0,      #-- item.1.9
 		  "Keep",            "6.92Mb",                    0,      #-- item.1.10
-		  "KoreanIME",       "6.94Mb",                    0,      #-- item.1.11
+		  "KoreanIME",       "6.94Mb foreign keyboard",   0,      #-- item.1.11
 		  "Maps",            "12.4Mb",                    0,      #-- item.1.12
 		  "News & Weather",  "2.13Mb",                    0,      #-- item.1.13
 		  "PlayGames",       "6.20Mb",                    0,      #-- item.1.14
@@ -539,8 +560,8 @@ if prop("debloat.prop","selected.1")=="1" then
 		  "YouTube",         "10.4Mb",                    0,      #-- item.1.16
 		
 		"priv-apps",  "", 2,
-		  "DotMatrix",       "6.42Mb",                    0,      #-- item.2.2
-		  "Wallet",          "7.84Mb May cause Wallet not to work if downloaded form the play store.", 0      #-- item.2.2
+		  "DotMatrix",       "6.42Mb",                    0,      #-- item.2.1
+		  "Wallet",          "7.84Mb May cause Wallet to not work if downloaded form the play store.", 0      #-- item.2.2
 	);
     write("/data/media/0/aroma/Debloat.prop", readtmpfile("debloat.prop"));
 endif;
