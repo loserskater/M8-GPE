@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <dimen name="kg_visualizer_path_effect_1">8.0dip</dimen>
-    <dimen name="kg_visualizer_path_effect_2">1.0dip</dimen>
-    <dimen name="kg_visualizer_path_stroke_width">20.0dip</dimen>
-    <dimen name="weather_text_size">12.0sp</dimen>
-</resources>
