@@ -2500,7 +2500,7 @@
 .end method
 
 .method public stopRepeating()V
-    .locals 8
+    .locals 10
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/hardware/camera2/CameraAccessException;
@@ -2559,6 +2559,10 @@
     move-result-wide v2
 
     invoke-direct {p0, v4, v2, v3}, Landroid/hardware/camera2/impl/CameraDeviceImpl;->checkEarlyTriggerSequenceComplete(IJ)V
+
+    const-wide/16 v8, 0x32
+
+    invoke-static {v8, v9}, Landroid/os/SystemClock;->sleep(J)V
     :try_end_1
     .catch Landroid/hardware/camera2/utils/CameraRuntimeException; {:try_start_1 .. :try_end_1} :catch_0
     .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_1

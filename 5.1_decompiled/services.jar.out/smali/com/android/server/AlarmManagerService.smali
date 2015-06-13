@@ -1883,7 +1883,7 @@
 
     cmp-long v3, v4, p1
 
-    if-gtz v3, :cond_0
+    if-ltz v3, :cond_0
 
     :cond_2
     iget-wide v4, p0, Lcom/android/server/AlarmManagerService;->mLastAlarmDeliveryTime:J

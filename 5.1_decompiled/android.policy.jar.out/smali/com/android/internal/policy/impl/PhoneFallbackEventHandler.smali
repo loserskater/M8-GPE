@@ -96,6 +96,31 @@
     return-void
 .end method
 
+.method private isUserSetupComplete()Z
+    .locals 3
+
+    const/4 v0, 0x0
+
+    iget-object v1, p0, Lcom/android/internal/policy/impl/PhoneFallbackEventHandler;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v1
+
+    const-string v2, "user_setup_complete"
+
+    invoke-static {v1, v2, v0}, Landroid/provider/Settings$Secure;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    const/4 v0, 0x1
+
+    :cond_0
+    return v0
+.end method
+
 
 # virtual methods
 .method public dispatchKeyEvent(Landroid/view/KeyEvent;)Z
@@ -354,6 +379,12 @@
 
     invoke-virtual {v10, p2}, Landroid/view/KeyEvent$DispatcherState;->performedLongPress(Landroid/view/KeyEvent;)V
 
+    invoke-direct {p0}, Lcom/android/internal/policy/impl/PhoneFallbackEventHandler;->isUserSetupComplete()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_5
+
     iget-object v0, p0, Lcom/android/internal/policy/impl/PhoneFallbackEventHandler;->mView:Landroid/view/View;
 
     invoke-virtual {v0, v6}, Landroid/view/View;->performHapticFeedback(I)Z
@@ -384,6 +415,15 @@
 
     goto :goto_1
 
+    :cond_5
+    sget-object v0, Lcom/android/internal/policy/impl/PhoneFallbackEventHandler;->TAG:Ljava/lang/String;
+
+    const-string v2, "Not starting call activity because user setup is in progress."
+
+    invoke-static {v0, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto :goto_1
+
     :sswitch_4
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/PhoneFallbackEventHandler;->getKeyguardManager()Landroid/app/KeyguardManager;
 
@@ -401,30 +441,36 @@
 
     move-result v0
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_7
 
     invoke-virtual {v10, p2, p0}, Landroid/view/KeyEvent$DispatcherState;->startTracking(Landroid/view/KeyEvent;Ljava/lang/Object;)V
 
-    :cond_5
+    :cond_6
     :goto_2
     move v6, v12
 
     goto/16 :goto_0
 
-    :cond_6
+    :cond_7
     invoke-virtual {p2}, Landroid/view/KeyEvent;->isLongPress()Z
 
     move-result v0
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_6
 
     invoke-virtual {v10, p2}, Landroid/view/KeyEvent$DispatcherState;->isTracking(Landroid/view/KeyEvent;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_6
 
     invoke-virtual {v10, p2}, Landroid/view/KeyEvent$DispatcherState;->performedLongPress(Landroid/view/KeyEvent;)V
+
+    invoke-direct {p0}, Lcom/android/internal/policy/impl/PhoneFallbackEventHandler;->isUserSetupComplete()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_8
 
     iget-object v0, p0, Lcom/android/internal/policy/impl/PhoneFallbackEventHandler;->mView:Landroid/view/View;
 
@@ -458,6 +504,15 @@
 
     goto :goto_2
 
+    :cond_8
+    sget-object v0, Lcom/android/internal/policy/impl/PhoneFallbackEventHandler;->TAG:Ljava/lang/String;
+
+    const-string v2, "Not dispatching CAMERA long press because user setup is in progress."
+
+    invoke-static {v0, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto :goto_2
+
     :sswitch_5
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/PhoneFallbackEventHandler;->getKeyguardManager()Landroid/app/KeyguardManager;
 
@@ -475,13 +530,13 @@
 
     move-result v0
 
-    if-nez v0, :cond_7
+    if-nez v0, :cond_9
 
     invoke-virtual {v10, p2, p0}, Landroid/view/KeyEvent$DispatcherState;->startTracking(Landroid/view/KeyEvent;Ljava/lang/Object;)V
 
     goto/16 :goto_0
 
-    :cond_7
+    :cond_9
     invoke-virtual {p2}, Landroid/view/KeyEvent;->isLongPress()Z
 
     move-result v0
@@ -506,7 +561,7 @@
 
     iget v0, v9, Landroid/content/res/Configuration;->keyboard:I
 
-    if-eq v0, v12, :cond_8
+    if-eq v0, v12, :cond_a
 
     iget v0, v9, Landroid/content/res/Configuration;->hardKeyboardHidden:I
 
@@ -514,7 +569,13 @@
 
     if-ne v0, v2, :cond_0
 
-    :cond_8
+    :cond_a
+    invoke-direct {p0}, Lcom/android/internal/policy/impl/PhoneFallbackEventHandler;->isUserSetupComplete()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_b
+
     new-instance v1, Landroid/content/Intent;
 
     const-string v0, "android.intent.action.SEARCH_LONG_PRESS"
@@ -550,12 +611,19 @@
 
     goto/16 :goto_0
 
+    :cond_b
+    sget-object v0, Lcom/android/internal/policy/impl/PhoneFallbackEventHandler;->TAG:Ljava/lang/String;
+
+    const-string v2, "Not dispatching SEARCH long press because user setup is in progress."
+
+    invoke-static {v0, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto/16 :goto_0
+
     :catch_1
     move-exception v0
 
     goto/16 :goto_0
-
-    nop
 
     :sswitch_data_0
     .sparse-switch
@@ -677,7 +745,22 @@
 
     if-nez v2, :cond_2
 
+    invoke-direct {p0}, Lcom/android/internal/policy/impl/PhoneFallbackEventHandler;->isUserSetupComplete()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_3
+
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/PhoneFallbackEventHandler;->startCallActivity()V
+
+    goto :goto_0
+
+    :cond_3
+    sget-object v2, Lcom/android/internal/policy/impl/PhoneFallbackEventHandler;->TAG:Ljava/lang/String;
+
+    const-string v3, "Not starting call activity because user setup is in progress."
+
+    invoke-static {v2, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     goto :goto_0
 
@@ -771,7 +854,7 @@
 
     const-string v3, "No activity found for android.intent.action.CALL_BUTTON."
 
-    invoke-static {v2, v3}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v2, v3}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
     goto :goto_0
 .end method

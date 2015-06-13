@@ -1022,7 +1022,7 @@
 
     invoke-direct {v7}, Ljava/util/ArrayList;-><init>()V
 
-    if-eqz p1, :cond_6
+    if-eqz p1, :cond_7
 
     invoke-interface/range {p1 .. p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -1033,7 +1033,7 @@
 
     move-result v12
 
-    if-eqz v12, :cond_6
+    if-eqz v12, :cond_7
 
     invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -1057,6 +1057,25 @@
     return v12
 
     :cond_0
+    invoke-virtual {v4}, Landroid/view/Surface;->isValid()Z
+
+    move-result v12
+
+    if-nez v12, :cond_1
+
+    move-object/from16 v0, p0
+
+    iget-object v12, v0, Landroid/hardware/camera2/legacy/LegacyCameraDevice;->TAG:Ljava/lang/String;
+
+    const-string v13, "configureOutputs - invalid output surfaces are not allowed"
+
+    invoke-static {v12, v13}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    const/16 v12, -0x16
+
+    goto :goto_1
+
+    :cond_1
     move-object/from16 v0, p0
 
     iget-object v12, v0, Landroid/hardware/camera2/legacy/LegacyCameraDevice;->mStaticCharacteristics:Landroid/hardware/camera2/CameraCharacteristics;
@@ -1086,15 +1105,15 @@
 
     move-result-object v8
 
-    if-nez v8, :cond_1
+    if-nez v8, :cond_2
 
     const/4 v12, 0x1
 
-    if-lt v11, v12, :cond_2
+    if-lt v11, v12, :cond_3
 
     const/4 v12, 0x5
 
-    if-gt v11, v12, :cond_2
+    if-gt v11, v12, :cond_3
 
     const/16 v12, 0x23
 
@@ -1102,21 +1121,21 @@
 
     move-result-object v8
 
-    :cond_1
+    :cond_2
     :goto_2
     invoke-static {v8, v6}, Landroid/hardware/camera2/utils/ArrayUtils;->contains([Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v12
 
-    if-nez v12, :cond_5
+    if-nez v12, :cond_6
 
-    if-eqz v2, :cond_3
+    if-eqz v2, :cond_4
 
     invoke-static {v6, v8}, Landroid/hardware/camera2/legacy/LegacyCameraDevice;->findClosestSize(Landroid/util/Size;[Landroid/util/Size;)Landroid/util/Size;
 
     move-result-object v6
 
-    if-eqz v6, :cond_3
+    if-eqz v6, :cond_4
 
     new-instance v12, Landroid/util/Pair;
 
@@ -1143,10 +1162,10 @@
 
     goto :goto_1
 
-    :cond_2
+    :cond_3
     const/16 v12, 0x21
 
-    if-ne v11, v12, :cond_1
+    if-ne v11, v12, :cond_2
 
     const/16 v12, 0x100
 
@@ -1157,8 +1176,8 @@
 
     goto :goto_2
 
-    :cond_3
-    if-nez v8, :cond_4
+    :cond_4
+    if-nez v8, :cond_5
 
     const-string v5, "format is invalid."
 
@@ -1219,7 +1238,7 @@
 
     goto/16 :goto_1
 
-    :cond_4
+    :cond_5
     new-instance v12, Ljava/lang/StringBuilder;
 
     invoke-direct {v12}, Ljava/lang/StringBuilder;-><init>()V
@@ -1244,7 +1263,7 @@
 
     goto :goto_3
 
-    :cond_5
+    :cond_6
     new-instance v12, Landroid/util/Pair;
 
     invoke-direct {v12, v4, v6}, Landroid/util/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
@@ -1255,7 +1274,7 @@
 
     goto/16 :goto_0
 
-    :cond_6
+    :cond_7
     const/4 v10, 0x0
 
     move-object/from16 v0, p0
@@ -1266,7 +1285,7 @@
 
     move-result v12
 
-    if-eqz v12, :cond_7
+    if-eqz v12, :cond_8
 
     move-object/from16 v0, p0
 
@@ -1282,10 +1301,10 @@
 
     move-result v10
 
-    :cond_7
-    if-eqz v10, :cond_9
+    :cond_8
+    if-eqz v10, :cond_a
 
-    if-eqz p1, :cond_8
+    if-eqz p1, :cond_9
 
     new-instance v12, Ljava/util/ArrayList;
 
@@ -1302,12 +1321,12 @@
 
     goto/16 :goto_1
 
-    :cond_8
+    :cond_9
     const/4 v12, 0x0
 
     goto :goto_4
 
-    :cond_9
+    :cond_a
     const/16 v12, -0x26
 
     goto/16 :goto_1

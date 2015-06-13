@@ -18777,6 +18777,8 @@
 
     check-cast v4, Landroid/service/persistentdata/PersistentDataBlockManager;
 
+    if-eqz v4, :cond_4
+
     invoke-virtual {v4}, Landroid/service/persistentdata/PersistentDataBlockManager;->wipe()V
 
     :cond_4

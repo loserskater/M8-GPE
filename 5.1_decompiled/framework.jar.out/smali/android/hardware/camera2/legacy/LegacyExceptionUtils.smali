@@ -79,7 +79,7 @@
 
     :sswitch_data_0
     .sparse-switch
-        -0x13 -> :sswitch_1
+        -0x16 -> :sswitch_1
         0x0 -> :sswitch_0
     .end sparse-switch
 .end method

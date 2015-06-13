@@ -598,6 +598,15 @@
 
     invoke-virtual {p0, v0, v0}, Landroid/media/ImageReader;->setOnImageAvailableListener(Landroid/media/ImageReader$OnImageAvailableListener;Landroid/os/Handler;)V
 
+    iget-object v0, p0, Landroid/media/ImageReader;->mSurface:Landroid/view/Surface;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Landroid/media/ImageReader;->mSurface:Landroid/view/Surface;
+
+    invoke-virtual {v0}, Landroid/view/Surface;->release()V
+
+    :cond_0
     invoke-direct {p0}, Landroid/media/ImageReader;->nativeClose()V
 
     return-void
