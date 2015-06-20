@@ -2,7 +2,7 @@
 ini_set("force_colorspace","rgba");
 ini_set("dp","6");
 theme("material");
-ini_set("rom_name", "M8_GPE LRX22C.H5");
+ini_set("rom_name", "Doppelkänger M8 GPE 5.1+ LMY47O.H6");
 ini_set("rom_authors", "enewman17, loserskater");
 loadlang("langs/en.lang");
 fontresload( "0", "ttf/Roboto-Regular.ttf", "12" );
@@ -589,9 +589,9 @@ if prop("type.prop","selected")=="1"||prop("type.prop","selected")=="2"||prop("t
   
       "Kernel Options", "",                        2,
        "Default",    "Stock kernel",               1,     #-- selected.1 = 1
-       "Quantum",    "Kernel by PwnCakes193",      0,     #-- selected.1 = 2
-       "Elemental X","Kernel by Flar2",            0,     #-- selected.1 = 3
-       "Elite",      "Kernel by buckmarble",       0      #-- selected.1 = 4
+       "Quantum",    "Kernel by PwnCakes193",      3,     #-- selected.1 = 2
+       "Elemental X","Kernel by Flar2",            3,     #-- selected.1 = 3
+       "Elite",      "Kernel by buckmarble",       3      #-- selected.1 = 4
     );
   else
     selectbox(
@@ -608,9 +608,10 @@ if prop("type.prop","selected")=="1"||prop("type.prop","selected")=="2"||prop("t
         "kernel.prop",
   
       "Kernel Options", "",                        2,
-      "Quantum",    "Kernel by PwnCakes193",       0,     #-- selected.1 = 1
-      "CodeCraft",  "Kernel by Evolutionmods",     0,     #-- selected.1 = 2
-      "Elite",      "Kernel by buckmarble",        1      #-- selected.1 = 3
+	  "Default",    "Stock kernel",                1,     #-- selected.1 = 1
+      "Quantum",    "Kernel by PwnCakes193",       3,     #-- selected.1 = 2
+      "CodeCraft",  "Kernel by Evolutionmods",     3,     #-- selected.1 = 3
+      "Elite",      "Kernel by buckmarble",        3      #-- selected.1 = 4
     );
     write("/data/media/0/aroma/Kernel.prop", readtmpfile("kernel.prop"););
   endif;
@@ -771,19 +772,14 @@ checkviewbox(
     "@welcome",
 
   #-- Checkbox Text
-    "Reboot your device now.",
-
-  #-- Initial Checkbox value ( 0=unchecked, 1=checked ) -  (Optional, default:0)
-    "1",
-
-  #-- Save checked value in variable "reboot_it" (Optional)
-    "reboot_it"
+    "Reboot your device now.", "1", "reboot_it",
+	"Exit to recovery.", "0", "exit"
 );
 
-if
-  getvar("reboot_it")=="1"
-then
+if getvar("reboot_it")=="1" then
   reboot("onfinish");
+else
+  exit("")
 endif;
 
 #---- FINISH

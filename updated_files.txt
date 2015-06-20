@@ -4,12 +4,8 @@ system\framework\framework-res.apk
 system\framework\framework.jar
 system\framework\services.jar
 system\priv-app\ExtraSettings\ExtraSettings.apk
-system\priv-app\OTAUpdates\base.apk
-system\priv-app\OTAUpdates\lib\arm\libbypass.so
 system\priv-app\Settings\Settings.apk
 system\priv-app\SystemUI\SystemUI.apk
-system\xbin\bash
-system\xbin\busybox
 aroma\theme\
 aroma\carrier\
 aroma\navbar\
