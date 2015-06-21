@@ -867,6 +867,14 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "2" || file_getprop("/tmp/
   #
   #Theme extract
   #
+  if file_getprop("/tmp/aroma/dialer.prop","selected.0") == "1" then
+    ui_print("Stock Blue dialer");
+    package_extract_dir("system/priv-app/GoogleDialer", "/system/priv-app/GoogleDialer");
+	package_extract_dir("system/priv-app/GoogleContacts", "/system/priv-app/GoogleContacts");
+  else
+    ui_print("Teal dialer");
+    package_extract_dir("aroma/theme/teal_dialer", "/system");
+  endif;
   if file_getprop("/tmp/aroma/themes.prop","selected.0") == "2" then
     ui_print("Dark Theme");
     package_extract_dir("aroma/theme/dark", "/system");
