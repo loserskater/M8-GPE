@@ -240,28 +240,29 @@ if prop("type.prop","selected")=="2"||prop("type.prop","selected")=="3" then
     );
 	write("/data/media/0/aroma/Themes.prop", readtmpfile("themes.prop"));
 	if prop("themes.prop","selected.0")=="1" then
-    setvar("dialer_prop", read("/data/media/0/aroma/Dialer.prop"));
-    if (getvar("dialer_prop")!="") then
-      writetmpfile("dialer.prop",getvar("dialer_prop"));
-    endif;
-    selectbox(
-      #-- Title
-        "Dialer",
+      setvar("dialer_prop", read("/data/media/0/aroma/Dialer.prop"));
+      if (getvar("dialer_prop")!="") then
+        writetmpfile("dialer.prop",getvar("dialer_prop"));
+      endif;
+      selectbox(
+        #-- Title
+          "Dialer",
       
-      #-- Sub Title
-        "Select your theme",
+        #-- Sub Title
+          "Select your theme",
       
-      #-- Icon:
-        "@personalize",
+        #-- Icon:
+          "@personalize",
       
-      #-- Will be saved in /tmp/aroma/themes.prop
-        "dialer.prop",
+        #-- Will be saved in /tmp/aroma/themes.prop
+          "dialer.prop",
 		
-        "Blue dialer",  "Stock, No themeing has been done.",                       1,      #-- selected.0 = 1
-        "Teal dialer",  "Changed Blue accents to material teal-green color",       0       #-- selected.0 = 2
+          "Blue dialer",  "Stock, No themeing has been done.",                       1,      #-- selected.0 = 1
+          "Teal dialer",  "Changed Blue accents to material teal-green color",       0       #-- selected.0 = 2
 		
-    );
-	write("/data/media/0/aroma/Dialer.prop", readtmpfile("dialer.prop"));
+      );
+	  write("/data/media/0/aroma/Dialer.prop", readtmpfile("dialer.prop"));
+	endif;
 	setvar("mms_prop", read("/data/media/0/aroma/MMS.prop"));
     if (getvar("mms_prop")!="") then
       writetmpfile("mms.prop",getvar("mms_prop"));
@@ -795,14 +796,19 @@ checkviewbox(
     "@welcome",
 
   #-- Checkbox Text
-    "Reboot your device now.", "1", "reboot_it",
-	"Exit to recovery.", "0", "exit"
+    "Exit installer.",
+
+  #-- Initial Checkbox value ( 0=unchecked, 1=checked ) -  (Optional, default:0)
+    "1",
+
+  #-- Save checked value in variable "reboot_it" (Optional)
+    "reboot_it"
 );
 
-if getvar("reboot_it")=="1" then
-  reboot("onfinish");
-else
-  exit("")
+if
+  getvar("reboot_it")=="1"
+then
+  exit("");
 endif;
 
 #---- FINISH
