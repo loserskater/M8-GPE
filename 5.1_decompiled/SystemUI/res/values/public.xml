@@ -403,6 +403,17 @@
     <public type="drawable" name="stat_sys_network_traffic_down" id="0x7f020167" />
     <public type="drawable" name="stat_sys_network_traffic_up" id="0x7f020168" />
     <public type="drawable" name="stat_sys_network_traffic_updown" id="0x7f020169" />
+    <public type="drawable" name="ic_notify_clear_normal" id="0x7f02016e" />
+    <public type="drawable" name="ic_sysbar_add" id="0x7f02016f" />
+    <public type="drawable" name="ic_sysbar_add_land" id="0x7f020170" />
+    <public type="drawable" name="ic_sysbar_ime_left" id="0x7f020171" />
+    <public type="drawable" name="ic_sysbar_ime_right" id="0x7f020172" />
+    <public type="drawable" name="ic_sysbar_menu_big" id="0x7f020173" />
+    <public type="drawable" name="ic_sysbar_menu_big_land" id="0x7f020174" />
+    <public type="drawable" name="ic_sysbar_power" id="0x7f020175" />
+    <public type="drawable" name="ic_sysbar_power_land" id="0x7f020176" />
+    <public type="drawable" name="ic_sysbar_search" id="0x7f020177" />
+    <public type="drawable" name="ic_sysbar_search_land" id="0x7f020178" />
     <public type="drawable" name="ic_qs_default_user" id="0x7f02007e" />
     <public type="mipmap" name="ic_daydreams" id="0x7f030000" />
     <public type="mipmap" name="ic_launcher_dreams" id="0x7f030001" />
@@ -808,6 +819,12 @@
     <public type="integer" name="config_activityDefaultDur" id="0x7f0a0038" />
     <public type="integer" name="kg_carousel_angle" id="0x7f0a0039" />
     <public type="integer" name="kg_glowpad_rotation_offset" id="0x7f0a003a" />
+    <public type="integer" name="visualizer_divisions" id="0x7f0a003e" />
+    <public type="integer" name="visualizer_db_fuzz_factor" id="0x7f0a003f" />
+    <public type="integer" name="visualizer_db_fuzz" id="0x7f0a0040" />
+    <public type="integer" name="kg_visualizer_divisions" id="0x7f0a0041" />
+    <public type="integer" name="kg_visualizer_db_fuzz_factor" id="0x7f0a0042" />
+    <public type="integer" name="kg_visualizer_db_fuzz" id="0x7f0a0043" />
     <public type="integer" name="status_bar_config_maxNotificationIcons" id="0x7f0a0035" />
     <public type="integer" name="kg_selector_gravity" id="0x7f0a003b" />
     <public type="integer" name="kg_widget_region_weight" id="0x7f0a003c" />
@@ -872,6 +889,7 @@
     <public type="style" name="Widget.TransportControl.SeekBar" id="0x7f0b0039" />
     <public type="style" name="BouncerSecurityContainer" id="0x7f0b003a" />
     <public type="style" name="PasswordTheme" id="0x7f0b003b" />
+    <public type="style" name="TextAppearance.StatusBar.Traffic" id="0x7f0b003c" />
     <public type="string" name="config_statusBarComponent" id="0x7f0c0000" />
     <public type="string" name="quick_settings_tiles_default" id="0x7f0c0001" />
     <public type="string" name="quick_settings_tiles" id="0x7f0c0002" />
@@ -1358,6 +1376,79 @@
     <public type="string" name="keyguard_transport_play_description" id="0x7f0c01f4" />
     <public type="string" name="keyguard_transport_stop_description" id="0x7f0c01f5" />
     <public type="string" name="keyguard_carrier_default" id="0x7f0c01f6" />
+    <public type="string" name="left_shortcut_hint" id="0x7f0c01fa" />
+    <public type="string" name="right_shortcut_hint" id="0x7f0c01fb" />
+    <public type="string" name="accessibility_quick_settings_data_off" id="0x7f0c01fc" />
+    <public type="string" name="accessibility_quick_settings_data_on" id="0x7f0c01fd" />
+    <public type="string" name="accessibility_quick_settings_roaming_off" id="0x7f0c01fe" />
+    <public type="string" name="accessibility_quick_settings_roaming_on" id="0x7f0c01ff" />
+    <public type="string" name="accessibility_quick_settings_location_battery_saving" id="0x7f0c0200" />
+    <public type="string" name="accessibility_quick_settings_location_gps_only" id="0x7f0c0201" />
+    <public type="string" name="accessibility_quick_settings_location_high_accuracy" id="0x7f0c0202" />
+    <public type="string" name="quick_settings_mobile_data_label" id="0x7f0c0203" />
+    <public type="string" name="quick_settings_roaming_label" id="0x7f0c0204" />
+    <public type="string" name="quick_settings_apn_switch_label" id="0x7f0c0205" />
+    <public type="string" name="quick_settings_dds_sub" id="0x7f0c0206" />
+    <public type="string" name="quick_settings_data_off" id="0x7f0c0207" />
+    <public type="string" name="quick_settings_location_detail_title" id="0x7f0c0208" />
+    <public type="string" name="quick_settings_location_battery_saving_label" id="0x7f0c0209" />
+    <public type="string" name="quick_settings_location_gps_only_label" id="0x7f0c020a" />
+    <public type="string" name="quick_settings_location_high_accuracy_label" id="0x7f0c020b" />
+    <public type="string" name="quick_settings_nfc_label" id="0x7f0c020c" />
+    <public type="string" name="quick_settings_profiles_detail_title" id="0x7f0c020d" />
+    <public type="string" name="quick_settings_profiles_disabled" id="0x7f0c020e" />
+    <public type="string" name="quick_settings_compass_label" id="0x7f0c020f" />
+    <public type="string" name="quick_settings_compass_value" id="0x7f0c0210" />
+    <public type="string" name="quick_settings_compass_init" id="0x7f0c0211" />
+    <public type="string" name="quick_settings_lockscreen_label" id="0x7f0c0212" />
+    <public type="string" name="quick_settings_network_adb_label" id="0x7f0c0213" />
+    <public type="string" name="quick_settings_lte_label" id="0x7f0c0214" />
+    <public type="string" name="quick_settings_visualizer_label" id="0x7f0c0215" />
+    <public type="string" name="quick_settings_screen_timeout_detail_title" id="0x7f0c0216" />
+    <public type="string" name="status_bar_expanded_header_weather_format" id="0x7f0c0217" />
+    <public type="string" name="navbar_dialog_title" id="0x7f0c0218" />
+    <public type="string" name="navbar_home_button" id="0x7f0c0219" />
+    <public type="string" name="navbar_recent_button" id="0x7f0c021a" />
+    <public type="string" name="navbar_search_button" id="0x7f0c021b" />
+    <public type="string" name="navbar_back_button" id="0x7f0c021c" />
+    <public type="string" name="navbar_empty_button" id="0x7f0c021d" />
+    <public type="string" name="navbar_menu_conditional_button" id="0x7f0c021e" />
+    <public type="string" name="navbar_menu_always_button" id="0x7f0c021f" />
+    <public type="string" name="navbar_menu_big_button" id="0x7f0c0220" />
+    <public type="string" name="accessibility_dpad_left" id="0x7f0c0221" />
+    <public type="string" name="accessibility_dpad_right" id="0x7f0c0222" />
+    <public type="string" name="navigation_ring_title" id="0x7f0c0223" />
+    <public type="string" name="navring_target_reset_message" id="0x7f0c0224" />
+    <public type="string" name="navring_target_reset" id="0x7f0c0225" />
+    <public type="string" name="navring_action_open_ime_switcher" id="0x7f0c0226" />
+    <public type="string" name="navring_action_kill_app" id="0x7f0c0227" />
+    <public type="string" name="navring_action_none" id="0x7f0c0228" />
+    <public type="string" name="navring_action_take_screenshot" id="0x7f0c0229" />
+    <public type="string" name="navring_action_ring_vibrate" id="0x7f0c022a" />
+    <public type="string" name="navring_action_ring_silent" id="0x7f0c022b" />
+    <public type="string" name="navring_action_ring_vibrate_silent" id="0x7f0c022c" />
+    <public type="string" name="navring_action_screen_off" id="0x7f0c022d" />
+    <public type="string" name="navring_action_torch" id="0x7f0c022e" />
+    <public type="string" name="navring_action_google_now" id="0x7f0c022f" />
+    <public type="string" name="navring_choose_action_title" id="0x7f0c0230" />
+    <public type="string" name="select_application" id="0x7f0c0231" />
+    <public type="string" name="lockscreen_target_empty" id="0x7f0c0232" />
+    <public type="string" name="quick_settings_screenshot" id="0x7f0c0233" />
+    <public type="string" name="quick_settings_sync" id="0x7f0c0234" />
+    <public type="string" name="quick_settings_sync_off" id="0x7f0c0235" />
+    <public type="string" name="quick_settings_battery_saver" id="0x7f0c0236" />
+    <public type="string" name="quick_settings_battery_saver_off" id="0x7f0c0237" />
+    <public type="string" name="quick_settings_expanded_desktop" id="0x7f0c0238" />
+    <public type="string" name="quick_settings_expanded_desktop_off" id="0x7f0c0239" />
+    <public type="string" name="quick_settings_screen_off" id="0x7f0c023a" />
+    <public type="string" name="quick_settings_reboot_label" id="0x7f0c023b" />
+    <public type="string" name="quick_settings_reboot_recovery_label" id="0x7f0c023c" />
+    <public type="string" name="quick_settings_lockscreen_label_enforced" id="0x7f0c023d" />
+    <public type="string" name="quick_settings_powermenu_label" id="0x7f0c023e" />
+    <public type="string" name="accessibility_power" id="0x7f0c023f" />
+    <public type="string" name="navbar_power_button" id="0x7f0c0240" />
+    <public type="string" name="interruption_level_silent" id="0x7f0c0241" />
+    <public type="string" name="zen_silent_with_warning" id="0x7f0c0242" />
     <public type="string" name="status_bar_date_formatter" id="0x7f0c0006" />
     <public type="string" name="toast_rotation_locked" id="0x7f0c015d" />
     <public type="string" name="APKTOOL_DUMMY_015f" id="0x7f0c015f" />

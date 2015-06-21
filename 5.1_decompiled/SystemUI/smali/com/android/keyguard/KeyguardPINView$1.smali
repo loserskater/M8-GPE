@@ -3,12 +3,12 @@
 .source "KeyguardPINView.java"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lcom/android/keyguard/PasswordTextView$QuickUnlockListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/keyguard/KeyguardPINView;->startAppearAnimation()V
+    value = Lcom/android/keyguard/KeyguardPINView;->onFinishInflate()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -34,15 +34,13 @@
 
 
 # virtual methods
-.method public run()V
-    .locals 2
+.method public onValidateQuickUnlock(Ljava/lang/String;)V
+    .locals 1
 
     iget-object v0, p0, Lcom/android/keyguard/KeyguardPINView$1;->this$0:Lcom/android/keyguard/KeyguardPINView;
 
-    const/4 v1, 0x1
-
-    # invokes: Lcom/android/keyguard/KeyguardPINView;->enableClipping(Z)V
-    invoke-static {v0, v1}, Lcom/android/keyguard/KeyguardPINView;->access$000(Lcom/android/keyguard/KeyguardPINView;Z)V
+    # invokes: Lcom/android/keyguard/KeyguardPINView;->validateQuickUnlock(Ljava/lang/String;)V
+    invoke-static {v0, p1}, Lcom/android/keyguard/KeyguardPINView;->access$000(Lcom/android/keyguard/KeyguardPINView;Ljava/lang/String;)V
 
     return-void
 .end method

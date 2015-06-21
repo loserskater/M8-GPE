@@ -2434,8 +2434,6 @@
     invoke-virtual {v1, v2}, Landroid/view/View;->setPivotX(F)V
 
     :cond_1
-    if-eqz v1, :cond_2
-
     invoke-virtual {v1}, Landroid/view/View;->getScaleX()F
 
     move-result v2

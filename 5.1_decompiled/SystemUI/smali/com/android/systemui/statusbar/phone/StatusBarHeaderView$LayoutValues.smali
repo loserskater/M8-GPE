@@ -49,6 +49,8 @@
 
 .field timeScale:F
 
+.field weatherY:F
+
 
 # direct methods
 .method private constructor <init>()V
@@ -207,6 +209,20 @@
     add-float/2addr v3, v4
 
     iput v3, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$LayoutValues;->settingsTranslation:F
+
+    iget v3, p1, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$LayoutValues;->weatherY:F
+
+    sub-float v4, v5, p3
+
+    mul-float/2addr v3, v4
+
+    iget v4, p2, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$LayoutValues;->weatherY:F
+
+    mul-float/2addr v4, p3
+
+    add-float/2addr v3, v4
+
+    iput v3, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$LayoutValues;->weatherY:F
 
     const/high16 v3, 0x3f000000    # 0.5f
 

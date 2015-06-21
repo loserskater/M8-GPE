@@ -353,7 +353,7 @@
 
     cmpg-float v6, v6, v5
 
-    if-gez v6, :cond_3
+    if-gez v6, :cond_4
 
     move v2, v3
 
@@ -368,9 +368,9 @@
 
     cmpl-float v6, v6, v7
 
-    if-lez v6, :cond_4
+    if-lez v6, :cond_5
 
-    if-eqz v2, :cond_4
+    if-eqz v2, :cond_5
 
     move v6, v3
 
@@ -386,25 +386,42 @@
     :cond_0
     if-nez v0, :cond_1
 
-    if-eqz p1, :cond_2
+    if-eqz p1, :cond_6
 
     :cond_1
-    move v4, v3
+    move v5, v3
+
+    :goto_2
+    invoke-direct {p0, v1, v5}, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->fling(FZ)V
+
+    iget-object v5, p0, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->mCallback:Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper$Callback;
+
+    if-nez v0, :cond_2
+
+    if-eqz p1, :cond_3
 
     :cond_2
-    invoke-direct {p0, v1, v4}, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper;->fling(FZ)V
+    move v4, v3
+
+    :cond_3
+    invoke-interface {v5, v4}, Lcom/android/systemui/statusbar/phone/KeyguardAffordanceHelper$Callback;->onSwipingAnimationFinished(Z)V
 
     return-void
 
-    :cond_3
+    :cond_4
     move v2, v4
 
     goto :goto_0
 
-    :cond_4
+    :cond_5
     move v6, v4
 
     goto :goto_1
+
+    :cond_6
+    move v5, v4
+
+    goto :goto_2
 .end method
 
 .method private getAnimatorToRadius(ZI)Landroid/animation/ValueAnimator;

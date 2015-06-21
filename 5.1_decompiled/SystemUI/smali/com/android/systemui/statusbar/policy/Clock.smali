@@ -1,13 +1,21 @@
 .class public Lcom/android/systemui/statusbar/policy/Clock;
-.super Landroid/widget/TextView;
+.super Ljava/lang/Object;
 .source "Clock.java"
 
 # interfaces
 .implements Lcom/android/systemui/DemoMode;
 
 
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lcom/android/systemui/statusbar/policy/Clock$SettingsObserver;
+    }
+.end annotation
+
+
 # instance fields
-.field private final mAmPmStyle:I
+.field private mAmPmStyle:I
 
 .field private mAttached:Z
 
@@ -17,40 +25,32 @@
 
 .field private mClockFormatString:Ljava/lang/String;
 
+.field private mClockView:Landroid/widget/TextView;
+
+.field mContext:Landroid/content/Context;
+
 .field private mDemoMode:Z
+
+.field private mDowStyle:I
 
 .field private final mIntentReceiver:Landroid/content/BroadcastReceiver;
 
 .field private mLocale:Ljava/util/Locale;
 
+.field private settingsObserver:Lcom/android/systemui/statusbar/policy/Clock$SettingsObserver;
+
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;)V
-    .locals 1
+.method public constructor <init>(Landroid/content/Context;Landroid/widget/TextView;)V
+    .locals 5
 
-    const/4 v0, 0x0
+    const/4 v1, 0x2
 
-    invoke-direct {p0, p1, v0}, Lcom/android/systemui/statusbar/policy/Clock;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    return-void
-.end method
+    iput v1, p0, Lcom/android/systemui/statusbar/policy/Clock;->mAmPmStyle:I
 
-.method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
-    .locals 1
-
-    const/4 v0, 0x0
-
-    invoke-direct {p0, p1, p2, v0}, Lcom/android/systemui/statusbar/policy/Clock;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
-
-    return-void
-.end method
-
-.method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
-    .locals 4
-
-    const/4 v3, 0x0
-
-    invoke-direct {p0, p1, p2, p3}, Landroid/widget/TextView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
+    iput v1, p0, Lcom/android/systemui/statusbar/policy/Clock;->mDowStyle:I
 
     new-instance v1, Lcom/android/systemui/statusbar/policy/Clock$1;
 
@@ -58,39 +58,90 @@
 
     iput-object v1, p0, Lcom/android/systemui/statusbar/policy/Clock;->mIntentReceiver:Landroid/content/BroadcastReceiver;
 
-    invoke-virtual {p1}, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
+    iput-object p1, p0, Lcom/android/systemui/statusbar/policy/Clock;->mContext:Landroid/content/Context;
+
+    iput-object p2, p0, Lcom/android/systemui/statusbar/policy/Clock;->mClockView:Landroid/widget/TextView;
+
+    iget-boolean v1, p0, Lcom/android/systemui/statusbar/policy/Clock;->mAttached:Z
+
+    if-nez v1, :cond_0
+
+    const/4 v1, 0x1
+
+    iput-boolean v1, p0, Lcom/android/systemui/statusbar/policy/Clock;->mAttached:Z
+
+    new-instance v0, Landroid/content/IntentFilter;
+
+    invoke-direct {v0}, Landroid/content/IntentFilter;-><init>()V
+
+    const-string v1, "android.intent.action.TIME_TICK"
+
+    invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
+
+    const-string v1, "android.intent.action.TIME_SET"
+
+    invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
+
+    const-string v1, "android.intent.action.TIMEZONE_CHANGED"
+
+    invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
+
+    const-string v1, "android.intent.action.CONFIGURATION_CHANGED"
+
+    invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
+
+    const-string v1, "android.intent.action.USER_SWITCHED"
+
+    invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
+
+    iget-object v1, p0, Lcom/android/systemui/statusbar/policy/Clock;->mContext:Landroid/content/Context;
+
+    iget-object v2, p0, Lcom/android/systemui/statusbar/policy/Clock;->mIntentReceiver:Landroid/content/BroadcastReceiver;
+
+    const/4 v3, 0x0
+
+    new-instance v4, Landroid/os/Handler;
+
+    invoke-direct {v4}, Landroid/os/Handler;-><init>()V
+
+    invoke-virtual {v1, v2, v0, v3, v4}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;Ljava/lang/String;Landroid/os/Handler;)Landroid/content/Intent;
+
+    :cond_0
+    invoke-static {}, Ljava/util/TimeZone;->getDefault()Ljava/util/TimeZone;
 
     move-result-object v1
 
-    sget-object v2, Lcom/android/systemui/R$styleable;->Clock:[I
+    invoke-static {v1}, Ljava/util/Calendar;->getInstance(Ljava/util/TimeZone;)Ljava/util/Calendar;
 
-    invoke-virtual {v1, p2, v2, v3, v3}, Landroid/content/res/Resources$Theme;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
+    move-result-object v1
 
-    move-result-object v0
+    iput-object v1, p0, Lcom/android/systemui/statusbar/policy/Clock;->mCalendar:Ljava/util/Calendar;
 
-    const/4 v1, 0x0
+    iget-object v1, p0, Lcom/android/systemui/statusbar/policy/Clock;->settingsObserver:Lcom/android/systemui/statusbar/policy/Clock$SettingsObserver;
 
-    const/4 v2, 0x2
+    if-nez v1, :cond_1
 
-    :try_start_0
-    invoke-virtual {v0, v1, v2}, Landroid/content/res/TypedArray;->getInt(II)I
+    new-instance v1, Lcom/android/systemui/statusbar/policy/Clock$SettingsObserver;
 
-    move-result v1
+    new-instance v2, Landroid/os/Handler;
 
-    iput v1, p0, Lcom/android/systemui/statusbar/policy/Clock;->mAmPmStyle:I
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    invoke-direct {v2}, Landroid/os/Handler;-><init>()V
 
-    invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
+    invoke-direct {v1, p0, v2}, Lcom/android/systemui/statusbar/policy/Clock$SettingsObserver;-><init>(Lcom/android/systemui/statusbar/policy/Clock;Landroid/os/Handler;)V
 
+    iput-object v1, p0, Lcom/android/systemui/statusbar/policy/Clock;->settingsObserver:Lcom/android/systemui/statusbar/policy/Clock$SettingsObserver;
+
+    iget-object v1, p0, Lcom/android/systemui/statusbar/policy/Clock;->settingsObserver:Lcom/android/systemui/statusbar/policy/Clock$SettingsObserver;
+
+    invoke-virtual {v1}, Lcom/android/systemui/statusbar/policy/Clock$SettingsObserver;->observe()V
+
+    :goto_0
     return-void
 
-    :catchall_0
-    move-exception v1
+    :cond_1
+    invoke-virtual {p0}, Lcom/android/systemui/statusbar/policy/Clock;->updateClock()V
 
-    invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
-
-    throw v1
+    goto :goto_0
 .end method
 
 .method static synthetic access$000(Lcom/android/systemui/statusbar/policy/Clock;)Ljava/util/Calendar;
@@ -141,112 +192,275 @@
     return-object p1
 .end method
 
+.method private getAmPm(Ljava/util/Date;Ljava/util/Locale;)Ljava/lang/CharSequence;
+    .locals 7
+
+    iget-object v4, p0, Lcom/android/systemui/statusbar/policy/Clock;->mContext:Landroid/content/Context;
+
+    invoke-static {v4}, Landroid/text/format/DateFormat;->is24HourFormat(Landroid/content/Context;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1
+
+    const-string v0, ""
+
+    :cond_0
+    :goto_0
+    return-object v0
+
+    :cond_1
+    iget v4, p0, Lcom/android/systemui/statusbar/policy/Clock;->mAmPmStyle:I
+
+    const/4 v5, 0x2
+
+    if-eq v4, v5, :cond_2
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v5, " "
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    new-instance v5, Ljava/text/SimpleDateFormat;
+
+    const-string v6, "a"
+
+    invoke-direct {v5, v6, p2}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;Ljava/util/Locale;)V
+
+    invoke-virtual {v5, p1}, Ljava/text/SimpleDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    iget v4, p0, Lcom/android/systemui/statusbar/policy/Clock;->mAmPmStyle:I
+
+    if-eqz v4, :cond_0
+
+    new-instance v1, Landroid/text/SpannableStringBuilder;
+
+    invoke-direct {v1, v0}, Landroid/text/SpannableStringBuilder;-><init>(Ljava/lang/CharSequence;)V
+
+    new-instance v3, Landroid/text/style/RelativeSizeSpan;
+
+    const v4, 0x3f333333    # 0.7f
+
+    invoke-direct {v3, v4}, Landroid/text/style/RelativeSizeSpan;-><init>(F)V
+
+    const/4 v4, 0x0
+
+    const/4 v5, 0x3
+
+    const/16 v6, 0x22
+
+    invoke-virtual {v1, v3, v4, v5, v6}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
+
+    move-object v0, v1
+
+    goto :goto_0
+
+    :cond_2
+    const-string v0, ""
+
+    goto :goto_0
+.end method
+
+.method private getDayOfWeek(Ljava/util/Date;Ljava/util/Locale;)Ljava/lang/CharSequence;
+    .locals 6
+
+    iget v3, p0, Lcom/android/systemui/statusbar/policy/Clock;->mDowStyle:I
+
+    const/4 v4, 0x2
+
+    if-eq v3, v4, :cond_1
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    new-instance v4, Ljava/text/SimpleDateFormat;
+
+    const-string v5, "EEE"
+
+    invoke-direct {v4, v5, p2}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;Ljava/util/Locale;)V
+
+    invoke-virtual {v4, p1}, Ljava/text/SimpleDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, " "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    iget v3, p0, Lcom/android/systemui/statusbar/policy/Clock;->mDowStyle:I
+
+    if-nez v3, :cond_0
+
+    :goto_0
+    return-object v0
+
+    :cond_0
+    new-instance v1, Landroid/text/SpannableStringBuilder;
+
+    invoke-direct {v1, v0}, Landroid/text/SpannableStringBuilder;-><init>(Ljava/lang/CharSequence;)V
+
+    new-instance v2, Landroid/text/style/RelativeSizeSpan;
+
+    const v3, 0x3f333333    # 0.7f
+
+    invoke-direct {v2, v3}, Landroid/text/style/RelativeSizeSpan;-><init>(F)V
+
+    const/4 v3, 0x0
+
+    invoke-virtual {v0}, Ljava/lang/String;->length()I
+
+    move-result v4
+
+    add-int/lit8 v4, v4, -0x1
+
+    const/16 v5, 0x22
+
+    invoke-virtual {v1, v2, v3, v4, v5}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
+
+    move-object v0, v1
+
+    goto :goto_0
+
+    :cond_1
+    const-string v0, ""
+
+    goto :goto_0
+.end method
+
 .method private final getSmallTime()Ljava/lang/CharSequence;
-    .locals 21
+    .locals 20
 
-    invoke-virtual/range {p0 .. p0}, Lcom/android/systemui/statusbar/policy/Clock;->getContext()Landroid/content/Context;
+    move-object/from16 v0, p0
 
-    move-result-object v7
+    iget-object v0, v0, Lcom/android/systemui/statusbar/policy/Clock;->mContext:Landroid/content/Context;
 
-    invoke-static {}, Landroid/app/ActivityManager;->getCurrentUser()I
+    move-object/from16 v18, v0
 
-    move-result v19
+    invoke-static/range {v18 .. v18}, Landroid/text/format/DateFormat;->is24HourFormat(Landroid/content/Context;)Z
 
-    move/from16 v0, v19
+    move-result v11
 
-    invoke-static {v7, v0}, Landroid/text/format/DateFormat;->is24HourFormat(Landroid/content/Context;I)Z
+    move-object/from16 v0, p0
 
-    move-result v12
+    iget-object v0, v0, Lcom/android/systemui/statusbar/policy/Clock;->mContext:Landroid/content/Context;
 
-    invoke-virtual {v7}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+    move-object/from16 v18, v0
 
-    move-result-object v19
+    invoke-virtual/range {v18 .. v18}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-    invoke-virtual/range {v19 .. v19}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
+    move-result-object v18
 
-    move-result-object v19
+    invoke-virtual/range {v18 .. v18}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
 
-    move-object/from16 v0, v19
+    move-result-object v18
+
+    move-object/from16 v0, v18
 
     iget-object v0, v0, Landroid/content/res/Configuration;->locale:Ljava/util/Locale;
 
-    move-object/from16 v19, v0
+    move-object/from16 v18, v0
 
-    invoke-static/range {v19 .. v19}, Llibcore/icu/LocaleData;->get(Ljava/util/Locale;)Llibcore/icu/LocaleData;
+    invoke-static/range {v18 .. v18}, Llibcore/icu/LocaleData;->get(Ljava/util/Locale;)Llibcore/icu/LocaleData;
 
-    move-result-object v8
+    move-result-object v7
 
     const v2, 0xef00
 
     const v3, 0xef01
 
-    if-eqz v12, :cond_2
+    if-eqz v11, :cond_2
 
-    iget-object v9, v8, Llibcore/icu/LocaleData;->timeFormat24:Ljava/lang/String;
+    iget-object v8, v7, Llibcore/icu/LocaleData;->timeFormat24:Ljava/lang/String;
 
     :goto_0
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/policy/Clock;->mClockFormatString:Ljava/lang/String;
 
-    move-object/from16 v19, v0
+    move-object/from16 v18, v0
 
-    move-object/from16 v0, v19
+    move-object/from16 v0, v18
 
-    invoke-virtual {v9, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v8, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v19
+    move-result v18
 
-    if-nez v19, :cond_7
+    if-nez v18, :cond_8
 
     move-object/from16 v0, p0
 
     iget v0, v0, Lcom/android/systemui/statusbar/policy/Clock;->mAmPmStyle:I
 
-    move/from16 v19, v0
+    move/from16 v18, v0
 
-    if-eqz v19, :cond_6
+    if-eqz v18, :cond_6
 
     const/4 v4, -0x1
 
-    const/4 v15, 0x0
+    const/4 v14, 0x0
 
-    const/4 v11, 0x0
+    const/4 v10, 0x0
 
     :goto_1
-    invoke-virtual {v9}, Ljava/lang/String;->length()I
+    invoke-virtual {v8}, Ljava/lang/String;->length()I
 
-    move-result v19
+    move-result v18
 
-    move/from16 v0, v19
+    move/from16 v0, v18
 
-    if-ge v11, v0, :cond_1
+    if-ge v10, v0, :cond_1
 
-    invoke-virtual {v9, v11}, Ljava/lang/String;->charAt(I)C
+    invoke-virtual {v8, v10}, Ljava/lang/String;->charAt(I)C
 
     move-result v6
 
-    const/16 v19, 0x27
+    const/16 v18, 0x27
 
-    move/from16 v0, v19
+    move/from16 v0, v18
 
     if-ne v6, v0, :cond_0
 
-    if-nez v15, :cond_3
+    if-nez v14, :cond_3
 
-    const/4 v15, 0x1
+    const/4 v14, 0x1
 
     :cond_0
     :goto_2
-    if-nez v15, :cond_4
+    if-nez v14, :cond_4
 
-    const/16 v19, 0x61
+    const/16 v18, 0x61
 
-    move/from16 v0, v19
+    move/from16 v0, v18
 
     if-ne v6, v0, :cond_4
 
-    move v4, v11
+    move v4, v10
 
     :cond_1
     if-ltz v4, :cond_6
@@ -256,106 +470,106 @@
     :goto_3
     if-lez v4, :cond_5
 
-    add-int/lit8 v19, v4, -0x1
+    add-int/lit8 v18, v4, -0x1
 
-    move/from16 v0, v19
+    move/from16 v0, v18
 
-    invoke-virtual {v9, v0}, Ljava/lang/String;->charAt(I)C
+    invoke-virtual {v8, v0}, Ljava/lang/String;->charAt(I)C
 
-    move-result v19
+    move-result v18
 
-    invoke-static/range {v19 .. v19}, Ljava/lang/Character;->isWhitespace(C)Z
+    invoke-static/range {v18 .. v18}, Ljava/lang/Character;->isWhitespace(C)Z
 
-    move-result v19
+    move-result v18
 
-    if-eqz v19, :cond_5
+    if-eqz v18, :cond_5
 
     add-int/lit8 v4, v4, -0x1
 
     goto :goto_3
 
     :cond_2
-    iget-object v9, v8, Llibcore/icu/LocaleData;->timeFormat12:Ljava/lang/String;
+    iget-object v8, v7, Llibcore/icu/LocaleData;->timeFormat12:Ljava/lang/String;
 
     goto :goto_0
 
     :cond_3
-    const/4 v15, 0x0
+    const/4 v14, 0x0
 
     goto :goto_2
 
     :cond_4
-    add-int/lit8 v11, v11, 0x1
+    add-int/lit8 v10, v10, 0x1
 
     goto :goto_1
 
     :cond_5
-    new-instance v19, Ljava/lang/StringBuilder;
+    new-instance v18, Ljava/lang/StringBuilder;
 
-    invoke-direct/range {v19 .. v19}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct/range {v18 .. v18}, Ljava/lang/StringBuilder;-><init>()V
 
-    const/16 v20, 0x0
+    const/16 v19, 0x0
 
-    move/from16 v0, v20
+    move/from16 v0, v19
 
-    invoke-virtual {v9, v0, v4}, Ljava/lang/String;->substring(II)Ljava/lang/String;
-
-    move-result-object v20
-
-    invoke-virtual/range {v19 .. v20}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v8, v0, v4}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object v19
 
-    const v20, 0xef00
+    invoke-virtual/range {v18 .. v19}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual/range {v19 .. v20}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    move-result-object v18
 
-    move-result-object v19
+    const v19, 0xef00
 
-    invoke-virtual {v9, v4, v5}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+    invoke-virtual/range {v18 .. v19}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    move-result-object v20
+    move-result-object v18
 
-    invoke-virtual/range {v19 .. v20}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v19
-
-    const-string v20, "a"
-
-    invoke-virtual/range {v19 .. v20}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v8, v4, v5}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object v19
 
-    const v20, 0xef01
+    invoke-virtual/range {v18 .. v19}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual/range {v19 .. v20}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    move-result-object v18
+
+    const-string v19, "a"
+
+    invoke-virtual/range {v18 .. v19}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v18
+
+    const v19, 0xef01
+
+    invoke-virtual/range {v18 .. v19}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    move-result-object v18
+
+    add-int/lit8 v19, v5, 0x1
+
+    move/from16 v0, v19
+
+    invoke-virtual {v8, v0}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
     move-result-object v19
 
-    add-int/lit8 v20, v5, 0x1
+    invoke-virtual/range {v18 .. v19}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move/from16 v0, v20
+    move-result-object v18
 
-    invoke-virtual {v9, v0}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+    invoke-virtual/range {v18 .. v18}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v20
-
-    invoke-virtual/range {v19 .. v20}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v19
-
-    invoke-virtual/range {v19 .. v19}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v9
+    move-result-object v8
 
     :cond_6
-    new-instance v17, Ljava/text/SimpleDateFormat;
+    new-instance v16, Ljava/text/SimpleDateFormat;
 
-    move-object/from16 v0, v17
+    move-object/from16 v0, v16
 
-    invoke-direct {v0, v9}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v8}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;)V
 
-    move-object/from16 v0, v17
+    move-object/from16 v0, v16
 
     move-object/from16 v1, p0
 
@@ -363,145 +577,173 @@
 
     move-object/from16 v0, p0
 
-    iput-object v9, v0, Lcom/android/systemui/statusbar/policy/Clock;->mClockFormatString:Ljava/lang/String;
+    iput-object v8, v0, Lcom/android/systemui/statusbar/policy/Clock;->mClockFormatString:Ljava/lang/String;
 
     :goto_4
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/policy/Clock;->mCalendar:Ljava/util/Calendar;
 
-    move-object/from16 v19, v0
+    move-object/from16 v18, v0
 
-    invoke-virtual/range {v19 .. v19}, Ljava/util/Calendar;->getTime()Ljava/util/Date;
+    invoke-virtual/range {v18 .. v18}, Ljava/util/Calendar;->getTime()Ljava/util/Date;
 
-    move-result-object v19
+    move-result-object v18
 
-    move-object/from16 v0, v17
+    move-object/from16 v0, v16
 
-    move-object/from16 v1, v19
+    move-object/from16 v1, v18
 
     invoke-virtual {v0, v1}, Ljava/text/SimpleDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
 
-    move-result-object v16
+    move-result-object v15
 
     move-object/from16 v0, p0
 
     iget v0, v0, Lcom/android/systemui/statusbar/policy/Clock;->mAmPmStyle:I
 
-    move/from16 v19, v0
+    move/from16 v18, v0
 
-    if-eqz v19, :cond_a
+    if-eqz v18, :cond_7
 
-    const v19, 0xef00
+    const v18, 0xef00
 
-    move-object/from16 v0, v16
+    move/from16 v0, v18
 
-    move/from16 v1, v19
+    invoke-virtual {v15, v0}, Ljava/lang/String;->indexOf(I)I
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->indexOf(I)I
+    move-result v12
+
+    const v18, 0xef01
+
+    move/from16 v0, v18
+
+    invoke-virtual {v15, v0}, Ljava/lang/String;->indexOf(I)I
 
     move-result v13
 
-    const v19, 0xef01
+    if-ltz v12, :cond_7
 
-    move-object/from16 v0, v16
+    if-le v13, v12, :cond_7
 
-    move/from16 v1, v19
+    new-instance v9, Landroid/text/SpannableStringBuilder;
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->indexOf(I)I
-
-    move-result v14
-
-    if-ltz v13, :cond_a
-
-    if-le v14, v13, :cond_a
-
-    new-instance v10, Landroid/text/SpannableStringBuilder;
-
-    move-object/from16 v0, v16
-
-    invoke-direct {v10, v0}, Landroid/text/SpannableStringBuilder;-><init>(Ljava/lang/CharSequence;)V
+    invoke-direct {v9, v15}, Landroid/text/SpannableStringBuilder;-><init>(Ljava/lang/CharSequence;)V
 
     move-object/from16 v0, p0
 
     iget v0, v0, Lcom/android/systemui/statusbar/policy/Clock;->mAmPmStyle:I
 
-    move/from16 v19, v0
+    move/from16 v18, v0
 
-    const/16 v20, 0x2
+    const/16 v19, 0x2
 
-    move/from16 v0, v19
+    move/from16 v0, v18
 
-    move/from16 v1, v20
+    move/from16 v1, v19
 
-    if-ne v0, v1, :cond_8
+    if-ne v0, v1, :cond_9
 
-    add-int/lit8 v19, v14, 0x1
+    add-int/lit8 v18, v13, 0x1
 
-    move/from16 v0, v19
+    move/from16 v0, v18
 
-    invoke-virtual {v10, v13, v0}, Landroid/text/SpannableStringBuilder;->delete(II)Landroid/text/SpannableStringBuilder;
-
-    :goto_5
-    return-object v10
+    invoke-virtual {v9, v12, v0}, Landroid/text/SpannableStringBuilder;->delete(II)Landroid/text/SpannableStringBuilder;
 
     :cond_7
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/systemui/statusbar/policy/Clock;->mClockFormat:Ljava/text/SimpleDateFormat;
-
-    move-object/from16 v17, v0
-
-    goto :goto_4
+    :goto_5
+    return-object v15
 
     :cond_8
     move-object/from16 v0, p0
 
+    iget-object v0, v0, Lcom/android/systemui/statusbar/policy/Clock;->mClockFormat:Ljava/text/SimpleDateFormat;
+
+    move-object/from16 v16, v0
+
+    goto :goto_4
+
+    :cond_9
+    move-object/from16 v0, p0
+
     iget v0, v0, Lcom/android/systemui/statusbar/policy/Clock;->mAmPmStyle:I
 
-    move/from16 v19, v0
+    move/from16 v18, v0
 
-    const/16 v20, 0x1
+    const/16 v19, 0x1
 
-    move/from16 v0, v19
-
-    move/from16 v1, v20
-
-    if-ne v0, v1, :cond_9
-
-    new-instance v18, Landroid/text/style/RelativeSizeSpan;
-
-    const v19, 0x3f333333    # 0.7f
-
-    invoke-direct/range {v18 .. v19}, Landroid/text/style/RelativeSizeSpan;-><init>(F)V
-
-    const/16 v19, 0x22
-
-    move-object/from16 v0, v18
+    move/from16 v0, v18
 
     move/from16 v1, v19
 
-    invoke-virtual {v10, v0, v13, v14, v1}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
+    if-ne v0, v1, :cond_a
 
-    :cond_9
-    add-int/lit8 v19, v14, 0x1
+    new-instance v17, Landroid/text/style/RelativeSizeSpan;
 
-    move/from16 v0, v19
+    const v18, 0x3f333333    # 0.7f
 
-    invoke-virtual {v10, v14, v0}, Landroid/text/SpannableStringBuilder;->delete(II)Landroid/text/SpannableStringBuilder;
+    invoke-direct/range {v17 .. v18}, Landroid/text/style/RelativeSizeSpan;-><init>(F)V
 
-    add-int/lit8 v19, v13, 0x1
+    const/16 v18, 0x22
 
-    move/from16 v0, v19
+    move-object/from16 v0, v17
 
-    invoke-virtual {v10, v13, v0}, Landroid/text/SpannableStringBuilder;->delete(II)Landroid/text/SpannableStringBuilder;
+    move/from16 v1, v18
 
-    goto :goto_5
+    invoke-virtual {v9, v0, v12, v13, v1}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
 
     :cond_a
-    move-object/from16 v10, v16
+    add-int/lit8 v18, v13, 0x1
+
+    move/from16 v0, v18
+
+    invoke-virtual {v9, v13, v0}, Landroid/text/SpannableStringBuilder;->delete(II)Landroid/text/SpannableStringBuilder;
+
+    add-int/lit8 v18, v12, 0x1
+
+    move/from16 v0, v18
+
+    invoke-virtual {v9, v12, v0}, Landroid/text/SpannableStringBuilder;->delete(II)Landroid/text/SpannableStringBuilder;
 
     goto :goto_5
+.end method
+
+.method private getSmallTime(Ljava/util/Date;Ljava/util/Locale;)Ljava/lang/CharSequence;
+    .locals 4
+
+    iget-object v2, p0, Lcom/android/systemui/statusbar/policy/Clock;->mContext:Landroid/content/Context;
+
+    invoke-static {v2}, Landroid/text/format/DateFormat;->is24HourFormat(Landroid/content/Context;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    new-instance v2, Ljava/text/SimpleDateFormat;
+
+    const-string v3, "HH:mm"
+
+    invoke-direct {v2, v3, p2}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;Ljava/util/Locale;)V
+
+    invoke-virtual {v2, p1}, Ljava/text/SimpleDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
+
+    move-result-object v1
+
+    :goto_0
+    return-object v1
+
+    :cond_0
+    new-instance v2, Ljava/text/SimpleDateFormat;
+
+    const-string v3, "h:mm"
+
+    invoke-direct {v2, v3, p2}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;Ljava/util/Locale;)V
+
+    invoke-virtual {v2, p1}, Ljava/text/SimpleDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
+
+    move-result-object v1
+
+    goto :goto_0
 .end method
 
 
@@ -589,11 +831,13 @@
 
     :cond_3
     :goto_1
+    iget-object v4, p0, Lcom/android/systemui/statusbar/policy/Clock;->mClockView:Landroid/widget/TextView;
+
     invoke-direct {p0}, Lcom/android/systemui/statusbar/policy/Clock;->getSmallTime()Ljava/lang/CharSequence;
 
-    move-result-object v4
+    move-result-object v5
 
-    invoke-virtual {p0, v4}, Lcom/android/systemui/statusbar/policy/Clock;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v4, v5}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     goto :goto_0
 
@@ -639,124 +883,98 @@
     goto :goto_1
 .end method
 
-.method protected onAttachedToWindow()V
-    .locals 6
+.method final updateClock()V
+    .locals 8
 
-    invoke-super {p0}, Landroid/widget/TextView;->onAttachedToWindow()V
+    new-instance v2, Ljava/util/Date;
 
-    iget-boolean v0, p0, Lcom/android/systemui/statusbar/policy/Clock;->mAttached:Z
+    invoke-direct {v2}, Ljava/util/Date;-><init>()V
 
-    if-nez v0, :cond_0
+    invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
 
-    const/4 v0, 0x1
+    move-result-object v1
 
-    iput-boolean v0, p0, Lcom/android/systemui/statusbar/policy/Clock;->mAttached:Z
-
-    new-instance v3, Landroid/content/IntentFilter;
-
-    invoke-direct {v3}, Landroid/content/IntentFilter;-><init>()V
-
-    const-string v0, "android.intent.action.TIME_TICK"
-
-    invoke-virtual {v3, v0}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
-
-    const-string v0, "android.intent.action.TIME_SET"
-
-    invoke-virtual {v3, v0}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
-
-    const-string v0, "android.intent.action.TIMEZONE_CHANGED"
-
-    invoke-virtual {v3, v0}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
-
-    const-string v0, "android.intent.action.CONFIGURATION_CHANGED"
-
-    invoke-virtual {v3, v0}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
-
-    const-string v0, "android.intent.action.USER_SWITCHED"
-
-    invoke-virtual {v3, v0}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
-
-    invoke-virtual {p0}, Lcom/android/systemui/statusbar/policy/Clock;->getContext()Landroid/content/Context;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lcom/android/systemui/statusbar/policy/Clock;->mIntentReceiver:Landroid/content/BroadcastReceiver;
-
-    sget-object v2, Landroid/os/UserHandle;->ALL:Landroid/os/UserHandle;
-
-    const/4 v4, 0x0
-
-    invoke-virtual {p0}, Lcom/android/systemui/statusbar/policy/Clock;->getHandler()Landroid/os/Handler;
+    invoke-direct {p0, v2, v1}, Lcom/android/systemui/statusbar/policy/Clock;->getDayOfWeek(Ljava/util/Date;Ljava/util/Locale;)Ljava/lang/CharSequence;
 
     move-result-object v5
 
-    invoke-virtual/range {v0 .. v5}, Landroid/content/Context;->registerReceiverAsUser(Landroid/content/BroadcastReceiver;Landroid/os/UserHandle;Landroid/content/IntentFilter;Ljava/lang/String;Landroid/os/Handler;)Landroid/content/Intent;
+    invoke-direct {p0, v2, v1}, Lcom/android/systemui/statusbar/policy/Clock;->getSmallTime(Ljava/util/Date;Ljava/util/Locale;)Ljava/lang/CharSequence;
 
-    :cond_0
-    invoke-static {}, Ljava/util/TimeZone;->getDefault()Ljava/util/TimeZone;
+    move-result-object v3
 
-    move-result-object v0
-
-    invoke-static {v0}, Ljava/util/Calendar;->getInstance(Ljava/util/TimeZone;)Ljava/util/Calendar;
+    invoke-direct {p0, v2, v1}, Lcom/android/systemui/statusbar/policy/Clock;->getAmPm(Ljava/util/Date;Ljava/util/Locale;)Ljava/lang/CharSequence;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/systemui/statusbar/policy/Clock;->mCalendar:Ljava/util/Calendar;
+    const/4 v6, 0x3
+
+    new-array v6, v6, [Ljava/lang/CharSequence;
+
+    const/4 v7, 0x0
+
+    aput-object v5, v6, v7
+
+    const/4 v7, 0x1
+
+    aput-object v3, v6, v7
+
+    const/4 v7, 0x2
+
+    aput-object v0, v6, v7
+
+    invoke-static {v6}, Landroid/text/TextUtils;->concat([Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
+
+    move-result-object v4
+
+    iget-object v6, p0, Lcom/android/systemui/statusbar/policy/Clock;->mClockView:Landroid/widget/TextView;
+
+    invoke-virtual {v6, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    return-void
+.end method
+
+.method public updateClockView(Landroid/widget/TextView;)V
+    .locals 0
+
+    iput-object p1, p0, Lcom/android/systemui/statusbar/policy/Clock;->mClockView:Landroid/widget/TextView;
+
+    invoke-virtual {p0}, Lcom/android/systemui/statusbar/policy/Clock;->updateSettings()V
+
+    return-void
+.end method
+
+.method updateSettings()V
+    .locals 3
+
+    const/4 v2, 0x2
+
+    iget-object v1, p0, Lcom/android/systemui/statusbar/policy/Clock;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v0
+
+    const-string v1, "status_bar_am_pm"
+
+    invoke-static {v0, v1, v2}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+
+    move-result v1
+
+    iput v1, p0, Lcom/android/systemui/statusbar/policy/Clock;->mAmPmStyle:I
+
+    const-string v1, "status_bar_dow"
+
+    invoke-static {v0, v1, v2}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+
+    move-result v1
+
+    iput v1, p0, Lcom/android/systemui/statusbar/policy/Clock;->mDowStyle:I
+
+    const-string v1, ""
+
+    iput-object v1, p0, Lcom/android/systemui/statusbar/policy/Clock;->mClockFormatString:Ljava/lang/String;
 
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/policy/Clock;->updateClock()V
 
     return-void
-.end method
-
-.method protected onDetachedFromWindow()V
-    .locals 2
-
-    invoke-super {p0}, Landroid/widget/TextView;->onDetachedFromWindow()V
-
-    iget-boolean v0, p0, Lcom/android/systemui/statusbar/policy/Clock;->mAttached:Z
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {p0}, Lcom/android/systemui/statusbar/policy/Clock;->getContext()Landroid/content/Context;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lcom/android/systemui/statusbar/policy/Clock;->mIntentReceiver:Landroid/content/BroadcastReceiver;
-
-    invoke-virtual {v0, v1}, Landroid/content/Context;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
-
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Lcom/android/systemui/statusbar/policy/Clock;->mAttached:Z
-
-    :cond_0
-    return-void
-.end method
-
-.method final updateClock()V
-    .locals 4
-
-    iget-boolean v0, p0, Lcom/android/systemui/statusbar/policy/Clock;->mDemoMode:Z
-
-    if-eqz v0, :cond_0
-
-    :goto_0
-    return-void
-
-    :cond_0
-    iget-object v0, p0, Lcom/android/systemui/statusbar/policy/Clock;->mCalendar:Ljava/util/Calendar;
-
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
-
-    move-result-wide v2
-
-    invoke-virtual {v0, v2, v3}, Ljava/util/Calendar;->setTimeInMillis(J)V
-
-    invoke-direct {p0}, Lcom/android/systemui/statusbar/policy/Clock;->getSmallTime()Ljava/lang/CharSequence;
-
-    move-result-object v0
-
-    invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/policy/Clock;->setText(Ljava/lang/CharSequence;)V
-
-    goto :goto_0
 .end method

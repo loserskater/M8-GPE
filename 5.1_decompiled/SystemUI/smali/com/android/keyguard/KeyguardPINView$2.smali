@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/keyguard/KeyguardPINView;->startDisappearAnimation(Ljava/lang/Runnable;)Z
+    value = Lcom/android/keyguard/KeyguardPINView;->startAppearAnimation()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,16 +20,12 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/keyguard/KeyguardPINView;
 
-.field final synthetic val$finishRunnable:Ljava/lang/Runnable;
-
 
 # direct methods
-.method constructor <init>(Lcom/android/keyguard/KeyguardPINView;Ljava/lang/Runnable;)V
+.method constructor <init>(Lcom/android/keyguard/KeyguardPINView;)V
     .locals 0
 
     iput-object p1, p0, Lcom/android/keyguard/KeyguardPINView$2;->this$0:Lcom/android/keyguard/KeyguardPINView;
-
-    iput-object p2, p0, Lcom/android/keyguard/KeyguardPINView$2;->val$finishRunnable:Ljava/lang/Runnable;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -46,16 +42,7 @@
     const/4 v1, 0x1
 
     # invokes: Lcom/android/keyguard/KeyguardPINView;->enableClipping(Z)V
-    invoke-static {v0, v1}, Lcom/android/keyguard/KeyguardPINView;->access$000(Lcom/android/keyguard/KeyguardPINView;Z)V
+    invoke-static {v0, v1}, Lcom/android/keyguard/KeyguardPINView;->access$100(Lcom/android/keyguard/KeyguardPINView;Z)V
 
-    iget-object v0, p0, Lcom/android/keyguard/KeyguardPINView$2;->val$finishRunnable:Ljava/lang/Runnable;
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lcom/android/keyguard/KeyguardPINView$2;->val$finishRunnable:Ljava/lang/Runnable;
-
-    invoke-interface {v0}, Ljava/lang/Runnable;->run()V
-
-    :cond_0
     return-void
 .end method

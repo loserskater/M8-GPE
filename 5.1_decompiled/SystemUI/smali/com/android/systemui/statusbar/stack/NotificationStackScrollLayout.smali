@@ -5804,7 +5804,7 @@
     return-void
 .end method
 
-.method public onChildDismissed(Landroid/view/View;)V
+.method public onChildDismissed(Landroid/view/View;Z)V
     .locals 3
 
     iget-boolean v1, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->mDismissAllInProgress:Z

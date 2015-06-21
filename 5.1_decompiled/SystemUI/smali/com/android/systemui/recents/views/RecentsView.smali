@@ -1043,7 +1043,7 @@
 
     const-string v6, "recents_clear_all_location"
 
-    const/4 v7, 0x5
+    const/4 v7, 0x3
 
     const/16 v21, -0x2
 

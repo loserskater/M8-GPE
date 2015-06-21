@@ -133,7 +133,7 @@
 
     const/4 v3, 0x0
 
-    if-eqz p1, :cond_1
+    if-eqz p1, :cond_2
 
     move v0, v2
 
@@ -145,7 +145,7 @@
 
     move-result-object v5
 
-    if-nez v0, :cond_2
+    if-nez v0, :cond_3
 
     move v4, v2
 
@@ -159,7 +159,7 @@
 
     move-result-object v5
 
-    if-nez v0, :cond_3
+    if-nez v0, :cond_4
 
     move v4, v2
 
@@ -168,7 +168,7 @@
 
     iget-object v4, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$4;->this$0:Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;
 
-    # getter for: Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->mAlarmShowing:Z
+    # getter for: Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->mShowWeather:Z
     invoke-static {v4}, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->access$1300(Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;)Z
 
     move-result v4
@@ -177,12 +177,12 @@
 
     iget-object v4, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$4;->this$0:Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;
 
-    # getter for: Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->mAlarmStatus:Landroid/widget/TextView;
-    invoke-static {v4}, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->access$1400(Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;)Landroid/widget/TextView;
+    # getter for: Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->mWeatherContainer:Landroid/view/ViewGroup;
+    invoke-static {v4}, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->access$1400(Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;)Landroid/view/ViewGroup;
 
     move-result-object v5
 
-    if-nez v0, :cond_4
+    if-nez v0, :cond_5
 
     move v4, v2
 
@@ -192,8 +192,32 @@
     :cond_0
     iget-object v4, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$4;->this$0:Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;
 
+    # getter for: Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->mAlarmShowing:Z
+    invoke-static {v4}, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->access$1500(Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_1
+
+    iget-object v4, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$4;->this$0:Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;
+
+    # getter for: Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->mAlarmStatus:Landroid/widget/TextView;
+    invoke-static {v4}, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->access$1600(Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;)Landroid/widget/TextView;
+
+    move-result-object v5
+
+    if-nez v0, :cond_6
+
+    move v4, v2
+
+    :goto_4
+    invoke-direct {p0, v5, v4}, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$4;->transition(Landroid/view/View;Z)V
+
+    :cond_1
+    iget-object v4, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$4;->this$0:Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;
+
     # getter for: Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->mQsDetailHeader:Landroid/view/View;
-    invoke-static {v4}, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->access$1500(Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;)Landroid/view/View;
+    invoke-static {v4}, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->access$1700(Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;)Landroid/view/View;
 
     move-result-object v4
 
@@ -202,14 +226,14 @@
     iget-object v4, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$4;->this$0:Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;
 
     # setter for: Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->mShowingDetail:Z
-    invoke-static {v4, v0}, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->access$1602(Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;Z)Z
+    invoke-static {v4, v0}, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->access$1802(Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;Z)Z
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_8
 
     iget-object v4, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$4;->this$0:Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;
 
     # getter for: Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->mQsDetailHeaderTitle:Landroid/widget/TextView;
-    invoke-static {v4}, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->access$1700(Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;)Landroid/widget/TextView;
+    invoke-static {v4}, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->access$1900(Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;)Landroid/widget/TextView;
 
     move-result-object v4
 
@@ -223,7 +247,7 @@
 
     move-result-object v1
 
-    if-nez v1, :cond_5
+    if-nez v1, :cond_7
 
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$4;->this$0:Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;
 
@@ -239,36 +263,41 @@
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$4;->this$0:Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;
 
     # getter for: Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->mQsDetailHeader:Landroid/view/View;
-    invoke-static {v2}, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->access$1500(Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;)Landroid/view/View;
+    invoke-static {v2}, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->access$1700(Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;)Landroid/view/View;
 
     move-result-object v2
 
     invoke-virtual {v2, v3}, Landroid/view/View;->setClickable(Z)V
 
-    :goto_4
+    :goto_5
     return-void
 
-    :cond_1
+    :cond_2
     move v0, v3
 
     goto :goto_0
 
-    :cond_2
+    :cond_3
     move v4, v3
 
     goto :goto_1
 
-    :cond_3
+    :cond_4
     move v4, v3
 
     goto :goto_2
 
-    :cond_4
+    :cond_5
     move v4, v3
 
     goto :goto_3
 
-    :cond_5
+    :cond_6
+    move v4, v3
+
+    goto :goto_4
+
+    :cond_7
     iget-object v4, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$4;->this$0:Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;
 
     # getter for: Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->mQsDetailHeaderSwitch:Landroid/widget/Switch;
@@ -294,7 +323,7 @@
     iget-object v3, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$4;->this$0:Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;
 
     # getter for: Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->mQsDetailHeader:Landroid/view/View;
-    invoke-static {v3}, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->access$1500(Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;)Landroid/view/View;
+    invoke-static {v3}, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->access$1700(Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;)Landroid/view/View;
 
     move-result-object v3
 
@@ -303,7 +332,7 @@
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$4;->this$0:Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;
 
     # getter for: Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->mQsDetailHeader:Landroid/view/View;
-    invoke-static {v2}, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->access$1500(Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;)Landroid/view/View;
+    invoke-static {v2}, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->access$1700(Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;)Landroid/view/View;
 
     move-result-object v2
 
@@ -313,19 +342,19 @@
 
     invoke-virtual {v2, v3}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    goto :goto_4
+    goto :goto_5
 
-    :cond_6
+    :cond_8
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$4;->this$0:Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;
 
     # getter for: Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->mQsDetailHeader:Landroid/view/View;
-    invoke-static {v2}, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->access$1500(Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;)Landroid/view/View;
+    invoke-static {v2}, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->access$1700(Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;)Landroid/view/View;
 
     move-result-object v2
 
     invoke-virtual {v2, v3}, Landroid/view/View;->setClickable(Z)V
 
-    goto :goto_4
+    goto :goto_5
 .end method
 
 .method private handleToggleStateChanged(Z)V

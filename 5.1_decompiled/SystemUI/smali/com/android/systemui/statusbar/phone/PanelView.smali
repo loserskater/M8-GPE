@@ -54,6 +54,8 @@
 
 .field protected mKeyguardBottomArea:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
 
+.field private mLastTap:J
+
 .field private mLinearOutSlowInInterpolator:Landroid/view/animation/Interpolator;
 
 .field private mOverExpandedBeforeFling:Z
@@ -640,6 +642,12 @@
     .locals 8
 
     const-wide/16 v6, 0xfa
+
+    const/4 v3, 0x0
+
+    iget-object v2, p0, Lcom/android/systemui/statusbar/phone/PanelView;->mKeyguardBottomArea:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
+
+    invoke-virtual {v2, v3, v3}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->requestVisualizer(ZI)V
 
     const/4 v2, 0x0
 
@@ -1478,6 +1486,75 @@
     return v0
 .end method
 
+.method protected isDoubleTap()V
+    .locals 6
+
+    const-wide/16 v4, 0x12c
+
+    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/PanelView;->getContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v0
+
+    const-string v1, "double_tap_sleep"
+
+    const/4 v2, 0x0
+
+    invoke-static {v0, v1, v2}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/PanelView;->isDozing()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
+
+    move-result-wide v0
+
+    iget-wide v2, p0, Lcom/android/systemui/statusbar/phone/PanelView;->mLastTap:J
+
+    iput-wide v0, p0, Lcom/android/systemui/statusbar/phone/PanelView;->mLastTap:J
+
+    sub-long/2addr v0, v2
+
+    cmp-long v0, v0, v4
+
+    if-gez v0, :cond_0
+
+    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/PanelView;->getContext()Landroid/content/Context;
+
+    move-result-object v1
+
+    const-string v2, "power"
+
+    invoke-virtual {v1, v2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/os/PowerManager;
+
+    invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
+
+    move-result-wide v2
+
+    const/4 v1, 0x5
+
+    const/4 v4, 0x0
+
+    invoke-virtual {v0, v2, v3, v1, v4}, Landroid/os/PowerManager;->goToSleep(JII)V
+
+    :cond_0
+    return-void
+.end method
+
 .method protected abstract isDozing()Z
 .end method
 
@@ -1650,6 +1727,8 @@
 
 .method protected onEmptySpaceClick(F)Z
     .locals 3
+
+    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/PanelView;->isDoubleTap()V
 
     const/4 v0, 0x1
 

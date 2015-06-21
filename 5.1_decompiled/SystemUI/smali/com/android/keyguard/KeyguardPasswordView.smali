@@ -352,9 +352,11 @@
 .end method
 
 .method protected onFinishInflate()V
-    .locals 7
+    .locals 9
 
-    const/4 v6, 0x0
+    const/4 v6, 0x1
+
+    const/4 v7, 0x0
 
     invoke-super {p0}, Lcom/android/keyguard/KeyguardAbsKeyInputView;->onFinishInflate()V
 
@@ -362,129 +364,151 @@
 
     invoke-virtual {p0}, Lcom/android/keyguard/KeyguardPasswordView;->getContext()Landroid/content/Context;
 
-    move-result-object v4
+    move-result-object v5
 
-    const-string v5, "input_method"
-
-    invoke-virtual {v4, v5}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v4
-
-    check-cast v4, Landroid/view/inputmethod/InputMethodManager;
-
-    iput-object v4, p0, Lcom/android/keyguard/KeyguardPasswordView;->mImm:Landroid/view/inputmethod/InputMethodManager;
-
-    invoke-virtual {p0}, Lcom/android/keyguard/KeyguardPasswordView;->getPasswordTextViewId()I
-
-    move-result v4
-
-    invoke-virtual {p0, v4}, Lcom/android/keyguard/KeyguardPasswordView;->findViewById(I)Landroid/view/View;
-
-    move-result-object v4
-
-    check-cast v4, Landroid/widget/TextView;
-
-    iput-object v4, p0, Lcom/android/keyguard/KeyguardPasswordView;->mPasswordEntry:Landroid/widget/TextView;
-
-    iget-object v4, p0, Lcom/android/keyguard/KeyguardPasswordView;->mPasswordEntry:Landroid/widget/TextView;
-
-    invoke-static {}, Landroid/text/method/TextKeyListener;->getInstance()Landroid/text/method/TextKeyListener;
+    invoke-virtual {v5}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v5
 
-    invoke-virtual {v4, v5}, Landroid/widget/TextView;->setKeyListener(Landroid/text/method/KeyListener;)V
+    const-string v8, "quick_unlock"
 
-    iget-object v4, p0, Lcom/android/keyguard/KeyguardPasswordView;->mPasswordEntry:Landroid/widget/TextView;
+    invoke-static {v5, v8, v7}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
 
-    const/16 v5, 0x81
+    move-result v5
 
-    invoke-virtual {v4, v5}, Landroid/widget/TextView;->setInputType(I)V
+    if-ne v5, v6, :cond_2
 
-    iget-object v4, p0, Lcom/android/keyguard/KeyguardPasswordView;->mPasswordEntry:Landroid/widget/TextView;
+    move v3, v6
 
-    invoke-virtual {v4, p0}, Landroid/widget/TextView;->setOnEditorActionListener(Landroid/widget/TextView$OnEditorActionListener;)V
+    :goto_0
+    invoke-virtual {p0}, Lcom/android/keyguard/KeyguardPasswordView;->getContext()Landroid/content/Context;
 
-    iget-object v4, p0, Lcom/android/keyguard/KeyguardPasswordView;->mPasswordEntry:Landroid/widget/TextView;
+    move-result-object v5
 
-    invoke-virtual {v4, p0}, Landroid/widget/TextView;->addTextChangedListener(Landroid/text/TextWatcher;)V
+    const-string v8, "input_method"
 
-    iget-object v4, p0, Lcom/android/keyguard/KeyguardPasswordView;->mPasswordEntry:Landroid/widget/TextView;
+    invoke-virtual {v5, v8}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
-    new-instance v5, Lcom/android/keyguard/KeyguardPasswordView$2;
+    move-result-object v5
 
-    invoke-direct {v5, p0}, Lcom/android/keyguard/KeyguardPasswordView$2;-><init>(Lcom/android/keyguard/KeyguardPasswordView;)V
+    check-cast v5, Landroid/view/inputmethod/InputMethodManager;
 
-    invoke-virtual {v4, v5}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    iput-object v5, p0, Lcom/android/keyguard/KeyguardPasswordView;->mImm:Landroid/view/inputmethod/InputMethodManager;
 
-    iget-object v4, p0, Lcom/android/keyguard/KeyguardPasswordView;->mPasswordEntry:Landroid/widget/TextView;
+    invoke-virtual {p0}, Lcom/android/keyguard/KeyguardPasswordView;->getPasswordTextViewId()I
 
-    const/4 v5, 0x1
+    move-result v5
 
-    invoke-virtual {v4, v5}, Landroid/widget/TextView;->setSelected(Z)V
+    invoke-virtual {p0, v5}, Lcom/android/keyguard/KeyguardPasswordView;->findViewById(I)Landroid/view/View;
 
-    iget-object v4, p0, Lcom/android/keyguard/KeyguardPasswordView;->mPasswordEntry:Landroid/widget/TextView;
+    move-result-object v5
 
-    new-instance v5, Lcom/android/keyguard/KeyguardPasswordView$3;
+    check-cast v5, Landroid/widget/TextView;
 
-    invoke-direct {v5, p0}, Lcom/android/keyguard/KeyguardPasswordView$3;-><init>(Lcom/android/keyguard/KeyguardPasswordView;)V
+    iput-object v5, p0, Lcom/android/keyguard/KeyguardPasswordView;->mPasswordEntry:Landroid/widget/TextView;
 
-    invoke-virtual {v4, v5}, Landroid/widget/TextView;->addTextChangedListener(Landroid/text/TextWatcher;)V
+    iget-object v5, p0, Lcom/android/keyguard/KeyguardPasswordView;->mPasswordEntry:Landroid/widget/TextView;
 
-    iget-object v4, p0, Lcom/android/keyguard/KeyguardPasswordView;->mPasswordEntry:Landroid/widget/TextView;
+    invoke-static {}, Landroid/text/method/TextKeyListener;->getInstance()Landroid/text/method/TextKeyListener;
 
-    invoke-virtual {v4}, Landroid/widget/TextView;->requestFocus()Z
+    move-result-object v8
 
-    sget v4, Lcom/android/keyguard/R$id;->switch_ime_button:I
+    invoke-virtual {v5, v8}, Landroid/widget/TextView;->setKeyListener(Landroid/text/method/KeyListener;)V
 
-    invoke-virtual {p0, v4}, Lcom/android/keyguard/KeyguardPasswordView;->findViewById(I)Landroid/view/View;
+    iget-object v5, p0, Lcom/android/keyguard/KeyguardPasswordView;->mPasswordEntry:Landroid/widget/TextView;
 
-    move-result-object v3
+    const/16 v8, 0x81
 
-    if-eqz v3, :cond_0
+    invoke-virtual {v5, v8}, Landroid/widget/TextView;->setInputType(I)V
 
-    iget-object v4, p0, Lcom/android/keyguard/KeyguardPasswordView;->mImm:Landroid/view/inputmethod/InputMethodManager;
+    iget-object v5, p0, Lcom/android/keyguard/KeyguardPasswordView;->mPasswordEntry:Landroid/widget/TextView;
 
-    invoke-direct {p0, v4, v6}, Lcom/android/keyguard/KeyguardPasswordView;->hasMultipleEnabledIMEsOrSubtypes(Landroid/view/inputmethod/InputMethodManager;Z)Z
+    invoke-virtual {v5, p0}, Landroid/widget/TextView;->setOnEditorActionListener(Landroid/widget/TextView$OnEditorActionListener;)V
 
-    move-result v4
+    iget-object v5, p0, Lcom/android/keyguard/KeyguardPasswordView;->mPasswordEntry:Landroid/widget/TextView;
+
+    invoke-virtual {v5, p0}, Landroid/widget/TextView;->addTextChangedListener(Landroid/text/TextWatcher;)V
+
+    iget-object v5, p0, Lcom/android/keyguard/KeyguardPasswordView;->mPasswordEntry:Landroid/widget/TextView;
+
+    new-instance v8, Lcom/android/keyguard/KeyguardPasswordView$2;
+
+    invoke-direct {v8, p0}, Lcom/android/keyguard/KeyguardPasswordView$2;-><init>(Lcom/android/keyguard/KeyguardPasswordView;)V
+
+    invoke-virtual {v5, v8}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    iget-object v5, p0, Lcom/android/keyguard/KeyguardPasswordView;->mPasswordEntry:Landroid/widget/TextView;
+
+    invoke-virtual {v5, v6}, Landroid/widget/TextView;->setSelected(Z)V
+
+    iget-object v5, p0, Lcom/android/keyguard/KeyguardPasswordView;->mPasswordEntry:Landroid/widget/TextView;
+
+    new-instance v6, Lcom/android/keyguard/KeyguardPasswordView$3;
+
+    invoke-direct {v6, p0, v3}, Lcom/android/keyguard/KeyguardPasswordView$3;-><init>(Lcom/android/keyguard/KeyguardPasswordView;Z)V
+
+    invoke-virtual {v5, v6}, Landroid/widget/TextView;->addTextChangedListener(Landroid/text/TextWatcher;)V
+
+    iget-object v5, p0, Lcom/android/keyguard/KeyguardPasswordView;->mPasswordEntry:Landroid/widget/TextView;
+
+    invoke-virtual {v5}, Landroid/widget/TextView;->requestFocus()Z
+
+    sget v5, Lcom/android/keyguard/R$id;->switch_ime_button:I
+
+    invoke-virtual {p0, v5}, Lcom/android/keyguard/KeyguardPasswordView;->findViewById(I)Landroid/view/View;
+
+    move-result-object v4
 
     if-eqz v4, :cond_0
 
-    invoke-virtual {v3, v6}, Landroid/view/View;->setVisibility(I)V
+    iget-object v5, p0, Lcom/android/keyguard/KeyguardPasswordView;->mImm:Landroid/view/inputmethod/InputMethodManager;
+
+    invoke-direct {p0, v5, v7}, Lcom/android/keyguard/KeyguardPasswordView;->hasMultipleEnabledIMEsOrSubtypes(Landroid/view/inputmethod/InputMethodManager;Z)Z
+
+    move-result v5
+
+    if-eqz v5, :cond_0
+
+    invoke-virtual {v4, v7}, Landroid/view/View;->setVisibility(I)V
 
     const/4 v0, 0x1
 
-    new-instance v4, Lcom/android/keyguard/KeyguardPasswordView$4;
+    new-instance v5, Lcom/android/keyguard/KeyguardPasswordView$4;
 
-    invoke-direct {v4, p0}, Lcom/android/keyguard/KeyguardPasswordView$4;-><init>(Lcom/android/keyguard/KeyguardPasswordView;)V
+    invoke-direct {v5, p0}, Lcom/android/keyguard/KeyguardPasswordView$4;-><init>(Lcom/android/keyguard/KeyguardPasswordView;)V
 
-    invoke-virtual {v3, v4}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {v4, v5}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     :cond_0
     if-nez v0, :cond_1
 
-    iget-object v4, p0, Lcom/android/keyguard/KeyguardPasswordView;->mPasswordEntry:Landroid/widget/TextView;
+    iget-object v5, p0, Lcom/android/keyguard/KeyguardPasswordView;->mPasswordEntry:Landroid/widget/TextView;
 
-    invoke-virtual {v4}, Landroid/widget/TextView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+    invoke-virtual {v5}, Landroid/widget/TextView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v2
 
-    instance-of v4, v2, Landroid/view/ViewGroup$MarginLayoutParams;
+    instance-of v5, v2, Landroid/view/ViewGroup$MarginLayoutParams;
 
-    if-eqz v4, :cond_1
+    if-eqz v5, :cond_1
 
     move-object v1, v2
 
     check-cast v1, Landroid/view/ViewGroup$MarginLayoutParams;
 
-    invoke-virtual {v1, v6}, Landroid/view/ViewGroup$MarginLayoutParams;->setMarginStart(I)V
+    invoke-virtual {v1, v7}, Landroid/view/ViewGroup$MarginLayoutParams;->setMarginStart(I)V
 
-    iget-object v4, p0, Lcom/android/keyguard/KeyguardPasswordView;->mPasswordEntry:Landroid/widget/TextView;
+    iget-object v5, p0, Lcom/android/keyguard/KeyguardPasswordView;->mPasswordEntry:Landroid/widget/TextView;
 
-    invoke-virtual {v4, v2}, Landroid/widget/TextView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v5, v2}, Landroid/widget/TextView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
     :cond_1
     return-void
+
+    :cond_2
+    move v3, v7
+
+    goto/16 :goto_0
 .end method
 
 .method public onPause()V

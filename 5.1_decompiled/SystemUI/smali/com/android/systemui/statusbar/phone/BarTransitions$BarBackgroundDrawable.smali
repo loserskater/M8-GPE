@@ -41,7 +41,7 @@
 
 .field private final mTransparent:I
 
-.field private final mWarning:I
+.field private mWarning:I
 
 
 # direct methods
@@ -481,6 +481,14 @@
 
 .method public setColorFilter(Landroid/graphics/ColorFilter;)V
     .locals 0
+
+    return-void
+.end method
+
+.method public setWarningColor(I)V
+    .locals 0
+
+    iput p1, p0, Lcom/android/systemui/statusbar/phone/BarTransitions$BarBackgroundDrawable;->mWarning:I
 
     return-void
 .end method

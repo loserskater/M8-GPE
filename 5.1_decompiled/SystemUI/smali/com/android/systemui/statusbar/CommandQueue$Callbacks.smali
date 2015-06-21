@@ -51,6 +51,9 @@
 .method public abstract removeIcon(Ljava/lang/String;II)V
 .end method
 
+.method public abstract scheduleHeadsUpClose()V
+.end method
+
 .method public abstract setImeWindowStatus(Landroid/os/IBinder;IIZ)V
 .end method
 

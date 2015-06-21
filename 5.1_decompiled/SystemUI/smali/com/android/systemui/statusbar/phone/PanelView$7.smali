@@ -48,7 +48,7 @@
 .end method
 
 .method public onAnimationEnd(Landroid/animation/Animator;)V
-    .locals 2
+    .locals 3
 
     iget-boolean v0, p0, Lcom/android/systemui/statusbar/phone/PanelView$7;->mCancelled:Z
 
@@ -64,6 +64,16 @@
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PanelView$7;->val$onAnimationFinished:Ljava/lang/Runnable;
 
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PanelView$7;->this$0:Lcom/android/systemui/statusbar/phone/PanelView;
+
+    iget-object v0, v0, Lcom/android/systemui/statusbar/phone/PanelView;->mKeyguardBottomArea:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
+
+    const/4 v1, 0x1
+
+    const/16 v2, 0xfa
+
+    invoke-virtual {v0, v1, v2}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->requestVisualizer(ZI)V
 
     :goto_0
     return-void

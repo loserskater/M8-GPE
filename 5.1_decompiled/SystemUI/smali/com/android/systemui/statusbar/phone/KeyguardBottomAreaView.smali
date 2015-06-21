@@ -12,6 +12,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$SettingsObserver;,
+        Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$LockscreenBarEqRenderer;,
         Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$IntrinsicSizeDrawable;
     }
 .end annotation
@@ -48,6 +50,8 @@
 
 .field private final mLinearOutSlowInInterpolator:Landroid/view/animation/Interpolator;
 
+.field private mLinked:Z
+
 .field private mLockIcon:Lcom/android/systemui/statusbar/KeyguardAffordanceView;
 
 .field private mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
@@ -58,15 +62,31 @@
 
 .field private mPhoneStatusBar:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
+.field private mPowerSaveModeEnabled:Z
+
 .field private mPreviewContainer:Landroid/view/ViewGroup;
 
 .field private mPreviewInflater:Lcom/android/systemui/statusbar/policy/PreviewInflater;
+
+.field private final mReceiver:Landroid/content/BroadcastReceiver;
+
+.field private mScreenOn:Z
+
+.field private mSettingsObserver:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$SettingsObserver;
+
+.field private final mStartVisualizer:Ljava/lang/Runnable;
+
+.field private final mStopVisualizer:Ljava/lang/Runnable;
 
 .field private final mTrustDrawable:Lcom/android/systemui/statusbar/phone/TrustDrawable;
 
 .field private mUnlockMethodCache:Lcom/android/systemui/statusbar/phone/UnlockMethodCache;
 
 .field private final mUpdateMonitorCallback:Lcom/android/keyguard/KeyguardUpdateMonitorCallback;
+
+.field private mVisualizer:Lcom/pheelicks/visualizer/VisualizerView;
+
+.field private mVisualizerEnabled:Z
 
 
 # direct methods
@@ -161,7 +181,25 @@
 
     invoke-direct {v0, p0}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$4;-><init>(Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;)V
 
+    iput-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mReceiver:Landroid/content/BroadcastReceiver;
+
+    new-instance v0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$5;
+
+    invoke-direct {v0, p0}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$5;-><init>(Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;)V
+
     iput-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mUpdateMonitorCallback:Lcom/android/keyguard/KeyguardUpdateMonitorCallback;
+
+    new-instance v0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$6;
+
+    invoke-direct {v0, p0}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$6;-><init>(Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;)V
+
+    iput-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mStartVisualizer:Ljava/lang/Runnable;
+
+    new-instance v0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$7;
+
+    invoke-direct {v0, p0}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$7;-><init>(Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;)V
+
+    iput-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mStopVisualizer:Ljava/lang/Runnable;
 
     new-instance v0, Lcom/android/systemui/statusbar/phone/TrustDrawable;
 
@@ -170,6 +208,16 @@
     invoke-direct {v0, v1}, Lcom/android/systemui/statusbar/phone/TrustDrawable;-><init>(Landroid/content/Context;)V
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mTrustDrawable:Lcom/android/systemui/statusbar/phone/TrustDrawable;
+
+    new-instance v0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$SettingsObserver;
+
+    new-instance v1, Landroid/os/Handler;
+
+    invoke-direct {v1}, Landroid/os/Handler;-><init>()V
+
+    invoke-direct {v0, p0, v1}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$SettingsObserver;-><init>(Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;Landroid/os/Handler;)V
+
+    iput-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mSettingsObserver:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$SettingsObserver;
 
     const v0, 0x10c000e
 
@@ -198,6 +246,62 @@
     return-object v0
 .end method
 
+.method static synthetic access$1000(Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;)Lcom/pheelicks/visualizer/VisualizerView;
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mVisualizer:Lcom/pheelicks/visualizer/VisualizerView;
+
+    return-object v0
+.end method
+
+.method static synthetic access$1100(Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;)Z
+    .locals 1
+
+    iget-boolean v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mLinked:Z
+
+    return v0
+.end method
+
+.method static synthetic access$1102(Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;Z)Z
+    .locals 0
+
+    iput-boolean p1, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mLinked:Z
+
+    return p1
+.end method
+
+.method static synthetic access$1200(Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;)Landroid/content/Context;
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mContext:Landroid/content/Context;
+
+    return-object v0
+.end method
+
+.method static synthetic access$1300(Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;)Landroid/content/Context;
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mContext:Landroid/content/Context;
+
+    return-object v0
+.end method
+
+.method static synthetic access$1400(Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;)Landroid/content/Context;
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mContext:Landroid/content/Context;
+
+    return-object v0
+.end method
+
+.method static synthetic access$1502(Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;Z)Z
+    .locals 0
+
+    iput-boolean p1, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mVisualizerEnabled:Z
+
+    return p1
+.end method
+
 .method static synthetic access$200(Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;)Lcom/android/systemui/statusbar/KeyguardAffordanceView;
     .locals 1
 
@@ -222,7 +326,47 @@
     return-void
 .end method
 
-.method static synthetic access$500(Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;)V
+.method static synthetic access$500(Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;)Z
+    .locals 1
+
+    iget-boolean v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mPowerSaveModeEnabled:Z
+
+    return v0
+.end method
+
+.method static synthetic access$502(Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;Z)Z
+    .locals 0
+
+    iput-boolean p1, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mPowerSaveModeEnabled:Z
+
+    return p1
+.end method
+
+.method static synthetic access$600(Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;)Ljava/lang/Runnable;
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mStartVisualizer:Ljava/lang/Runnable;
+
+    return-object v0
+.end method
+
+.method static synthetic access$700(Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;)Ljava/lang/Runnable;
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mStopVisualizer:Ljava/lang/Runnable;
+
+    return-object v0
+.end method
+
+.method static synthetic access$802(Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;Z)Z
+    .locals 0
+
+    iput-boolean p1, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mScreenOn:Z
+
+    return p1
+.end method
+
+.method static synthetic access$900(Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;)V
     .locals 0
 
     invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->updateLockIcon()V
@@ -403,10 +547,6 @@
 
     if-eqz v2, :cond_1
 
-    iget-object v7, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mPhoneStatusBar:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
-
-    if-eqz v7, :cond_1
-
     :try_start_0
     invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
 
@@ -561,14 +701,6 @@
 
     const/4 v2, 0x0
 
-    iget-object v3, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mCameraImageView:Lcom/android/systemui/statusbar/KeyguardAffordanceView;
-
-    if-nez v3, :cond_0
-
-    :goto_0
-    return-void
-
-    :cond_0
     iget-object v3, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mContext:Landroid/content/Context;
 
     invoke-virtual {v3}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
@@ -595,9 +727,9 @@
 
     move-result v3
 
-    if-nez v3, :cond_1
+    if-nez v3, :cond_0
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_0
 
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->getResources()Landroid/content/res/Resources;
 
@@ -609,29 +741,29 @@
 
     move-result v3
 
-    if-eqz v3, :cond_1
+    if-eqz v3, :cond_0
 
     const/4 v1, 0x1
 
-    :goto_1
+    :goto_0
     iget-object v3, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mCameraImageView:Lcom/android/systemui/statusbar/KeyguardAffordanceView;
 
-    if-eqz v1, :cond_2
+    if-eqz v1, :cond_1
 
-    :goto_2
+    :goto_1
     invoke-virtual {v3, v2}, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->setVisibility(I)V
+
+    return-void
+
+    :cond_0
+    move v1, v2
 
     goto :goto_0
 
     :cond_1
-    move v1, v2
-
-    goto :goto_1
-
-    :cond_2
     const/16 v2, 0x8
 
-    goto :goto_2
+    goto :goto_1
 .end method
 
 .method private updateLockIcon()V
@@ -1078,6 +1210,30 @@
     goto :goto_0
 .end method
 
+.method protected onAttachedToWindow()V
+    .locals 4
+
+    invoke-super {p0}, Landroid/widget/FrameLayout;->onAttachedToWindow()V
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mContext:Landroid/content/Context;
+
+    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mReceiver:Landroid/content/BroadcastReceiver;
+
+    new-instance v2, Landroid/content/IntentFilter;
+
+    const-string v3, "android.os.action.POWER_SAVE_MODE_CHANGING"
+
+    invoke-direct {v2, v3}, Landroid/content/IntentFilter;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mSettingsObserver:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$SettingsObserver;
+
+    invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$SettingsObserver;->observe()V
+
+    return-void
+.end method
+
 .method public onClick(Landroid/view/View;)V
     .locals 3
 
@@ -1184,81 +1340,97 @@
 .end method
 
 .method protected onDetachedFromWindow()V
-    .locals 1
+    .locals 3
+
+    const/4 v2, 0x0
 
     invoke-super {p0}, Landroid/widget/FrameLayout;->onDetachedFromWindow()V
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mSettingsObserver:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$SettingsObserver;
+
+    invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$SettingsObserver;->unobserve()V
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mContext:Landroid/content/Context;
+
+    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mReceiver:Landroid/content/BroadcastReceiver;
+
+    invoke-virtual {v0, v1}, Landroid/content/Context;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mTrustDrawable:Lcom/android/systemui/statusbar/phone/TrustDrawable;
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/TrustDrawable;->stop()V
 
+    invoke-virtual {p0, v2, v2}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->requestVisualizer(ZI)V
+
     return-void
 .end method
 
 .method protected onFinishInflate()V
-    .locals 4
+    .locals 9
 
-    const/4 v2, 0x0
+    const/4 v8, 0x1
+
+    const/4 v7, 0x0
 
     invoke-super {p0}, Landroid/widget/FrameLayout;->onFinishInflate()V
 
-    new-instance v0, Lcom/android/internal/widget/LockPatternUtils;
+    new-instance v3, Lcom/android/internal/widget/LockPatternUtils;
 
-    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mContext:Landroid/content/Context;
+    iget-object v4, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mContext:Landroid/content/Context;
 
-    invoke-direct {v0, v1}, Lcom/android/internal/widget/LockPatternUtils;-><init>(Landroid/content/Context;)V
+    invoke-direct {v3, v4}, Lcom/android/internal/widget/LockPatternUtils;-><init>(Landroid/content/Context;)V
 
-    iput-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
+    iput-object v3, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
 
-    const v0, 0x7f0f0042
+    const v3, 0x7f0f0042
 
-    invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v3}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->findViewById(I)Landroid/view/View;
 
-    move-result-object v0
+    move-result-object v3
 
-    check-cast v0, Landroid/view/ViewGroup;
+    check-cast v3, Landroid/view/ViewGroup;
 
-    iput-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mPreviewContainer:Landroid/view/ViewGroup;
+    iput-object v3, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mPreviewContainer:Landroid/view/ViewGroup;
 
-    const v0, 0x7f0f0043
+    const v3, 0x7f0f0043
 
-    invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v3}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->findViewById(I)Landroid/view/View;
 
-    move-result-object v0
+    move-result-object v3
 
-    check-cast v0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;
+    check-cast v3, Lcom/android/systemui/statusbar/KeyguardAffordanceView;
 
-    iput-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mCameraImageView:Lcom/android/systemui/statusbar/KeyguardAffordanceView;
+    iput-object v3, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mCameraImageView:Lcom/android/systemui/statusbar/KeyguardAffordanceView;
 
-    const v0, 0x7f0f0044
+    const v3, 0x7f0f0044
 
-    invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v3}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->findViewById(I)Landroid/view/View;
 
-    move-result-object v0
+    move-result-object v3
 
-    check-cast v0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;
+    check-cast v3, Lcom/android/systemui/statusbar/KeyguardAffordanceView;
 
-    iput-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mPhoneImageView:Lcom/android/systemui/statusbar/KeyguardAffordanceView;
+    iput-object v3, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mPhoneImageView:Lcom/android/systemui/statusbar/KeyguardAffordanceView;
 
-    const v0, 0x7f0f0045
+    const v3, 0x7f0f0045
 
-    invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v3}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->findViewById(I)Landroid/view/View;
 
-    move-result-object v0
+    move-result-object v3
 
-    check-cast v0, Lcom/android/systemui/statusbar/KeyguardAffordanceView;
+    check-cast v3, Lcom/android/systemui/statusbar/KeyguardAffordanceView;
 
-    iput-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mLockIcon:Lcom/android/systemui/statusbar/KeyguardAffordanceView;
+    iput-object v3, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mLockIcon:Lcom/android/systemui/statusbar/KeyguardAffordanceView;
 
-    const v0, 0x7f0f0041
+    const v3, 0x7f0f0041
 
-    invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v3}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->findViewById(I)Landroid/view/View;
 
-    move-result-object v0
+    move-result-object v3
 
-    check-cast v0, Landroid/widget/TextView;
+    check-cast v3, Landroid/widget/TextView;
 
-    iput-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mIndicationText:Landroid/widget/TextView;
+    iput-object v3, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mIndicationText:Landroid/widget/TextView;
 
     invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->watchForCameraPolicyChanges()V
 
@@ -1268,62 +1440,165 @@
 
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->getContext()Landroid/content/Context;
 
-    move-result-object v0
+    move-result-object v3
 
-    invoke-static {v0}, Lcom/android/systemui/statusbar/phone/UnlockMethodCache;->getInstance(Landroid/content/Context;)Lcom/android/systemui/statusbar/phone/UnlockMethodCache;
+    invoke-static {v3}, Lcom/android/systemui/statusbar/phone/UnlockMethodCache;->getInstance(Landroid/content/Context;)Lcom/android/systemui/statusbar/phone/UnlockMethodCache;
 
-    move-result-object v0
+    move-result-object v3
 
-    iput-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mUnlockMethodCache:Lcom/android/systemui/statusbar/phone/UnlockMethodCache;
+    iput-object v3, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mUnlockMethodCache:Lcom/android/systemui/statusbar/phone/UnlockMethodCache;
 
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mUnlockMethodCache:Lcom/android/systemui/statusbar/phone/UnlockMethodCache;
+    iget-object v3, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mUnlockMethodCache:Lcom/android/systemui/statusbar/phone/UnlockMethodCache;
 
-    invoke-virtual {v0, p0}, Lcom/android/systemui/statusbar/phone/UnlockMethodCache;->addListener(Lcom/android/systemui/statusbar/phone/UnlockMethodCache$OnUnlockMethodChangedListener;)V
+    invoke-virtual {v3, p0}, Lcom/android/systemui/statusbar/phone/UnlockMethodCache;->addListener(Lcom/android/systemui/statusbar/phone/UnlockMethodCache$OnUnlockMethodChangedListener;)V
 
     invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->updateLockIcon()V
 
-    invoke-virtual {p0, v2}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->setClipChildren(Z)V
+    invoke-virtual {p0, v7}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->setClipChildren(Z)V
 
-    invoke-virtual {p0, v2}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->setClipToPadding(Z)V
+    invoke-virtual {p0, v7}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->setClipToPadding(Z)V
 
-    new-instance v0, Lcom/android/systemui/statusbar/policy/PreviewInflater;
+    new-instance v3, Lcom/android/systemui/statusbar/policy/PreviewInflater;
 
-    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mContext:Landroid/content/Context;
+    iget-object v4, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mContext:Landroid/content/Context;
 
-    new-instance v2, Lcom/android/internal/widget/LockPatternUtils;
+    new-instance v5, Lcom/android/internal/widget/LockPatternUtils;
 
-    iget-object v3, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mContext:Landroid/content/Context;
+    iget-object v6, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mContext:Landroid/content/Context;
 
-    invoke-direct {v2, v3}, Lcom/android/internal/widget/LockPatternUtils;-><init>(Landroid/content/Context;)V
+    invoke-direct {v5, v6}, Lcom/android/internal/widget/LockPatternUtils;-><init>(Landroid/content/Context;)V
 
-    invoke-direct {v0, v1, v2}, Lcom/android/systemui/statusbar/policy/PreviewInflater;-><init>(Landroid/content/Context;Lcom/android/internal/widget/LockPatternUtils;)V
+    invoke-direct {v3, v4, v5}, Lcom/android/systemui/statusbar/policy/PreviewInflater;-><init>(Landroid/content/Context;Lcom/android/internal/widget/LockPatternUtils;)V
 
-    iput-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mPreviewInflater:Lcom/android/systemui/statusbar/policy/PreviewInflater;
+    iput-object v3, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mPreviewInflater:Lcom/android/systemui/statusbar/policy/PreviewInflater;
 
     invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->inflatePreviews()V
 
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mLockIcon:Lcom/android/systemui/statusbar/KeyguardAffordanceView;
+    iget-object v3, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mLockIcon:Lcom/android/systemui/statusbar/KeyguardAffordanceView;
 
-    invoke-virtual {v0, p0}, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {v3, p0}, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mLockIcon:Lcom/android/systemui/statusbar/KeyguardAffordanceView;
+    iget-object v3, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mLockIcon:Lcom/android/systemui/statusbar/KeyguardAffordanceView;
 
-    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mTrustDrawable:Lcom/android/systemui/statusbar/phone/TrustDrawable;
+    iget-object v4, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mTrustDrawable:Lcom/android/systemui/statusbar/phone/TrustDrawable;
 
-    invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->setBackground(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {v3, v4}, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mLockIcon:Lcom/android/systemui/statusbar/KeyguardAffordanceView;
+    iget-object v3, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mLockIcon:Lcom/android/systemui/statusbar/KeyguardAffordanceView;
 
-    invoke-virtual {v0, p0}, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->setOnLongClickListener(Landroid/view/View$OnLongClickListener;)V
+    invoke-virtual {v3, p0}, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->setOnLongClickListener(Landroid/view/View$OnLongClickListener;)V
 
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mCameraImageView:Lcom/android/systemui/statusbar/KeyguardAffordanceView;
+    iget-object v3, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mCameraImageView:Lcom/android/systemui/statusbar/KeyguardAffordanceView;
 
-    invoke-virtual {v0, p0}, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {v3, p0}, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mPhoneImageView:Lcom/android/systemui/statusbar/KeyguardAffordanceView;
+    iget-object v3, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mPhoneImageView:Lcom/android/systemui/statusbar/KeyguardAffordanceView;
 
-    invoke-virtual {v0, p0}, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {v3, p0}, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
+    const v3, 0x7f0f0158
+
+    invoke-virtual {p0, v3}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->findViewById(I)Landroid/view/View;
+
+    move-result-object v3
+
+    check-cast v3, Lcom/pheelicks/visualizer/VisualizerView;
+
+    iput-object v3, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mVisualizer:Lcom/pheelicks/visualizer/VisualizerView;
+
+    iget-object v3, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mVisualizer:Lcom/pheelicks/visualizer/VisualizerView;
+
+    if-eqz v3, :cond_0
+
+    new-instance v1, Landroid/graphics/Paint;
+
+    invoke-direct {v1}, Landroid/graphics/Paint;-><init>()V
+
+    iget-object v3, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v3}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v2
+
+    const v3, 0x7f0d0137
+
+    invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+
+    move-result v3
+
+    int-to-float v3, v3
+
+    invoke-virtual {v1, v3}, Landroid/graphics/Paint;->setStrokeWidth(F)V
+
+    invoke-virtual {v1, v8}, Landroid/graphics/Paint;->setAntiAlias(Z)V
+
+    const v3, 0x7f080053
+
+    invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getColor(I)I
+
+    move-result v3
+
+    invoke-virtual {v1, v3}, Landroid/graphics/Paint;->setColor(I)V
+
+    new-instance v3, Landroid/graphics/DashPathEffect;
+
+    const/4 v4, 0x2
+
+    new-array v4, v4, [F
+
+    const v5, 0x7f0d012c
+
+    invoke-virtual {v2, v5}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+
+    move-result v5
+
+    int-to-float v5, v5
+
+    aput v5, v4, v7
+
+    const v5, 0x7f0d012d
+
+    invoke-virtual {v2, v5}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+
+    move-result v5
+
+    int-to-float v5, v5
+
+    aput v5, v4, v8
+
+    const/4 v5, 0x0
+
+    invoke-direct {v3, v4, v5}, Landroid/graphics/DashPathEffect;-><init>([FF)V
+
+    invoke-virtual {v1, v3}, Landroid/graphics/Paint;->setPathEffect(Landroid/graphics/PathEffect;)Landroid/graphics/PathEffect;
+
+    const v3, 0x7f0a0041
+
+    invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getInteger(I)I
+
+    move-result v0
+
+    iget-object v3, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mVisualizer:Lcom/pheelicks/visualizer/VisualizerView;
+
+    new-instance v4, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$LockscreenBarEqRenderer;
+
+    const v5, 0x7f0a0042
+
+    invoke-virtual {v2, v5}, Landroid/content/res/Resources;->getInteger(I)I
+
+    move-result v5
+
+    const v6, 0x7f0a0043
+
+    invoke-virtual {v2, v6}, Landroid/content/res/Resources;->getInteger(I)I
+
+    move-result v6
+
+    invoke-direct {v4, v0, v1, v5, v6}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$LockscreenBarEqRenderer;-><init>(ILandroid/graphics/Paint;II)V
+
+    invoke-virtual {v3, v4}, Lcom/pheelicks/visualizer/VisualizerView;->addRenderer(Lcom/pheelicks/visualizer/renderer/Renderer;)V
+
+    :cond_0
     invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->initAccessibility()V
 
     return-void
@@ -1374,7 +1649,9 @@
 .end method
 
 .method protected onVisibilityChanged(Landroid/view/View;I)V
-    .locals 1
+    .locals 2
+
+    const/4 v1, 0x0
 
     invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->onVisibilityChanged(Landroid/view/View;I)V
 
@@ -1404,6 +1681,94 @@
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mTrustDrawable:Lcom/android/systemui/statusbar/phone/TrustDrawable;
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/TrustDrawable;->stop()V
+
+    invoke-virtual {p0, v1, v1}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->requestVisualizer(ZI)V
+
+    goto :goto_0
+.end method
+
+.method public requestVisualizer(ZI)V
+    .locals 4
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mVisualizer:Lcom/pheelicks/visualizer/VisualizerView;
+
+    if-eqz v0, :cond_0
+
+    iget-boolean v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mVisualizerEnabled:Z
+
+    if-eqz v0, :cond_0
+
+    iget-boolean v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mPowerSaveModeEnabled:Z
+
+    if-eqz v0, :cond_1
+
+    :cond_0
+    :goto_0
+    return-void
+
+    :cond_1
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mStartVisualizer:Ljava/lang/Runnable;
+
+    invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->removeCallbacks(Ljava/lang/Runnable;)Z
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mStopVisualizer:Ljava/lang/Runnable;
+
+    invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->removeCallbacks(Ljava/lang/Runnable;)Z
+
+    if-eqz p1, :cond_2
+
+    iget-boolean v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mScreenOn:Z
+
+    if-eqz v0, :cond_2
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mPhoneStatusBar:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
+
+    invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->getBarState()I
+
+    move-result v0
+
+    const/4 v1, 0x1
+
+    if-ne v0, v1, :cond_2
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mPhoneStatusBar:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
+
+    invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->isKeyguardFadingAway()Z
+
+    move-result v0
+
+    if-nez v0, :cond_2
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mPhoneStatusBar:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
+
+    invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->isGoingToNotificationShade()Z
+
+    move-result v0
+
+    if-nez v0, :cond_2
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mPhoneStatusBar:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
+
+    invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->getCurrentMediaNotificationKey()Ljava/lang/String;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_2
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mStartVisualizer:Ljava/lang/Runnable;
+
+    int-to-long v2, p2
+
+    invoke-virtual {p0, v0, v2, v3}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->postDelayed(Ljava/lang/Runnable;J)Z
+
+    goto :goto_0
+
+    :cond_2
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mStopVisualizer:Ljava/lang/Runnable;
+
+    int-to-long v2, p2
+
+    invoke-virtual {p0, v0, v2, v3}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->postDelayed(Ljava/lang/Runnable;J)Z
 
     goto :goto_0
 .end method
@@ -1446,8 +1811,6 @@
     .locals 0
 
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mPhoneStatusBar:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
-
-    invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->updateCameraVisibility()V
 
     return-void
 .end method

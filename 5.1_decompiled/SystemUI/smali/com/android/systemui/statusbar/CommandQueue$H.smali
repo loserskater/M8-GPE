@@ -494,7 +494,17 @@
 
     goto/16 :goto_0
 
-    nop
+    :sswitch_12
+    iget-object v0, p0, Lcom/android/systemui/statusbar/CommandQueue$H;->this$0:Lcom/android/systemui/statusbar/CommandQueue;
+
+    # getter for: Lcom/android/systemui/statusbar/CommandQueue;->mCallbacks:Lcom/android/systemui/statusbar/CommandQueue$Callbacks;
+    invoke-static {v0}, Lcom/android/systemui/statusbar/CommandQueue;->access$200(Lcom/android/systemui/statusbar/CommandQueue;)Lcom/android/systemui/statusbar/CommandQueue$Callbacks;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Lcom/android/systemui/statusbar/CommandQueue$Callbacks;->scheduleHeadsUpClose()V
+
+    goto/16 :goto_0
 
     :sswitch_data_0
     .sparse-switch
@@ -516,6 +526,7 @@
         0x100000 -> :sswitch_f
         0x110000 -> :sswitch_10
         0x120000 -> :sswitch_11
+        0x130000 -> :sswitch_12
     .end sparse-switch
 
     :pswitch_data_0
