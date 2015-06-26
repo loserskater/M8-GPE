@@ -25,6 +25,8 @@
 
 .field batteryLevelAlpha:F
 
+.field batteryLevelExpandedAlpha:F
+
 .field batteryX:F
 
 .field batteryY:F
@@ -307,6 +309,20 @@
     add-float/2addr v3, v4
 
     iput v3, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$LayoutValues;->batteryLevelAlpha:F
+
+    iget v3, p1, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$LayoutValues;->batteryLevelExpandedAlpha:F
+
+    sub-float v4, v5, v2
+
+    mul-float/2addr v3, v4
+
+    iget v4, p2, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$LayoutValues;->batteryLevelExpandedAlpha:F
+
+    mul-float/2addr v4, v2
+
+    add-float/2addr v3, v4
+
+    iput v3, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$LayoutValues;->batteryLevelExpandedAlpha:F
 
     iget v3, p1, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$LayoutValues;->settingsAlpha:F
 

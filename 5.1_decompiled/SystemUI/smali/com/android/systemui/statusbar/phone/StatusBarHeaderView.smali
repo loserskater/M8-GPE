@@ -4,7 +4,6 @@
 
 # interfaces
 .implements Landroid/view/View$OnClickListener;
-.implements Lcom/android/systemui/statusbar/policy/BatteryController$BatteryStateChangeCallback;
 .implements Lcom/android/systemui/statusbar/policy/NextAlarmController$NextAlarmChangeCallback;
 .implements Lcom/android/systemui/statusbar/policy/WeatherController$Callback;
 
@@ -31,7 +30,7 @@
 
 .field private mBatteryController:Lcom/android/systemui/statusbar/policy/BatteryController;
 
-.field private mBatteryLevel:Landroid/widget/TextView;
+.field private mBatteryLevel:Lcom/android/systemui/BatteryLevelTextView;
 
 .field private mCaptureValues:Z
 
@@ -104,6 +103,8 @@
 .field private mSettingsButton:Landroid/view/View;
 
 .field private mSettingsObserver:Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$SettingsObserver;
+
+.field private mShowBatteryTextExpanded:Z
 
 .field private mShowEmergencyCallsOnly:Z
 
@@ -299,6 +300,14 @@
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->mContext:Landroid/content/Context;
 
     return-object v0
+.end method
+
+.method static synthetic access$2302(Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;Z)Z
+    .locals 0
+
+    iput-boolean p1, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->mShowBatteryTextExpanded:Z
+
+    return p1
 .end method
 
 .method static synthetic access$2400(Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;)V
@@ -657,7 +666,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->applyAlpha(Landroid/view/View;F)V
 
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->mBatteryLevel:Landroid/widget/TextView;
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->mBatteryLevel:Lcom/android/systemui/BatteryLevelTextView;
 
     iget v1, p1, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$LayoutValues;->batteryLevelAlpha:F
 
@@ -935,7 +944,7 @@
 
     iput v0, p1, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$LayoutValues;->batteryY:F
 
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->mBatteryLevel:Landroid/widget/TextView;
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->mBatteryLevel:Lcom/android/systemui/BatteryLevelTextView;
 
     invoke-direct {p0, v0}, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->getAlphaForVisibility(Landroid/view/View;)F
 
@@ -1690,10 +1699,6 @@
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$SettingsObserver;->observe()V
 
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->mBatteryController:Lcom/android/systemui/statusbar/policy/BatteryController;
-
-    invoke-virtual {v0, p0}, Lcom/android/systemui/statusbar/policy/BatteryController;->addStateChangedCallback(Lcom/android/systemui/statusbar/policy/BatteryController$BatteryStateChangeCallback;)V
-
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->mNextAlarmController:Lcom/android/systemui/statusbar/policy/NextAlarmController;
 
     invoke-virtual {v0, p0}, Lcom/android/systemui/statusbar/policy/NextAlarmController;->addStateChangedCallback(Lcom/android/systemui/statusbar/policy/NextAlarmController$NextAlarmChangeCallback;)V
@@ -1706,10 +1711,6 @@
     return-void
 
     :cond_0
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->mBatteryController:Lcom/android/systemui/statusbar/policy/BatteryController;
-
-    invoke-virtual {v0, p0}, Lcom/android/systemui/statusbar/policy/BatteryController;->removeStateChangedCallback(Lcom/android/systemui/statusbar/policy/BatteryController$BatteryStateChangeCallback;)V
-
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->mNextAlarmController:Lcom/android/systemui/statusbar/policy/NextAlarmController;
 
     invoke-virtual {v0, p0}, Lcom/android/systemui/statusbar/policy/NextAlarmController;->removeStateChangedCallback(Lcom/android/systemui/statusbar/policy/NextAlarmController$NextAlarmChangeCallback;)V
@@ -1974,14 +1975,24 @@
     :goto_5
     invoke-virtual {v2, v0}, Landroid/widget/TextView;->setVisibility(I)V
 
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->mBatteryLevel:Landroid/widget/TextView;
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->mBatteryLevel:Lcom/android/systemui/BatteryLevelTextView;
 
     iget-boolean v2, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->mExpanded:Z
 
     if-eqz v2, :cond_7
 
+    iget-boolean v2, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->mShowBatteryTextExpanded:Z
+
+    if-eqz v2, :cond_7
+
+    const/4 v1, 0x1
+
     :goto_6
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
+    invoke-virtual {v0, v1}, Lcom/android/systemui/BatteryLevelTextView;->setForceShown(Z)V
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->mBatteryLevel:Lcom/android/systemui/BatteryLevelTextView;
+
+    invoke-virtual {v0, v1}, Lcom/android/systemui/BatteryLevelTextView;->setVisibility(I)V
 
     return-void
 
@@ -2043,30 +2054,6 @@
     iget v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->mExpandedHeight:I
 
     return v0
-.end method
-
-.method public onBatteryLevelChanged(IZZ)V
-    .locals 6
-
-    invoke-static {}, Ljava/text/NumberFormat;->getPercentInstance()Ljava/text/NumberFormat;
-
-    move-result-object v1
-
-    int-to-double v2, p1
-
-    const-wide/high16 v4, 0x4059000000000000L    # 100.0
-
-    div-double/2addr v2, v4
-
-    invoke-virtual {v1, v2, v3}, Ljava/text/NumberFormat;->format(D)Ljava/lang/String;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->mBatteryLevel:Landroid/widget/TextView;
-
-    invoke-virtual {v1, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    return-void
 .end method
 
 .method public onClick(Landroid/view/View;)V
@@ -2148,12 +2135,6 @@
     const v2, 0x7f0d009e
 
     invoke-super {p0, p1}, Landroid/widget/RelativeLayout;->onConfigurationChanged(Landroid/content/res/Configuration;)V
-
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->mBatteryLevel:Landroid/widget/TextView;
-
-    const v1, 0x7f0d00b2
-
-    invoke-static {v0, v1}, Lcom/android/systemui/FontSizeUtils;->updateFontSize(Landroid/widget/TextView;I)V
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->mEmergencyCallsOnly:Landroid/widget/TextView;
 
@@ -2413,9 +2394,9 @@
 
     move-result-object v0
 
-    check-cast v0, Landroid/widget/TextView;
+    check-cast v0, Lcom/android/systemui/BatteryLevelTextView;
 
-    iput-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->mBatteryLevel:Landroid/widget/TextView;
+    iput-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->mBatteryLevel:Lcom/android/systemui/BatteryLevelTextView;
 
     const v0, 0x7f0f0081
 
@@ -2614,12 +2595,6 @@
     goto :goto_0
 .end method
 
-.method public onPowerSaveChanged()V
-    .locals 0
-
-    return-void
-.end method
-
 .method public onWeatherChanged(Lcom/android/systemui/statusbar/policy/WeatherController$WeatherInfo;)V
     .locals 6
 
@@ -2701,6 +2676,10 @@
     check-cast v0, Lcom/android/systemui/BatteryMeterView;
 
     invoke-virtual {v0, p1}, Lcom/android/systemui/BatteryMeterView;->setBatteryController(Lcom/android/systemui/statusbar/policy/BatteryController;)V
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->mBatteryLevel:Lcom/android/systemui/BatteryLevelTextView;
+
+    invoke-virtual {v0, p1}, Lcom/android/systemui/BatteryLevelTextView;->setBatteryController(Lcom/android/systemui/statusbar/policy/BatteryController;)V
 
     return-void
 .end method

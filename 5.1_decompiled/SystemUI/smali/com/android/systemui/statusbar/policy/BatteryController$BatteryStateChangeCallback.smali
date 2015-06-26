@@ -18,5 +18,8 @@
 .method public abstract onBatteryLevelChanged(IZZ)V
 .end method
 
+.method public abstract onBatteryStyleChanged(II)V
+.end method
+
 .method public abstract onPowerSaveChanged()V
 .end method

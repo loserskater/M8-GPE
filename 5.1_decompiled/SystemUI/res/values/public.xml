@@ -637,6 +637,7 @@
     <public type="array" name="batterymeter_color_values" id="0x7f070001" />
     <public type="array" name="batterymeter_bolt_points" id="0x7f070002" />
     <public type="array" name="lockscreen_num_pad_klondike" id="0x7f070003" />
+    <public type="array" name="batterymeter_inverted_bolt_points" id="0x7f070004" />
     <public type="color" name="system_bar_background_opaque" id="0x7f080000" />
     <public type="color" name="system_bar_background_semi_transparent" id="0x7f080001" />
     <public type="color" name="system_bar_background_transparent" id="0x7f080002" />
@@ -1449,6 +1450,7 @@
     <public type="string" name="navbar_power_button" id="0x7f0c0240" />
     <public type="string" name="interruption_level_silent" id="0x7f0c0241" />
     <public type="string" name="zen_silent_with_warning" id="0x7f0c0242" />
+    <public type="string" name="battery_level_template" id="0x7f0c0243" />
     <public type="string" name="status_bar_date_formatter" id="0x7f0c0006" />
     <public type="string" name="toast_rotation_locked" id="0x7f0c015d" />
     <public type="string" name="APKTOOL_DUMMY_015f" id="0x7f0c015f" />
@@ -1925,7 +1927,7 @@
     <public type="id" name="multi_user_avatar" id="0x7f0f0084" />
     <public type="id" name="system_icons_super_container" id="0x7f0f0085" />
     <public type="id" name="system_icons_container" id="0x7f0f0086" />
-    <public type="id" name="battery_level" id="0x7f0f0087" />
+    <public type="id" name="battery_level_text" id="0x7f0f0087" />
     <public type="id" name="keyguard_carrier_text" id="0x7f0f0088" />
     <public type="id" name="keyguard_status_view" id="0x7f0f0089" />
     <public type="id" name="keyguard_clock_container" id="0x7f0f008a" />

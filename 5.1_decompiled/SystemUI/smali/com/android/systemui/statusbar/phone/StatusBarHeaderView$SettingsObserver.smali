@@ -156,6 +156,11 @@
     :pswitch_0
     iget-object v6, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$SettingsObserver;->this$0:Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;
 
+    # setter for: Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->mShowBatteryTextExpanded:Z
+    invoke-static {v6, v3}, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->access$2302(Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;Z)Z
+
+    iget-object v6, p0, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView$SettingsObserver;->this$0:Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;
+
     const-string v7, "status_bar_show_weather"
 
     invoke-static {v2, v7, v4}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
@@ -194,6 +199,8 @@
     move v4, v5
 
     goto :goto_2
+
+    nop
 
     :pswitch_data_0
     .packed-switch 0x4

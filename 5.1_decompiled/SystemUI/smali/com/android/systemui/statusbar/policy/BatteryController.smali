@@ -6,6 +6,7 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Lcom/android/systemui/statusbar/policy/BatteryController$SettingsObserver;,
         Lcom/android/systemui/statusbar/policy/BatteryController$BatteryStateChangeCallback;
     }
 .end annotation
@@ -33,11 +34,19 @@
 
 .field private mLevel:I
 
+.field private mObserver:Lcom/android/systemui/statusbar/policy/BatteryController$SettingsObserver;
+
+.field private mPercentMode:I
+
 .field private mPluggedIn:Z
 
 .field private final mPowerManager:Landroid/os/PowerManager;
 
 .field private mPowerSave:Z
+
+.field private mStyle:I
+
+.field private mUserId:I
 
 
 # direct methods
@@ -57,7 +66,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Landroid/content/Context;)V
+.method public constructor <init>(Landroid/content/Context;Landroid/os/Handler;)V
     .locals 2
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -97,6 +106,48 @@
     invoke-virtual {p1, p0, v0}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
     invoke-direct {p0}, Lcom/android/systemui/statusbar/policy/BatteryController;->updatePowerSave()V
+
+    new-instance v1, Lcom/android/systemui/statusbar/policy/BatteryController$SettingsObserver;
+
+    invoke-direct {v1, p0, p1, p2}, Lcom/android/systemui/statusbar/policy/BatteryController$SettingsObserver;-><init>(Lcom/android/systemui/statusbar/policy/BatteryController;Landroid/content/Context;Landroid/os/Handler;)V
+
+    iput-object v1, p0, Lcom/android/systemui/statusbar/policy/BatteryController;->mObserver:Lcom/android/systemui/statusbar/policy/BatteryController$SettingsObserver;
+
+    iget-object v1, p0, Lcom/android/systemui/statusbar/policy/BatteryController;->mObserver:Lcom/android/systemui/statusbar/policy/BatteryController$SettingsObserver;
+
+    invoke-virtual {v1}, Lcom/android/systemui/statusbar/policy/BatteryController$SettingsObserver;->observe()V
+
+    return-void
+.end method
+
+.method static synthetic access$000(Lcom/android/systemui/statusbar/policy/BatteryController;)I
+    .locals 1
+
+    iget v0, p0, Lcom/android/systemui/statusbar/policy/BatteryController;->mUserId:I
+
+    return v0
+.end method
+
+.method static synthetic access$102(Lcom/android/systemui/statusbar/policy/BatteryController;I)I
+    .locals 0
+
+    iput p1, p0, Lcom/android/systemui/statusbar/policy/BatteryController;->mStyle:I
+
+    return p1
+.end method
+
+.method static synthetic access$202(Lcom/android/systemui/statusbar/policy/BatteryController;I)I
+    .locals 0
+
+    iput p1, p0, Lcom/android/systemui/statusbar/policy/BatteryController;->mPercentMode:I
+
+    return p1
+.end method
+
+.method static synthetic access$300(Lcom/android/systemui/statusbar/policy/BatteryController;)V
+    .locals 0
+
+    invoke-direct {p0}, Lcom/android/systemui/statusbar/policy/BatteryController;->fireSettingsChanged()V
 
     return-void
 .end method
@@ -162,6 +213,42 @@
     check-cast v2, Lcom/android/systemui/statusbar/policy/BatteryController$BatteryStateChangeCallback;
 
     invoke-interface {v2}, Lcom/android/systemui/statusbar/policy/BatteryController$BatteryStateChangeCallback;->onPowerSaveChanged()V
+
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    return-void
+.end method
+
+.method private fireSettingsChanged()V
+    .locals 5
+
+    iget-object v2, p0, Lcom/android/systemui/statusbar/policy/BatteryController;->mChangeCallbacks:Ljava/util/ArrayList;
+
+    invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
+
+    move-result v0
+
+    const/4 v1, 0x0
+
+    :goto_0
+    if-ge v1, v0, :cond_0
+
+    iget-object v2, p0, Lcom/android/systemui/statusbar/policy/BatteryController;->mChangeCallbacks:Ljava/util/ArrayList;
+
+    invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lcom/android/systemui/statusbar/policy/BatteryController$BatteryStateChangeCallback;
+
+    iget v3, p0, Lcom/android/systemui/statusbar/policy/BatteryController;->mStyle:I
+
+    iget v4, p0, Lcom/android/systemui/statusbar/policy/BatteryController;->mPercentMode:I
+
+    invoke-interface {v2, v3, v4}, Lcom/android/systemui/statusbar/policy/BatteryController$BatteryStateChangeCallback;->onBatteryStyleChanged(II)V
 
     add-int/lit8 v1, v1, 0x1
 
@@ -258,6 +345,12 @@
     iget-boolean v2, p0, Lcom/android/systemui/statusbar/policy/BatteryController;->mCharging:Z
 
     invoke-interface {p1, v0, v1, v2}, Lcom/android/systemui/statusbar/policy/BatteryController$BatteryStateChangeCallback;->onBatteryLevelChanged(IZZ)V
+
+    iget v0, p0, Lcom/android/systemui/statusbar/policy/BatteryController;->mStyle:I
+
+    iget v1, p0, Lcom/android/systemui/statusbar/policy/BatteryController;->mPercentMode:I
+
+    invoke-interface {p1, v0, v1}, Lcom/android/systemui/statusbar/policy/BatteryController$BatteryStateChangeCallback;->onBatteryStyleChanged(II)V
 
     return-void
 .end method
@@ -464,6 +557,18 @@
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/BatteryController;->mChangeCallbacks:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
+
+    return-void
+.end method
+
+.method public setUserId(I)V
+    .locals 1
+
+    iput p1, p0, Lcom/android/systemui/statusbar/policy/BatteryController;->mUserId:I
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/policy/BatteryController;->mObserver:Lcom/android/systemui/statusbar/policy/BatteryController$SettingsObserver;
+
+    invoke-virtual {v0}, Lcom/android/systemui/statusbar/policy/BatteryController$SettingsObserver;->observe()V
 
     return-void
 .end method

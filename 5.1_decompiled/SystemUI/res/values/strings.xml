@@ -631,4 +631,5 @@ Try again in %d seconds."</string>
     <string name="navbar_power_button">Power button</string>
     <string name="interruption_level_silent">Silent</string>
     <string name="zen_silent_with_warning">No interruptions, except alarms.</string>
+    <string name="battery_level_template">%d%%</string>
 </resources>
