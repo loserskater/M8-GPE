@@ -5120,13 +5120,26 @@
     goto :goto_0
 
     :cond_2
-    const/4 v5, 0x4
+    iget-object v5, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mKeyguardBottomArea:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
 
-    invoke-static {v5, v1, v3}, Lcom/android/systemui/EventLogTags;->writeSysuiLockscreenGesture(III)V
+    sget-object v3, Lcom/android/internal/policy/impl/LockscreenShortcutsHelper$Shortcuts;->RIGHT_SHORTCUT:Lcom/android/internal/policy/impl/LockscreenShortcutsHelper$Shortcuts;
+
+    invoke-virtual {v5, v3}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->isTargetCustom(Lcom/android/internal/policy/impl/LockscreenShortcutsHelper$Shortcuts;)Z
+
+    move-result v5
+
+    if-nez v5, :cond_3
 
     iget-object v5, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mSecureCameraLaunchManager:Lcom/android/systemui/statusbar/phone/SecureCameraLaunchManager;
 
     invoke-virtual {v5}, Lcom/android/systemui/statusbar/phone/SecureCameraLaunchManager;->startSecureCameraLaunch()V
+
+    goto :goto_1
+
+    :cond_3
+    iget-object v5, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mKeyguardBottomArea:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
+
+    invoke-virtual {v5}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->launchCamera()V
 
     goto :goto_1
 .end method
@@ -5272,7 +5285,13 @@
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mStatusBar:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
-    invoke-virtual {v1}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->onPhoneHintStarted()V
+    iget-object v2, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mKeyguardBottomArea:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
+
+    invoke-virtual {v2}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->getLeftHint()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->onPhoneHintStarted(Ljava/lang/String;)V
 
     goto :goto_0
 
@@ -5286,7 +5305,13 @@
     :cond_6
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mStatusBar:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
 
-    invoke-virtual {v1}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->onCameraHintStarted()V
+    iget-object v2, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mKeyguardBottomArea:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
+
+    invoke-virtual {v2}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->getRightHint()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->onCameraHintStarted(Ljava/lang/String;)V
 
     goto :goto_0
 .end method

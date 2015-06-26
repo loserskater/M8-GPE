@@ -10913,14 +10913,12 @@
     goto :goto_0
 .end method
 
-.method public onCameraHintStarted()V
-    .locals 2
+.method public onCameraHintStarted(Ljava/lang/String;)V
+    .locals 1
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mKeyguardIndicationController:Lcom/android/systemui/statusbar/KeyguardIndicationController;
 
-    const v1, 0x7f0c011b
-
-    invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/KeyguardIndicationController;->showTransientIndication(I)V
+    invoke-virtual {v0, p1}, Lcom/android/systemui/statusbar/KeyguardIndicationController;->showTransientIndication(Ljava/lang/String;)V
 
     return-void
 .end method
@@ -11107,14 +11105,12 @@
     goto :goto_0
 .end method
 
-.method public onPhoneHintStarted()V
-    .locals 2
+.method public onPhoneHintStarted(Ljava/lang/String;)V
+    .locals 1
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mKeyguardIndicationController:Lcom/android/systemui/statusbar/KeyguardIndicationController;
 
-    const v1, 0x7f0c011a
-
-    invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/KeyguardIndicationController;->showTransientIndication(I)V
+    invoke-virtual {v0, p1}, Lcom/android/systemui/statusbar/KeyguardIndicationController;->showTransientIndication(Ljava/lang/String;)V
 
     return-void
 .end method
