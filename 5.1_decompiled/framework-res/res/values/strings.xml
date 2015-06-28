@@ -41,7 +41,7 @@
     <string name="config_geofenceProviderPackageName">@null</string>
     <string name="config_activityRecognitionHardwarePackageName">@null</string>
     <string name="config_datause_iface">rmnet0</string>
-    <string name="default_sms_application">com.google.android.talk</string>
+    <string name="default_sms_application">com.google.android.apps.messaging</string>
     <string name="config_default_dns_server">8.8.8.8</string>
     <string name="mobile_provisioning_apn" />
     <string name="mobile_provisioning_url" />

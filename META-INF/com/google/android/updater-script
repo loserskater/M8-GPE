@@ -385,16 +385,6 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "2" || file_getprop("/tmp/
     package_extract_dir("system/priv-app/Wallet", "/system/priv-app/Wallet");
   endif;
   #
-  #Mms
-  #
-  ui_print("@MMS");
-  if file_getprop("/tmp/aroma/mms.prop","item.0.1") == "1" then
-    ui_print("Adding Messenger");
-    package_extract_dir("aroma/mms/messenger", "/system");
-  else
-    delete_recursive("/system/priv-app/Messenger");
-  endif;
-  #
   #Email
   #
   set_progress(0.66);
@@ -1140,9 +1130,9 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "1" || file_getprop("/tmp/
   if file_getprop("/tmp/aroma/xposed.prop","item.0.1") == "1" then
     ui_print("@Installing Xposed");
 	package_extract_dir("aroma/xposed/system", "/system");
-    package_extract_dir("aroma/xposed/zip", "/tmp/xposed");
-    run_program("/sbin/busybox", "unzip", "/tmp/xposed/xposed.zip", "META-INF/com/google/android/*", "-d", "/tmp/xposed");
-    run_program("/sbin/busybox", "sh", "/tmp/xposed/META-INF/com/google/android/update-binary", "dummy", "1", "/tmp/xposed/xposed.zip");
+    package_extract_dir("aroma/xposed/zip", "/temp/xposed");
+    run_program("/sbin/busybox", "unzip", "/temp/xposed/xposed.zip", "META-INF/com/google/android/*", "-d", "/temp/xposed");
+    run_program("/sbin/busybox", "sh", "/temp/xposed/META-INF/com/google/android/update-binary", "dummy", "1", "/temp/xposed/xposed.zip");
   endif;
   ui_print("@*Success*");
   ui_print("@*Please Reboot System*");

@@ -7,6 +7,7 @@ ini_set("rom_authors", "enewman17, loserskater");
 loadlang("langs/en.lang");
 fontresload( "0", "ttf/Roboto-Regular.ttf", "12" );
 fontresload( "1", "ttf/Roboto-Regular.ttf", "18" );
+
 #
 # Show Animated Splash
 #
@@ -25,7 +26,6 @@ anisplash(
 #
 # Show Splash
 #
-
 splash(
     4000,
     "m8_gpe"
@@ -38,8 +38,7 @@ textbox(
     "Welcome",
   
   #-- Subtitle
-    ini_get("rom_name")+"\n"+
-	resread("version.txt"),
+    ini_get("rom_name"),
   
   #-- Icon
     "@welcome",
@@ -65,12 +64,12 @@ menubox(
     
     
     "Install Stock Rom",       "Don't worry about mods or apps, just install.",  "@install2",    #-- selected = 1
-    "Install Custom Rom",        "Install the rom along with mods selection.", "@install2",      #-- selected = 2
-    "Mods Only",                 "Change themes, enable or disable mods.",  "@mods",             #-- selected = 3
-	"Kernel Only",               "Install a kernel",                      "@mods2",              #-- selected = 4
-	"System Information",        "Show device and partition information.",  "@info",             #-- selected = 5
-	"Reboot",                    "Reboot Your Device",   "@reboot",                              #-- selected = 6
-	"Exit",                      "Terminate AROMA and return to recovery.", "@exit"              #-- selected = 7
+    "Install Custom Rom",      "Install the rom along with mods selection.",     "@install2",    #-- selected = 2
+    "Mods Only",               "Change themes, enable or disable mods.",         "@mods",        #-- selected = 3
+	"Kernel Only",             "Install a kernel",                               "@mods2",       #-- selected = 4
+	"System Information",      "Show device and partition information.",         "@info",        #-- selected = 5
+	"Reboot",                  "Reboot Your Device",                             "@reboot",      #-- selected = 6
+	"Exit",                    "Terminate AROMA and return to recovery.",        "@exit"         #-- selected = 7
 );
 
 ###################################################################################################################
@@ -263,30 +262,6 @@ if prop("type.prop","selected")=="2"||prop("type.prop","selected")=="3" then
       );
 	  write("/data/media/0/aroma/Dialer.prop", readtmpfile("dialer.prop"));
 	endif;
-	setvar("mms_prop", read("/data/media/0/aroma/MMS.prop"));
-    if (getvar("mms_prop")!="") then
-      writetmpfile("mms.prop",getvar("mms_prop"));
-    endif;
-    checkbox(
-      #-- Title
-        "MMS Options",
-      
-      #-- Sub Title
-        "Select the apps you would like added/removed.\n"+
-        "CHECKED items will be ADDED.\n"+
-        "UNCHECKED will be REMOVED.",
-       
-      #-- Icon:
-        "@apps",
-      
-      #-- Will be saved in /tmp/aroma/mms.prop
-        "mms.prop",
-
-		  "Messenger",        "",           1,      #-- item.0.1
-          "AOSP",             "",           3       #-- item.0.2
-
-    );
-	write("/data/media/0/aroma/MMS.prop", readtmpfile("mms.prop"));
 	setvar("email_prop", read("/data/media/0/aroma/Email.prop"));
     if (getvar("email_prop")!="") then
       writetmpfile("email.prop",getvar("email_prop"));
@@ -330,7 +305,7 @@ if prop("type.prop","selected")=="2"||prop("type.prop","selected")=="3" then
         "keyboard.prop",
           
 	  "Keyboard", "",                         2,
-		"HTC",    "HTC Sense 6 Keyboard",     0,        #-- item.1.1
+		"HTC",    "HTC Sense 7 Keyboard",     0,        #-- item.1.1
 		
 	  "Languages",              "",           2,
 	    "Arabic",               "",           0,		#-- item.2.1
