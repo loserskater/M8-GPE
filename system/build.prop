@@ -19,7 +19,7 @@ ro.aa.report=com
 ro.aa.mainsku=0
 ro.onecid=
 ro.build.id=LMY47O.H6
-ro.build.display.id=LMY47O.H6 release-keys
+ro.build.display.id=LMY47O.H6
 ro.build.version.incremental=534182
 ro.build.version.sdk=22
 ro.build.version.codename=REL
@@ -342,9 +342,9 @@ persist.loc.nlp_name=com.qualcomm.location
 ro.gps.agps_provider=1
 ro.pip.gated=0
 
-persist.sys.media.use-awesome=1
+persist.sys.media.use-awesome=0
 
 # OTA Updates
 ro.ota.romname=M8-GPE
-ro.ota.version=7
+ro.ota.version=8
 ro.ota.manifest=https://romhut.com/roms/m8-gpe/ota.xml
