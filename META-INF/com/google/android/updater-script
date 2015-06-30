@@ -1129,7 +1129,7 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "1" || file_getprop("/tmp/
   #
   if file_getprop("/tmp/aroma/xposed.prop","item.0.1") == "1" then
     ui_print("@Installing Xposed");
-	package_extract_dir("aroma/xposed/system", "/system");
+	assert(package_extract_file("aroma/xposed/app/Xposed.apk", "/system/priv-app/Xposed/Xposed.apk"));
     package_extract_dir("aroma/xposed/zip", "/temp/xposed");
     run_program("/sbin/busybox", "unzip", "/temp/xposed/xposed.zip", "META-INF/com/google/android/*", "-d", "/temp/xposed");
     run_program("/sbin/busybox", "sh", "/temp/xposed/META-INF/com/google/android/update-binary", "dummy", "1", "/temp/xposed/xposed.zip");
