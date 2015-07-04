@@ -24,7 +24,7 @@ gsm.sim.operator.numeric=000000
 gsm.operator.numeric=000000
 gsm.sim.operator.iso-country=us
 gsm.operator.iso-country=us
-ro.net.apnwhitelist=admin
+ro.net.apnwhitelist=none
 ro.htc.checkin.delay=0
 ro.telephony.ipv6_capability=1
 
