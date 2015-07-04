@@ -35,95 +35,10 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "4" then
   package_extract_file("system/bin/mpdecision", "/system/bin/mpdecision");
   package_extract_file("system/bin/pnpmgr", "/system/bin/pnpmgr");
   package_extract_file("system/etc/thermal-engine.conf", "/system/etc/thermal-engine.conf");
-  if file_getprop("/tmp/aroma/carrier.prop","selected.0") == "1" then
-    if file_getprop("/tmp/aroma/kernel.prop","selected.1") == "1" then
-      ui_print("@Installing Stock Kernel");
-	  package_extract_dir("system/lib/modules", "/system/lib/modules");
-      package_extract_file("boot.img", "/dev/block/platform/msm_sdcc.1/by-name/boot");
-    endif;
-    if file_getprop("/tmp/aroma/kernel.prop","selected.1") == "2" then
-      ui_print("@Installing Quantum by PwnCakes193");
-	  package_extract_dir("system/lib/modules", "/system/lib/modules");
-	  package_extract_dir("aroma/kernels/quantum/system", "/system");
-	  package_extract_dir("aroma/kernels/quantum/system/lib/modules", "/system/lib/modules");
-	  set_perm_recursive(0, 2000, 0755, 0755, "/system/etc/init.d/93QuantumTweaks");
-      set_perm_recursive(0, 2000, 0755, 0755, "/system/etc/init.d/97QuantumSettings");
-      set_perm_recursive(0, 2000, 0755, 0755, "/system/etc/init.d/98remount_fullext4");
-      set_perm_recursive(0, 2000, 0755, 0755, "/system/bin/fstrim");
-      package_extract_file("aroma/kernels/quantum/boot.img", "/dev/block/platform/msm_sdcc.1/by-name/boot");
-	  ui_print("Running FSTRIM, this might take a while");
-      run_program("/system/bin/fstrim", "-v", "/system");
-    endif;
-    if file_getprop("/tmp/aroma/kernel.prop","selected.1") == "3" then
-      ui_print("@Installing Elemental X Kernel");
-	  package_extract_dir("system/lib/modules", "/system/lib/modules");
-	  package_extract_dir("aroma/kernels/elementalx/config", "/tmp");
-      set_perm(0, 0, 0777, "/tmp/busybox");
-	  set_perm(0, 0, 0777, "/tmp/buildconfig.sh");
-      package_extract_dir("aroma/kernels/elementalx/system", "/system");
-	  if file_getprop("/tmp/aroma/cpu.prop","selected.3") == "1" then
-	    package_extract_dir("aroma/kernels/elementalx/thermal/elexcool", "/system/etc");
-	  endif;
-	  if file_getprop("/tmp/aroma/cpu.prop","selected.3") == "2" then
-	    package_extract_dir("aroma/kernels/elementalx/thermal/stockcool", "/system/etc");
-	  endif;
-	  set_perm_recursive(0, 2000, 0755, 0755, "/system/su.d/elex_permissive.sh");
-	  set_perm_recursive(0, 2000, 0755, 0755, "/system/bin/fstrim");
-      set_perm_recursive(0, 0, 0644, 0644, "/system/etc/thermal-engine.conf");
-      set_perm_recursive(0, 2000, 0777, 0777, "/system/bin/mpdecision");
-      set_perm_recursive(0, 2000, 0777, 0777, "/system/bin/pnpmgr");
-	  run_program("/tmp/buildconfig.sh");
-	  run_program("/tmp/busybox", "cp", "/tmp/elementalx.conf", "/system/etc/elementalx.conf");
-	  package_extract_dir("aroma/kernels/elementalx/boot", "/tmp");
-	  set_perm(0, 0, 0777, "/tmp/cmdline.sh");
-	  set_perm(0, 0, 0777, "/tmp/abootimg");
-	  run_program("/tmp/cmdline.sh");
-	  run_program("/tmp/abootimg", "-u", "/tmp/boot.img", "-f", "/tmp/bootimg.cfg");
-	  run_program("/tmp/busybox", "dd", "if=/tmp/boot.img", "of=/dev/block/platform/msm_sdcc.1/by-name/boot");
-    endif;
-    if file_getprop("/tmp/aroma/kernel.prop","selected.1") == "4" then
-      ui_print("@Installing Elite by buckmarble");
-	  package_extract_dir("system/lib/modules", "/system/lib/modules");
-	  package_extract_dir("aroma/kernels/elite/system", "/system");
-	  set_perm_recursive(0, 2000, 0755, 0755, "/system/bin/fstrim");
-      package_extract_file("aroma/kernels/elite/boot.img", "/dev/block/platform/msm_sdcc.1/by-name/boot");
-	  ui_print("Running FSTRIM, this might take a while");
-      run_program("/system/bin/fstrim", "-v", "/system");
-    endif;
-  else
-    if file_getprop("/tmp/aroma/kernel.prop","selected.1") == "1" then
-      ui_print("@Installing Stock Kernel");
-	  package_extract_dir("system/lib/modules", "/system/lib/modules");
-      package_extract_file("boot.img", "/dev/block/platform/msm_sdcc.1/by-name/boot");
-    endif;
-    if file_getprop("/tmp/aroma/kernel.prop","selected.1") == "2" then
-      ui_print("@Installing Quantum by PwnCakes193");
-	  package_extract_dir("system/lib/modules", "/system/lib/modules");
-	  package_extract_dir("aroma/kernels/quantum/system", "/system");
-	  package_extract_dir("aroma/kernels/quantum/system/lib/modules", "/system/lib/modules");
-	  set_perm_recursive(0, 2000, 0755, 0755, "/system/etc/init.d/93QuantumTweaks");
-      set_perm_recursive(0, 2000, 0755, 0755, "/system/etc/init.d/97QuantumSettings");
-      set_perm_recursive(0, 2000, 0755, 0755, "/system/etc/init.d/98remount_fullext4");
-      set_perm_recursive(0, 2000, 0755, 0755, "/system/bin/fstrim");
-      package_extract_file("aroma/kernels/quantum/boot.img", "/dev/block/platform/msm_sdcc.1/by-name/boot");
-	  ui_print("Running FSTRIM, this might take a while");
-      run_program("/system/bin/fstrim", "-v", "/system");
-    endif;
-    if file_getprop("/tmp/aroma/kernel.prop","selected.1") == "3" then
-      ui_print("@Installing CodeCraft by Evolutionmods");
-	  package_extract_dir("system/lib/modules", "/system/lib/modules");
-	  package_extract_dir("aroma/kernels/codecraft/system", "/system");
-      package_extract_file("aroma/kernels/codecraft/boot.img", "/dev/block/platform/msm_sdcc.1/by-name/boot");
-    endif;
-    if file_getprop("/tmp/aroma/kernel.prop","selected.1") == "4" then
-      ui_print("@Installing Elite by buckmarble");
-	  package_extract_dir("system/lib/modules", "/system/lib/modules");
-	  package_extract_dir("aroma/kernels/elite/system", "/system");
-	  set_perm_recursive(0, 2000, 0755, 0755, "/system/bin/fstrim");
-      package_extract_file("aroma/kernels/elite/boot.img", "/dev/block/platform/msm_sdcc.1/by-name/boot");
-	  ui_print("Running FSTRIM, this might take a while");
-      run_program("/system/bin/fstrim", "-v", "/system");
-    endif;
+  if file_getprop("/tmp/aroma/kernel.prop","selected.1") == "1" then
+    ui_print("@Installing Stock Kernel");
+	package_extract_dir("system/lib/modules", "/system/lib/modules");
+    package_extract_file("boot.img", "/dev/block/platform/msm_sdcc.1/by-name/boot");
   endif;
   set_perm_recursive(0, 0, 0755, 0644, "/system/lib/modules");
   symlink("/system/lib/modules/pronto/pronto_wlan.ko", "/system/lib/modules/wlan.ko");
@@ -176,91 +91,32 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "1" || file_getprop("/tmp/
     run_program("/tmp/wipe.sh");
   endif;
   set_progress(0.20);
+  show_progress(0.59,20);
   ui_print("@Extracting System");
   package_extract_dir("system", "/system");
-  set_progress(0.55);
   if file_getprop("/tmp/aroma/wipe.prop","selected.0") == "1" then
     package_extract_dir("data", "/data");
   endif;
-  if file_getprop("/tmp/aroma/carrier.prop","selected.0") == "1" then
-    if file_getprop("/tmp/aroma/kernel.prop","selected.1") == "1" then
-      ui_print("@Installing Stock Kernel");
-      package_extract_file("boot.img", "/dev/block/platform/msm_sdcc.1/by-name/boot");
-    endif;
-    if file_getprop("/tmp/aroma/kernel.prop","selected.1") == "2" then
-      ui_print("@Installing Quantum by PwnCakes193");
-      package_extract_dir("aroma/kernels/quantum/system", "/system");
-      package_extract_file("aroma/kernels/quantum/boot.img", "/dev/block/platform/msm_sdcc.1/by-name/boot");
-	  ui_print("Running FSTRIM, this might take a while");
-      run_program("/system/bin/fstrim", "-v", "/system");
-    endif;
-    if file_getprop("/tmp/aroma/kernel.prop","selected.1") == "3" then
-      ui_print("@Installing Elemental X Kernel");
-	  package_extract_dir("aroma/kernels/elementalx/config", "/tmp");
-      set_perm(0, 0, 0777, "/tmp/busybox");
-	  set_perm(0, 0, 0777, "/tmp/buildconfig.sh");
-      package_extract_dir("aroma/kernels/elementalx/system", "/system");
-	  if file_getprop("/tmp/aroma/cpu.prop","selected.3") == "1" then
-	    package_extract_dir("aroma/kernels/elementalx/thermal/elexcool", "/system/etc");
-	  endif;
-	  if file_getprop("/tmp/aroma/cpu.prop","selected.3") == "2" then
-	    package_extract_dir("aroma/kernels/elementalx/thermal/stockcool", "/system/etc");
-	  endif;
-	  run_program("/tmp/buildconfig.sh");
-	  run_program("/tmp/busybox", "cp", "/tmp/elementalx.conf", "/system/etc/elementalx.conf");
-	  package_extract_dir("aroma/kernels/elementalx/boot", "/tmp");
-	  set_perm(0, 0, 0777, "/tmp/cmdline.sh");
-	  set_perm(0, 0, 0777, "/tmp/abootimg");
-	  run_program("/tmp/cmdline.sh");
-	  run_program("/tmp/abootimg", "-u", "/tmp/boot.img", "-f", "/tmp/bootimg.cfg");
-	  run_program("/tmp/busybox", "dd", "if=/tmp/boot.img", "of=/dev/block/platform/msm_sdcc.1/by-name/boot");
-    endif;
-    if file_getprop("/tmp/aroma/kernel.prop","selected.1") == "4" then
-      ui_print("@Installing Elite by buckmarble");
-	  package_extract_dir("aroma/kernels/elite/system", "/system");
-      package_extract_file("aroma/kernels/elite/boot.img", "/dev/block/platform/msm_sdcc.1/by-name/boot");
-	  ui_print("Running FSTRIM, this might take a while");
-      run_program("/system/bin/fstrim", "-v", "/system");
-    endif;
-  else
-    if file_getprop("/tmp/aroma/kernel.prop","selected.1") == "1" then
-      ui_print("@Installing Stock Kernel");
-	  package_extract_dir("system/lib/modules", "/system/lib/modules");
-      package_extract_file("boot.img", "/dev/block/platform/msm_sdcc.1/by-name/boot");
-    endif;
-    if file_getprop("/tmp/aroma/kernel.prop","selected.1") == "2" then
-      ui_print("@Installing Quantum by PwnCakes193");
-	  package_extract_dir("aroma/kernels/quantum/system", "/system");
-      package_extract_file("aroma/kernels/quantum/boot.img", "/dev/block/platform/msm_sdcc.1/by-name/boot");
-	  ui_print("Running FSTRIM, this might take a while");
-      run_program("/system/bin/fstrim", "-v", "/system");
-    endif;
-    if file_getprop("/tmp/aroma/kernel.prop","selected.1") == "3" then
-      ui_print("@Installing CodeCraft by Evolutionmods");
-	  package_extract_dir("aroma/kernels/codecraft/system", "/system");
-      package_extract_file("aroma/kernels/codecraft/boot.img", "/dev/block/platform/msm_sdcc.1/by-name/boot");
-    endif;
-    if file_getprop("/tmp/aroma/kernel.prop","selected.1") == "4" then
-      ui_print("@Installing Elite by buckmarble");
-	  package_extract_dir("aroma/kernels/elite/system", "/system");
-      package_extract_file("aroma/kernels/elite/boot.img", "/dev/block/platform/msm_sdcc.1/by-name/boot");
-      ui_print("Running FSTRIM, this might take a while");
-      run_program("/system/bin/fstrim", "-v", "/system");
-    endif;
+  ui_print("@Installing Kernel");
+  package_extract_file("boot.img", "/dev/block/platform/msm_sdcc.1/by-name/boot");
+  if file_getprop("/tmp/aroma/type.prop","selected") == "1" && file_getprop("/tmp/aroma/carrier.prop","selected.0") != "1" then
+    ui_print("@Carrier Patch");
     package_extract_dir("aroma/scripts/patch_apk", "/tmp");
 	set_perm_recursive(0, 0, 0755, 0755, "/tmp");
 	if file_getprop("/tmp/aroma/carrier.prop","selected.0") == "3" then
+	  ui_print("Sprint");
       package_extract_dir("aroma/carrier/sprint/system", "/system");
       package_extract_dir("aroma/carrier/sprint/framework", "/tmp");
 	else
+	  ui_print("Verizon");
       package_extract_dir("aroma/carrier/verizon/system", "/system");
 	  package_extract_dir("aroma/carrier/verizon/framework", "/tmp");
 	endif;
     run_program("/tmp/patch_apk.sh", "/system/framework/framework-res.apk");
     set_perm(0, 0, 0644, "/system/framework/framework-res.apk");
   endif;
-  set_progress(0.60);
 endif;
+set_progress(0.60);
 #
 #Mods
 #
@@ -272,6 +128,18 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "2" || file_getprop("/tmp/
   #
   ui_print("@De-Bloat");
   if file_getprop("/tmp/aroma/debloat.prop","item.1.1") == "1" then
+    ui_print("Removing Chrome");
+	delete_recursive("/system/app/Chrome");
+  else
+    package_extract_dir("system/app/Chrome", "/system/app/Chrome");
+  endif;
+  if file_getprop("/tmp/aroma/debloat.prop","item.1.2") == "1" then
+    ui_print("Removing Compass");
+	delete_recursive("/system/app/Compass");
+  else
+    package_extract_dir("system/app/Compass", "/system/app/Compass");
+  endif;
+  if file_getprop("/tmp/aroma/debloat.prop","item.1.3") == "1" then
     ui_print("Removing Drive");
 	delete_recursive("/system/app/Drive");
 	delete_recursive("/system/app/DriveActivator");
@@ -279,91 +147,109 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "2" || file_getprop("/tmp/
     package_extract_dir("system/app/Drive", "/system/app/Drive");
 	package_extract_dir("system/app/DriveActivator", "/system/app/DriveActivator");
   endif;
-  if file_getprop("/tmp/aroma/debloat.prop","item.1.2") == "1" then
+  if file_getprop("/tmp/aroma/debloat.prop","item.1.4") == "1" then
     ui_print("Removing EditorsDocs");
 	delete_recursive("/system/app/EditorsDocs");
   else
     package_extract_dir("system/app/EditorsDocs", "/system/app/EditorsDocs");
   endif;
-  if file_getprop("/tmp/aroma/debloat.prop","item.1.3") == "1" then
+  if file_getprop("/tmp/aroma/debloat.prop","item.1.5") == "1" then
     ui_print("Removing EditorsSheets");
 	delete_recursive("/system/app/EditorsSheets");
   else
     package_extract_dir("system/app/EditorsSheets", "/system/app/EditorsSheets");
   endif;
-  if file_getprop("/tmp/aroma/debloat.prop","item.1.4") == "1" then
+  if file_getprop("/tmp/aroma/debloat.prop","item.1.6") == "1" then
     ui_print("Removing EditorsSlides");
 	delete_recursive("/system/app/EditorsSlides");
   else
     package_extract_dir("system/app/EditorsSlides", "/system/app/EditorsSlides");
   endif;
-  if file_getprop("/tmp/aroma/debloat.prop","item.1.5") == "1" then
+  if file_getprop("/tmp/aroma/debloat.prop","item.1.7") == "1" then
+    ui_print("Removing Gmail");
+	delete_recursive("/system/app/Gmail2");
+  else
+    package_extract_dir("system/app/Gmail2", "/system/app/Gmail2");
+  endif;
+  if file_getprop("/tmp/aroma/debloat.prop","item.1.8") == "1" then
+    ui_print("Removing Google Camera");
+	delete_recursive("/system/app/GoogleCamera");
+  else
+    package_extract_dir("system/app/GoogleCamera", "/system/app/GoogleCamera");
+  endif;
+  if file_getprop("/tmp/aroma/debloat.prop","item.1.9") == "1" then
     ui_print("Removing GoogleHindiIME");
 	delete_recursive("/system/app/GoogleHindiIME");
   else
     package_extract_dir("system/app/GoogleHindiIME", "/system/app/GoogleHindiIME");
   endif;
-  if file_getprop("/tmp/aroma/debloat.prop","item.1.6") == "1" then
+  if file_getprop("/tmp/aroma/debloat.prop","item.1.10") == "1" then
     ui_print("Removing GooglePinyinIME");
 	delete_recursive("/system/app/GooglePinyinIME");
   else
     package_extract_dir("system/app/GooglePinyinIME", "/system/app/GooglePinyinIME");
   endif;
-  if file_getprop("/tmp/aroma/debloat.prop","item.1.7") == "1" then
+  if file_getprop("/tmp/aroma/debloat.prop","item.1.11") == "1" then
     ui_print("Removing Hangouts");
 	delete_recursive("/system/app/Hangouts");
   else
     package_extract_dir("system/app/Hangouts", "/system/app/Hangouts");
   endif;
-  if file_getprop("/tmp/aroma/debloat.prop","item.1.8") == "1" then
+  if file_getprop("/tmp/aroma/debloat.prop","item.1.12") == "1" then
     ui_print("Removing HPPrintPlugin");
 	delete_recursive("/system/app/HPPrintPlugin");
   else
     package_extract_dir("system/app/HPPrintPlugin", "/system/app/HPPrintPlugin");
   endif;
-  if file_getprop("/tmp/aroma/debloat.prop","item.1.9") == "1" then
+  if file_getprop("/tmp/aroma/debloat.prop","item.1.13") == "1" then
     ui_print("Removing iWnnIME");
 	delete_recursive("/system/app/iWnnIME");
   else
     package_extract_dir("system/app/iWnnIME", "/system/app/iWnnIME");
   endif;
-  if file_getprop("/tmp/aroma/debloat.prop","item.1.10") == "1" then
+  if file_getprop("/tmp/aroma/debloat.prop","item.1.14") == "1" then
     ui_print("Removing Keep");
 	delete_recursive("/system/app/Keep");
   else
     package_extract_dir("system/app/Keep", "/system/app/Keep");
   endif;
-  if file_getprop("/tmp/aroma/debloat.prop","item.1.11") == "1" then
+  if file_getprop("/tmp/aroma/debloat.prop","item.1.15") == "1" then
     ui_print("Removing KoreanIME");
 	delete_recursive("/system/app/KoreanIME");
   else
     package_extract_dir("system/app/KoreanIME", "/system/app/KoreanIME");
   endif;
-  if file_getprop("/tmp/aroma/debloat.prop","item.1.12") == "1" then
+  if file_getprop("/tmp/aroma/debloat.prop","item.1.16") == "1" then
     ui_print("Removing Maps");
 	delete_recursive("/system/app/Maps");
   else
     package_extract_dir("system/app/Maps", "/system/app/Maps");
   endif;
-  if file_getprop("/tmp/aroma/debloat.prop","item.1.13") == "1" then
+  if file_getprop("/tmp/aroma/debloat.prop","item.1.17") == "1" then
+    ui_print("Removing Google Play Music");
+	delete_recursive("/system/app/Music2");
+  else
+    package_extract_dir("system/app/Music2", "/system/app/Music2");
+  endif;
+  if file_getprop("/tmp/aroma/debloat.prop","item.1.18") == "1" then
     ui_print("Removing News & Weather");
 	delete_recursive("/system/app/NewsWeather");
   else
     package_extract_dir("system/app/NewsWeather", "/system/app/NewsWeather");
   endif;
-  if file_getprop("/tmp/aroma/debloat.prop","item.1.14") == "1" then
+  if file_getprop("/tmp/aroma/debloat.prop","item.1.19") == "1" then
     ui_print("Removing PlayGames");
 	delete_recursive("/system/app/PlayGames");
   else
     package_extract_dir("system/app/PlayGames", "/system/app/PlayGames");
   endif;
-  if file_getprop("/tmp/aroma/debloat.prop","item.1.15") == "1" then
+  if file_getprop("/tmp/aroma/debloat.prop","item.1.20") == "1" then
     ui_print("Removing Street");
 	delete_recursive("/system/app/Street");
   else
     package_extract_dir("system/app/Street", "/system/app/Street");
   endif;
-  if file_getprop("/tmp/aroma/debloat.prop","item.1.16") == "1" then
+  if file_getprop("/tmp/aroma/debloat.prop","item.1.21") == "1" then
     ui_print("Removing YouTube");
 	delete_recursive("/system/app/YouTube");
   else
@@ -379,10 +265,26 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "2" || file_getprop("/tmp/
     package_extract_dir("system/priv-app/DotMatrix", "/system/priv-app/DotMatrix");
   endif;
   if file_getprop("/tmp/aroma/debloat.prop","item.2.2") == "1" then
+    ui_print("Removing Setup Wizard");
+	delete_recursive("/system/priv-app/SetupWizard");
+  else
+    package_extract_dir("system/priv-app/SetupWizard", "/system/priv-app/SetupWizard");
+  endif;
+  if file_getprop("/tmp/aroma/debloat.prop","item.2.3") == "1" then
     ui_print("Removing Wallet");
 	delete_recursive("/system/priv-app/Wallet");
   else
     package_extract_dir("system/priv-app/Wallet", "/system/priv-app/Wallet");
+  endif;
+  #
+  #Mms
+  #
+  ui_print("@MMS");
+  if file_getprop("/tmp/aroma/mms.prop","item.0.1") == "1" then
+    ui_print("Adding Messenger");
+    package_extract_dir("aroma/mms/messenger", "/system");
+  else
+    delete_recursive("/system/priv-app/Messenger");
   endif;
   #
   #Email
@@ -680,7 +582,6 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "2" || file_getprop("/tmp/
   if file_getprop("/tmp/aroma/cm.prop","item.0.2") == "1" then
     ui_print("Adding Browser");
     package_extract_dir("aroma/cm_apps/browser", "/system");
-	delete_recursive("/system/app/Chrome");
   else
     delete_recursive("/system/priv-app/Browser+");
 	delete_recursive("/system/priv-app/GoogleBookmarksSync");
@@ -705,7 +606,9 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "2" || file_getprop("/tmp/
 	delete_recursive("/system/app/Music2");
   else
     delete_recursive("/system/priv-app/Eleven");
-	package_extract_dir("system/app/Music2", "/system/app/Music2");
+	if file_getprop("/tmp/aroma/debloat.prop","item.1.17") != "1" then
+	  package_extract_dir("system/app/Music2", "/system/app/Music2");
+	endif;
   endif;
   if file_getprop("/tmp/aroma/cm.prop","item.0.6") == "1" then
     ui_print("Adding Sound Recorder");
@@ -857,13 +760,15 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "2" || file_getprop("/tmp/
   #
   #Theme extract
   #
-  if file_getprop("/tmp/aroma/dialer.prop","selected.0") == "1" then
-    ui_print("Stock Blue dialer");
-    package_extract_dir("system/priv-app/GoogleDialer", "/system/priv-app/GoogleDialer");
-	package_extract_dir("system/priv-app/GoogleContacts", "/system/priv-app/GoogleContacts");
-  else
-    ui_print("Teal dialer");
-    package_extract_dir("aroma/theme/teal_dialer", "/system");
+  if file_getprop("/tmp/aroma/themes.prop","selected.0") == "1" then
+    if file_getprop("/tmp/aroma/dialer.prop","selected.0") == "1" then
+      ui_print("Stock Blue dialer");
+      package_extract_dir("system/priv-app/GoogleDialer", "/system/priv-app/GoogleDialer");
+	  package_extract_dir("system/priv-app/GoogleContacts", "/system/priv-app/GoogleContacts");
+    else
+      ui_print("Teal dialer");
+      package_extract_dir("aroma/theme/teal_dialer", "/system");
+	endif;
   endif;
   if file_getprop("/tmp/aroma/themes.prop","selected.0") == "2" then
     ui_print("Dark Theme");
@@ -912,9 +817,11 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "2" || file_getprop("/tmp/
     package_extract_dir("aroma/scripts/patch_apk", "/tmp");
 	set_perm_recursive(0, 0, 0755, 0755, "/tmp");
 	if file_getprop("/tmp/aroma/carrier.prop","selected.0") == "3" then
+	  ui_print("Sprint");
       package_extract_dir("aroma/carrier/sprint/system", "/system");
       package_extract_dir("aroma/carrier/sprint/framework", "/tmp");
 	else
+	  ui_print("Verizon");
       package_extract_dir("aroma/carrier/verizon/system", "/system");
 	  package_extract_dir("aroma/carrier/verizon/framework", "/tmp");
 	endif;
@@ -1134,6 +1041,8 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "1" || file_getprop("/tmp/
     run_program("/sbin/busybox", "unzip", "/temp/xposed/xposed.zip", "META-INF/com/google/android/*", "-d", "/temp/xposed");
     run_program("/sbin/busybox", "sh", "/temp/xposed/META-INF/com/google/android/update-binary", "dummy", "1", "/temp/xposed/xposed.zip");
   endif;
+  delete_recursive("/tmp");
+  delete_recursive("/temp");
   ui_print("@*Success*");
   ui_print("@*Please Reboot System*");
   set_progress(1.0);

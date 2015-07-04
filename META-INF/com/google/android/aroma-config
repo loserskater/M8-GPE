@@ -66,7 +66,7 @@ menubox(
     "Install Stock Rom",       "Don't worry about mods or apps, just install.",  "@install2",    #-- selected = 1
     "Install Custom Rom",      "Install the rom along with mods selection.",     "@install2",    #-- selected = 2
     "Mods Only",               "Change themes, enable or disable mods.",         "@mods",        #-- selected = 3
-	"Kernel Only",             "Install a kernel",                               "@mods2",       #-- selected = 4
+	"Kernel Only",             "Reinstall stock kernel",                         "@mods2",       #-- selected = 4
 	"System Information",      "Show device and partition information.",         "@info",        #-- selected = 5
 	"Reboot",                  "Reboot Your Device",                             "@reboot",      #-- selected = 6
 	"Exit",                    "Terminate AROMA and return to recovery.",        "@exit"         #-- selected = 7
@@ -257,11 +257,33 @@ if prop("type.prop","selected")=="2"||prop("type.prop","selected")=="3" then
           "dialer.prop",
 		
           "Blue dialer",  "Stock, No themeing has been done.",                       1,      #-- selected.0 = 1
-          "Teal dialer",  "Changed Blue accents to material teal-green color",       0       #-- selected.0 = 2
+          "Teal dialer",  "Changed Blue accents to material teal-green",             0       #-- selected.0 = 2
 		
       );
 	  write("/data/media/0/aroma/Dialer.prop", readtmpfile("dialer.prop"));
 	endif;
+	setvar("mms_prop", read("/data/media/0/aroma/MMS.prop"));
+    if (getvar("mms_prop")!="") then
+      writetmpfile("mms.prop",getvar("mms_prop"));
+    endif;
+    checkbox(
+      #-- Title
+        "MMS Options",
+      
+      #-- Sub Title
+        "Select the apps you would like added/removed.\n"+
+        "CHECKED items will be ADDED.\n"+
+        "UNCHECKED will be REMOVED.",
+       
+      #-- Icon:
+        "@apps",
+      
+      #-- Will be saved in /tmp/aroma/mms.prop
+        "mms.prop",
+
+		  "Messenger",        "",           0      #-- item.0.1
+    );
+	write("/data/media/0/aroma/MMS.prop", readtmpfile("mms.prop"));
 	setvar("email_prop", read("/data/media/0/aroma/Email.prop"));
     if (getvar("email_prop")!="") then
       writetmpfile("email.prop",getvar("email_prop"));
@@ -371,11 +393,11 @@ if prop("type.prop","selected")=="2"||prop("type.prop","selected")=="3" then
         "cm.prop",
 										  
 	    "Audio FX",       "Will replace MusicFX",                                                        0,      #-- item.0.1
-		"CM Browser",     "Material design web browser, will replace Chrome in /system",                 0,      #-- item.0.2
+		"CM Browser",     "Material design web browser",                 0,      #-- item.0.2
 		"Calendar",       "AOSP Calendar, will replace Google Calendar in /system",                      0,      #-- item.0.3
 	    "File Manager",   "Material design file explorer",                                               0,      #-- item.0.4
         "Music",          "Material design music player, will replace Google music in /system",          0,      #-- item.0.5
-		"Sound Recorder", "",                                                                            0,      #-- item.0.6
+		"Sound Recorder", "Voice recording app, memos or whatever",                                      0,      #-- item.0.6
 		"Trebuchet",      "Launcher, will replace Google Home",                                          0       #-- item.0.7
     
 	);
@@ -402,10 +424,10 @@ if prop("type.prop","selected")=="2"||prop("type.prop","selected")=="3" then
        "Camera",           "",                                                                2,       		
 		"Stock Google",    "Stock camera. HDR available, saving to SDcard not available",     1,       #-- item.1.1
 		"Moto X",          "Motorola Camera. saving to SD card supported, no HDR",            0,       #-- item.1.2
-		"Sense",           "Includes camera and gallery",            						  0,       #-- item.1.3
+		"Sense",           "Includes camera, gallery, video player",            			  0,       #-- item.1.3
 		
 	   "Gallery",          "",                                                                2,
-	     "CM Gallery",     "",                                                                0,       #-- item.2.1
+	     "CM Gallery",     "",                                                                1,       #-- item.2.1
 		 "MotoX Gallery",  "",                                                                0        #-- item.2.2
 			  
     );
@@ -541,174 +563,59 @@ if prop("debloat.prop","selected.1")=="1" then
       #-- Will be saved in /tmp/aroma/other
         "debloat.prop",
 		"apps",  "", 2,								  
-	      "Drive",           "12.1Mb",                    0,      #-- item.1.1
-		  "EditorsDocs",     "20.7Mb",                    0,      #-- item.1.2
-	      "EditorsSheets",   "28.8Mb",                    0,      #-- item.1.3
-          "EditorsSlides",   "22.5Mb",                    0,      #-- item.1.4
-		  "GoogleHindiIME",  "8.37Mb foreign keyboard",   0,      #-- item.1.5
-		  "GooglePinyinIME", "7.67Mb foreign keyboard",   0,      #-- item.1.6
-		  "Hangouts",        "21.7Mb",                    0,      #-- item.1.7
-		  "HPPrintPlugin",   "3.23Mb",                    0,      #-- item.1.8
-		  "iWnnIME",         "14Mb foreign keyboard",     0,      #-- item.1.9
-		  "Keep",            "6.92Mb",                    0,      #-- item.1.10
-		  "KoreanIME",       "6.94Mb foreign keyboard",   0,      #-- item.1.11
-		  "Maps",            "12.4Mb",                    0,      #-- item.1.12
-		  "News & Weather",  "2.13Mb",                    0,      #-- item.1.13
-		  "PlayGames",       "6.20Mb",                    0,      #-- item.1.14
-		  "Street",          "258kb",                     0,      #-- item.1.15
-		  "YouTube",         "10.4Mb",                    0,      #-- item.1.16
+	      "Chrome",          "45.0Mb",                    0,      #-- item.1.1
+		  "Compass",         "2.78Mb",                    0,      #-- item.1.2
+		  "Drive",           "12.1Mb",                    0,      #-- item.1.3
+		  "EditorsDocs",     "25.5Mb",                    0,      #-- item.1.4
+	      "EditorsSheets",   "34.8Mb",                    0,      #-- item.1.5
+          "EditorsSlides",   "27.0Mb",                    0,      #-- item.1.6
+		  "Gmail",           "9.19Mb",                    0,      #-- item.1.7
+		  "GoogleCamera",    "27.9Mb",                    0,      #-- item.1.8
+		  "GoogleHindiIME",  "9.37Mb foreign keyboard",   0,      #-- item.1.9
+		  "GooglePinyinIME", "7.52Mb foreign keyboard",   0,      #-- item.1.10
+		  "Hangouts",        "18.6Mb",                    0,      #-- item.1.11
+		  "HPPrintPlugin",   "3.23Mb",                    0,      #-- item.1.12
+		  "iWnnIME",         "1.65Mb foreign keyboard",   0,      #-- item.1.13
+		  "Keep",            "8.93Mb",                    0,      #-- item.1.14
+		  "KoreanIME",       "6.02Mb foreign keyboard",   0,      #-- item.1.15
+		  "Maps",            "14.6Mb",                    0,      #-- item.1.16
+		  "Play Music",      "14.2Mb",                    0,      #-- item.1.17
+		  "News & Weather",  "3.04Mb",                    0,      #-- item.1.18
+		  "PlayGames",       "5.26Mb",                    0,      #-- item.1.19
+		  "Street",          "258kb",                     0,      #-- item.1.20
+		  "YouTube",         "13.1Mb",                    0,      #-- item.1.21
 		
 		"priv-apps",  "", 2,
 		  "DotMatrix",       "6.42Mb",                    0,      #-- item.2.1
-		  "Wallet",          "7.84Mb May cause Wallet to not work if downloaded form the play store.", 0      #-- item.2.2
+		  "Setup Wizard",    "4.75Mb",                    0,      #-- item.2.2
+		  "Wallet",          "11.8Mb May cause Wallet to not work if downloaded form the play store.", 0      #-- item.2.3
 	);
     write("/data/media/0/aroma/Debloat.prop", readtmpfile("debloat.prop"));
 endif;
 
 ##################################################################################################################
 
-if prop("type.prop","selected")=="1"||prop("type.prop","selected")=="2"||prop("type.prop","selected")=="4" then
-  if prop("carrier.prop","selected.0")=="1" then
-    setvar("kernel_prop", read("/data/media/0/aroma/Kernel.prop"));
-    if (getvar("kernel_prop")!="") then
-      writetmpfile("kernel.prop",getvar("kernel_prop"));
-    endif;
-    selectbox(
-      #-- Title
-        "Kernel Options",
-  
-	  #-- Sub Title
-	    "",
-  
-      #-- Icon
-        "@settings",
-  
-      #-- Will be saved in /tmp/aroma/kernel.prop
-        "kernel.prop",
-  
-      "Kernel Options", "",                        2,
-       "Default",    "Stock kernel",               1,     #-- selected.1 = 1
-       "Quantum",    "Kernel by PwnCakes193",      3,     #-- selected.1 = 2
-       "Elemental X","Kernel by Flar2",            3,     #-- selected.1 = 3
-       "Elite",      "Kernel by buckmarble",       3      #-- selected.1 = 4
-    );
-  else
-    selectbox(
-      #-- Title
-        "Kernel Options",
-  
-	  #-- Sub Title
-	    "",
-  
-      #-- Icon
-        "@settings",
-  
-      #-- Will be saved in /tmp/aroma/kernel.prop
-        "kernel.prop",
-  
-      "Kernel Options", "",                        2,
-	  "Default",    "Stock kernel",                1,     #-- selected.1 = 1
-      "Quantum",    "Kernel by PwnCakes193",       3,     #-- selected.1 = 2
-      "CodeCraft",  "Kernel by Evolutionmods",     3,     #-- selected.1 = 3
-      "Elite",      "Kernel by buckmarble",        3      #-- selected.1 = 4
-    );
-    write("/data/media/0/aroma/Kernel.prop", readtmpfile("kernel.prop"););
+if prop("type.prop","selected")=="4" then
+  setvar("kernel_prop", read("/data/media/0/aroma/Kernel.prop"));
+  if (getvar("kernel_prop")!="") then
+    writetmpfile("kernel.prop",getvar("kernel_prop"));
   endif;
-endif;
-if prop("type.prop","selected")=="2"&&prop("carrier.prop","selected.0")=="1"&&prop("kernel.prop","selected.1")=="3"||prop("type.prop","selected")=="4"&&prop("carrier.prop","selected.0")=="1"&&prop("kernel.prop","selected.1")=="3" then
-selectbox(
-  "CPU Settings","","","cpu.prop",
-
-  "Adjust CPU frequencies","",2,
-  "Yes","Overclocking/underclocking options",0,
-  "No","Stock frequencies",1,
-
-  "Undervolting","Lowers voltage for lowest frequency. Undervolting may cause instability",2,
-  "Stock Voltage","",1,
-  "Undervolt -15mV","",0,
-  "Undervolt -30mV","",0,
-  "Undervolt -45mV","",0,
-
-  "Select thermal throttling","",2,
-  "Performance","(best performance)",0,
-  "Stock","(cooler)",1
-);
-
-if file_getprop("/tmp/aroma/cpu.prop","selected.1") == "1"
-then
-
-selectbox(
-  "Maximum CPU Frequency","<b>Select maximum CPU frequency.</b>\n","@info","freq.prop",
-  "1728MHz","",0,
-  "1958MHz","",0,
-  "2265MHz","",0,
-  "2458MHz","",0,
-  "2573MHz","",0,
-  "2650MHz","",0,
-  "2726MHz","",0,
-  "2803MHz","",0
-);
-
-endif;
-
-selectbox(
-  "GPU Settings","","","gpu.prop",
-
-  "Select maximum GPU frequency","",2,
-  "578Mhz","(stock)",1,
-  "462Mhz","(underclocked)",0,
-  "389MHz","(underclocked)",0,
-
-  "Select GPU governor","",2,
-  "Stock","",1,
-  "Simple-ondemand","",0
-);
-
-selectbox(
-  "Wake Gestures","<b>Customize Sweep2wake and DoubleTap2wake</b>\n","@info","wg.prop",
-  "Stock","Do not modify HTC Motion Launch Gestures",1,
-  "Remove motion requirement","Use launch gestures without having to move phone",0,
-  "Traditional S2W/DT2W","S2W/DT2W wake screen only",0
-);
-
-if file_getprop("/tmp/aroma/wg.prop","selected.0") == "2" || file_getprop("/tmp/aroma/wg.prop","selected.0") == "3"
-then
-checkbox(
-  "Wake Gestures","<b>Select the gestures you would like to use</b>","","gest.prop",
+  selectbox(
+  #-- Title
+    "Kernel Options",
   
-  "Available Gestures:","",2,
-  "Sweep right","",1,
-  "Sweep left","",1,
-  "Sweep up","",1,
-  "Sweep down","",1,
-  "Double tap","",1,
-
-  "Other Options","",2,
-  "Vibrate on wake","enable haptic feedback on successful gesture",1,
-  "Pocket Detection","prevent accidental wakes (experimental)",1,
-  "Volume buttons launch camera in landscape","",1
-);
-endif;
-
-selectbox(
-  "Sweep2Sleep","<b>Sweep across navbar area to put phone to sleep</b>","","s2s.prop",
-  "Disable Sweep2Sleep","",1,
-  "Sweep right","",0,
-  "Sweep left","(default)",0,
-  "Sweep left or right","",0
-);
-
-checkbox(
-  "Other settings","<b>Select the mods you want to install</b>","@personalize","mods.prop",
-  "Enable USB fastcharge","",0,
-  "Disable fsync","Faster fileystem performance, but risk of data loss",0,
-  "Disable max screen off frequency","",0,
-  "Reduce button vibration","",0,
-  "Enable gboost","Enhanced gaming performance",0,
-  "Disable magnetic cover sensor","",0,
-  "Enable backlight dimmer","",0,
-  "Set SELinux permissive","",1
-);
+  #-- Sub Title
+	"",
+  
+  #-- Icon
+    "@settings",
+  
+  #-- Will be saved in /tmp/aroma/kernel.prop
+    "kernel.prop",
+  
+    "Kernel Options", "",                        2,
+     "Default",    "Stock kernel",               1     #-- selected.1 = 1
+  );
 endif;
 
 ###################################################################################################################
