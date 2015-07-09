@@ -10,7 +10,7 @@
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Lcom/android/systemui/volume/VolumePanel$Callback;,
-        Lcom/android/systemui/volume/VolumePanel$SecondaryIconTransition;,
+        Lcom/android/systemui/volume/VolumePanel$VolumeSeekBar;,
         Lcom/android/systemui/volume/VolumePanel$SafetyWarning;,
         Lcom/android/systemui/volume/VolumePanel$StreamControl;,
         Lcom/android/systemui/volume/VolumePanel$StreamResources;
@@ -47,6 +47,8 @@
 
 .field private mDisabledAlpha:F
 
+.field private mExtendedPanelExpanded:Z
+
 .field private mHasVibrator:Z
 
 .field private final mIconPulser:Lcom/android/systemui/volume/IconPulser;
@@ -65,9 +67,9 @@
 
 .field private mRingIsSilent:Z
 
-.field private final mSecondaryIconTransition:Lcom/android/systemui/volume/VolumePanel$SecondaryIconTransition;
-
 .field private final mSeekListener:Landroid/widget/SeekBar$OnSeekBarChangeListener;
+
+.field private mSettingsObserver:Landroid/database/ContentObserver;
 
 .field private final mSliderPanel:Landroid/view/ViewGroup;
 
@@ -94,6 +96,8 @@
 
 .field private mVoiceCapable:Z
 
+.field private mVolumeLinkNotification:Z
+
 .field private final mZenCallback:Lcom/android/systemui/statusbar/policy/ZenModeController$Callback;
 
 .field private final mZenController:Lcom/android/systemui/statusbar/policy/ZenModeController;
@@ -101,6 +105,8 @@
 .field private mZenModeAvailable:Z
 
 .field private mZenPanel:Lcom/android/systemui/volume/ZenModePanel;
+
+.field private mZenPanelCallback:Lcom/android/systemui/volume/ZenModePanel$Callback;
 
 .field private mZenPanelExpanded:Z
 
@@ -205,6 +211,10 @@
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
 
+    const/4 v9, 0x0
+
+    iput-boolean v9, p0, Lcom/android/systemui/volume/VolumePanel;->mExtendedPanelExpanded:Z
+
     const/16 v9, 0xbb8
 
     iput v9, p0, Lcom/android/systemui/volume/VolumePanel;->mTimeoutDelay:I
@@ -220,6 +230,12 @@
     const/4 v9, -0x1
 
     iput v9, p0, Lcom/android/systemui/volume/VolumePanel;->mActiveStreamType:I
+
+    new-instance v9, Lcom/android/systemui/volume/VolumePanel$Settings;
+
+    invoke-direct {v9, p0, p0}, Lcom/android/systemui/volume/VolumePanel$Settings;-><init>(Lcom/android/systemui/volume/VolumePanel;Landroid/os/Handler;)V
+
+    iput-object v9, p0, Lcom/android/systemui/volume/VolumePanel;->mSettingsObserver:Landroid/database/ContentObserver;
 
     new-instance v9, Lcom/android/systemui/volume/VolumePanel$9;
 
@@ -292,14 +308,6 @@
     check-cast v9, Landroid/view/accessibility/AccessibilityManager;
 
     iput-object v9, p0, Lcom/android/systemui/volume/VolumePanel;->mAccessibilityManager:Landroid/view/accessibility/AccessibilityManager;
-
-    new-instance v9, Lcom/android/systemui/volume/VolumePanel$SecondaryIconTransition;
-
-    const/4 v10, 0x0
-
-    invoke-direct {v9, p0, v10}, Lcom/android/systemui/volume/VolumePanel$SecondaryIconTransition;-><init>(Lcom/android/systemui/volume/VolumePanel;Lcom/android/systemui/volume/VolumePanel$1;)V
-
-    iput-object v9, p0, Lcom/android/systemui/volume/VolumePanel;->mSecondaryIconTransition:Lcom/android/systemui/volume/VolumePanel$SecondaryIconTransition;
 
     new-instance v9, Lcom/android/systemui/volume/IconPulser;
 
@@ -602,6 +610,45 @@
 
     iput-boolean v9, p0, Lcom/android/systemui/volume/VolumePanel;->mVoiceCapable:Z
 
+    iget-object v9, p0, Lcom/android/systemui/volume/VolumePanel;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v9}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v9
+
+    const-string v10, "volume_link_notification"
+
+    const/4 v11, 0x1
+
+    invoke-static {v9, v10, v11}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+
+    move-result v9
+
+    const/4 v10, 0x1
+
+    if-ne v9, v10, :cond_6
+
+    const/4 v9, 0x1
+
+    :goto_3
+    iput-boolean v9, p0, Lcom/android/systemui/volume/VolumePanel;->mVolumeLinkNotification:Z
+
+    invoke-virtual/range {p1 .. p1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v9
+
+    const-string v10, "volume_link_notification"
+
+    invoke-static {v10}, Landroid/provider/Settings$System;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object v10
+
+    const/4 v11, 0x0
+
+    iget-object v12, p0, Lcom/android/systemui/volume/VolumePanel;->mSettingsObserver:Landroid/database/ContentObserver;
+
+    invoke-virtual/range {v9 .. v12}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
+
     iget-object v9, p0, Lcom/android/systemui/volume/VolumePanel;->mZenController:Lcom/android/systemui/statusbar/policy/ZenModeController;
 
     if-eqz v9, :cond_4
@@ -643,13 +690,13 @@
 
     move-result v3
 
-    if-eqz v4, :cond_6
+    if-eqz v4, :cond_7
 
-    if-eqz v3, :cond_6
+    if-eqz v3, :cond_7
 
     const/4 v9, 0x1
 
-    :goto_3
+    :goto_4
     iput-boolean v9, p0, Lcom/android/systemui/volume/VolumePanel;->mPlayMasterStreamTones:Z
 
     invoke-direct {p0}, Lcom/android/systemui/volume/VolumePanel;->registerReceiver()V
@@ -665,6 +712,11 @@
     const/4 v9, 0x0
 
     goto :goto_3
+
+    :cond_7
+    const/4 v9, 0x0
+
+    goto :goto_4
 .end method
 
 .method static synthetic access$000()Z
@@ -673,6 +725,14 @@
     sget-boolean v0, Lcom/android/systemui/volume/VolumePanel;->LOGD:Z
 
     return v0
+.end method
+
+.method static synthetic access$002(Lcom/android/systemui/volume/VolumePanel;Z)Z
+    .locals 0
+
+    iput-boolean p1, p0, Lcom/android/systemui/volume/VolumePanel;->mVolumeLinkNotification:Z
+
+    return p1
 .end method
 
 .method static synthetic access$100()Ljava/lang/Object;
@@ -691,10 +751,34 @@
     return p1
 .end method
 
-.method static synthetic access$1100(Lcom/android/systemui/volume/VolumePanel;)Lcom/android/systemui/volume/VolumePanel$SecondaryIconTransition;
+.method static synthetic access$1111(Lcom/android/systemui/volume/VolumePanel;)V
+    .locals 0
+
+    invoke-direct {p0}, Lcom/android/systemui/volume/VolumePanel;->expandVolumePanel()V
+
+    return-void
+.end method
+
+.method static synthetic access$1112(Lcom/android/systemui/volume/VolumePanel;)V
+    .locals 0
+
+    invoke-direct {p0}, Lcom/android/systemui/volume/VolumePanel;->showRingerHint()V
+
+    return-void
+.end method
+
+.method static synthetic access$1113(Lcom/android/systemui/volume/VolumePanel;)Lcom/android/systemui/volume/ZenModePanel$Callback;
     .locals 1
 
-    iget-object v0, p0, Lcom/android/systemui/volume/VolumePanel;->mSecondaryIconTransition:Lcom/android/systemui/volume/VolumePanel$SecondaryIconTransition;
+    iget-object v0, p0, Lcom/android/systemui/volume/VolumePanel;->mZenPanelCallback:Lcom/android/systemui/volume/ZenModePanel$Callback;
+
+    return-object v0
+.end method
+
+.method static synthetic access$1114(Lcom/android/systemui/volume/VolumePanel;)Lcom/android/systemui/volume/ZenModePanel;
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/systemui/volume/VolumePanel;->mZenPanel:Lcom/android/systemui/volume/ZenModePanel;
 
     return-object v0
 .end method
@@ -819,14 +903,6 @@
     return-void
 .end method
 
-.method static synthetic access$400(Lcom/android/systemui/volume/VolumePanel;)V
-    .locals 0
-
-    invoke-direct {p0}, Lcom/android/systemui/volume/VolumePanel;->updateStates()V
-
-    return-void
-.end method
-
 .method static synthetic access$700(Lcom/android/systemui/volume/VolumePanel;)I
     .locals 1
 
@@ -909,336 +985,340 @@
 .end method
 
 .method private createSliders()V
-    .locals 12
+    .locals 13
 
-    iget-object v10, p0, Lcom/android/systemui/volume/VolumePanel;->mContext:Landroid/content/Context;
+    const/4 v12, 0x0
 
-    invoke-virtual {v10}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+    const/4 v9, 0x1
 
-    move-result-object v5
+    const/4 v10, 0x0
 
-    iget-object v10, p0, Lcom/android/systemui/volume/VolumePanel;->mContext:Landroid/content/Context;
+    iget-object v8, p0, Lcom/android/systemui/volume/VolumePanel;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v8}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v4
+
+    iget-object v8, p0, Lcom/android/systemui/volume/VolumePanel;->mContext:Landroid/content/Context;
 
     const-string v11, "layout_inflater"
 
-    invoke-virtual {v10, v11}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {v8, v11}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Landroid/view/LayoutInflater;
 
-    new-instance v10, Landroid/util/SparseArray;
+    new-instance v8, Landroid/util/SparseArray;
 
     sget-object v11, Lcom/android/systemui/volume/VolumePanel;->STREAMS:[Lcom/android/systemui/volume/VolumePanel$StreamResources;
 
     array-length v11, v11
 
-    invoke-direct {v10, v11}, Landroid/util/SparseArray;-><init>(I)V
+    invoke-direct {v8, v11}, Landroid/util/SparseArray;-><init>(I)V
 
-    iput-object v10, p0, Lcom/android/systemui/volume/VolumePanel;->mStreamControls:Landroid/util/SparseArray;
+    iput-object v8, p0, Lcom/android/systemui/volume/VolumePanel;->mStreamControls:Landroid/util/SparseArray;
 
     sget-object v3, Lcom/android/systemui/volume/VolumePanel$StreamResources;->NotificationStream:Lcom/android/systemui/volume/VolumePanel$StreamResources;
 
     const/4 v0, 0x0
 
     :goto_0
-    sget-object v10, Lcom/android/systemui/volume/VolumePanel;->STREAMS:[Lcom/android/systemui/volume/VolumePanel$StreamResources;
+    sget-object v8, Lcom/android/systemui/volume/VolumePanel;->STREAMS:[Lcom/android/systemui/volume/VolumePanel$StreamResources;
 
-    array-length v10, v10
+    array-length v8, v8
 
-    if-ge v0, v10, :cond_9
+    if-ge v0, v8, :cond_3
 
-    sget-object v10, Lcom/android/systemui/volume/VolumePanel;->STREAMS:[Lcom/android/systemui/volume/VolumePanel$StreamResources;
+    sget-object v8, Lcom/android/systemui/volume/VolumePanel;->STREAMS:[Lcom/android/systemui/volume/VolumePanel$StreamResources;
 
-    aget-object v8, v10, v0
+    aget-object v6, v8, v0
 
-    iget v9, v8, Lcom/android/systemui/volume/VolumePanel$StreamResources;->streamType:I
+    iget v7, v6, Lcom/android/systemui/volume/VolumePanel$StreamResources;->streamType:I
 
-    invoke-static {v9}, Lcom/android/systemui/volume/VolumePanel;->isNotificationOrRing(I)Z
+    invoke-direct {p0, v7}, Lcom/android/systemui/volume/VolumePanel;->isNotificationOrRing(I)Z
 
     move-result v2
 
-    new-instance v6, Lcom/android/systemui/volume/VolumePanel$StreamControl;
+    new-instance v5, Lcom/android/systemui/volume/VolumePanel$StreamControl;
 
-    const/4 v10, 0x0
+    invoke-direct {v5, p0, v12}, Lcom/android/systemui/volume/VolumePanel$StreamControl;-><init>(Lcom/android/systemui/volume/VolumePanel;Lcom/android/systemui/volume/VolumePanel$Settings;)V
 
-    invoke-direct {v6, p0, v10}, Lcom/android/systemui/volume/VolumePanel$StreamControl;-><init>(Lcom/android/systemui/volume/VolumePanel;Lcom/android/systemui/volume/VolumePanel$1;)V
+    iput v7, v5, Lcom/android/systemui/volume/VolumePanel$StreamControl;->streamType:I
 
-    iput v9, v6, Lcom/android/systemui/volume/VolumePanel$StreamControl;->streamType:I
+    const v8, 0x7f040052
 
-    const v10, 0x7f040052
+    invoke-virtual {v1, v8, v12}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
-    const/4 v11, 0x0
+    move-result-object v8
 
-    invoke-virtual {v1, v10, v11}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
+    check-cast v8, Landroid/view/ViewGroup;
 
-    move-result-object v10
+    iput-object v8, v5, Lcom/android/systemui/volume/VolumePanel$StreamControl;->group:Landroid/view/ViewGroup;
 
-    check-cast v10, Landroid/view/ViewGroup;
+    iget-object v8, v5, Lcom/android/systemui/volume/VolumePanel$StreamControl;->group:Landroid/view/ViewGroup;
 
-    iput-object v10, v6, Lcom/android/systemui/volume/VolumePanel$StreamControl;->group:Landroid/view/ViewGroup;
+    invoke-virtual {v8, v5}, Landroid/view/ViewGroup;->setTag(Ljava/lang/Object;)V
 
-    iget-object v10, v6, Lcom/android/systemui/volume/VolumePanel$StreamControl;->group:Landroid/view/ViewGroup;
-
-    invoke-virtual {v10, v6}, Landroid/view/ViewGroup;->setTag(Ljava/lang/Object;)V
-
-    iget-object v10, v6, Lcom/android/systemui/volume/VolumePanel$StreamControl;->group:Landroid/view/ViewGroup;
+    iget-object v8, v5, Lcom/android/systemui/volume/VolumePanel$StreamControl;->group:Landroid/view/ViewGroup;
 
     const v11, 0x7f0f012e
 
-    invoke-virtual {v10, v11}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v8, v11}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
-    move-result-object v10
+    move-result-object v8
 
-    check-cast v10, Landroid/widget/ImageView;
+    check-cast v8, Landroid/widget/ImageView;
 
-    iput-object v10, v6, Lcom/android/systemui/volume/VolumePanel$StreamControl;->icon:Landroid/widget/ImageView;
+    iput-object v8, v5, Lcom/android/systemui/volume/VolumePanel$StreamControl;->icon:Landroid/widget/ImageView;
 
-    iget-object v10, v6, Lcom/android/systemui/volume/VolumePanel$StreamControl;->icon:Landroid/widget/ImageView;
+    iget-object v8, v5, Lcom/android/systemui/volume/VolumePanel$StreamControl;->icon:Landroid/widget/ImageView;
 
-    invoke-virtual {v10, v6}, Landroid/widget/ImageView;->setTag(Ljava/lang/Object;)V
+    invoke-virtual {v8, v5}, Landroid/widget/ImageView;->setTag(Ljava/lang/Object;)V
 
-    iget-object v10, v6, Lcom/android/systemui/volume/VolumePanel$StreamControl;->icon:Landroid/widget/ImageView;
+    iget-object v8, v5, Lcom/android/systemui/volume/VolumePanel$StreamControl;->icon:Landroid/widget/ImageView;
 
-    iget v11, v8, Lcom/android/systemui/volume/VolumePanel$StreamResources;->descRes:I
+    iget v11, v6, Lcom/android/systemui/volume/VolumePanel$StreamResources;->descRes:I
 
-    invoke-virtual {v5, v11}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+    invoke-virtual {v4, v11}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
     move-result-object v11
 
-    invoke-virtual {v10, v11}, Landroid/widget/ImageView;->setContentDescription(Ljava/lang/CharSequence;)V
+    invoke-virtual {v8, v11}, Landroid/widget/ImageView;->setContentDescription(Ljava/lang/CharSequence;)V
 
-    iget v10, v8, Lcom/android/systemui/volume/VolumePanel$StreamResources;->iconRes:I
+    iget v8, v6, Lcom/android/systemui/volume/VolumePanel$StreamResources;->iconRes:I
 
-    iput v10, v6, Lcom/android/systemui/volume/VolumePanel$StreamControl;->iconRes:I
+    iput v8, v5, Lcom/android/systemui/volume/VolumePanel$StreamControl;->iconRes:I
 
-    iget v10, v8, Lcom/android/systemui/volume/VolumePanel$StreamResources;->iconMuteRes:I
+    iget v8, v6, Lcom/android/systemui/volume/VolumePanel$StreamResources;->iconMuteRes:I
 
-    iput v10, v6, Lcom/android/systemui/volume/VolumePanel$StreamControl;->iconMuteRes:I
+    iput v8, v5, Lcom/android/systemui/volume/VolumePanel$StreamControl;->iconMuteRes:I
 
-    iget-object v10, v6, Lcom/android/systemui/volume/VolumePanel$StreamControl;->icon:Landroid/widget/ImageView;
+    iget-object v8, v5, Lcom/android/systemui/volume/VolumePanel$StreamControl;->icon:Landroid/widget/ImageView;
 
-    iget v11, v6, Lcom/android/systemui/volume/VolumePanel$StreamControl;->iconRes:I
+    iget v11, v5, Lcom/android/systemui/volume/VolumePanel$StreamControl;->iconRes:I
 
-    invoke-virtual {v10, v11}, Landroid/widget/ImageView;->setImageResource(I)V
+    invoke-virtual {v8, v11}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    iget-object v11, v6, Lcom/android/systemui/volume/VolumePanel$StreamControl;->icon:Landroid/widget/ImageView;
+    iget-object v11, v5, Lcom/android/systemui/volume/VolumePanel$StreamControl;->icon:Landroid/widget/ImageView;
 
-    if-eqz v2, :cond_4
+    if-eqz v2, :cond_2
 
-    iget-boolean v10, p0, Lcom/android/systemui/volume/VolumePanel;->mHasVibrator:Z
+    iget-boolean v8, p0, Lcom/android/systemui/volume/VolumePanel;->mHasVibrator:Z
 
-    if-eqz v10, :cond_4
+    if-eqz v8, :cond_2
 
-    const/4 v10, 0x1
+    move v8, v9
 
     :goto_1
-    invoke-virtual {v11, v10}, Landroid/widget/ImageView;->setClickable(Z)V
+    invoke-virtual {v11, v8}, Landroid/widget/ImageView;->setClickable(Z)V
 
     if-eqz v2, :cond_1
 
-    iget-boolean v10, p0, Lcom/android/systemui/volume/VolumePanel;->mHasVibrator:Z
+    iget-boolean v8, p0, Lcom/android/systemui/volume/VolumePanel;->mHasVibrator:Z
 
-    if-eqz v10, :cond_0
+    if-eqz v8, :cond_0
 
-    iget-object v10, v6, Lcom/android/systemui/volume/VolumePanel$StreamControl;->icon:Landroid/widget/ImageView;
+    iget-object v8, v5, Lcom/android/systemui/volume/VolumePanel$StreamControl;->icon:Landroid/widget/ImageView;
 
-    const/4 v11, 0x0
+    invoke-virtual {v8, v10}, Landroid/widget/ImageView;->setSoundEffectsEnabled(Z)V
 
-    invoke-virtual {v10, v11}, Landroid/widget/ImageView;->setSoundEffectsEnabled(Z)V
+    const v8, 0x7f0200ae
 
-    const v10, 0x7f0200ae
+    iput v8, v5, Lcom/android/systemui/volume/VolumePanel$StreamControl;->iconMuteRes:I
 
-    iput v10, v6, Lcom/android/systemui/volume/VolumePanel$StreamControl;->iconMuteRes:I
-
-    iget-object v10, v6, Lcom/android/systemui/volume/VolumePanel$StreamControl;->icon:Landroid/widget/ImageView;
+    iget-object v8, v5, Lcom/android/systemui/volume/VolumePanel$StreamControl;->icon:Landroid/widget/ImageView;
 
     new-instance v11, Lcom/android/systemui/volume/VolumePanel$6;
 
-    invoke-direct {v11, p0, v6}, Lcom/android/systemui/volume/VolumePanel$6;-><init>(Lcom/android/systemui/volume/VolumePanel;Lcom/android/systemui/volume/VolumePanel$StreamControl;)V
+    invoke-direct {v11, p0, v5}, Lcom/android/systemui/volume/VolumePanel$6;-><init>(Lcom/android/systemui/volume/VolumePanel;Lcom/android/systemui/volume/VolumePanel$StreamControl;)V
 
-    invoke-virtual {v10, v11}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {v8, v11}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     :cond_0
-    const v10, 0x7f0200ad
+    const v8, 0x7f0200ad
 
-    iput v10, v6, Lcom/android/systemui/volume/VolumePanel$StreamControl;->iconSuppressedRes:I
+    iput v8, v5, Lcom/android/systemui/volume/VolumePanel$StreamControl;->iconSuppressedRes:I
 
     :cond_1
-    iget-object v10, v6, Lcom/android/systemui/volume/VolumePanel$StreamControl;->group:Landroid/view/ViewGroup;
+    iget-object v8, v5, Lcom/android/systemui/volume/VolumePanel$StreamControl;->group:Landroid/view/ViewGroup;
 
     const v11, 0x7f0f0130
 
-    invoke-virtual {v10, v11}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v8, v11}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
-    move-result-object v10
+    move-result-object v8
 
-    check-cast v10, Landroid/widget/SeekBar;
+    check-cast v8, Landroid/widget/SeekBar;
 
-    iput-object v10, v6, Lcom/android/systemui/volume/VolumePanel$StreamControl;->seekbarView:Landroid/widget/SeekBar;
+    iput-object v8, v5, Lcom/android/systemui/volume/VolumePanel$StreamControl;->seekbarView:Landroid/widget/SeekBar;
 
-    iget-object v10, v6, Lcom/android/systemui/volume/VolumePanel$StreamControl;->group:Landroid/view/ViewGroup;
+    iget-object v8, v5, Lcom/android/systemui/volume/VolumePanel$StreamControl;->group:Landroid/view/ViewGroup;
 
     const v11, 0x7f0f012f
 
-    invoke-virtual {v10, v11}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v8, v11}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
-    move-result-object v10
+    move-result-object v8
 
-    check-cast v10, Landroid/widget/TextView;
+    check-cast v8, Landroid/widget/TextView;
 
-    iput-object v10, v6, Lcom/android/systemui/volume/VolumePanel$StreamControl;->suppressorView:Landroid/widget/TextView;
+    iput-object v8, v5, Lcom/android/systemui/volume/VolumePanel$StreamControl;->suppressorView:Landroid/widget/TextView;
 
-    iget-object v10, v6, Lcom/android/systemui/volume/VolumePanel$StreamControl;->suppressorView:Landroid/widget/TextView;
+    iget-object v8, v5, Lcom/android/systemui/volume/VolumePanel$StreamControl;->suppressorView:Landroid/widget/TextView;
 
     const/16 v11, 0x8
 
-    invoke-virtual {v10, v11}, Landroid/widget/TextView;->setVisibility(I)V
+    invoke-virtual {v8, v11}, Landroid/widget/TextView;->setVisibility(I)V
 
-    if-nez v2, :cond_5
+    iget-object v8, v5, Lcom/android/systemui/volume/VolumePanel$StreamControl;->group:Landroid/view/ViewGroup;
 
-    iget-boolean v10, v3, Lcom/android/systemui/volume/VolumePanel$StreamResources;->show:Z
+    const v11, 0x7f0f0160
 
-    if-eqz v10, :cond_5
+    invoke-virtual {v8, v11}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
-    const/4 v7, 0x1
+    move-result-object v8
 
-    :goto_2
-    iget-object v10, v6, Lcom/android/systemui/volume/VolumePanel$StreamControl;->group:Landroid/view/ViewGroup;
+    check-cast v8, Landroid/widget/ImageView;
 
-    const v11, 0x7f0f0066
+    iput-object v8, v5, Lcom/android/systemui/volume/VolumePanel$StreamControl;->expandPanel:Landroid/widget/ImageView;
 
-    invoke-virtual {v10, v11}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
+    iget-object v8, v5, Lcom/android/systemui/volume/VolumePanel$StreamControl;->expandPanel:Landroid/widget/ImageView;
 
-    move-result-object v10
+    invoke-virtual {v8, v9}, Landroid/widget/ImageView;->setClickable(Z)V
 
-    iput-object v10, v6, Lcom/android/systemui/volume/VolumePanel$StreamControl;->divider:Landroid/view/View;
-
-    iget-object v10, v6, Lcom/android/systemui/volume/VolumePanel$StreamControl;->group:Landroid/view/ViewGroup;
-
-    const v11, 0x7f0f0131
-
-    invoke-virtual {v10, v11}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
-
-    move-result-object v10
-
-    check-cast v10, Landroid/widget/ImageView;
-
-    iput-object v10, v6, Lcom/android/systemui/volume/VolumePanel$StreamControl;->secondaryIcon:Landroid/widget/ImageView;
-
-    iget-object v10, v6, Lcom/android/systemui/volume/VolumePanel$StreamControl;->secondaryIcon:Landroid/widget/ImageView;
-
-    const v11, 0x7f0200ac
-
-    invoke-virtual {v10, v11}, Landroid/widget/ImageView;->setImageResource(I)V
-
-    iget-object v10, v6, Lcom/android/systemui/volume/VolumePanel$StreamControl;->secondaryIcon:Landroid/widget/ImageView;
-
-    iget v11, v3, Lcom/android/systemui/volume/VolumePanel$StreamResources;->descRes:I
-
-    invoke-virtual {v5, v11}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
-
-    move-result-object v11
-
-    invoke-virtual {v10, v11}, Landroid/widget/ImageView;->setContentDescription(Ljava/lang/CharSequence;)V
-
-    iget-object v10, v6, Lcom/android/systemui/volume/VolumePanel$StreamControl;->secondaryIcon:Landroid/widget/ImageView;
-
-    invoke-virtual {v10, v7}, Landroid/widget/ImageView;->setClickable(Z)V
-
-    iget-object v11, v6, Lcom/android/systemui/volume/VolumePanel$StreamControl;->divider:Landroid/view/View;
-
-    if-eqz v7, :cond_6
-
-    const/4 v10, 0x0
-
-    :goto_3
-    invoke-virtual {v11, v10}, Landroid/view/View;->setVisibility(I)V
-
-    iget-object v11, v6, Lcom/android/systemui/volume/VolumePanel$StreamControl;->secondaryIcon:Landroid/widget/ImageView;
-
-    if-eqz v7, :cond_7
-
-    const/4 v10, 0x0
-
-    :goto_4
-    invoke-virtual {v11, v10}, Landroid/widget/ImageView;->setVisibility(I)V
-
-    if-eqz v7, :cond_2
-
-    iget-object v10, v6, Lcom/android/systemui/volume/VolumePanel$StreamControl;->secondaryIcon:Landroid/widget/ImageView;
+    iget-object v8, v5, Lcom/android/systemui/volume/VolumePanel$StreamControl;->expandPanel:Landroid/widget/ImageView;
 
     new-instance v11, Lcom/android/systemui/volume/VolumePanel$7;
 
-    invoke-direct {v11, p0, v6}, Lcom/android/systemui/volume/VolumePanel$7;-><init>(Lcom/android/systemui/volume/VolumePanel;Lcom/android/systemui/volume/VolumePanel$StreamControl;)V
+    invoke-direct {v11, p0}, Lcom/android/systemui/volume/VolumePanel$7;-><init>(Lcom/android/systemui/volume/VolumePanel;)V
 
-    invoke-virtual {v10, v11}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {v8, v11}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    :cond_2
-    const/4 v10, 0x6
+    iget-object v8, v5, Lcom/android/systemui/volume/VolumePanel$StreamControl;->seekbarView:Landroid/widget/SeekBar;
 
-    if-eq v9, v10, :cond_3
-
-    if-nez v9, :cond_8
-
-    :cond_3
-    const/4 v4, 0x1
-
-    :goto_5
-    iget-object v10, v6, Lcom/android/systemui/volume/VolumePanel$StreamControl;->seekbarView:Landroid/widget/SeekBar;
-
-    invoke-direct {p0, v9}, Lcom/android/systemui/volume/VolumePanel;->getStreamMaxVolume(I)I
+    invoke-direct {p0, v7}, Lcom/android/systemui/volume/VolumePanel;->getStreamMaxVolume(I)I
 
     move-result v11
 
-    add-int/2addr v11, v4
+    invoke-virtual {v8, v11}, Landroid/widget/SeekBar;->setMax(I)V
 
-    invoke-virtual {v10, v11}, Landroid/widget/SeekBar;->setMax(I)V
-
-    iget-object v10, v6, Lcom/android/systemui/volume/VolumePanel$StreamControl;->seekbarView:Landroid/widget/SeekBar;
+    iget-object v8, v5, Lcom/android/systemui/volume/VolumePanel$StreamControl;->seekbarView:Landroid/widget/SeekBar;
 
     iget-object v11, p0, Lcom/android/systemui/volume/VolumePanel;->mSeekListener:Landroid/widget/SeekBar$OnSeekBarChangeListener;
 
-    invoke-virtual {v10, v11}, Landroid/widget/SeekBar;->setOnSeekBarChangeListener(Landroid/widget/SeekBar$OnSeekBarChangeListener;)V
+    invoke-virtual {v8, v11}, Landroid/widget/SeekBar;->setOnSeekBarChangeListener(Landroid/widget/SeekBar$OnSeekBarChangeListener;)V
 
-    iget-object v10, v6, Lcom/android/systemui/volume/VolumePanel$StreamControl;->seekbarView:Landroid/widget/SeekBar;
+    iget-object v8, v5, Lcom/android/systemui/volume/VolumePanel$StreamControl;->seekbarView:Landroid/widget/SeekBar;
 
-    invoke-virtual {v10, v6}, Landroid/widget/SeekBar;->setTag(Ljava/lang/Object;)V
+    invoke-virtual {v8, v5}, Landroid/widget/SeekBar;->setTag(Ljava/lang/Object;)V
 
-    iget-object v10, p0, Lcom/android/systemui/volume/VolumePanel;->mStreamControls:Landroid/util/SparseArray;
+    iget-object v8, p0, Lcom/android/systemui/volume/VolumePanel;->mStreamControls:Landroid/util/SparseArray;
 
-    invoke-virtual {v10, v9, v6}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
+    invoke-virtual {v8, v7, v5}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
     add-int/lit8 v0, v0, 0x1
 
     goto/16 :goto_0
 
-    :cond_4
-    const/4 v10, 0x0
+    :cond_2
+    move v8, v10
 
-    goto/16 :goto_1
+    goto :goto_1
 
-    :cond_5
-    const/4 v7, 0x0
+    :cond_3
+    return-void
+.end method
 
-    goto :goto_2
+.method private diappearVolumePanel()V
+    .locals 7
 
-    :cond_6
-    const/16 v10, 0x8
+    const/16 v6, 0x8
 
-    goto :goto_3
+    const/4 v5, 0x0
 
-    :cond_7
-    const/16 v10, 0x8
+    iput-boolean v5, p0, Lcom/android/systemui/volume/VolumePanel;->mExtendedPanelExpanded:Z
 
-    goto :goto_4
+    const/4 v1, 0x0
 
-    :cond_8
-    const/4 v4, 0x0
+    :goto_0
+    sget-object v3, Lcom/android/systemui/volume/VolumePanel;->STREAMS:[Lcom/android/systemui/volume/VolumePanel$StreamResources;
 
-    goto :goto_5
+    array-length v3, v3
 
-    :cond_9
+    if-ge v1, v3, :cond_1
+
+    sget-object v3, Lcom/android/systemui/volume/VolumePanel;->STREAMS:[Lcom/android/systemui/volume/VolumePanel$StreamResources;
+
+    aget-object v3, v3, v1
+
+    iget v2, v3, Lcom/android/systemui/volume/VolumePanel$StreamResources;->streamType:I
+
+    invoke-direct {p0, v2}, Lcom/android/systemui/volume/VolumePanel;->isValidExpandedPanelControl(I)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_0
+
+    iget-object v3, p0, Lcom/android/systemui/volume/VolumePanel;->mStreamControls:Landroid/util/SparseArray;
+
+    invoke-virtual {v3, v2}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/android/systemui/volume/VolumePanel$StreamControl;
+
+    if-eqz v0, :cond_0
+
+    iget v3, v0, Lcom/android/systemui/volume/VolumePanel$StreamControl;->streamType:I
+
+    iget v4, p0, Lcom/android/systemui/volume/VolumePanel;->mActiveStreamType:I
+
+    if-eq v3, v4, :cond_0
+
+    iget-object v3, v0, Lcom/android/systemui/volume/VolumePanel$StreamControl;->group:Landroid/view/ViewGroup;
+
+    invoke-virtual {v3, v6}, Landroid/view/ViewGroup;->setVisibility(I)V
+
+    iget-object v3, v0, Lcom/android/systemui/volume/VolumePanel$StreamControl;->expandPanel:Landroid/widget/ImageView;
+
+    invoke-virtual {v3, v6}, Landroid/widget/ImageView;->setVisibility(I)V
+
+    invoke-direct {p0, v0, v5}, Lcom/android/systemui/volume/VolumePanel;->updateSlider(Lcom/android/systemui/volume/VolumePanel$StreamControl;Z)V
+
+    :cond_0
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_0
+
+    :cond_1
+    return-void
+.end method
+
+.method private expandVolumePanel()V
+    .locals 3
+
+    invoke-direct {p0}, Lcom/android/systemui/volume/VolumePanel;->showVolumePanel()V
+
+    iget-object v1, p0, Lcom/android/systemui/volume/VolumePanel;->mStreamControls:Landroid/util/SparseArray;
+
+    iget v2, p0, Lcom/android/systemui/volume/VolumePanel;->mActiveStreamType:I
+
+    invoke-virtual {v1, v2}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/android/systemui/volume/VolumePanel$StreamControl;
+
+    if-eqz v0, :cond_0
+
+    iget-object v1, v0, Lcom/android/systemui/volume/VolumePanel$StreamControl;->expandPanel:Landroid/widget/ImageView;
+
+    const/16 v2, 0x8
+
+    invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setVisibility(I)V
+
+    :cond_0
     return-void
 .end method
 
@@ -1626,6 +1706,33 @@
     goto :goto_0
 .end method
 
+.method private hideVolumePanel()V
+    .locals 3
+
+    invoke-direct {p0}, Lcom/android/systemui/volume/VolumePanel;->diappearVolumePanel()V
+
+    iget-object v1, p0, Lcom/android/systemui/volume/VolumePanel;->mStreamControls:Landroid/util/SparseArray;
+
+    iget v2, p0, Lcom/android/systemui/volume/VolumePanel;->mActiveStreamType:I
+
+    invoke-virtual {v1, v2}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/android/systemui/volume/VolumePanel$StreamControl;
+
+    if-eqz v0, :cond_0
+
+    iget-object v1, v0, Lcom/android/systemui/volume/VolumePanel$StreamControl;->expandPanel:Landroid/widget/ImageView;
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setVisibility(I)V
+
+    :cond_0
+    return-void
+.end method
+
 .method private initZenModePanel()V
     .locals 2
 
@@ -1681,16 +1788,20 @@
     goto :goto_0
 .end method
 
-.method private static isNotificationOrRing(I)Z
+.method private isNotificationOrRing(I)Z
     .locals 1
 
     const/4 v0, 0x2
 
-    if-eq p0, v0, :cond_0
+    if-eq p1, v0, :cond_0
+
+    iget-boolean v0, p0, Lcom/android/systemui/volume/VolumePanel;->mVolumeLinkNotification:Z
+
+    if-eqz v0, :cond_1
 
     const/4 v0, 0x5
 
-    if-ne p0, v0, :cond_1
+    if-ne p1, v0, :cond_1
 
     :cond_0
     const/4 v0, 0x1
@@ -1714,6 +1825,69 @@
     move-result v0
 
     return v0
+.end method
+
+.method private isValidExpandedPanelControl(I)Z
+    .locals 3
+
+    const/4 v0, 0x1
+
+    const/4 v1, 0x0
+
+    packed-switch p1, :pswitch_data_0
+
+    move v0, v1
+
+    :cond_0
+    :goto_0
+    return v0
+
+    :pswitch_0
+    iget-boolean v2, p0, Lcom/android/systemui/volume/VolumePanel;->mVoiceCapable:Z
+
+    if-eqz v2, :cond_0
+
+    iget-boolean v2, p0, Lcom/android/systemui/volume/VolumePanel;->mVoiceCapable:Z
+
+    if-eqz v2, :cond_1
+
+    iget-boolean v2, p0, Lcom/android/systemui/volume/VolumePanel;->mVolumeLinkNotification:Z
+
+    if-eqz v2, :cond_1
+
+    move v0, v1
+
+    goto :goto_0
+
+    :cond_1
+    :pswitch_1
+    iget-boolean v2, p0, Lcom/android/systemui/volume/VolumePanel;->mVoiceCapable:Z
+
+    if-nez v2, :cond_2
+
+    move v0, v1
+
+    goto :goto_0
+
+    :cond_2
+    :pswitch_2
+    iget v2, p0, Lcom/android/systemui/volume/VolumePanel;->mActiveStreamType:I
+
+    if-ne p1, v2, :cond_0
+
+    move v0, v1
+
+    goto :goto_0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x2
+        :pswitch_1
+        :pswitch_2
+        :pswitch_2
+        :pswitch_0
+    .end packed-switch
 .end method
 
 .method private isZenPanelVisible()Z
@@ -1787,7 +1961,7 @@
 
     check-cast v0, Lcom/android/systemui/volume/VolumePanel$StreamControl;
 
-    if-nez v0, :cond_0
+    if-nez v0, :cond_1
 
     const-string v1, "VolumePanel"
 
@@ -1815,10 +1989,21 @@
 
     iput v1, p0, Lcom/android/systemui/volume/VolumePanel;->mActiveStreamType:I
 
+    :cond_0
     :goto_0
+    invoke-direct {p0}, Lcom/android/systemui/volume/VolumePanel;->updateTimeoutDelay()V
+
+    invoke-direct {p0}, Lcom/android/systemui/volume/VolumePanel;->updateZenPanelVisible()V
+
+    invoke-direct {p0}, Lcom/android/systemui/volume/VolumePanel;->hideVolumePanel()V
+
     return-void
 
-    :cond_0
+    :cond_1
+    iget-boolean v1, p0, Lcom/android/systemui/volume/VolumePanel;->mExtendedPanelExpanded:Z
+
+    if-nez v1, :cond_0
+
     iget-object v1, p0, Lcom/android/systemui/volume/VolumePanel;->mSliderPanel:Landroid/view/ViewGroup;
 
     iget-object v2, v0, Lcom/android/systemui/volume/VolumePanel$StreamControl;->group:Landroid/view/ViewGroup;
@@ -1836,10 +2021,6 @@
     const/4 v1, 0x1
 
     invoke-direct {p0, v0, v1}, Lcom/android/systemui/volume/VolumePanel;->updateSlider(Lcom/android/systemui/volume/VolumePanel$StreamControl;Z)V
-
-    invoke-direct {p0}, Lcom/android/systemui/volume/VolumePanel;->updateTimeoutDelay()V
-
-    invoke-direct {p0}, Lcom/android/systemui/volume/VolumePanel;->updateZenPanelVisible()V
 
     goto :goto_0
 .end method
@@ -1940,7 +2121,7 @@
 
     invoke-virtual {v0, p1}, Landroid/view/ViewGroup;->setLayoutDirection(I)V
 
-    invoke-direct {p0}, Lcom/android/systemui/volume/VolumePanel;->updateStates()V
+    invoke-virtual {p0}, Lcom/android/systemui/volume/VolumePanel;->updateStates()V
 
     return-void
 .end method
@@ -2123,6 +2304,31 @@
     goto :goto_1
 .end method
 
+.method private showRingerHint()V
+    .locals 3
+
+    iget-object v1, p0, Lcom/android/systemui/volume/VolumePanel;->mStreamControls:Landroid/util/SparseArray;
+
+    const/4 v2, 0x2
+
+    invoke-virtual {v1, v2}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/android/systemui/volume/VolumePanel$StreamControl;
+
+    if-eqz v0, :cond_0
+
+    iget-object v1, p0, Lcom/android/systemui/volume/VolumePanel;->mIconPulser:Lcom/android/systemui/volume/IconPulser;
+
+    iget-object v2, v0, Lcom/android/systemui/volume/VolumePanel$StreamControl;->icon:Landroid/widget/ImageView;
+
+    invoke-virtual {v1, v2}, Lcom/android/systemui/volume/IconPulser;->start(Landroid/view/View;)V
+
+    :cond_0
+    return-void
+.end method
+
 .method private showSilentHint()V
     .locals 1
 
@@ -2172,6 +2378,81 @@
     invoke-virtual {p0, v4, v2, v3}, Lcom/android/systemui/volume/VolumePanel;->sendEmptyMessageDelayed(IJ)Z
 
     :cond_0
+    return-void
+.end method
+
+.method private showVolumePanel()V
+    .locals 6
+
+    const/4 v5, 0x0
+
+    const/4 v3, 0x1
+
+    iput-boolean v3, p0, Lcom/android/systemui/volume/VolumePanel;->mExtendedPanelExpanded:Z
+
+    const/4 v1, 0x0
+
+    :goto_0
+    sget-object v3, Lcom/android/systemui/volume/VolumePanel;->STREAMS:[Lcom/android/systemui/volume/VolumePanel$StreamResources;
+
+    array-length v3, v3
+
+    if-ge v1, v3, :cond_1
+
+    sget-object v3, Lcom/android/systemui/volume/VolumePanel;->STREAMS:[Lcom/android/systemui/volume/VolumePanel$StreamResources;
+
+    aget-object v3, v3, v1
+
+    iget v2, v3, Lcom/android/systemui/volume/VolumePanel$StreamResources;->streamType:I
+
+    invoke-direct {p0, v2}, Lcom/android/systemui/volume/VolumePanel;->isValidExpandedPanelControl(I)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_0
+
+    iget-object v3, p0, Lcom/android/systemui/volume/VolumePanel;->mStreamControls:Landroid/util/SparseArray;
+
+    invoke-virtual {v3, v2}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/android/systemui/volume/VolumePanel$StreamControl;
+
+    if-eqz v0, :cond_0
+
+    iget v3, v0, Lcom/android/systemui/volume/VolumePanel$StreamControl;->streamType:I
+
+    iget v4, p0, Lcom/android/systemui/volume/VolumePanel;->mActiveStreamType:I
+
+    if-eq v3, v4, :cond_0
+
+    iget-object v3, p0, Lcom/android/systemui/volume/VolumePanel;->mSliderPanel:Landroid/view/ViewGroup;
+
+    iget-object v4, v0, Lcom/android/systemui/volume/VolumePanel$StreamControl;->group:Landroid/view/ViewGroup;
+
+    invoke-virtual {v3, v4}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
+
+    iget-object v3, v0, Lcom/android/systemui/volume/VolumePanel$StreamControl;->group:Landroid/view/ViewGroup;
+
+    invoke-virtual {v3, v5}, Landroid/view/ViewGroup;->setVisibility(I)V
+
+    iget-object v3, v0, Lcom/android/systemui/volume/VolumePanel$StreamControl;->expandPanel:Landroid/widget/ImageView;
+
+    const/16 v4, 0x8
+
+    invoke-virtual {v3, v4}, Landroid/widget/ImageView;->setVisibility(I)V
+
+    invoke-direct {p0, v0, v5}, Lcom/android/systemui/volume/VolumePanel;->updateSlider(Lcom/android/systemui/volume/VolumePanel$StreamControl;Z)V
+
+    :cond_0
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_0
+
+    :cond_1
+    invoke-direct {p0}, Lcom/android/systemui/volume/VolumePanel;->updateZenPanelVisible()V
+
     return-void
 .end method
 
@@ -2257,6 +2538,58 @@
     return-void
 .end method
 
+.method private updateNotificationSlider(Z)V
+    .locals 3
+
+    iget-object v1, p0, Lcom/android/systemui/volume/VolumePanel;->mStreamControls:Landroid/util/SparseArray;
+
+    const/4 v2, 0x5
+
+    invoke-virtual {v1, v2}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/android/systemui/volume/VolumePanel$StreamControl;
+
+    if-eqz v0, :cond_0
+
+    invoke-direct {p0, v0, p1}, Lcom/android/systemui/volume/VolumePanel;->updateSlider(Lcom/android/systemui/volume/VolumePanel$StreamControl;Z)V
+
+    :cond_0
+    return-void
+.end method
+
+.method private updateRingerSlider(Z)V
+    .locals 3
+
+    iget-boolean v1, p0, Lcom/android/systemui/volume/VolumePanel;->mVoiceCapable:Z
+
+    if-nez v1, :cond_1
+
+    invoke-direct {p0, p1}, Lcom/android/systemui/volume/VolumePanel;->updateNotificationSlider(Z)V
+
+    :cond_0
+    :goto_0
+    return-void
+
+    :cond_1
+    iget-object v1, p0, Lcom/android/systemui/volume/VolumePanel;->mStreamControls:Landroid/util/SparseArray;
+
+    const/4 v2, 0x2
+
+    invoke-virtual {v1, v2}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/android/systemui/volume/VolumePanel$StreamControl;
+
+    if-eqz v0, :cond_0
+
+    invoke-direct {p0, v0, p1}, Lcom/android/systemui/volume/VolumePanel;->updateSlider(Lcom/android/systemui/volume/VolumePanel$StreamControl;Z)V
+
+    goto :goto_0
+.end method
+
 .method private updateSlider(Lcom/android/systemui/volume/VolumePanel$StreamControl;Z)V
     .locals 3
 
@@ -2291,185 +2624,231 @@
 .end method
 
 .method private updateSliderEnabled(Lcom/android/systemui/volume/VolumePanel$StreamControl;ZZ)V
-    .locals 8
+    .locals 9
 
-    const/high16 v7, 0x3f800000    # 1.0f
+    const/high16 v8, 0x3f800000    # 1.0f
 
-    const/4 v3, 0x1
+    const/4 v4, 0x1
 
-    const/4 v4, 0x0
+    const/4 v5, 0x0
 
-    iget-object v5, p1, Lcom/android/systemui/volume/VolumePanel$StreamControl;->seekbarView:Landroid/widget/SeekBar;
+    iget-object v6, p1, Lcom/android/systemui/volume/VolumePanel$StreamControl;->seekbarView:Landroid/widget/SeekBar;
 
-    invoke-virtual {v5}, Landroid/widget/SeekBar;->isEnabled()Z
+    invoke-virtual {v6}, Landroid/widget/SeekBar;->isEnabled()Z
 
-    move-result v2
+    move-result v3
 
-    iget v5, p1, Lcom/android/systemui/volume/VolumePanel$StreamControl;->streamType:I
+    iget v6, p1, Lcom/android/systemui/volume/VolumePanel$StreamControl;->streamType:I
 
-    invoke-static {v5}, Lcom/android/systemui/volume/VolumePanel;->isNotificationOrRing(I)Z
+    invoke-direct {p0, v6}, Lcom/android/systemui/volume/VolumePanel;->isNotificationOrRing(I)Z
 
     move-result v0
 
-    iget v5, p1, Lcom/android/systemui/volume/VolumePanel$StreamControl;->streamType:I
+    iget-boolean v6, p0, Lcom/android/systemui/volume/VolumePanel;->mVolumeLinkNotification:Z
 
-    const/16 v6, -0xc8
+    if-nez v6, :cond_3
 
-    if-ne v5, v6, :cond_2
+    iget v6, p1, Lcom/android/systemui/volume/VolumePanel$StreamControl;->streamType:I
 
-    iget-object v5, p1, Lcom/android/systemui/volume/VolumePanel$StreamControl;->seekbarView:Landroid/widget/SeekBar;
+    const/4 v7, 0x5
 
-    if-nez p3, :cond_1
+    if-ne v6, v7, :cond_3
+
+    move v1, v4
 
     :goto_0
-    invoke-virtual {v5, v3}, Landroid/widget/SeekBar;->setEnabled(Z)V
+    iget v6, p1, Lcom/android/systemui/volume/VolumePanel$StreamControl;->streamType:I
+
+    const/16 v7, -0xc8
+
+    if-ne v6, v7, :cond_5
+
+    iget-object v7, p1, Lcom/android/systemui/volume/VolumePanel$StreamControl;->seekbarView:Landroid/widget/SeekBar;
+
+    if-nez p3, :cond_4
+
+    move v6, v4
 
     :goto_1
-    if-eqz v0, :cond_0
-
-    iget-object v3, p1, Lcom/android/systemui/volume/VolumePanel$StreamControl;->seekbarView:Landroid/widget/SeekBar;
-
-    invoke-virtual {v3}, Landroid/widget/SeekBar;->isEnabled()Z
-
-    move-result v3
-
-    if-eq v2, v3, :cond_0
-
-    iget-object v3, p1, Lcom/android/systemui/volume/VolumePanel$StreamControl;->seekbarView:Landroid/widget/SeekBar;
-
-    invoke-virtual {v3}, Landroid/widget/SeekBar;->isEnabled()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_8
-
-    iget-object v3, p1, Lcom/android/systemui/volume/VolumePanel$StreamControl;->group:Landroid/view/ViewGroup;
-
-    const/4 v4, 0x0
-
-    invoke-virtual {v3, v4}, Landroid/view/ViewGroup;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
-
-    iget-object v3, p1, Lcom/android/systemui/volume/VolumePanel$StreamControl;->icon:Landroid/widget/ImageView;
-
-    iget-boolean v4, p0, Lcom/android/systemui/volume/VolumePanel;->mHasVibrator:Z
-
-    invoke-virtual {v3, v4}, Landroid/widget/ImageView;->setClickable(Z)V
+    invoke-virtual {v7, v6}, Landroid/widget/SeekBar;->setEnabled(Z)V
 
     :cond_0
     :goto_2
-    return-void
+    if-nez v0, :cond_1
+
+    if-eqz v1, :cond_2
 
     :cond_1
-    move v3, v4
+    iget-object v6, p1, Lcom/android/systemui/volume/VolumePanel$StreamControl;->seekbarView:Landroid/widget/SeekBar;
 
-    goto :goto_0
-
-    :cond_2
-    if-eqz v0, :cond_3
-
-    iget-object v5, p0, Lcom/android/systemui/volume/VolumePanel;->mNotificationEffectsSuppressor:Landroid/content/ComponentName;
-
-    if-eqz v5, :cond_3
-
-    iget-object v5, p1, Lcom/android/systemui/volume/VolumePanel$StreamControl;->icon:Landroid/widget/ImageView;
-
-    invoke-virtual {v5, v3}, Landroid/widget/ImageView;->setEnabled(Z)V
-
-    iget-object v3, p1, Lcom/android/systemui/volume/VolumePanel$StreamControl;->icon:Landroid/widget/ImageView;
-
-    invoke-virtual {v3, v7}, Landroid/widget/ImageView;->setAlpha(F)V
-
-    iget-object v3, p1, Lcom/android/systemui/volume/VolumePanel$StreamControl;->icon:Landroid/widget/ImageView;
-
-    invoke-virtual {v3, v4}, Landroid/widget/ImageView;->setClickable(Z)V
-
-    goto :goto_1
-
-    :cond_3
-    if-eqz v0, :cond_4
-
-    iget-object v5, p0, Lcom/android/systemui/volume/VolumePanel;->mAudioManager:Landroid/media/AudioManager;
-
-    invoke-virtual {v5}, Landroid/media/AudioManager;->getRingerModeInternal()I
-
-    move-result v5
-
-    if-nez v5, :cond_4
-
-    iget-object v3, p1, Lcom/android/systemui/volume/VolumePanel$StreamControl;->seekbarView:Landroid/widget/SeekBar;
-
-    invoke-virtual {v3, v4}, Landroid/widget/SeekBar;->setEnabled(Z)V
-
-    iget-object v3, p1, Lcom/android/systemui/volume/VolumePanel$StreamControl;->icon:Landroid/widget/ImageView;
-
-    invoke-virtual {v3, v4}, Landroid/widget/ImageView;->setEnabled(Z)V
-
-    iget-object v3, p1, Lcom/android/systemui/volume/VolumePanel$StreamControl;->icon:Landroid/widget/ImageView;
-
-    iget v5, p0, Lcom/android/systemui/volume/VolumePanel;->mDisabledAlpha:F
-
-    invoke-virtual {v3, v5}, Landroid/widget/ImageView;->setAlpha(F)V
-
-    iget-object v3, p1, Lcom/android/systemui/volume/VolumePanel$StreamControl;->icon:Landroid/widget/ImageView;
-
-    invoke-virtual {v3, v4}, Landroid/widget/ImageView;->setClickable(Z)V
-
-    goto :goto_1
-
-    :cond_4
-    if-nez p3, :cond_6
-
-    iget v5, p1, Lcom/android/systemui/volume/VolumePanel$StreamControl;->streamType:I
-
-    iget-object v6, p0, Lcom/android/systemui/volume/VolumePanel;->mAudioManager:Landroid/media/AudioManager;
-
-    invoke-virtual {v6}, Landroid/media/AudioManager;->getMasterStreamType()I
+    invoke-virtual {v6}, Landroid/widget/SeekBar;->isEnabled()Z
 
     move-result v6
 
-    if-eq v5, v6, :cond_5
+    if-eq v3, v6, :cond_2
 
-    if-nez v0, :cond_5
+    iget-object v6, p1, Lcom/android/systemui/volume/VolumePanel$StreamControl;->seekbarView:Landroid/widget/SeekBar;
 
-    if-nez p2, :cond_6
+    invoke-virtual {v6}, Landroid/widget/SeekBar;->isEnabled()Z
 
-    :cond_5
-    sget-object v5, Lcom/android/systemui/volume/VolumePanel;->sSafetyWarning:Landroid/app/AlertDialog;
+    move-result v6
 
-    if-eqz v5, :cond_7
+    if-eqz v6, :cond_c
 
-    :cond_6
-    iget-object v3, p1, Lcom/android/systemui/volume/VolumePanel$StreamControl;->seekbarView:Landroid/widget/SeekBar;
+    iget-object v6, p1, Lcom/android/systemui/volume/VolumePanel$StreamControl;->group:Landroid/view/ViewGroup;
 
-    invoke-virtual {v3, v4}, Landroid/widget/SeekBar;->setEnabled(Z)V
+    const/4 v7, 0x0
+
+    invoke-virtual {v6, v7}, Landroid/view/ViewGroup;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
+
+    iget-object v6, p1, Lcom/android/systemui/volume/VolumePanel$StreamControl;->icon:Landroid/widget/ImageView;
+
+    if-eqz v0, :cond_b
+
+    iget-boolean v7, p0, Lcom/android/systemui/volume/VolumePanel;->mHasVibrator:Z
+
+    if-eqz v7, :cond_b
+
+    :goto_3
+    invoke-virtual {v6, v4}, Landroid/widget/ImageView;->setClickable(Z)V
+
+    :cond_2
+    :goto_4
+    return-void
+
+    :cond_3
+    move v1, v5
+
+    goto :goto_0
+
+    :cond_4
+    move v6, v5
 
     goto :goto_1
 
-    :cond_7
-    iget-object v4, p1, Lcom/android/systemui/volume/VolumePanel$StreamControl;->seekbarView:Landroid/widget/SeekBar;
+    :cond_5
+    if-eqz v0, :cond_6
 
-    invoke-virtual {v4, v3}, Landroid/widget/SeekBar;->setEnabled(Z)V
+    iget-object v6, p0, Lcom/android/systemui/volume/VolumePanel;->mNotificationEffectsSuppressor:Landroid/content/ComponentName;
 
-    iget-object v4, p1, Lcom/android/systemui/volume/VolumePanel$StreamControl;->icon:Landroid/widget/ImageView;
+    if-eqz v6, :cond_6
 
-    invoke-virtual {v4, v3}, Landroid/widget/ImageView;->setEnabled(Z)V
+    iget-object v6, p1, Lcom/android/systemui/volume/VolumePanel$StreamControl;->icon:Landroid/widget/ImageView;
 
-    iget-object v3, p1, Lcom/android/systemui/volume/VolumePanel$StreamControl;->icon:Landroid/widget/ImageView;
+    invoke-virtual {v6, v4}, Landroid/widget/ImageView;->setEnabled(Z)V
 
-    invoke-virtual {v3, v7}, Landroid/widget/ImageView;->setAlpha(F)V
+    iget-object v6, p1, Lcom/android/systemui/volume/VolumePanel$StreamControl;->icon:Landroid/widget/ImageView;
 
-    goto/16 :goto_1
+    invoke-virtual {v6, v8}, Landroid/widget/ImageView;->setAlpha(F)V
 
-    :cond_8
-    new-instance v1, Lcom/android/systemui/volume/VolumePanel$8;
+    iget-object v6, p1, Lcom/android/systemui/volume/VolumePanel$StreamControl;->icon:Landroid/widget/ImageView;
 
-    invoke-direct {v1, p0}, Lcom/android/systemui/volume/VolumePanel$8;-><init>(Lcom/android/systemui/volume/VolumePanel;)V
-
-    iget-object v3, p1, Lcom/android/systemui/volume/VolumePanel$StreamControl;->group:Landroid/view/ViewGroup;
-
-    invoke-virtual {v3, v1}, Landroid/view/ViewGroup;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
+    invoke-virtual {v6, v5}, Landroid/widget/ImageView;->setClickable(Z)V
 
     goto :goto_2
+
+    :cond_6
+    if-eqz v0, :cond_7
+
+    iget-object v6, p0, Lcom/android/systemui/volume/VolumePanel;->mAudioManager:Landroid/media/AudioManager;
+
+    invoke-virtual {v6}, Landroid/media/AudioManager;->getRingerModeInternal()I
+
+    move-result v6
+
+    if-nez v6, :cond_7
+
+    iget-object v6, p1, Lcom/android/systemui/volume/VolumePanel$StreamControl;->seekbarView:Landroid/widget/SeekBar;
+
+    invoke-virtual {v6, v5}, Landroid/widget/SeekBar;->setEnabled(Z)V
+
+    iget-object v6, p1, Lcom/android/systemui/volume/VolumePanel$StreamControl;->icon:Landroid/widget/ImageView;
+
+    invoke-virtual {v6, v5}, Landroid/widget/ImageView;->setEnabled(Z)V
+
+    iget-object v6, p1, Lcom/android/systemui/volume/VolumePanel$StreamControl;->icon:Landroid/widget/ImageView;
+
+    iget v7, p0, Lcom/android/systemui/volume/VolumePanel;->mDisabledAlpha:F
+
+    invoke-virtual {v6, v7}, Landroid/widget/ImageView;->setAlpha(F)V
+
+    iget-object v6, p1, Lcom/android/systemui/volume/VolumePanel$StreamControl;->icon:Landroid/widget/ImageView;
+
+    invoke-virtual {v6, v5}, Landroid/widget/ImageView;->setClickable(Z)V
+
+    goto :goto_2
+
+    :cond_7
+    if-nez p3, :cond_9
+
+    iget v6, p1, Lcom/android/systemui/volume/VolumePanel$StreamControl;->streamType:I
+
+    iget-object v7, p0, Lcom/android/systemui/volume/VolumePanel;->mAudioManager:Landroid/media/AudioManager;
+
+    invoke-virtual {v7}, Landroid/media/AudioManager;->getMasterStreamType()I
+
+    move-result v7
+
+    if-eq v6, v7, :cond_8
+
+    if-nez v0, :cond_8
+
+    if-nez p2, :cond_9
+
+    :cond_8
+    sget-object v6, Lcom/android/systemui/volume/VolumePanel;->sSafetyWarning:Landroid/app/AlertDialog;
+
+    if-eqz v6, :cond_a
+
+    :cond_9
+    iget-object v6, p1, Lcom/android/systemui/volume/VolumePanel$StreamControl;->seekbarView:Landroid/widget/SeekBar;
+
+    invoke-virtual {v6, v5}, Landroid/widget/SeekBar;->setEnabled(Z)V
+
+    if-eqz v1, :cond_0
+
+    iget-object v6, p1, Lcom/android/systemui/volume/VolumePanel$StreamControl;->icon:Landroid/widget/ImageView;
+
+    invoke-virtual {v6, v5}, Landroid/widget/ImageView;->setEnabled(Z)V
+
+    iget-object v6, p1, Lcom/android/systemui/volume/VolumePanel$StreamControl;->icon:Landroid/widget/ImageView;
+
+    iget v7, p0, Lcom/android/systemui/volume/VolumePanel;->mDisabledAlpha:F
+
+    invoke-virtual {v6, v7}, Landroid/widget/ImageView;->setAlpha(F)V
+
+    goto/16 :goto_2
+
+    :cond_a
+    iget-object v6, p1, Lcom/android/systemui/volume/VolumePanel$StreamControl;->seekbarView:Landroid/widget/SeekBar;
+
+    invoke-virtual {v6, v4}, Landroid/widget/SeekBar;->setEnabled(Z)V
+
+    iget-object v6, p1, Lcom/android/systemui/volume/VolumePanel$StreamControl;->icon:Landroid/widget/ImageView;
+
+    invoke-virtual {v6, v4}, Landroid/widget/ImageView;->setEnabled(Z)V
+
+    iget-object v6, p1, Lcom/android/systemui/volume/VolumePanel$StreamControl;->icon:Landroid/widget/ImageView;
+
+    invoke-virtual {v6, v8}, Landroid/widget/ImageView;->setAlpha(F)V
+
+    goto/16 :goto_2
+
+    :cond_b
+    move v4, v5
+
+    goto :goto_3
+
+    :cond_c
+    new-instance v2, Lcom/android/systemui/volume/VolumePanel$8;
+
+    invoke-direct {v2, p0}, Lcom/android/systemui/volume/VolumePanel$8;-><init>(Lcom/android/systemui/volume/VolumePanel;)V
+
+    iget-object v4, p1, Lcom/android/systemui/volume/VolumePanel$StreamControl;->group:Landroid/view/ViewGroup;
+
+    invoke-virtual {v4, v2}, Landroid/view/ViewGroup;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
+
+    goto/16 :goto_4
 .end method
 
 .method private updateSliderIcon(Lcom/android/systemui/volume/VolumePanel$StreamControl;Z)V
@@ -2481,7 +2860,7 @@
 
     iget v3, p1, Lcom/android/systemui/volume/VolumePanel$StreamControl;->streamType:I
 
-    invoke-static {v3}, Lcom/android/systemui/volume/VolumePanel;->isNotificationOrRing(I)Z
+    invoke-direct {p0, v3}, Lcom/android/systemui/volume/VolumePanel;->isNotificationOrRing(I)Z
 
     move-result v3
 
@@ -2563,7 +2942,7 @@
 
     iget v1, p1, Lcom/android/systemui/volume/VolumePanel$StreamControl;->streamType:I
 
-    invoke-static {v1}, Lcom/android/systemui/volume/VolumePanel;->isNotificationOrRing(I)Z
+    invoke-direct {p0, v1}, Lcom/android/systemui/volume/VolumePanel;->isNotificationOrRing(I)Z
 
     move-result v0
 
@@ -2610,7 +2989,7 @@
 
     iget v1, p1, Lcom/android/systemui/volume/VolumePanel$StreamControl;->streamType:I
 
-    invoke-static {v1}, Lcom/android/systemui/volume/VolumePanel;->isNotificationOrRing(I)Z
+    invoke-direct {p0, v1}, Lcom/android/systemui/volume/VolumePanel;->isNotificationOrRing(I)Z
 
     move-result v1
 
@@ -2671,46 +3050,8 @@
     goto :goto_1
 .end method
 
-.method private updateStates()V
-    .locals 4
-
-    iget-object v3, p0, Lcom/android/systemui/volume/VolumePanel;->mSliderPanel:Landroid/view/ViewGroup;
-
-    invoke-virtual {v3}, Landroid/view/ViewGroup;->getChildCount()I
-
-    move-result v0
-
-    const/4 v1, 0x0
-
-    :goto_0
-    if-ge v1, v0, :cond_0
-
-    iget-object v3, p0, Lcom/android/systemui/volume/VolumePanel;->mSliderPanel:Landroid/view/ViewGroup;
-
-    invoke-virtual {v3, v1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Landroid/view/View;->getTag()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lcom/android/systemui/volume/VolumePanel$StreamControl;
-
-    const/4 v3, 0x1
-
-    invoke-direct {p0, v2, v3}, Lcom/android/systemui/volume/VolumePanel;->updateSlider(Lcom/android/systemui/volume/VolumePanel$StreamControl;Z)V
-
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    return-void
-.end method
-
 .method private updateTimeoutDelay()V
-    .locals 3
+    .locals 2
 
     const/16 v0, 0x2710
 
@@ -2734,17 +3075,6 @@
     goto :goto_0
 
     :cond_2
-    iget v1, p0, Lcom/android/systemui/volume/VolumePanel;->mActiveStreamType:I
-
-    const/4 v2, 0x3
-
-    if-ne v1, v2, :cond_3
-
-    const/16 v0, 0x5dc
-
-    goto :goto_0
-
-    :cond_3
     iget-boolean v1, p0, Lcom/android/systemui/volume/VolumePanel;->mZenPanelExpanded:Z
 
     if-nez v1, :cond_0
@@ -2753,9 +3083,20 @@
 
     move-result v0
 
-    if-eqz v0, :cond_4
+    if-eqz v0, :cond_3
 
     const/16 v0, 0x1194
+
+    goto :goto_0
+
+    :cond_3
+    iget v0, p0, Lcom/android/systemui/volume/VolumePanel;->mActiveStreamType:I
+
+    const/4 v1, 0x3
+
+    if-ne v0, v1, :cond_4
+
+    const/16 v0, 0x5dc
 
     goto :goto_0
 
@@ -2767,6 +3108,10 @@
 
 .method private updateWidth()V
     .locals 3
+
+    iget-object v2, p0, Lcom/android/systemui/volume/VolumePanel;->mDialog:Landroid/app/Dialog;
+
+    if-eqz v2, :cond_0
 
     iget-object v2, p0, Lcom/android/systemui/volume/VolumePanel;->mContext:Landroid/content/Context;
 
@@ -2808,6 +3153,7 @@
 
     invoke-virtual {v2, v0}, Landroid/view/Window;->setAttributes(Landroid/view/WindowManager$LayoutParams;)V
 
+    :cond_0
     return-void
 .end method
 
@@ -2816,16 +3162,21 @@
 
     iget-boolean v0, p0, Lcom/android/systemui/volume/VolumePanel;->mZenModeAvailable:Z
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_1
 
     iget v0, p0, Lcom/android/systemui/volume/VolumePanel;->mActiveStreamType:I
 
-    invoke-static {v0}, Lcom/android/systemui/volume/VolumePanel;->isNotificationOrRing(I)Z
+    invoke-direct {p0, v0}, Lcom/android/systemui/volume/VolumePanel;->isNotificationOrRing(I)Z
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    if-nez v0, :cond_0
 
+    iget-boolean v0, p0, Lcom/android/systemui/volume/VolumePanel;->mExtendedPanelExpanded:Z
+
+    if-eqz v0, :cond_1
+
+    :cond_0
     const/4 v0, 0x1
 
     :goto_0
@@ -2833,7 +3184,7 @@
 
     return-void
 
-    :cond_0
+    :cond_1
     const/4 v0, 0x0
 
     goto :goto_0
@@ -3226,6 +3577,14 @@
     goto :goto_1
 .end method
 
+.method public getContentView()Landroid/view/View;
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/systemui/volume/VolumePanel;->mView:Landroid/view/View;
+
+    return-object v0
+.end method
+
 .method public getZenController()Lcom/android/systemui/statusbar/policy/ZenModeController;
     .locals 1
 
@@ -3296,6 +3655,12 @@
 
     if-eqz v1, :cond_1
 
+    invoke-direct {p0}, Lcom/android/systemui/volume/VolumePanel;->hideVolumePanel()V
+
+    iget-object v1, p0, Lcom/android/systemui/volume/VolumePanel;->mDialog:Landroid/app/Dialog;
+
+    if-eqz v1, :cond_1
+
     iget-object v1, p0, Lcom/android/systemui/volume/VolumePanel;->mDialog:Landroid/app/Dialog;
 
     invoke-virtual {v1}, Landroid/app/Dialog;->dismiss()V
@@ -3356,10 +3721,29 @@
     :pswitch_7
     invoke-direct {p0}, Lcom/android/systemui/volume/VolumePanel;->isShowing()Z
 
-    move-result v0
+    move-result v1
 
-    if-eqz v0, :cond_0
+    if-eqz v1, :cond_0
 
+    iget-boolean v1, p0, Lcom/android/systemui/volume/VolumePanel;->mExtendedPanelExpanded:Z
+
+    if-eqz v1, :cond_4
+
+    invoke-direct {p0, v0}, Lcom/android/systemui/volume/VolumePanel;->updateRingerSlider(Z)V
+
+    iget-boolean v1, p0, Lcom/android/systemui/volume/VolumePanel;->mVoiceCapable:Z
+
+    if-eqz v1, :cond_0
+
+    iget-boolean v1, p0, Lcom/android/systemui/volume/VolumePanel;->mVolumeLinkNotification:Z
+
+    if-nez v1, :cond_0
+
+    invoke-direct {p0, v0}, Lcom/android/systemui/volume/VolumePanel;->updateNotificationSlider(Z)V
+
+    goto :goto_0
+
+    :cond_4
     invoke-direct {p0}, Lcom/android/systemui/volume/VolumePanel;->updateActiveSlider()V
 
     goto :goto_0
@@ -3373,12 +3757,12 @@
 
     invoke-virtual {p0, v0, v1}, Lcom/android/systemui/volume/VolumePanel;->onRemoteVolumeChanged(Landroid/media/session/MediaController;I)V
 
-    goto :goto_0
+    goto/16 :goto_0
 
     :pswitch_9
     invoke-virtual {p0}, Lcom/android/systemui/volume/VolumePanel;->onRemoteVolumeUpdateIfShown()V
 
-    goto :goto_0
+    goto/16 :goto_0
 
     :pswitch_a
     iget v0, p1, Landroid/os/Message;->arg1:I
@@ -3387,14 +3771,14 @@
 
     invoke-virtual {p0, v0, v1}, Lcom/android/systemui/volume/VolumePanel;->onSliderVisibilityChanged(II)V
 
-    goto :goto_0
+    goto/16 :goto_0
 
     :pswitch_b
     iget v0, p1, Landroid/os/Message;->arg1:I
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/volume/VolumePanel;->onDisplaySafeVolumeWarning(I)V
 
-    goto :goto_0
+    goto/16 :goto_0
 
     :pswitch_c
     iget v0, p1, Landroid/os/Message;->arg1:I
@@ -3406,11 +3790,11 @@
     :pswitch_d
     iget v1, p1, Landroid/os/Message;->arg1:I
 
-    if-eqz v1, :cond_4
+    if-eqz v1, :cond_5
 
     const/4 v0, 0x1
 
-    :cond_4
+    :cond_5
     iput-boolean v0, p0, Lcom/android/systemui/volume/VolumePanel;->mZenModeAvailable:Z
 
     invoke-direct {p0}, Lcom/android/systemui/volume/VolumePanel;->updateZenPanelVisible()V
@@ -3516,7 +3900,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    invoke-direct {p0}, Lcom/android/systemui/volume/VolumePanel;->updateStates()V
+    invoke-virtual {p0}, Lcom/android/systemui/volume/VolumePanel;->updateStates()V
 
     :cond_2
     iget-object v0, p0, Lcom/android/systemui/volume/VolumePanel;->mAccessibilityManager:Landroid/view/accessibility/AccessibilityManager;
@@ -4004,7 +4388,7 @@
     :cond_1
     :goto_0
     :sswitch_0
-    if-eqz v4, :cond_6
+    if-eqz v4, :cond_5
 
     const/16 v7, -0xc8
 
@@ -4064,60 +4448,31 @@
     :goto_1
     invoke-direct {p0, v4, v2, v7}, Lcom/android/systemui/volume/VolumePanel;->updateSliderEnabled(Lcom/android/systemui/volume/VolumePanel$StreamControl;ZZ)V
 
-    invoke-static {p1}, Lcom/android/systemui/volume/VolumePanel;->isNotificationOrRing(I)Z
-
-    move-result v7
-
-    if-eqz v7, :cond_6
-
-    iget-object v7, p0, Lcom/android/systemui/volume/VolumePanel;->mSecondaryIconTransition:Lcom/android/systemui/volume/VolumePanel$SecondaryIconTransition;
-
-    invoke-virtual {v7}, Lcom/android/systemui/volume/VolumePanel$SecondaryIconTransition;->isRunning()Z
+    invoke-direct {p0, p1}, Lcom/android/systemui/volume/VolumePanel;->isNotificationOrRing(I)Z
 
     move-result v7
 
     if-eqz v7, :cond_5
 
-    iget-object v7, p0, Lcom/android/systemui/volume/VolumePanel;->mSecondaryIconTransition:Lcom/android/systemui/volume/VolumePanel$SecondaryIconTransition;
-
-    invoke-virtual {v7}, Lcom/android/systemui/volume/VolumePanel$SecondaryIconTransition;->cancel()V
-
-    iget-object v7, v4, Lcom/android/systemui/volume/VolumePanel$StreamControl;->seekbarView:Landroid/widget/SeekBar;
-
-    const/4 v8, 0x0
-
-    invoke-virtual {v7, v8}, Landroid/widget/SeekBar;->setAlpha(F)V
-
-    iget-object v7, v4, Lcom/android/systemui/volume/VolumePanel$StreamControl;->seekbarView:Landroid/widget/SeekBar;
-
-    invoke-virtual {v7}, Landroid/widget/SeekBar;->animate()Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v7
-
-    const/high16 v8, 0x3f800000    # 1.0f
-
-    invoke-virtual {v7, v8}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
-
-    iget-object v7, p0, Lcom/android/systemui/volume/VolumePanel;->mZenPanel:Lcom/android/systemui/volume/ZenModePanel;
-
-    const/4 v8, 0x0
-
-    invoke-virtual {v7, v8}, Lcom/android/systemui/volume/ZenModePanel;->setAlpha(F)V
-
-    iget-object v7, p0, Lcom/android/systemui/volume/VolumePanel;->mZenPanel:Lcom/android/systemui/volume/ZenModePanel;
-
-    invoke-virtual {v7}, Lcom/android/systemui/volume/ZenModePanel;->animate()Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v7
-
-    const/high16 v8, 0x3f800000    # 1.0f
-
-    invoke-virtual {v7, v8}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
-
-    :cond_5
     invoke-direct {p0, v4, v2}, Lcom/android/systemui/volume/VolumePanel;->updateSliderIcon(Lcom/android/systemui/volume/VolumePanel$StreamControl;Z)V
 
-    :cond_6
+    iget-boolean v7, p0, Lcom/android/systemui/volume/VolumePanel;->mVoiceCapable:Z
+
+    if-eqz v7, :cond_5
+
+    iget-boolean v7, p0, Lcom/android/systemui/volume/VolumePanel;->mVolumeLinkNotification:Z
+
+    if-nez v7, :cond_5
+
+    iget-boolean v7, p0, Lcom/android/systemui/volume/VolumePanel;->mExtendedPanelExpanded:Z
+
+    if-eqz v7, :cond_5
+
+    const/4 v7, 0x0
+
+    invoke-direct {p0, v7}, Lcom/android/systemui/volume/VolumePanel;->updateNotificationSlider(Z)V
+
+    :cond_5
     invoke-direct {p0}, Lcom/android/systemui/volume/VolumePanel;->isShowing()Z
 
     move-result v7
@@ -4131,6 +4486,15 @@
     const/4 v5, -0x1
 
     :goto_2
+    iget-object v7, p0, Lcom/android/systemui/volume/VolumePanel;->mDialog:Landroid/app/Dialog;
+
+    if-eqz v7, :cond_6
+
+    iget-object v7, p0, Lcom/android/systemui/volume/VolumePanel;->mDialog:Landroid/app/Dialog;
+
+    invoke-virtual {v7}, Landroid/app/Dialog;->show()V
+
+    :cond_6
     const/16 v7, -0x64
 
     if-eq v5, v7, :cond_7
@@ -4140,10 +4504,6 @@
     invoke-virtual {v7, v5}, Landroid/media/AudioManager;->forceVolumeControlStream(I)V
 
     :cond_7
-    iget-object v7, p0, Lcom/android/systemui/volume/VolumePanel;->mDialog:Landroid/app/Dialog;
-
-    invoke-virtual {v7}, Landroid/app/Dialog;->show()V
-
     iget-object v7, p0, Lcom/android/systemui/volume/VolumePanel;->mCallback:Lcom/android/systemui/volume/VolumePanel$Callback;
 
     if-eqz v7, :cond_8
@@ -4166,7 +4526,7 @@
 
     if-eqz v7, :cond_a
 
-    invoke-static {p1}, Lcom/android/systemui/volume/VolumePanel;->isNotificationOrRing(I)Z
+    invoke-direct {p0, p1}, Lcom/android/systemui/volume/VolumePanel;->isNotificationOrRing(I)Z
 
     move-result v7
 
@@ -4274,6 +4634,10 @@
 
     if-nez v3, :cond_1
 
+    iget-boolean v7, p0, Lcom/android/systemui/volume/VolumePanel;->mVolumeLinkNotification:Z
+
+    if-eqz v7, :cond_1
+
     const/4 v7, 0x1
 
     iput-boolean v7, p0, Lcom/android/systemui/volume/VolumePanel;->mRingIsSilent:Z
@@ -4377,8 +4741,6 @@
     move v5, p1
 
     goto/16 :goto_2
-
-    nop
 
     :sswitch_data_0
     .sparse-switch
@@ -4644,6 +5006,10 @@
     iget v0, p0, Lcom/android/systemui/volume/VolumePanel;->mActiveStreamType:I
 
     if-eq v0, p1, :cond_1
+
+    iget-boolean v0, p0, Lcom/android/systemui/volume/VolumePanel;->mExtendedPanelExpanded:Z
+
+    if-nez v0, :cond_1
 
     invoke-direct {p0, p1}, Lcom/android/systemui/volume/VolumePanel;->reorderSliders(I)V
 
@@ -4977,5 +5343,51 @@
 
     iput-object p1, p0, Lcom/android/systemui/volume/VolumePanel;->mCallback:Lcom/android/systemui/volume/VolumePanel$Callback;
 
+    return-void
+.end method
+
+.method public setZenModePanelCallback(Lcom/android/systemui/volume/ZenModePanel$Callback;)V
+    .locals 0
+
+    iput-object p1, p0, Lcom/android/systemui/volume/VolumePanel;->mZenPanelCallback:Lcom/android/systemui/volume/ZenModePanel$Callback;
+
+    return-void
+.end method
+
+.method public updateStates()V
+    .locals 4
+
+    iget-object v3, p0, Lcom/android/systemui/volume/VolumePanel;->mSliderPanel:Landroid/view/ViewGroup;
+
+    invoke-virtual {v3}, Landroid/view/ViewGroup;->getChildCount()I
+
+    move-result v0
+
+    const/4 v1, 0x0
+
+    :goto_0
+    if-ge v1, v0, :cond_0
+
+    iget-object v3, p0, Lcom/android/systemui/volume/VolumePanel;->mSliderPanel:Landroid/view/ViewGroup;
+
+    invoke-virtual {v3, v1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Landroid/view/View;->getTag()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lcom/android/systemui/volume/VolumePanel$StreamControl;
+
+    const/4 v3, 0x1
+
+    invoke-direct {p0, v2, v3}, Lcom/android/systemui/volume/VolumePanel;->updateSlider(Lcom/android/systemui/volume/VolumePanel$StreamControl;Z)V
+
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_0
+
+    :cond_0
     return-void
 .end method

@@ -17,7 +17,7 @@
 # instance fields
 .field controller:Landroid/media/session/MediaController;
 
-.field divider:Landroid/view/View;
+.field expandPanel:Landroid/widget/ImageView;
 
 .field group:Landroid/view/ViewGroup;
 
@@ -28,8 +28,6 @@
 .field iconRes:I
 
 .field iconSuppressedRes:I
-
-.field secondaryIcon:Landroid/widget/ImageView;
 
 .field seekbarView:Landroid/widget/SeekBar;
 
@@ -51,7 +49,7 @@
     return-void
 .end method
 
-.method synthetic constructor <init>(Lcom/android/systemui/volume/VolumePanel;Lcom/android/systemui/volume/VolumePanel$1;)V
+.method synthetic constructor <init>(Lcom/android/systemui/volume/VolumePanel;Lcom/android/systemui/volume/VolumePanel$Settings;)V
     .locals 0
 
     invoke-direct {p0, p1}, Lcom/android/systemui/volume/VolumePanel$StreamControl;-><init>(Lcom/android/systemui/volume/VolumePanel;)V

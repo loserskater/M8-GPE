@@ -138,8 +138,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/volume/VolumePanel$SafetyWarning;->mVolumePanel:Lcom/android/systemui/volume/VolumePanel;
 
-    # invokes: Lcom/android/systemui/volume/VolumePanel;->updateStates()V
-    invoke-static {v0}, Lcom/android/systemui/volume/VolumePanel;->access$400(Lcom/android/systemui/volume/VolumePanel;)V
+    invoke-virtual {v0}, Lcom/android/systemui/volume/VolumePanel;->updateStates()V
 
     return-void
 

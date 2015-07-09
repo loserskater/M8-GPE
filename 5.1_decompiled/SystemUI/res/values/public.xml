@@ -303,6 +303,7 @@
     <public type="drawable" name="stat_sys_signal_inout" id="0x7f02016b" />
     <public type="drawable" name="stat_sys_signal_none" id="0x7f02016c" />
     <public type="drawable" name="stat_sys_signal_out" id="0x7f02016d" />
+    <public type="drawable" name="ic_notification_audible" id="0x7f02017a" />
     <public type="drawable" name="ic_input_delete" id="0x7f020035" />
     <public type="drawable" name="ic_lockscreen_search_activated" id="0x7f020052" />
     <public type="drawable" name="ic_lockscreen_search_normal" id="0x7f020053" />
@@ -414,6 +415,7 @@
     <public type="drawable" name="ic_sysbar_power_land" id="0x7f020176" />
     <public type="drawable" name="ic_sysbar_search" id="0x7f020177" />
     <public type="drawable" name="ic_sysbar_search_land" id="0x7f020178" />
+    <public type="drawable" name="ic_expand_slider_panel" id="0x7f020179" />
     <public type="drawable" name="ic_qs_default_user" id="0x7f02007e" />
     <public type="mipmap" name="ic_daydreams" id="0x7f030000" />
     <public type="mipmap" name="ic_launcher_dreams" id="0x7f030001" />

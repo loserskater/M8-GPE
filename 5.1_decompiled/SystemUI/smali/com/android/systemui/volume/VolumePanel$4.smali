@@ -76,6 +76,34 @@
     # invokes: Lcom/android/systemui/volume/VolumePanel;->resetTimeout()V
     invoke-static {v0}, Lcom/android/systemui/volume/VolumePanel;->access$1200(Lcom/android/systemui/volume/VolumePanel;)V
 
+    iget-object v0, p0, Lcom/android/systemui/volume/VolumePanel$4;->this$0:Lcom/android/systemui/volume/VolumePanel;
+
+    # getter for: Lcom/android/systemui/volume/VolumePanel;->mZenPanelCallback:Lcom/android/systemui/volume/ZenModePanel$Callback;
+    invoke-static {v0}, Lcom/android/systemui/volume/VolumePanel;->access$1113(Lcom/android/systemui/volume/VolumePanel;)Lcom/android/systemui/volume/ZenModePanel$Callback;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/android/systemui/volume/VolumePanel$4;->this$0:Lcom/android/systemui/volume/VolumePanel;
+
+    # getter for: Lcom/android/systemui/volume/VolumePanel;->mZenPanelCallback:Lcom/android/systemui/volume/ZenModePanel$Callback;
+    invoke-static {v0}, Lcom/android/systemui/volume/VolumePanel;->access$1113(Lcom/android/systemui/volume/VolumePanel;)Lcom/android/systemui/volume/ZenModePanel$Callback;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Lcom/android/systemui/volume/ZenModePanel$Callback;->onInteraction()V
+
+    iget-object v0, p0, Lcom/android/systemui/volume/VolumePanel$4;->this$0:Lcom/android/systemui/volume/VolumePanel;
+
+    # getter for: Lcom/android/systemui/volume/VolumePanel;->mZenPanel:Lcom/android/systemui/volume/ZenModePanel;
+    invoke-static {v0}, Lcom/android/systemui/volume/VolumePanel;->access$1114(Lcom/android/systemui/volume/VolumePanel;)Lcom/android/systemui/volume/ZenModePanel;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/android/systemui/volume/ZenModePanel;->clearAnimation()V
+
+    :cond_0
     return-void
 .end method
 
@@ -101,5 +129,24 @@
     invoke-interface {v0}, Lcom/android/systemui/volume/VolumePanel$Callback;->onZenSettings()V
 
     :cond_0
+    iget-object v0, p0, Lcom/android/systemui/volume/VolumePanel$4;->this$0:Lcom/android/systemui/volume/VolumePanel;
+
+    # getter for: Lcom/android/systemui/volume/VolumePanel;->mZenPanelCallback:Lcom/android/systemui/volume/ZenModePanel$Callback;
+    invoke-static {v0}, Lcom/android/systemui/volume/VolumePanel;->access$1113(Lcom/android/systemui/volume/VolumePanel;)Lcom/android/systemui/volume/ZenModePanel$Callback;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_1
+
+    iget-object v0, p0, Lcom/android/systemui/volume/VolumePanel$4;->this$0:Lcom/android/systemui/volume/VolumePanel;
+
+    # getter for: Lcom/android/systemui/volume/VolumePanel;->mZenPanelCallback:Lcom/android/systemui/volume/ZenModePanel$Callback;
+    invoke-static {v0}, Lcom/android/systemui/volume/VolumePanel;->access$1113(Lcom/android/systemui/volume/VolumePanel;)Lcom/android/systemui/volume/ZenModePanel$Callback;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Lcom/android/systemui/volume/ZenModePanel$Callback;->onMoreSettings()V
+
+    :cond_1
     return-void
 .end method

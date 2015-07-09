@@ -20,16 +20,12 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/systemui/volume/VolumePanel;
 
-.field final synthetic val$sc:Lcom/android/systemui/volume/VolumePanel$StreamControl;
-
 
 # direct methods
-.method constructor <init>(Lcom/android/systemui/volume/VolumePanel;Lcom/android/systemui/volume/VolumePanel$StreamControl;)V
+.method constructor <init>(Lcom/android/systemui/volume/VolumePanel;)V
     .locals 0
 
     iput-object p1, p0, Lcom/android/systemui/volume/VolumePanel$7;->this$0:Lcom/android/systemui/volume/VolumePanel;
-
-    iput-object p2, p0, Lcom/android/systemui/volume/VolumePanel$7;->val$sc:Lcom/android/systemui/volume/VolumePanel$StreamControl;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -39,18 +35,17 @@
 
 # virtual methods
 .method public onClick(Landroid/view/View;)V
-    .locals 2
+    .locals 1
 
     iget-object v0, p0, Lcom/android/systemui/volume/VolumePanel$7;->this$0:Lcom/android/systemui/volume/VolumePanel;
 
-    # getter for: Lcom/android/systemui/volume/VolumePanel;->mSecondaryIconTransition:Lcom/android/systemui/volume/VolumePanel$SecondaryIconTransition;
-    invoke-static {v0}, Lcom/android/systemui/volume/VolumePanel;->access$1100(Lcom/android/systemui/volume/VolumePanel;)Lcom/android/systemui/volume/VolumePanel$SecondaryIconTransition;
+    # invokes: Lcom/android/systemui/volume/VolumePanel;->expandVolumePanel()V
+    invoke-static {v0}, Lcom/android/systemui/volume/VolumePanel;->access$1111(Lcom/android/systemui/volume/VolumePanel;)V
 
-    move-result-object v0
+    iget-object v0, p0, Lcom/android/systemui/volume/VolumePanel$7;->this$0:Lcom/android/systemui/volume/VolumePanel;
 
-    iget-object v1, p0, Lcom/android/systemui/volume/VolumePanel$7;->val$sc:Lcom/android/systemui/volume/VolumePanel$StreamControl;
-
-    invoke-virtual {v0, v1}, Lcom/android/systemui/volume/VolumePanel$SecondaryIconTransition;->start(Lcom/android/systemui/volume/VolumePanel$StreamControl;)V
+    # invokes: Lcom/android/systemui/volume/VolumePanel;->resetTimeout()V
+    invoke-static {v0}, Lcom/android/systemui/volume/VolumePanel;->access$1200(Lcom/android/systemui/volume/VolumePanel;)V
 
     return-void
 .end method
