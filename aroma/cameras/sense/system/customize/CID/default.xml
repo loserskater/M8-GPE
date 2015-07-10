@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<customization_form>
+    <module name="deviceData">
+      <function>
+        <set name="single">
+          <item name="device_name">HTC One M8</item>
+        </set>
+      </function>
+    </module>
+  </category>
+</customization_form>

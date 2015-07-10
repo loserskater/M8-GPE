@@ -1,0 +1,6 @@
+TaskID : 411207
+Project : M8_UL_L50_SENSE60_MR
+SKU : BrightstarUS WWE[1540]
+ROM Ver : 4.16.1540.8
+Customization Id : 951490
+RCMS Id : 505
