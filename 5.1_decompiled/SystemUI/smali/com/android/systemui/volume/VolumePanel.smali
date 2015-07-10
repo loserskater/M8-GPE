@@ -2100,7 +2100,19 @@
     :cond_1
     invoke-virtual {p0, v6}, Lcom/android/systemui/volume/VolumePanel;->removeMessages(I)V
 
-    iget v1, p0, Lcom/android/systemui/volume/VolumePanel;->mTimeoutDelay:I
+    iget-object v1, p0, Lcom/android/systemui/volume/VolumePanel;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v1
+
+    const-string v4, "volume_panel_timeout"
+
+    const/16 v0, 0xbb8
+
+    invoke-static {v1, v4, v0}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+
+    move-result v1
 
     int-to-long v2, v1
 
