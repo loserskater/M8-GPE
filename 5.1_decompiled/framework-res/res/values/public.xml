@@ -8394,6 +8394,7 @@
     <public type="xml" name="sms_short_codes" id="0x01110011" />
     <public type="xml" name="storage_list" id="0x01110012" />
     <public type="xml" name="time_zones_by_country" id="0x01110013" />
+    <public type="xml" name="zzz_cdmaapns" id="0x01110014" />
     <public type="bool" name="kg_enable_camera_default_widget" id="0x01120000" />
     <public type="bool" name="kg_center_small_widgets_vertically" id="0x01120001" />
     <public type="bool" name="kg_top_align_page_shrink_on_bouncer_visible" id="0x01120002" />

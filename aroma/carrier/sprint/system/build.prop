@@ -2,14 +2,9 @@
 ro.build.project=M8_UL_L51_STOCK_UI_MR:430316
 ro.build.project=M8_UL_L51_STOCK_UI_MR:430316
 ro.ril.oem.ecclist=911
-ro.ril.hsdpa.category=14
-ro.ril.hsupa.category=6
-ro.ril.hsxpa=4
-ro.ril.fast.dormancy.rule=0
 ro.ril.disable.fd.plmn.prefix=23402,23410,23411,23420
 ro.ril.enable.sdr=0
 ro.ril.set.mtusize=1422
-ro.ril.disable.cpc=1
 ro.product.locale.language=en
 ro.product.locale.region=US
 ro.com.google.clientidbase=android-htc
@@ -22,10 +17,7 @@ gsm.operator.alpha=Chameleon
 ro.cdma.home.operator.numeric=000000
 gsm.sim.operator.numeric=000000
 gsm.operator.numeric=000000
-gsm.sim.operator.iso-country=us
-gsm.operator.iso-country=us
 ro.net.apnwhitelist=none
-ro.htc.checkin.delay=0
 ro.telephony.ipv6_capability=1
 
 # begin build properties
@@ -36,8 +28,8 @@ ro.aa.romver=4.04.1700.6
 ro.aa.project=M8_UL_L51_STOCK_UI_MR
 ro.prot=true
 ro.aa.maincid=GOOGL001
-ro.aa.modelid=0P6B10000,0P6B12000,0P6B13000,0P6B11000,0P6B15000,0P6B16000,0P6B17000
-ro.aa.cidlist=GOOGL001,11111111,CWS__001,T-MOB010
+ro.aa.modelid=0P6B10000,0P6B12000,0P6B13000,0P6B11000,0P6B15000,0P6B16000,0P6B17000,0P6B70000
+ro.aa.cidlist=GOOGL001,11111111,22222222,CWS__001,T-MOB010,SPCS_001,SPCS_004
 ro.aa.skulist=1700
 ro.aa.rid=27
 ro.cwkey=GOOGL001
@@ -105,7 +97,7 @@ persist.rild.nitz_short_ons_3=
 ril.subscription.types=NV,RUIM
 DEVICE_PROVISIONED=1
 # Default network type.
-# 10 =>  LTE/CDMA/EvDo/GSM/WCDMA mode preferred.
+# 9 => GSM/UMTS/LTE mode preferred.
 ro.telephony.default_network=8
 
 #
@@ -136,6 +128,8 @@ persist.demo.hdmirotationlock=false
 ro.baseband.arch=msm
 
 # -SSD_RIL
+# Enable IMS service by default
+persist.radio.jbims=1
 
 ro.hdmi.enable=true
 tunnel.decode=true
@@ -343,7 +337,12 @@ ro.config.ringtone=Titania.ogg
 ro.config.notification_sound=Tethys.ogg
 ro.config.alarm_alert=Oxygen.ogg
 ro.sys.medialink=0
-
+ro.ril.hsdpa.category=14
+ro.ril.hsupa.category=6
+ro.ril.hsxpa=4
+ro.ril.radio.svn=1
+ro.ril.disable.cpc=1
+ro.ril.def.agps.mode=1
 keyguard.no_require_sim=true
 ro.com.android.dataroaming=false
 ro.com.android.dateformat=MM-dd-yyyy
@@ -352,12 +351,11 @@ drm.service.enabled=true
 ro.setupwizard.mode=OPTIONAL
 ro.com.google.gmsversion=5.1_r1
 ro.vendor.extension_library=/vendor/lib/libqc-opt.so
+persist.radio.apm_sim_not_pwdn=1
 persist.sys.dalvik.vm.lib.2=libart.so
 dalvik.vm.isa.arm.features=div
 net.bt.name=Android
 dalvik.vm.stack-trace-file=/data/anr/traces.txt
-ro.qc.sdk.izat.premium_enabled=0
-ro.qc.sdk.izat.service_mask=0x0
 persist.gps.qc_nlp_in_use=1
 persist.loc.nlp_name=com.qualcomm.services.location
 ro.gps.agps_provider=1

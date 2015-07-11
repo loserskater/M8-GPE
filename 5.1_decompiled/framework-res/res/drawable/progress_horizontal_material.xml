@@ -6,12 +6,12 @@
     </item>
     <item android:id="@id/secondaryProgress">
         <scale android:scaleWidth="100%">
-            <nine-patch android:src="@drawable/progress_mtrl_alpha" android:tint="?colorControlActivated" android:alpha="?disabledAlpha" />
+            <nine-patch android:src="@drawable/progress_mtrl_alpha" android:tint="#ff009587" android:alpha="?disabledAlpha" />
         </scale>
     </item>
     <item android:id="@id/progress">
         <scale android:scaleWidth="100%">
-            <nine-patch android:src="@drawable/progress_mtrl_alpha" android:tint="?colorControlActivated" />
+            <nine-patch android:src="@drawable/progress_mtrl_alpha" android:tint="#ff009587" />
         </scale>
     </item>
 </layer-list>
