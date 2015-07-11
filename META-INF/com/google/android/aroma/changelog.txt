@@ -1,6 +1,26 @@
-<b></b>
+<b>7-11-2015</b>
 <b>*Updates</b>
 New Base, GPE 5.1 LMY47O.H6
+Stock kernel, init.d, su.d, boots on CDMA devices
+APM with screenshot, airplane and ringer states.
+Clear all recents, show ram, clear all location
+Show/hide alarm icon
+Weather in notifition header
+Double tap status bar to sleep
+Network traffic metet
+Ticker... kinda works
+Clock mod
+Battery mod
+Heads up mod
+One finger quick settings
+Expanded volume panel, panel timeout and sounds
+Quick unlock
+Scramble pin
+Double tap lock screen to sleep
+AppOps
+Extra animation values in developer settings
+Disabled signature checks
+Enable Google update services fix to prevent wakelocks
 
 <b>3-16-2015</b>
 <b>*New Additions</b>
