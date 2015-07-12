@@ -584,6 +584,8 @@ if prop("debloat.prop","selected.1")=="1" then
 		  "PlayGames",       "5.26Mb",                    0,      #-- item.1.19
 		  "Street",          "258kb",                     0,      #-- item.1.20
 		  "YouTube",         "13.1Mb",                    0,      #-- item.1.21
+		  "GooglePhotos",    "39.9Mb",                    0,      #-- item.1.22
+		  
 		
 		"priv-apps",  "", 2,
 		  "DotMatrix",       "6.42Mb",                    0,      #-- item.2.1

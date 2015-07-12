@@ -95,7 +95,7 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "1" || file_getprop("/tmp/
   ui_print("@Extracting System");
   package_extract_dir("system", "/system");
   if file_getprop("/tmp/aroma/wipe.prop","selected.0") == "1" then
-    package_extract_dir("data", "/data");
+    package_extract_dir("aroma/data", "/data");
   endif;
   ui_print("@Installing Kernel");
   package_extract_file("boot.img", "/dev/block/platform/msm_sdcc.1/by-name/boot");
@@ -255,6 +255,12 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "2" || file_getprop("/tmp/
   else
     package_extract_dir("system/app/YouTube", "/system/app/YouTube");
   endif;
+  if file_getprop("/tmp/aroma/debloat.prop","item.1.22") == "1" then
+    ui_print("Removing GooglePhotos");
+	delete_recursive("/system/app/GooglePhotos");
+  else
+    package_extract_dir("system/app/GooglePhotos", "/system/app/GooglePhotos");
+  endif;
   #
   #priv-app
   #
@@ -311,12 +317,10 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "2" || file_getprop("/tmp/
   set_progress(0.72);
   ui_print("@Keyboards");
   if file_getprop("/tmp/aroma/keyboard.prop","item.0.1") == "1" then
-    ui_print("Adding HTC Sense 6 keyboard");
+    ui_print("Adding HTC Sense 7 keyboard");
     package_extract_dir("aroma/keyboards/htc", "/system");
   else
-    delete_recursive("/system/priv-app/HTC_IME");
-	delete("/system/lib/libcootek_pte_oem.so", "/system/lib/libcpt9.so", "/system/lib/libcpt9core.so", "/system/lib/libcpt9provider.so", "/system/lib/libhtcime_baseinputmethod_jni.so",
-	"/system/lib/libhtcime_baseinputmethod2_jni.so", "/system/lib/libpphwr.so", "/system/lib/libpphwrcore.so", "/system/lib/libpphwrphrase.so", "/system/lib/libt9.so");
+    delete_recursive("/system/priv-app/HTC_IME", "/system/priv-app/IME_TP_Basic", "/system/priv-app/IME_TP_ValueAdd");
   endif;
   #
   #HTC IME Languages
@@ -1021,8 +1025,7 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "1" || file_getprop("/tmp/
     package_extract_dir("aroma/xposed/zip", "/temp/xposed");
     run_program("/sbin/busybox", "unzip", "/temp/xposed/xposed.zip", "META-INF/com/google/android/*", "-d", "/temp/xposed");
     run_program("/sbin/busybox", "sh", "/temp/xposed/META-INF/com/google/android/update-binary", "dummy", "1", "/temp/xposed/xposed.zip");
-	package_extract_dir("aroma/xposed/apk", "/sdcard");
-	ui_print("Xposed is Active. Remember to install the Xposed app that is now on your internal sdcard.");
+	package_extract_dir("aroma/xposed/apk", "/data/app");
   endif;
   delete_recursive("/tmp");
   delete_recursive("/temp");
