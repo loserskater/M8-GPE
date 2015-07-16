@@ -279,29 +279,25 @@
 
     move-result v0
 
-    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NavigationBarTransitions;->mView:Lcom/android/systemui/statusbar/phone/NavigationBarView;
+    sget-object v1, Lcom/android/systemui/statusbar/phone/NavbarEditor;->NAVBAR_HOME:Lcom/android/systemui/statusbar/phone/NavbarEditor$ButtonInfo;
 
-    invoke-virtual {v1}, Lcom/android/systemui/statusbar/phone/NavigationBarView;->getHomeButton()Landroid/view/View;
+    invoke-direct {p0, v1, v0, p2}, Lcom/android/systemui/statusbar/phone/NavigationBarTransitions;->setKeyButtonViewQuiescentAlpha(Lcom/android/systemui/statusbar/phone/NavbarEditor$ButtonInfo;FZ)V
 
-    move-result-object v1
+    sget-object v1, Lcom/android/systemui/statusbar/phone/NavbarEditor;->NAVBAR_RECENT:Lcom/android/systemui/statusbar/phone/NavbarEditor$ButtonInfo;
 
-    invoke-direct {p0, v1, v0, p2}, Lcom/android/systemui/statusbar/phone/NavigationBarTransitions;->setKeyButtonViewQuiescentAlpha(Landroid/view/View;FZ)V
+    invoke-direct {p0, v1, v0, p2}, Lcom/android/systemui/statusbar/phone/NavigationBarTransitions;->setKeyButtonViewQuiescentAlpha(Lcom/android/systemui/statusbar/phone/NavbarEditor$ButtonInfo;FZ)V
 
-    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NavigationBarTransitions;->mView:Lcom/android/systemui/statusbar/phone/NavigationBarView;
+    sget-object v1, Lcom/android/systemui/statusbar/phone/NavbarEditor;->NAVBAR_CONDITIONAL_MENU:Lcom/android/systemui/statusbar/phone/NavbarEditor$ButtonInfo;
 
-    invoke-virtual {v1}, Lcom/android/systemui/statusbar/phone/NavigationBarView;->getRecentsButton()Landroid/view/View;
+    invoke-direct {p0, v1, v0, p2}, Lcom/android/systemui/statusbar/phone/NavigationBarTransitions;->setKeyButtonViewQuiescentAlpha(Lcom/android/systemui/statusbar/phone/NavbarEditor$ButtonInfo;FZ)V
 
-    move-result-object v1
+    sget-object v1, Lcom/android/systemui/statusbar/phone/NavbarEditor;->NAVBAR_ALWAYS_MENU:Lcom/android/systemui/statusbar/phone/NavbarEditor$ButtonInfo;
 
-    invoke-direct {p0, v1, v0, p2}, Lcom/android/systemui/statusbar/phone/NavigationBarTransitions;->setKeyButtonViewQuiescentAlpha(Landroid/view/View;FZ)V
+    invoke-direct {p0, v1, v0, p2}, Lcom/android/systemui/statusbar/phone/NavigationBarTransitions;->setKeyButtonViewQuiescentAlpha(Lcom/android/systemui/statusbar/phone/NavbarEditor$ButtonInfo;FZ)V
 
-    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NavigationBarTransitions;->mView:Lcom/android/systemui/statusbar/phone/NavigationBarView;
+    sget-object v1, Lcom/android/systemui/statusbar/phone/NavbarEditor;->NAVBAR_MENU_BIG:Lcom/android/systemui/statusbar/phone/NavbarEditor$ButtonInfo;
 
-    invoke-virtual {v1}, Lcom/android/systemui/statusbar/phone/NavigationBarView;->getMenuButton()Landroid/view/View;
-
-    move-result-object v1
-
-    invoke-direct {p0, v1, v0, p2}, Lcom/android/systemui/statusbar/phone/NavigationBarTransitions;->setKeyButtonViewQuiescentAlpha(Landroid/view/View;FZ)V
+    invoke-direct {p0, v1, v0, p2}, Lcom/android/systemui/statusbar/phone/NavigationBarTransitions;->setKeyButtonViewQuiescentAlpha(Lcom/android/systemui/statusbar/phone/NavbarEditor$ButtonInfo;FZ)V
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NavigationBarTransitions;->mView:Lcom/android/systemui/statusbar/phone/NavigationBarView;
 
@@ -313,13 +309,21 @@
 
     invoke-virtual {p0, p1, p2}, Lcom/android/systemui/statusbar/phone/NavigationBarTransitions;->applyBackButtonQuiescentAlpha(IZ)V
 
-    invoke-virtual {p0, p1}, Lcom/android/systemui/statusbar/phone/NavigationBarTransitions;->isLightsOut(I)Z
+    const/4 v1, 0x3
 
-    move-result v1
+    if-ne p1, v1, :cond_0
 
+    const/4 v1, 0x1
+
+    :goto_0
     invoke-direct {p0, v1, p2, p3}, Lcom/android/systemui/statusbar/phone/NavigationBarTransitions;->applyLightsOut(ZZZ)V
 
     return-void
+
+    :cond_0
+    const/4 v1, 0x0
+
+    goto :goto_0
 .end method
 
 .method private static maxVisibleQuiescentAlpha(FLandroid/view/View;)F
@@ -349,6 +353,39 @@
     return p0
 .end method
 
+.method private maxVisibleQuiescentAlpha(FLcom/android/systemui/statusbar/phone/NavbarEditor$ButtonInfo;)F
+    .locals 2
+
+    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NavigationBarTransitions;->mView:Lcom/android/systemui/statusbar/phone/NavigationBarView;
+
+    invoke-virtual {v1, p2}, Lcom/android/systemui/statusbar/phone/NavigationBarView;->findViewWithTag(Ljava/lang/Object;)Landroid/view/View;
+
+    move-result-object v0
+
+    instance-of v1, v0, Lcom/android/systemui/statusbar/policy/KeyButtonView;
+
+    if-eqz v1, :cond_0
+
+    invoke-virtual {v0}, Landroid/view/View;->isShown()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    check-cast v0, Lcom/android/systemui/statusbar/policy/KeyButtonView;
+
+    invoke-virtual {v0}, Lcom/android/systemui/statusbar/policy/KeyButtonView;->getQuiescentAlpha()F
+
+    move-result v1
+
+    invoke-static {p1, v1}, Ljava/lang/Math;->max(FF)F
+
+    move-result p1
+
+    :cond_0
+    return p1
+.end method
+
 .method private setKeyButtonViewQuiescentAlpha(Landroid/view/View;FZ)V
     .locals 1
 
@@ -364,6 +401,23 @@
     return-void
 .end method
 
+.method private setKeyButtonViewQuiescentAlpha(Lcom/android/systemui/statusbar/phone/NavbarEditor$ButtonInfo;FZ)V
+    .locals 2
+
+    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NavigationBarTransitions;->mView:Lcom/android/systemui/statusbar/phone/NavigationBarView;
+
+    invoke-virtual {v1, p1}, Lcom/android/systemui/statusbar/phone/NavigationBarView;->findViewWithTag(Ljava/lang/Object;)Landroid/view/View;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    invoke-direct {p0, v0, p2, p3}, Lcom/android/systemui/statusbar/phone/NavigationBarTransitions;->setKeyButtonViewQuiescentAlpha(Landroid/view/View;FZ)V
+
+    :cond_0
+    return-void
+.end method
+
 
 # virtual methods
 .method public applyBackButtonQuiescentAlpha(IZ)V
@@ -371,33 +425,33 @@
 
     const/4 v0, 0x0
 
-    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NavigationBarTransitions;->mView:Lcom/android/systemui/statusbar/phone/NavigationBarView;
+    sget-object v1, Lcom/android/systemui/statusbar/phone/NavbarEditor;->NAVBAR_HOME:Lcom/android/systemui/statusbar/phone/NavbarEditor$ButtonInfo;
 
-    invoke-virtual {v1}, Lcom/android/systemui/statusbar/phone/NavigationBarView;->getHomeButton()Landroid/view/View;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Lcom/android/systemui/statusbar/phone/NavigationBarTransitions;->maxVisibleQuiescentAlpha(FLandroid/view/View;)F
+    invoke-direct {p0, v0, v1}, Lcom/android/systemui/statusbar/phone/NavigationBarTransitions;->maxVisibleQuiescentAlpha(FLcom/android/systemui/statusbar/phone/NavbarEditor$ButtonInfo;)F
 
     move-result v0
 
-    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NavigationBarTransitions;->mView:Lcom/android/systemui/statusbar/phone/NavigationBarView;
+    sget-object v1, Lcom/android/systemui/statusbar/phone/NavbarEditor;->NAVBAR_RECENT:Lcom/android/systemui/statusbar/phone/NavbarEditor$ButtonInfo;
 
-    invoke-virtual {v1}, Lcom/android/systemui/statusbar/phone/NavigationBarView;->getRecentsButton()Landroid/view/View;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Lcom/android/systemui/statusbar/phone/NavigationBarTransitions;->maxVisibleQuiescentAlpha(FLandroid/view/View;)F
+    invoke-direct {p0, v0, v1}, Lcom/android/systemui/statusbar/phone/NavigationBarTransitions;->maxVisibleQuiescentAlpha(FLcom/android/systemui/statusbar/phone/NavbarEditor$ButtonInfo;)F
 
     move-result v0
 
-    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NavigationBarTransitions;->mView:Lcom/android/systemui/statusbar/phone/NavigationBarView;
+    sget-object v1, Lcom/android/systemui/statusbar/phone/NavbarEditor;->NAVBAR_MENU_BIG:Lcom/android/systemui/statusbar/phone/NavbarEditor$ButtonInfo;
 
-    invoke-virtual {v1}, Lcom/android/systemui/statusbar/phone/NavigationBarView;->getMenuButton()Landroid/view/View;
+    invoke-direct {p0, v0, v1}, Lcom/android/systemui/statusbar/phone/NavigationBarTransitions;->maxVisibleQuiescentAlpha(FLcom/android/systemui/statusbar/phone/NavbarEditor$ButtonInfo;)F
 
-    move-result-object v1
+    move-result v0
 
-    invoke-static {v0, v1}, Lcom/android/systemui/statusbar/phone/NavigationBarTransitions;->maxVisibleQuiescentAlpha(FLandroid/view/View;)F
+    sget-object v1, Lcom/android/systemui/statusbar/phone/NavbarEditor;->NAVBAR_ALWAYS_MENU:Lcom/android/systemui/statusbar/phone/NavbarEditor$ButtonInfo;
+
+    invoke-direct {p0, v0, v1}, Lcom/android/systemui/statusbar/phone/NavigationBarTransitions;->maxVisibleQuiescentAlpha(FLcom/android/systemui/statusbar/phone/NavbarEditor$ButtonInfo;)F
+
+    move-result v0
+
+    sget-object v1, Lcom/android/systemui/statusbar/phone/NavbarEditor;->NAVBAR_CONDITIONAL_MENU:Lcom/android/systemui/statusbar/phone/NavbarEditor$ButtonInfo;
+
+    invoke-direct {p0, v0, v1}, Lcom/android/systemui/statusbar/phone/NavigationBarTransitions;->maxVisibleQuiescentAlpha(FLcom/android/systemui/statusbar/phone/NavbarEditor$ButtonInfo;)F
 
     move-result v0
 
@@ -417,13 +471,9 @@
 
     if-lez v1, :cond_0
 
-    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NavigationBarTransitions;->mView:Lcom/android/systemui/statusbar/phone/NavigationBarView;
+    sget-object v1, Lcom/android/systemui/statusbar/phone/NavbarEditor;->NAVBAR_BACK:Lcom/android/systemui/statusbar/phone/NavbarEditor$ButtonInfo;
 
-    invoke-virtual {v1}, Lcom/android/systemui/statusbar/phone/NavigationBarView;->getBackButton()Landroid/view/View;
-
-    move-result-object v1
-
-    invoke-direct {p0, v1, v0, p2}, Lcom/android/systemui/statusbar/phone/NavigationBarTransitions;->setKeyButtonViewQuiescentAlpha(Landroid/view/View;FZ)V
+    invoke-direct {p0, v1, v0, p2}, Lcom/android/systemui/statusbar/phone/NavigationBarTransitions;->setKeyButtonViewQuiescentAlpha(Lcom/android/systemui/statusbar/phone/NavbarEditor$ButtonInfo;FZ)V
 
     :cond_0
     return-void
@@ -496,23 +546,13 @@
 
     const/4 v0, 0x4
 
-    if-ne p1, v0, :cond_2
+    if-ne p1, v0, :cond_1
 
     :cond_0
     const/4 p1, 0x0
 
     :cond_1
-    :goto_0
     invoke-super {p0, p1, p2}, Lcom/android/systemui/statusbar/phone/BarTransitions;->transitionTo(IZ)V
 
     return-void
-
-    :cond_2
-    const/4 v0, 0x6
-
-    if-ne p1, v0, :cond_1
-
-    const/4 p1, 0x3
-
-    goto :goto_0
 .end method

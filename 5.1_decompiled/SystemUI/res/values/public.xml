@@ -346,6 +346,11 @@
     <public type="drawable" name="lockscreen_protection_pattern" id="0x7f0200dc" />
     <public type="drawable" name="sym_keyboard_return_holo" id="0x7f020157" />
     <public type="drawable" name="top_divider_glow" id="0x7f020159" />
+    <public type="drawable" name="ic_sysbar_add_side" id="0x7f02017b" />
+    <public type="drawable" name="ic_sysbar_back_ime_land" id="0x7f02017c" />
+    <public type="drawable" name="ic_sysbar_back_side" id="0x7f02017d" />
+    <public type="drawable" name="ic_sysbar_recent_side" id="0x7f02017e" />
+    <public type="drawable" name="ic_sysbar_search_side" id="0x7f02017f" />
     <public type="drawable" name="bg_protect" id="0x7f020001" />
     <public type="drawable" name="ic_camera_alt_24dp" id="0x7f02002a" />
     <public type="drawable" name="ic_done_wht" id="0x7f02002d" />
@@ -505,6 +510,9 @@
     <public type="layout" name="keyguard_eca" id="0x7f040055" />
     <public type="layout" name="floating_action_button" id="0x7f040056" />
     <public type="layout" name="recents_membar" id="0x7f040057" />
+    <public type="layout" name="mid_navigation_bar_land" id="0x7f040058" />
+    <public type="layout" name="mid_navigation_bar_port" id="0x7f040059" />
+    <public type="layout" name="navigation_bar_edit_menu_item" id="0x7f04005a" />
     <public type="layout" name="keyguard_host_view" id="0x7f04000d" />
     <public type="layout" name="keyguard_widget_pager" id="0x7f040021" />
     <public type="anim" name="dismiss_all_shape_animation_1" id="0x7f050000" />
