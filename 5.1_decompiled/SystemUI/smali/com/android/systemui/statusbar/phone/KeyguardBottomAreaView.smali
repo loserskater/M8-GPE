@@ -42,8 +42,6 @@
 
 .field private final mDevicePolicyReceiver:Landroid/content/BroadcastReceiver;
 
-.field private mFlashlightController:Lcom/android/systemui/statusbar/policy/FlashlightController;
-
 .field private mIndicationController:Lcom/android/systemui/statusbar/KeyguardIndicationController;
 
 .field private mIndicationText:Landroid/widget/TextView;
@@ -2175,14 +2173,6 @@
     .locals 0
 
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mActivityStarter:Lcom/android/systemui/statusbar/phone/ActivityStarter;
-
-    return-void
-.end method
-
-.method public setFlashlightController(Lcom/android/systemui/statusbar/policy/FlashlightController;)V
-    .locals 0
-
-    iput-object p1, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->mFlashlightController:Lcom/android/systemui/statusbar/policy/FlashlightController;
 
     return-void
 .end method

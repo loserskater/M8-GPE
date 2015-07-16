@@ -27,8 +27,6 @@
 
 .field private final mContext:Landroid/content/Context;
 
-.field private final mFlashlight:Lcom/android/systemui/statusbar/policy/FlashlightController;
-
 .field private final mHotspot:Lcom/android/systemui/statusbar/policy/HotspotController;
 
 .field private final mKeyguard:Lcom/android/systemui/statusbar/policy/KeyguardMonitor;
@@ -83,7 +81,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Landroid/content/Context;Lcom/android/systemui/statusbar/phone/PhoneStatusBar;Lcom/android/systemui/statusbar/policy/BluetoothController;Lcom/android/systemui/statusbar/policy/LocationController;Lcom/android/systemui/statusbar/policy/RotationLockController;Lcom/android/systemui/statusbar/policy/NetworkController;Lcom/android/systemui/statusbar/policy/ZenModeController;Lcom/android/systemui/statusbar/policy/HotspotController;Lcom/android/systemui/statusbar/policy/CastController;Lcom/android/systemui/statusbar/policy/FlashlightController;Lcom/android/systemui/statusbar/policy/UserSwitcherController;Lcom/android/systemui/statusbar/policy/KeyguardMonitor;Lcom/android/systemui/statusbar/policy/SecurityController;)V
+.method public constructor <init>(Landroid/content/Context;Lcom/android/systemui/statusbar/phone/PhoneStatusBar;Lcom/android/systemui/statusbar/policy/BluetoothController;Lcom/android/systemui/statusbar/policy/LocationController;Lcom/android/systemui/statusbar/policy/RotationLockController;Lcom/android/systemui/statusbar/policy/NetworkController;Lcom/android/systemui/statusbar/policy/ZenModeController;Lcom/android/systemui/statusbar/policy/HotspotController;Lcom/android/systemui/statusbar/policy/CastController;Lcom/android/systemui/statusbar/policy/UserSwitcherController;Lcom/android/systemui/statusbar/policy/KeyguardMonitor;Lcom/android/systemui/statusbar/policy/SecurityController;)V
     .locals 4
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -118,15 +116,13 @@
 
     iput-object p9, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mCast:Lcom/android/systemui/statusbar/policy/CastController;
 
-    iput-object p10, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mFlashlight:Lcom/android/systemui/statusbar/policy/FlashlightController;
+    iput-object p10, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mUserSwitcherController:Lcom/android/systemui/statusbar/policy/UserSwitcherController;
 
-    iput-object p11, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mUserSwitcherController:Lcom/android/systemui/statusbar/policy/UserSwitcherController;
-
-    move-object/from16 v0, p12
+    move-object/from16 v0, p11
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mKeyguard:Lcom/android/systemui/statusbar/policy/KeyguardMonitor;
 
-    move-object/from16 v0, p13
+    move-object/from16 v0, p12
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mSecurity:Lcom/android/systemui/statusbar/policy/SecurityController;
 
@@ -330,7 +326,7 @@
     goto :goto_0
 
     :cond_5
-    const-string v0, "flashlight"
+    const-string v0, "location"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -338,14 +334,14 @@
 
     if-eqz v0, :cond_6
 
-    new-instance v0, Lcom/android/systemui/qs/tiles/FlashlightTile;
+    new-instance v0, Lcom/android/systemui/qs/tiles/LocationTile;
 
-    invoke-direct {v0, p0}, Lcom/android/systemui/qs/tiles/FlashlightTile;-><init>(Lcom/android/systemui/qs/QSTile$Host;)V
+    invoke-direct {v0, p0}, Lcom/android/systemui/qs/tiles/LocationTile;-><init>(Lcom/android/systemui/qs/QSTile$Host;)V
 
     goto :goto_0
 
     :cond_6
-    const-string v0, "location"
+    const-string v0, "cast"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -353,14 +349,14 @@
 
     if-eqz v0, :cond_7
 
-    new-instance v0, Lcom/android/systemui/qs/tiles/LocationTile;
+    new-instance v0, Lcom/android/systemui/qs/tiles/CastTile;
 
-    invoke-direct {v0, p0}, Lcom/android/systemui/qs/tiles/LocationTile;-><init>(Lcom/android/systemui/qs/QSTile$Host;)V
+    invoke-direct {v0, p0}, Lcom/android/systemui/qs/tiles/CastTile;-><init>(Lcom/android/systemui/qs/QSTile$Host;)V
 
     goto :goto_0
 
     :cond_7
-    const-string v0, "cast"
+    const-string v0, "hotspot"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -368,35 +364,20 @@
 
     if-eqz v0, :cond_8
 
-    new-instance v0, Lcom/android/systemui/qs/tiles/CastTile;
-
-    invoke-direct {v0, p0}, Lcom/android/systemui/qs/tiles/CastTile;-><init>(Lcom/android/systemui/qs/QSTile$Host;)V
-
-    goto :goto_0
-
-    :cond_8
-    const-string v0, "hotspot"
-
-    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_9
-
     new-instance v0, Lcom/android/systemui/qs/tiles/HotspotTile;
 
     invoke-direct {v0, p0}, Lcom/android/systemui/qs/tiles/HotspotTile;-><init>(Lcom/android/systemui/qs/QSTile$Host;)V
 
     goto :goto_0
 
-    :cond_9
+    :cond_8
     const-string v0, "intent("
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_9
 
     invoke-static {p0, p1}, Lcom/android/systemui/qs/tiles/IntentTile;->create(Lcom/android/systemui/qs/QSTile$Host;Ljava/lang/String;)Lcom/android/systemui/qs/QSTile;
 
@@ -404,7 +385,7 @@
 
     goto/16 :goto_0
 
-    :cond_a
+    :cond_9
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -876,14 +857,6 @@
     .locals 1
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mContext:Landroid/content/Context;
-
-    return-object v0
-.end method
-
-.method public getFlashlightController()Lcom/android/systemui/statusbar/policy/FlashlightController;
-    .locals 1
-
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/QSTileHost;->mFlashlight:Lcom/android/systemui/statusbar/policy/FlashlightController;
 
     return-object v0
 .end method

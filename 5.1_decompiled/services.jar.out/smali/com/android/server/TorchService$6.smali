@@ -1,11 +1,11 @@
-.class Lcom/android/systemui/statusbar/policy/FlashlightController$5;
+.class Lcom/android/server/TorchService$6;
 .super Landroid/hardware/camera2/CameraManager$AvailabilityCallback;
-.source "FlashlightController.java"
+.source "TorchService.java"
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/android/systemui/statusbar/policy/FlashlightController;
+    value = Lcom/android/server/TorchService;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -15,32 +15,32 @@
 
 
 # instance fields
-.field final synthetic this$0:Lcom/android/systemui/statusbar/policy/FlashlightController;
+.field final synthetic this$0:Lcom/android/server/TorchService;
 
 
 # direct methods
-.method constructor <init>(Lcom/android/systemui/statusbar/policy/FlashlightController;)V
+.method constructor <init>(Lcom/android/server/TorchService;)V
     .locals 0
 
-    iput-object p1, p0, Lcom/android/systemui/statusbar/policy/FlashlightController$5;->this$0:Lcom/android/systemui/statusbar/policy/FlashlightController;
+    iput-object p1, p0, Lcom/android/server/TorchService$6;->this$0:Lcom/android/server/TorchService;
 
     invoke-direct {p0}, Landroid/hardware/camera2/CameraManager$AvailabilityCallback;-><init>()V
 
     return-void
 .end method
 
-.method private setCameraAvailable(Z)V
+.method private setTorchAvailable(Z)V
     .locals 4
 
-    iget-object v2, p0, Lcom/android/systemui/statusbar/policy/FlashlightController$5;->this$0:Lcom/android/systemui/statusbar/policy/FlashlightController;
+    iget-object v2, p0, Lcom/android/server/TorchService$6;->this$0:Lcom/android/server/TorchService;
 
     monitor-enter v2
 
     :try_start_0
-    iget-object v1, p0, Lcom/android/systemui/statusbar/policy/FlashlightController$5;->this$0:Lcom/android/systemui/statusbar/policy/FlashlightController;
+    iget-object v1, p0, Lcom/android/server/TorchService$6;->this$0:Lcom/android/server/TorchService;
 
-    # getter for: Lcom/android/systemui/statusbar/policy/FlashlightController;->mCameraAvailable:Z
-    invoke-static {v1}, Lcom/android/systemui/statusbar/policy/FlashlightController;->access$1000(Lcom/android/systemui/statusbar/policy/FlashlightController;)Z
+    # getter for: Lcom/android/server/TorchService;->mTorchAvailable:Z
+    invoke-static {v1}, Lcom/android/server/TorchService;->access$1400(Lcom/android/server/TorchService;)Z
 
     move-result v1
 
@@ -49,10 +49,10 @@
     const/4 v0, 0x1
 
     :goto_0
-    iget-object v1, p0, Lcom/android/systemui/statusbar/policy/FlashlightController$5;->this$0:Lcom/android/systemui/statusbar/policy/FlashlightController;
+    iget-object v1, p0, Lcom/android/server/TorchService$6;->this$0:Lcom/android/server/TorchService;
 
-    # setter for: Lcom/android/systemui/statusbar/policy/FlashlightController;->mCameraAvailable:Z
-    invoke-static {v1, p1}, Lcom/android/systemui/statusbar/policy/FlashlightController;->access$1002(Lcom/android/systemui/statusbar/policy/FlashlightController;Z)Z
+    # setter for: Lcom/android/server/TorchService;->mTorchAvailable:Z
+    invoke-static {v1, p1}, Lcom/android/server/TorchService;->access$1402(Lcom/android/server/TorchService;Z)Z
 
     monitor-exit v2
     :try_end_0
@@ -60,14 +60,17 @@
 
     if-eqz v0, :cond_1
 
-    # getter for: Lcom/android/systemui/statusbar/policy/FlashlightController;->DEBUG:Z
-    invoke-static {}, Lcom/android/systemui/statusbar/policy/FlashlightController;->access$800()Z
+    # getter for: Lcom/android/server/TorchService;->DEBUG:Z
+    invoke-static {}, Lcom/android/server/TorchService;->access$100()Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    const-string v1, "FlashlightController"
+    # getter for: Lcom/android/server/TorchService;->TAG:Ljava/lang/String;
+    invoke-static {}, Lcom/android/server/TorchService;->access$200()Ljava/lang/String;
+
+    move-result-object v1
 
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -96,10 +99,10 @@
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     :cond_0
-    iget-object v1, p0, Lcom/android/systemui/statusbar/policy/FlashlightController$5;->this$0:Lcom/android/systemui/statusbar/policy/FlashlightController;
+    iget-object v1, p0, Lcom/android/server/TorchService$6;->this$0:Lcom/android/server/TorchService;
 
-    # invokes: Lcom/android/systemui/statusbar/policy/FlashlightController;->dispatchAvailabilityChanged(Z)V
-    invoke-static {v1, p1}, Lcom/android/systemui/statusbar/policy/FlashlightController;->access$1100(Lcom/android/systemui/statusbar/policy/FlashlightController;Z)V
+    # invokes: Lcom/android/server/TorchService;->dispatchAvailabilityChanged(Z)V
+    invoke-static {v1, p1}, Lcom/android/server/TorchService;->access$1500(Lcom/android/server/TorchService;Z)V
 
     :cond_1
     return-void
@@ -125,14 +128,17 @@
 .method public onCameraAvailable(Ljava/lang/String;)V
     .locals 3
 
-    # getter for: Lcom/android/systemui/statusbar/policy/FlashlightController;->DEBUG:Z
-    invoke-static {}, Lcom/android/systemui/statusbar/policy/FlashlightController;->access$800()Z
+    # getter for: Lcom/android/server/TorchService;->DEBUG:Z
+    invoke-static {}, Lcom/android/server/TorchService;->access$100()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    const-string v0, "FlashlightController"
+    # getter for: Lcom/android/server/TorchService;->TAG:Ljava/lang/String;
+    invoke-static {}, Lcom/android/server/TorchService;->access$200()Ljava/lang/String;
+
+    move-result-object v0
 
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -161,10 +167,14 @@
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     :cond_0
-    iget-object v0, p0, Lcom/android/systemui/statusbar/policy/FlashlightController$5;->this$0:Lcom/android/systemui/statusbar/policy/FlashlightController;
+    iget-object v0, p0, Lcom/android/server/TorchService$6;->this$0:Lcom/android/server/TorchService;
 
-    # getter for: Lcom/android/systemui/statusbar/policy/FlashlightController;->mCameraId:Ljava/lang/String;
-    invoke-static {v0}, Lcom/android/systemui/statusbar/policy/FlashlightController;->access$900(Lcom/android/systemui/statusbar/policy/FlashlightController;)Ljava/lang/String;
+    # getter for: Lcom/android/server/TorchService;->mTorchCameraId:I
+    invoke-static {v0}, Lcom/android/server/TorchService;->access$1300(Lcom/android/server/TorchService;)I
+
+    move-result v0
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
     move-result-object v0
 
@@ -176,7 +186,7 @@
 
     const/4 v0, 0x1
 
-    invoke-direct {p0, v0}, Lcom/android/systemui/statusbar/policy/FlashlightController$5;->setCameraAvailable(Z)V
+    invoke-direct {p0, v0}, Lcom/android/server/TorchService$6;->setTorchAvailable(Z)V
 
     :cond_1
     return-void
@@ -185,14 +195,17 @@
 .method public onCameraUnavailable(Ljava/lang/String;)V
     .locals 3
 
-    # getter for: Lcom/android/systemui/statusbar/policy/FlashlightController;->DEBUG:Z
-    invoke-static {}, Lcom/android/systemui/statusbar/policy/FlashlightController;->access$800()Z
+    # getter for: Lcom/android/server/TorchService;->DEBUG:Z
+    invoke-static {}, Lcom/android/server/TorchService;->access$100()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    const-string v0, "FlashlightController"
+    # getter for: Lcom/android/server/TorchService;->TAG:Ljava/lang/String;
+    invoke-static {}, Lcom/android/server/TorchService;->access$200()Ljava/lang/String;
+
+    move-result-object v0
 
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -221,10 +234,14 @@
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     :cond_0
-    iget-object v0, p0, Lcom/android/systemui/statusbar/policy/FlashlightController$5;->this$0:Lcom/android/systemui/statusbar/policy/FlashlightController;
+    iget-object v0, p0, Lcom/android/server/TorchService$6;->this$0:Lcom/android/server/TorchService;
 
-    # getter for: Lcom/android/systemui/statusbar/policy/FlashlightController;->mCameraId:Ljava/lang/String;
-    invoke-static {v0}, Lcom/android/systemui/statusbar/policy/FlashlightController;->access$900(Lcom/android/systemui/statusbar/policy/FlashlightController;)Ljava/lang/String;
+    # getter for: Lcom/android/server/TorchService;->mTorchCameraId:I
+    invoke-static {v0}, Lcom/android/server/TorchService;->access$1300(Lcom/android/server/TorchService;)I
+
+    move-result v0
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
     move-result-object v0
 
@@ -236,7 +253,7 @@
 
     const/4 v0, 0x0
 
-    invoke-direct {p0, v0}, Lcom/android/systemui/statusbar/policy/FlashlightController$5;->setCameraAvailable(Z)V
+    invoke-direct {p0, v0}, Lcom/android/server/TorchService$6;->setTorchAvailable(Z)V
 
     :cond_1
     return-void

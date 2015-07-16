@@ -162,6 +162,8 @@
 
 .field public static final TEXT_SERVICES_MANAGER_SERVICE:Ljava/lang/String; = "textservices"
 
+.field public static final TORCH_SERVICE:Ljava/lang/String; = "torch"
+
 .field public static final TRUST_SERVICE:Ljava/lang/String; = "trust"
 
 .field public static final TV_INPUT_SERVICE:Ljava/lang/String; = "tv_input"

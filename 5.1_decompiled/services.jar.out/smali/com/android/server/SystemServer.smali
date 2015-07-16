@@ -1456,7 +1456,28 @@
 
     :cond_5
     :goto_e
-    if-nez v55, :cond_6
+    if-nez v57, :cond_6
+
+    :try_start_torch
+    const-string v4, "SystemServer"
+
+    const-string v5, "TorchService"
+
+    invoke-static {v4, v5}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    const-string v4, "torch"
+
+    new-instance v5, Lcom/android/server/TorchService;
+
+    invoke-direct {v5, v3}, Lcom/android/server/TorchService;-><init>(Landroid/content/Context;)V
+
+    invoke-static {v4, v5}, Landroid/os/ServiceManager;->addService(Ljava/lang/String;Landroid/os/IBinder;)V
+    :try_end_torch
+    .catch Ljava/lang/Throwable; {:try_start_torch .. :try_end_torch} :catch_torch
+
+    :cond_torch
+    :goto_torch
+    if-nez v56, :cond_6
 
     :try_start_16
     const-string v4, "SystemServer"
@@ -2932,6 +2953,19 @@
     invoke-direct {v0, v4, v1}, Lcom/android/server/SystemServer;->reportWtf(Ljava/lang/String;Ljava/lang/Throwable;)V
 
     goto/16 :goto_e
+
+    :catch_torch
+    move-exception v60
+
+    const-string v4, "starting Torch Service"
+
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, v60
+
+    invoke-direct {v0, v4, v1}, Lcom/android/server/SystemServer;->reportWtf(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    goto/16 :goto_torch
 
     :catch_b
     move-exception v61

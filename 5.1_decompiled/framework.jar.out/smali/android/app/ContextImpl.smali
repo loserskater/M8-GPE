@@ -689,6 +689,14 @@
 
     invoke-static {v0, v1}, Landroid/app/ContextImpl;->registerService(Ljava/lang/String;Landroid/app/ContextImpl$ServiceFetcher;)V
 
+    const-string/jumbo v0, "torch"
+
+    new-instance v1, Landroid/app/ContextImpl$65;
+
+    invoke-direct {v1}, Landroid/app/ContextImpl$65;-><init>()V
+
+    invoke-static {v0, v1}, Landroid/app/ContextImpl;->registerService(Ljava/lang/String;Landroid/app/ContextImpl$ServiceFetcher;)V
+
     return-void
 .end method
 
