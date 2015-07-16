@@ -51,8 +51,6 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Lcom/android/internal/policy/impl/LockscreenShortcutsHelper$OnChangeListener;)V
     .locals 4
-    .param p1    # Landroid/content/Context;
-    .param p2    # Lcom/android/internal/policy/impl/LockscreenShortcutsHelper$OnChangeListener;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -96,7 +94,6 @@
 
 .method static synthetic access$000(Lcom/android/internal/policy/impl/LockscreenShortcutsHelper;)V
     .locals 0
-    .param p0    # Lcom/android/internal/policy/impl/LockscreenShortcutsHelper;
 
     invoke-direct {p0}, Lcom/android/internal/policy/impl/LockscreenShortcutsHelper;->fetchTargets()V
 
@@ -105,7 +102,6 @@
 
 .method static synthetic access$100(Lcom/android/internal/policy/impl/LockscreenShortcutsHelper;)Lcom/android/internal/policy/impl/LockscreenShortcutsHelper$OnChangeListener;
     .locals 1
-    .param p0    # Lcom/android/internal/policy/impl/LockscreenShortcutsHelper;
 
     iget-object v0, p0, Lcom/android/internal/policy/impl/LockscreenShortcutsHelper;->mListener:Lcom/android/internal/policy/impl/LockscreenShortcutsHelper$OnChangeListener;
 
@@ -214,8 +210,6 @@
 
 .method private getFriendlyActivityName(Landroid/content/Intent;Z)Ljava/lang/String;
     .locals 4
-    .param p1    # Landroid/content/Intent;
-    .param p2    # Z
 
     iget-object v3, p0, Lcom/android/internal/policy/impl/LockscreenShortcutsHelper;->mContext:Landroid/content/Context;
 
@@ -268,7 +262,6 @@
 
 .method private getFriendlyShortcutName(Landroid/content/Intent;)Ljava/lang/String;
     .locals 4
-    .param p1    # Landroid/content/Intent;
 
     const/4 v2, 0x1
 
@@ -328,7 +321,6 @@
 # virtual methods
 .method public getDrawableFromSystemUI(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
     .locals 6
-    .param p1    # Ljava/lang/String;
 
     const/4 v3, 0x0
 
@@ -557,7 +549,6 @@
 
 .method public getFriendlyNameForUri(Lcom/android/internal/policy/impl/LockscreenShortcutsHelper$Shortcuts;)Ljava/lang/String;
     .locals 3
-    .param p1    # Lcom/android/internal/policy/impl/LockscreenShortcutsHelper$Shortcuts;
 
     invoke-virtual {p0, p1}, Lcom/android/internal/policy/impl/LockscreenShortcutsHelper;->getIntent(Lcom/android/internal/policy/impl/LockscreenShortcutsHelper$Shortcuts;)Landroid/content/Intent;
 
@@ -594,7 +585,6 @@
 
 .method public getIntent(Lcom/android/internal/policy/impl/LockscreenShortcutsHelper$Shortcuts;)Landroid/content/Intent;
     .locals 4
-    .param p1    # Lcom/android/internal/policy/impl/LockscreenShortcutsHelper$Shortcuts;
 
     const/4 v1, 0x0
 
@@ -633,7 +623,6 @@
 
 .method public isTargetCustom(Lcom/android/internal/policy/impl/LockscreenShortcutsHelper$Shortcuts;)Z
     .locals 4
-    .param p1    # Lcom/android/internal/policy/impl/LockscreenShortcutsHelper$Shortcuts;
 
     const/4 v1, 0x0
 
@@ -697,7 +686,6 @@
 
 .method public isTargetEmpty(Lcom/android/internal/policy/impl/LockscreenShortcutsHelper$Shortcuts;)Z
     .locals 2
-    .param p1    # Lcom/android/internal/policy/impl/LockscreenShortcutsHelper$Shortcuts;
 
     iget-object v0, p0, Lcom/android/internal/policy/impl/LockscreenShortcutsHelper;->mTargetActivities:Ljava/util/List;
 

@@ -25,9 +25,6 @@
 # direct methods
 .method public constructor <init>(Landroid/graphics/drawable/Drawable;Landroid/graphics/ColorFilter;Ljava/lang/String;)V
     .locals 0
-    .param p1    # Landroid/graphics/drawable/Drawable;
-    .param p2    # Landroid/graphics/ColorFilter;
-    .param p3    # Ljava/lang/String;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
