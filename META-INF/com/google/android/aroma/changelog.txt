@@ -1,5 +1,14 @@
+<b>7-18-2015</b>
+<b>*New Additions</b>
+Navigation bar height
+Navigation bar layout 
+Long press back to kill
+Long press recents
+Show arrow keys on navbar while typing
+Dark theme
+
 <b>7-11-2015</b>
-<b>*Updates</b>
+<b>*New Additions</b>
 New Base, GPE 5.1 LMY47O.H6
 Stock kernel, init.d, su.d, boots on CDMA devices
 APM with screenshot, airplane and ringer states.

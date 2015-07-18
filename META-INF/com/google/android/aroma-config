@@ -7,15 +7,14 @@ ini_set("rom_authors", "enewman17, loserskater");
 loadlang("langs/en.lang");
 fontresload( "0", "ttf/Roboto-Regular.ttf", "12" );
 fontresload( "1", "ttf/Roboto-Regular.ttf", "18" );
-
 #
-# Show Animated Splash
+#Show Animated Splash
 #
 anisplash(
   #-- Number of Loop
     2,
   
-  #-- Frame 1 [ Image, duration in millisecond ]. <AROMA Resource Dir>/splash/a[1..6].png
+  #-- Frame 1 [ Image, duration in millisecond ]
     "splash/a1", 500,
     "splash/a2", 30,
     "splash/a3", 30,
@@ -24,15 +23,15 @@ anisplash(
     "splash/a6", 30
 );
 #
-# Show Splash
+#Show Splash
 #
 splash(
     4000,
     "m8_gpe"
 );
-
-###################################################################################################################
-
+#
+#Changelog
+#
 textbox(
   #-- Title
     "Welcome",
@@ -46,9 +45,9 @@ textbox(
   #-- Arg 4
     resread("changelog.txt")
 );
-
-###################################################################################################################
-
+#
+#Main Menu
+#
 menubox(
   #-- Title
     "Install/Option Menu",
@@ -61,8 +60,7 @@ menubox(
     
   #-- Will be saved in /tmp/aroma/type.prop
     "type.prop",
-    
-    
+ 
     "Install Stock Rom",       "Don't worry about mods or apps, just install.",  "@install2",    #-- selected = 1
     "Install Custom Rom",      "Install the rom along with mods selection.",     "@install2",    #-- selected = 2
     "Mods Only",               "Change themes, enable or disable mods.",         "@mods",        #-- selected = 3
@@ -71,11 +69,9 @@ menubox(
 	"Reboot",                  "Reboot Your Device",                             "@reboot",      #-- selected = 6
 	"Exit",                    "Terminate AROMA and return to recovery.",        "@exit"         #-- selected = 7
 );
-
-###################################################################################################################
-
-#-- System Information
-
+#
+#System Information
+#
 if prop("type.prop","selected")=="5" then
   pleasewait("Getting system information...");
   setvar(
@@ -106,9 +102,9 @@ textbox(
   );
   back("2");
 endif;
-
-#-- Reboot
-
+#
+#Reboot
+#
 if prop("type.prop","selected")=="6" then
   if
     confirm(
@@ -122,9 +118,9 @@ if prop("type.prop","selected")=="6" then
   back("1");
   endif;
 endif;
-
-#-- Exit Installer
-
+#
+#Exit Installer
+#
 if prop("type.prop","selected")=="7" then
   if
     confirm(
@@ -138,9 +134,11 @@ if prop("type.prop","selected")=="7" then
   back("1");
   endif;
 endif;
-
-###################################################################################################################
-  
+#
+#Begin ROM install
+#
+#Wipe Options
+#  
 if prop("type.prop","selected")=="1"||prop("type.prop","selected")=="2" then
   selectbox(
     #-- Title
@@ -161,9 +159,9 @@ if prop("type.prop","selected")=="1"||prop("type.prop","selected")=="2" then
 
 );
 endif;
-
-###################################################################################################################
-
+#
+#Mod only wipe
+#
 if prop("type.prop","selected")=="3" then
   selectbox(
     #-- Title
@@ -183,9 +181,9 @@ if prop("type.prop","selected")=="3" then
 
 );
 endif;
-
-###################################################################################################################
-
+#
+#Carrier patch
+#
 if prop("type.prop","selected")=="1"||prop("type.prop","selected")=="2"||prop("type.prop","selected")=="4" then
     setvar("carrier_prop", read("/data/media/0/aroma/Carrier.prop"));
     if (getvar("carrier_prop")!="") then
@@ -211,9 +209,9 @@ if prop("type.prop","selected")=="1"||prop("type.prop","selected")=="2"||prop("t
     );
 	write("/data/media/0/aroma/carrier.prop", readtmpfile("carrier.prop"));
 endif;
-
-###################################################################################################################
-
+#
+#Begin mod options
+#
 if prop("type.prop","selected")=="2"||prop("type.prop","selected")=="3" then
     setvar("themes_prop", read("/data/media/0/aroma/Themes.prop"));
     if (getvar("themes_prop")!="") then
@@ -233,7 +231,7 @@ if prop("type.prop","selected")=="2"||prop("type.prop","selected")=="3" then
         "themes.prop",
 		
         "Stock Material UI",  "Stock UI, No themeing has been done.",                                     1,      #-- selected.0 = 1
-        "Dark Material UI",   "Dark (greyish) material themed UI, material teal and white accents",       3,      #-- selected.0 = 2
+        "Dark Material UI",   "Dark (greyish) material themed UI, material teal and white accents",       0,      #-- selected.0 = 2
 		"Darker Material UI", "Darker (blackened) material themed UI, material teal and white accents",   3       #-- selected.0 = 3
 		
     );
@@ -393,7 +391,7 @@ if prop("type.prop","selected")=="2"||prop("type.prop","selected")=="3" then
         "cm.prop",
 										  
 	    "Audio FX",       "Will replace MusicFX",                                                        0,      #-- item.0.1
-		"CM Browser",     "Material design web browser",                 0,      #-- item.0.2
+		"CM Browser",     "Material design web browser",                                                 0,      #-- item.0.2
 		"Calendar",       "AOSP Calendar, will replace Google Calendar in /system",                      0,      #-- item.0.3
 	    "File Manager",   "Material design file explorer",                                               0,      #-- item.0.4
         "Music",          "Material design music player, will replace Google music in /system",          0,      #-- item.0.5
@@ -422,7 +420,7 @@ if prop("type.prop","selected")=="2"||prop("type.prop","selected")=="3" then
         "camera.prop",
         
        "Camera",           "",                                                                2,       		
-		"Stock Google",    "Stock camera. HDR available, saving to SDcard not available",     1,       #-- item.1.1
+		"Google Camera",   "Stock camera. HDR available, saving to SDcard not available",     1,       #-- item.1.1
 		"Moto X",          "Motorola Camera. saving to SD card supported, no HDR",            0,       #-- item.1.2
 		"Sense",           "Includes camera, gallery, video player",            			  0,       #-- item.1.3
 		
@@ -572,19 +570,19 @@ if prop("debloat.prop","selected.1")=="1" then
 		  "Gmail",           "9.19Mb",                    0,      #-- item.1.7
 		  "GoogleCamera",    "27.9Mb",                    0,      #-- item.1.8
 		  "GoogleHindiIME",  "9.37Mb foreign keyboard",   0,      #-- item.1.9
-		  "GooglePinyinIME", "7.52Mb foreign keyboard",   0,      #-- item.1.10
-		  "Hangouts",        "18.6Mb",                    0,      #-- item.1.11
-		  "HPPrintPlugin",   "3.23Mb",                    0,      #-- item.1.12
-		  "iWnnIME",         "1.65Mb foreign keyboard",   0,      #-- item.1.13
-		  "Keep",            "8.93Mb",                    0,      #-- item.1.14
-		  "KoreanIME",       "6.02Mb foreign keyboard",   0,      #-- item.1.15
-		  "Maps",            "14.6Mb",                    0,      #-- item.1.16
-		  "Play Music",      "14.2Mb",                    0,      #-- item.1.17
+		  "GooglePhotos",    "39.9Mb",                    0,      #-- item.1.10
+		  "GooglePinyinIME", "7.52Mb foreign keyboard",   0,      #-- item.1.11
+		  "Hangouts",        "18.6Mb",                    0,      #-- item.1.12
+		  "HPPrintPlugin",   "3.23Mb",                    0,      #-- item.1.13
+		  "iWnnIME",         "1.65Mb foreign keyboard",   0,      #-- item.1.15
+		  "Keep",            "8.93Mb",                    0,      #-- item.1.15
+		  "KoreanIME",       "6.02Mb foreign keyboard",   0,      #-- item.1.16
+		  "Maps",            "14.6Mb",                    0,      #-- item.1.17
 		  "News & Weather",  "3.04Mb",                    0,      #-- item.1.18
-		  "PlayGames",       "5.26Mb",                    0,      #-- item.1.19
-		  "Street",          "258kb",                     0,      #-- item.1.20
-		  "YouTube",         "13.1Mb",                    0,      #-- item.1.21
-		  "GooglePhotos",    "39.9Mb",                    0,      #-- item.1.22
+		  "Play Music",      "14.2Mb",                    0,      #-- item.1.19
+		  "PlayGames",       "5.26Mb",                    0,      #-- item.1.20
+		  "Street",          "258kb",                     0,      #-- item.1.21
+		  "YouTube",         "13.1Mb",                    0,      #-- item.1.22
 		  
 		
 		"priv-apps",  "", 2,
@@ -594,9 +592,9 @@ if prop("debloat.prop","selected.1")=="1" then
 	);
     write("/data/media/0/aroma/Debloat.prop", readtmpfile("debloat.prop"));
 endif;
-
-##################################################################################################################
-
+#
+#Kernel only menu
+#
 if prop("type.prop","selected")=="4" then
   setvar("kernel_prop", read("/data/media/0/aroma/Kernel.prop"));
   if (getvar("kernel_prop")!="") then
@@ -619,13 +617,13 @@ if prop("type.prop","selected")=="4" then
      "Default",    "Stock kernel",               1     #-- selected.1 = 1
   );
 endif;
-
-###################################################################################################################
-
+#
+#Proceed to install
+#
 ini_set("text_next", "Install Now");
-
-###################################################################################################################
-
+#
+#Get ready...
+#
 viewbox(
   #-- Title
     "Ready to Install",
@@ -644,9 +642,9 @@ viewbox(
 );
 
 ini_set("text_next", "Next >");
-
-###################################################################################################################
-
+#
+#Install
+#
 setvar("retstatus",
   install(
     #-- Title
@@ -666,7 +664,9 @@ setvar("retstatus",
 );
 
 ini_set("text_next", "Finish");
-
+#
+#Install complete exit installer
+#
 checkviewbox(
   #-- Title
     "Installation Completed",

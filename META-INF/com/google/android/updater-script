@@ -91,7 +91,7 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "1" || file_getprop("/tmp/
     run_program("/tmp/wipe.sh");
   endif;
   set_progress(0.20);
-  show_progress(0.60,60);
+  show_progress(0.40,60);
   ui_print("@Extracting System");
   package_extract_dir("system", "/system");
   if file_getprop("/tmp/aroma/wipe.prop","selected.0") == "1" then
@@ -184,52 +184,52 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "2" || file_getprop("/tmp/
     package_extract_dir("system/app/GoogleHindiIME", "/system/app/GoogleHindiIME");
   endif;
   if file_getprop("/tmp/aroma/debloat.prop","item.1.10") == "1" then
+    ui_print("Removing GooglePhotos");
+	delete_recursive("/system/app/GooglePhotos");
+  else
+    package_extract_dir("system/app/GooglePhotos", "/system/app/GooglePhotos");
+  endif;
+  if file_getprop("/tmp/aroma/debloat.prop","item.1.11") == "1" then
     ui_print("Removing GooglePinyinIME");
 	delete_recursive("/system/app/GooglePinyinIME");
   else
     package_extract_dir("system/app/GooglePinyinIME", "/system/app/GooglePinyinIME");
   endif;
-  if file_getprop("/tmp/aroma/debloat.prop","item.1.11") == "1" then
+  if file_getprop("/tmp/aroma/debloat.prop","item.1.12") == "1" then
     ui_print("Removing Hangouts");
 	delete_recursive("/system/app/Hangouts");
   else
     package_extract_dir("system/app/Hangouts", "/system/app/Hangouts");
   endif;
-  if file_getprop("/tmp/aroma/debloat.prop","item.1.12") == "1" then
+  if file_getprop("/tmp/aroma/debloat.prop","item.1.13") == "1" then
     ui_print("Removing HPPrintPlugin");
 	delete_recursive("/system/app/HPPrintPlugin");
   else
     package_extract_dir("system/app/HPPrintPlugin", "/system/app/HPPrintPlugin");
   endif;
-  if file_getprop("/tmp/aroma/debloat.prop","item.1.13") == "1" then
+  if file_getprop("/tmp/aroma/debloat.prop","item.1.14") == "1" then
     ui_print("Removing iWnnIME");
 	delete_recursive("/system/app/iWnnIME");
   else
     package_extract_dir("system/app/iWnnIME", "/system/app/iWnnIME");
   endif;
-  if file_getprop("/tmp/aroma/debloat.prop","item.1.14") == "1" then
+  if file_getprop("/tmp/aroma/debloat.prop","item.1.15") == "1" then
     ui_print("Removing Keep");
 	delete_recursive("/system/app/Keep");
   else
     package_extract_dir("system/app/Keep", "/system/app/Keep");
   endif;
-  if file_getprop("/tmp/aroma/debloat.prop","item.1.15") == "1" then
+  if file_getprop("/tmp/aroma/debloat.prop","item.1.16") == "1" then
     ui_print("Removing KoreanIME");
 	delete_recursive("/system/app/KoreanIME");
   else
     package_extract_dir("system/app/KoreanIME", "/system/app/KoreanIME");
   endif;
-  if file_getprop("/tmp/aroma/debloat.prop","item.1.16") == "1" then
+  if file_getprop("/tmp/aroma/debloat.prop","item.1.17") == "1" then
     ui_print("Removing Maps");
 	delete_recursive("/system/app/Maps");
   else
     package_extract_dir("system/app/Maps", "/system/app/Maps");
-  endif;
-  if file_getprop("/tmp/aroma/debloat.prop","item.1.17") == "1" then
-    ui_print("Removing Google Play Music");
-	delete_recursive("/system/app/Music2");
-  else
-    package_extract_dir("system/app/Music2", "/system/app/Music2");
   endif;
   if file_getprop("/tmp/aroma/debloat.prop","item.1.18") == "1" then
     ui_print("Removing News & Weather");
@@ -238,28 +238,28 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "2" || file_getprop("/tmp/
     package_extract_dir("system/app/NewsWeather", "/system/app/NewsWeather");
   endif;
   if file_getprop("/tmp/aroma/debloat.prop","item.1.19") == "1" then
+    ui_print("Removing Google Play Music");
+	delete_recursive("/system/app/Music2");
+  else
+    package_extract_dir("system/app/Music2", "/system/app/Music2");
+  endif;
+  if file_getprop("/tmp/aroma/debloat.prop","item.1.20") == "1" then
     ui_print("Removing PlayGames");
 	delete_recursive("/system/app/PlayGames");
   else
     package_extract_dir("system/app/PlayGames", "/system/app/PlayGames");
   endif;
-  if file_getprop("/tmp/aroma/debloat.prop","item.1.20") == "1" then
+  if file_getprop("/tmp/aroma/debloat.prop","item.1.21") == "1" then
     ui_print("Removing Street");
 	delete_recursive("/system/app/Street");
   else
     package_extract_dir("system/app/Street", "/system/app/Street");
   endif;
-  if file_getprop("/tmp/aroma/debloat.prop","item.1.21") == "1" then
+  if file_getprop("/tmp/aroma/debloat.prop","item.1.22") == "1" then
     ui_print("Removing YouTube");
 	delete_recursive("/system/app/YouTube");
   else
     package_extract_dir("system/app/YouTube", "/system/app/YouTube");
-  endif;
-  if file_getprop("/tmp/aroma/debloat.prop","item.1.22") == "1" then
-    ui_print("Removing GooglePhotos");
-	delete_recursive("/system/app/GooglePhotos");
-  else
-    package_extract_dir("system/app/GooglePhotos", "/system/app/GooglePhotos");
   endif;
   #
   #priv-app
@@ -626,6 +626,7 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "2" || file_getprop("/tmp/
 	delete_recursive("/system/app/GoogleHome");
   else
     delete_recursive("/system/priv-app/Trebuchet");
+	package_extract_dir("system/app/GoogleHome", "/system/app/GoogleHome");
   endif;
   #
   #Camera/Gallery
@@ -1025,7 +1026,8 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "1" || file_getprop("/tmp/
     package_extract_dir("aroma/xposed/zip", "/temp/xposed");
     run_program("/sbin/busybox", "unzip", "/temp/xposed/xposed.zip", "META-INF/com/google/android/*", "-d", "/temp/xposed");
     run_program("/sbin/busybox", "sh", "/temp/xposed/META-INF/com/google/android/update-binary", "dummy", "1", "/temp/xposed/xposed.zip");
-	package_extract_dir("aroma/xposed/apk", "/data/app");
+	ui_print("Note: Xposed is active. The latest xposed apk has been copied to your internal sdcard. Install after setup.");
+	package_extract_dir("aroma/xposed/apk", "/sdcard");
   endif;
   delete_recursive("/tmp");
   delete_recursive("/temp");
