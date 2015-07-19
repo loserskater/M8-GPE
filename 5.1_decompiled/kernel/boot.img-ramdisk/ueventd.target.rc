@@ -1,0 +1,14 @@
+# for embedded diag
+/dev/pmem_ediag		0660	system	system
+/dev/pmem_ediag1	0660	system	system
+/dev/pmem_ediag2	0660	system	system
+/dev/pmem_ediag3	0660	system	system
+
+#+ SSD_RIL: for CXX
+/dev/smd20 0660 system system
+
+# for autobot car pc
+/dev/ttyHSUSB3                                 0660    autobot_access autobot_access
+
+# MirrorLink
+/sys/devices/virtual/android_usb/android0/f_projector2    client_context_info    0644  system system
