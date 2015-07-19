@@ -91,7 +91,7 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "1" || file_getprop("/tmp/
     run_program("/tmp/wipe.sh");
   endif;
   set_progress(0.20);
-  show_progress(0.40,60);
+  show_progress(0.40,300);
   ui_print("@Extracting System");
   package_extract_dir("system", "/system");
   if file_getprop("/tmp/aroma/wipe.prop","selected.0") == "1" then
@@ -116,7 +116,6 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "1" || file_getprop("/tmp/
     set_perm(0, 0, 0644, "/system/framework/framework-res.apk");
   endif;
 endif;
-set_progress(0.60);
 #
 #Mods
 #
@@ -195,6 +194,7 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "2" || file_getprop("/tmp/
   else
     package_extract_dir("system/app/GooglePinyinIME", "/system/app/GooglePinyinIME");
   endif;
+  set_progress(0.63);
   if file_getprop("/tmp/aroma/debloat.prop","item.1.12") == "1" then
     ui_print("Removing Hangouts");
 	delete_recursive("/system/app/Hangouts");
@@ -243,6 +243,7 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "2" || file_getprop("/tmp/
   else
     package_extract_dir("system/app/Music2", "/system/app/Music2");
   endif;
+  set_progress(0.64);
   if file_getprop("/tmp/aroma/debloat.prop","item.1.20") == "1" then
     ui_print("Removing PlayGames");
 	delete_recursive("/system/app/PlayGames");
@@ -271,17 +272,12 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "2" || file_getprop("/tmp/
     package_extract_dir("system/priv-app/DotMatrix", "/system/priv-app/DotMatrix");
   endif;
   if file_getprop("/tmp/aroma/debloat.prop","item.2.2") == "1" then
-    ui_print("Removing Setup Wizard");
-	delete_recursive("/system/priv-app/SetupWizard");
-  else
-    package_extract_dir("system/priv-app/SetupWizard", "/system/priv-app/SetupWizard");
-  endif;
-  if file_getprop("/tmp/aroma/debloat.prop","item.2.3") == "1" then
     ui_print("Removing Wallet");
 	delete_recursive("/system/priv-app/Wallet");
   else
     package_extract_dir("system/priv-app/Wallet", "/system/priv-app/Wallet");
   endif;
+  set_progress(0.65);
   #
   #Mms
   #
@@ -314,7 +310,7 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "2" || file_getprop("/tmp/
   #
   #Keyboards
   #
-  set_progress(0.72);
+  set_progress(0.68);
   ui_print("@Keyboards");
   if file_getprop("/tmp/aroma/keyboard.prop","item.0.1") == "1" then
     ui_print("Adding HTC Sense 7 keyboard");
@@ -322,6 +318,7 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "2" || file_getprop("/tmp/
   else
     delete_recursive("/system/priv-app/HTC_IME", "/system/priv-app/IME_TP_Basic", "/system/priv-app/IME_TP_ValueAdd");
   endif;
+  set_progress(0.70);
   #
   #HTC IME Languages
   #
@@ -349,6 +346,7 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "2" || file_getprop("/tmp/
   else
     delete_recursive("/system/priv-app/IMEXT9Catalan");
   endif;
+  set_progress(0.72);
   if file_getprop("/tmp/aroma/keyboard.prop","item.2.5") == "1" then
     ui_print("Adding Chinese");
     package_extract_file("aroma/keyboards/languages/IMEHWRPenPower", "/system/app/IMEHWRPenPower");
@@ -447,6 +445,7 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "2" || file_getprop("/tmp/
   else
     delete_recursive("/system/priv-app/IMEXT9BahasaIndonesia");
   endif;
+  set_progress(0.74);
   if file_getprop("/tmp/aroma/keyboard.prop","item.2.21") == "1" then
     ui_print("Adding Italian"); 
     package_extract_file("aroma/keyboards/languages/IMEXT9Italian", "/system/app/IMEXT9Italian");
@@ -543,6 +542,7 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "2" || file_getprop("/tmp/
   else
     delete_recursive("/system/priv-app/IMEXT9Swedish");
   endif;
+  set_progress(0.75);
   if file_getprop("/tmp/aroma/keyboard.prop","item.2.37") == "1" then
     ui_print("Adding Thai"); 
     package_extract_file("aroma/keyboards/languages/IMEXT9Thai", "/system/app/IMEXT9Thai");
@@ -1010,7 +1010,7 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "1" || file_getprop("/tmp/
   set_metadata("/system/vendor/pittpatt/models/recognition/face.face.y0-y0-71-N-tree_7-wmd.bin", "uid", 0, "gid", 0, "mode", 0644, "capabilities", 0x0, "selabel", "u:object_r:system_file:s0");
   set_metadata_recursive("/system/xbin", "uid", 0, "gid", 2000, "dmode", 0755, "fmode", 0755, "capabilities", 0x0, "selabel", "u:object_r:system_file:s0");
   set_metadata_recursive("/system/su.d", "uid", 0, "gid", 0, "dmode", 0700, "fmode", 0755, "capabilities", 0x0, "selabel", "u:object_r:system_file:s0");
-  set_progress(0.97);
+  set_progress(0.96);
   #
   #SuperSU
   #
@@ -1018,6 +1018,7 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "1" || file_getprop("/tmp/
   package_extract_dir("supersu", "/tmp/supersu");
   run_program("/sbin/busybox", "unzip", "/tmp/supersu/supersu.zip", "META-INF/com/google/android/*", "-d", "/tmp/supersu");
   run_program("/sbin/busybox", "sh", "/tmp/supersu/META-INF/com/google/android/update-binary", "dummy", "1", "/tmp/supersu/supersu.zip");
+  set_progress(0.98);
   #
   #Xposed
   #
@@ -1026,11 +1027,15 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "1" || file_getprop("/tmp/
     package_extract_dir("aroma/xposed/zip", "/temp/xposed");
     run_program("/sbin/busybox", "unzip", "/temp/xposed/xposed.zip", "META-INF/com/google/android/*", "-d", "/temp/xposed");
     run_program("/sbin/busybox", "sh", "/temp/xposed/META-INF/com/google/android/update-binary", "dummy", "1", "/temp/xposed/xposed.zip");
-	ui_print("Note: Xposed is active. The latest xposed apk has been copied to your internal sdcard. Install after setup.");
-	package_extract_dir("aroma/xposed/apk", "/sdcard");
+	mount("ext4", "EMMC", "/dev/block/platform/msm_sdcc.1/by-name/system", "/system");
+    mount("ext4", "EMMC", "/dev/block/platform/msm_sdcc.1/by-name/userdata", "/data");
+	package_extract_dir("aroma/xposed/apk", "/data/app");
   endif;
   delete_recursive("/tmp");
   delete_recursive("/temp");
+  ifelse(is_mounted("/system"), unmount("/system"));
+  ifelse(is_mounted("/cache"), unmount("/cache"));
+  ifelse(is_mounted("/data"), unmount("/data"));
   ui_print("@*Success*");
   ui_print("@*Please Reboot System*");
   set_progress(1.0);

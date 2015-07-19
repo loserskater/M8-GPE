@@ -587,8 +587,7 @@ if prop("debloat.prop","selected.1")=="1" then
 		
 		"priv-apps",  "", 2,
 		  "DotMatrix",       "6.42Mb",                    0,      #-- item.2.1
-		  "Setup Wizard",    "4.75Mb",                    0,      #-- item.2.2
-		  "Wallet",          "11.8Mb May cause Wallet to not work if downloaded form the play store.", 0      #-- item.2.3
+		  "Wallet",          "11.8Mb May cause Wallet to not work if downloaded form the play store.", 0      #-- item.2.2
 	);
     write("/data/media/0/aroma/Debloat.prop", readtmpfile("debloat.prop"));
 endif;

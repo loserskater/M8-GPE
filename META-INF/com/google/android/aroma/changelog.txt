@@ -1,4 +1,4 @@
-<b>7-18-2015</b>
+<b>7-19-2015</b>
 <b>*New Additions</b>
 Navigation bar height
 Navigation bar layout 
