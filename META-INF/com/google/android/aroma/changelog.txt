@@ -1,3 +1,6 @@
+<b>7-20-2015</b>
+Dark theme SystemUI navbar layout fix
+
 <b>7-19-2015</b>
 <b>*New Additions</b>
 Navigation bar height
