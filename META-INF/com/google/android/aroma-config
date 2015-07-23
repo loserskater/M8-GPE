@@ -154,7 +154,7 @@ if prop("type.prop","selected")=="1"||prop("type.prop","selected")=="2" then
       "wipe.prop",
 
       "Full Wipe",            "Data, System, Cache",               0,      #-- selected.0 = 1
-      "Upgrade",              "System, Cache",                     1,      #-- selected.0 = 2
+      "Update",               "System & Cache",                    1,      #-- selected.0 = 2
 	  "Dirty",                "Cache only",                        0       #-- selected.0 = 3
 
 );
@@ -177,14 +177,14 @@ if prop("type.prop","selected")=="3" then
       "wipe.prop",
 
       "Expert",               "Doesn't wipe anything",                    0,      #-- selected.0 = 1
-      "Upgrade",              "Cache only",                               1       #-- selected.0 = 2
+      "Update",               "Cache only",                               1       #-- selected.0 = 2
 
 );
 endif;
 #
 #Carrier patch
 #
-if prop("type.prop","selected")=="1"||prop("type.prop","selected")=="2"||prop("type.prop","selected")=="4" then
+if prop("type.prop","selected")=="1"||prop("type.prop","selected")=="2"||prop("type.prop","selected")=="3" then
     setvar("carrier_prop", read("/data/media/0/aroma/Carrier.prop"));
     if (getvar("carrier_prop")!="") then
       writetmpfile("carrier.prop",getvar("carrier_prop"));
@@ -305,72 +305,6 @@ if prop("type.prop","selected")=="2"||prop("type.prop","selected")=="3" then
 
     );
 	write("/data/media/0/aroma/Email.prop", readtmpfile("email.prop"));
-	setvar("keyboard_prop", read("/data/media/0/aroma/Keyboard.prop"));
-    if (getvar("keyboard_prop")!="") then
-      writetmpfile("keyboard.prop",getvar("keyboard_prop"));
-    endif;
-    checkbox(
-      #-- Title
-        "Keyboards",
-      
-      #-- Sub Title
-        "Select the apps you would like added/removed.\n"+
-        "CHECKED items will be ADDED.\n"+
-        "UNCHECKED will be REMOVED.",
-      
-      #-- Icon:
-        "@apps",
-      
-      #-- Will be saved in /tmp/aroma/keyboard.prop
-        "keyboard.prop",
-          
-	  "Keyboard", "",                         2,
-		"HTC",    "HTC Sense 7 Keyboard",     0,        #-- item.1.1
-		
-	  "Languages",              "",           2,
-	    "Arabic",               "",           0,		#-- item.2.1
-        "Armenian",             "",           0,		#-- item.2.2
-        "Bulgarian",            "",           0,		#-- item.2.3
-        "Catalan",              "",           0,		#-- item.2.4
-        "Chinese",              "",           0,		#-- item.2.5
-        "Croatian",             "",           0,		#-- item.2.6
-        "Czech",                "",           0,		#-- item.2.7
-        "Danish",               "",           0,		#-- item.2.8
-        "Dutch",                "",           0,		#-- item.2.9
-		"English",              "",           0,        #-- item.2.10
-		"English UK",           "",           0,        #-- item.2.11
-        "Estonian",             "",           0,		#-- item.2.12
-        "Finnish",              "",           0,		#-- item.2.13
-        "French",               "",           0,		#-- item.2.14
-        "German",               "",           0,		#-- item.2.15
-        "Greek",                "",           0,		#-- item.2.16
-        "Hebrew",               "",           0,		#-- item.2.17
-        "Hungarian",            "",           0,		#-- item.2.18
-        "Indian",            	"",           0,		#-- item.2.19
-        "Indonesian",           "",           0,		#-- item.2.20
-        "Italian",              "",           0,		#-- item.2.21
-        "Kazakh",               "",           0,		#-- item.2.22
-        "Latvian",              "",           0,		#-- item.2.23
-        "Lithuanian",           "",           0,		#-- item.2.24
-        "Malay",                "",           0,		#-- item.2.25
-        "Norwegian",            "",           0,		#-- item.2.26
-        "Persian",              "",           0,		#-- item.2.27
-        "Polish",               "",           0,		#-- item.2.28
-        "Portuguese",           "",           0,		#-- item.2.29
-        "Romanian",             "",           0,		#-- item.2.30
-        "Russian",              "",           0,		#-- item.2.31
-        "Serbian",              "",           0,		#-- item.2.32
-        "Slovak",               "",           0,		#-- item.2.33
-        "Slovenian",            "",           0,		#-- item.2.34
-        "Spanish",              "",           0,		#-- item.2.35
-        "Swedish",              "",           0,		#-- item.2.36
-        "Thai",             	"",           0,		#-- item.2.37
-        "Turkish",              "",           0,		#-- item.2.38
-        "Ukrainian",            "",           0,		#-- item.2.39
-        "Vietnamese",           "",           0 		#-- item.2.40
-			  
-    );
-	write("/data/media/0/aroma/Keyboard.prop", readtmpfile("keyboard.prop"));
 	setvar("cm_prop", read("/data/media/0/aroma/CM.prop"));
     if (getvar("cm_prop")!="") then
       writetmpfile("cm.prop",getvar("cm_prop"));
@@ -525,6 +459,10 @@ if prop("type.prop","selected")=="2"||prop("type.prop","selected")=="3" then
 		
 	);
     write("/data/media/0/aroma/Xposed.prop", readtmpfile("xposed.prop"));
+	setvar("debloat_prop", read("/data/media/0/aroma/Debloat.prop"));
+    if (getvar("debloat_prop")!="") then
+      writetmpfile("debloat.prop",getvar("debloat_prop"));
+    endif;
 	selectbox(
       #-- Title
         "System De-Bloat",
@@ -542,11 +480,12 @@ if prop("type.prop","selected")=="2"||prop("type.prop","selected")=="3" then
 		  "Yes",            "De-Bloat safe to remove system apps",           0,      #-- selected.1 = 1
           "No",             "",                                              1       #-- selected.1 = 2
     );
+	write("/data/media/0/aroma/Debloat.prop", readtmpfile("debloat.prop"));
 endif;
 if prop("debloat.prop","selected.1")=="1" then
-	setvar("debloat_prop", read("/data/media/0/aroma/Debloat.prop"));
-    if (getvar("debloat_prop")!="") then
-      writetmpfile("debloat.prop",getvar("debloat_prop"));
+	setvar("debloatlist_prop", read("/data/media/0/aroma/DebloatList.prop"));
+    if (getvar("debloatlist_prop")!="") then
+      writetmpfile("debloatlist.prop",getvar("debloatlist_prop"));
     endif;
     checkbox(
       #-- Title
@@ -559,8 +498,9 @@ if prop("debloat.prop","selected.1")=="1" then
         "@apps",
       
       #-- Will be saved in /tmp/aroma/other
-        "debloat.prop",
-		"apps",  "282.16 Mb", 2,								  
+        "debloatlist.prop",
+		
+		"apps 282.16 Mb",  "", 2,								  
 	      "Chrome",          "45.0Mb Play Store",             0,      #-- item.1.1
 		  "Compass",         "2.78Mb",                        0,      #-- item.1.2
 		  "Drive",           "12.1Mb Play Store",             0,      #-- item.1.3
@@ -574,7 +514,7 @@ if prop("debloat.prop","selected.1")=="1" then
 		  "GooglePinyinIME", "7.52Mb foreign keyboard",       0,      #-- item.1.11
 		  "Hangouts",        "18.6Mb Play Store",             0,      #-- item.1.12
 		  "HPPrintPlugin",   "3.23Mb Play Store",             0,      #-- item.1.13
-		  "iWnnIME",         "1.65Mb foreign keyboard",       0,      #-- item.1.15
+		  "iWnnIME",         "1.65Mb foreign keyboard",       0,      #-- item.1.14
 		  "Keep",            "8.93Mb Play Store",             0,      #-- item.1.15
 		  "KoreanIME",       "6.02Mb foreign keyboard",       0,      #-- item.1.16
 		  "Maps",            "14.6Mb Play Store",             0,      #-- item.1.17
@@ -585,11 +525,11 @@ if prop("debloat.prop","selected.1")=="1" then
 		  "YouTube",         "13.1Mb Play Store",             0,      #-- item.1.22
 		  
 		
-		"priv-apps",  "17.5 Mb", 2,
+		"priv-apps 17.5 Mb",  "", 2,
 		  "DotMatrix",       "6.42Mb",                    0,      #-- item.2.1
 		  "Wallet",          "11.8Mb May cause Wallet to not work if downloaded form the play store.", 0      #-- item.2.2
 	);
-    write("/data/media/0/aroma/Debloat.prop", readtmpfile("debloat.prop"));
+    write("/data/media/0/aroma/DebloatList.prop", readtmpfile("debloatlist.prop"));
 endif;
 #
 #Kernel only menu
