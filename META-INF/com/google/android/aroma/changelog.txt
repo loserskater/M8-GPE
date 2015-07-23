@@ -1,5 +1,7 @@
-<b>7-20-2015</b>
-Dark theme SystemUI navbar layout fix
+<b>7-23-2015</b>
+Installer fixes
+Dark theme fixes
+Removed HTC keyboard, doesn't work anymore and no plan on porting it either.
 
 <b>7-19-2015</b>
 <b>*New Additions</b>
