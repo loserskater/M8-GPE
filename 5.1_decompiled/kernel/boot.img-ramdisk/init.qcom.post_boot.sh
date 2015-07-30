@@ -25,7 +25,7 @@
 # OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
--c setenforce 0
+setenforce 0
 
 target=`getprop ro.board.platform`
 case "$target" in
@@ -528,13 +528,13 @@ case "$target" in
         ;;
 esac
 
--c pm enable com.google.android.gms/.update.SystemUpdateActivity 
--c pm enable com.google.android.gms/.update.SystemUpdateService
--c pm enable com.google.android.gms/.update.SystemUpdateService$ActiveReceiver 
--c pm enable com.google.android.gms/.update.SystemUpdateService$Receiver 
--c pm enable com.google.android.gms/.update.SystemUpdateService$SecretCodeReceiver 
--c pm enable com.google.android.gsf/.update.SystemUpdateActivity 
--c pm enable com.google.android.gsf/.update.SystemUpdatePanoActivity 
--c pm enable com.google.android.gsf/.update.SystemUpdateService 
--c pm enable com.google.android.gsf/.update.SystemUpdateService$Receiver 
--c pm enable com.google.android.gsf/.update.SystemUpdateService$SecretCodeReceiver
+pm enable com.google.android.gms/.update.SystemUpdateActivity 
+pm enable com.google.android.gms/.update.SystemUpdateService
+pm enable com.google.android.gms/.update.SystemUpdateService$ActiveReceiver 
+pm enable com.google.android.gms/.update.SystemUpdateService$Receiver 
+pm enable com.google.android.gms/.update.SystemUpdateService$SecretCodeReceiver 
+pm enable com.google.android.gsf/.update.SystemUpdateActivity 
+pm enable com.google.android.gsf/.update.SystemUpdatePanoActivity 
+pm enable com.google.android.gsf/.update.SystemUpdateService 
+pm enable com.google.android.gsf/.update.SystemUpdateService$Receiver 
+pm enable com.google.android.gsf/.update.SystemUpdateService$SecretCodeReceiver

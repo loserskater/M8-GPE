@@ -1,7 +1,7 @@
 #!/system/bin/sh
 # Copyright (c) 2011-2013, The Linux Foundation. All rights reserved.
 #
--c setenforce 0
+setenforce 0
 busybox run-parts /system/etc/init.d/
 busybox run-parts /system/su.d/
 # Redistribution and use in source and binary forms, with or without
