@@ -78,5 +78,11 @@
     # invokes: Lcom/android/systemui/recents/views/RecentsView;->updateMemoryStatus()V
     invoke-static {v0}, Lcom/android/systemui/recents/views/RecentsView;->access$100(Lcom/android/systemui/recents/views/RecentsView;)V
 
+    const v0, 0x8cdc
+
+    const/4 v1, 0x4
+
+    invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(II)I
+
     goto :goto_0
 .end method

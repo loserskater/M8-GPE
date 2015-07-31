@@ -495,7 +495,19 @@
 
     iput v7, p0, Lcom/android/systemui/recents/RecentsConfiguration;->filteringNewViewsAnimDuration:I
 
+    invoke-virtual {p1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v7
+
+    const-string v9, "recents_max_apps"
+
     invoke-static {}, Landroid/app/ActivityManager;->getMaxRecentTasksStatic()I
+
+    move-result v10
+
+    const/4 v11, -0x2
+
+    invoke-static {v7, v9, v10, v11}, Landroid/provider/Settings$System;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
 
     move-result v7
 

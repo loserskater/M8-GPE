@@ -836,6 +836,7 @@
     <public type="integer" name="kg_visualizer_divisions" id="0x7f0a0041" />
     <public type="integer" name="kg_visualizer_db_fuzz_factor" id="0x7f0a0042" />
     <public type="integer" name="kg_visualizer_db_fuzz" id="0x7f0a0043" />
+    <public type="integer" name="doze_shake_accelerometer_threshold" id="0x7f0a0044" />
     <public type="integer" name="status_bar_config_maxNotificationIcons" id="0x7f0a0035" />
     <public type="integer" name="kg_selector_gravity" id="0x7f0a003b" />
     <public type="integer" name="kg_widget_region_weight" id="0x7f0a003c" />

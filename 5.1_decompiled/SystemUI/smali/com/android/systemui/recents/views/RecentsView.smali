@@ -1348,7 +1348,7 @@
 .end method
 
 .method public onRecentsHidden()V
-    .locals 5
+    .locals 6
 
     invoke-virtual {p0}, Lcom/android/systemui/recents/views/RecentsView;->getChildCount()I
 
@@ -1379,6 +1379,12 @@
     goto :goto_0
 
     :cond_1
+    const v4, 0x8cdc
+
+    const/4 v5, 0x2
+
+    invoke-static {v4, v5}, Landroid/util/EventLog;->writeEvent(II)I
+
     return-void
 .end method
 
@@ -1698,6 +1704,12 @@
     invoke-interface {v11}, Ljava/lang/Runnable;->run()V
 
     :goto_2
+    const v7, 0x8cdc
+
+    const/4 v8, 0x3
+
+    invoke-static {v7, v8}, Landroid/util/EventLog;->writeEvent(II)I
+
     return-void
 
     :cond_4
@@ -2084,7 +2096,7 @@
 .end method
 
 .method public startEnterRecentsAnimation(Lcom/android/systemui/recents/views/ViewAnimation$TaskViewEnterContext;)V
-    .locals 5
+    .locals 6
 
     iget-object v4, p1, Lcom/android/systemui/recents/views/ViewAnimation$TaskViewEnterContext;->postAnimationTrigger:Lcom/android/systemui/recents/misc/ReferenceCountedTrigger;
 
@@ -2122,6 +2134,12 @@
     iget-object v4, p1, Lcom/android/systemui/recents/views/ViewAnimation$TaskViewEnterContext;->postAnimationTrigger:Lcom/android/systemui/recents/misc/ReferenceCountedTrigger;
 
     invoke-virtual {v4}, Lcom/android/systemui/recents/misc/ReferenceCountedTrigger;->decrement()V
+
+    const v4, 0x8cdc
+
+    const/4 v5, 0x1
+
+    invoke-static {v4, v5}, Landroid/util/EventLog;->writeEvent(II)I
 
     return-void
 .end method

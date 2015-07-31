@@ -305,7 +305,7 @@
 
     const-string v4, "appWidgetCategory"
 
-    const/4 v5, 0x1
+    const/4 v5, 0x4
 
     invoke-virtual {v0, v4, v5}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 

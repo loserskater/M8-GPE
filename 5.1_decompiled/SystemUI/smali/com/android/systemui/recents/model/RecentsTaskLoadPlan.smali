@@ -502,7 +502,7 @@
 .end method
 
 .method declared-synchronized preloadPlan(Lcom/android/systemui/recents/model/RecentsTaskLoader;Z)V
-    .locals 28
+    .locals 32
 
     monitor-enter p0
 
@@ -538,11 +538,11 @@
 
     invoke-virtual {v3}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-    move-result-object v25
+    move-result-object v28
 
-    new-instance v24, Ljava/util/ArrayList;
+    new-instance v26, Ljava/util/ArrayList;
 
-    invoke-direct/range {v24 .. v24}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct/range {v26 .. v26}, Ljava/util/ArrayList;-><init>()V
 
     move-object/from16 v0, p0
 
@@ -563,16 +563,16 @@
 
     invoke-interface {v3}, Ljava/util/List;->size()I
 
-    move-result v27
+    move-result v31
 
     const/16 v23, 0x0
 
     :goto_0
     move/from16 v0, v23
 
-    move/from16 v1, v27
+    move/from16 v1, v31
 
-    if-ge v0, v1, :cond_9
+    if-ge v0, v1, :cond_d
 
     move-object/from16 v0, p0
 
@@ -582,29 +582,128 @@
 
     invoke-interface {v3, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    move-result-object v26
+    move-result-object v30
 
-    check-cast v26, Landroid/app/ActivityManager$RecentTaskInfo;
+    check-cast v30, Landroid/app/ActivityManager$RecentTaskInfo;
 
+    move-object/from16 v0, p0
+
+    iget-object v3, v0, Lcom/android/systemui/recents/model/RecentsTaskLoadPlan;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v3}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v3
+
+    const-string v4, "show_running_tasks"
+
+    const/4 v5, 0x0
+
+    const/4 v6, -0x2
+
+    invoke-static {v3, v4, v5, v6}, Landroid/provider/Settings$System;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
+
+    move-result v3
+
+    const/4 v4, 0x1
+
+    if-ne v3, v4, :cond_3
+
+    const/16 v27, 0x1
+
+    :goto_1
+    move-object/from16 v0, p0
+
+    iget-object v3, v0, Lcom/android/systemui/recents/model/RecentsTaskLoadPlan;->mSystemServicesProxy:Lcom/android/systemui/recents/misc/SystemServicesProxy;
+
+    const v4, 0x7fffffff
+
+    invoke-virtual {v3, v4}, Lcom/android/systemui/recents/misc/SystemServicesProxy;->getRunningTasks(I)Ljava/util/List;
+
+    move-result-object v29
+
+    const/16 v25, 0x0
+
+    if-eqz v27, :cond_5
+
+    invoke-interface/range {v29 .. v29}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v24
+
+    :cond_2
+    :goto_2
+    invoke-interface/range {v24 .. v24}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_4
+
+    invoke-interface/range {v24 .. v24}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v9
+
+    check-cast v9, Landroid/app/ActivityManager$RunningTaskInfo;
+
+    move-object/from16 v0, v30
+
+    iget-object v3, v0, Landroid/app/ActivityManager$RecentTaskInfo;->baseIntent:Landroid/content/Intent;
+
+    invoke-virtual {v3}, Landroid/content/Intent;->getComponent()Landroid/content/ComponentName;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
+
+    move-result-object v3
+
+    iget-object v4, v9, Landroid/app/ActivityManager$RunningTaskInfo;->baseActivity:Landroid/content/ComponentName;
+
+    invoke-virtual {v4}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_2
+
+    const/16 v25, 0x1
+
+    goto :goto_2
+
+    :cond_3
+    const/16 v27, 0x0
+
+    goto :goto_1
+
+    :cond_4
+    if-nez v25, :cond_5
+
+    :goto_3
+    add-int/lit8 v23, v23, 0x1
+
+    goto :goto_0
+
+    :cond_5
     new-instance v2, Lcom/android/systemui/recents/model/Task$TaskKey;
 
-    move-object/from16 v0, v26
+    move-object/from16 v0, v30
 
     iget v3, v0, Landroid/app/ActivityManager$RecentTaskInfo;->persistentId:I
 
-    move-object/from16 v0, v26
+    move-object/from16 v0, v30
 
     iget-object v4, v0, Landroid/app/ActivityManager$RecentTaskInfo;->baseIntent:Landroid/content/Intent;
 
-    move-object/from16 v0, v26
+    move-object/from16 v0, v30
 
     iget v5, v0, Landroid/app/ActivityManager$RecentTaskInfo;->userId:I
 
-    move-object/from16 v0, v26
+    move-object/from16 v0, v30
 
     iget-wide v6, v0, Landroid/app/ActivityManager$RecentTaskInfo;->firstActiveTime:J
 
-    move-object/from16 v0, v26
+    move-object/from16 v0, v30
 
     iget-wide v8, v0, Landroid/app/ActivityManager$RecentTaskInfo;->lastActiveTime:J
 
@@ -626,7 +725,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_4
+    if-eqz v3, :cond_8
 
     move-object/from16 v0, p0
 
@@ -642,8 +741,8 @@
 
     const/16 v22, 0x1
 
-    :goto_1
-    move-object/from16 v0, v26
+    :goto_4
+    move-object/from16 v0, v30
 
     iget-object v3, v0, Landroid/app/ActivityManager$RecentTaskInfo;->taskDescription:Landroid/app/ActivityManager$TaskDescription;
 
@@ -657,7 +756,7 @@
 
     move-result-object v14
 
-    move-object/from16 v0, v26
+    move-object/from16 v0, v30
 
     iget-object v5, v0, Landroid/app/ActivityManager$RecentTaskInfo;->taskDescription:Landroid/app/ActivityManager$TaskDescription;
 
@@ -671,13 +770,13 @@
 
     move-object v4, v2
 
-    move-object/from16 v7, v25
+    move-object/from16 v7, v28
 
     invoke-virtual/range {v3 .. v9}, Lcom/android/systemui/recents/model/RecentsTaskLoader;->getAndUpdateActivityIcon(Lcom/android/systemui/recents/model/Task$TaskKey;Landroid/app/ActivityManager$TaskDescription;Lcom/android/systemui/recents/misc/SystemServicesProxy;Landroid/content/res/Resources;Lcom/android/systemui/recents/model/ActivityInfoHandle;Z)Landroid/graphics/drawable/Drawable;
 
     move-result-object v15
 
-    move-object/from16 v0, v26
+    move-object/from16 v0, v30
 
     iget-object v3, v0, Landroid/app/ActivityManager$RecentTaskInfo;->taskDescription:Landroid/app/ActivityManager$TaskDescription;
 
@@ -691,11 +790,11 @@
 
     move-result v16
 
-    if-nez v22, :cond_2
+    if-nez v22, :cond_6
 
     iget-object v3, v8, Lcom/android/systemui/recents/model/ActivityInfoHandle;->info:Landroid/content/pm/ActivityInfo;
 
-    if-eqz v3, :cond_2
+    if-eqz v3, :cond_6
 
     move-object/from16 v0, p0
 
@@ -705,14 +804,14 @@
 
     invoke-virtual {v3, v0, v8}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    :cond_2
-    move-object/from16 v0, v26
+    :cond_6
+    move-object/from16 v0, v30
 
     iget-object v3, v0, Landroid/app/ActivityManager$RecentTaskInfo;->taskDescription:Landroid/app/ActivityManager$TaskDescription;
 
-    if-eqz v3, :cond_5
+    if-eqz v3, :cond_9
 
-    move-object/from16 v0, v26
+    move-object/from16 v0, v30
 
     iget-object v3, v0, Landroid/app/ActivityManager$RecentTaskInfo;->taskDescription:Landroid/app/ActivityManager$TaskDescription;
 
@@ -720,14 +819,14 @@
 
     move-result-object v19
 
-    :goto_2
-    move-object/from16 v0, v26
+    :goto_5
+    move-object/from16 v0, v30
 
     iget-object v3, v0, Landroid/app/ActivityManager$RecentTaskInfo;->taskDescription:Landroid/app/ActivityManager$TaskDescription;
 
-    if-eqz v3, :cond_6
+    if-eqz v3, :cond_a
 
-    move-object/from16 v0, v26
+    move-object/from16 v0, v30
 
     iget-object v3, v0, Landroid/app/ActivityManager$RecentTaskInfo;->taskDescription:Landroid/app/ActivityManager$TaskDescription;
 
@@ -735,37 +834,37 @@
 
     move-result-object v20
 
-    :goto_3
+    :goto_6
     new-instance v9, Lcom/android/systemui/recents/model/Task;
 
-    move-object/from16 v0, v26
+    move-object/from16 v0, v30
 
     iget v3, v0, Landroid/app/ActivityManager$RecentTaskInfo;->id:I
 
     sget v4, Lcom/android/systemui/recents/model/RecentsTaskLoader;->INVALID_TASK_ID:I
 
-    if-eq v3, v4, :cond_7
+    if-eq v3, v4, :cond_b
 
     const/4 v11, 0x1
 
-    :goto_4
-    move-object/from16 v0, v26
+    :goto_7
+    move-object/from16 v0, v30
 
     iget v12, v0, Landroid/app/ActivityManager$RecentTaskInfo;->affiliatedTaskId:I
 
-    move-object/from16 v0, v26
+    move-object/from16 v0, v30
 
     iget v13, v0, Landroid/app/ActivityManager$RecentTaskInfo;->affiliatedTaskColor:I
 
-    add-int/lit8 v3, v27, -0x1
+    add-int/lit8 v3, v31, -0x1
 
     move/from16 v0, v23
 
-    if-ne v0, v3, :cond_8
+    if-ne v0, v3, :cond_c
 
     const/16 v17, 0x1
 
-    :goto_5
+    :goto_8
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/systemui/recents/model/RecentsTaskLoadPlan;->mConfig:Lcom/android/systemui/recents/RecentsConfiguration;
@@ -794,7 +893,7 @@
 
     sget-boolean v3, Lcom/android/systemui/recents/model/RecentsTaskLoadPlan;->DEBUG:Z
 
-    if-eqz v3, :cond_3
+    if-eqz v3, :cond_7
 
     sget-object v3, Lcom/android/systemui/recents/model/RecentsTaskLoadPlan;->TAG:Ljava/lang/String;
 
@@ -830,48 +929,56 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_3
-    move-object/from16 v0, v24
+    :cond_7
+    move-object/from16 v0, v26
 
     invoke-virtual {v0, v9}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    add-int/lit8 v23, v23, 0x1
+    goto/16 :goto_3
 
-    goto/16 :goto_0
+    :catchall_0
+    move-exception v3
 
-    :cond_4
+    monitor-exit p0
+
+    throw v3
+
+    :cond_8
+    :try_start_1
     new-instance v8, Lcom/android/systemui/recents/model/ActivityInfoHandle;
 
     invoke-direct {v8}, Lcom/android/systemui/recents/model/ActivityInfoHandle;-><init>()V
 
-    goto/16 :goto_1
+    goto/16 :goto_4
 
-    :cond_5
+    :cond_9
     const/16 v19, 0x0
-
-    goto :goto_2
-
-    :cond_6
-    const/16 v20, 0x0
-
-    goto :goto_3
-
-    :cond_7
-    const/4 v11, 0x0
-
-    goto :goto_4
-
-    :cond_8
-    const/16 v17, 0x0
 
     goto :goto_5
 
-    :cond_9
+    :cond_a
+    const/16 v20, 0x0
+
+    goto :goto_6
+
+    :cond_b
+    const/4 v11, 0x0
+
+    goto :goto_7
+
+    :cond_c
+    const/16 v17, 0x0
+
+    goto :goto_8
+
+    :cond_d
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/systemui/recents/model/RecentsTaskLoadPlan;->mStack:Lcom/android/systemui/recents/model/TaskStack;
 
-    move-object/from16 v0, v24
+    move-object/from16 v0, v26
 
     invoke-virtual {v3, v0}, Lcom/android/systemui/recents/model/TaskStack;->setTasks(Ljava/util/List;)V
 
@@ -898,29 +1005,14 @@
     iget-object v4, v0, Lcom/android/systemui/recents/model/RecentsTaskLoadPlan;->mRawTasks:Ljava/util/List;
 
     invoke-interface {v4}, Ljava/util/List;->size()I
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     move-result v4
 
-    if-eq v3, v4, :cond_a
+    if-eq v3, v4, :cond_e
 
-    new-instance v3, Ljava/lang/RuntimeException;
-
-    const-string v4, "Loading failed"
-
-    invoke-direct {v3, v4}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
-
-    throw v3
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    :catchall_0
-    move-exception v3
-
-    monitor-exit p0
-
-    throw v3
-
-    :cond_a
+    :cond_e
     monitor-exit p0
 
     return-void

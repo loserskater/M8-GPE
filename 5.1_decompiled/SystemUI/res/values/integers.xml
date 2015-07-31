@@ -64,4 +64,5 @@
     <integer name="kg_visualizer_divisions">16</integer>
     <integer name="kg_visualizer_db_fuzz_factor">0</integer>
     <integer name="kg_visualizer_db_fuzz">0</integer>
+    <integer name="doze_shake_accelerometer_threshold">10</integer>
 </resources>

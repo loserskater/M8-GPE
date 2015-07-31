@@ -2,6 +2,10 @@
 .super Landroid/service/dreams/DreamService;
 .source "DozeService.java"
 
+# interfaces
+.implements Lcom/android/systemui/doze/ProximitySensorManager$ProximityListener;
+.implements Lcom/android/systemui/doze/ShakeSensorManager$ShakeListener;
+
 
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
@@ -41,6 +45,8 @@
 
 .field private final mHostCallback:Lcom/android/systemui/doze/DozeHost$Callback;
 
+.field private mIsFar:Z
+
 .field private mNotificationLightOn:Z
 
 .field private mNotificationPulseTime:J
@@ -51,17 +57,23 @@
 
 .field private mPowerSaveActive:Z
 
+.field private mProximitySensorManager:Lcom/android/systemui/doze/ProximitySensorManager;
+
 .field private mPulsing:Z
 
 .field private mScheduleResetsRemaining:I
 
 .field private mSensors:Landroid/hardware/SensorManager;
 
+.field private mShakeSensorManager:Lcom/android/systemui/doze/ShakeSensorManager;
+
 .field private mSigMotionSensor:Lcom/android/systemui/doze/DozeService$TriggerSensor;
 
 .field private final mTag:Ljava/lang/String;
 
 .field private mUiModeManager:Landroid/app/UiModeManager;
+
+.field private mUseAccelerometer:Z
 
 .field private mWakeLock:Landroid/os/PowerManager$WakeLock;
 
@@ -84,15 +96,15 @@
 .end method
 
 .method public constructor <init>()V
-    .locals 4
+    .locals 5
+
+    const/4 v4, 0x1
 
     invoke-direct {p0}, Landroid/service/dreams/DreamService;-><init>()V
 
     const-string v0, "DozeService.%08x"
 
-    const/4 v1, 0x1
-
-    new-array v1, v1, [Ljava/lang/Object;
+    new-array v1, v4, [Ljava/lang/Object;
 
     const/4 v2, 0x0
 
@@ -128,15 +140,17 @@
 
     iput-object v0, p0, Lcom/android/systemui/doze/DozeService;->mHandler:Landroid/os/Handler;
 
-    new-instance v0, Lcom/android/systemui/doze/DozeService$4;
-
-    invoke-direct {v0, p0}, Lcom/android/systemui/doze/DozeService$4;-><init>(Lcom/android/systemui/doze/DozeService;)V
-
-    iput-object v0, p0, Lcom/android/systemui/doze/DozeService;->mBroadcastReceiver:Landroid/content/BroadcastReceiver;
+    iput-boolean v4, p0, Lcom/android/systemui/doze/DozeService;->mIsFar:Z
 
     new-instance v0, Lcom/android/systemui/doze/DozeService$5;
 
     invoke-direct {v0, p0}, Lcom/android/systemui/doze/DozeService$5;-><init>(Lcom/android/systemui/doze/DozeService;)V
+
+    iput-object v0, p0, Lcom/android/systemui/doze/DozeService;->mBroadcastReceiver:Landroid/content/BroadcastReceiver;
+
+    new-instance v0, Lcom/android/systemui/doze/DozeService$6;
+
+    invoke-direct {v0, p0}, Lcom/android/systemui/doze/DozeService$6;-><init>(Lcom/android/systemui/doze/DozeService;)V
 
     iput-object v0, p0, Lcom/android/systemui/doze/DozeService;->mHostCallback:Lcom/android/systemui/doze/DozeHost$Callback;
 
@@ -161,12 +175,68 @@
 .method static synthetic access$000(Lcom/android/systemui/doze/DozeService;)Z
     .locals 1
 
+    iget-boolean v0, p0, Lcom/android/systemui/doze/DozeService;->mPulsing:Z
+
+    return v0
+.end method
+
+.method static synthetic access$002(Lcom/android/systemui/doze/DozeService;Z)Z
+    .locals 0
+
+    iput-boolean p1, p0, Lcom/android/systemui/doze/DozeService;->mPulsing:Z
+
+    return p1
+.end method
+
+.method static synthetic access$100(Lcom/android/systemui/doze/DozeService;)Z
+    .locals 1
+
     iget-boolean v0, p0, Lcom/android/systemui/doze/DozeService;->mDreaming:Z
 
     return v0
 .end method
 
-.method static synthetic access$1000(Lcom/android/systemui/doze/DozeService;)Z
+.method static synthetic access$1000(Lcom/android/systemui/doze/DozeService;)Landroid/content/Context;
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/systemui/doze/DozeService;->mContext:Landroid/content/Context;
+
+    return-object v0
+.end method
+
+.method static synthetic access$1100()Z
+    .locals 1
+
+    sget-boolean v0, Lcom/android/systemui/doze/DozeService;->DEBUG:Z
+
+    return v0
+.end method
+
+.method static synthetic access$1200(Lcom/android/systemui/doze/DozeService;)Ljava/lang/String;
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/systemui/doze/DozeService;->mTag:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method static synthetic access$1300(Lcom/android/systemui/doze/DozeService;)V
+    .locals 0
+
+    invoke-direct {p0}, Lcom/android/systemui/doze/DozeService;->requestPulseFromAccelerometer()V
+
+    return-void
+.end method
+
+.method static synthetic access$1400(Lcom/android/systemui/doze/DozeService;I)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lcom/android/systemui/doze/DozeService;->requestPulse(I)V
+
+    return-void
+.end method
+
+.method static synthetic access$1500(Lcom/android/systemui/doze/DozeService;)Z
     .locals 1
 
     iget-boolean v0, p0, Lcom/android/systemui/doze/DozeService;->mNotificationLightOn:Z
@@ -174,7 +244,7 @@
     return v0
 .end method
 
-.method static synthetic access$1002(Lcom/android/systemui/doze/DozeService;Z)Z
+.method static synthetic access$1502(Lcom/android/systemui/doze/DozeService;Z)Z
     .locals 0
 
     iput-boolean p1, p0, Lcom/android/systemui/doze/DozeService;->mNotificationLightOn:Z
@@ -182,7 +252,7 @@
     return p1
 .end method
 
-.method static synthetic access$1100(Lcom/android/systemui/doze/DozeService;Z)V
+.method static synthetic access$1600(Lcom/android/systemui/doze/DozeService;Z)V
     .locals 0
 
     invoke-direct {p0, p1}, Lcom/android/systemui/doze/DozeService;->rescheduleNotificationPulse(Z)V
@@ -190,7 +260,7 @@
     return-void
 .end method
 
-.method static synthetic access$1200(Lcom/android/systemui/doze/DozeService;)Z
+.method static synthetic access$1700(Lcom/android/systemui/doze/DozeService;)Z
     .locals 1
 
     iget-boolean v0, p0, Lcom/android/systemui/doze/DozeService;->mCarMode:Z
@@ -198,7 +268,7 @@
     return v0
 .end method
 
-.method static synthetic access$1202(Lcom/android/systemui/doze/DozeService;Z)Z
+.method static synthetic access$1702(Lcom/android/systemui/doze/DozeService;Z)Z
     .locals 0
 
     iput-boolean p1, p0, Lcom/android/systemui/doze/DozeService;->mCarMode:Z
@@ -206,7 +276,7 @@
     return p1
 .end method
 
-.method static synthetic access$1300(Lcom/android/systemui/doze/DozeService;)V
+.method static synthetic access$1800(Lcom/android/systemui/doze/DozeService;)V
     .locals 0
 
     invoke-direct {p0}, Lcom/android/systemui/doze/DozeService;->finishForCarMode()V
@@ -214,7 +284,7 @@
     return-void
 .end method
 
-.method static synthetic access$1400(Lcom/android/systemui/doze/DozeService;J)V
+.method static synthetic access$1900(Lcom/android/systemui/doze/DozeService;J)V
     .locals 1
 
     invoke-direct {p0, p1, p2}, Lcom/android/systemui/doze/DozeService;->updateNotificationPulse(J)V
@@ -222,7 +292,23 @@
     return-void
 .end method
 
-.method static synthetic access$1500(Lcom/android/systemui/doze/DozeService;)V
+.method static synthetic access$200(Lcom/android/systemui/doze/DozeService;)V
+    .locals 0
+
+    invoke-direct {p0}, Lcom/android/systemui/doze/DozeService;->turnDisplayOn()V
+
+    return-void
+.end method
+
+.method static synthetic access$2000(Lcom/android/systemui/doze/DozeService;Z)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lcom/android/systemui/doze/DozeService;->listenForHalfMode(Z)V
+
+    return-void
+.end method
+
+.method static synthetic access$2100(Lcom/android/systemui/doze/DozeService;)V
     .locals 0
 
     invoke-direct {p0}, Lcom/android/systemui/doze/DozeService;->updateNotificationPulseDueToLight()V
@@ -230,7 +316,7 @@
     return-void
 .end method
 
-.method static synthetic access$1600(Lcom/android/systemui/doze/DozeService;)Z
+.method static synthetic access$2200(Lcom/android/systemui/doze/DozeService;)Z
     .locals 1
 
     iget-boolean v0, p0, Lcom/android/systemui/doze/DozeService;->mPowerSaveActive:Z
@@ -238,7 +324,7 @@
     return v0
 .end method
 
-.method static synthetic access$1602(Lcom/android/systemui/doze/DozeService;Z)Z
+.method static synthetic access$2202(Lcom/android/systemui/doze/DozeService;Z)Z
     .locals 0
 
     iput-boolean p1, p0, Lcom/android/systemui/doze/DozeService;->mPowerSaveActive:Z
@@ -246,7 +332,7 @@
     return p1
 .end method
 
-.method static synthetic access$1700(Lcom/android/systemui/doze/DozeService;)V
+.method static synthetic access$2300(Lcom/android/systemui/doze/DozeService;)V
     .locals 0
 
     invoke-direct {p0}, Lcom/android/systemui/doze/DozeService;->finishToSavePower()V
@@ -254,7 +340,7 @@
     return-void
 .end method
 
-.method static synthetic access$1800(Lcom/android/systemui/doze/DozeService;)Landroid/hardware/SensorManager;
+.method static synthetic access$2400(Lcom/android/systemui/doze/DozeService;)Landroid/hardware/SensorManager;
     .locals 1
 
     iget-object v0, p0, Lcom/android/systemui/doze/DozeService;->mSensors:Landroid/hardware/SensorManager;
@@ -262,7 +348,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$1900(Landroid/hardware/TriggerEvent;)Ljava/lang/String;
+.method static synthetic access$2500(Landroid/hardware/TriggerEvent;)Ljava/lang/String;
     .locals 1
 
     invoke-static {p0}, Lcom/android/systemui/doze/DozeService;->triggerEventToString(Landroid/hardware/TriggerEvent;)Ljava/lang/String;
@@ -272,31 +358,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$200(Lcom/android/systemui/doze/DozeService;)Z
-    .locals 1
-
-    iget-boolean v0, p0, Lcom/android/systemui/doze/DozeService;->mPulsing:Z
-
-    return v0
-.end method
-
-.method static synthetic access$2000(Lcom/android/systemui/doze/DozeService;)Landroid/content/Context;
-    .locals 1
-
-    iget-object v0, p0, Lcom/android/systemui/doze/DozeService;->mContext:Landroid/content/Context;
-
-    return-object v0
-.end method
-
-.method static synthetic access$202(Lcom/android/systemui/doze/DozeService;Z)Z
-    .locals 0
-
-    iput-boolean p1, p0, Lcom/android/systemui/doze/DozeService;->mPulsing:Z
-
-    return p1
-.end method
-
-.method static synthetic access$2100(Lcom/android/systemui/doze/DozeService;)J
+.method static synthetic access$2600(Lcom/android/systemui/doze/DozeService;)J
     .locals 2
 
     iget-wide v0, p0, Lcom/android/systemui/doze/DozeService;->mNotificationPulseTime:J
@@ -304,15 +366,7 @@
     return-wide v0
 .end method
 
-.method static synthetic access$2200(Lcom/android/systemui/doze/DozeService;)Lcom/android/systemui/statusbar/phone/DozeParameters;
-    .locals 1
-
-    iget-object v0, p0, Lcom/android/systemui/doze/DozeService;->mDozeParameters:Lcom/android/systemui/statusbar/phone/DozeParameters;
-
-    return-object v0
-.end method
-
-.method static synthetic access$2300(Lcom/android/systemui/doze/DozeService;)V
+.method static synthetic access$2700(Lcom/android/systemui/doze/DozeService;)V
     .locals 0
 
     invoke-direct {p0}, Lcom/android/systemui/doze/DozeService;->resetNotificationResets()V
@@ -320,7 +374,7 @@
     return-void
 .end method
 
-.method static synthetic access$2400(Lcom/android/systemui/doze/DozeService;)Lcom/android/systemui/doze/DozeService$TriggerSensor;
+.method static synthetic access$2800(Lcom/android/systemui/doze/DozeService;)Lcom/android/systemui/doze/DozeService$TriggerSensor;
     .locals 1
 
     iget-object v0, p0, Lcom/android/systemui/doze/DozeService;->mPickupSensor:Lcom/android/systemui/doze/DozeService$TriggerSensor;
@@ -328,7 +382,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$2500(Lcom/android/systemui/doze/DozeService;)Landroid/os/Handler;
+.method static synthetic access$2900(Lcom/android/systemui/doze/DozeService;)Landroid/os/Handler;
     .locals 1
 
     iget-object v0, p0, Lcom/android/systemui/doze/DozeService;->mHandler:Landroid/os/Handler;
@@ -336,31 +390,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$300(Lcom/android/systemui/doze/DozeService;)Landroid/os/PowerManager$WakeLock;
-    .locals 1
-
-    iget-object v0, p0, Lcom/android/systemui/doze/DozeService;->mWakeLock:Landroid/os/PowerManager$WakeLock;
-
-    return-object v0
-.end method
-
-.method static synthetic access$400(Lcom/android/systemui/doze/DozeService;I)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lcom/android/systemui/doze/DozeService;->continuePulsing(I)V
-
-    return-void
-.end method
-
-.method static synthetic access$500(Lcom/android/systemui/doze/DozeService;)V
-    .locals 0
-
-    invoke-direct {p0}, Lcom/android/systemui/doze/DozeService;->turnDisplayOn()V
-
-    return-void
-.end method
-
-.method static synthetic access$600(Lcom/android/systemui/doze/DozeService;)V
+.method static synthetic access$300(Lcom/android/systemui/doze/DozeService;)V
     .locals 0
 
     invoke-direct {p0}, Lcom/android/systemui/doze/DozeService;->turnDisplayOff()V
@@ -368,18 +398,34 @@
     return-void
 .end method
 
-.method static synthetic access$700()Z
+.method static synthetic access$400(Lcom/android/systemui/doze/DozeService;)Landroid/os/PowerManager$WakeLock;
     .locals 1
 
-    sget-boolean v0, Lcom/android/systemui/doze/DozeService;->DEBUG:Z
+    iget-object v0, p0, Lcom/android/systemui/doze/DozeService;->mWakeLock:Landroid/os/PowerManager$WakeLock;
+
+    return-object v0
+.end method
+
+.method static synthetic access$600(Lcom/android/systemui/doze/DozeService;)Z
+    .locals 1
+
+    iget-boolean v0, p0, Lcom/android/systemui/doze/DozeService;->mUseAccelerometer:Z
 
     return v0
 .end method
 
-.method static synthetic access$800(Lcom/android/systemui/doze/DozeService;)Ljava/lang/String;
+.method static synthetic access$700(Lcom/android/systemui/doze/DozeService;)Lcom/android/systemui/statusbar/phone/DozeParameters;
     .locals 1
 
-    iget-object v0, p0, Lcom/android/systemui/doze/DozeService;->mTag:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/systemui/doze/DozeService;->mDozeParameters:Lcom/android/systemui/statusbar/phone/DozeParameters;
+
+    return-object v0
+.end method
+
+.method static synthetic access$800(Lcom/android/systemui/doze/DozeService;)Lcom/android/systemui/doze/ShakeSensorManager;
+    .locals 1
+
+    iget-object v0, p0, Lcom/android/systemui/doze/DozeService;->mShakeSensorManager:Lcom/android/systemui/doze/ShakeSensorManager;
 
     return-object v0
 .end method
@@ -387,7 +433,7 @@
 .method static synthetic access$900(Lcom/android/systemui/doze/DozeService;I)V
     .locals 0
 
-    invoke-direct {p0, p1}, Lcom/android/systemui/doze/DozeService;->requestPulse(I)V
+    invoke-direct {p0, p1}, Lcom/android/systemui/doze/DozeService;->continuePulsing(I)V
 
     return-void
 .end method
@@ -397,9 +443,9 @@
 
     iget-object v0, p0, Lcom/android/systemui/doze/DozeService;->mHost:Lcom/android/systemui/doze/DozeHost;
 
-    new-instance v1, Lcom/android/systemui/doze/DozeService$3;
+    new-instance v1, Lcom/android/systemui/doze/DozeService$4;
 
-    invoke-direct {v1, p0}, Lcom/android/systemui/doze/DozeService$3;-><init>(Lcom/android/systemui/doze/DozeService;)V
+    invoke-direct {v1, p0}, Lcom/android/systemui/doze/DozeService$4;-><init>(Lcom/android/systemui/doze/DozeService;)V
 
     invoke-interface {v0, v1, p1}, Lcom/android/systemui/doze/DozeHost;->pulseWhileDozing(Lcom/android/systemui/doze/DozeHost$PulseCallback;I)V
 
@@ -415,6 +461,18 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
+    invoke-direct {p0}, Lcom/android/systemui/doze/DozeService;->finishNow()V
+
+    return-void
+.end method
+
+.method private finishNow()V
+    .locals 1
+
+    const/4 v0, 0x0
+
+    invoke-direct {p0, v0}, Lcom/android/systemui/doze/DozeService;->listenForSignalsSensor(Z)V
+
     invoke-virtual {p0}, Lcom/android/systemui/doze/DozeService;->finish()V
 
     return-void
@@ -429,7 +487,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    invoke-virtual {p0}, Lcom/android/systemui/doze/DozeService;->finish()V
+    invoke-direct {p0}, Lcom/android/systemui/doze/DozeService;->finishNow()V
 
     return-void
 .end method
@@ -481,6 +539,52 @@
     const/4 v1, 0x0
 
     iput-boolean v1, p0, Lcom/android/systemui/doze/DozeService;->mBroadcastReceiverRegistered:Z
+
+    goto :goto_0
+.end method
+
+.method private listenForHalfMode(Z)V
+    .locals 2
+
+    iget-boolean v0, p0, Lcom/android/systemui/doze/DozeService;->mUseAccelerometer:Z
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/android/systemui/doze/DozeService;->mDozeParameters:Lcom/android/systemui/statusbar/phone/DozeParameters;
+
+    invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/DozeParameters;->getFullMode()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    :cond_0
+    :goto_0
+    return-void
+
+    :cond_1
+    if-eqz p1, :cond_2
+
+    iget-object v0, p0, Lcom/android/systemui/doze/DozeService;->mDozeParameters:Lcom/android/systemui/statusbar/phone/DozeParameters;
+
+    invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/DozeParameters;->getHalfMode()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    iget-object v0, p0, Lcom/android/systemui/doze/DozeService;->mProximitySensorManager:Lcom/android/systemui/doze/ProximitySensorManager;
+
+    invoke-virtual {v0}, Lcom/android/systemui/doze/ProximitySensorManager;->enable()V
+
+    goto :goto_0
+
+    :cond_2
+    iget-object v0, p0, Lcom/android/systemui/doze/DozeService;->mProximitySensorManager:Lcom/android/systemui/doze/ProximitySensorManager;
+
+    const/4 v1, 0x1
+
+    invoke-virtual {v0, v1}, Lcom/android/systemui/doze/ProximitySensorManager;->disable(Z)V
 
     goto :goto_0
 .end method
@@ -556,6 +660,10 @@
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     :cond_0
+    iget-boolean v0, p0, Lcom/android/systemui/doze/DozeService;->mUseAccelerometer:Z
+
+    if-nez v0, :cond_1
+
     iget-object v0, p0, Lcom/android/systemui/doze/DozeService;->mSigMotionSensor:Lcom/android/systemui/doze/DozeService$TriggerSensor;
 
     invoke-virtual {v0, p1}, Lcom/android/systemui/doze/DozeService$TriggerSensor;->setListening(Z)V
@@ -564,11 +672,51 @@
 
     invoke-virtual {v0, p1}, Lcom/android/systemui/doze/DozeService$TriggerSensor;->setListening(Z)V
 
+    :goto_0
     invoke-direct {p0, p1}, Lcom/android/systemui/doze/DozeService;->listenForBroadcasts(Z)V
 
     invoke-direct {p0, p1}, Lcom/android/systemui/doze/DozeService;->listenForNotifications(Z)V
 
     return-void
+
+    :cond_1
+    invoke-direct {p0, p1}, Lcom/android/systemui/doze/DozeService;->listenForSignalsSensor(Z)V
+
+    goto :goto_0
+.end method
+
+.method private listenForSignalsSensor(Z)V
+    .locals 2
+
+    if-eqz p1, :cond_0
+
+    iget-object v0, p0, Lcom/android/systemui/doze/DozeService;->mDozeParameters:Lcom/android/systemui/statusbar/phone/DozeParameters;
+
+    invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/DozeParameters;->getFullMode()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/android/systemui/doze/DozeService;->mProximitySensorManager:Lcom/android/systemui/doze/ProximitySensorManager;
+
+    invoke-virtual {v0}, Lcom/android/systemui/doze/ProximitySensorManager;->enable()V
+
+    :goto_0
+    return-void
+
+    :cond_0
+    iget-object v0, p0, Lcom/android/systemui/doze/DozeService;->mProximitySensorManager:Lcom/android/systemui/doze/ProximitySensorManager;
+
+    const/4 v1, 0x1
+
+    invoke-virtual {v0, v1}, Lcom/android/systemui/doze/ProximitySensorManager;->disable(Z)V
+
+    iget-object v0, p0, Lcom/android/systemui/doze/DozeService;->mShakeSensorManager:Lcom/android/systemui/doze/ShakeSensorManager;
+
+    invoke-virtual {v0}, Lcom/android/systemui/doze/ShakeSensorManager;->disable()V
+
+    goto :goto_0
 .end method
 
 .method private notificationPulseIntent(J)Landroid/app/PendingIntent;
@@ -620,15 +768,15 @@
 
     iget-object v0, p0, Lcom/android/systemui/doze/DozeService;->mHost:Lcom/android/systemui/doze/DozeHost;
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_1
 
     iget-boolean v0, p0, Lcom/android/systemui/doze/DozeService;->mDreaming:Z
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_1
 
     iget-boolean v0, p0, Lcom/android/systemui/doze/DozeService;->mPulsing:Z
 
-    if-nez v0, :cond_0
+    if-nez v0, :cond_1
 
     iget-object v0, p0, Lcom/android/systemui/doze/DozeService;->mWakeLock:Landroid/os/PowerManager$WakeLock;
 
@@ -642,22 +790,25 @@
 
     move-result v0
 
-    if-nez v0, :cond_1
+    if-eqz v0, :cond_0
 
-    invoke-direct {p0, p1}, Lcom/android/systemui/doze/DozeService;->continuePulsing(I)V
+    if-nez p1, :cond_2
 
     :cond_0
+    invoke-direct {p0, p1}, Lcom/android/systemui/doze/DozeService;->continuePulsing(I)V
+
+    :cond_1
     :goto_0
     return-void
 
-    :cond_1
+    :cond_2
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v2
 
     const/4 v0, 0x3
 
-    if-ne p1, v0, :cond_3
+    if-ne p1, v0, :cond_4
 
     iget-object v0, p0, Lcom/android/systemui/doze/DozeService;->mDozeParameters:Lcom/android/systemui/statusbar/phone/DozeParameters;
 
@@ -665,30 +816,71 @@
 
     move-result v0
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_4
 
     :goto_1
-    if-eqz v5, :cond_2
+    if-eqz v5, :cond_3
 
     invoke-direct {p0, p1}, Lcom/android/systemui/doze/DozeService;->continuePulsing(I)V
 
-    :cond_2
-    new-instance v0, Lcom/android/systemui/doze/DozeService$2;
+    :cond_3
+    new-instance v0, Lcom/android/systemui/doze/DozeService$3;
 
     move-object v1, p0
 
     move v4, p1
 
-    invoke-direct/range {v0 .. v5}, Lcom/android/systemui/doze/DozeService$2;-><init>(Lcom/android/systemui/doze/DozeService;JIZ)V
+    invoke-direct/range {v0 .. v5}, Lcom/android/systemui/doze/DozeService$3;-><init>(Lcom/android/systemui/doze/DozeService;JIZ)V
 
-    invoke-virtual {v0}, Lcom/android/systemui/doze/DozeService$2;->check()V
+    invoke-virtual {v0}, Lcom/android/systemui/doze/DozeService$3;->check()V
 
     goto :goto_0
 
-    :cond_3
+    :cond_4
     const/4 v5, 0x0
 
     goto :goto_1
+.end method
+
+.method private requestPulseFromAccelerometer()V
+    .locals 3
+
+    iget-object v0, p0, Lcom/android/systemui/doze/DozeService;->mHost:Lcom/android/systemui/doze/DozeHost;
+
+    if-eqz v0, :cond_0
+
+    iget-boolean v0, p0, Lcom/android/systemui/doze/DozeService;->mDreaming:Z
+
+    if-eqz v0, :cond_0
+
+    iget-boolean v0, p0, Lcom/android/systemui/doze/DozeService;->mPulsing:Z
+
+    if-nez v0, :cond_0
+
+    iget-boolean v0, p0, Lcom/android/systemui/doze/DozeService;->mIsFar:Z
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/android/systemui/doze/DozeService;->mWakeLock:Landroid/os/PowerManager$WakeLock;
+
+    invoke-virtual {v0}, Landroid/os/PowerManager$WakeLock;->acquire()V
+
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/android/systemui/doze/DozeService;->mPulsing:Z
+
+    iget-object v0, p0, Lcom/android/systemui/doze/DozeService;->mHost:Lcom/android/systemui/doze/DozeHost;
+
+    new-instance v1, Lcom/android/systemui/doze/DozeService$1;
+
+    invoke-direct {v1, p0}, Lcom/android/systemui/doze/DozeService$1;-><init>(Lcom/android/systemui/doze/DozeService;)V
+
+    const/4 v2, 0x0
+
+    invoke-interface {v0, v1, v2}, Lcom/android/systemui/doze/DozeHost;->pulseWhileDozing(Lcom/android/systemui/doze/DozeHost$PulseCallback;I)V
+
+    :cond_0
+    return-void
 .end method
 
 .method private rescheduleNotificationPulse(Z)V
@@ -942,6 +1134,61 @@
     iput v0, p0, Lcom/android/systemui/doze/DozeService;->mScheduleResetsRemaining:I
 
     return-void
+.end method
+
+.method private startPulsingFromSensor()V
+    .locals 8
+
+    invoke-direct {p0}, Lcom/android/systemui/doze/DozeService;->requestPulseFromAccelerometer()V
+
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v4
+
+    iget-wide v6, p0, Lcom/android/systemui/doze/DozeService;->mNotificationPulseTime:J
+
+    sub-long v0, v4, v6
+
+    iget-object v3, p0, Lcom/android/systemui/doze/DozeService;->mDozeParameters:Lcom/android/systemui/statusbar/phone/DozeParameters;
+
+    invoke-virtual {v3}, Lcom/android/systemui/statusbar/phone/DozeParameters;->getPickupVibrationThreshold()I
+
+    move-result v3
+
+    int-to-long v4, v3
+
+    cmp-long v3, v0, v4
+
+    if-gez v3, :cond_1
+
+    const/4 v2, 0x1
+
+    :goto_0
+    if-eqz v2, :cond_2
+
+    sget-boolean v3, Lcom/android/systemui/doze/DozeService;->DEBUG:Z
+
+    if-eqz v3, :cond_0
+
+    iget-object v3, p0, Lcom/android/systemui/doze/DozeService;->mTag:Ljava/lang/String;
+
+    const-string v4, "Not resetting schedule, recent notification"
+
+    invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_0
+    :goto_1
+    return-void
+
+    :cond_1
+    const/4 v2, 0x0
+
+    goto :goto_0
+
+    :cond_2
+    invoke-direct {p0}, Lcom/android/systemui/doze/DozeService;->resetNotificationResets()V
+
+    goto :goto_1
 .end method
 
 .method private static triggerEventToString(Landroid/hardware/TriggerEvent;)Ljava/lang/String;
@@ -1486,6 +1733,35 @@
 
     iput-object v0, p0, Lcom/android/systemui/doze/DozeService;->mPickupSensor:Lcom/android/systemui/doze/DozeService$TriggerSensor;
 
+    iget-object v0, p0, Lcom/android/systemui/doze/DozeService;->mDozeParameters:Lcom/android/systemui/statusbar/phone/DozeParameters;
+
+    invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/DozeParameters;->setUsingAccelerometerAsSensorPickUp()Z
+
+    move-result v0
+
+    iput-boolean v0, p0, Lcom/android/systemui/doze/DozeService;->mUseAccelerometer:Z
+
+    iget-boolean v0, p0, Lcom/android/systemui/doze/DozeService;->mUseAccelerometer:Z
+
+    if-eqz v0, :cond_3
+
+    new-instance v0, Lcom/android/systemui/doze/ProximitySensorManager;
+
+    iget-object v1, p0, Lcom/android/systemui/doze/DozeService;->mContext:Landroid/content/Context;
+
+    invoke-direct {v0, v1, p0}, Lcom/android/systemui/doze/ProximitySensorManager;-><init>(Landroid/content/Context;Lcom/android/systemui/doze/ProximitySensorManager$ProximityListener;)V
+
+    iput-object v0, p0, Lcom/android/systemui/doze/DozeService;->mProximitySensorManager:Lcom/android/systemui/doze/ProximitySensorManager;
+
+    new-instance v0, Lcom/android/systemui/doze/ShakeSensorManager;
+
+    iget-object v1, p0, Lcom/android/systemui/doze/DozeService;->mContext:Landroid/content/Context;
+
+    invoke-direct {v0, v1, p0}, Lcom/android/systemui/doze/ShakeSensorManager;-><init>(Landroid/content/Context;Lcom/android/systemui/doze/ShakeSensorManager$ShakeListener;)V
+
+    iput-object v0, p0, Lcom/android/systemui/doze/DozeService;->mShakeSensorManager:Lcom/android/systemui/doze/ShakeSensorManager;
+
+    :cond_3
     iget-object v0, p0, Lcom/android/systemui/doze/DozeService;->mContext:Landroid/content/Context;
 
     const-string v1, "power"
@@ -1562,7 +1838,7 @@
 
     if-nez v0, :cond_0
 
-    invoke-virtual {p0}, Lcom/android/systemui/doze/DozeService;->finish()V
+    invoke-direct {p0}, Lcom/android/systemui/doze/DozeService;->finishNow()V
 
     :goto_0
     return-void
@@ -1687,9 +1963,9 @@
 
     iget-object v0, p0, Lcom/android/systemui/doze/DozeService;->mHost:Lcom/android/systemui/doze/DozeHost;
 
-    new-instance v1, Lcom/android/systemui/doze/DozeService$1;
+    new-instance v1, Lcom/android/systemui/doze/DozeService$2;
 
-    invoke-direct {v1, p0}, Lcom/android/systemui/doze/DozeService$1;-><init>(Lcom/android/systemui/doze/DozeService;)V
+    invoke-direct {v1, p0}, Lcom/android/systemui/doze/DozeService$2;-><init>(Lcom/android/systemui/doze/DozeService;)V
 
     invoke-interface {v0, v1}, Lcom/android/systemui/doze/DozeHost;->startDozing(Ljava/lang/Runnable;)V
 
@@ -1751,4 +2027,138 @@
     invoke-interface {v0}, Lcom/android/systemui/doze/DozeHost;->stopDozing()V
 
     goto :goto_0
+.end method
+
+.method public declared-synchronized onFar()V
+    .locals 2
+
+    monitor-enter p0
+
+    :try_start_0
+    iget-boolean v0, p0, Lcom/android/systemui/doze/DozeService;->mIsFar:Z
+
+    if-nez v0, :cond_1
+
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/android/systemui/doze/DozeService;->mIsFar:Z
+
+    iget-object v0, p0, Lcom/android/systemui/doze/DozeService;->mDozeParameters:Lcom/android/systemui/statusbar/phone/DozeParameters;
+
+    invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/DozeParameters;->getShakeMode()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/android/systemui/doze/DozeService;->mShakeSensorManager:Lcom/android/systemui/doze/ShakeSensorManager;
+
+    iget-object v1, p0, Lcom/android/systemui/doze/DozeService;->mDozeParameters:Lcom/android/systemui/statusbar/phone/DozeParameters;
+
+    invoke-virtual {v1}, Lcom/android/systemui/statusbar/phone/DozeParameters;->getShakeAccelerometerThreshold()I
+
+    move-result v1
+
+    int-to-float v1, v1
+
+    invoke-virtual {v0, v1}, Lcom/android/systemui/doze/ShakeSensorManager;->enable(F)V
+
+    :cond_0
+    invoke-direct {p0}, Lcom/android/systemui/doze/DozeService;->startPulsingFromSensor()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    :cond_1
+    monitor-exit p0
+
+    return-void
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
+.method public declared-synchronized onNear()V
+    .locals 1
+
+    monitor-enter p0
+
+    :try_start_0
+    iget-boolean v0, p0, Lcom/android/systemui/doze/DozeService;->mIsFar:Z
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lcom/android/systemui/doze/DozeService;->mIsFar:Z
+
+    iget-object v0, p0, Lcom/android/systemui/doze/DozeService;->mDozeParameters:Lcom/android/systemui/statusbar/phone/DozeParameters;
+
+    invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/DozeParameters;->getShakeMode()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/android/systemui/doze/DozeService;->mShakeSensorManager:Lcom/android/systemui/doze/ShakeSensorManager;
+
+    invoke-virtual {v0}, Lcom/android/systemui/doze/ShakeSensorManager;->disable()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    :cond_0
+    monitor-exit p0
+
+    return-void
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
+.method public declared-synchronized onShake()V
+    .locals 1
+
+    monitor-enter p0
+
+    :try_start_0
+    iget-object v0, p0, Lcom/android/systemui/doze/DozeService;->mDozeParameters:Lcom/android/systemui/statusbar/phone/DozeParameters;
+
+    invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/DozeParameters;->getPocketMode()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-direct {p0}, Lcom/android/systemui/doze/DozeService;->startPulsingFromSensor()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    :goto_0
+    monitor-exit p0
+
+    return-void
+
+    :cond_0
+    const/4 v0, 0x0
+
+    :try_start_1
+    invoke-direct {p0, v0}, Lcom/android/systemui/doze/DozeService;->requestPulse(I)V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
 .end method

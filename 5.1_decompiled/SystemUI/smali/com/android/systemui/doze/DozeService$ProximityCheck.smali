@@ -45,7 +45,7 @@
     iget-object v1, p0, Lcom/android/systemui/doze/DozeService$ProximityCheck;->this$0:Lcom/android/systemui/doze/DozeService;
 
     # getter for: Lcom/android/systemui/doze/DozeService;->mTag:Ljava/lang/String;
-    invoke-static {v1}, Lcom/android/systemui/doze/DozeService;->access$800(Lcom/android/systemui/doze/DozeService;)Ljava/lang/String;
+    invoke-static {v1}, Lcom/android/systemui/doze/DozeService;->access$1200(Lcom/android/systemui/doze/DozeService;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -91,12 +91,12 @@
     :cond_0
     iget-boolean v0, p0, Lcom/android/systemui/doze/DozeService$ProximityCheck;->mRegistered:Z
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_2
 
     iget-object v0, p0, Lcom/android/systemui/doze/DozeService$ProximityCheck;->this$0:Lcom/android/systemui/doze/DozeService;
 
     # getter for: Lcom/android/systemui/doze/DozeService;->mHandler:Landroid/os/Handler;
-    invoke-static {v0}, Lcom/android/systemui/doze/DozeService;->access$2500(Lcom/android/systemui/doze/DozeService;)Landroid/os/Handler;
+    invoke-static {v0}, Lcom/android/systemui/doze/DozeService;->access$2900(Lcom/android/systemui/doze/DozeService;)Landroid/os/Handler;
 
     move-result-object v0
 
@@ -105,7 +105,7 @@
     iget-object v0, p0, Lcom/android/systemui/doze/DozeService$ProximityCheck;->this$0:Lcom/android/systemui/doze/DozeService;
 
     # getter for: Lcom/android/systemui/doze/DozeService;->mSensors:Landroid/hardware/SensorManager;
-    invoke-static {v0}, Lcom/android/systemui/doze/DozeService;->access$1800(Lcom/android/systemui/doze/DozeService;)Landroid/hardware/SensorManager;
+    invoke-static {v0}, Lcom/android/systemui/doze/DozeService;->access$2400(Lcom/android/systemui/doze/DozeService;)Landroid/hardware/SensorManager;
 
     move-result-object v0
 
@@ -113,16 +113,26 @@
 
     iget-object v0, p0, Lcom/android/systemui/doze/DozeService$ProximityCheck;->this$0:Lcom/android/systemui/doze/DozeService;
 
+    # getter for: Lcom/android/systemui/doze/DozeService;->mUseAccelerometer:Z
+    invoke-static {v0}, Lcom/android/systemui/doze/DozeService;->access$600(Lcom/android/systemui/doze/DozeService;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    iget-object v0, p0, Lcom/android/systemui/doze/DozeService$ProximityCheck;->this$0:Lcom/android/systemui/doze/DozeService;
+
     # getter for: Lcom/android/systemui/doze/DozeService;->mPickupSensor:Lcom/android/systemui/doze/DozeService$TriggerSensor;
-    invoke-static {v0}, Lcom/android/systemui/doze/DozeService;->access$2400(Lcom/android/systemui/doze/DozeService;)Lcom/android/systemui/doze/DozeService$TriggerSensor;
+    invoke-static {v0}, Lcom/android/systemui/doze/DozeService;->access$2800(Lcom/android/systemui/doze/DozeService;)Lcom/android/systemui/doze/DozeService$TriggerSensor;
 
     move-result-object v0
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/doze/DozeService$TriggerSensor;->setDisabled(Z)V
 
+    :cond_1
     iput-boolean v1, p0, Lcom/android/systemui/doze/DozeService$ProximityCheck;->mRegistered:Z
 
-    :cond_1
+    :cond_2
     invoke-virtual {p0, p1}, Lcom/android/systemui/doze/DozeService$ProximityCheck;->onProximityResult(I)V
 
     const/4 v0, 0x1
@@ -157,7 +167,7 @@
     iget-object v0, p0, Lcom/android/systemui/doze/DozeService$ProximityCheck;->this$0:Lcom/android/systemui/doze/DozeService;
 
     # getter for: Lcom/android/systemui/doze/DozeService;->mSensors:Landroid/hardware/SensorManager;
-    invoke-static {v0}, Lcom/android/systemui/doze/DozeService;->access$1800(Lcom/android/systemui/doze/DozeService;)Landroid/hardware/SensorManager;
+    invoke-static {v0}, Lcom/android/systemui/doze/DozeService;->access$2400(Lcom/android/systemui/doze/DozeService;)Landroid/hardware/SensorManager;
 
     move-result-object v0
 
@@ -170,7 +180,7 @@
     if-nez v2, :cond_3
 
     # getter for: Lcom/android/systemui/doze/DozeService;->DEBUG:Z
-    invoke-static {}, Lcom/android/systemui/doze/DozeService;->access$700()Z
+    invoke-static {}, Lcom/android/systemui/doze/DozeService;->access$1100()Z
 
     move-result v0
 
@@ -190,13 +200,23 @@
     :cond_3
     iget-object v0, p0, Lcom/android/systemui/doze/DozeService$ProximityCheck;->this$0:Lcom/android/systemui/doze/DozeService;
 
+    # getter for: Lcom/android/systemui/doze/DozeService;->mUseAccelerometer:Z
+    invoke-static {v0}, Lcom/android/systemui/doze/DozeService;->access$600(Lcom/android/systemui/doze/DozeService;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_4
+
+    iget-object v0, p0, Lcom/android/systemui/doze/DozeService$ProximityCheck;->this$0:Lcom/android/systemui/doze/DozeService;
+
     # getter for: Lcom/android/systemui/doze/DozeService;->mPickupSensor:Lcom/android/systemui/doze/DozeService$TriggerSensor;
-    invoke-static {v0}, Lcom/android/systemui/doze/DozeService;->access$2400(Lcom/android/systemui/doze/DozeService;)Lcom/android/systemui/doze/DozeService$TriggerSensor;
+    invoke-static {v0}, Lcom/android/systemui/doze/DozeService;->access$2800(Lcom/android/systemui/doze/DozeService;)Lcom/android/systemui/doze/DozeService$TriggerSensor;
 
     move-result-object v0
 
     invoke-virtual {v0, v6}, Lcom/android/systemui/doze/DozeService$TriggerSensor;->setDisabled(Z)V
 
+    :cond_4
     invoke-virtual {v2}, Landroid/hardware/Sensor;->getMaximumRange()F
 
     move-result v0
@@ -206,7 +226,7 @@
     iget-object v0, p0, Lcom/android/systemui/doze/DozeService$ProximityCheck;->this$0:Lcom/android/systemui/doze/DozeService;
 
     # getter for: Lcom/android/systemui/doze/DozeService;->mSensors:Landroid/hardware/SensorManager;
-    invoke-static {v0}, Lcom/android/systemui/doze/DozeService;->access$1800(Lcom/android/systemui/doze/DozeService;)Landroid/hardware/SensorManager;
+    invoke-static {v0}, Lcom/android/systemui/doze/DozeService;->access$2400(Lcom/android/systemui/doze/DozeService;)Landroid/hardware/SensorManager;
 
     move-result-object v0
 
@@ -215,7 +235,7 @@
     iget-object v1, p0, Lcom/android/systemui/doze/DozeService$ProximityCheck;->this$0:Lcom/android/systemui/doze/DozeService;
 
     # getter for: Lcom/android/systemui/doze/DozeService;->mHandler:Landroid/os/Handler;
-    invoke-static {v1}, Lcom/android/systemui/doze/DozeService;->access$2500(Lcom/android/systemui/doze/DozeService;)Landroid/os/Handler;
+    invoke-static {v1}, Lcom/android/systemui/doze/DozeService;->access$2900(Lcom/android/systemui/doze/DozeService;)Landroid/os/Handler;
 
     move-result-object v5
 
@@ -226,7 +246,7 @@
     iget-object v0, p0, Lcom/android/systemui/doze/DozeService$ProximityCheck;->this$0:Lcom/android/systemui/doze/DozeService;
 
     # getter for: Lcom/android/systemui/doze/DozeService;->mHandler:Landroid/os/Handler;
-    invoke-static {v0}, Lcom/android/systemui/doze/DozeService;->access$2500(Lcom/android/systemui/doze/DozeService;)Landroid/os/Handler;
+    invoke-static {v0}, Lcom/android/systemui/doze/DozeService;->access$2900(Lcom/android/systemui/doze/DozeService;)Landroid/os/Handler;
 
     move-result-object v0
 
@@ -262,7 +282,7 @@
     if-nez v2, :cond_1
 
     # getter for: Lcom/android/systemui/doze/DozeService;->DEBUG:Z
-    invoke-static {}, Lcom/android/systemui/doze/DozeService;->access$700()Z
+    invoke-static {}, Lcom/android/systemui/doze/DozeService;->access$1100()Z
 
     move-result v1
 
@@ -282,7 +302,7 @@
 
     :cond_1
     # getter for: Lcom/android/systemui/doze/DozeService;->DEBUG:Z
-    invoke-static {}, Lcom/android/systemui/doze/DozeService;->access$700()Z
+    invoke-static {}, Lcom/android/systemui/doze/DozeService;->access$1100()Z
 
     move-result v2
 
@@ -357,7 +377,7 @@
     .locals 2
 
     # getter for: Lcom/android/systemui/doze/DozeService;->DEBUG:Z
-    invoke-static {}, Lcom/android/systemui/doze/DozeService;->access$700()Z
+    invoke-static {}, Lcom/android/systemui/doze/DozeService;->access$1100()Z
 
     move-result v0
 

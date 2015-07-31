@@ -914,18 +914,6 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    const-wide/16 v0, 0x3
-
-    :try_start_2
-    invoke-static {v0, v1}, Ljava/lang/Thread;->sleep(J)V
-    :try_end_2
-    .catch Ljava/lang/InterruptedException; {:try_start_2 .. :try_end_2} :catch_0
-
-    goto :goto_0
-
-    :catch_0
-    move-exception v0
-
     goto :goto_0
 .end method
 

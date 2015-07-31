@@ -62,7 +62,7 @@
 .end method
 
 .method protected varargs doInBackground([Ljava/lang/Void;)Ljava/lang/Void;
-    .locals 22
+    .locals 23
 
     invoke-static {}, Landroid/os/Process;->myTid()I
 
@@ -70,7 +70,7 @@
 
     invoke-static {v1}, Landroid/os/Process;->getThreadPriority(I)I
 
-    move-result v17
+    move-result v18
 
     const/16 v1, 0xa
 
@@ -87,7 +87,7 @@
 
     invoke-virtual {v1}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
-    move-result-object v18
+    move-result-object v19
 
     move-object/from16 v0, p0
 
@@ -108,15 +108,15 @@
 
     const/16 v1, 0x15
 
-    const/4 v2, 0x6
+    const/16 v2, 0x17
 
     invoke-virtual {v8, v1, v2}, Landroid/app/ActivityManager;->getRecentTasks(II)Ljava/util/List;
 
-    move-result-object v20
+    move-result-object v21
 
-    invoke-interface/range {v20 .. v20}, Ljava/util/List;->size()I
+    invoke-interface/range {v21 .. v21}, Ljava/util/List;->size()I
 
-    move-result v16
+    move-result v17
 
     new-instance v1, Landroid/content/Intent;
 
@@ -132,7 +132,7 @@
 
     const/4 v2, 0x0
 
-    move-object/from16 v0, v18
+    move-object/from16 v0, v19
 
     invoke-virtual {v1, v0, v2}, Landroid/content/Intent;->resolveActivityInfo(Landroid/content/pm/PackageManager;I)Landroid/content/pm/ActivityInfo;
 
@@ -140,9 +140,11 @@
 
     const/4 v10, 0x1
 
-    new-instance v21, Ljava/util/ArrayList;
+    const/16 v16, 0x1
 
-    invoke-direct/range {v21 .. v21}, Ljava/util/ArrayList;-><init>()V
+    new-instance v22, Ljava/util/ArrayList;
+
+    invoke-direct/range {v22 .. v22}, Ljava/util/ArrayList;-><init>()V
 
     const/4 v9, 0x0
 
@@ -151,7 +153,7 @@
     const/4 v13, 0x0
 
     :goto_0
-    move/from16 v0, v16
+    move/from16 v0, v17
 
     if-ge v12, v0, :cond_0
 
@@ -178,7 +180,7 @@
 
     const/4 v2, 0x0
 
-    aput-object v21, v1, v2
+    aput-object v22, v1, v2
 
     move-object/from16 v0, p0
 
@@ -217,36 +219,36 @@
     :try_end_0
     .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
 
-    invoke-static/range {v17 .. v17}, Landroid/os/Process;->setThreadPriority(I)V
+    invoke-static/range {v18 .. v18}, Landroid/os/Process;->setThreadPriority(I)V
 
     const/4 v1, 0x0
 
     return-object v1
 
     :cond_2
-    move-object/from16 v0, v20
+    move-object/from16 v0, v21
 
     invoke-interface {v0, v12}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    move-result-object v19
+    move-result-object v20
 
-    check-cast v19, Landroid/app/ActivityManager$RecentTaskInfo;
+    check-cast v20, Landroid/app/ActivityManager$RecentTaskInfo;
 
     new-instance v14, Landroid/content/Intent;
 
-    move-object/from16 v0, v19
+    move-object/from16 v0, v20
 
     iget-object v1, v0, Landroid/app/ActivityManager$RecentTaskInfo;->baseIntent:Landroid/content/Intent;
 
     invoke-direct {v14, v1}, Landroid/content/Intent;-><init>(Landroid/content/Intent;)V
 
-    move-object/from16 v0, v19
+    move-object/from16 v0, v20
 
     iget-object v1, v0, Landroid/app/ActivityManager$RecentTaskInfo;->origActivity:Landroid/content/ComponentName;
 
     if-eqz v1, :cond_3
 
-    move-object/from16 v0, v19
+    move-object/from16 v0, v20
 
     iget-object v1, v0, Landroid/app/ActivityManager$RecentTaskInfo;->origActivity:Landroid/content/ComponentName;
 
@@ -267,6 +269,8 @@
     move-result v1
 
     if-eqz v1, :cond_5
+
+    const/16 v16, 0x0
 
     :cond_4
     :goto_2
@@ -302,31 +306,50 @@
 
     if-nez v1, :cond_4
 
+    if-nez v16, :cond_6
+
+    move-object/from16 v0, v20
+
+    iget-object v1, v0, Landroid/app/ActivityManager$RecentTaskInfo;->baseIntent:Landroid/content/Intent;
+
+    invoke-virtual {v1}, Landroid/content/Intent;->getFlags()I
+
+    move-result v1
+
+    const/high16 v2, 0x800000
+
+    and-int/2addr v1, v2
+
+    if-nez v1, :cond_4
+
+    :cond_6
+    const/16 v16, 0x0
+
     move-object/from16 v0, p0
 
     iget-object v1, v0, Lcom/android/systemui/recent/RecentTasksLoader$3;->this$0:Lcom/android/systemui/recent/RecentTasksLoader;
 
-    move-object/from16 v0, v19
+    move-object/from16 v0, v20
 
     iget v2, v0, Landroid/app/ActivityManager$RecentTaskInfo;->id:I
 
-    move-object/from16 v0, v19
+    move-object/from16 v0, v20
 
     iget v3, v0, Landroid/app/ActivityManager$RecentTaskInfo;->persistentId:I
 
-    move-object/from16 v0, v19
+    move-object/from16 v0, v20
 
     iget-object v4, v0, Landroid/app/ActivityManager$RecentTaskInfo;->baseIntent:Landroid/content/Intent;
 
-    move-object/from16 v0, v19
+    move-object/from16 v0, v20
 
     iget-object v5, v0, Landroid/app/ActivityManager$RecentTaskInfo;->origActivity:Landroid/content/ComponentName;
 
-    move-object/from16 v0, v19
+    move-object/from16 v0, v20
 
     iget-object v6, v0, Landroid/app/ActivityManager$RecentTaskInfo;->description:Ljava/lang/CharSequence;
 
-    move-object/from16 v0, v19
+    move-object/from16 v0, v20
 
     iget v7, v0, Landroid/app/ActivityManager$RecentTaskInfo;->userId:I
 
@@ -346,13 +369,13 @@
     :try_end_1
     .catch Ljava/lang/InterruptedException; {:try_start_1 .. :try_end_1} :catch_1
 
-    move-object/from16 v0, v21
+    move-object/from16 v0, v22
 
     invoke-virtual {v0, v15}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    if-eqz v10, :cond_6
+    if-eqz v10, :cond_7
 
-    invoke-virtual/range {v21 .. v21}, Ljava/util/ArrayList;->size()I
+    invoke-virtual/range {v22 .. v22}, Ljava/util/ArrayList;->size()I
 
     move-result v1
 
@@ -365,7 +388,7 @@
 
     move-result v2
 
-    if-ne v1, v2, :cond_6
+    if-ne v1, v2, :cond_7
 
     const/4 v1, 0x1
 
@@ -373,19 +396,19 @@
 
     const/4 v2, 0x0
 
-    aput-object v21, v1, v2
+    aput-object v22, v1, v2
 
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/recent/RecentTasksLoader$3;->publishProgress([Ljava/lang/Object;)V
 
-    new-instance v21, Ljava/util/ArrayList;
+    new-instance v22, Ljava/util/ArrayList;
 
-    invoke-direct/range {v21 .. v21}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct/range {v22 .. v22}, Ljava/util/ArrayList;-><init>()V
 
     const/4 v10, 0x0
 
-    :cond_6
+    :cond_7
     add-int/lit8 v13, v13, 0x1
 
     goto :goto_2
