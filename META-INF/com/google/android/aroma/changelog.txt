@@ -1,5 +1,10 @@
 <b>8-3-2015</b>
 <b>*Updates</b>
+CM apps
+updater script
+
+<b>8-3-2015</b>
+<b>*Updates</b>
 sepolicy permissive fixed
 Ambient display, still a w.i.p but it works
 Recents updated with Revolution Remix, still blinks when returning home for some reason 

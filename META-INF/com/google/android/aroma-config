@@ -409,10 +409,14 @@ if prop("type.prop","selected")=="2"||prop("type.prop","selected")=="3" then
       
       #-- Will be saved in /tmp/aroma/other
         "audio.prop",
-										  
-	    "Volume Boost",           "System wide volume boost",                  0,      #-- item.0.1
-        "CyanogenMod Ringtones",  "15.7Mb ringtones, notifications, alarms",   0,      #-- item.0.2
-		"Viper4Android",          "",                                          0       #-- item.0.3
+		
+		"Audio Mods",  "",                                                     2,	   #-- Group				  
+	    "Volume Boost",           "System wide volume boost",                  0,      #-- item.1.1
+        "CyanogenMod Ringtones",  "15.7Mb ringtones, notifications, alarms",   0,      #-- item.1.2
+		
+		"Viper",  "",                                                                            2, #-- Group
+		"Viper4Android",        "Eq and audio processer to fine tune your audio experience",     0, #-- item.2.1
+		"Clear defaults",  "Are you switching from Viper4Androdid back to AudioFX or MusicFX?",  0  #-- item.2.2
     
 	);
     write("/data/media/0/aroma/Audio.prop", readtmpfile("audio.prop"));
