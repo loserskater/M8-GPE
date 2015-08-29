@@ -1,5 +1,6 @@
-<b>8-3-2015</b>
+<b>0-0-2015</b>
 <b>*Updates</b>
+Fixed ticker, SystemUI will still stop after the first notification but works as intended after that
 CM apps
 updater script
 
@@ -13,7 +14,7 @@ Xposed updated to v69
 <b>7-25-2015</b>
 Installer fixes
 Dark theme fixes
-Removed HTC keyboard, doesn't work anymore and no plan on porting it either.
+Removed HTC keyboard, doesn't work anymore and no plan on porting it either
 
 <b>7-19-2015</b>
 <b>*New Additions</b>
@@ -28,7 +29,7 @@ Dark theme
 <b>*New Additions</b>
 New Base, GPE 5.1 LMY47O.H6
 Stock kernel, init.d, su.d, boots on CDMA devices
-APM with screenshot, airplane and ringer states.
+APM with screenshot, airplane and ringer states
 Clear all recents, show ram, clear all location
 Show/hide alarm icon
 Weather in notifition header
@@ -133,7 +134,7 @@ Ambient display / notificaions only, pick up is disabled
 Change DPI (play store still thinks 480 "BETA")
 Audio boost (testing)
 <b>*Fixes</b>
-Updater script, should fix bootloops.
+Updater script, should fix bootloops
 Dark dialer theme changes and fixes
 Navbar back button
 Location quick setting
@@ -155,13 +156,13 @@ FCs in apps like PowerAmp
 
 <b>2-01-2015</b>
 <b>*New Additions</b>
-Multi-Carrier support (beta) needs testing.
+Multi-Carrier support (beta) needs testing
 Network traffic meter
 AM/PM in clock mod
 Nav bar height (*requires a reboot)
 Sense camera and gallery
 ElementalX kernel
-Recents clear all FAB moved to center, added fade in animation.
+Recents clear all FAB moved to center, added fade in animation
 .75 to animations
 <b>*Fixes</b>
 Battery mod
@@ -182,7 +183,7 @@ Busybox
 <b>*Fixes</b>
 Dark theme
 Extra settings defaults should match system on fresh boot
-5.0.2 memory leak fix for Color Fade when screen is turned off.
+5.0.2 memory leak fix for Color Fade when screen is turned off
 
 <b>1-23-2015</b>
 Initial release

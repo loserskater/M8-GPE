@@ -5,7 +5,7 @@ unmount("/data");
 #Kernel Only
 #
 if file_getprop("/tmp/aroma/type.prop","selected") == "4" then
-  set_progress(0.1);
+  show_progress(1.0, 500);
   mount("ext4", "EMMC", "/dev/block/platform/msm_sdcc.1/by-name/system", "/system");
   mount("ext4", "EMMC", "/dev/block/platform/msm_sdcc.1/by-name/cache", "/cache");
   mount("ext4", "EMMC", "/dev/block/platform/msm_sdcc.1/by-name/userdata", "/data");
@@ -30,7 +30,6 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "4" then
   delete("/system/etc/elementalx.conf");
   delete("/system/etc/skydragon.conf");
   delete("/system/su.d/elex_permissive.sh");
-  set_progress(0.5);
   package_extract_dir("system/lib/modules", "/system/lib/modules");
   package_extract_file("system/bin/mpdecision", "/system/bin/mpdecision");
   package_extract_file("system/bin/pnpmgr", "/system/bin/pnpmgr");
@@ -42,14 +41,13 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "4" then
   endif;
   set_perm_recursive(0, 0, 0755, 0644, "/system/lib/modules");
   symlink("/system/lib/modules/pronto/pronto_wlan.ko", "/system/lib/modules/wlan.ko");
-  set_progress(1.0);
 endif;
 #
 #Modify ROM
 #
 if file_getprop("/tmp/aroma/type.prop","selected") == "3" then
+  show_progress(1.0, 4000);
   ui_print("@Modifying Rom");
-  set_progress(0.01);
   if file_getprop("/tmp/aroma/wipe.prop","selected.0") != "1" then
     ui_print("@Formatting Cache");
     format("ext4", "EMMC", "/dev/block/platform/msm_sdcc.1/by-name/cache", "0", "/cache");
@@ -68,12 +66,11 @@ endif;
 #
 if file_getprop("/tmp/aroma/type.prop","selected") == "1" || file_getprop("/tmp/aroma/type.prop","selected") == "2" then
   ui_print("@Installing Rom");
-  set_progress(0.01);
+  show_progress(1.0, 4000);
   if file_getprop("/tmp/aroma/wipe.prop","selected.0") != "3" then
     ui_print("@Formatting System");
     format("ext4", "EMMC", "/dev/block/platform/msm_sdcc.1/by-name/system", "0", "/system");
   endif;
-  set_progress(0.10);
   ui_print("@Formatting Cache");
   format("ext4", "EMMC", "/dev/block/platform/msm_sdcc.1/by-name/cache", "0", "/cache");
   mount("ext4", "EMMC", "/dev/block/platform/msm_sdcc.1/by-name/system", "/system");
@@ -82,7 +79,6 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "1" || file_getprop("/tmp/
   ui_print("@Formatting Dalvik");
   delete_recursive("/data/dalvik-cache");
   delete_recursive("/data/local");
-  set_progress(0.15);
   if file_getprop("/tmp/aroma/wipe.prop","selected.0") == "1" then
     ui_print("@Formatting Data");
 	assert(run_program("/sbin/mount", "/data") || ui_print("(data is mounted already)"));
@@ -90,8 +86,6 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "1" || file_getprop("/tmp/
     set_perm(0, 0, 0777, "/tmp/wipe.sh");
     run_program("/tmp/wipe.sh");
   endif;
-  set_progress(0.20);
-  show_progress(0.40,750);
   ui_print("@Extracting System");
   package_extract_dir("system", "/system");
   if file_getprop("/tmp/aroma/wipe.prop","selected.0") == "1" then
@@ -121,7 +115,6 @@ endif;
 #
 if file_getprop("/tmp/aroma/type.prop","selected") == "2" || file_getprop("/tmp/aroma/type.prop","selected") == "3" then
   ui_print("#Installing Mods#");
-  set_progress(0.62);
   #
   #De-Bloat
   #
@@ -188,7 +181,6 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "2" || file_getprop("/tmp/
   else
     package_extract_dir("system/app/GooglePinyinIME", "/system/app/GooglePinyinIME");
   endif;
-  set_progress(0.63);
   if file_getprop("/tmp/aroma/debloatlist.prop","item.1.11") == "1" then
     ui_print("Removing Hangouts");
 	delete_recursive("/system/app/Hangouts");
@@ -237,7 +229,6 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "2" || file_getprop("/tmp/
   else
     package_extract_dir("system/app/Music2", "/system/app/Music2");
   endif;
-  set_progress(0.64);
   if file_getprop("/tmp/aroma/debloatlist.prop","item.1.19") == "1" then
     ui_print("Removing PlayGames");
 	delete_recursive("/system/app/PlayGames");
@@ -271,7 +262,6 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "2" || file_getprop("/tmp/
   else
     package_extract_dir("system/priv-app/Wallet", "/system/priv-app/Wallet");
   endif;
-  set_progress(0.65);
   #
   #Mms
   #
@@ -285,7 +275,6 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "2" || file_getprop("/tmp/
   #
   #Email
   #
-  set_progress(0.66);
   ui_print("@Email");
   if file_getprop("/tmp/aroma/email.prop","selected.1") == "1" then
     ui_print("Adding stock email");
@@ -304,7 +293,6 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "2" || file_getprop("/tmp/
   #
   #CyanogenMod apps
   #
-  set_progress(0.76);
   ui_print("@CyanogenMod apps");
   if file_getprop("/tmp/aroma/cm.prop","item.0.1") == "1" then
     ui_print("Adding AudioFX");
@@ -365,7 +353,6 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "2" || file_getprop("/tmp/
   #
   #Camera/Gallery
   #
-  set_progress(0.78);
   ui_print("@Cameras");
   if file_getprop("/tmp/aroma/camera.prop","item.1.1") == "1" then
     ui_print("Adding Google Camera");
@@ -407,7 +394,6 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "2" || file_getprop("/tmp/
   #
   #LiveWallpaper
   #
-  set_progress(0.82);
   ui_print("@LiveWallpaper");
   if file_getprop("/tmp/aroma/live.prop","item.0.1") == "1" then
     ui_print("Adding Galaxy4");
@@ -472,7 +458,6 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "2" || file_getprop("/tmp/
   #
   #THEMES Preparing theme
   #
-  set_progress(0.84);
   ui_print("@Preparing Theme Install");
   if file_getprop("/tmp/aroma/type.prop","selected") == "3" then
     package_extract_dir("system/app/DocumentsUI", "/system/app/DocumentsUI");
@@ -555,7 +540,6 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "2" || file_getprop("/tmp/
   endif;
 endif;
 ui_print("@Finishing up");
-set_progress(0.87);
 if file_getprop("/tmp/aroma/type.prop","selected") == "1" || file_getprop("/tmp/aroma/type.prop","selected") == "2" then
   ui_print("@Installing busybox");
   run_program("/system/xbin/busybox", "--install", "-s", "/system/xbin");
@@ -683,7 +667,6 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "1" || file_getprop("/tmp/
           "/system/bin/touch", "/system/bin/umount", "/system/bin/uptime",
           "/system/bin/vmstat", "/system/bin/watchprops",
           "/system/bin/wipe");
-  set_progress(0.93);
   ui_print("@Setting Permissions");
   set_metadata_recursive("/system", "uid", 0, "gid", 0, "dmode", 0755, "fmode", 0644, "capabilities", 0x0, "selabel", "u:object_r:system_file:s0");
   set_metadata_recursive("/system/bin", "uid", 0, "gid", 2000, "dmode", 0755, "fmode", 0755, "capabilities", 0x0, "selabel", "u:object_r:system_file:s0");
@@ -748,7 +731,6 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "1" || file_getprop("/tmp/
   set_metadata("/system/vendor/pittpatt/models/recognition/face.face.y0-y0-71-N-tree_7-wmd.bin", "uid", 0, "gid", 0, "mode", 0644, "capabilities", 0x0, "selabel", "u:object_r:system_file:s0");
   set_metadata_recursive("/system/xbin", "uid", 0, "gid", 2000, "dmode", 0755, "fmode", 0755, "capabilities", 0x0, "selabel", "u:object_r:system_file:s0");
   set_metadata_recursive("/system/su.d", "uid", 0, "gid", 0, "dmode", 0700, "fmode", 0755, "capabilities", 0x0, "selabel", "u:object_r:system_file:s0");
-  set_progress(0.96);
   #
   #SuperSU
   #
@@ -756,7 +738,6 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "1" || file_getprop("/tmp/
   package_extract_dir("supersu", "/tmp/supersu");
   run_program("/sbin/busybox", "unzip", "/tmp/supersu/supersu.zip", "META-INF/com/google/android/*", "-d", "/tmp/supersu");
   run_program("/sbin/busybox", "sh", "/tmp/supersu/META-INF/com/google/android/update-binary", "dummy", "1", "/tmp/supersu/supersu.zip");
-  set_progress(0.98);
   #
   #Xposed
   #
@@ -776,5 +757,4 @@ if file_getprop("/tmp/aroma/type.prop","selected") == "1" || file_getprop("/tmp/
   ifelse(is_mounted("/data"), unmount("/data"));
   ui_print("@*Success*");
   ui_print("@*Please Reboot System*");
-  set_progress(1.0);
 endif;
