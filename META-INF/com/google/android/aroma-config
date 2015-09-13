@@ -2,7 +2,7 @@
 ini_set("force_colorspace","rgba");
 ini_set("dp","6");
 theme("material");
-ini_set("rom_name", "Doppelkänger M8 GPE 5.1+ LMY47O.H6");
+ini_set("rom_name", "Doppelkänger M8 GPE 5.1+ LMY47O.H9");
 ini_set("rom_authors", "enewman17, loserskater");
 loadlang("langs/en.lang");
 fontresload( "0", "ttf/Roboto-Regular.ttf", "12" );
@@ -260,13 +260,13 @@ if prop("type.prop","selected")=="2"||prop("type.prop","selected")=="3" then
       );
 	  write("/data/media/0/aroma/Dialer.prop", readtmpfile("dialer.prop"));
 	endif;
-	setvar("mms_prop", read("/data/media/0/aroma/MMS.prop"));
-    if (getvar("mms_prop")!="") then
-      writetmpfile("mms.prop",getvar("mms_prop"));
+	setvar("google_prop", read("/data/media/0/aroma/Google.prop"));
+    if (getvar("google_prop")!="") then
+      writetmpfile("google.prop",getvar("google_prop"));
     endif;
     checkbox(
       #-- Title
-        "MMS Options",
+        "Google Apps",
       
       #-- Sub Title
         "Select the apps you would like added/removed.\n"+
@@ -277,11 +277,13 @@ if prop("type.prop","selected")=="2"||prop("type.prop","selected")=="3" then
         "@apps",
       
       #-- Will be saved in /tmp/aroma/mms.prop
-        "mms.prop",
+        "google.prop",
 
-		  "Messenger",        "",           0      #-- item.0.1
+		  "Messenger",             "",                    0,     #-- item.0.1
+		  "Google Now Launcher",   "Android M version",   3      #-- item.0.2
+		  
     );
-	write("/data/media/0/aroma/MMS.prop", readtmpfile("mms.prop"));
+	write("/data/media/0/aroma/Google.prop", readtmpfile("google.prop"));
 	setvar("email_prop", read("/data/media/0/aroma/Email.prop"));
     if (getvar("email_prop")!="") then
       writetmpfile("email.prop",getvar("email_prop"));
@@ -504,7 +506,7 @@ if prop("debloat.prop","selected.1")=="1" then
       #-- Will be saved in /tmp/aroma/other
         "debloatlist.prop",
 		
-		"apps 282.16 Mb",  "", 2,								  
+		"apps 276.36 Mb",  "", 2,								  
 	      "Chrome",          "45.0Mb Play Store",             0,      #-- item.1.1
 		  "Drive",           "12.1Mb Play Store",             0,      #-- item.1.2
 		  "EditorsDocs",     "25.5Mb Play Store",             0,      #-- item.1.3
@@ -513,7 +515,7 @@ if prop("debloat.prop","selected.1")=="1" then
 		  "Gmail",           "9.19Mb Play Store",             0,      #-- item.1.6
 		  "GoogleCamera",    "27.9Mb",                        0,      #-- item.1.7
 		  "GoogleHindiIME",  "9.37Mb foreign keyboard",       0,      #-- item.1.8
-		  "GooglePhotos",    "39.9Mb Play Store",             0,      #-- item.1.9
+		  "GooglePhotos",    "398kb Play Store",              0,      #-- item.1.9
 		  "GooglePinyinIME", "7.52Mb foreign keyboard",       0,      #-- item.1.10
 		  "Hangouts",        "18.6Mb Play Store",             0,      #-- item.1.11
 		  "HPPrintPlugin",   "3.23Mb Play Store",             0,      #-- item.1.12
@@ -524,8 +526,9 @@ if prop("debloat.prop","selected.1")=="1" then
 		  "News & Weather",  "3.04Mb Play Store",             0,      #-- item.1.17
 		  "Play Music",      "14.2Mb Play Store",             0,      #-- item.1.18
 		  "PlayGames",       "5.26Mb Play Store",             0,      #-- item.1.19
-		  "Street",          "258kb  Play Store",             0,      #-- item.1.20
-		  "YouTube",         "13.1Mb Play Store",             0,      #-- item.1.21
+		  "PlusOne",         "30.1Mb Play Store",             0,      #-- item.1.20
+		  "Street",          "258kb  Play Store",             0,      #-- item.1.21
+		  "YouTube",         "13.1Mb Play Store",             0,      #-- item.1.22
 		  
 		
 		"priv-apps 17.5 Mb",  "", 2,

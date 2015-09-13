@@ -1,8 +1,12 @@
-<b>0-0-2015</b>
+<b>9-12-2015</b>
 <b>*Updates</b>
+Base updated to H9
+Stagefreight patched
+Xposed v74
 Fixed ticker, SystemUI will still stop after the first notification but works as intended after that
 CM apps
 updater script
+Removed settings that don't work in Extras
 
 <b>8-3-2015</b>
 <b>*Updates</b>
